@@ -1,0 +1,687 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I">
+      
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/tools/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Werkzeuge - Programmieren I</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#werkzeuge" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmieren I" class="md-header__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmieren I
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Werkzeuge
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmieren I" class="md-nav__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    Programmieren I
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aufgaben/" class="md-nav__link">
+        Aufgaben
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Werkzeuge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Werkzeuge
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#literaturempfehlungen" class="md-nav__link">
+    Literaturempfehlungen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    IDE
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluej" class="md-nav__link">
+    BlueJ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eclipse" class="md-nav__link">
+    Eclipse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij" class="md-nav__link">
+    IntelliJ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-nutzliche-werkzeuge" class="md-nav__link">
+    Weitere nützliche Werkzeuge
+  </a>
+  
+    <nav class="md-nav" aria-label="Weitere nützliche Werkzeuge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-gitbash" class="md-nav__link">
+    Windows: gitBash
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-kurse" class="md-nav__link">
+    Online-Kurse
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#literaturempfehlungen" class="md-nav__link">
+    Literaturempfehlungen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    IDE
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluej" class="md-nav__link">
+    BlueJ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eclipse" class="md-nav__link">
+    Eclipse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij" class="md-nav__link">
+    IntelliJ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-nutzliche-werkzeuge" class="md-nav__link">
+    Weitere nützliche Werkzeuge
+  </a>
+  
+    <nav class="md-nav" aria-label="Weitere nützliche Werkzeuge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-gitbash" class="md-nav__link">
+    Windows: gitBash
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-kurse" class="md-nav__link">
+    Online-Kurse
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/prog1/edit/master/docs/tools.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="werkzeuge">Werkzeuge<a class="headerlink" href="#werkzeuge" title="Permanent link">&para;</a></h1>
+<h2 id="literaturempfehlungen">Literaturempfehlungen<a class="headerlink" href="#literaturempfehlungen" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Joachim Goll, Cornelia Heinisch: <em>"Java als erste Programmiersprache. Ein professioneller Einstieg in die Objektorientierung mit Java"</em>,  Springer Vieweg</li>
+<li>Sebastian Dörn: <em>"Java lernen in abgeschlossenen Lerneinheiten"</em>, Springer Vieweg</li>
+<li>Dietmar Ratz, Jens Scheffler, Detlef Seese, Jan Wiesenberger: <em>"Grundkurs Programmieren in Java x"</em>, Hanser Verlag</li>
+<li>Kathy Sierra, Bert Bates: <em>"Java von Kopf bis Fuß"</em>, O'Reilly Verlag</li>
+<li>Joshua Bloch: <em>"Effective Java. Best practices for the Java platform"</em>, Pearson Education Inc.</li>
+<li>Robin C. Martin: <em>"Clean Code: A Handbook of Agile Software Craftmanship"</em>, Prentice Hall</li>
+<li>und alle Bücher für Einsteigerinnen, die Sie ansprechen...</li>
+</ul>
+<h2 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h2>
+<p>Wir verwenden die Programmiersprache <em>Java</em>, um die Programmierkonzepte, die wir lernen und anwenden wollen, zu implementieren. </p>
+<p>Java besteht aus 2 Teilen:</p>
+<ul>
+<li>der <em>Java Run Time Environment (Java RTE)</em> (Java-Laufzeitumgebung)</li>
+<li>dem <em>Java Development Kit (JDK)</em> (die Java-Entwicklungsumgebung)</li>
+</ul>
+<p>Die Java-Laufzeitumgebung ist üblicherweise bereits auf allen Rechnern installiert. Sie ist selbst ein Programm. Innerhalb dieses Programms werden Java-Programme ausgeführt. </p>
+<p>Das JDK müssen Sie installieren. Verwenden Sie dazu <a href="https://www.oracle.com/java/technologies/javase-downloads.html">diesen Link</a> und gehen wie für Ihr Betriebssystem angegeben vor (prüfen Sie aber zunächst, ob Sie nicht eventuell bereits Beides haben - <code>java -version</code> und <code>javac -version</code> - siehe folgend). </p>
+<p>Testen Sie am besten auf Ihrer Konsole (Terminal), ob Ihr Java korrekt funktioniert. Zum Testen Ihrer Laufzeitumgebung geben Sie dazu</p>
+<div class="highlight"><pre><span></span><code>java -version
+</code></pre></div>
+<p>ein. Es sollte soetwas erscheinen, wie (Versionsnummern bei Ihnen sicherlich schon höher):</p>
+<div class="highlight"><pre><span></span><code>java version <span class="s2">&quot;15.0.1&quot;</span> <span class="m">2020</span>-10-20
+Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build <span class="m">15</span>.0.1+9-18<span class="o">)</span>
+Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">64</span>-Bit Server VM <span class="o">(</span>build <span class="m">15</span>.0.1+9-18, mixed mode, sharing<span class="o">)</span>
+</code></pre></div>
+<p>Somit wissen Sie, dass die Laufzeitumgebung funktioniert. Zum Testen des JDK rufen wir am besten den Compiler (<code>javac</code>) auf:</p>
+<div class="highlight"><pre><span></span><code>javac -version
+</code></pre></div>
+<p>Es sollte soetwas erscheinen, wie (Versionsnummern bei Ihnen sicherlich schon höher):</p>
+<div class="highlight"><pre><span></span><code>javac <span class="m">15</span>.0.1
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Sie haben nun die Java-Laufzeitumgebung installiert, in der unsere Java-Programme ausgeführt werden und Sie haben das Java Development Kit installiert. Teil des JDK ist z.B. der <em>Compiler</em>, der unsere Java-Programme in Byte-Code übersetzt. Dieser Bytecode wird in unserer Java-Laufzeitumgebung ausgeführt.</p>
+</div>
+<h2 id="ide">IDE<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h2>
+<p>Um unsere Programme "zu schreiben", verwenden wir eine sogenannte <em>Integrated Development Environment (IDE)</em>, eine integrierte Entwicklungsumgebung, die uns beim Programmieren unterstützt. Wir könnten unsere Programme auch mit einfachen Texteditoren schreiben, aber eine IDE unterstützt uns, indem der Programmcode geeignet hervorgehoben wird (<em>Syntx-Highlighting</em>) und uns Vorschläge für die Verwendung von Methoden und Variablen gemacht werden (<em>Intelligent Code Completion</em>). </p>
+<h3 id="bluej">BlueJ<a class="headerlink" href="#bluej" title="Permanent link">&para;</a></h3>
+<p>Am Anfang verwenden wir <a href="https://www.bluej.org/"><strong>BlueJ</strong></a>. BlueJ wird an der University of Kent (UK) entwickelt und richtet sich speziell an Programmieranfängerinnen. Das Tolle an BlueJ ist, dass die <em>Funktionsblöcke</em>, die zusammengehören, farbig hervorgehoben werden. Die Download-Seite von BlueJ befindet sich <a href="https://www.bluej.org/index.html"><strong>hier</strong></a>. Laden Sie BlueJ herunter, <strong>entpacken Sie das zip-File</strong> und bewegen Sie den Ordner <code>BlueJ</code> in Ihren Programme-Ordner. Derzeit heißt der Ordner</p>
+<div class="highlight"><pre><span></span><code>BlueJ <span class="m">5</span>.0.2
+</code></pre></div>
+<p>In dem Ordner befindet sich die ausführbare <code>BlueJ</code>-Datei (<code>BlueJ.app</code> oder <code>BlueJ.exe</code>) und ein <code>examples</code>-Ordner. </p>
+<ol>
+<li>Öffnen Sie <code>BlueJ</code> durch Doppelklick auf die ausführbare <code>BlueJ</code>-Datei.</li>
+<li>Wählen Sie im Menü <code>Project --&gt; Open Project...</code>. Klicken Sie zum <code>examples</code>-Ordner und wählen Sie das Projekt <code>hello</code> und öffnen Sie es. BlueJ sieht dann so aus:</li>
+</ol>
+<p><img alt="BlueJ" src="../files/02_bluej.png" /></p>
+<p>Klicken Sie mit der <strong>rechten</strong> Maustaste auf das gelbe Rechteck <code>Hello</code> und wählen Sie im Menü <code>Open editor</code> aus. Es erscheint folgendes Fenster: </p>
+<p><img alt="BlueJ" src="../files/03_bluej.png" /></p>
+<p>Klicken Sie in diesem Fenster auf den Button <code>Compile</code>. Es sollte folgendes Fenster erscheinen: </p>
+<p><img alt="BlueJ" src="../files/04_bluej.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Sie haben BlueJ erfolgreich installiert und die Java-Programme werden übersetzt (compiliert).</p>
+</div>
+<h3 id="eclipse">Eclipse<a class="headerlink" href="#eclipse" title="Permanent link">&para;</a></h3>
+<p>Nachdem wir anfangs alle BlueJ verwenden, sind Sie danach in der Wahl Ihrer IDE frei. Wir verwenden <a href="https://www.eclipse.org/"><strong>Eclipse</strong></a>. Eclipse ist in Java geschrieben und Open-Source. Den Download-Link für Eclipse finden Sie <a href="https://www.eclipse.org/downloads/">hier</a>. Es gibt verschiedene Versionen von Eclipse, wir verwenden die <em>Eclipse IDE for Java Developers</em>. Installieren Sie Eclipse am besten in ihren <em>Applications</em> oder <em>Programme</em> Ordner. </p>
+<ol>
+<li>Starten Sie Eclipse durch Doppelklick auf das Programmsymbol.</li>
+<li>Erstellen Sie einen <em>Workspace</em> (Arbeitsbereich) in einem gewünschten Ordner (z. B.
+Programmieren) im Dateisystem. Achten Sie darauf, dass Sie Schreibrechte in diesem Ordner besitzen.</li>
+<li>Anlegen eines Projektordners:<ul>
+<li>Auswahl im Menü <code>File--&gt;New--&gt;Java Project</code>.</li>
+<li>Eingabe des <code>Project name:</code> Name des Projektes (z.B. <em>WiSe20</em> oder <em>Uebung1</em> oder <em>Aufgabe2</em>). Wenn Sie gefragt werden, ob Sie ein <code>module-info.java</code> erstellen wollen, wählen Sie <code>Don't create</code>.</li>
+<li>Klicken auf den Button <code>Finish</code>.</li>
+</ul>
+</li>
+<li>Erstellen eines neuen Packages (Paketes):<ul>
+<li>Öffnen der Projektmappe im <code>Package Explorer</code>.</li>
+<li>Auswahl des Ordners <code>src</code> mit der rechten Maustaste.</li>
+<li>Auswahl des Menüpunktes <code>New --&gt; Package</code>.</li>
+<li>Geben Sie einen Paketnamen ein (Paketnamen werden kleingeschrieben), z.B. <code>themen.start</code>.</li>
+</ul>
+</li>
+<li>Erstellen einer neuen Klasse:<ul>
+<li>Öffnen der Projektmappe im Package Explorer.</li>
+<li>Auswahl des Paketes (z.B. <code>themen.start</code>) mit der rechten Maustaste.</li>
+<li>Auswahl des Menüpunktes <code>New --&gt; Class</code>.</li>
+<li>Eingabe eines beliebigen Namens, der gleichzeitig der Klassen- und Dateiname ist (z.B. <code>HelloFIW</code>). Klassennamen werden immer groß geschrieben.</li>
+<li>Setzen des Häkchens bei <code>public static void main()</code>.</li>
+<li>Klicken auf den Button <code>Finish</code>.</li>
+</ul>
+</li>
+</ol>
+<p>Die folgende Abbildung gibt einen Überblick über die Bedeutung der einzelnen Fenster in Eclipse:</p>
+<p><img alt="Eclipse" src="../files/01_eclipse.png" /></p>
+<h3 id="intellij">IntelliJ<a class="headerlink" href="#intellij" title="Permanent link">&para;</a></h3>
+<p>Diejenigen von Ihnen, die nicht Eclipse verwenden, werden sich stattdessen wahrscheinlich für <a href="https://www.jetbrains.com/de-de/idea/"><strong>IntelliJ</strong></a> entscheiden. Das ist völlig in Ordnung. IntelliJ ist von JetBrains, einem tschechischen Unternehmen, und derzeit die wohl modernste IDE auf dem Markt, nicht nur für Java- sondern auch für Web-Entwicklungen. IntelliJ ist nicht Open-Source und ist kostenpflichtig. Mit einer Hochschullizenz erhalten Sie jedoch kostenlosen Zugriff auf alle Enterprise-Versionen. Sie müssen sich dazu bei JetBrains mit Ihrer HTW-Adresse registrieren. </p>
+<h3 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">&para;</a></h3>
+<p>Wer gerne mit Microsoft-Produkten arbeitet, kann auch gerne <a href="https://code.visualstudio.com/docs/java/java-tutorial"><strong>Visual Studio Code</strong></a> (<em>VS Code</em>) arbeiten. Das ist auch eine sehr gute IDE und ebenfalls nicht nur zur Nutzung für die Java-Entwicklung, sondern auch für Web- und App-Entwicklungen geeignet. Spätestens im dritten Semster in <em>WebTech</em> werden die meisten von Ihnen entweder auf IntelliJ oder VS Code wechseln. </p>
+<h2 id="weitere-nutzliche-werkzeuge">Weitere nützliche Werkzeuge<a class="headerlink" href="#weitere-nutzliche-werkzeuge" title="Permanent link">&para;</a></h2>
+<h3 id="windows-gitbash">Windows: gitBash<a class="headerlink" href="#windows-gitbash" title="Permanent link">&para;</a></h3>
+<p>Das Terminal (<code>cmd</code>) in Windows ist nicht so gut. Installieren Sie sich lieber die <a href="https://gitforwindows.org/"><strong>GitBash für Windows</strong></a>. Unter Downloads öffnet sich das GitHub-Repository für Git. Aktuell wählen Sie dort <a href="https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.1/Git-2.29.2-64-bit.exe"><strong>Git-2.29.2-64-bit.exe</strong></a> und folgen dann den Installationsanweisungen. </p>
+<h2 id="online-kurse">Online-Kurse<a class="headerlink" href="#online-kurse" title="Permanent link">&para;</a></h2>
+<ul>
+<li>SoloLearn <a href="https://www.sololearn.com/Course/Java/">https://www.sololearn.com/Course/Java/</a></li>
+<li>JetBrains Academy <a href="https://hyperskill.org/tracks/1">https://hyperskill.org/tracks/1</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../aufgaben/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Aufgaben" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Aufgaben
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>
