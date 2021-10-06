@@ -63,6 +63,7 @@ markdown_extensions:
 nav:
     - Home: index.md
     - Start: start.md
+    - BlueJ: bluej.md
     - Übungen: uebungen.md
     - Aufgaben: aufgaben.md
     - Werkzeuge: tools.md

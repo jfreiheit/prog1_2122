@@ -29,4 +29,11 @@ Die Aufgaben laden Sie in [Moodle](https://moodle.htw-berlin.de/course/view.php?
 	```
 - Sie können Ihre Aufgaben zu zweit lösen. Tragen Sie dann hinter das `@author`-Tag beide Namen ein und **laden Sie bitte beide** die Lösung in Moodle hoch!
 
+## Code review
+
+Für jede abgebene Aufgabe wird Ihnen eine Lösung einer Kommilitonin zm Review zugewiesen. Analysieren Sie den Code Ihrer Kommilitonin und geben Sie Kommentare dazu ab! Zur offiziellen Abgabe einer Aufgabe gehören also
+
+- das Hochladen der eigenen Lösung,
+- das Analysieren/Kommentieren einer fremden Lösung (2-3 Review-Kommentare genügen).
+
 ## Aufgaben

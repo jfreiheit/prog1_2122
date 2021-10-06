@@ -24,10 +24,39 @@ Der Plan zur Durchführung der Veranstaltung ist derzeit wie folgt:
 - Es wird ein Tutorium angeboten (Termin wird noch bekanntgegeben). 
 - Sollten Sie Wünsche haben, diesen Plan zu ändern, kommen Sie gerne auf mich zu.
 
-Zur erfolgreichen Durchführung der Veranstaltung müssen die **Aufgaben** (Hausaufgaben) lösen und zu den jeweiligen Fristen auf Moodle hochladen. Wenn Sie alle Aufgaben fristgerecht hochgeladen haben, dürfen Sie an der Klausur teilnehmen. Es werden insgesamt wahrscheinlich 10 Aufgaben sein, die Sie selbständig lösen und hochladen müssen. Sie können die Aufgaben auch zu zweit lösen. Laden Sie dann aber bitte beide jeweils die Lösung hoch. Am Ende des Semesters schreiben wir eine **Klausur** (am Rechner). Diese Klausur wird bewertet und entspricht der Note für "Programmieren 1". 
+Zur erfolgreichen Durchführung der Veranstaltung müssen die **Aufgaben** (Hausaufgaben) lösen und zu den jeweiligen Fristen auf Moodle hochladen. Wenn Sie alle Aufgaben fristgerecht hochgeladen haben, dürfen Sie an der Klausur teilnehmen. Es werden insgesamt wahrscheinlich 12 Aufgaben sein, die Sie selbständig lösen und hochladen müssen. Sie können die Aufgaben auch zu zweit lösen. Laden Sie dann aber bitte beide jeweils die Lösung hoch. Am Ende des Semesters schreiben wir eine **Klausur** (am Rechner). Diese Klausur wird bewertet und entspricht der Note für "Programmieren 1". 
 
 Unter [**Aufgaben**](./aufgaben/#aufgaben) sind die Aufgaben beschrieben, die Sie in jeder Woche ausführen sollen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht jeweils einer Vorlesung. Diese wird also selbständig durchgeführt. 
 
 Daneben gibt es jede Woche (zu jedem Thema) **Übungen**, die wir in den Übungszeiten besprechen. Diese dienen der Anwendung und der Festigung der erlangten Kenntnisse. Die [**Übungen**](./uebungen/#ubungsblatter-wochenweise) sind kleine Aufgaben, an denen Sie das neue Wissen anwenden sollen. Die Übungen dienen der Befähigung, die (größeren) Aufgaben lösen zu können.  
 
 Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn ich dort möglichst wenig Fragen - zumindest die inhaltlichen - beantworten müsste, sondern eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, diese von Ihnen dort beantwortet zu sehen. Damit wäre allen geholfen und ich kann besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht.  
+
+
+## Planung (vorläufig - kann sich noch ändern)
+
+
+Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
+
+| | Woche | Themen (Vorlesung) | Aufgabe | Abgabe Aufgabe bis | 
+|-|-------|--------------------|-------|-----------------|
+| 1. | 11.-15.10.2021 | Einführung und Organisatorisches, erstes Programm | -  | - | 
+| 2. | 18.-22.10.2021 | Klassen und Objekte - BlueJ | Aufgabe 1  | 25.10.2021 | 
+| 3. | 25.-29.10.2021 | Datentypen und Variablen, logische Ausdrücke | Aufgabe 2  | 01.11.2021 | 
+| 4. | 01.-05.11.2021 | Sequenzen, Iterationen und Selektion | Aufgabe 3 | 08.11.2021 | 
+| 5. | 08.-12.11.2021 | Nützliche Klassen, Einführung Arrays | Aufgabe 4 | 15.11.2021 | 
+| 6. | 15.-19.11.2021 | Sortieren von Arrays | Aufgabe 5  | 22.11.2021 | 
+| 7. | 22.-26.11.2021 | Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten | Aufgabe 6  | 29.11.2021 | 
+| 8. | 29.-03.12.2021 | Klassen- und Objekt-Variablen und -Methoden  | Aufgabe 7  | 06.12.2021 |
+| 9. | 06.-10.12.2021 | Vererbung | Aufgabe 8  | 13.12.2021 |
+| 10. | 13.-17.12.2021 | Object und Polymorphie | Aufgabe 9 | 20.12.2021 |
+| 11. | 20.-24.12.2021 | return  | Aufgabe 10  | 03.01.2022 |
+| | | | | | | |
+| 12. | 03.-07.01.2022 | Enumerations | Aufgabe 11  | 10.01.2022 |
+| 13. | 10.-14.01.2022 | Exceptions | Aufgabe 12 | 17.01.2022 |
+| 14. | 17.-21.01.2022 | JavaDoc  | -  | - |
+| 15. | 24.-28.01.2021 | Neuerungen ab Java 8 | - | - |
+| 16. | 31.-03.02.2022 | Wiederholung, Klausurvorbereitung  | Fragen  | - |
+| 17. | 07.-11.02.2021 | Wiederholung, Klausurvorbereitung | Fragen | - |
+
+
