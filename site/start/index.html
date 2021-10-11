@@ -500,7 +500,7 @@
 </ul>
 <hr />
 <p>Ehe wir uns weiter mit Java und Programmierkonzepten beschäftigen, wollen wir uns bewusst werden, was Programmieren überhaupt ist. Prinzipiell lösen wir beim Programmieren ein Problem mithilfe einer Programmiersprache. Dabei stellt sich die Frage, welche Probleme mithilfe eines Computers lösbar sind und welche nicht. Dazu gibt es umfangreiche theoretische Untersuchungen - viele davon werden Sie in den "Grundlegenden Konzepten der Informatik" diskutieren. Ein wesentlicher Begriff dabei ist <em>Algorithmus</em>. Ein Algorithmus ist eine eindeutige Handlungsvorschrift, die aus endlich vielen einzelnen Schritten besteht und ein Problem löst. </p>
-<p>Algorithmen sind also auch Kochrezepte oder Bauanleitungen, wenn sie denn "eindeutig" sind. Wir kennen alle das Problem, dass Handlungsanweisungen nicht immer eindeutig sind - man kann es manchmal so oder so machen. In der Programmierung darf eine solche Mehrdeutigkeit natürlich nicht vorkommen. Der Algorithmusbegriff wurde deshalb detailliert und folgende Eigenschaften müssen für eine Handlungsanweisung für einen Computer gelten, um ein Algrithmus zu sein:</p>
+<p>Algorithmen sind also auch Kochrezepte oder Bauanleitungen, wenn sie denn "eindeutig" sind. Wir kennen alle das Problem, dass Handlungsanweisungen nicht immer eindeutig sind - man kann es manchmal so oder so machen. In der Programmierung darf eine solche Mehrdeutigkeit natürlich nicht vorkommen. Der Algorithmusbegriff wurde deshalb detailliert und folgende Eigenschaften müssen für eine Handlungsanweisung für einen Computer gelten, um ein Algorithmus zu sein:</p>
 <ol>
 <li><strong>Finitheit</strong> Das Verfahren muss in einem <strong>endlichen</strong> Text (Programm) eindeutig beschreibbar sein.</li>
 <li><strong>Ausführbarkeit</strong> Jeder einzelne Schritt des Verfahrens muss auch tatsächlich ausführbar sein.</li>
@@ -510,7 +510,7 @@
 <li><strong>Determinismus</strong> Die nächste anzuwendende Regel im Verfahren ist zu jedem Zeitpunkt (in jedem Zustand) eindeutig definiert.</li>
 </ol>
 <h3 id="beispiel-euklidischer-algorithmus">Beispiel: Euklidischer Algorithmus<a class="headerlink" href="#beispiel-euklidischer-algorithmus" title="Permanent link">&para;</a></h3>
-<p>Mit dem euklidischen Algorithmus<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup> kann der <em>größte gemeinsame Teiler (ggT)</em> zweier Zahlen berechnet werden. In seinen <em>Elementen</em> hat er diesen Algorithmus ungefähr so formuliert:</p>
+<p>Mit dem euklidischen Algorithmus<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup> kann der <em>größte gemeinsame Teiler (ggT)</em> zweier Zahlen berechnet werden. In seinen <em>Elementen</em> hat Euklid diesen Algorithmus ungefähr so formuliert:</p>
 <div class="admonition quote">
 <p class="admonition-title">Euklidischer Algorithmus</p>
 <p>Wenn CD aber AB nicht misst, und man nimmt bei AB, CD abwechselnd immer das kleinere vom größeren weg, dann muss (schließlich) eine Zahl übrig bleiben, die die vorangehende misst.</p>
@@ -523,7 +523,7 @@
 <li>AB: 16, CD: 8,  AB größer als CD &rarr; 16 -  8 =  8  </li>
 <li>AB:  8, CD: 8,  AB gleich CD &rarr; Ende &rarr; ggT ist 8</li>
 </ol>
-<p>Wir versuchen, den Algorithmus in einer verständlicheren und genaueren Sprache zu überführen, ohne bereits eine <em>Programmiersprache</em> zu verwenden. Wir benutzen sogenannten <em>Pseudocode</em>:</p>
+<p>Wir versuchen, den Algorithmus in eine verständlichere und genauere Sprache zu überführen, ohne bereits eine <em>Programmiersprache</em> zu verwenden. Wir benutzen sogenannten <em>Pseudocode</em>:</p>
 <p>Angenommen, die beiden Zahlen, von denen wir den <em>ggT</em> berechnen wollen, sind <code>a</code> und <code>b</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -540,7 +540,7 @@ wenn a gleich b ist, dann:
     a <span class="o">(</span>oder auch b<span class="o">)</span> ist der gesuchte ggT
 </code></pre></div>
 </td></tr></table>
-<p>Wichtig ist, dass das Einrücken hier eine Bedeutung hat (eine <em>Semantik</em>). In Zeile <code>1</code> formulieren wir, dass sich etwas wiederholen soll, solange eine bestimmte Bedingung gilt. Das, was sich wiederholen soll, ist in den Zeilen <code>2</code> bis <code>5</code> formuliert. Zeile <code>1</code> formuliert eine <em>Schleife</em> und in den Zeilen <code>2</code>-<code>5</code> befindet sich der <em>Schleifeninhalt</em>. Die Zeilen <code>2</code>-<code>5</code> formulieren eine eigenes Konstrukt, nämlich eine Auswahl zwischen Alternativen, abhängig von einer Bedingung. Die Bedingung ist, ob <code>a</code> größer ist als <code>b</code>. Wenn das der Fall ist, dann wird die Alternative <code>ziehe b von a ab und weise das Ergebnis a zu</code> ausgeführt. Ist jedoch <code>a</code> nicht größer als <code>b</code>, dann wird die Alternative <code>ziehe a von b ab und weise das Ergebnis b zu</code> ausgeführt. Ein solches Konstrukt wird <em>Selektion</em> (oder auch <em>bedingte Alternative</em>) genannt. Nachdem entweder Zeile <code>3</code> oder Zeile <code>5</code> ausgeführt wurde (es wird genau eins von beiden ausgeführt), wird erneut in Zeile <code>1</code> geprüft, ob <code>a ungleich b</code> ist. Wenn ja, wird die Selektion wiederholt. Wenn nicht, dann ist die Schleife beendet und Zeile <code>6</code> wird ausgeführt. Die in Zeile <code>6</code> formulierte Bedingung <code>wenn a gleich b ist</code>, ist eigentlich unnötig. </p>
+<p>Wichtig ist, dass das Einrücken hier eine Bedeutung hat (eine <em>Semantik</em>). In Zeile <code>1</code> formulieren wir, dass sich etwas wiederholen soll, solange eine bestimmte Bedingung gilt. Das, was sich wiederholen soll, ist in den Zeilen <code>2</code> bis <code>5</code> formuliert. Zeile <code>1</code> formuliert eine <em>Schleife</em> und in den Zeilen <code>2</code>-<code>5</code> befindet sich der <em>Schleifeninhalt</em>. Die Zeilen <code>2</code>-<code>5</code> formulieren ein eigenes Konstrukt, nämlich eine Auswahl zwischen Alternativen, abhängig von einer Bedingung. Die Bedingung ist, ob <code>a</code> größer ist als <code>b</code>. Wenn das der Fall ist, dann wird die Alternative <code>ziehe b von a ab und weise das Ergebnis a zu</code> ausgeführt (In der Programmierung werden das später als <code>a = a - b</code> schreiben - das sieht für uns jetzt noch sehr "falsch" aus). Ist jedoch <code>a</code> nicht größer als <code>b</code>, dann wird die Alternative <code>ziehe a von b ab und weise das Ergebnis b zu</code> (<code>b = b - a</code>) ausgeführt. Ein solches Konstrukt wird <em>Selektion</em> (oder auch <em>bedingte Alternative</em>) genannt. Nachdem entweder Zeile <code>3</code> oder Zeile <code>5</code> ausgeführt wurde (es wird genau eins von beiden ausgeführt), wird erneut in Zeile <code>1</code> geprüft, ob <code>a ungleich b</code> ist. Wenn ja, wird die Selektion wiederholt. Wenn nicht, dann ist die Schleife beendet und Zeile <code>6</code> wird ausgeführt. Die in Zeile <code>6</code> formulierte Bedingung <code>wenn a gleich b ist</code>, ist eigentlich unnötig. </p>
 <div class="admonition question">
 <p class="admonition-title">Frage</p>
 <p>Warum ist die Bedingung <code>wenn a gleich b ist</code> in Zeile <code>6</code> unnötig?</p>
@@ -605,30 +605,30 @@ Zeile <code>2</code>: <code>n ist ungerade</code>, also wird Zeile <code>3</code
 Zeile <code>3</code>: das Ergebnis von <code>3*5+1</code> ist <code>16</code>. Der neue Wert von <code>n</code> ist 16.
 Zeile <code>1</code>: wegen <em>wiederhole</em> (Iteration): <code>n (16) ist ungleich 1</code>, also wird der Schleifeninhalt ausgeführt
 Zeile <code>2</code>: <code>n ist nicht ungerade</code>, also wird Zeile <code>5</code> ausgeführt (und genau nicht Zeile <code>3</code>)
-Zeile <code>3</code>: das Ergebnis von <code>16/2</code> ist <code>8</code>n. Der neue Wert von <code>n</code> ist 8.
+Zeile <code>5</code>: das Ergebnis von <code>16/2</code> ist <code>8</code>. Der neue Wert von <code>n</code> ist 8.
 Zeile <code>1</code>: wegen <em>wiederhole</em> (Iteration): <code>n (8) ist ungleich 1</code>, also wird der Schleifeninhalt ausgeführt
 Zeile <code>2</code>: <code>n ist nicht ungerade</code>, also wird Zeile <code>5</code> ausgeführt (und genau nicht Zeile <code>3</code>)
-Zeile <code>3</code>: das Ergebnis von <code>8/2</code> ist <code>4</code>. Der neue Wert von <code>n</code> ist 4.
+Zeile <code>5</code>: das Ergebnis von <code>8/2</code> ist <code>4</code>. Der neue Wert von <code>n</code> ist 4.
 Zeile <code>1</code>: wegen <em>wiederhole</em> (Iteration): <code>n (4) ist ungleich 1</code>, also wird der Schleifeninhalt ausgeführt
 Zeile <code>2</code>: <code>n ist nicht ungerade</code>, also wird Zeile <code>5</code> ausgeführt (und genau nicht Zeile <code>3</code>)
-Zeile <code>3</code>: das Ergebnis von <code>4/2</code> ist <code>2</code>. Der neue Wert von <code>n</code> ist 2.
+Zeile <code>5</code>: das Ergebnis von <code>4/2</code> ist <code>2</code>. Der neue Wert von <code>n</code> ist 2.
 Zeile <code>1</code>: wegen <em>wiederhole</em> (Iteration): <code>n (2) ist ungleich 1</code>, also wird der Schleifeninhalt ausgeführt
 Zeile <code>2</code>: <code>n ist nicht ungerade</code>, also wird Zeile <code>5</code> ausgeführt (und genau nicht Zeile <code>3</code>)
-Zeile <code>3</code>: das Ergebnis von <code>2/2</code> ist <code>1</code>. Der neue Wert von <code>n</code> ist 1.
+Zeile <code>5</code>: das Ergebnis von <code>2/2</code> ist <code>1</code>. Der neue Wert von <code>n</code> ist 1.
 Zeile <code>1</code>: wegen <em>wiederhole</em> (Iteration): <code>n (1) ist nicht ungleich 1</code>, also wird der Schleifeninhalt <strong>nicht</strong> ausgeführt
 Ende</p>
-<p>Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die die Eingabe <code>n=5</code> stets <code>1</code> ist. </p>
+<p>Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die Eingabe <code>n=5</code> stets <code>1</code> ist. </p>
 <div class="admonition question">
 <p class="admonition-title">Fragen</p>
 <ul>
 <li>Spielen Sie den Algorithmus ruhig einmal für <code>n=7</code> durch oder auch für andere <code>n</code></li>
 <li>Denken Sie, dass der Algorithmus für jede beliebige positive natürliche Zahl <code>n</code> terminiert?</li>
-<li>Wenn ein Algorithmus für eine konkrete Eingabe stets ein eindeutiges Ergebnis (und zwar immer das gleiche)liefert, wie können dann Zufallszahlen berechnet werden?</li>
+<li>Wenn ein Algorithmus für eine konkrete Eingabe stets ein eindeutiges Ergebnis (und zwar immer das gleiche) liefert, wie können dann Zufallszahlen berechnet werden?</li>
 </ul>
 </div>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>Wir haben ein Verständnis über den <em>Algorithmus</em>-Begriff erlangt und wissen, was <em>Finitheit</em>, <em>Determiniertheit</em>, <em>Determinismus</em> und * Terminierung* bedeuten. </p>
+<p>Wir haben ein Verständnis über den <em>Algorithmus</em>-Begriff erlangt und wissen, was <em>Finitheit</em>, <em>Determiniertheit</em>, <em>Determinismus</em> und <em>Terminierung</em> bedeuten. </p>
 </div>
 <h2 id="programmablaufstrukturen">Programmablaufstrukturen<a class="headerlink" href="#programmablaufstrukturen" title="Permanent link">&para;</a></h2>
 <p>Interessanterweise gibt es nur <em>drei</em> verschiedene Ablaufstrukturen in Programmen bzw. Algorithmen. Alle drei haben wir bereits verwendet. Mit Ablaufstrukturen meinen wir die Abarbeitungsreihenfolge von Anweisungen. Man sagt auch <em>Kontrollfluss</em> dazu. Die drei Ablaufstrukturen, die es gibt, sind:</p>
@@ -651,9 +651,9 @@ Anweisung3
 <div class="highlight"><pre><span></span><code>berechne <span class="m">3</span>*n und weise das Ergebnis n zu
 berechne n+1 und weise das Ergebnis n zu 
 </code></pre></div>
-<p>Zur Visulaisierung von Kontrollstrukturen werden auch sogannnte <em>Programmablaufdiagramme</em> oder <em>Programmablaufpläne</em> verwendet. Für eine Sequenz sähe ein solches Ablaufidagramm so aus:</p>
+<p>Zur Visualisierung von Kontrollstrukturen werden auch sogannnte <em>Programmablaufdiagramme</em> oder <em>Programmablaufpläne</em> verwendet. Für eine Sequenz sähe ein solches Ablaufdiagramm so aus:</p>
 <p><img alt="sequenz" src="../files/07_sequenz.png" /></p>
-<p>So ein Diagramm wird von oben nach unten gelsen. Es wird also erst <code>Anweisung1</code> ausgeführt, dann <code>Anweisung2</code> und zuletzt <code>Anweisung3</code>. Innerhalb einer Sequenz gilt immer <em>single entry</em>/<em>single exit</em>, d.h. keine der Anweisungen innerhalb einer Sequenz kann mehrer Ausgänge oder mehrere Eingänge haben. Es wäre ansonsten <em>nicht-determinsitisch</em>  und somit ein Verstoß gegen unseren Algorithmusbegriff.</p>
+<p>So ein Diagramm wird von oben nach unten gelesen. Es wird also erst <code>Anweisung1</code> ausgeführt, dann <code>Anweisung2</code> und zuletzt <code>Anweisung3</code>. Innerhalb einer Sequenz gilt immer <em>single entry</em>/<em>single exit</em>, d.h. keine der Anweisungen innerhalb einer Sequenz kann mehrere Ausgänge oder mehrere Eingänge haben. Es wäre ansonsten <em>nicht-deterministisch</em>  und somit ein Verstoß gegen unseren Algorithmusbegriff.</p>
 <p><img alt="sequenz" src="../files/08_sequenz.png" /></p>
 <h3 id="die-iteration">Die Iteration<a class="headerlink" href="#die-iteration" title="Permanent link">&para;</a></h3>
 <p>Bei der <em>Iteration</em> handelt es sich um eine wiederholte Ausführung einer Anweisung bzw. einer Sequenz von Anweisungen. Wie oft eine Iteration ausgeführt wird, hängt von einer Bedingung ab. In der Programmierung sprechen wir bei der Iteration auch von einer <em>Schleife</em>. </p>
@@ -706,7 +706,7 @@ andernfalls:
 <p><code>Anweisung1</code> und auch <code>Anweisung2</code> müssen nicht zwingend jeweils nur genau eine Anweisung sein. Bei beiden kann es sich auch um eine Sequenz von Anweisungen oder eine Selektion oder um eine Iteration handeln!</p>
 </div>
 <h3 id="verschachteln-von-kontrollstrukturen">Verschachteln von Kontrollstrukturen<a class="headerlink" href="#verschachteln-von-kontrollstrukturen" title="Permanent link">&para;</a></h3>
-<p>Mehr als diese drei genannten Kontrollstrukturen gibt es nicht. Aber diese Kontrollstrukturen können beliebig ineinander verschachtelt werden. Überall dort, wo eine Anweisung steht (z.B. <code>Anweisung1</code>) kann auch eine komplette Kontrollstruktur eingesetzt werden, also eine Sequenz von Anwesiungen oder eine Iteration oder eine Selektion. Die kann dann beliebig fortgeführt werden. So entstehen komplexe Strukturen - und somit komplexe Programme. </p>
+<p>Mehr als diese drei genannten Kontrollstrukturen gibt es nicht. Aber diese Kontrollstrukturen können beliebig ineinander verschachtelt werden. Überall dort, wo eine Anweisung steht (z.B. <code>Anweisung1</code>) kann auch eine komplette Kontrollstruktur eingesetzt werden, also eine Sequenz von Anweisungen oder eine Iteration oder eine Selektion. Die kann dann beliebig fortgeführt werden. So entstehen komplexe Strukturen - und somit komplexe Programme. </p>
 <p>Ein (immernoch recht einfaches) Beispiel für eine etwas komplexere Struktur:</p>
 <p><img alt="komplex" src="../files/11_komplex.png" /></p>
 <details class="note"><summary>Übung Programmablaufpläne</summary><p>Erstellen Sie sowohl für den euklidischen Algorithmus als auch für die (3n+1)-Vermutung einen Programmablaufplan!</p>

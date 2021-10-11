@@ -9,7 +9,7 @@ Zunächst ein bisschen Motivation:
 
 Ehe wir uns weiter mit Java und Programmierkonzepten beschäftigen, wollen wir uns bewusst werden, was Programmieren überhaupt ist. Prinzipiell lösen wir beim Programmieren ein Problem mithilfe einer Programmiersprache. Dabei stellt sich die Frage, welche Probleme mithilfe eines Computers lösbar sind und welche nicht. Dazu gibt es umfangreiche theoretische Untersuchungen - viele davon werden Sie in den "Grundlegenden Konzepten der Informatik" diskutieren. Ein wesentlicher Begriff dabei ist *Algorithmus*. Ein Algorithmus ist eine eindeutige Handlungsvorschrift, die aus endlich vielen einzelnen Schritten besteht und ein Problem löst. 
 
-Algorithmen sind also auch Kochrezepte oder Bauanleitungen, wenn sie denn "eindeutig" sind. Wir kennen alle das Problem, dass Handlungsanweisungen nicht immer eindeutig sind - man kann es manchmal so oder so machen. In der Programmierung darf eine solche Mehrdeutigkeit natürlich nicht vorkommen. Der Algorithmusbegriff wurde deshalb detailliert und folgende Eigenschaften müssen für eine Handlungsanweisung für einen Computer gelten, um ein Algrithmus zu sein:
+Algorithmen sind also auch Kochrezepte oder Bauanleitungen, wenn sie denn "eindeutig" sind. Wir kennen alle das Problem, dass Handlungsanweisungen nicht immer eindeutig sind - man kann es manchmal so oder so machen. In der Programmierung darf eine solche Mehrdeutigkeit natürlich nicht vorkommen. Der Algorithmusbegriff wurde deshalb detailliert und folgende Eigenschaften müssen für eine Handlungsanweisung für einen Computer gelten, um ein Algorithmus zu sein:
 
 1. **Finitheit** Das Verfahren muss in einem **endlichen** Text (Programm) eindeutig beschreibbar sein.
 2. **Ausführbarkeit** Jeder einzelne Schritt des Verfahrens muss auch tatsächlich ausführbar sein.
@@ -20,7 +20,7 @@ Algorithmen sind also auch Kochrezepte oder Bauanleitungen, wenn sie denn "einde
 
 ### Beispiel: Euklidischer Algorithmus
 
-Mit dem euklidischen Algorithmus[^4] kann der *größte gemeinsame Teiler (ggT)* zweier Zahlen berechnet werden. In seinen *Elementen* hat er diesen Algorithmus ungefähr so formuliert:
+Mit dem euklidischen Algorithmus[^4] kann der *größte gemeinsame Teiler (ggT)* zweier Zahlen berechnet werden. In seinen *Elementen* hat Euklid diesen Algorithmus ungefähr so formuliert:
 
 [^4]: Benannt nach Euklid von Alexandria, einem Mathematiker aus dem 3. Jahrhundert, Autor der *Elemente* - einem Kompendium des Wissens der Mathematik seiner Zeit. 
 
@@ -36,7 +36,7 @@ Beispiel: ggT von 24 und 40
 3. AB: 16, CD: 8,  AB größer als CD --> 16 -  8 =  8  
 4. AB:  8, CD: 8,  AB gleich CD --> Ende --> ggT ist 8
 
-Wir versuchen, den Algorithmus in einer verständlicheren und genaueren Sprache zu überführen, ohne bereits eine *Programmiersprache* zu verwenden. Wir benutzen sogenannten *Pseudocode*:
+Wir versuchen, den Algorithmus in eine verständlichere und genauere Sprache zu überführen, ohne bereits eine *Programmiersprache* zu verwenden. Wir benutzen sogenannten *Pseudocode*:
 
 Angenommen, die beiden Zahlen, von denen wir den *ggT* berechnen wollen, sind `a` und `b`:
 
@@ -50,7 +50,7 @@ wenn a gleich b ist, dann:
 	a (oder auch b) ist der gesuchte ggT
 ``` 
 
-Wichtig ist, dass das Einrücken hier eine Bedeutung hat (eine *Semantik*). In Zeile `1` formulieren wir, dass sich etwas wiederholen soll, solange eine bestimmte Bedingung gilt. Das, was sich wiederholen soll, ist in den Zeilen `2` bis `5` formuliert. Zeile `1` formuliert eine *Schleife* und in den Zeilen `2`-`5` befindet sich der *Schleifeninhalt*. Die Zeilen `2`-`5` formulieren eine eigenes Konstrukt, nämlich eine Auswahl zwischen Alternativen, abhängig von einer Bedingung. Die Bedingung ist, ob `a` größer ist als `b`. Wenn das der Fall ist, dann wird die Alternative `ziehe b von a ab und weise das Ergebnis a zu` ausgeführt. Ist jedoch `a` nicht größer als `b`, dann wird die Alternative `ziehe a von b ab und weise das Ergebnis b zu` ausgeführt. Ein solches Konstrukt wird *Selektion* (oder auch *bedingte Alternative*) genannt. Nachdem entweder Zeile `3` oder Zeile `5` ausgeführt wurde (es wird genau eins von beiden ausgeführt), wird erneut in Zeile `1` geprüft, ob `a ungleich b` ist. Wenn ja, wird die Selektion wiederholt. Wenn nicht, dann ist die Schleife beendet und Zeile `6` wird ausgeführt. Die in Zeile `6` formulierte Bedingung `wenn a gleich b ist`, ist eigentlich unnötig. 
+Wichtig ist, dass das Einrücken hier eine Bedeutung hat (eine *Semantik*). In Zeile `1` formulieren wir, dass sich etwas wiederholen soll, solange eine bestimmte Bedingung gilt. Das, was sich wiederholen soll, ist in den Zeilen `2` bis `5` formuliert. Zeile `1` formuliert eine *Schleife* und in den Zeilen `2`-`5` befindet sich der *Schleifeninhalt*. Die Zeilen `2`-`5` formulieren ein eigenes Konstrukt, nämlich eine Auswahl zwischen Alternativen, abhängig von einer Bedingung. Die Bedingung ist, ob `a` größer ist als `b`. Wenn das der Fall ist, dann wird die Alternative `ziehe b von a ab und weise das Ergebnis a zu` ausgeführt (In der Programmierung werden das später als `a = a - b` schreiben - das sieht für uns jetzt noch sehr "falsch" aus). Ist jedoch `a` nicht größer als `b`, dann wird die Alternative `ziehe a von b ab und weise das Ergebnis b zu` (`b = b - a`) ausgeführt. Ein solches Konstrukt wird *Selektion* (oder auch *bedingte Alternative*) genannt. Nachdem entweder Zeile `3` oder Zeile `5` ausgeführt wurde (es wird genau eins von beiden ausgeführt), wird erneut in Zeile `1` geprüft, ob `a ungleich b` ist. Wenn ja, wird die Selektion wiederholt. Wenn nicht, dann ist die Schleife beendet und Zeile `6` wird ausgeführt. Die in Zeile `6` formulierte Bedingung `wenn a gleich b ist`, ist eigentlich unnötig. 
 
 !!! question "Frage"
 	Warum ist die Bedingung `wenn a gleich b ist` in Zeile `6` unnötig?
@@ -117,28 +117,28 @@ Zeile `2`: `n ist ungerade`, also wird Zeile `3` ausgeführt (und genau nicht Ze
 Zeile `3`: das Ergebnis von `3*5+1` ist `16`. Der neue Wert von `n` ist 16.
 Zeile `1`: wegen *wiederhole* (Iteration): `n (16) ist ungleich 1`, also wird der Schleifeninhalt ausgeführt
 Zeile `2`: `n ist nicht ungerade`, also wird Zeile `5` ausgeführt (und genau nicht Zeile `3`)
-Zeile `3`: das Ergebnis von `16/2` ist `8`n. Der neue Wert von `n` ist 8.
+Zeile `5`: das Ergebnis von `16/2` ist `8`. Der neue Wert von `n` ist 8.
 Zeile `1`: wegen *wiederhole* (Iteration): `n (8) ist ungleich 1`, also wird der Schleifeninhalt ausgeführt
 Zeile `2`: `n ist nicht ungerade`, also wird Zeile `5` ausgeführt (und genau nicht Zeile `3`)
-Zeile `3`: das Ergebnis von `8/2` ist `4`. Der neue Wert von `n` ist 4.
+Zeile `5`: das Ergebnis von `8/2` ist `4`. Der neue Wert von `n` ist 4.
 Zeile `1`: wegen *wiederhole* (Iteration): `n (4) ist ungleich 1`, also wird der Schleifeninhalt ausgeführt
 Zeile `2`: `n ist nicht ungerade`, also wird Zeile `5` ausgeführt (und genau nicht Zeile `3`)
-Zeile `3`: das Ergebnis von `4/2` ist `2`. Der neue Wert von `n` ist 2.
+Zeile `5`: das Ergebnis von `4/2` ist `2`. Der neue Wert von `n` ist 2.
 Zeile `1`: wegen *wiederhole* (Iteration): `n (2) ist ungleich 1`, also wird der Schleifeninhalt ausgeführt
 Zeile `2`: `n ist nicht ungerade`, also wird Zeile `5` ausgeführt (und genau nicht Zeile `3`)
-Zeile `3`: das Ergebnis von `2/2` ist `1`. Der neue Wert von `n` ist 1.
+Zeile `5`: das Ergebnis von `2/2` ist `1`. Der neue Wert von `n` ist 1.
 Zeile `1`: wegen *wiederhole* (Iteration): `n (1) ist nicht ungleich 1`, also wird der Schleifeninhalt **nicht** ausgeführt
 Ende
 
-Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die die Eingabe `n=5` stets `1` ist. 
+Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die Eingabe `n=5` stets `1` ist. 
 
 !!! question "Fragen"
 	 * Spielen Sie den Algorithmus ruhig einmal für `n=7` durch oder auch für andere `n`
 	 * Denken Sie, dass der Algorithmus für jede beliebige positive natürliche Zahl `n` terminiert?
-	 * Wenn ein Algorithmus für eine konkrete Eingabe stets ein eindeutiges Ergebnis (und zwar immer das gleiche)liefert, wie können dann Zufallszahlen berechnet werden?
+	 * Wenn ein Algorithmus für eine konkrete Eingabe stets ein eindeutiges Ergebnis (und zwar immer das gleiche) liefert, wie können dann Zufallszahlen berechnet werden?
 
 !!! success
-    Wir haben ein Verständnis über den *Algorithmus*-Begriff erlangt und wissen, was *Finitheit*, *Determiniertheit*, *Determinismus* und * Terminierung* bedeuten. 
+    Wir haben ein Verständnis über den *Algorithmus*-Begriff erlangt und wissen, was *Finitheit*, *Determiniertheit*, *Determinismus* und *Terminierung* bedeuten. 
 
 ## Programmablaufstrukturen
 
@@ -168,11 +168,11 @@ berechne 3*n und weise das Ergebnis n zu
 berechne n+1 und weise das Ergebnis n zu 
 ```
 
-Zur Visulaisierung von Kontrollstrukturen werden auch sogannnte *Programmablaufdiagramme* oder *Programmablaufpläne* verwendet. Für eine Sequenz sähe ein solches Ablaufidagramm so aus:
+Zur Visualisierung von Kontrollstrukturen werden auch sogannnte *Programmablaufdiagramme* oder *Programmablaufpläne* verwendet. Für eine Sequenz sähe ein solches Ablaufdiagramm so aus:
 
 ![sequenz](./files/07_sequenz.png)
 
-So ein Diagramm wird von oben nach unten gelsen. Es wird also erst `Anweisung1` ausgeführt, dann `Anweisung2` und zuletzt `Anweisung3`. Innerhalb einer Sequenz gilt immer *single entry*/*single exit*, d.h. keine der Anweisungen innerhalb einer Sequenz kann mehrer Ausgänge oder mehrere Eingänge haben. Es wäre ansonsten *nicht-determinsitisch*  und somit ein Verstoß gegen unseren Algorithmusbegriff.
+So ein Diagramm wird von oben nach unten gelesen. Es wird also erst `Anweisung1` ausgeführt, dann `Anweisung2` und zuletzt `Anweisung3`. Innerhalb einer Sequenz gilt immer *single entry*/*single exit*, d.h. keine der Anweisungen innerhalb einer Sequenz kann mehrere Ausgänge oder mehrere Eingänge haben. Es wäre ansonsten *nicht-deterministisch*  und somit ein Verstoß gegen unseren Algorithmusbegriff.
 
 ![sequenz](./files/08_sequenz.png)
 
@@ -248,7 +248,7 @@ Das Ablaufdiagramm einer Selektion sieht so aus:
 
 ### Verschachteln von Kontrollstrukturen
 
-Mehr als diese drei genannten Kontrollstrukturen gibt es nicht. Aber diese Kontrollstrukturen können beliebig ineinander verschachtelt werden. Überall dort, wo eine Anweisung steht (z.B. `Anweisung1`) kann auch eine komplette Kontrollstruktur eingesetzt werden, also eine Sequenz von Anwesiungen oder eine Iteration oder eine Selektion. Die kann dann beliebig fortgeführt werden. So entstehen komplexe Strukturen - und somit komplexe Programme. 
+Mehr als diese drei genannten Kontrollstrukturen gibt es nicht. Aber diese Kontrollstrukturen können beliebig ineinander verschachtelt werden. Überall dort, wo eine Anweisung steht (z.B. `Anweisung1`) kann auch eine komplette Kontrollstruktur eingesetzt werden, also eine Sequenz von Anweisungen oder eine Iteration oder eine Selektion. Die kann dann beliebig fortgeführt werden. So entstehen komplexe Strukturen - und somit komplexe Programme. 
 
 Ein (immernoch recht einfaches) Beispiel für eine etwas komplexere Struktur:
 

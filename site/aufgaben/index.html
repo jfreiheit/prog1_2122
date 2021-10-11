@@ -308,12 +308,38 @@
     Hinweise zur Abgabe der Aufgaben
   </a>
   
+    <nav class="md-nav" aria-label="Hinweise zur Abgabe der Aufgaben">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluej-vs-eclipse" class="md-nav__link">
+    BlueJ vs. Eclipse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#code-review" class="md-nav__link">
-    Code review
+    Code Review
   </a>
+  
+    <nav class="md-nav" aria-label="Code Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hinweise-zum-review" class="md-nav__link">
+    Hinweise zum Review:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -377,12 +403,38 @@
     Hinweise zur Abgabe der Aufgaben
   </a>
   
+    <nav class="md-nav" aria-label="Hinweise zur Abgabe der Aufgaben">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluej-vs-eclipse" class="md-nav__link">
+    BlueJ vs. Eclipse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#code-review" class="md-nav__link">
-    Code review
+    Code Review
   </a>
+  
+    <nav class="md-nav" aria-label="Code Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hinweise-zum-review" class="md-nav__link">
+    Hinweise zum Review:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -414,10 +466,13 @@
 <p>Hier finden Sie die Aufgaben. Die Abgabefristen der einzelnen Aufgaben stehen <a href="../#planung-vorlaufig-kann-sich-noch-andern">hier</a>. Beachten Sie die nachfolgenden Hinweise zum Hochladen der Aufgaben. </p>
 <h2 id="hinweise-zur-abgabe-der-aufgaben">Hinweise zur Abgabe der Aufgaben<a class="headerlink" href="#hinweise-zur-abgabe-der-aufgaben" title="Permanent link">&para;</a></h2>
 <p>Die Aufgaben laden Sie in <a href="https://moodle.htw-berlin.de/course/view.php?id=29156">Moodle</a> unter dem Reiter "Aufgaben" hoch. Dort ist für jede Aufgabe eine Moodle-Aufgabe erstellt. Beachten Sie, dass ein Hochladen nach Ablauf der Abgabefrist nicht mehr möglich ist. </p>
+<h3 id="bluej-vs-eclipse">BlueJ vs. Eclipse<a class="headerlink" href="#bluej-vs-eclipse" title="Permanent link">&para;</a></h3>
+<p>Die ersten Wochen verwenden wir als Entwicklungsumgebung BlueJ. Für die Aufgaben, die wir mit BlueJ lösen, werde ich Ihnen jeweils Hinweise zur Abgabe für jede Aufgabe einzeln geben. </p>
+<p>Sobald wir Eclipse verwenden, gelten die folgenden Hinweise: </p>
 <ul>
 <li>Achten Sie darauf, dass Sie die Quelldateien (also die <code>.java</code>-Dateien aus dem <code>src</code>-Verzeichnis) hochladen. </li>
 <li>Ihre Klassen erstellen Sie immer in einem package <code>aufgaben.aufgabeX</code>. Das heißt, Aufgabe1 ist im package <code>aufgaben.aufgabe1</code>, Aufgabe2 im package <code>aufgaben.aufgabe2</code> usw. </li>
-<li>In Ihrem <code>workspace</code>gibt es dann einen Ordner für Ihr Java-Projekt, z.B. <code>WS20</code> (je nachdem, wie Sie Ihr Java-Projekt genannt haben) und darin befindet sich ein <code>bin</code>- und ein <code>src</code>-Ordner. In dem <code>src</code>-Ordner befindet sich dann ein Ordner <code>aufgaben</code> und darin ein Ordner <code>aufgaben1</code> (für Aufgabe1). Darin befindet sich Ihre <code>.java</code>-Datei, die Sie hochladen sollen. Angenommen, Sie haben Ihre Klasse <code>Aufgabe1</code> genannt, dann heißt die Klasse also <code>Aufgabe1.java</code>. Sie folgen also dem Pfad <code>workspace</code>&rarr; <em>Java-Projekt</em> (z.B. <code>WS20</code>) &rarr; <code>src</code> &rarr; <code>aufgaben</code> &rarr; <code>aufgabe</code><em>X</em>.</li>
+<li>In Ihrem <code>workspace</code>gibt es dann einen Ordner für Ihr Java-Projekt, z.B. <code>WS21</code> (je nachdem, wie Sie Ihr Java-Projekt genannt haben) und darin befindet sich ein <code>bin</code>- und ein <code>src</code>-Ordner. In dem <code>src</code>-Ordner befindet sich dann ein Ordner <code>aufgaben</code> und darin ein Ordner <code>aufgaben1</code> (für Aufgabe1). Darin befindet sich Ihre <code>.java</code>-Datei, die Sie hochladen sollen. Angenommen, Sie haben Ihre Klasse <code>Aufgabe1</code> genannt, dann heißt die Klasse also <code>Aufgabe1.java</code>. Sie folgen also dem Pfad <code>workspace</code>&rarr; <em>Java-Projekt</em> (z.B. <code>WS21</code>) &rarr; <code>src</code> &rarr; <code>aufgaben</code> &rarr; <code>aufgabe</code><em>X</em>.</li>
 <li>Wenn Ihre Lösung aus mehreren Klassen (mehreren <code>.java</code>-Dateien) besteht, können Sie entweder die Dateien einzeln hochladen oder Sie zippen Ihre Dateien (am besten dann den <code>aufgabeX</code>-Ordner und laden das <code>.zip</code>-File hoch. </li>
 <li>In Ihrer Lösung (Ihrer/n Klasse/n) fügen Sie direkt oberhalb Ihrer Klassendefinition einen JavaDoc-Kommentar ein (<code>/** ... */</code>). Dieser enthält ein <code>@author</code>-Tag. dahinter schreiben Sie Ihren Namen. Das sieht dann z.B. so aus:
     <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">aufgaben.aufgabe1</span><span class="p">;</span>
@@ -437,11 +492,27 @@
 </code></pre></div></li>
 <li>Sie können Ihre Aufgaben zu zweit lösen. Tragen Sie dann hinter das <code>@author</code>-Tag beide Namen ein und <strong>laden Sie bitte beide</strong> die Lösung in Moodle hoch!</li>
 </ul>
-<h2 id="code-review">Code review<a class="headerlink" href="#code-review" title="Permanent link">&para;</a></h2>
-<p>Für jede abgebene Aufgabe wird Ihnen eine Lösung einer Kommilitonin zm Review zugewiesen. Analysieren Sie den Code Ihrer Kommilitonin und geben Sie Kommentare dazu ab! Zur offiziellen Abgabe einer Aufgabe gehören also</p>
+<h2 id="code-review">Code Review<a class="headerlink" href="#code-review" title="Permanent link">&para;</a></h2>
+<p>Für jede abgegebene Aufgabe wird Ihnen die Lösung einer Kommilitonin zum Review zugewiesen. Analysieren Sie den Code Ihrer Kommilitonin und geben Sie ihr dazu eine Rückmeldung!  Es genügen 2 bis 3 Review-Kommentare.
+Zur offiziellen Abgabe einer Aufgabe gehören also</p>
 <ul>
 <li>das Hochladen der eigenen Lösung,</li>
-<li>das Analysieren/Kommentieren einer fremden Lösung (2-3 Review-Kommentare genügen).</li>
+<li>das Analysieren/Kommentieren einer fremden Lösung.</li>
+</ul>
+<h4 id="hinweise-zum-review">Hinweise zum Review:<a class="headerlink" href="#hinweise-zum-review" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Es geht nicht darum, das Programm zu überarbeiten, sondern darum es nachzuvollziehen und Ihrer Kommilitonin eine Rückmeldung und eventuell Anregungen zu geben.</li>
+<li>Weisen Sie sowohl auf Stärken als auch auf Schwächen des Quelltexts hin.</li>
+<li>Worauf Sie u.a. achten können:<ul>
+<li>Ist der Quelltext gut strukturiert und verständlich?</li>
+<li>Haben Variablen und Methoden passende Namen? Werden die Namen konsistent verwendet?</li>
+<li>Werden Konventionen eingehalten? Beispiel: Klassennamen starten immer mit Großbuchstaben, Objektnamen immer mit Kleinbuchstaben</li>
+<li>Ist das Programm übersichtlich formatiert? Beispiel: kein horizontales Scrolling nötig</li>
+</ul>
+</li>
+<li>Machen Sie ggf. Vorschläge für (alternative) Lösungen.</li>
+<li>Gehen Sie respektvoll miteinander um, es gibt keinen Grund, unhöflich zu sein.</li>
+<li>Lesen Sie Ihre Kommentare noch einmal durch, bevor Sie sie an Ihre Kommilitonin weitergeben.</li>
 </ul>
 <h2 id="aufgaben_1">Aufgaben<a class="headerlink" href="#aufgaben_1" title="Permanent link">&para;</a></h2>
                 
