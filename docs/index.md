@@ -42,7 +42,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 | | Woche | Themen (Vorlesung) | Aufgabe | Abgabe Aufgabe bis | 
 |-|-------|--------------------|-------|-----------------|
-| 1. | 11.-15.10.2021 | Einführung und Organisatorisches, erstes Programm | -  | - | 
+| 1. | 11.-15.10.2021 | [Einführung](./start/#was-ist-programmieren) und [Organisatorisches](./#organisatorisches), [erstes Programm](./bluej/#bluej) | -  | - | 
 | 2. | 18.-22.10.2021 | Klassen und Objekte - BlueJ | Aufgabe 1  | 25.10.2021 | 
 | 3. | 25.-29.10.2021 | Datentypen und Variablen, logische Ausdrücke | Aufgabe 2  | 01.11.2021 | 
 | 4. | 01.-05.11.2021 | Sequenzen, Iterationen und Selektion | Aufgabe 3 | 08.11.2021 | 
