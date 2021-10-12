@@ -93,7 +93,7 @@ F체r dieses Beispiel war stets eindeutig, welche Anweisung als n채chstes ausgef�
 !!! question "Fragen"
 	 * Was 채ndert sich, wenn am Anfang `a=24` und `b=40` sind?
 	 * Was 채ndert sich, wenn am Anfang `a=-40` und `b=24` sind?
-	 * Was 채ndert sich, wenn am Anfang `a=-40` und `b=-24` sind?
+	 * Was 채ndert sich, wenn am Anfang `a=0` und `b=24` sind?
 	 * Was 채ndert sich, wenn am Anfang `a=24` und `b=24` sind?
 
 ### Beispiel: (3n+1)-Vermutung (Collatz-Problem)

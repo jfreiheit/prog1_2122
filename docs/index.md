@@ -32,6 +32,8 @@ Daneben gibt es jede Woche (zu jedem Thema) **Übungen**, die wir in den Übungs
 
 Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, dass Sie sich diese gegenseitig beantworten. Damit wäre allen geholfen und wir können besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht. Bei Bedarf beantworten die Lehrenden die Fragen natürlich.  
 
+Es wird ein Programmier-Tutorium angeboten. Dieses findet montags um 16:00 Uhr in C 639 statt - Start ist am 25.10.2021. Unsere Tutorin ist [Lisanne Delfs](mailto:Lisanne.Delfs@Student.HTW-Berlin.de).  
+
 
 ## Planung (vorläufig - kann sich noch ändern)
 
