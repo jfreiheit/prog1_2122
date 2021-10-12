@@ -31,6 +31,37 @@ Insgesamt sprechen wir bei der Struktur und dem Verhalten von den *Eigenschaften
 
 Ein typisches Beispiel ist *Auto*. Ein Auto kann fahren, hat eine Farbe, ist von einer bestimmten Marke, hat einen bestimmten Motor, eine bestimmte Anzahl von Türen und so weiter. Das sind alles Eigenschaften eines Autos. Diese Eigenschaften werden in einer Klasse definiert und beschreiben ein Auto im Allgemeinen. Davon gibt es dann konkrete Objekte: ein roter VW Golf mit 5 Türen, ein blauer Toyota mit 3 Türen usw. 
 
+Eine Klasse beschreibt also alle möglichen Objekte, die von dieser Klasse erstellt werden können. Die *Eigenschaften* der Objekte werden in 
+
+- *Objektvariablen* und
+- *Objektmethoden* 
+
+beschrieben. Beispiele dafür zeigen zunächst die folgenden Abbildungen:
+
+![stuhl](./files/13_stuhl.png)
+
+#### Objektvariablen
+
+In der Klasse `Stuhl` ist beschrieben, dass jeder Stuhl (jedes `Stuhl`-Objekt) 
+
+- eine `Inventarnummer` hat, 
+- in einem `Raum` steht,
+- eine bestimmt `Anzahl Beine` hat und 
+- einen `Status`, der beschreibt, ob er frei oder besetzt ist. 
+
+Diese Eigenschaften werden als *Objektvariablen*  definiert. Jedes Objekt der Klasse `Stuhl` hat seinen eigenen *Objektvariablen*, nämlich genau die vier. Das bedeutet, alle Objekte der Klasse Stuhl haben die gleichen Eigenschaften, aber **die konkreten Werte dieser Objektvariablen** sind von Stuhl(-Objekt) zu Stuhl(-Objekt) unterschiedlich. Vier konkrete Stuhl-Objekte `stuhl1`, `stuhl2`, `stuhl3` und `stuhl4` sind in der Abbildung dargestellt. 
+
+#### Objektmethoden
+
+Jedes Objekt der Klasse `Stuhl` hat jeweils konkrete Werte für die Objektvariablen. Zum Beispiel hat das Objekt `stuhl1` den Wert `1` für die `Inventarnummer`, den Wert `123` für den `Raum`, den Wert `4` für `Anzahl Beine` und den Wert `frei` für `Status`. **Wie können diese Werte geändert werden?** Die Antwort ist: *durch Objektmethoden*. *Objektmethoden* beschreiben das *Verhalten* eines Objektes. Z.B. kann der `Status` dadurch geändert werden, dass man sich auf den Stuhl setzt oder wieder aufsteht. Solche Tätigkeiten bzw. so ein Verhalten lassen sich durch *Obejktmethoden* beschreiben. Darin wird **etwas getan** und zwar hauptsächlich die Werte von *Objektvariablen* geändert oder einfach ausgelesen. Mögliche *Objektmethoden* wären also
+
+- *aufstehen* (den `Status` in `frei` ändern),
+- *hinsetzen* (den `Status` in `besetzt` ändern),
+- *umziehen* (den `Raum` ändern),
+- *inventarisieren* (die `Inventarnummer` auslesen),
+- *zusammenkrachen* (die `Anzahl Beine` ändern) usw.
+
+
 ### Ein erstes Beispiel mit BlueJ
 
 Wir öffnen `BlueJ`dann im Menü auf `Project --> Open Project`. Im `examples`-Ordner von `BlueJ` finden wir den Ordner `shapes`. Wir wählen den Ordner und klicken auf `Open`. Es erscheint:
@@ -228,7 +259,7 @@ Wir haben viele neue Begriffe kennengelernt:
 - *Methoden*, *Methodenaufrufe*,
 - *Parameter*,
 - *Datentypen* (`int`, `String`, `boolean`), 
-- *Objektvariablen*,
+- *Objektvariablen*, *Objektmethoden*,
 - *Zustand* eines Objektes. 
 
 Das ist ganz schön viel auf einmal! Diese Begriffe werden wir in den kommenden Wochen verwenden und vertiefen. Zunächst zum Abschluss noch eine "kleine" Aufgabe zum Entspannen. Zeichnen Sie dieses Bild:

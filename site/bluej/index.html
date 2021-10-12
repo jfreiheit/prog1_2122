@@ -282,6 +282,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#objektvariablen" class="md-nav__link">
+    Objektvariablen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektmethoden" class="md-nav__link">
+    Objektmethoden
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ein-erstes-beispiel-mit-bluej" class="md-nav__link">
     Ein erstes Beispiel mit BlueJ
   </a>
@@ -435,6 +449,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#objektvariablen" class="md-nav__link">
+    Objektvariablen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektmethoden" class="md-nav__link">
+    Objektmethoden
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ein-erstes-beispiel-mit-bluej" class="md-nav__link">
     Ein erstes Beispiel mit BlueJ
   </a>
@@ -544,6 +572,31 @@
 <p><em>Objekte</em> werden aus <em>Klassen</em> erzeugt. Eine <em>Klasse</em> beschreibt die Art und Weise, den Aufbau von Objekten. Objekte sind die speziellen <em>Instanzen</em> einer allgemeinen Klasse.</p>
 </blockquote>
 <p>Ein typisches Beispiel ist <em>Auto</em>. Ein Auto kann fahren, hat eine Farbe, ist von einer bestimmten Marke, hat einen bestimmten Motor, eine bestimmte Anzahl von Türen und so weiter. Das sind alles Eigenschaften eines Autos. Diese Eigenschaften werden in einer Klasse definiert und beschreiben ein Auto im Allgemeinen. Davon gibt es dann konkrete Objekte: ein roter VW Golf mit 5 Türen, ein blauer Toyota mit 3 Türen usw. </p>
+<p>Eine Klasse beschreibt also alle möglichen Objekte, die von dieser Klasse erstellt werden können. Die <em>Eigenschaften</em> der Objekte werden in </p>
+<ul>
+<li><em>Objektvariablen</em> und</li>
+<li><em>Objektmethoden</em> </li>
+</ul>
+<p>beschrieben. Beispiele dafür zeigen zunächst die folgenden Abbildungen:</p>
+<p><img alt="stuhl" src="../files/13_stuhl.png" /></p>
+<h4 id="objektvariablen">Objektvariablen<a class="headerlink" href="#objektvariablen" title="Permanent link">&para;</a></h4>
+<p>In der Klasse <code>Stuhl</code> ist beschrieben, dass jeder Stuhl (jedes <code>Stuhl</code>-Objekt) </p>
+<ul>
+<li>eine <code>Inventarnummer</code> hat, </li>
+<li>in einem <code>Raum</code> steht,</li>
+<li>eine bestimmt <code>Anzahl Beine</code> hat und </li>
+<li>einen <code>Status</code>, der beschreibt, ob er frei oder besetzt ist. </li>
+</ul>
+<p>Diese Eigenschaften werden als <em>Objektvariablen</em>  definiert. Jedes Objekt der Klasse <code>Stuhl</code> hat seinen eigenen <em>Objektvariablen</em>, nämlich genau die vier. Das bedeutet, alle Objekte der Klasse Stuhl haben die gleichen Eigenschaften, aber <strong>die konkreten Werte dieser Objektvariablen</strong> sind von Stuhl(-Objekt) zu Stuhl(-Objekt) unterschiedlich. Vier konkrete Stuhl-Objekte <code>stuhl1</code>, <code>stuhl2</code>, <code>stuhl3</code> und <code>stuhl4</code> sind in der Abbildung dargestellt. </p>
+<h4 id="objektmethoden">Objektmethoden<a class="headerlink" href="#objektmethoden" title="Permanent link">&para;</a></h4>
+<p>Jedes Objekt der Klasse <code>Stuhl</code> hat jeweils konkrete Werte für die Objektvariablen. Zum Beispiel hat das Objekt <code>stuhl1</code> den Wert <code>1</code> für die <code>Inventarnummer</code>, den Wert <code>123</code> für den <code>Raum</code>, den Wert <code>4</code> für <code>Anzahl Beine</code> und den Wert <code>frei</code> für <code>Status</code>. <strong>Wie können diese Werte geändert werden?</strong> Die Antwort ist: <em>durch Objektmethoden</em>. <em>Objektmethoden</em> beschreiben das <em>Verhalten</em> eines Objektes. Z.B. kann der <code>Status</code> dadurch geändert werden, dass man sich auf den Stuhl setzt oder wieder aufsteht. Solche Tätigkeiten bzw. so ein Verhalten lassen sich durch <em>Obejktmethoden</em> beschreiben. Darin wird <strong>etwas getan</strong> und zwar hauptsächlich die Werte von <em>Objektvariablen</em> geändert oder einfach ausgelesen. Mögliche <em>Objektmethoden</em> wären also</p>
+<ul>
+<li><em>aufstehen</em> (den <code>Status</code> in <code>frei</code> ändern),</li>
+<li><em>hinsetzen</em> (den <code>Status</code> in <code>besetzt</code> ändern),</li>
+<li><em>umziehen</em> (den <code>Raum</code> ändern),</li>
+<li><em>inventarisieren</em> (die <code>Inventarnummer</code> auslesen),</li>
+<li><em>zusammenkrachen</em> (die <code>Anzahl Beine</code> ändern) usw.</li>
+</ul>
 <h3 id="ein-erstes-beispiel-mit-bluej">Ein erstes Beispiel mit BlueJ<a class="headerlink" href="#ein-erstes-beispiel-mit-bluej" title="Permanent link">&para;</a></h3>
 <p>Wir öffnen <code>BlueJ</code>dann im Menü auf <code>Project --&gt; Open Project</code>. Im <code>examples</code>-Ordner von <code>BlueJ</code> finden wir den Ordner <code>shapes</code>. Wir wählen den Ordner und klicken auf <code>Open</code>. Es erscheint:</p>
 <p><img alt="bluej" src="../files/05_bluej.png" /></p>
@@ -679,7 +732,7 @@
 <li><em>Methoden</em>, <em>Methodenaufrufe</em>,</li>
 <li><em>Parameter</em>,</li>
 <li><em>Datentypen</em> (<code>int</code>, <code>String</code>, <code>boolean</code>), </li>
-<li><em>Objektvariablen</em>,</li>
+<li><em>Objektvariablen</em>, <em>Objektmethoden</em>,</li>
 <li><em>Zustand</em> eines Objektes. </li>
 </ul>
 <p>Das ist ganz schön viel auf einmal! Diese Begriffe werden wir in den kommenden Wochen verwenden und vertiefen. Zunächst zum Abschluss noch eine "kleine" Aufgabe zum Entspannen. Zeichnen Sie dieses Bild:</p>
