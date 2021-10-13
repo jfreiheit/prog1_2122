@@ -102,8 +102,18 @@ aus. Es erscheint:
 `makeVisible()` ist eine *Methode*. Genauer gesagt, handelt es sich um eine *Objektmethode*. Als wir darauf geklickt haben, haben wir diese Methode *aufgerufen*. 
 
 
-??? note "Übung Methoden aufrufen"
-	Rufen Sie (auch mehrmals) die Methoden `makeLeft()`, `makeRight()`, `makeUp` und `makeDown()` auf. Rufen Sie auch `makeInvisible()` und dann wieder `makeVisible()` auf.
+!!! question "Übung Methoden aufrufen"
+	Rufen Sie (auch mehrmals) die Methoden 
+
+    - `makeLeft()`, 
+    - `makeRight()`, 
+    - `makeUp` und 
+    - `makeDown()` 
+
+    auf. Rufen Sie auch 
+
+    - `makeInvisible()` und dann wieder 
+    - `makeVisible()` auf.
 
 > Methoden erkennen wir an den runden Klammern **()** hinter dem Namen. In diesen Klammern kann auch ein **Wert** stehen. Dazu kommen wir jetzt, zu den sogenannten **Parametern**.
 
