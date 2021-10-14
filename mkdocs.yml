@@ -64,6 +64,8 @@ nav:
     - Home: index.md
     - Start: start.md
     - BlueJ: bluej.md
+    - Variablen: variablen.md
+    - Ausdrücke: ausdruecke.md
     - Übungen: uebungen.md
     - Aufgaben: aufgaben.md
     - Werkzeuge: tools.md

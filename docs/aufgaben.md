@@ -60,3 +60,43 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 ![review](./files/12_review.png)
 
 ## Aufgaben
+
+#### Aufgabe 1 (Abgabe bis 25.10.2021 24:00 Uhr)
+??? "Aufgabe1 - Square mit Circles"
+	- Verwenden Sie BlueJ und öffnen Sie das Projekt `picture` aus dem `examples`-Ordner von BlueJ. Speichern Sie das Projekt als Projekt `aufgabe1` ab. Die Klasse `Picture` können Sie wie folgt anpassen:
+		```java
+		/**
+		 * Aufgabe 1
+		 * 
+		 */
+		public class Picture
+		{
+		    /**
+		     * Constructor for objects of class Picture
+		     */
+		    public Picture()
+		    {// nothing to do... instance variables are automatically set to null
+		        
+		    }
+
+		    /**
+		     * Draw this picture.
+		     */
+		    public void draw()
+		    {
+		        Square s1 = new Square();		        
+		        Circle c1 = new Circle();
+		        Circle c2 = new Circle();
+		        Circle c3 = new Circle();  
+		        Circle c4 = new Circle();
+		        // hier die Implementierung
+		    }
+		}
+		```
+	 - Programmieren Sie die `draw()`-Methode so, dass folgendes Bild gezeichnet wird:
+	 	![aufgabe1](./files/21_aufgabe1.png)
+	 	
+	 	Die Größen bleiben Ihnen überlassen, aber die vier Kreise sollen das gelbe Quadrat vollständig ausfüllen. Den Titel des Fensters müssen Sie nicht ändern (geht aber in der Klasse `Canvas`).
+
+	 - Erstellen Sie sich eine Testklasse `PictureTest`, in der es eine Testmethode `testDraw()` gibt, die die `draw()`-Methode für ein `Picture`-Objekt ausführt. 
+	 - Zippen Sie Ihr Projekt `aufgabe1` und laden es in Moodle hoch. 

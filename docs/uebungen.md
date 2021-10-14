@@ -3,7 +3,7 @@
 ## Übungsblätter (wochenweise)
 
 
-??? note "Übung 1"
+??? note "Übung 1 (20.10.2021)"
 
 	**Vorbereitung**
 
@@ -120,3 +120,58 @@
 	4. Geben Sie als Namen für diese Testmethode `drawTest` an und bestätigen Sie die Eingabe mit `OK`. 
 	5. Nun wird ein Test "aufgenommen". Klicken Sie mit der rechten Maustaste auf die Klasse `Picture` und erzeugen Sie von dieser Klasse eine Objekt `picture1`. Für dieses Objekt rufen Sie die `draw()`-Methode auf. Klicken Sie dann im Hauptfenster auf der linken Seite unter `recording` den Button `End`. Sie haben nun einen Test erzeugt, den Sie leicht aufrufen können. 
 	6. Ändern Sie Ihre `draw()`-Methode, compilieren Sie die Klasse `Picture` und wählen Sie nun mit der rechten Maustaste für die Klasse `PictureTest` die Methode `drawTest()` aus und rufen diese auf. 
+
+
+
+??? note "Übung 2 (27.10.2021)"
+	1. Öffnen Sie `BlueJ` und erstellen Sie ein neues Projekt `uebung2`. 
+	2. Erstellen Sie darin eine Klasse `Uebung2`. 
+	3. Ersetzen Sie den gesamten Code der Klasse `Uebung2` durch folgenden Code:
+		```java 
+		public class Uebung2
+		{
+		    public Uebung2()
+		    {
+		        
+		    }
+
+		    public void printLesson2()
+		    {
+		        // Schreiben Sie Ihren gesamten Code in diese Methode
+		        // und fuehren Sie diese Methode aus
+		        
+		    }
+		}
+		```
+	3. Deklarieren und initialisieren Sie in der `printLesson2()`-Methode jeweils eine Variable mit dem Datentyp `int`, `long`, `char`, `byte`, `short`, `float`, `double`, `boolean` und `String`. Geben Sie alle Werte einzeln durch Aufruf der `println()`-Methode aus. Erzeugen Sie dabei folgende Ausgabe (Werte nur Beispiele):
+	```bash
+	Wert vom Typ int 		: 	123
+	Wert vom Typ long 		: 	456789
+	Wert vom Typ char 		: 	a
+	Wert vom Typ byte 		: 	127
+	Wert vom Typ short 		: 	32767
+	Wert vom Typ float 		: 	4.23
+	Wert vom Typ double		: 	6.98
+	Wert vom Typ boolean	: 	true
+	Wert vom Typ String		: 	Hallo!
+	```
+	4. Setzen Sie den Wert Ihrer `int`-Variablen auf `2147483647`. Geben Sie den Wert auf der Konsole aus, z.B.:	
+	```bash
+	Wert von i 	: 	2147483647
+	```
+	Erhöhen Sie nun den Wert der Variablen um `1` und geben Sie den Wert erneut aus. Was passiert? Warum?
+	5. Wiederholen Sie das gleiche mit einer `long-Variablen.
+	6. Weisen Sie Ihrer `char`-Variablen den Wert `65` zu. Geben Sie den Wert Ihrer `char`-Variablen aus. Was passiert? Warum?
+	7. Deklarieren Sie zwei weitere `int`-Variablen und weisen Sie diesen Variablen Werte zu. Erzeugen Sie unter Verwendung der Werte dieser beiden Variablen folgende Ausgabe (wir nehmen an, die beiden Werte sind `17` und `4`):
+	```bash 
+	17 geteilt durch 4 ergibt 4. Es bleibt ein Rest von 1
+	```
+	Ändern Sie das Programm so, dass bei einer ganzzahligen Division ohne Rest die Ausgabe in der Form ist (z.B. für die Werte `16` und `4`): 
+	```bash
+	16 geteilt durch 4 ergibt 4 ohne Rest.
+	```
+	8. Fügen Sie zwei weitere Anweisungen hinzu, sodass mit Hilfe der `println()`-Methode folgende Ausgaben (für die Beispielwerte `17` und `4`) erscheinen: 
+	```bash 
+	17/4 = 4
+	17 mod 4 = 1
+	```

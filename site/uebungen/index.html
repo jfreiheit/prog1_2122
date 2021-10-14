@@ -254,6 +254,36 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../variablen/" class="md-nav__link">
+        Variablen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ausdruecke/" class="md-nav__link">
+        Ausdrücke
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -384,7 +414,7 @@
                 
                 <h1 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h1>
 <h2 id="ubungsblatter-wochenweise">Übungsblätter (wochenweise)<a class="headerlink" href="#ubungsblatter-wochenweise" title="Permanent link">&para;</a></h2>
-<details class="note"><summary>Übung 1</summary><p><strong>Vorbereitung</strong></p>
+<details class="note"><summary>Übung 1 (20.10.2021)</summary><p><strong>Vorbereitung</strong></p>
 <ol>
 <li>Installieren Sie - falls noch nicht geschehen - das Java Davelopment Kit (JDK) (siehe <a href="../tools/#java"><strong>Java</strong></a>).</li>
 <li>Installieren Sie BlueJ (siehe <a href="../tools/#bluej"><strong>IDE</strong></a>). </li>
@@ -585,6 +615,54 @@
 <li>Ändern Sie Ihre <code>draw()</code>-Methode, compilieren Sie die Klasse <code>Picture</code> und wählen Sie nun mit der rechten Maustaste für die Klasse <code>PictureTest</code> die Methode <code>drawTest()</code> aus und rufen diese auf. </li>
 </ol>
 </details>
+<details class="note"><summary>Übung 2 (27.10.2021)</summary><ol>
+<li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung2</code>. </li>
+<li>Erstellen Sie darin eine Klasse <code>Uebung2</code>. </li>
+<li>Ersetzen Sie den gesamten Code der Klasse <code>Uebung2</code> durch folgenden Code:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung2</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Uebung2</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printLesson2</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Schreiben Sie Ihren gesamten Code in diese Methode</span>
+        <span class="c1">// und fuehren Sie diese Methode aus</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Deklarieren und initialisieren Sie in der <code>printLesson2()</code>-Methode jeweils eine Variable mit dem Datentyp <code>int</code>, <code>long</code>, <code>char</code>, <code>byte</code>, <code>short</code>, <code>float</code>, <code>double</code>, <code>boolean</code> und <code>String</code>. Geben Sie alle Werte einzeln durch Aufruf der <code>println()</code>-Methode aus. Erzeugen Sie dabei folgende Ausgabe (Werte nur Beispiele):
+<div class="highlight"><pre><span></span><code>Wert vom Typ int        :   <span class="m">123</span>
+Wert vom Typ long       :   <span class="m">456789</span>
+Wert vom Typ char       :   a
+Wert vom Typ byte       :   <span class="m">127</span>
+Wert vom Typ short      :   <span class="m">32767</span>
+Wert vom Typ float      :   <span class="m">4</span>.23
+Wert vom Typ double     :   <span class="m">6</span>.98
+Wert vom Typ boolean    :   <span class="nb">true</span>
+Wert vom Typ String     :   Hallo!
+</code></pre></div></li>
+<li>Setzen Sie den Wert Ihrer <code>int</code>-Variablen auf <code>2147483647</code>. Geben Sie den Wert auf der Konsole aus, z.B.:  <br />
+<div class="highlight"><pre><span></span><code>Wert von i  :   <span class="m">2147483647</span>
+</code></pre></div>
+Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert erneut aus. Was passiert? Warum?</li>
+<li>Wiederholen Sie das gleiche mit einer `long-Variablen.</li>
+<li>Weisen Sie Ihrer <code>char</code>-Variablen den Wert <code>65</code> zu. Geben Sie den Wert Ihrer <code>char</code>-Variablen aus. Was passiert? Warum?</li>
+<li>Deklarieren Sie zwei weitere <code>int</code>-Variablen und weisen Sie diesen Variablen Werte zu. Erzeugen Sie unter Verwendung der Werte dieser beiden Variablen folgende Ausgabe (wir nehmen an, die beiden Werte sind <code>17</code> und <code>4</code>):
+<div class="highlight"><pre><span></span><code><span class="m">17</span> geteilt durch <span class="m">4</span> ergibt <span class="m">4</span>. Es bleibt ein Rest von <span class="m">1</span>
+</code></pre></div>
+Ändern Sie das Programm so, dass bei einer ganzzahligen Division ohne Rest die Ausgabe in der Form ist (z.B. für die Werte <code>16</code> und <code>4</code>): 
+<div class="highlight"><pre><span></span><code><span class="m">16</span> geteilt durch <span class="m">4</span> ergibt <span class="m">4</span> ohne Rest.
+</code></pre></div></li>
+<li>Fügen Sie zwei weitere Anweisungen hinzu, sodass mit Hilfe der <code>println()</code>-Methode folgende Ausgaben (für die Beispielwerte <code>17</code> und <code>4</code>) erscheinen: 
+<div class="highlight"><pre><span></span><code><span class="m">17</span>/4 <span class="o">=</span> <span class="m">4</span>
+<span class="m">17</span> mod <span class="nv">4</span> <span class="o">=</span> <span class="m">1</span>
+</code></pre></div></li>
+</ol>
+</details>
                 
               
               
@@ -604,7 +682,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../bluej/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: BlueJ" rel="prev">
+        <a href="../ausdruecke/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Ausdrücke" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -613,7 +691,7 @@
               <span class="md-footer__direction">
                 Zurück
               </span>
-              BlueJ
+              Ausdrücke
             </div>
           </div>
         </a>
