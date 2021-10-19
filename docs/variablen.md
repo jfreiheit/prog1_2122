@@ -62,7 +62,7 @@ public class Variablen
 - In Zeile `8` beginnt die Implementierung der Klasse. Diese Implementierung wird durch eine öffnende geschweifte Klammer `{` begonnen und endet in Zeile `32` mit der schließenden geschweiften Klammer `}`.
 - In Zeile `9` steht ein sogenannter *Zeilenkommentar*. Ein *Zeilenkommentar* beginnt mit `//` und endet automatisch am Ende der Zeile. Hier dient der Kommentar dazu, über die Objektvariable `x` zu informieren, die in Zeile `10` *deklariert* wird. 
 - In Zeile `10` wird eine *Variable deklariert*. Der Name der Variable ist `x`. Sie ist vom *Datentyp* `int`. Wir können nur innerhalb der Klasse `Variablen` auf diese Variable zugreifen, da sie als `private` deklariert wird. Zu *Variablen und Datentypen* kommen wir gleich ausführlich. 
-- In den Zeile `12-14` steht erneut ein *JavaDoc-Kommentar* - dieses Mal kommentiert er die nachfolgende Methode, den sogenannten *Konstruktor*. 
+- In den Zeilen `12-14` steht erneut ein *JavaDoc-Kommentar* - dieses Mal kommentiert er die nachfolgende Methode, den sogenannten *Konstruktor*. 
 - In den Zeilen `15-19` sehen wir die erste Methode der Klasse. Diese Methode ist speziell, denn sie heißt exakt so, wie die Klasse selbst. Es handelt sich um einen sogenannten *Konstruktor*. Diese Methode wird aufgerufen, um ein Objekt der Klasse zu erzeugen. Wir werden uns ausführlich mit *Konstruktoren* beschäftigen. 
 - Typischerweise werden im Konstruktor alle Objektvariablen *initialisiert*, d.h. die Objektvariablen bekommen einen initialen Wert. Hier wird der Objektvariablen `x` der Wert `0` zugewiesen (Zeile `18`).
 - In den Zeilen `27-31` wird die Methode `sampleMethod()` implementiert. Dieser Methode wird ein Parameter `y` vom Typ `int` übergeben. Diese Methode gibt den Wert der Summe von `x` und `y` zurück. Wir kommen dazu, wenn wir uns ausgiebiger mit Methoden beschäftigen. 
@@ -270,7 +270,7 @@ Eine Variable kann man sich wie eine Kiste vorstellen, in die genau ein *Wert* p
 Eine Variable besteht also aus drei Dingen:
 
 - dem Wert der Variablen (genau einer)
-- dem Datentyp der Variablen (besteimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)
+- dem Datentyp der Variablen (bestimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)
 - dem Namen der Variablen (dafür gibt es Regeln, wie solche *Bezeichner* aussehen dürfen)
 
 ![variablen](./files/12_variable.png)
@@ -337,7 +337,7 @@ Nun, da wir Datentypen kennen, können wir Variablen "erzeugen". Das "Erzeugen" 
 1. wir vergeben einen Namen für unsere Variable und
 2. wir weisen der Variablen einen Datentyp zu. 
 
-Dieses Erzeugen von Variablen nennt sich *Deklaration* (oder *Variablendeklaration*). Die allgemine Syntax der Variablendeklaration ist wie folgt:
+Dieses Erzeugen von Variablen nennt sich *Deklaration* (oder *Variablendeklaration*). Die allgemeine Syntax der Variablendeklaration ist wie folgt:
 
 ```bash
 datentyp variablenName;
@@ -374,9 +374,9 @@ Es gibt einige Regeln für Bezeichner, die wir beachten müssen:
 - wichtig: **keine** Leerzeichen, **keine** reservierten Schlüsselwörter und **keine** Sonderzeichen, wie z.B. `!`, `/`, `*`, `{`, `[`, `.`, `]`, `}`
 - In Java wird Groß- und Kleinschreibung unterschieden (*case sensitive*)!
 
-Reservierte Schlüsselwörter sind Begriffe aus dem Java-Sprachumfang (alle kleingeschrieben)[^1]. Dazu gehören:
+Reservierte Schlüsselwörter sind Begriffe aus dem Java-Sprachumfang (alle kleingeschrieben)[^2]. Dazu gehören:
 
-[^1]: `const` und `goto` gehören eigentlich gar nicht zum Sprachumfang von Java und sind aber trotzdem reservierte Schlüsselwörter.
+[^2]: `const` und `goto` gehören eigentlich gar nicht zum Sprachumfang von Java und sind aber trotzdem reservierte Schlüsselwörter.
 
 
 <table style="boder: none;">	
@@ -473,17 +473,17 @@ Wir wissen jetzt, was gültige Bezeichner sind und was ungültige. Darüber hina
 
 ### Initialisierung von Variablen
 
-Nach der Deklaration einer Variablen existiert diese zwar, sie hat jedoch noch keinen Wert. Wir wollen sicherstellen, dass Variablen immer einen Wert haben. Du weisen wir den Variablen direkt nach der Deklaration einen Wert zu. Die erstmalige *Wertzuweisung* einer Variablen wird *Initialisierung* genannt. 
+Nach der Deklaration einer Variablen existiert diese zwar, sie hat jedoch noch keinen Wert. Wir wollen sicherstellen, dass Variablen immer einen Wert haben. Deshalb weisen wir den Variablen direkt nach der Deklaration einen Wert zu. Die erstmalige *Wertzuweisung* einer Variablen wird *Initialisierung* genannt. 
 
 #### Der Wertzuweisungsoperator `=`
 
-Um einer Variablen einen Wert zuzuweisen, wird der *Wertzuweisungsoperator* verwendet. Dieser ist ein eifaches Gleichheitszeichen `=`. Die Syntax der Wertzuweisung ist wie folgt:
+Um einer Variablen einen Wert zuzuweisen, wird der *Wertzuweisungsoperator* verwendet. Dieser ist ein einfaches Gleichheitszeichen `=`. Die Syntax der Wertzuweisung ist wie folgt:
 
 ```bash
 variablenName = wert;
 ```
 
-Auf der linken Seite steht also immer die Variable und auf der rechten Seite der Wert. Auch hier muss am Ende wieder zwingend das Seikolon stehen, denn es handelt sich um eine Anweisung. Wichtig ist, dass der Wert dem Datentyp der Variablen entspricht!
+Auf der linken Seite steht also immer die Variable und auf der rechten Seite der Wert. Auch hier muss am Ende wieder zwingend das Semikolon stehen, denn es handelt sich um eine Anweisung. Wichtig ist, dass der Wert dem Datentyp der Variablen entspricht!
 
 Wir geben einige Beispiele für Variablen an, die wir oben deklariert hatten:
 
@@ -500,7 +500,7 @@ Nachdem einer Zahl mithilfe des Wertzuweisungsoperators ein Wert zugewiesen wurd
 
 ### Deklaration und Initialisierung in einem Schritt
 
-Da wir möchten, dass eine Variable sofort nach ihrer Deklaration einen Wert zugewiesen bekommt, ist es üblich, die Deklaration und die Initialisierung in einem Schritt, d.h. durch **eine** Anweisung durchzuführen. Die Syntax der kombinierten Anweisung (Deklaration und INitialisierung) ist wie folgt:
+Da wir möchten, dass eine Variable sofort nach ihrer Deklaration einen Wert zugewiesen bekommt, ist es üblich, die Deklaration und die Initialisierung in einem Schritt, d.h. durch **eine** Anweisung durchzuführen. Die Syntax der kombinierten Anweisung (Deklaration und Initialisierung) ist wie folgt:
 
 ```bash
 datentyp variablenName = wert;
@@ -525,7 +525,7 @@ Wie wir bereits bei der Vorstellung der primitiven Datentypen erwähnt haben, is
 
 | Datentyp  | Größe | Wertebereich |
 |-----------|-------|--------------|
-| `boolean` | 1 Byte[^2] | `true` / `false` |
+| `boolean` | 1 Byte[^3] | `true` / `false` |
 | `char` | 16 bit | `0` ... `65.535` (z.B. `'A'`) | 
 | `byte` | 8 bit  | `-128` ... `127` |
 | `short` | 16 bit | `-32.768` ... `32.767` |
@@ -534,7 +534,7 @@ Wie wir bereits bei der Vorstellung der primitiven Datentypen erwähnt haben, is
 | `float` | 32 bit | `+/-1,4E-45` ... `+/-3,4E+38` |
 | `double` | 64 bit | `+/-4,9E-324` ... `+/-1,7E+308` |
 
-[^2]: Tatsächlich ist die Größe eines `boolean` gar nicht genau definiert (siehe [**hier**](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)). man braucht ja eigentlich nur ein bit. Man liest aber sehr häufig davon, dass einer Variablen vom Typ `boolean` ein ganzes Byte reserviert wird. 
+[^3]: Tatsächlich ist die Größe eines `boolean` gar nicht genau definiert (siehe [**hier**](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)). man braucht ja eigentlich nur ein bit. Man liest aber sehr häufig davon, dass einer Variablen vom Typ `boolean` ein ganzes Byte reserviert wird. 
 
 Wir schauen uns jetzt noch einige interssante Details zu den Datentypen an.
 
@@ -550,7 +550,7 @@ Eine ganze Zahl in einem Java-Programm ist vom Typ `int`. Dieser Datentyp ist de
 
 Die Abbildung zeigt in den oberen drei Zeilen die interne Darstellung von `-128`, `127` und `0`.  In den drei Zeilen darunter ist dargestellt, wie z.B. die Zahlen `85`, `-43` und `-85` als Zweierkomplement repräsentiert werden. 
 
-Die folgende Abbildung zeigt die Addition (und somit auch die Subtraktion) zweier Zahlen im Zweierkomplement. Dargestellt sidn die Repräsentationen von `-4` und `3` als Zweierkomplement. Es wird die Addition der beiden Zahlen gezeigt. 
+Die folgende Abbildung zeigt die Addition (und somit auch die Subtraktion) zweier Zahlen im Zweierkomplement. Dargestellt sind die Repräsentationen von `-4` und `3` als Zweierkomplement. Es wird die Addition der beiden Zahlen gezeigt. 
 
 ![zweierkomplement](./files/14_addition.png)
 
@@ -574,15 +574,13 @@ Beachten Sie, dass ein solcher Überlauf unbemerkt passiert. Das bedeutet, dass 
 
 #### Initialisierung von `long`-Variablen.
 
-Eine ganze Zahl als *Literal*, also als alleinstehender Wert ist vom Typ `int`. Wenn wir folgende kombinierte Deklaration und INitialisierung betrachten:
+Eine ganze Zahl als *Literal*, also als alleinstehender Wert ist vom Typ `int`. Wenn wir folgende kombinierte Deklaration und Initialisierung betrachten:
 
 ```java 
 long bigNumber = 12345678;
 ```
 
-dann stellen wir fest, dass die Variable `bigNumber` auf der linken Seite des Wertzuweisungsoperators vom Typ `long` ist, die Zahl `12345678` aber vom Typ `int`. Wir werden später noch auf solche *Typkonvertierung* zu sprechen kommen. Es sei hier jedoch bereits angemerkt, dass man eine ganze Zahl auch um das Postfix `L` ergänzen kann[^3] - mit der Wirkung, dass die Zahl dann nicht mehr vom Typ `int`, sondern vom Typ `long` ist. 
-
-[^3]: Man könnte auch nit dem kleinen Buchstaben `l` ergänzen, das macht man aber nicht, weil die Verwechselungsgefahr mit der `1` zu groß ist. 
+dann stellen wir fest, dass die Variable `bigNumber` auf der linken Seite des Wertzuweisungsoperators vom Typ `long` ist, die Zahl `12345678` aber vom Typ `int`. Wir werden später noch auf solche *Typkonvertierung* zu sprechen kommen. Es sei hier jedoch bereits angemerkt, dass man eine ganze Zahl auch um das Postfix `L` ergänzen kann (man könnte auch mit dem kleinen Buchstaben `l` ergänzen, das macht man aber nicht, weil die Verwechselungsgefahr mit der `1` zu groß ist) - mit der Wirkung, dass die Zahl dann nicht mehr vom Typ `int`, sondern vom Typ `long` ist. 
 
 Die "richtige" Initialisierung sieht so aus: 
 
@@ -590,7 +588,7 @@ Die "richtige" Initialisierung sieht so aus:
 long bigNumber = 12345678L;
 ```
 
-Es ist nur in wenigen Fällen wirklich erforderlich, das `L` an die Zahl zu hängen, wenn wir eine `long`-Variable initialisieren. Warum das so ist, werden wir kennenlernen, wenn wir uns über * Typkonvertierung*  Gedanken machen. Trotzdem sei hier schonmal erwähnt, dass diese Deklaration und Initailisierung kein Problem ist 
+Es ist nur in wenigen Fällen wirklich erforderlich, das `L` an die Zahl zu hängen, wenn wir eine `long`-Variable initialisieren. Warum das so ist, werden wir kennenlernen, wenn wir uns über *Typkonvertierung*  Gedanken machen. Trotzdem sei hier schonmal erwähnt, dass diese Deklaration und Initialisierung kein Problem ist 
 
 ```java
 long bigNumber = 2147483647;
@@ -640,7 +638,7 @@ Der Datentyp `char` ist für das Speichern von Zeichen vorgesehen. Es handelt si
 | 79  | `O`  | 93  | `]`  | 107 | `k`  |
 | 80  | `P` | 94  | `^`  | 108  | `l`  |
 | 81  | `Q` | 95  | `_`  | 109 | `m`  |
-| 82  | `R`  | 96  | ```  | 110 | `n`  |
+| 82  | `R`  | 96  | <code>&bprime;</code>  | 110 | `n`  |
 | 83  | `S` | 97  | `a`  | 111 | `o`  |
 | 84  | `T` | 98  | `b`  | 112 | `p`  |
 | 85  | `U` | 99  | `c`  | 113 | `q`  |
@@ -692,7 +690,7 @@ Eine Gleitkomma-Zahl (also eine Zahl mit einem Punkt, z.B. `5.0` oder `-1.2345`)
 
 Im obigen Beispiel wird mithilfe von `float` der Bruch `1/3` ausgerechnet. Zwei Sachen sind zu beachten
 
-1. Wie wir das schon beim Datentyp `long` gesehen haben, gibt es auch für Gleitkommazahlen ein Postfix, hier `f`, um zu sagen, dass eine Zahl vom Typ `float` sein soll. Ohne das `f` wäre sie vom Typ `double` und wir würden sogar einen Compilerfehler erhalten, wenn wir das `f` am Ende der Zahl nicht angeben würden. Hier ist es also wichtig, bei der Wertzuweisung anzugeben, dass die Zahl vom Typ `float` sein soll - nämlcih durch die Angabe von `f` (`F` ginge auch).
+1. Wie wir das schon beim Datentyp `long` gesehen haben, gibt es auch für Gleitkommazahlen ein Postfix, hier `f`, um zu sagen, dass eine Zahl vom Typ `float` sein soll. Ohne das `f` wäre sie vom Typ `double` und wir würden sogar einen Compilerfehler erhalten, wenn wir das `f` am Ende der Zahl nicht angeben würden. Hier ist es also wichtig, bei der Wertzuweisung anzugeben, dass die Zahl vom Typ `float` sein soll - nämlich durch die Angabe von `f` (`F` ginge auch).
 2. Die Genauigkeit bei `float` ist nicht sehr hoch. `1/3` im `float`-Wertebereich ergibt `0.33333334`. Schauen wir uns das gleiche Beispiel mit `double` an:
 
 === "Beispiel float"
@@ -721,7 +719,7 @@ Der Datentyp `String` ist kein primitiver Datentyp (kein Wertetyp), sondern ein 
 
 Wir können uns merken (ist aber derzeit noch nicht wichtig), dass ein String ein Objekt und kein einfacher Wert ist, aber derzeit betrachten wir den Datentyp `String` wie die primitiven Wertetypen auch. 
 
-Ein `String`-Literal erkennt man an den doppelten Anführungsstrichen. Darin kann ein beliebiger Text (bestehend aus allen möglichen Zeichen, Buchstaben, Sonderzeichen, Umlauten etc.) stehen, z.B. `"Hallo FIW!"`, `"2und2gleich4 und $ % & 0? | \ !"`, `" ä ü ö ß`.
+Ein `String`-Literal erkennt man an den doppelten Anführungsstrichen. Darin kann ein beliebiger Text (bestehend aus allen möglichen Zeichen, Buchstaben, Sonderzeichen, Umlauten etc.) stehen, z.B. `"Hallo FIW!"`, `"2und2gleich4 und $ % & 0? | \ !"`, `" ä ü ö ß"`.
 
 Die Deklaration und Initialisierung einer `String`-Variablen sieht also so aus:
 ```java
@@ -753,7 +751,7 @@ System.out.println(s7);				//Informatik und Wirtschaft
 
 ### Doppelte Bedeutung des Operatorzeichens `+`
 
-Das `+` wird sowohl als arithmetischer Operator für numerische Datentypen als auch als Konkatenation für Strings verwendet. In den obigen Beispielen kommen wir damit nicht durcheinander, da völlig klar ist, dass es sich dabei um die Konkatenation handelt. Es gibt aber Beispiele, bei denen in einem Ausdruck beide Bedeutungen vorkommen. Diese diskutieren wir jetzt. Zunächst schauen wir uns noch eine Typische Verendung der Konkatenation an:
+Das `+` wird sowohl als arithmetischer Operator für numerische Datentypen als auch als Konkatenation für Strings verwendet. In den obigen Beispielen kommen wir damit nicht durcheinander, da völlig klar ist, dass es sich dabei um die Konkatenation handelt. Es gibt aber Beispiele, bei denen in einem Ausdruck beide Bedeutungen vorkommen. Diese diskutieren wir jetzt. Zunächst schauen wir uns noch eine typische Verwendung der Konkatenation an:
 
 === "typisches Beispiel für die Konkatenation"
 	```java linenums="1"
@@ -783,7 +781,7 @@ Die Ausgabe bei dem obigen Beispiel ist `3 + 4 = 7`. Schauen wir uns das Beispie
 	Sie erhalten jedoch nicht die gewünschte Ausgabe. Warum nicht? Wie können Sie doch die Summe ausgeben, ohne diese zwischenspeichern zu müssen?
 
 !!! success
-    Wir können nun Variablen deklarieren und initialisieren. Wir kennen alle acht primitiven Datentypen. Wir nennen diese Datentypen *Wertetypen*. Wir wissen, dass eine ganze Zahl im Java-Programm vom Typ `int` ist und eine Gleikommazahl vom Typ `double`. Wir kennen die interne Darstellung von ganzen Zahlen und wir wissen über die Kodierung von Zeichen Bescheid. Der datentyp `char` ist ein ganzzahliger Typ, obwohl er für das Speichern von Zeichen zuständig ist. Dies liegt an der Kodierung der Zeichen als ganze Zahlen. Der Wertzuweisungsoperator ist `=`. Wenn einer Variablen ein Wert zugewiesen werden soll, dann muss die Variablen links stehen, der Wertuweisungsoperator in der Mitte und rechts der Wert. 
+    Wir können nun Variablen deklarieren und initialisieren. Wir kennen alle acht primitiven Datentypen. Wir nennen diese Datentypen *Wertetypen*. Wir wissen, dass eine ganze Zahl im Java-Programm vom Typ `int` ist und eine Gleikommazahl vom Typ `double`. Wir kennen die interne Darstellung von ganzen Zahlen und wir wissen über die Kodierung von Zeichen Bescheid. Der datentyp `char` ist ein ganzzahliger Typ, obwohl er für das Speichern von Zeichen zuständig ist. Dies liegt an der Kodierung der Zeichen als ganze Zahlen. Der Wertzuweisungsoperator ist `=`. Wenn einer Variablen ein Wert zugewiesen werden soll, dann muss die Variablen links stehen, der Wertzuweisungsoperator in der Mitte und rechts der Wert. 
 
 
 ## Konstanten
@@ -835,11 +833,11 @@ Wann immer Sie in Ihrem Programm ein Literal verwenden, also einen Wert, sollten
 
 ## Typkonvertierung (type-cast)
 
-Java ist *statisch typisiert*, d.h. dass jede Variable (und jedes Literal) einen Datentyp hat. Dieser wird bei der Deklaration der Variablen festegelgt und ist somit bereits zur Compile-Zeit bekannt. Der Datentyp einer Variablen kann auch nicht mehr geändert werden[^4].
+Java ist *statisch typisiert*, d.h. dass jede Variable (und jedes Literal) einen Datentyp hat. Dieser wird bei der Deklaration der Variablen festegelgt und ist somit bereits zur Compile-Zeit bekannt. Der Datentyp einer Variablen kann auch nicht mehr geändert werden[^5].
 
-[^4]: Das ist nicht in Allen Programmiersprachen so. Beispielsweise wird in JavaScript erst zur Laufzeit ermittelt, von welchem Typ die Variable ist, denn das hängt von ihrem Wert ab. Dort kann eine Variable `foo="String"` vom Typ `string` sein und dann durch `foo=4` vom Typ `number`. Die Typisierung in solchen Programmiersprachen nennt man *dynamisch typisiert*. 
+[^5]: Das ist nicht in Allen Programmiersprachen so. Beispielsweise wird in JavaScript erst zur Laufzeit ermittelt, von welchem Typ die Variable ist, denn das hängt von ihrem Wert ab. Dort kann eine Variable `foo="String"` vom Typ `string` sein und dann durch `foo=4` vom Typ `number`. Die Typisierung in solchen Programmiersprachen nennt man *dynamisch typisiert*. 
 
-Die Typisierung einer Variablen gibt den Wertebereich vor, aus dem die Variable Werte annehmen kann (`int`-Variablen aus dem `int`-Wertebereich, `boolean` aus dem Wertebereich `{true, false}`usw.). Trotzdem ist in Java auch erlaubt, dass Wertezuweisungen nicht nur aus *identischen* Datentypen möglich sind, sondern auch aus *kampatiblen* Datentypen:
+Die Typisierung einer Variablen gibt den Wertebereich vor, aus dem die Variable Werte annehmen kann (`int`-Variablen aus dem `int`-Wertebereich, `boolean` aus dem Wertebereich `{true, false}`usw.). Trotzdem ist in Java auch erlaubt, dass Wertezuweisungen nicht nur aus *identischen* Datentypen möglich sind, sondern auch aus *kompatiblen* Datentypen:
 
 ```java linenums="1"
 int a = 5; 			// links ist int und rechts ist int --> identische Datentypen
@@ -929,7 +927,7 @@ Was ist passiert? Dadurch, dass in der Wertezuweisung `celsius = 5 * (fahrenheit
 
 - zuerst wird der Ausdruck `(fahrenheit - 32)` aufgelöst, da er in Klammern steht. Hier ist die Operation `double - int`. Sobald einer der beiden Operanden ein `double` ist, wird der `double`-Operator `-` verwendet --> dazu wird die `32` in eine `32.0` konvertiert --> das Ergebnis ist ein `double`
 - dann wird von links nach rechts aufgelöst, also zunächst `5 * double`. Auch hier ist die Operation also `int * double`, d.h. `double`-Multiplikation und somit wird aus der `5` eine `5.0`. Das Ergebnis dieser Multiplikation ist `double`
-- dann erfolgt die Berechnung von `double / 9`. Wenn einer der beiden Operanden ein `double` ist, handelt es sich bei der Division um eine **Gleikommadivision**. Also gibt es auch Nachkommastellen --> das Ergebnis ist ein `double`
+- dann erfolgt die Berechnung von `double / 9`. Wenn einer der beiden Operanden ein `double` ist, handelt es sich bei der Division um eine **Gleitkommadivision**. Also gibt es auch Nachkommastellen --> das Ergebnis ist ein `double`
 
 Diese *implizite* Typkonvertierung macht der Compiler automatisch. *Implizite* Typkonvertierung kann immer dann erfolgen, wenn von einem **schmalen** in einen **breiten** Datentyp konvertiert wird, d.h. wenn alle Werte aus dem "schmalen" Wertebereich auch Werte aus dem "breiten" Wertebereich sind. Dies ist bei `int` (schmal) nach `double` (breit) der Fall, da alle `int`-Werte auch im `double`-Wertebereich enthalten sind. 
 
@@ -1034,7 +1032,6 @@ System.out.println("Durchschnitt ist " + average);		// 2.5
 ```
 
 Wir haben jetzt die Länge explizit nach `double` konvertiert und somit ist einer der beiden Operanden der Division ein `double` und somit wird die Gleitkommadivision durchgeführt. Nun erhalten wir das richtige Ergebnis:
-Kopf, dass für die vier Werte `1`, `2`, `3` und `4` der Durchschnitt `2.5` ist. Ausgegeben wird aber 
 
 ```bash
 Durchschnitt ist 2.5

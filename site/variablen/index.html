@@ -911,7 +911,7 @@
 <li>In Zeile <code>8</code> beginnt die Implementierung der Klasse. Diese Implementierung wird durch eine öffnende geschweifte Klammer <code>{</code> begonnen und endet in Zeile <code>32</code> mit der schließenden geschweiften Klammer <code>}</code>.</li>
 <li>In Zeile <code>9</code> steht ein sogenannter <em>Zeilenkommentar</em>. Ein <em>Zeilenkommentar</em> beginnt mit <code>//</code> und endet automatisch am Ende der Zeile. Hier dient der Kommentar dazu, über die Objektvariable <code>x</code> zu informieren, die in Zeile <code>10</code> <em>deklariert</em> wird. </li>
 <li>In Zeile <code>10</code> wird eine <em>Variable deklariert</em>. Der Name der Variable ist <code>x</code>. Sie ist vom <em>Datentyp</em> <code>int</code>. Wir können nur innerhalb der Klasse <code>Variablen</code> auf diese Variable zugreifen, da sie als <code>private</code> deklariert wird. Zu <em>Variablen und Datentypen</em> kommen wir gleich ausführlich. </li>
-<li>In den Zeile <code>12-14</code> steht erneut ein <em>JavaDoc-Kommentar</em> - dieses Mal kommentiert er die nachfolgende Methode, den sogenannten <em>Konstruktor</em>. </li>
+<li>In den Zeilen <code>12-14</code> steht erneut ein <em>JavaDoc-Kommentar</em> - dieses Mal kommentiert er die nachfolgende Methode, den sogenannten <em>Konstruktor</em>. </li>
 <li>In den Zeilen <code>15-19</code> sehen wir die erste Methode der Klasse. Diese Methode ist speziell, denn sie heißt exakt so, wie die Klasse selbst. Es handelt sich um einen sogenannten <em>Konstruktor</em>. Diese Methode wird aufgerufen, um ein Objekt der Klasse zu erzeugen. Wir werden uns ausführlich mit <em>Konstruktoren</em> beschäftigen. </li>
 <li>Typischerweise werden im Konstruktor alle Objektvariablen <em>initialisiert</em>, d.h. die Objektvariablen bekommen einen initialen Wert. Hier wird der Objektvariablen <code>x</code> der Wert <code>0</code> zugewiesen (Zeile <code>18</code>).</li>
 <li>In den Zeilen <code>27-31</code> wird die Methode <code>sampleMethod()</code> implementiert. Dieser Methode wird ein Parameter <code>y</code> vom Typ <code>int</code> übergeben. Diese Methode gibt den Wert der Summe von <code>x</code> und <code>y</code> zurück. Wir kommen dazu, wenn wir uns ausgiebiger mit Methoden beschäftigen. </li>
@@ -1176,7 +1176,7 @@
 <p>Eine Variable besteht also aus drei Dingen:</p>
 <ul>
 <li>dem Wert der Variablen (genau einer)</li>
-<li>dem Datentyp der Variablen (besteimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)</li>
+<li>dem Datentyp der Variablen (bestimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)</li>
 <li>dem Namen der Variablen (dafür gibt es Regeln, wie solche <em>Bezeichner</em> aussehen dürfen)</li>
 </ul>
 <p><img alt="variablen" src="../files/12_variable.png" /></p>
@@ -1238,7 +1238,7 @@
 <li>wir vergeben einen Namen für unsere Variable und</li>
 <li>wir weisen der Variablen einen Datentyp zu. </li>
 </ol>
-<p>Dieses Erzeugen von Variablen nennt sich <em>Deklaration</em> (oder <em>Variablendeklaration</em>). Die allgemine Syntax der Variablendeklaration ist wie folgt:</p>
+<p>Dieses Erzeugen von Variablen nennt sich <em>Deklaration</em> (oder <em>Variablendeklaration</em>). Die allgemeine Syntax der Variablendeklaration ist wie folgt:</p>
 <div class="highlight"><pre><span></span><code>datentyp variablenName<span class="p">;</span>
 </code></pre></div>
 <p>Wir geben also zuerst den Datentyp an, dann kommt ein Leerschritt, dann den Bezeichner für die Variable (den Namen) und dann folgt ein Semikolon, weil es sich um eine Anweisung handelt. </p>
@@ -1265,7 +1265,7 @@
 <li>wichtig: <strong>keine</strong> Leerzeichen, <strong>keine</strong> reservierten Schlüsselwörter und <strong>keine</strong> Sonderzeichen, wie z.B. <code>!</code>, <code>/</code>, <code>*</code>, <code>{</code>, <code>[</code>, <code>.</code>, <code>]</code>, <code>}</code></li>
 <li>In Java wird Groß- und Kleinschreibung unterschieden (<em>case sensitive</em>)!</li>
 </ul>
-<p>Reservierte Schlüsselwörter sind Begriffe aus dem Java-Sprachumfang (alle kleingeschrieben)<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Dazu gehören:</p>
+<p>Reservierte Schlüsselwörter sind Begriffe aus dem Java-Sprachumfang (alle kleingeschrieben)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Dazu gehören:</p>
 <table style="boder: none;">    
     <tr>        
         <td><code>abstract</code></td>  
@@ -1359,12 +1359,12 @@
 <li>verwenden die sogenannte <em>camelCaseSchreibweise</em>. Da keine Leerzeichen erlaubt sind, wir aber sprechende Namen haben wollen, die aus mehreren Wörtern bestehen können, schreiben wir den Beginn eines neuen Wortes immer groß (außer ganz am Anfang, denn Methoden- und Variablennamen beginnen ja mit einem Kleinbuchstaben.)</li>
 </ul>
 <h3 id="initialisierung-von-variablen">Initialisierung von Variablen<a class="headerlink" href="#initialisierung-von-variablen" title="Permanent link">&para;</a></h3>
-<p>Nach der Deklaration einer Variablen existiert diese zwar, sie hat jedoch noch keinen Wert. Wir wollen sicherstellen, dass Variablen immer einen Wert haben. Du weisen wir den Variablen direkt nach der Deklaration einen Wert zu. Die erstmalige <em>Wertzuweisung</em> einer Variablen wird <em>Initialisierung</em> genannt. </p>
+<p>Nach der Deklaration einer Variablen existiert diese zwar, sie hat jedoch noch keinen Wert. Wir wollen sicherstellen, dass Variablen immer einen Wert haben. Deshalb weisen wir den Variablen direkt nach der Deklaration einen Wert zu. Die erstmalige <em>Wertzuweisung</em> einer Variablen wird <em>Initialisierung</em> genannt. </p>
 <h4 id="der-wertzuweisungsoperator">Der Wertzuweisungsoperator <code>=</code><a class="headerlink" href="#der-wertzuweisungsoperator" title="Permanent link">&para;</a></h4>
-<p>Um einer Variablen einen Wert zuzuweisen, wird der <em>Wertzuweisungsoperator</em> verwendet. Dieser ist ein eifaches Gleichheitszeichen <code>=</code>. Die Syntax der Wertzuweisung ist wie folgt:</p>
+<p>Um einer Variablen einen Wert zuzuweisen, wird der <em>Wertzuweisungsoperator</em> verwendet. Dieser ist ein einfaches Gleichheitszeichen <code>=</code>. Die Syntax der Wertzuweisung ist wie folgt:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">variablenName</span> <span class="o">=</span> wert<span class="p">;</span>
 </code></pre></div>
-<p>Auf der linken Seite steht also immer die Variable und auf der rechten Seite der Wert. Auch hier muss am Ende wieder zwingend das Seikolon stehen, denn es handelt sich um eine Anweisung. Wichtig ist, dass der Wert dem Datentyp der Variablen entspricht!</p>
+<p>Auf der linken Seite steht also immer die Variable und auf der rechten Seite der Wert. Auch hier muss am Ende wieder zwingend das Semikolon stehen, denn es handelt sich um eine Anweisung. Wichtig ist, dass der Wert dem Datentyp der Variablen entspricht!</p>
 <p>Wir geben einige Beispiele für Variablen an, die wir oben deklariert hatten:</p>
 <div class="highlight"><pre><span></span><code><span class="n">ganzeZahl</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>          <span class="c1">// int</span>
 <span class="n">number</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1234</span><span class="p">;</span>         <span class="c1">// int</span>
@@ -1375,7 +1375,7 @@
 </code></pre></div>
 <p>Nachdem einer Zahl mithilfe des Wertzuweisungsoperators ein Wert zugewiesen wurde, behält die Variable den Wert so lange bis ihr ein neuer Wert (mithilfe des Wertzuweisungsoperators) zugewiesen wird. Einer Variablen kann beliebig oft ein neuer Wert zugewiesen werden. </p>
 <h3 id="deklaration-und-initialisierung-in-einem-schritt">Deklaration und Initialisierung in einem Schritt<a class="headerlink" href="#deklaration-und-initialisierung-in-einem-schritt" title="Permanent link">&para;</a></h3>
-<p>Da wir möchten, dass eine Variable sofort nach ihrer Deklaration einen Wert zugewiesen bekommt, ist es üblich, die Deklaration und die Initialisierung in einem Schritt, d.h. durch <strong>eine</strong> Anweisung durchzuführen. Die Syntax der kombinierten Anweisung (Deklaration und INitialisierung) ist wie folgt:</p>
+<p>Da wir möchten, dass eine Variable sofort nach ihrer Deklaration einen Wert zugewiesen bekommt, ist es üblich, die Deklaration und die Initialisierung in einem Schritt, d.h. durch <strong>eine</strong> Anweisung durchzuführen. Die Syntax der kombinierten Anweisung (Deklaration und Initialisierung) ist wie folgt:</p>
 <p><div class="highlight"><pre><span></span><code>datentyp <span class="nv">variablenName</span> <span class="o">=</span> wert<span class="p">;</span>
 </code></pre></div>
 Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand der bereits verwendeten Beispiele:</p>
@@ -1403,7 +1403,7 @@ Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand
 <tbody>
 <tr>
 <td><code>boolean</code></td>
-<td> 1 Byte<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td> 1 Byte<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
 <td> <code>true</code> / <code>false</code></td>
 </tr>
 <tr>
@@ -1453,7 +1453,7 @@ Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand
 </ul>
 <p><img alt="zweierkomplement" src="../files/13_zweierkomplement.png" /></p>
 <p>Die Abbildung zeigt in den oberen drei Zeilen die interne Darstellung von <code>-128</code>, <code>127</code> und <code>0</code>.  In den drei Zeilen darunter ist dargestellt, wie z.B. die Zahlen <code>85</code>, <code>-43</code> und <code>-85</code> als Zweierkomplement repräsentiert werden. </p>
-<p>Die folgende Abbildung zeigt die Addition (und somit auch die Subtraktion) zweier Zahlen im Zweierkomplement. Dargestellt sidn die Repräsentationen von <code>-4</code> und <code>3</code> als Zweierkomplement. Es wird die Addition der beiden Zahlen gezeigt. </p>
+<p>Die folgende Abbildung zeigt die Addition (und somit auch die Subtraktion) zweier Zahlen im Zweierkomplement. Dargestellt sind die Repräsentationen von <code>-4</code> und <code>3</code> als Zweierkomplement. Es wird die Addition der beiden Zahlen gezeigt. </p>
 <p><img alt="zweierkomplement" src="../files/14_addition.png" /></p>
 <p>Da die Werte alle einen begrenzten Wertebereich haben, kann es zu einem <em>Wertebereichsüberlauf</em> kommen. Ein solcher Überlauf ist in der folgenden Abbildung dargestellt. Im Datentyp <code>byte</code> ist <code>127</code> die größte positive Zahl. Die Abbildung verdeutlicht, was passiert, wenn zu dieser größten Zahl eine <code>1</code> hinzuaddiert wird. </p>
 <p><img alt="zweierkomplement" src="../files/15_ueberlauf.png" /></p>
@@ -1498,14 +1498,14 @@ Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand
 </ul>
 </div>
 <h4 id="initialisierung-von-long-variablen">Initialisierung von <code>long</code>-Variablen.<a class="headerlink" href="#initialisierung-von-long-variablen" title="Permanent link">&para;</a></h4>
-<p>Eine ganze Zahl als <em>Literal</em>, also als alleinstehender Wert ist vom Typ <code>int</code>. Wenn wir folgende kombinierte Deklaration und INitialisierung betrachten:</p>
+<p>Eine ganze Zahl als <em>Literal</em>, also als alleinstehender Wert ist vom Typ <code>int</code>. Wenn wir folgende kombinierte Deklaration und Initialisierung betrachten:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="n">bigNumber</span> <span class="o">=</span> <span class="mi">12345678</span><span class="p">;</span>
 </code></pre></div>
-<p>dann stellen wir fest, dass die Variable <code>bigNumber</code> auf der linken Seite des Wertzuweisungsoperators vom Typ <code>long</code> ist, die Zahl <code>12345678</code> aber vom Typ <code>int</code>. Wir werden später noch auf solche <em>Typkonvertierung</em> zu sprechen kommen. Es sei hier jedoch bereits angemerkt, dass man eine ganze Zahl auch um das Postfix <code>L</code> ergänzen kann<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> - mit der Wirkung, dass die Zahl dann nicht mehr vom Typ <code>int</code>, sondern vom Typ <code>long</code> ist. </p>
+<p>dann stellen wir fest, dass die Variable <code>bigNumber</code> auf der linken Seite des Wertzuweisungsoperators vom Typ <code>long</code> ist, die Zahl <code>12345678</code> aber vom Typ <code>int</code>. Wir werden später noch auf solche <em>Typkonvertierung</em> zu sprechen kommen. Es sei hier jedoch bereits angemerkt, dass man eine ganze Zahl auch um das Postfix <code>L</code> ergänzen kann (man könnte auch mit dem kleinen Buchstaben <code>l</code> ergänzen, das macht man aber nicht, weil die Verwechselungsgefahr mit der <code>1</code> zu groß ist) - mit der Wirkung, dass die Zahl dann nicht mehr vom Typ <code>int</code>, sondern vom Typ <code>long</code> ist. </p>
 <p>Die "richtige" Initialisierung sieht so aus: </p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="n">bigNumber</span> <span class="o">=</span> <span class="mi">12345678L</span><span class="p">;</span>
 </code></pre></div>
-<p>Es ist nur in wenigen Fällen wirklich erforderlich, das <code>L</code> an die Zahl zu hängen, wenn wir eine <code>long</code>-Variable initialisieren. Warum das so ist, werden wir kennenlernen, wenn wir uns über * Typkonvertierung*  Gedanken machen. Trotzdem sei hier schonmal erwähnt, dass diese Deklaration und Initailisierung kein Problem ist </p>
+<p>Es ist nur in wenigen Fällen wirklich erforderlich, das <code>L</code> an die Zahl zu hängen, wenn wir eine <code>long</code>-Variable initialisieren. Warum das so ist, werden wir kennenlernen, wenn wir uns über <em>Typkonvertierung</em>  Gedanken machen. Trotzdem sei hier schonmal erwähnt, dass diese Deklaration und Initialisierung kein Problem ist </p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="n">bigNumber</span> <span class="o">=</span> <span class="mi">2147483647</span><span class="p">;</span>
 </code></pre></div>
 <p>aber hier bekommen wir einen Fehler und können das Programm gar nicht übersetzen:</p>
@@ -1715,7 +1715,7 @@ Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand
 <td>82</td>
 <td> <code>R</code></td>
 <td>96</td>
-<td> ```</td>
+<td> <code>&bprime;</code></td>
 <td>110</td>
 <td> <code>n</code></td>
 </tr>
@@ -1848,7 +1848,7 @@ Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand
 </div>
 <p>Im obigen Beispiel wird mithilfe von <code>float</code> der Bruch <code>1/3</code> ausgerechnet. Zwei Sachen sind zu beachten</p>
 <ol>
-<li>Wie wir das schon beim Datentyp <code>long</code> gesehen haben, gibt es auch für Gleitkommazahlen ein Postfix, hier <code>f</code>, um zu sagen, dass eine Zahl vom Typ <code>float</code> sein soll. Ohne das <code>f</code> wäre sie vom Typ <code>double</code> und wir würden sogar einen Compilerfehler erhalten, wenn wir das <code>f</code> am Ende der Zahl nicht angeben würden. Hier ist es also wichtig, bei der Wertzuweisung anzugeben, dass die Zahl vom Typ <code>float</code> sein soll - nämlcih durch die Angabe von <code>f</code> (<code>F</code> ginge auch).</li>
+<li>Wie wir das schon beim Datentyp <code>long</code> gesehen haben, gibt es auch für Gleitkommazahlen ein Postfix, hier <code>f</code>, um zu sagen, dass eine Zahl vom Typ <code>float</code> sein soll. Ohne das <code>f</code> wäre sie vom Typ <code>double</code> und wir würden sogar einen Compilerfehler erhalten, wenn wir das <code>f</code> am Ende der Zahl nicht angeben würden. Hier ist es also wichtig, bei der Wertzuweisung anzugeben, dass die Zahl vom Typ <code>float</code> sein soll - nämlich durch die Angabe von <code>f</code> (<code>F</code> ginge auch).</li>
 <li>Die Genauigkeit bei <code>float</code> ist nicht sehr hoch. <code>1/3</code> im <code>float</code>-Wertebereich ergibt <code>0.33333334</code>. Schauen wir uns das gleiche Beispiel mit <code>double</code> an:</li>
 </ol>
 <div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Beispiel float</label><div class="tabbed-content">
@@ -1888,7 +1888,7 @@ Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand
 <h2 id="der-datentyp-string">Der Datentyp <code>String</code><a class="headerlink" href="#der-datentyp-string" title="Permanent link">&para;</a></h2>
 <p>Der Datentyp <code>String</code> ist kein primitiver Datentyp (kein Wertetyp), sondern ein sogenannter <em>komplexer Datentyp</em> (oder, wie wir sagen <em>Referenztyp</em>). Wir erkennen das bereits daran, dass der Datentyp mit einem Großbuchstaben beginnt. Der Unterschied zwischen Variablen von einem Wertetypen und Variablen von Referenztypen ist der, dass die ersten "nur" Werte speichern (<code>3</code>, <code>5</code>, <code>'a'</code>, <code>123.45</code>, <code>true</code>, ...) und die anderen speichern <em>Objekte</em> (oder richtiger: Referenzen auf Objekte) - darum kümmern wir uns später sehr ausführlich. </p>
 <p>Wir können uns merken (ist aber derzeit noch nicht wichtig), dass ein String ein Objekt und kein einfacher Wert ist, aber derzeit betrachten wir den Datentyp <code>String</code> wie die primitiven Wertetypen auch. </p>
-<p>Ein <code>String</code>-Literal erkennt man an den doppelten Anführungsstrichen. Darin kann ein beliebiger Text (bestehend aus allen möglichen Zeichen, Buchstaben, Sonderzeichen, Umlauten etc.) stehen, z.B. <code>"Hallo FIW!"</code>, <code>"2und2gleich4 und $ % &amp; 0? | \ !"</code>, <code>" ä ü ö ß</code>.</p>
+<p>Ein <code>String</code>-Literal erkennt man an den doppelten Anführungsstrichen. Darin kann ein beliebiger Text (bestehend aus allen möglichen Zeichen, Buchstaben, Sonderzeichen, Umlauten etc.) stehen, z.B. <code>"Hallo FIW!"</code>, <code>"2und2gleich4 und $ % &amp; 0? | \ !"</code>, <code>" ä ü ö ß"</code>.</p>
 <p>Die Deklaration und Initialisierung einer <code>String</code>-Variablen sieht also so aus:
 <div class="highlight"><pre><span></span><code><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Informatik&quot;</span><span class="p">;</span>
 </code></pre></div></p>
@@ -1911,7 +1911,7 @@ Wir zeigen die Anwendung der kombinierten Deklaration und Initialisierung anhand
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s7</span><span class="p">);</span>             <span class="c1">//Informatik und Wirtschaft</span>
 </code></pre></div></p>
 <h3 id="doppelte-bedeutung-des-operatorzeichens">Doppelte Bedeutung des Operatorzeichens <code>+</code><a class="headerlink" href="#doppelte-bedeutung-des-operatorzeichens" title="Permanent link">&para;</a></h3>
-<p>Das <code>+</code> wird sowohl als arithmetischer Operator für numerische Datentypen als auch als Konkatenation für Strings verwendet. In den obigen Beispielen kommen wir damit nicht durcheinander, da völlig klar ist, dass es sich dabei um die Konkatenation handelt. Es gibt aber Beispiele, bei denen in einem Ausdruck beide Bedeutungen vorkommen. Diese diskutieren wir jetzt. Zunächst schauen wir uns noch eine Typische Verendung der Konkatenation an:</p>
+<p>Das <code>+</code> wird sowohl als arithmetischer Operator für numerische Datentypen als auch als Konkatenation für Strings verwendet. In den obigen Beispielen kommen wir damit nicht durcheinander, da völlig klar ist, dass es sich dabei um die Konkatenation handelt. Es gibt aber Beispiele, bei denen in einem Ausdruck beide Bedeutungen vorkommen. Diese diskutieren wir jetzt. Zunächst schauen wir uns noch eine typische Verwendung der Konkatenation an:</p>
 <div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">typisches Beispiel für die Konkatenation</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1947,7 +1947,7 @@ Sie erhalten jedoch nicht die gewünschte Ausgabe. Warum nicht? Wie können Sie 
 </div>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>Wir können nun Variablen deklarieren und initialisieren. Wir kennen alle acht primitiven Datentypen. Wir nennen diese Datentypen <em>Wertetypen</em>. Wir wissen, dass eine ganze Zahl im Java-Programm vom Typ <code>int</code> ist und eine Gleikommazahl vom Typ <code>double</code>. Wir kennen die interne Darstellung von ganzen Zahlen und wir wissen über die Kodierung von Zeichen Bescheid. Der datentyp <code>char</code> ist ein ganzzahliger Typ, obwohl er für das Speichern von Zeichen zuständig ist. Dies liegt an der Kodierung der Zeichen als ganze Zahlen. Der Wertzuweisungsoperator ist <code>=</code>. Wenn einer Variablen ein Wert zugewiesen werden soll, dann muss die Variablen links stehen, der Wertuweisungsoperator in der Mitte und rechts der Wert. </p>
+<p>Wir können nun Variablen deklarieren und initialisieren. Wir kennen alle acht primitiven Datentypen. Wir nennen diese Datentypen <em>Wertetypen</em>. Wir wissen, dass eine ganze Zahl im Java-Programm vom Typ <code>int</code> ist und eine Gleikommazahl vom Typ <code>double</code>. Wir kennen die interne Darstellung von ganzen Zahlen und wir wissen über die Kodierung von Zeichen Bescheid. Der datentyp <code>char</code> ist ein ganzzahliger Typ, obwohl er für das Speichern von Zeichen zuständig ist. Dies liegt an der Kodierung der Zeichen als ganze Zahlen. Der Wertzuweisungsoperator ist <code>=</code>. Wenn einer Variablen ein Wert zugewiesen werden soll, dann muss die Variablen links stehen, der Wertzuweisungsoperator in der Mitte und rechts der Wert. </p>
 </div>
 <h2 id="konstanten">Konstanten<a class="headerlink" href="#konstanten" title="Permanent link">&para;</a></h2>
 <p>Wir haben gesagt, dass Variablen beliebig oft einer neuer Wert zugewisen werden kann. Manchmal möchte man aber genau das nicht. Sogenannten <em>Konstanten</em> möchte man genau einmal einen Wert zuweisen und dann soll dieser Wert nicht mehr überschrieben werden können. In Java kann man solche Konstanten mithilfe des Schlüsselwortes <code>final</code> deklarieren:</p>
@@ -1982,8 +1982,8 @@ Sie erhalten jedoch nicht die gewünschte Ausgabe. Warum nicht? Wie können Sie 
 <p>Wenn Sie in Ihrem Programm versuchen, einer Konstanten einen neuen Wert zuzuweisen, erhalten Sie einen Fehler (<code>The final variable cannot be assigned</code>) und Sie können das Programm gar nicht erst compilieren. </p>
 <p>Wann immer Sie in Ihrem Programm ein Literal verwenden, also einen Wert, sollten Sie überlegen, ob Sie diesem Wert nicht besser einen Namen geben können, nämlich dafür eine Konstante verwenden, und dann stets die Konstante anstelle des Wertes verwenden. Damit werden sogenannte <em>magic numbers</em> vermieden und das Programm ist lesbarer. </p>
 <h2 id="typkonvertierung-type-cast">Typkonvertierung (type-cast)<a class="headerlink" href="#typkonvertierung-type-cast" title="Permanent link">&para;</a></h2>
-<p>Java ist <em>statisch typisiert</em>, d.h. dass jede Variable (und jedes Literal) einen Datentyp hat. Dieser wird bei der Deklaration der Variablen festegelgt und ist somit bereits zur Compile-Zeit bekannt. Der Datentyp einer Variablen kann auch nicht mehr geändert werden<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
-<p>Die Typisierung einer Variablen gibt den Wertebereich vor, aus dem die Variable Werte annehmen kann (<code>int</code>-Variablen aus dem <code>int</code>-Wertebereich, <code>boolean</code> aus dem Wertebereich <code>{true, false}</code>usw.). Trotzdem ist in Java auch erlaubt, dass Wertezuweisungen nicht nur aus <em>identischen</em> Datentypen möglich sind, sondern auch aus <em>kampatiblen</em> Datentypen:</p>
+<p>Java ist <em>statisch typisiert</em>, d.h. dass jede Variable (und jedes Literal) einen Datentyp hat. Dieser wird bei der Deklaration der Variablen festegelgt und ist somit bereits zur Compile-Zeit bekannt. Der Datentyp einer Variablen kann auch nicht mehr geändert werden<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">4</a></sup>.</p>
+<p>Die Typisierung einer Variablen gibt den Wertebereich vor, aus dem die Variable Werte annehmen kann (<code>int</code>-Variablen aus dem <code>int</code>-Wertebereich, <code>boolean</code> aus dem Wertebereich <code>{true, false}</code>usw.). Trotzdem ist in Java auch erlaubt, dass Wertezuweisungen nicht nur aus <em>identischen</em> Datentypen möglich sind, sondern auch aus <em>kompatiblen</em> Datentypen:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2077,7 +2077,7 @@ Sie erhalten jedoch nicht die gewünschte Ausgabe. Warum nicht? Wie können Sie 
 <ul>
 <li>zuerst wird der Ausdruck <code>(fahrenheit - 32)</code> aufgelöst, da er in Klammern steht. Hier ist die Operation <code>double - int</code>. Sobald einer der beiden Operanden ein <code>double</code> ist, wird der <code>double</code>-Operator <code>-</code> verwendet &rarr; dazu wird die <code>32</code> in eine <code>32.0</code> konvertiert &rarr; das Ergebnis ist ein <code>double</code></li>
 <li>dann wird von links nach rechts aufgelöst, also zunächst <code>5 * double</code>. Auch hier ist die Operation also <code>int * double</code>, d.h. <code>double</code>-Multiplikation und somit wird aus der <code>5</code> eine <code>5.0</code>. Das Ergebnis dieser Multiplikation ist <code>double</code></li>
-<li>dann erfolgt die Berechnung von <code>double / 9</code>. Wenn einer der beiden Operanden ein <code>double</code> ist, handelt es sich bei der Division um eine <strong>Gleikommadivision</strong>. Also gibt es auch Nachkommastellen &rarr; das Ergebnis ist ein <code>double</code></li>
+<li>dann erfolgt die Berechnung von <code>double / 9</code>. Wenn einer der beiden Operanden ein <code>double</code> ist, handelt es sich bei der Division um eine <strong>Gleitkommadivision</strong>. Also gibt es auch Nachkommastellen &rarr; das Ergebnis ist ein <code>double</code></li>
 </ul>
 <p>Diese <em>implizite</em> Typkonvertierung macht der Compiler automatisch. <em>Implizite</em> Typkonvertierung kann immer dann erfolgen, wenn von einem <strong>schmalen</strong> in einen <strong>breiten</strong> Datentyp konvertiert wird, d.h. wenn alle Werte aus dem "schmalen" Wertebereich auch Werte aus dem "breiten" Wertebereich sind. Dies ist bei <code>int</code> (schmal) nach <code>double</code> (breit) der Fall, da alle <code>int</code>-Werte auch im <code>double</code>-Wertebereich enthalten sind. </p>
 <p>Das hier ist also kein Problem:</p>
@@ -2147,8 +2147,7 @@ Sie erhalten jedoch nicht die gewünschte Ausgabe. Warum nicht? Wie können Sie 
 <span class="kt">double</span> <span class="n">average</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">ia</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durchschnitt ist &quot;</span> <span class="o">+</span> <span class="n">average</span><span class="p">);</span>      <span class="c1">// 2.5</span>
 </code></pre></div>
-<p>Wir haben jetzt die Länge explizit nach <code>double</code> konvertiert und somit ist einer der beiden Operanden der Division ein <code>double</code> und somit wird die Gleitkommadivision durchgeführt. Nun erhalten wir das richtige Ergebnis:
-Kopf, dass für die vier Werte <code>1</code>, <code>2</code>, <code>3</code> und <code>4</code> der Durchschnitt <code>2.5</code> ist. Ausgegeben wird aber </p>
+<p>Wir haben jetzt die Länge explizit nach <code>double</code> konvertiert und somit ist einer der beiden Operanden der Division ein <code>double</code> und somit wird die Gleitkommadivision durchgeführt. Nun erhalten wir das richtige Ergebnis:</p>
 <div class="highlight"><pre><span></span><code>Durchschnitt ist <span class="m">2</span>.5
 </code></pre></div>
 <hr />
@@ -2173,16 +2172,16 @@ Kopf, dass für die vier Werte <code>1</code>, <code>2</code>, <code>3</code> un
 <hr />
 <ol>
 <li id="fn:1">
-<p><code>const</code> und <code>goto</code> gehören eigentlich gar nicht zum Sprachumfang von Java und sind aber trotzdem reservierte Schlüsselwörter.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Wenn wir ganz genau sein wollen, dann ist <code>out</code> vom Typ <code>PrintStream</code> und wir greifen auf die Objektmethode <code>println()</code> des <code>PrintStream</code>-Objektes <code>out</code> zu.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Tatsächlich ist die Größe eines <code>boolean</code> gar nicht genau definiert (siehe <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"><strong>hier</strong></a>). man braucht ja eigentlich nur ein bit. Man liest aber sehr häufig davon, dass einer Variablen vom Typ <code>boolean</code> ein ganzes Byte reserviert wird.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><code>const</code> und <code>goto</code> gehören eigentlich gar nicht zum Sprachumfang von Java und sind aber trotzdem reservierte Schlüsselwörter.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Man könnte auch nit dem kleinen Buchstaben <code>l</code> ergänzen, das macht man aber nicht, weil die Verwechselungsgefahr mit der <code>1</code> zu groß ist.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Tatsächlich ist die Größe eines <code>boolean</code> gar nicht genau definiert (siehe <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"><strong>hier</strong></a>). man braucht ja eigentlich nur ein bit. Man liest aber sehr häufig davon, dass einer Variablen vom Typ <code>boolean</code> ein ganzes Byte reserviert wird.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn:4">
-<p>Das ist nicht in Allen Programmiersprachen so. Beispielsweise wird in JavaScript erst zur Laufzeit ermittelt, von welchem Typ die Variable ist, denn das hängt von ihrem Wert ab. Dort kann eine Variable <code>foo="String"</code> vom Typ <code>string</code> sein und dann durch <code>foo=4</code> vom Typ <code>number</code>. Die Typisierung in solchen Programmiersprachen nennt man <em>dynamisch typisiert</em>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<li id="fn:5">
+<p>Das ist nicht in Allen Programmiersprachen so. Beispielsweise wird in JavaScript erst zur Laufzeit ermittelt, von welchem Typ die Variable ist, denn das hängt von ihrem Wert ab. Dort kann eine Variable <code>foo="String"</code> vom Typ <code>string</code> sein und dann durch <code>foo=4</code> vom Typ <code>number</code>. Die Typisierung in solchen Programmiersprachen nennt man <em>dynamisch typisiert</em>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
