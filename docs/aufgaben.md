@@ -100,3 +100,11 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 
 	 - Erstellen Sie sich eine Testklasse `PictureTest`, in der es eine Testmethode `testDraw()` gibt, die die `draw()`-Methode für ein `Picture`-Objekt ausführt. 
 	 - Zippen Sie Ihr Projekt `aufgabe1` und laden es in Moodle hoch. 
+
+
+#### Aufgabe 2 (Abgabe bis 01.11.2021 24:00 Uhr)
+??? "Aufgabe2 - Refactoring: Square mit Circles"
+	- Verwenden Sie BlueJ das Projekt `aufgabe1` und speichern Sie es als `aufgabe2` ab. 
+	- In Ihrer Lösung für Aufgabe 1 hatten Sie (sehr wahrscheinlich) ziemlich viel doppelten Code. Überlegen Sie sie sich, was Sie machen könnten, um möglichst gar keinen doppelten Code mehr zu haben. 
+	- Das nachträgliche "Verbessern" von Programmen wird *refactoring* genannt. Dabei wird das Programm so umgeschrieben, dass wesentliche Programmierprinzipien eingehalten werden, z.B. sprechende Namen für Variablen und Methoden, Vermeidung von doppeltem Code, jede Methode erledigt nur genau eine Aufgabe. Wir wollen hier unsere Lösung aus Aufgabe 1 "refactoren". Refactoring ist ein wesentlicher Teil des Programmierens.
+	- Zippen Sie Ihr Projekt `aufgabe2` und laden es in Moodle hoch.

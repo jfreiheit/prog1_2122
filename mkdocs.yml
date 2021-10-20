@@ -9,7 +9,7 @@ repo_name: prog1
 repo_url: https://github.com/jfreiheit/prog1
 
 # Copyright
-copyright: Copyright &copy; 2020 Jörn Freiheit
+copyright: Copyright &copy; 2021 Jörn Freiheit
 
 # Configuration
 theme:
@@ -66,6 +66,10 @@ nav:
     - BlueJ: bluej.md
     - Variablen: variablen.md
     - Ausdrücke: ausdruecke.md
+    - Methoden: methoden.md
+    - Selektion: selektion.md 
+    - Iteration: iteration.md 
+    - Methodenstack: methodenstack.md 
     - Übungen: uebungen.md
     - Aufgaben: aufgaben.md
     - Werkzeuge: tools.md

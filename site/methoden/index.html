@@ -284,6 +284,140 @@
 
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Methoden
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Methoden
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methodendefinition" class="md-nav__link">
+    Methodendefinition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodenaufruf" class="md-nav__link">
+    Methodenaufruf
+  </a>
+  
+    <nav class="md-nav" aria-label="Methodenaufruf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ausfuhrung-des-programms-im-detail" class="md-nav__link">
+    Ausführung des Programms im Detail
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methode-gibt-einen-wert-zuruck" class="md-nav__link">
+    Methode gibt einen Wert zurück
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufruf-einer-methode-die-einen-wert-zuruckgibt" class="md-nav__link">
+    Aufruf einer Methode, die einen Wert zurückgibt
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     <li class="md-nav__item">
       <a href="../uebungen/" class="md-nav__link">
@@ -407,20 +541,20 @@
                 
                 
                 <h1 id="methoden">Methoden<a class="headerlink" href="#methoden" title="Permanent link">&para;</a></h1>
-<p>Bis jetzt haben wir unseren Programmcode stets in die <code>main()</code>-Methode geschrieben. Das wird auf Dauer viel zu unübersichtlich. Außerdem verstoßen wir so gegen zwei wichtige Prinzipien der Programmierung: </p>
+<p>Bis jetzt haben wir unseren Programmcode immer in genau eine Methode geschrieben (z.B. <code>printObjectState()</code>. Das wird auf Dauer viel zu unübersichtlich. Außerdem verstoßen wir so gegen zwei wichtige Prinzipien der Programmierung: </p>
 <ul>
 <li>dem <em>Single Responsibility Principle (SRP)</em> und</li>
 <li><em>Don't repeat yourself (DRY)</em>.</li>
 </ul>
-<p>Die ursprüngliche Formulierung des SRP stammt von <a href="http://blog.cleancoder.com/"><strong>Robert C. Martin</strong></a>, der es als ein Prinzip der Objektorientierung einführte und es ein wenig anders meinte, als wir es hier verwenden. Dazu kommen wir, wenn wir uns mit Objektorientierung beschäftigen. Wir können uns aber als wesentliche Prinzipien schonmal merken, dass</p>
+<p>Die ursprüngliche Formulierung des SRP stammt von <a href="http://blog.cleancoder.com/"><strong>Robert C. Martin</strong></a>. Wir können uns als wesentliche Prinzipien schonmal merken, dass</p>
 <ul>
-<li>eine Variable genau eine Bedeutung haben soll und niemals für verschiedene Bedeutungen benutzt werden sollte (zwei Bedeutungen <code>==</code> zwei Variablen) und</li>
+<li>eine Variable genau eine Bedeutung haben soll und niemals für verschiedene Bedeutungen benutzt werden sollte (zwei Bedeutungen: zwei Variablen) und</li>
 <li>eine <em>Methode</em> genau eine Sache erledigen sollte.</li>
 </ul>
-<p>Zunächst schauen wir uns an, was eine <em>Methode</em> überhaupt ist und wie wir sie definieren und verwenden. Angenommen, wir haben ein Programm in der folgenden Form:</p>
+<p>Zunächst schauen wir uns an, was eine <em>Methode</em> überhaupt ist und wie wir sie definieren und verwenden. Angenommen, wir haben eine Methode in der folgenden Form:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Methods</span>
 <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="kt">int</span> <span class="n">summand1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">summand2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
@@ -439,14 +573,14 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>In dieser <code>main()</code>-Methode machen wir drei Mal das Gleiche, wir addieren 2 Summanden und geben das Ergebnis der Berechnung aus. Wir sehen insbesondere doppelten (sogar dreifachen) Code, d.h. wir wiederholen uns. Außerdem geben die vergebenen Namen nur an, wofür die Variablen da sind, aber es gibt keine namentliche Beschreibung von dem, <em>WAS</em> wir tun. </p>
+<p>In dieser <code>myMethod()</code>-Methode machen wir drei Mal das Gleiche, wir addieren 2 Summanden und geben das Ergebnis der Berechnung aus. Wir sehen insbesondere doppelten (sogar dreifachen) Code, d.h. wir wiederholen uns. Außerdem geben die vergebenen Namen nur an, wofür die Variablen da sind, aber es gibt keine namentliche Beschreibung von dem, <em>WAS</em> wir tun. </p>
 <h2 id="methodendefinition">Methodendefinition<a class="headerlink" href="#methodendefinition" title="Permanent link">&para;</a></h2>
 <p>Das wollen wir ändern und laden den sich wiederholenden Code in eine <em>Methode</em> aus. Diese Methode nennen wir <code>add()</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">summand2</span><span class="p">)</span>
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">summand2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">summe</span> <span class="o">=</span> <span class="n">summand1</span> <span class="o">+</span> <span class="n">summand2</span><span class="p">;</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">summand1</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="o">+</span> <span class="n">summand2</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="n">summe</span><span class="p">);</span>
@@ -457,7 +591,6 @@
 <ul>
 <li>In Zeile <code>1</code> sehen wir den <em>Methodenkopf</em>:<ul>
 <li>Das Schlüsselwort <code>public</code> besagt, dass diese Methode von allen anderen Klassen (die wir noch nicht haben) aufgerufen werden kann. Es handelt sich um eine <em>öffentliche</em> Methode. Wir gehen darauf genauer ein, wenn wir uns mit <em>Sichtbarkeitsmodifizierern</em> beschäftigen. </li>
-<li>Das Schlüsselwort <code>static</code> besagt, dass wir diese Methode verwenden (aufrufen) können, ohne eine Objekt der Klasse <code>Methods</code> erzeugen zu müssen. Wir können derzeit eh noch keine Objekte erzeugen, also definieren wir zunächst alle unsere Methoden als <code>static</code> (<em>statisch</em>, <em>Klassenmethode</em>).</li>
 <li>Das Schlüsselwort <code>void</code> steht dafür, dass der Aufruf unserer Methode keinen Wert hat, d.h. der Aufruf dieser Methode ist eine Anweisung ohne Nebeneffekt. Wenn die Methode einen Wert haben soll, dann wird hier ein Datentyp eingetragen (sehen wir im nächsten Beispiel).</li>
 <li><code>add</code> ist der Methodenname. Hier gelten die Bedingungen, die wir an <a href="./variablen/#bezeichner"><strong>Bezeichner</strong></a> in Java haben. Methodennamen beginnen stets mit einem Kleinbuchstaben. </li>
 <li>Nach dem Methodennamen kommen runde Klammern und darin sogenannte <em>Parameter</em>. Parameter sind Variablen. Parameter werden in der Methodendefinition deklariert, aber nicht initialisiert. Parameter werden beim Aufruf der Methode initialisiert.</li>
@@ -476,7 +609,7 @@
 <li>außerhalb jeder anderen Methode.</li>
 </ul>
 <h2 id="methodenaufruf">Methodenaufruf<a class="headerlink" href="#methodenaufruf" title="Permanent link">&para;</a></h2>
-<p>In der <code>main()</code>-Methode wird unsere Methode nun aufgerufen. Wichtig ist es zu beachten, dass</p>
+<p>In der <code>myMethod()</code>-Methode wird unsere Methode nun aufgerufen. Wichtig ist es zu beachten, dass</p>
 <ul>
 <li>wir exakt den gleichen Namen für die Methode verwenden, wie in der Methodendefinition angegeben (Groß- und Kleinschreibung beachten!) und </li>
 <li>dass der Methode in den runden Klammern Werte für die Parameter übergeben werden. Dabei müssen<ul>
@@ -502,13 +635,13 @@
 14
 15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Methods</span>
 <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">summand2</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">summand2</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kt">int</span> <span class="n">summe</span> <span class="o">=</span> <span class="n">summand1</span> <span class="o">+</span> <span class="n">summand2</span><span class="p">;</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">summand1</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="o">+</span> <span class="n">summand2</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="n">summe</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
         <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
@@ -517,17 +650,17 @@
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>In der <code>main()</code>-Methode wird nun drei Mal unsere neue <code>add()</code>-Methode aufgerufen. Bei jedem Aufruf werden Werte für die Parameter übergeben. Der Aufruf der Methode entspricht einer Anweisung (Semikolon am Ende). Der Aufruf der <code>add()</code>-Methode entspricht keinem Ausdruck, da der Aufruf dieser Methode ohne Wert ist. Dies liegt daran, dass in der Methodendefinition angegeben wurde, dass der Wert der Methode <code>void</code> ist - also kein Wert, kein Typ. </p>
-<p>Beachten Sie, dass in der Klasse <code>Methods</code> nun zwei Methoden definiert sind, <code>main()</code> und <code>add()</code>. Die <code>main()</code>-Methode ist die <em>Programmmethode</em>, die automatisch ausgeführt wird, sobald wir das Programm starten. Damit die <code>add()</code>-Methode ausgeführt wird, muss sie aufgerufen werden.</p>
+<p>In der <code>myMethod()</code>-Methode wird nun drei Mal unsere neue <code>add()</code>-Methode aufgerufen. Bei jedem Aufruf werden Werte für die Parameter übergeben. Der Aufruf der Methode entspricht einer Anweisung (Semikolon am Ende). Der Aufruf der <code>add()</code>-Methode entspricht keinem Ausdruck, da der Aufruf dieser Methode ohne Wert ist. Dies liegt daran, dass in der Methodendefinition angegeben wurde, dass der Wert der Methode <code>void</code> ist - also kein Wert, kein Typ. </p>
+<p>Beachten Sie, dass in der Klasse <code>Methods</code> nun zwei Methoden definiert sind, <code>myMethod()</code> und <code>add()</code>. Wenn wir die <code>myMethod()</code>-Methode aufrufen, wird sie ausgeführt. Das bedeutet, dass alle Anweisungen, die in der <code>myMethod()</code>-Methode definiert wurden, sequentiell abgearbeitet werden. Es wird also nacheinander drei Mal die <code>add()</code>-Methode aufgerufen und ausgeführt. Damit die <code>add()</code>-Methode überhaupt ausgeführt wird, muss sie aufgerufen werden.</p>
 <div class="admonition info">
 <p class="admonition-title">Beachte</p>
-<p>Es werden nur alle Anweisungen ausgeführt, die in der <code>main()</code>-Methode enthalten sind! Wird <code>add()</code> nie in <code>main()</code> aufgerufen, wird <code>add()</code> auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!</p>
+<p>Wird <code>add()</code> nie in aufgerufen, wird sie auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!</p>
 </div>
 <h3 id="ausfuhrung-des-programms-im-detail">Ausführung des Programms im Detail<a class="headerlink" href="#ausfuhrung-des-programms-im-detail" title="Permanent link">&para;</a></h3>
 <p>Wir schauen uns die Ausführung des obigen Programms nochmal im Detail an, um die Aufrufe genauer zu analysieren:</p>
 <ol>
-<li>durch das Starten des Programms wird die <code>main()</code>-Methode aufgerufen (Zeile <code>9</code>)</li>
-<li>die erste Anweisung in der <code>main()</code>-Methode ist <code>add(3,4);</code> (Zeile <code>11</code>)</li>
+<li>wir rufen die <code>myMethod()</code>-Methode auf (Zeile <code>9</code>)</li>
+<li>die erste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(3,4);</code> (Zeile <code>11</code>)</li>
 <li>dadurch wird die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>) </li>
 <li>durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = 3</code> und <code>int summand2 = 4</code> (Zeile <code>3</code>) </li>
 <li>die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>7</code>. (Zeile <code>5</code>) </li>
@@ -538,20 +671,20 @@
 <li><code>"3 + 4 = " + summe</code>  ist ebenfalls eine Konkatenation; das Ergebnis ist <code>"3 + 4 = 7"</code>.</li>
 </ul>
 </li>
-<li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>main()</code>-Methode gegangen.</li>
-<li>die nächste Anweisung in der <code>main()</code>-Methode ist <code>add(5,9);</code> (Zeile <code>12</code>)</li>
+<li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>myMethod()</code>-Methode gegangen.</li>
+<li>die nächste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(5,9);</code> (Zeile <code>12</code>)</li>
 <li>dadurch wird erneut die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>) </li>
 <li>durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = 5</code> und <code>int summand2 = 9</code> (Zeile <code>3</code>) </li>
 <li>die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>14</code>. (Zeile <code>5</code>) </li>
 <li>Es wird die Methode <code>System.out.println()</code> aufgerufen. Der auszugebene String ergibt sich aus <code>summand1 + " + " + summand2 + " = " + summe</code>. Der Wert (vom Typ <code>String</code>) dieses Ausdrucks ist <code>"5 + 9 = 14"</code>.</li>
-<li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>main()</code>-Methode gegangen.</li>
-<li>die nächste Anweisung in der <code>main()</code>-Methode ist <code>add(-115,999);</code> (Zeile <code>13</code>)</li>
+<li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>myMethod()</code>-Methode gegangen.</li>
+<li>die nächste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(-115,999);</code> (Zeile <code>13</code>)</li>
 <li>dadurch wird erneut die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>) </li>
 <li>durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = -115</code> und <code>int summand2 = 999</code> (Zeile <code>3</code>) </li>
 <li>die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>884</code>. (Zeile <code>5</code>) </li>
 <li>Es wird die Methode <code>System.out.println()</code> aufgerufen. Der auszugebene String ergibt sich aus <code>summand1 + " + " + summand2 + " = " + summe</code>. Der Wert (vom Typ <code>String</code>) dieses Ausdrucks ist <code>"-115 + 999 = 884"</code>.</li>
-<li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>main()</code>-Methode gegangen.</li>
-<li>in der <code>main()</code>-Methode gibt es keine weitere Anweisung mehr. Das Programm ist beendet.</li>
+<li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>myMethod()</code>-Methode gegangen.</li>
+<li>in der <code>myMethod()</code>-Methode gibt es keine weitere Anweisung mehr. Der Aufruf dieser Methode ist beendet.</li>
 </ol>
 <h2 id="methode-gibt-einen-wert-zuruck">Methode gibt einen Wert zurück<a class="headerlink" href="#methode-gibt-einen-wert-zuruck" title="Permanent link">&para;</a></h2>
 <p>Unsere Methode <code>add()</code> hat keinen Wert zurückgegeben. Das wurde im Methodenkopf festgelegt, wo wir mit <code>void</code> definiert haben, dass der Aufruf der Methode keinem Wert entspricht. Dies ist typisch für Methoden, die etwas auf die Konsole ausgeben. Alle Methoden, deren Aufgabe es ist, etwas auszugeben, sind (sollten sein) vom Rückgabetyp<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <code>void</code>.</p>
@@ -561,7 +694,7 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">computeSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">summand2</span><span class="p">)</span>
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">computeSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">summand2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">summe</span> <span class="o">=</span> <span class="n">summand1</span> <span class="o">+</span> <span class="n">summand2</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">summe</span><span class="p">;</span>
@@ -574,7 +707,7 @@
 <li>Die letzte Anweisung der Methode <code>computeSum()</code> ist eine Anweisung, die mit dem Schlüsselwort <code>return</code> beginnt. Jede Methode, die einen Rückgabetyp hat (also genau nicht <code>void</code>), muss ein solches <code>return</code> enthalten. Dieses <code>return</code> muss die letzte Anweisung in der Methode sein und es muss einen Wert zurückgeben, der von dem Typ ist, der für die Methode als Rückgabetyp definiert wurde. Hier ist es der Wert von <code>summe</code>. <code>summe</code> ist vom Typ <code>int</code> und somit ist <code>return summe;</code> korrekt, da die Methode ja ein <code>int</code> zurückgeben soll.</li>
 </ul>
 <h2 id="aufruf-einer-methode-die-einen-wert-zuruckgibt">Aufruf einer Methode, die einen Wert zurückgibt<a class="headerlink" href="#aufruf-einer-methode-die-einen-wert-zuruckgibt" title="Permanent link">&para;</a></h2>
-<p>Unsere Methode <code>computeSum()</code> könnte nun in der <code>main()</code>-Methode wie folgt aufgerufen werden:</p>
+<p>Unsere Methode <code>computeSum()</code> könnte nun in der <code>myMethod()</code>-Methode wie folgt aufgerufen werden:</p>
 <div class="highlight"><pre><span></span><code><span class="n">computeSum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>    <span class="c1">// korrekt, aber sinnlos</span>
 </code></pre></div>
 <p>Ein solcher Aufruf macht aber gar keinen Sinn, weil die Methode selbst ja z.B. nichts ausgibt und somit hat diese Methode gar keinen Effekt. Sinnvoll eingesetzt werden kann eine solche Methode nur als Ausdruck, z.B.:</p>
@@ -583,18 +716,18 @@
 </code></pre></div>
 <p>Der Aufruf der Methode ist somit ein arithmetischer Ausdruck und kann auch als solcher behandelt werden, z.B. mit anderen arithmetischen Ausdrücken mittels arithmetischer Operatoren zu einem weiteren arithmetischen Ausdruck verknüpft werden. </p>
 <p>Hier noch weitere Beispiele für Methoden mit Rückgabe (hier Rückgabe vom Typ <code>boolean</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">areEqual</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">areEqual</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">nr1</span> <span class="o">==</span> <span class="n">nr2</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isDivider</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isDivider</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">nr1</span><span class="o">%</span><span class="n">nr2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Sie können auch Methoden in Methoden aufrufen. Nehmen wir die beiden Methoden <code>areEqual(int, int)</code> und <code>isDivider(int, int)</code> und angenommen, wir wollen für 2 <code>int</code>-Zahlen prüfen, ob die eine Teiler der anderen ist, aber beide sollen nicht gleich sein, dann können wir folgende Methode schreiben:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isDividerButNotEqual</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isDividerButNotEqual</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">isDivider</span><span class="p">(</span><span class="n">nr1</span><span class="p">,</span> <span class="n">nr2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">areEqual</span><span class="p">(</span><span class="n">nr1</span><span class="p">,</span> <span class="n">nr2</span><span class="p">));</span>
 <span class="p">}</span>
@@ -607,8 +740,8 @@
 <li>als Rückgabetyp definieren wir <code>boolean</code>, denn wir wollen ja prüfen, ob sich die beiden ganzzahlig teilen, aber nicht gleich sind</li>
 </ul>
 </li>
-<li>innerhalb der Methode rufen wir die Methode <code>isDivider(nr1, nr2)</code> auf und übergeben dabei unsere Werte für <code>nr1</code> und <code>nr2</code>. Der Aufruf dieser Methode entspricht einem boole<code>schen Ausdruck, da diese Methode ein</code>boolean<code>zurückgibt (</code>true<code>, wenn</code>nr2<code>Teiler von</code>nr1<code>ist und</code>false` sonst - also, wenn nicht)</li>
-<li>außerdem rufen wir die Methode <code>areEqual(nr1, nr2)</code> auf und übergeben dabei ebenfalls unsere Werte für <code>nr1</code> und <code>nr2</code>. Der Aufruf dieser Methode entspricht ebenfalls einem boole<code>schen Ausdruck, da diese Methode ein</code>boolean<code>zurückgibt (</code>true<code>, wenn</code>nr1<code>und</code>nr2<code>gleich sind und</code>false` sonst - also, wenn nicht)</li>
+<li>innerhalb der Methode rufen wir die Methode <code>isDivider(nr1, nr2)</code> auf und übergeben dabei unsere Werte für <code>nr1</code> und <code>nr2</code>. Der Aufruf dieser Methode entspricht einem boole'schen Ausdruck, da diese Methode ein <code>boolean</code> zurückgibt (<code>true</code>, wenn <code>nr2</code> Teiler von <code>nr1</code> ist und <code>false</code> sonst - also, wenn nicht)</li>
+<li>außerdem rufen wir die Methode <code>areEqual(nr1, nr2)</code> auf und übergeben dabei ebenfalls unsere Werte für <code>nr1</code> und <code>nr2</code>. Der Aufruf dieser Methode entspricht ebenfalls einem boole'schen Ausdruck, da diese Methode ein <code>boolean</code> zurückgibt (<code>true</code>, wenn <code>nr1</code> und <code>nr2</code> gleich sind und <code>false</code> sonst - also, wenn nicht)</li>
 <li>wir wollen aber prüfen, ob sie <strong>nicht</strong> gleich sind, also schreiben wir <code>!areEqual(nr1, nr2)</code> - also die Negation dieses Ausdrucks</li>
 <li>wir wollen prüfen, <ul>
 <li>ob <code>isDivider(nr1, nr2)</code> <strong>UND NICHT</strong> <code>areEqual(nr1, nr2)</code>, </li>
@@ -651,12 +784,47 @@ Einer Methode können beliebig viele Parameter übergeben werden. Diese lokalen 
         
 <footer class="md-footer">
   
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../ausdruecke/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Ausdrücke" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Ausdrücke
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../selektion/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Selektion" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Selektion
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020 Jörn Freiheit
+            Copyright &copy; 2021 Jörn Freiheit
           </div>
         
         Made with

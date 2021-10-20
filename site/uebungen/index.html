@@ -284,6 +284,66 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../methoden/" class="md-nav__link">
+        Methoden
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -663,6 +723,41 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
 </code></pre></div></li>
 </ol>
 </details>
+<details class="note"><summary>Übung 3 (3.11.2021)</summary><ol>
+<li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung3</code>. </li>
+<li>Erstellen Sie darin eine Klasse <code>Uebung3</code>. </li>
+<li>Ersetzen Sie den gesamten Code der Klasse <code>Uebung3</code> durch folgenden Code:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung3</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Uebung3</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myLesson3Method</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Definieren Sie alle Ihre Methoden außerhalb dieser Methode</span>
+        <span class="c1">// Rufen Sie alle Ihre Methoden hier auf</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Schreiben Sie eine Umrechnung für eine gegebene Anzahl von Sekunden (<code>printSeconds(int seconds)</code>), z.B. <code>printSeconds(3456789)</code>:
+    <div class="highlight"><pre><span></span><code><span class="m">3456789</span> Sekunden sind <span class="m">40</span> Tage, <span class="m">13</span> Minuten, <span class="m">9</span> Sekunden.
+</code></pre></div>
+    Aber z.B. <code>printSeconds(2345678)</code>:
+    <div class="highlight"><pre><span></span><code><span class="m">2345678</span> Sekunden sind <span class="m">27</span> Tage, <span class="m">3</span> Stunden, <span class="m">34</span> Minuten, <span class="m">38</span> Sekunden.
+</code></pre></div>
+    Aber z.B. <code>printSeconds(123456)</code>:
+    <div class="highlight"><pre><span></span><code><span class="m">123456</span> Sekunden sind <span class="m">1</span> Tag, <span class="m">10</span> Stunden, <span class="m">17</span> Minuten, <span class="m">36</span> Sekunden.
+</code></pre></div>
+    Aber z.B. <code>printSeconds(12345)</code>:
+    <div class="highlight"><pre><span></span><code><span class="m">12345</span> Sekunden sind <span class="m">3</span> Stunden, <span class="m">25</span> Minuten, <span class="m">45</span> Sekunden.
+</code></pre></div></li>
+<li>Die <code>printSeconds()</code>-Methode gibt selbst etwas aus. Welchen Rückgabetyp hat sie? Schreiben Sie eine weitere Methode <code>computeSeconds(int seconds)</code>, die genau die gleiche Funktionalität hat, aber den Ausgabestring nicht auf die Konsole ausgibt, sondern zurück. </li>
+<li>Wie könnten (und sollten!) Sie die <code>computeSeconds()</code>-Methode in der <code>printSeconds()</code>-Methode verwenden? Warum?</li>
+</ol>
+</details>
                 
               
               
@@ -682,7 +777,7 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ausdruecke/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Ausdrücke" rel="prev">
+        <a href="../methodenstack/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Methodenstack" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -691,7 +786,7 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
               <span class="md-footer__direction">
                 Zurück
               </span>
-              Ausdrücke
+              Methodenstack
             </div>
           </div>
         </a>
@@ -719,7 +814,7 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020 Jörn Freiheit
+            Copyright &copy; 2021 Jörn Freiheit
           </div>
         
         Made with

@@ -1,21 +1,21 @@
 # Methoden
 
-Bis jetzt haben wir unseren Programmcode stets in die `main()`-Methode geschrieben. Das wird auf Dauer viel zu unübersichtlich. Außerdem verstoßen wir so gegen zwei wichtige Prinzipien der Programmierung: 
+Bis jetzt haben wir unseren Programmcode immer in genau eine Methode geschrieben (z.B. `printObjectState()`. Das wird auf Dauer viel zu unübersichtlich. Außerdem verstoßen wir so gegen zwei wichtige Prinzipien der Programmierung: 
 
 - dem *Single Responsibility Principle (SRP)* und
 - *Don't repeat yourself (DRY)*.
 
-Die ursprüngliche Formulierung des SRP stammt von [**Robert C. Martin**](http://blog.cleancoder.com/), der es als ein Prinzip der Objektorientierung einführte und es ein wenig anders meinte, als wir es hier verwenden. Dazu kommen wir, wenn wir uns mit Objektorientierung beschäftigen. Wir können uns aber als wesentliche Prinzipien schonmal merken, dass
+Die ursprüngliche Formulierung des SRP stammt von [**Robert C. Martin**](http://blog.cleancoder.com/). Wir können uns als wesentliche Prinzipien schonmal merken, dass
 
-- eine Variable genau eine Bedeutung haben soll und niemals für verschiedene Bedeutungen benutzt werden sollte (zwei Bedeutungen `==` zwei Variablen) und
+- eine Variable genau eine Bedeutung haben soll und niemals für verschiedene Bedeutungen benutzt werden sollte (zwei Bedeutungen: zwei Variablen) und
 - eine *Methode* genau eine Sache erledigen sollte.
 
-Zunächst schauen wir uns an, was eine *Methode* überhaupt ist und wie wir sie definieren und verwenden. Angenommen, wir haben ein Programm in der folgenden Form:
+Zunächst schauen wir uns an, was eine *Methode* überhaupt ist und wie wir sie definieren und verwenden. Angenommen, wir haben eine Methode in der folgenden Form:
 
 ```java
 public class Methods
 {
-	public static void main(String[] args)
+	public void myMethod()
 	{
 		int summand1 = 3;
 		int summand2 = 4;
@@ -35,14 +35,14 @@ public class Methods
 }
 ```
 
-In dieser `main()`-Methode machen wir drei Mal das Gleiche, wir addieren 2 Summanden und geben das Ergebnis der Berechnung aus. Wir sehen insbesondere doppelten (sogar dreifachen) Code, d.h. wir wiederholen uns. Außerdem geben die vergebenen Namen nur an, wofür die Variablen da sind, aber es gibt keine namentliche Beschreibung von dem, *WAS* wir tun. 
+In dieser `myMethod()`-Methode machen wir drei Mal das Gleiche, wir addieren 2 Summanden und geben das Ergebnis der Berechnung aus. Wir sehen insbesondere doppelten (sogar dreifachen) Code, d.h. wir wiederholen uns. Außerdem geben die vergebenen Namen nur an, wofür die Variablen da sind, aber es gibt keine namentliche Beschreibung von dem, *WAS* wir tun. 
 
 ## Methodendefinition
 
 Das wollen wir ändern und laden den sich wiederholenden Code in eine *Methode* aus. Diese Methode nennen wir `add()`:
 
 ```java linenums="1"
-public static void add(int summand1, int summand2)
+public void add(int summand1, int summand2)
 {
 	int summe = summand1 + summand2;
 	System.out.println(summand1 + " + " + summand2 + " = " + summe);
@@ -53,7 +53,6 @@ Betrachten wir diese *Definition einer Methode* genauer:
 
 - In Zeile `1` sehen wir den *Methodenkopf*:
 	- Das Schlüsselwort `public` besagt, dass diese Methode von allen anderen Klassen (die wir noch nicht haben) aufgerufen werden kann. Es handelt sich um eine *öffentliche* Methode. Wir gehen darauf genauer ein, wenn wir uns mit *Sichtbarkeitsmodifizierern* beschäftigen. 
-	- Das Schlüsselwort `static` besagt, dass wir diese Methode verwenden (aufrufen) können, ohne eine Objekt der Klasse `Methods` erzeugen zu müssen. Wir können derzeit eh noch keine Objekte erzeugen, also definieren wir zunächst alle unsere Methoden als `static` (*statisch*, *Klassenmethode*).
 	- Das Schlüsselwort `void` steht dafür, dass der Aufruf unserer Methode keinen Wert hat, d.h. der Aufruf dieser Methode ist eine Anweisung ohne Nebeneffekt. Wenn die Methode einen Wert haben soll, dann wird hier ein Datentyp eingetragen (sehen wir im nächsten Beispiel).
 	- `add` ist der Methodenname. Hier gelten die Bedingungen, die wir an [**Bezeichner**](./variablen/#bezeichner) in Java haben. Methodennamen beginnen stets mit einem Kleinbuchstaben. 
 	- Nach dem Methodennamen kommen runde Klammern und darin sogenannte *Parameter*. Parameter sind Variablen. Parameter werden in der Methodendefinition deklariert, aber nicht initialisiert. Parameter werden beim Aufruf der Methode initialisiert.
@@ -69,7 +68,7 @@ Die Definition einer Methode erfolgt immer
 
 ## Methodenaufruf
 
-In der `main()`-Methode wird unsere Methode nun aufgerufen. Wichtig ist es zu beachten, dass
+In der `myMethod()`-Methode wird unsere Methode nun aufgerufen. Wichtig ist es zu beachten, dass
 
 - wir exakt den gleichen Namen für die Methode verwenden, wie in der Methodendefinition angegeben (Groß- und Kleinschreibung beachten!) und 
 - dass der Methode in den runden Klammern Werte für die Parameter übergeben werden. Dabei müssen
@@ -81,13 +80,13 @@ Hier nochmal die gesamte Klasse `Methods` mit den Aufrufen der `add()`-Methode i
 ```java linenums="1"
 public class Methods
 {
-	public static void add(int summand1, int summand2)
+	public void add(int summand1, int summand2)
 	{
 		int summe = summand1 + summand2;
 		System.out.println(summand1 + " + " + summand2 + " = " + summe);
 	}
 	
-	public static void main(String[] args)
+	public void myMethod()
 	{
 		add(3,4);
 		add(5,9);
@@ -96,19 +95,19 @@ public class Methods
 }
 ```
 
-In der `main()`-Methode wird nun drei Mal unsere neue `add()`-Methode aufgerufen. Bei jedem Aufruf werden Werte für die Parameter übergeben. Der Aufruf der Methode entspricht einer Anweisung (Semikolon am Ende). Der Aufruf der `add()`-Methode entspricht keinem Ausdruck, da der Aufruf dieser Methode ohne Wert ist. Dies liegt daran, dass in der Methodendefinition angegeben wurde, dass der Wert der Methode `void` ist - also kein Wert, kein Typ. 
+In der `myMethod()`-Methode wird nun drei Mal unsere neue `add()`-Methode aufgerufen. Bei jedem Aufruf werden Werte für die Parameter übergeben. Der Aufruf der Methode entspricht einer Anweisung (Semikolon am Ende). Der Aufruf der `add()`-Methode entspricht keinem Ausdruck, da der Aufruf dieser Methode ohne Wert ist. Dies liegt daran, dass in der Methodendefinition angegeben wurde, dass der Wert der Methode `void` ist - also kein Wert, kein Typ. 
 
-Beachten Sie, dass in der Klasse `Methods` nun zwei Methoden definiert sind, `main()` und `add()`. Die `main()`-Methode ist die *Programmmethode*, die automatisch ausgeführt wird, sobald wir das Programm starten. Damit die `add()`-Methode ausgeführt wird, muss sie aufgerufen werden.
+Beachten Sie, dass in der Klasse `Methods` nun zwei Methoden definiert sind, `myMethod()` und `add()`. Wenn wir die `myMethod()`-Methode aufrufen, wird sie ausgeführt. Das bedeutet, dass alle Anweisungen, die in der `myMethod()`-Methode definiert wurden, sequentiell abgearbeitet werden. Es wird also nacheinander drei Mal die `add()`-Methode aufgerufen und ausgeführt. Damit die `add()`-Methode überhaupt ausgeführt wird, muss sie aufgerufen werden.
 
 !!! info "Beachte"
-	Es werden nur alle Anweisungen ausgeführt, die in der `main()`-Methode enthalten sind! Wird `add()` nie in `main()` aufgerufen, wird `add()` auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!
+	Wird `add()` nie in aufgerufen, wird sie auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!
 
 ### Ausführung des Programms im Detail
 
 Wir schauen uns die Ausführung des obigen Programms nochmal im Detail an, um die Aufrufe genauer zu analysieren:
 
-1. durch das Starten des Programms wird die `main()`-Methode aufgerufen (Zeile `9`)
-2. die erste Anweisung in der `main()`-Methode ist `add(3,4);` (Zeile `11`)
+1. wir rufen die `myMethod()`-Methode auf (Zeile `9`)
+2. die erste Anweisung in der `myMethod()`-Methode ist `add(3,4);` (Zeile `11`)
 3. dadurch wird die `add()`-Methode aufgerufen (Zeile `3`) 
 4. durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = 3` und `int summand2 = 4` (Zeile `3`) 
 5. die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `7`. (Zeile `5`) 
@@ -117,20 +116,20 @@ Wir schauen uns die Ausführung des obigen Programms nochmal im Detail an, um di
 	- `"3 + " + summand2` ist ebenfalls eine Konkatenation; das Ergebnis ist `"3 + 4"`.
 	- `"3 + 4" + " = "`  ist ebenfalls eine Konkatenation; das Ergebnis ist `"3 + 4 = "`.
 	- `"3 + 4 = " + summe`  ist ebenfalls eine Konkatenation; das Ergebnis ist `"3 + 4 = 7"`.
-7. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `main()`-Methode gegangen.
-8. die nächste Anweisung in der `main()`-Methode ist `add(5,9);` (Zeile `12`)
+7. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `myMethod()`-Methode gegangen.
+8. die nächste Anweisung in der `myMethod()`-Methode ist `add(5,9);` (Zeile `12`)
 9. dadurch wird erneut die `add()`-Methode aufgerufen (Zeile `3`) 
 10. durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = 5` und `int summand2 = 9` (Zeile `3`) 
 11. die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `14`. (Zeile `5`) 
 12. Es wird die Methode `System.out.println()` aufgerufen. Der auszugebene String ergibt sich aus `summand1 + " + " + summand2 + " = " + summe`. Der Wert (vom Typ `String`) dieses Ausdrucks ist `"5 + 9 = 14"`.
-13. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `main()`-Methode gegangen.
-14. die nächste Anweisung in der `main()`-Methode ist `add(-115,999);` (Zeile `13`)
+13. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `myMethod()`-Methode gegangen.
+14. die nächste Anweisung in der `myMethod()`-Methode ist `add(-115,999);` (Zeile `13`)
 15. dadurch wird erneut die `add()`-Methode aufgerufen (Zeile `3`) 
 16. durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = -115` und `int summand2 = 999` (Zeile `3`) 
 17. die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `884`. (Zeile `5`) 
 18. Es wird die Methode `System.out.println()` aufgerufen. Der auszugebene String ergibt sich aus `summand1 + " + " + summand2 + " = " + summe`. Der Wert (vom Typ `String`) dieses Ausdrucks ist `"-115 + 999 = 884"`.
-19. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `main()`-Methode gegangen.
-20. in der `main()`-Methode gibt es keine weitere Anweisung mehr. Das Programm ist beendet.
+19. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `myMethod()`-Methode gegangen.
+20. in der `myMethod()`-Methode gibt es keine weitere Anweisung mehr. Der Aufruf dieser Methode ist beendet.
 
 ## Methode gibt einen Wert zurück
 
@@ -142,7 +141,7 @@ Jetzt erstellen wir eine Methode `computeSum()`, die das gleiche macht wie `add(
 
 Die Definition dieser Methode sieht dann so aus:
 ```java linenums="1"
-public static int computeSum(int summand1, int summand2)
+public int computeSum(int summand1, int summand2)
 {
 	int summe = summand1 + summand2;
 	return summe;
@@ -156,7 +155,7 @@ Zwei ganz wesentliche Unterschiede zur Definition von `add()` fallen auf:
 
 ## Aufruf einer Methode, die einen Wert zurückgibt
 
-Unsere Methode `computeSum()` könnte nun in der `main()`-Methode wie folgt aufgerufen werden:
+Unsere Methode `computeSum()` könnte nun in der `myMethod()`-Methode wie folgt aufgerufen werden:
 
 ```java
 computeSum(3,4);	// korrekt, aber sinnlos
@@ -174,12 +173,12 @@ Der Aufruf der Methode ist somit ein arithmetischer Ausdruck und kann auch als s
 Hier noch weitere Beispiele für Methoden mit Rückgabe (hier Rückgabe vom Typ `boolean`):
 
 ```java
-public static boolean areEqual(int nr1, int nr2)
+public boolean areEqual(int nr1, int nr2)
 {
 	return (nr1 == nr2);
 }
 
-public static boolean isDivider(int nr1, int nr2)
+public boolean isDivider(int nr1, int nr2)
 {
 	return (nr1%nr2 == 0);
 }
@@ -188,7 +187,7 @@ public static boolean isDivider(int nr1, int nr2)
 Sie können auch Methoden in Methoden aufrufen. Nehmen wir die beiden Methoden `areEqual(int, int)` und `isDivider(int, int)` und angenommen, wir wollen für 2 `int`-Zahlen prüfen, ob die eine Teiler der anderen ist, aber beide sollen nicht gleich sein, dann können wir folgende Methode schreiben:
 
 ```java
-public static boolean isDividerButNotEqual(int nr1, int nr2)
+public boolean isDividerButNotEqual(int nr1, int nr2)
 {
 	return (isDivider(nr1, nr2) && !areEqual(nr1, nr2));
 }
@@ -200,8 +199,8 @@ Das schauen wir uns einmal genauer an:
 	- wir vergeben einen Namen (`isDividerButNotEqual`) und 
 	- wir legen fest, dass bei Aufruf der Methode zwei `int`-Werte übergeben werden müssen (`(int nr1, int nr2)`).
 	- als Rückgabetyp definieren wir `boolean`, denn wir wollen ja prüfen, ob sich die beiden ganzzahlig teilen, aber nicht gleich sind
-- innerhalb der Methode rufen wir die Methode `isDivider(nr1, nr2)` auf und übergeben dabei unsere Werte für `nr1` und `nr2`. Der Aufruf dieser Methode entspricht einem boole`schen Ausdruck, da diese Methode ein `boolean` zurückgibt (`true`, wenn `nr2` Teiler von `nr1` ist und `false` sonst - also, wenn nicht)
-- außerdem rufen wir die Methode `areEqual(nr1, nr2)` auf und übergeben dabei ebenfalls unsere Werte für `nr1` und `nr2`. Der Aufruf dieser Methode entspricht ebenfalls einem boole`schen Ausdruck, da diese Methode ein `boolean` zurückgibt (`true`, wenn `nr1` und `nr2` gleich sind und `false` sonst - also, wenn nicht)
+- innerhalb der Methode rufen wir die Methode `isDivider(nr1, nr2)` auf und übergeben dabei unsere Werte für `nr1` und `nr2`. Der Aufruf dieser Methode entspricht einem boole'schen Ausdruck, da diese Methode ein `boolean` zurückgibt (`true`, wenn `nr2` Teiler von `nr1` ist und `false` sonst - also, wenn nicht)
+- außerdem rufen wir die Methode `areEqual(nr1, nr2)` auf und übergeben dabei ebenfalls unsere Werte für `nr1` und `nr2`. Der Aufruf dieser Methode entspricht ebenfalls einem boole'schen Ausdruck, da diese Methode ein `boolean` zurückgibt (`true`, wenn `nr1` und `nr2` gleich sind und `false` sonst - also, wenn nicht)
 - wir wollen aber prüfen, ob sie **nicht** gleich sind, also schreiben wir `!areEqual(nr1, nr2)` - also die Negation dieses Ausdrucks
 - wir wollen prüfen, 
 	- ob `isDivider(nr1, nr2)` **UND NICHT** `areEqual(nr1, nr2)`, 

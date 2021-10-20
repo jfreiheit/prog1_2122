@@ -175,3 +175,44 @@
 	17/4 = 4
 	17 mod 4 = 1
 	```
+
+
+
+??? note "Übung 3 (3.11.2021)"
+	1. Öffnen Sie `BlueJ` und erstellen Sie ein neues Projekt `uebung3`. 
+	2. Erstellen Sie darin eine Klasse `Uebung3`. 
+	3. Ersetzen Sie den gesamten Code der Klasse `Uebung3` durch folgenden Code:
+		```java 
+		public class Uebung3
+		{
+		    public Uebung3()
+		    {
+		        
+		    }
+
+		    public void myLesson3Method()
+		    {
+		        // Definieren Sie alle Ihre Methoden außerhalb dieser Methode
+		        // Rufen Sie alle Ihre Methoden hier auf
+		        
+		    }
+		}
+		```
+	3. Schreiben Sie eine Umrechnung für eine gegebene Anzahl von Sekunden (`printSeconds(int seconds)`), z.B. `printSeconds(3456789)`:
+		```bash
+		3456789 Sekunden sind 40 Tage, 13 Minuten, 9 Sekunden.
+		```
+		Aber z.B. `printSeconds(2345678)`:
+		```bash
+		2345678 Sekunden sind 27 Tage, 3 Stunden, 34 Minuten, 38 Sekunden.
+		```
+		Aber z.B. `printSeconds(123456)`:
+		```bash
+		123456 Sekunden sind 1 Tag, 10 Stunden, 17 Minuten, 36 Sekunden.
+		```
+		Aber z.B. `printSeconds(12345)`:
+		```bash
+		12345 Sekunden sind 3 Stunden, 25 Minuten, 45 Sekunden.
+		```
+	4. Die `printSeconds()`-Methode gibt selbst etwas aus. Welchen Rückgabetyp hat sie? Schreiben Sie eine weitere Methode `computeSeconds(int seconds)`, die genau die gleiche Funktionalität hat, aber den Ausgabestring nicht auf die Konsole ausgibt, sondern zurück. 
+	5. Wie könnten (und sollten!) Sie die `computeSeconds()`-Methode in der `printSeconds()`-Methode verwenden? Warum?
