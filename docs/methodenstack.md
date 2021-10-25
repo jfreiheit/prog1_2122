@@ -1,6 +1,6 @@
 # Methodenstack
 
-Programme und die dazugehörigen Variablen (und deren Werte) befinden sich zur Ausführung im Arbeitsspeicher. Der Speicher ist in Blöcke (Bytes) unetrteilt, die jeweils adressierbar sind. So könnte alles jeweils eine Adresse zugeordnet werden und mit einer komplexen Adressverwaltung ließen sich die Einzelteile ansprechen. Das ist jedoch viel zu aufwendig und inperformant. Deshalb werden Speichermodelle verwendet, die die Verwaltung der Programmteile erleichtern. Ein solches Speichermodell ist der *Stack* (*Stapelspeicher*). 
+Programme und die dazugehörigen Variablen (und deren Werte) befinden sich zur Ausführung im Arbeitsspeicher. Der Speicher ist in Blöcke (Bytes) unterteilt, die jeweils adressierbar sind. So könnte alles jeweils eine Adresse zugeordnet werden und mit einer komplexen Adressverwaltung ließen sich die Einzelteile ansprechen. Das ist jedoch viel zu aufwendig und inperformant. Deshalb werden Speichermodelle verwendet, die die Verwaltung der Programmteile erleichtern. Ein solches Speichermodell ist der *Stack* (*Stapelspeicher*). 
 
 Bei einem Stack gilt das *Last in first out (LIFO)* Prinzip, also das, was zuletzt in den Stack kam, muss auch als erstes wieder hinaus. tatsächlich gibt es nur ganz wenige Funktionalitäten, um einen solchen Stack zu verwalten: 
 
@@ -317,7 +317,7 @@ Lösen Sie die folgenden Übungsaufgaben durch Überlegen!
 
 Wir haben uns bereits eingehend mit der [Lebensdauer und der Sichtbarkeit](./#lebensdauer-und-sichtbarkeit-von-lokalen-variablen) von *lokalen* Variablen beschäftigt. Es ist dabei übrigens gaz egal, ob es sich um Variablen von einem Werte- oder einem Referenztyp handelt. Auf die Lebensdauer und Sichtbarkeit hat das keinen Einfluss. 
 
-Wir wissen auch bereits, dass *Objektvariablen* für jeweils ein Objekt existieren. Die Lebensdauer einer Objektvariablen entspricht also der Lebensdauer ihres Objektes. Wir wissen auch über die Sichtbarkeit der Objektvariablen bescheid, denn sie sind in der gesamten Klasse sichtbar, in der sie deklariert werden, also auch in allen Methoden dieser Klasse. Ob sie darüber hinaus auch über eine Referenz auf ein Objekt in anderen Klassen sichtbar sind, hängt vom Sichtbarkeitsmodifizierer ab. Normalerweise nicht, denn wir deklarieren alle Objektvariablen als `private`.
+Wir wissen auch bereits, dass *Objektvariablen* für jeweils ein Objekt existieren. Die Lebensdauer einer Objektvariablen entspricht also der Lebensdauer ihres Objektes. Wir wissen auch über die Sichtbarkeit der Objektvariablen Bescheid, denn sie sind in der gesamten Klasse sichtbar, in der sie deklariert werden, also auch in allen Methoden dieser Klasse. Ob sie darüber hinaus auch über eine Referenz auf ein Objekt in anderen Klassen sichtbar sind, hängt vom Sichtbarkeitsmodifizierer ab. Normalerweise nicht, denn wir deklarieren alle Objektvariablen als `private`.
 
 Wir wollen nun untersuchen, wie lange Objekte existieren. Wir wissen bereits, dass ihre Existenz mit der Anweisung `new` gefolgt vom Konstruktor beginnt. 
 
@@ -392,7 +392,7 @@ Wir wissen, wann Objekte anfangen, zu existieren (wenn sie erzeugt werden), aber
 
 	![referenztyp](./files/78_referenztyp.png)
 
-	Auf das erste Objekt existieren also gleich zwei Referenzen. Über beide Referenzen kann mittels Punktnotation auf das Objekt (dessen Objekteigenschaften) zugegriffen werden. Es ist also egal, ob man `p1.` oder `p3.` schreibt, beide zeigen auf das gleiche Objekt. 
+	Auf das erste Objekt existieren also gleich zwei Referenzen. Über beide Referenzen kann mittels Punktnotation auf das Objekt (dessen Objekteigenschaften) zugegriffen werden. Es ist also egal, ob man `p1` oder `p3` schreibt, beide zeigen auf das gleiche Objekt. 
 
 5. Eine Referenz ändern
 
@@ -412,7 +412,7 @@ Wir wissen, wann Objekte anfangen, zu existieren (wenn sie erzeugt werden), aber
 
 	![referenztyp](./files/79_referenztyp.png)
 
-	Nun zeigen `p2` und `p3` auf dasselbe Objekt. Nun ist es also egal, ob man `p2.` oder `p3.` schreibt, beide zeigen auf dasselbe - das "zweite" - Objekt. Auf das "erste" Objekt zeigt nur noch `p1`. 
+	Nun zeigen `p2` und `p3` auf dasselbe Objekt. Nun ist es also egal, ob man `p2` oder `p3` schreibt, beide zeigen auf dasselbe - das "zweite" - Objekt. Auf das "erste" Objekt zeigt nur noch `p1`. 
 
 6. Eine weitere Referenz ändern
 
@@ -476,7 +476,7 @@ public void start()
 }
 ```
 
-Im oberen Beispiel wurde die `p1`-referenzvariable vom Typ `Point` deklariert und ein `Point`-Objekt. Die `p1`-variable referenziert (zeigt auf) das `Point`-Objekt. Danach wird `p1` explizit der "Wert" `null` zugeordnet. Die `p1`-Variable zeigt auf *kein* `Point`-Objekt mehr. Da das `Point`-Objekt nun keine Referenz mehr auf sich hat (und somit nicht mehr verwendet werden kann), wird es durch die Garbage Collection entsorgt. 
+Im oberen Beispiel wurde die `p1`-Referenzvariable vom Typ `Point` deklariert und ein `Point`-Objekt. Die `p1`-Variable referenziert (zeigt auf) das `Point`-Objekt. Danach wird `p1` explizit der "Wert" `null` zugeordnet. Die `p1`-Variable zeigt auf *kein* `Point`-Objekt mehr. Da das `Point`-Objekt nun keine Referenz mehr auf sich hat (und somit nicht mehr verwendet werden kann), wird es durch die Garbage Collection entsorgt. 
 
 ### Referenzvergleiche mit `==`
 

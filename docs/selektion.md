@@ -10,7 +10,7 @@ Wir betrachten nun die Selektion genauer und schauen uns an, wie wir sie in Java
 
 ## `if...else`
 
-Bei der Selektion ist die Ausführung von Anweisungen von einer Bedingung abhängig. Angenommen, wir wollen erreichen, dass eine Zahl `number` halbiert wird, wenn sie gerade ist oder sie wird mit 3 multipliziert und 1 addiert, wenn sie ungerade ist. Es findet also eine Selektion der Anwesiungen statt, je nachdem ob `number` gerade ist oder nicht. Als "Pseudocode" sieht das so aus:
+Bei der Selektion ist die Ausführung von Anweisungen von einer Bedingung abhängig. Angenommen, wir wollen erreichen, dass eine Zahl `number` halbiert wird, wenn sie gerade ist oder sie wird mit 3 multipliziert und 1 addiert, wenn sie ungerade ist. Es findet also eine Selektion der Anweisungen statt, je nachdem ob `number` gerade ist oder nicht. Als "Pseudocode" sieht das so aus:
 
 ```bash
 wenn (number ist gerade)
@@ -334,7 +334,7 @@ Der Ablauf einer `switch()`-Anweisung ist nun so, dass für den entsprechenden W
 - entweder ein `break;` kommt oder
 - die `switch()`-Anweisung beendet ist. 
 
-`break;` stoppt also die Abarbeitung. Würde in unserem Beispiel kein `break` enthalten sien und wäre `month`z.B. `6`, dann würden alle Monate ab und inkl. Juli ausgegeben werden. Der `default:`-Fall ist dafür, falls keine der `case` passt. Der `default:`-Fall ist optional. 
+`break;` stoppt also die Abarbeitung. Würde in unserem Beispiel kein `break` enthalten sein und wäre `month`z.B. `6`, dann würden alle Monate ab und inkl. Juni ausgegeben werden. Der `default:`-Fall ist dafür, falls keine der `case` passt. Der `default:`-Fall ist optional. 
 
 Dass die Anweisungen nach `case x:` nicht in Anweisungsblöcken stehen und dass die Verwendung von `break;` erforderlich ist, um die Ausführung von Anweisungen zu stoppen, macht diese alte Syntax der `switch()`-Anweisung unschön. Wir betrachten noch ein Beispiel in der alten Syntax, um den Unterschied zur neuen noch besser zu erläutern:
 
@@ -380,5 +380,5 @@ Mehrere Dinge fallen auf:
 
 
 !!! success
-    Wir haben 2 Möglichkeiten kennengelernt, die Selktion in Java zu implementieren. Die eine (und bedeutendste) Möglichkeit ist die `if...else`-Anweisung. Dort wird in Abhängigkeit vom Wahreheitswert einer Bedingung entweder der eine oder der andere Anweisungsblock ausgeführt. Der `else`-Block kann auch weggelassen werden. Innerhalb eines Anweisungsblockes können beliebige Kontrollstrukturen stehen: Sequenzen, Iterationen und Selektionen. 
+    Wir haben 2 Möglichkeiten kennengelernt, die Selektion in Java zu implementieren. Die eine (und bedeutendste) Möglichkeit ist die `if...else`-Anweisung. Dort wird in Abhängigkeit vom Wahreheitswert einer Bedingung entweder der eine oder der andere Anweisungsblock ausgeführt. Der `else`-Block kann auch weggelassen werden. Innerhalb eines Anweisungsblockes können beliebige Kontrollstrukturen stehen: Sequenzen, Iterationen und Selektionen. 
     Die zweite Möglichkeit ist die `switch()`-Anweisung, die seit Java 12 auch selbst ein Ausdruck sein kann. Wir haben die alte Syntax der `switch()`-Anweisung kritisch betrachtet und die neue Syntax kennengelernt.

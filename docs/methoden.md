@@ -39,7 +39,7 @@ In dieser `myMethod()`-Methode machen wir drei Mal das Gleiche, wir addieren 2 S
 
 ## Methodendefinition
 
-Das wollen wir ändern und laden den sich wiederholenden Code in eine *Methode* aus. Diese Methode nennen wir `add()`:
+Das wollen wir ändern und lagern den sich wiederholenden Code in eine *Methode* aus. Diese Methode nennen wir `add()`:
 
 ```java linenums="1"
 public void add(int summand1, int summand2)
@@ -75,7 +75,7 @@ In der `myMethod()`-Methode wird unsere Methode nun aufgerufen. Wichtig ist es z
 	- die Anzahl der Parameter und
 	- der jeweilige Typ der Parameter mit dem Aufruf übereinstimmen. 
 
-Hier nochmal die gesamte Klasse `Methods` mit den Aufrufen der `add()`-Methode in `main()`:
+Hier nochmal die gesamte Klasse `Methods` mit den Aufrufen der `add()`-Methode in `myMethod()`:
 
 ```java linenums="1"
 public class Methods
@@ -100,36 +100,36 @@ In der `myMethod()`-Methode wird nun drei Mal unsere neue `add()`-Methode aufger
 Beachten Sie, dass in der Klasse `Methods` nun zwei Methoden definiert sind, `myMethod()` und `add()`. Wenn wir die `myMethod()`-Methode aufrufen, wird sie ausgeführt. Das bedeutet, dass alle Anweisungen, die in der `myMethod()`-Methode definiert wurden, sequentiell abgearbeitet werden. Es wird also nacheinander drei Mal die `add()`-Methode aufgerufen und ausgeführt. Damit die `add()`-Methode überhaupt ausgeführt wird, muss sie aufgerufen werden.
 
 !!! info "Beachte"
-	Wird `add()` nie in aufgerufen, wird sie auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!
+	Wird `add()` nirgends aufgerufen, wird sie auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!
 
 ### Ausführung des Programms im Detail
 
 Wir schauen uns die Ausführung des obigen Programms nochmal im Detail an, um die Aufrufe genauer zu analysieren:
 
-1. wir rufen die `myMethod()`-Methode auf (Zeile `9`)
-2. die erste Anweisung in der `myMethod()`-Methode ist `add(3,4);` (Zeile `11`)
-3. dadurch wird die `add()`-Methode aufgerufen (Zeile `3`) 
-4. durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = 3` und `int summand2 = 4` (Zeile `3`) 
-5. die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `7`. (Zeile `5`) 
+1. Wir rufen die `myMethod()`-Methode auf (Zeile `9`).
+2. Die erste Anweisung in der `myMethod()`-Methode ist `add(3,4);` (Zeile `11`).
+3. Dadurch wird die `add()`-Methode aufgerufen (Zeile `3`). 
+4. Durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = 3` und `int summand2 = 4` (Zeile `3`). 
+5. Die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `7`. (Zeile `5`). 
 6. Es wird die Methode `System.out.println()` aufgerufen. Der auszugebene String ergibt sich aus `summand1 + " + " + summand2 + " = " + summe`. Der Wert (vom Typ `String`) dieses Ausdrucks ergibt sich aus:
 	- `summand1 + " + "` ist ein Konkatenation; das Ergebnis ist `"3 + "`.
 	- `"3 + " + summand2` ist ebenfalls eine Konkatenation; das Ergebnis ist `"3 + 4"`.
 	- `"3 + 4" + " = "`  ist ebenfalls eine Konkatenation; das Ergebnis ist `"3 + 4 = "`.
 	- `"3 + 4 = " + summe`  ist ebenfalls eine Konkatenation; das Ergebnis ist `"3 + 4 = 7"`.
 7. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `myMethod()`-Methode gegangen.
-8. die nächste Anweisung in der `myMethod()`-Methode ist `add(5,9);` (Zeile `12`)
-9. dadurch wird erneut die `add()`-Methode aufgerufen (Zeile `3`) 
-10. durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = 5` und `int summand2 = 9` (Zeile `3`) 
-11. die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `14`. (Zeile `5`) 
+8. Die nächste Anweisung in der `myMethod()`-Methode ist `add(5,9);` (Zeile `12`).
+9. Dadurch wird erneut die `add()`-Methode aufgerufen (Zeile `3`). 
+10. Durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = 5` und `int summand2 = 9` (Zeile `3`). 
+11. Die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `14`. (Zeile `5`). 
 12. Es wird die Methode `System.out.println()` aufgerufen. Der auszugebene String ergibt sich aus `summand1 + " + " + summand2 + " = " + summe`. Der Wert (vom Typ `String`) dieses Ausdrucks ist `"5 + 9 = 14"`.
 13. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `myMethod()`-Methode gegangen.
-14. die nächste Anweisung in der `myMethod()`-Methode ist `add(-115,999);` (Zeile `13`)
-15. dadurch wird erneut die `add()`-Methode aufgerufen (Zeile `3`) 
-16. durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = -115` und `int summand2 = 999` (Zeile `3`) 
-17. die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `884`. (Zeile `5`) 
+14. Die nächste Anweisung in der `myMethod()`-Methode ist `add(-115,999);` (Zeile `13`).
+15. Dadurch wird erneut die `add()`-Methode aufgerufen (Zeile `3`). 
+16. Durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. `int summand1 = -115` und `int summand2 = 999` (Zeile `3`). 
+17. Die erste Anweisung in der Methode `add()` ist `int summe = summand1 + summand2;`. dadurch wird die Variable `summe` deklariert und bekommt den Wert des Ausdrucks `summand1 + summand2` initial zugewiesen. Dieser Wert ist `884`. (Zeile `5`). 
 18. Es wird die Methode `System.out.println()` aufgerufen. Der auszugebene String ergibt sich aus `summand1 + " + " + summand2 + " = " + summe`. Der Wert (vom Typ `String`) dieses Ausdrucks ist `"-115 + 999 = 884"`.
 19. Nach Ausgabe des Strings in Zeile `6` ist die Abarbeitung der `add()`-Methode beendet. Diese Methode wird verlassen und es wird zurück zur `myMethod()`-Methode gegangen.
-20. in der `myMethod()`-Methode gibt es keine weitere Anweisung mehr. Der Aufruf dieser Methode ist beendet.
+20. In der `myMethod()`-Methode gibt es keine weitere Anweisung mehr. Der Aufruf dieser Methode ist beendet.
 
 ## Methode gibt einen Wert zurück
 

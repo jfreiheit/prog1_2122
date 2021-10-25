@@ -575,7 +575,7 @@
 </code></pre></div>
 <p>In dieser <code>myMethod()</code>-Methode machen wir drei Mal das Gleiche, wir addieren 2 Summanden und geben das Ergebnis der Berechnung aus. Wir sehen insbesondere doppelten (sogar dreifachen) Code, d.h. wir wiederholen uns. Außerdem geben die vergebenen Namen nur an, wofür die Variablen da sind, aber es gibt keine namentliche Beschreibung von dem, <em>WAS</em> wir tun. </p>
 <h2 id="methodendefinition">Methodendefinition<a class="headerlink" href="#methodendefinition" title="Permanent link">&para;</a></h2>
-<p>Das wollen wir ändern und laden den sich wiederholenden Code in eine <em>Methode</em> aus. Diese Methode nennen wir <code>add()</code>:</p>
+<p>Das wollen wir ändern und lagern den sich wiederholenden Code in eine <em>Methode</em> aus. Diese Methode nennen wir <code>add()</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -618,7 +618,7 @@
 </ul>
 </li>
 </ul>
-<p>Hier nochmal die gesamte Klasse <code>Methods</code> mit den Aufrufen der <code>add()</code>-Methode in <code>main()</code>:</p>
+<p>Hier nochmal die gesamte Klasse <code>Methods</code> mit den Aufrufen der <code>add()</code>-Methode in <code>myMethod()</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -654,16 +654,16 @@
 <p>Beachten Sie, dass in der Klasse <code>Methods</code> nun zwei Methoden definiert sind, <code>myMethod()</code> und <code>add()</code>. Wenn wir die <code>myMethod()</code>-Methode aufrufen, wird sie ausgeführt. Das bedeutet, dass alle Anweisungen, die in der <code>myMethod()</code>-Methode definiert wurden, sequentiell abgearbeitet werden. Es wird also nacheinander drei Mal die <code>add()</code>-Methode aufgerufen und ausgeführt. Damit die <code>add()</code>-Methode überhaupt ausgeführt wird, muss sie aufgerufen werden.</p>
 <div class="admonition info">
 <p class="admonition-title">Beachte</p>
-<p>Wird <code>add()</code> nie in aufgerufen, wird sie auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!</p>
+<p>Wird <code>add()</code> nirgends aufgerufen, wird sie auch niemals ausgeführt. Die Definition der Methode allein sorgt noch nicht für dessen Ausführung!</p>
 </div>
 <h3 id="ausfuhrung-des-programms-im-detail">Ausführung des Programms im Detail<a class="headerlink" href="#ausfuhrung-des-programms-im-detail" title="Permanent link">&para;</a></h3>
 <p>Wir schauen uns die Ausführung des obigen Programms nochmal im Detail an, um die Aufrufe genauer zu analysieren:</p>
 <ol>
-<li>wir rufen die <code>myMethod()</code>-Methode auf (Zeile <code>9</code>)</li>
-<li>die erste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(3,4);</code> (Zeile <code>11</code>)</li>
-<li>dadurch wird die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>) </li>
-<li>durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = 3</code> und <code>int summand2 = 4</code> (Zeile <code>3</code>) </li>
-<li>die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>7</code>. (Zeile <code>5</code>) </li>
+<li>Wir rufen die <code>myMethod()</code>-Methode auf (Zeile <code>9</code>).</li>
+<li>Die erste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(3,4);</code> (Zeile <code>11</code>).</li>
+<li>Dadurch wird die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>). </li>
+<li>Durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = 3</code> und <code>int summand2 = 4</code> (Zeile <code>3</code>). </li>
+<li>Die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>7</code>. (Zeile <code>5</code>). </li>
 <li>Es wird die Methode <code>System.out.println()</code> aufgerufen. Der auszugebene String ergibt sich aus <code>summand1 + " + " + summand2 + " = " + summe</code>. Der Wert (vom Typ <code>String</code>) dieses Ausdrucks ergibt sich aus:<ul>
 <li><code>summand1 + " + "</code> ist ein Konkatenation; das Ergebnis ist <code>"3 + "</code>.</li>
 <li><code>"3 + " + summand2</code> ist ebenfalls eine Konkatenation; das Ergebnis ist <code>"3 + 4"</code>.</li>
@@ -672,19 +672,19 @@
 </ul>
 </li>
 <li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>myMethod()</code>-Methode gegangen.</li>
-<li>die nächste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(5,9);</code> (Zeile <code>12</code>)</li>
-<li>dadurch wird erneut die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>) </li>
-<li>durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = 5</code> und <code>int summand2 = 9</code> (Zeile <code>3</code>) </li>
-<li>die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>14</code>. (Zeile <code>5</code>) </li>
+<li>Die nächste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(5,9);</code> (Zeile <code>12</code>).</li>
+<li>Dadurch wird erneut die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>). </li>
+<li>Durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = 5</code> und <code>int summand2 = 9</code> (Zeile <code>3</code>). </li>
+<li>Die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>14</code>. (Zeile <code>5</code>). </li>
 <li>Es wird die Methode <code>System.out.println()</code> aufgerufen. Der auszugebene String ergibt sich aus <code>summand1 + " + " + summand2 + " = " + summe</code>. Der Wert (vom Typ <code>String</code>) dieses Ausdrucks ist <code>"5 + 9 = 14"</code>.</li>
 <li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>myMethod()</code>-Methode gegangen.</li>
-<li>die nächste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(-115,999);</code> (Zeile <code>13</code>)</li>
-<li>dadurch wird erneut die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>) </li>
-<li>durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = -115</code> und <code>int summand2 = 999</code> (Zeile <code>3</code>) </li>
-<li>die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>884</code>. (Zeile <code>5</code>) </li>
+<li>Die nächste Anweisung in der <code>myMethod()</code>-Methode ist <code>add(-115,999);</code> (Zeile <code>13</code>).</li>
+<li>Dadurch wird erneut die <code>add()</code>-Methode aufgerufen (Zeile <code>3</code>). </li>
+<li>Durch den Aufruf werden die Parameter der Methode deklariert und initialisiert, d.h. <code>int summand1 = -115</code> und <code>int summand2 = 999</code> (Zeile <code>3</code>). </li>
+<li>Die erste Anweisung in der Methode <code>add()</code> ist <code>int summe = summand1 + summand2;</code>. dadurch wird die Variable <code>summe</code> deklariert und bekommt den Wert des Ausdrucks <code>summand1 + summand2</code> initial zugewiesen. Dieser Wert ist <code>884</code>. (Zeile <code>5</code>). </li>
 <li>Es wird die Methode <code>System.out.println()</code> aufgerufen. Der auszugebene String ergibt sich aus <code>summand1 + " + " + summand2 + " = " + summe</code>. Der Wert (vom Typ <code>String</code>) dieses Ausdrucks ist <code>"-115 + 999 = 884"</code>.</li>
 <li>Nach Ausgabe des Strings in Zeile <code>6</code> ist die Abarbeitung der <code>add()</code>-Methode beendet. Diese Methode wird verlassen und es wird zurück zur <code>myMethod()</code>-Methode gegangen.</li>
-<li>in der <code>myMethod()</code>-Methode gibt es keine weitere Anweisung mehr. Der Aufruf dieser Methode ist beendet.</li>
+<li>In der <code>myMethod()</code>-Methode gibt es keine weitere Anweisung mehr. Der Aufruf dieser Methode ist beendet.</li>
 </ol>
 <h2 id="methode-gibt-einen-wert-zuruck">Methode gibt einen Wert zurück<a class="headerlink" href="#methode-gibt-einen-wert-zuruck" title="Permanent link">&para;</a></h2>
 <p>Unsere Methode <code>add()</code> hat keinen Wert zurückgegeben. Das wurde im Methodenkopf festgelegt, wo wir mit <code>void</code> definiert haben, dass der Aufruf der Methode keinem Wert entspricht. Dies ist typisch für Methoden, die etwas auf die Konsole ausgeben. Alle Methoden, deren Aufgabe es ist, etwas auszugeben, sind (sollten sein) vom Rückgabetyp<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <code>void</code>.</p>

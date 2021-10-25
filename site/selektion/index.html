@@ -549,7 +549,7 @@
 </ul>
 <p>Wir betrachten nun die Selektion genauer und schauen uns an, wie wir sie in Java umsetzen. </p>
 <h2 id="ifelse"><code>if...else</code><a class="headerlink" href="#ifelse" title="Permanent link">&para;</a></h2>
-<p>Bei der Selektion ist die Ausführung von Anweisungen von einer Bedingung abhängig. Angenommen, wir wollen erreichen, dass eine Zahl <code>number</code> halbiert wird, wenn sie gerade ist oder sie wird mit 3 multipliziert und 1 addiert, wenn sie ungerade ist. Es findet also eine Selektion der Anwesiungen statt, je nachdem ob <code>number</code> gerade ist oder nicht. Als "Pseudocode" sieht das so aus:</p>
+<p>Bei der Selektion ist die Ausführung von Anweisungen von einer Bedingung abhängig. Angenommen, wir wollen erreichen, dass eine Zahl <code>number</code> halbiert wird, wenn sie gerade ist oder sie wird mit 3 multipliziert und 1 addiert, wenn sie ungerade ist. Es findet also eine Selektion der Anweisungen statt, je nachdem ob <code>number</code> gerade ist oder nicht. Als "Pseudocode" sieht das so aus:</p>
 <div class="highlight"><pre><span></span><code>wenn <span class="o">(</span>number ist gerade<span class="o">)</span>
     dann teile number durch <span class="m">2</span>
 sonst
@@ -833,7 +833,7 @@ sonst
 <li>entweder ein <code>break;</code> kommt oder</li>
 <li>die <code>switch()</code>-Anweisung beendet ist. </li>
 </ul>
-<p><code>break;</code> stoppt also die Abarbeitung. Würde in unserem Beispiel kein <code>break</code> enthalten sien und wäre <code>month</code>z.B. <code>6</code>, dann würden alle Monate ab und inkl. Juli ausgegeben werden. Der <code>default:</code>-Fall ist dafür, falls keine der <code>case</code> passt. Der <code>default:</code>-Fall ist optional. </p>
+<p><code>break;</code> stoppt also die Abarbeitung. Würde in unserem Beispiel kein <code>break</code> enthalten sein und wäre <code>month</code>z.B. <code>6</code>, dann würden alle Monate ab und inkl. Juni ausgegeben werden. Der <code>default:</code>-Fall ist dafür, falls keine der <code>case</code> passt. Der <code>default:</code>-Fall ist optional. </p>
 <p>Dass die Anweisungen nach <code>case x:</code> nicht in Anweisungsblöcken stehen und dass die Verwendung von <code>break;</code> erforderlich ist, um die Ausführung von Anweisungen zu stoppen, macht diese alte Syntax der <code>switch()</code>-Anweisung unschön. Wir betrachten noch ein Beispiel in der alten Syntax, um den Unterschied zur neuen noch besser zu erläutern:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// monat vom Typ `int`</span>
 <span class="kt">int</span> <span class="n">anzahlTageImMonat</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -872,7 +872,7 @@ sonst
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>Wir haben 2 Möglichkeiten kennengelernt, die Selktion in Java zu implementieren. Die eine (und bedeutendste) Möglichkeit ist die <code>if...else</code>-Anweisung. Dort wird in Abhängigkeit vom Wahreheitswert einer Bedingung entweder der eine oder der andere Anweisungsblock ausgeführt. Der <code>else</code>-Block kann auch weggelassen werden. Innerhalb eines Anweisungsblockes können beliebige Kontrollstrukturen stehen: Sequenzen, Iterationen und Selektionen. 
+<p>Wir haben 2 Möglichkeiten kennengelernt, die Selektion in Java zu implementieren. Die eine (und bedeutendste) Möglichkeit ist die <code>if...else</code>-Anweisung. Dort wird in Abhängigkeit vom Wahreheitswert einer Bedingung entweder der eine oder der andere Anweisungsblock ausgeführt. Der <code>else</code>-Block kann auch weggelassen werden. Innerhalb eines Anweisungsblockes können beliebige Kontrollstrukturen stehen: Sequenzen, Iterationen und Selektionen. 
 Die zweite Möglichkeit ist die <code>switch()</code>-Anweisung, die seit Java 12 auch selbst ein Ausdruck sein kann. Wir haben die alte Syntax der <code>switch()</code>-Anweisung kritisch betrachtet und die neue Syntax kennengelernt.</p>
 </div>
                 

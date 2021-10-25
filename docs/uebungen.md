@@ -170,7 +170,7 @@
 	```bash
 	16 geteilt durch 4 ergibt 4 ohne Rest.
 	```
-	8. Fügen Sie zwei weitere Anweisungen hinzu, sodass mit Hilfe der `println()`-Methode folgende Ausgaben (für die Beispielwerte `17` und `4`) erscheinen: 
+	8. Fügen Sie (mindestens) zwei weitere Anweisungen hinzu, sodass mit Hilfe der `println()`-Methode folgende Ausgaben (für die Beispielwerte `17` und `4`) erscheinen: 
 	```bash 
 	17/4 = 4
 	17 mod 4 = 1

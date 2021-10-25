@@ -770,7 +770,7 @@
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Hier ist der initiale Wert der Laufvariablen <code>5</code>. Die Bedingung prüft, ob <code>i</code> größer ist als <code>0</code>. nach jedem Schleifendurchlauf wird der Wert der Laufvriablen <code>i</code> um <code>1</code> rediziert. Es entsteht folgende Ausgabe:</p>
+<p>Hier ist der initiale Wert der Laufvariablen <code>5</code>. Die Bedingung prüft, ob <code>i</code> größer ist als <code>0</code>. nach jedem Schleifendurchlauf wird der Wert der Laufvriablen <code>i</code> um <code>1</code> reduziert. Es entsteht folgende Ausgabe:</p>
 <div class="highlight"><pre><span></span><code><span class="m">5</span>
 <span class="m">4</span>
 <span class="m">3</span>
@@ -790,7 +790,7 @@
 </code></pre></div>
 <div class="admonition hint">
 <p class="admonition-title">Deklaration von Variablen in der <code>for</code>-Schleife</p>
-<p>In dem oberen Beispiel ist die Laufvariable <code>i</code> zwei Mal deklariert, einmal für die erste <code>for</code>-Schleife und ein weiteres Mal für die zweite <code>for</code>-Schleife. Eigentlich hatten wir ja gesagt, dass eine Variable immer nur genau ein Mal deklariert wird. Korrekt ist es, dass eine Variable immer nur in dem Anweisungsblock existiert, in dem sie deklariert wird. Außerhalb dieses Anweisungsblockes existiert sie nicht. Wir hatten das auch schon bei Methoden erwähnt. Dort hatten wir gesagt, dass die Variablen, die in zwei verschiedenen Methoden deklariert werden, miteinander nichts zu tun haben, sondern dass es sich dabei um verschiedene Variablen handelt. Wenn wir eine Variable innerhalb der <code>for</code>-Schleife deklarieren, dann exitiert sie für die <code>for</code>-Schleife. Davor und danch existiert die Variable nicht (mehr). Deshalb müssen wir <code>i</code> in der zweiten <code>for</code>-Schleife auch erneut deklarieren. Wir kommen darauf nochmal ausführlicher zu sprechen, wenn es um die <a href="../methodenstack/#lebensdauer-und-sichtbarkeit-von-variablen">Lebensdauer und Sichtbarkeit von Variablen</a> geht. </p>
+<p>In dem oberen Beispiel ist die Laufvariable <code>i</code> zwei Mal deklariert, einmal für die erste <code>for</code>-Schleife und ein weiteres Mal für die zweite <code>for</code>-Schleife. Eigentlich hatten wir ja gesagt, dass eine Variable immer nur genau ein Mal deklariert wird. Korrekt ist es, dass eine Variable immer nur in dem Anweisungsblock existiert, in dem sie deklariert wird. Außerhalb dieses Anweisungsblockes existiert sie nicht. Wir hatten das auch schon bei Methoden erwähnt. Dort hatten wir gesagt, dass die Variablen, die in zwei verschiedenen Methoden deklariert werden, miteinander nichts zu tun haben, sondern dass es sich dabei um verschiedene Variablen handelt. Wenn wir eine Variable innerhalb der <code>for</code>-Schleife deklarieren, dann existiert sie für die <code>for</code>-Schleife. Davor und danach existiert die Variable nicht (mehr). Deshalb müssen wir <code>i</code> in der zweiten <code>for</code>-Schleife auch erneut deklarieren. Wir kommen darauf nochmal ausführlicher zu sprechen, wenn es um die <a href="../methodenstack/#lebensdauer-und-sichtbarkeit-von-variablen">Lebensdauer und Sichtbarkeit von Variablen</a> geht. </p>
 </div>
 <h3 id="weitere-beispiele-fur-einfache-for-schleifen">Weitere Beispiele für einfache <code>for</code>-Schleifen<a class="headerlink" href="#weitere-beispiele-fur-einfache-for-schleifen" title="Permanent link">&para;</a></h3>
 <p>Wir betrachten noch einige Beispiele für einfache <code>for</code>-Schleifen, um uns mit dem Konzept weiter vertraut zu machen. </p>
@@ -827,11 +827,11 @@
 </td></tr></table>
 </div>
 </div>
-<p>In der Methode <code>computeSumFrom1ToN(int n)</code> wird die Summe von <code>1 + 2 + ... + n</code> berechnet, wobai <code>n</code> als Parameterwert der Methode übergeben wird. Jeder einzelne Schritt wird ausgegeben. Dazu wird ein <code>String s</code> erzeugt, der initial den Wert <code>"1"</code> hat. Für jede Weitere Addition kommt <code>" + 2"</code>, <code>" + 3"</code> usw. zu diesem String hinzu. </p>
+<p>In der Methode <code>computeSumFrom1ToN(int n)</code> wird die Summe von <code>1 + 2 + ... + n</code> berechnet, wobei <code>n</code> als Parameterwert der Methode übergeben wird. Jeder einzelne Schritt wird ausgegeben. Dazu wird ein <code>String s</code> erzeugt, der initial den Wert <code>"1"</code> hat. Für jede weitere Addition kommt <code>" + 2"</code>, <code>" + 3"</code> usw. zu diesem String hinzu. </p>
 <ul>
 <li>Beachten Sie, dass wir die Variable <code>s</code> außerhalb der <code>for</code>-Schleife deklariert haben. Wäre sie innerhalb der <code>for</code>-Schleife deklariert, dann würde sie bei jedem Schleifendurchlauf neu erzeugt werden. So wird ihr Wert bei jedem Schleifendurchlauf aktualisiert. </li>
 <li>Die Selektion wurde eingefügt, damit beim ersten Schleifendurchlauf (für <code>i==1</code>) nichts an den String <code>s</code> angehängt wird, sondern nur für alle weiteren Schleifendurchläufe. </li>
-<li>Beachten Sie auch, dass die Laufvariable <code>i</code> von <code>1</code> bis einschließlich <code>n</code> laäuft und wir dadurch die Summe von <code>1 + 2 + ... + n</code> erzeugen. Wird als Parameterwert eine Zahl kleiner als <code>1</code> übergeben, erfolgt keine Ausgabe, denn dann ist die Bedingung <code>1&lt;=n</code> bereits vor dem ersten Schleifendurchlauf <code>false</code>. </li>
+<li>Beachten Sie auch, dass die Laufvariable <code>i</code> von <code>1</code> bis einschließlich <code>n</code> läuft und wir dadurch die Summe von <code>1 + 2 + ... + n</code> erzeugen. Wird als Parameterwert eine Zahl kleiner als <code>1</code> übergeben, erfolgt keine Ausgabe, denn dann ist die Bedingung <code>1&lt;=n</code> bereits vor dem ersten Schleifendurchlauf <code>false</code>. </li>
 </ul>
 <div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Ausgabe für den Aufruf <code>computeSumFrom1ToN(10)</code></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nv">1</span> <span class="o">=</span> <span class="m">1</span>
@@ -889,7 +889,7 @@
 </td></tr></table>
 </div>
 </div>
-<p>In der Variablen <code>product</code> speichern wir das Produkt aus den Faktoren <code>1 * 2 * ... * n</code>. beachten Sie, dass <code>product</code> am Anfang den Wert <code>1</code> haben muss, um nicht immer mit <code>0</code> zu multiplizieren und somit wäre das Produkt immer <code>0</code>. Anstelle von <code>product *= i;</code> hätten wir auch <code>product = product * i;</code> schreiben können. Weil wir unseren Ausgabestring <code>s</code> noch ein wenig komplizierter gestalttet haben, ist hier sogar eine Fallunterscheidung zwischen <code>i==2</code> und <code>i&gt;2)</code> notwendig. </p>
+<p>In der Variablen <code>product</code> speichern wir das Produkt aus den Faktoren <code>1 * 2 * ... * n</code>. beachten Sie, dass <code>product</code> am Anfang den Wert <code>1</code> haben muss, um nicht immer mit <code>0</code> zu multiplizieren und somit wäre das Produkt immer <code>0</code>. Anstelle von <code>product *= i;</code> hätten wir auch <code>product = product * i;</code> schreiben können. Weil wir unseren Ausgabestring <code>s</code> noch ein wenig komplizierter gestaltet haben, ist hier sogar eine Fallunterscheidung zwischen <code>i==2</code> und <code>i&gt;2)</code> notwendig. </p>
 <div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Ausgabe für den Aufruf <code>fakultaetVonN(8)</code></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="m">1</span>! <span class="o">=</span> <span class="m">1</span>
 <span class="m">2</span>! <span class="o">=</span> <span class="m">1</span> * <span class="nv">2</span> <span class="o">=</span> <span class="m">2</span>
@@ -946,7 +946,7 @@
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Wir geben also in einer Schleife eine Anzahl <code>height</code> von Zeilen aus aus. In jeder Zeile soll die Anzahl <code>width</code> von Sternen ausgegeben werden. Wir müssen also die Schleife für die Sterne in die Schleife für die Zeilen einsetzen: </p>
+<p>Wir geben also in einer Schleife eine Anzahl <code>height</code> von Zeilen aus. In jeder Zeile soll die Anzahl <code>width</code> von Sternen ausgegeben werden. Wir müssen also die Schleife für die Sterne in die Schleife für die Zeilen einsetzen: </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -962,7 +962,7 @@
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Jetzt heben wir nur noch ein kleines Problem. Nachdem wir unsere Zeile mit Sternen ausgegeben haben, steht der Kursor noch hinter dem zuletzt ausgegebenen Stern. Er sollte danach aber an den Anfang der neuen Zeile wandern. Wir müssen also noch für einen Zeilenumbruch sorgen. das erledigen wir mit <code>System.out.println();</code>. Diese Anweisung kommt nach der <em>inneren</em> Schleife in die <em>äußere</em> Schleife. Die gesamte Methode sieht dann so aus:</p>
+<p>Jetzt haben wir nur noch ein kleines Problem. Nachdem wir unsere Zeile mit Sternen ausgegeben haben, steht der Kursor noch hinter dem zuletzt ausgegebenen Stern. Er sollte danach aber an den Anfang der neuen Zeile wandern. Wir müssen also noch für einen Zeilenumbruch sorgen. das erledigen wir mit <code>System.out.println();</code>. Diese Anweisung kommt nach der <em>inneren</em> Schleife in die <em>äußere</em> Schleife. Die gesamte Methode sieht dann so aus:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1031,7 +1031,7 @@
 <span class="o">(</span><span class="nv">row</span> <span class="o">=</span> <span class="m">4</span><span class="o">)</span>: <span class="o">[</span><span class="nv">col</span> <span class="o">=</span> <span class="m">0</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">1</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">2</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">3</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">4</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">5</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">6</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">7</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">8</span><span class="o">][</span><span class="nv">col</span> <span class="o">=</span> <span class="m">9</span><span class="o">]</span>
 </code></pre></div>
 <p>Durch die Verschachtelung der <code>for</code>-Schleife erzeugen wir somit eine 2-dimensionale Ausgabe. Die innere Schleife entwickelt die horizontale Dimension (eine Zeile mit <code>width</code> Sternen) und die äußere <code>for</code>-Schleife entwickelt entwickelt die vertikale Dimension (<code>height</code> viele Zeilen). </p>
-<p>Wir schauen uns noch ein Beispiel an. Nun ist die Bedingung der inneren Schleife vom Wert der Alufvariablen der äußeren Schleife abhängig. </p>
+<p>Wir schauen uns noch ein Beispiel an. Nun ist die Bedingung der inneren Schleife vom Wert der Laufvariablen der äußeren Schleife abhängig. </p>
 <h4 id="dreieck">Dreieck<a class="headerlink" href="#dreieck" title="Permanent link">&para;</a></h4>
 <p>Angenommen, wir wollen ein gleichschenkliges rechteckiges Dreieck erzeugen. Dazu übergeben wir die Höhe des Dreiecks als Wert. Angenommen, wir wollen ein Dreieck der Höhe <code>7</code>, dann soll folgende Ausgabe erscheinen:</p>
 <div class="highlight"><pre><span></span><code>*
@@ -1175,7 +1175,7 @@ Zeile <span class="m">7</span>:  <span class="nv">row</span> <span class="o">==<
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>So wie die Anzahl von Sternen abhängig von der Zeile ist, in der wir die Sterne ausgeben, so ist auch die Anzahl der Leerzeichen davon abhängig. Allerdings beginnen wir mit einem größeren Wert und werden dann immer kleiner (von <code>6</code> bis <code>0</code> bei der Höhe <code>height==7</code>). Die Anzahl der auszugebenden Leerzeichen ist also einerseits abhängig von der Gesamthöhe (<code>height</code>) und andererseits von der aktuellen Zeile <code>row</code>. Wir überlegen uns, mit welchem Startwert wir beginnen: am Anfang wollen wir <code>6</code> leerzeichen ausgeben, das sind <code>height-1</code> viele. Danach ziehen wir von diesem Wert immer so viele ab, wie <code>row</code> groß ist, also erst <code>-0</code>, dann <code>-1</code>, dann <code>-2</code> usw. Der Startwert ist also <code>height -1 - row</code>. In der letzten Zeile hat <code>row</code> den Wert <code>6</code>. Dann wäre unser Startwert <code>height -1 - 6 == 7 - 1 - 6 == 0</code>. In der letzten Zeile wollen wir aber gar kein Leerzeichen mehr ausgeben, also muss dort schon unsere Bedingung <code>false</code> sein. Also setzen wir die Bedingung auf <code>&gt;0</code>. Die Schleife für die Ausgabe der Leerzeichen ist dann wie folgt:</p>
+<p>So wie die Anzahl von Sternen abhängig von der Zeile ist, in der wir die Sterne ausgeben, so ist auch die Anzahl der Leerzeichen davon abhängig. Allerdings beginnen wir mit einem größeren Wert und werden dann immer kleiner (von <code>6</code> bis <code>0</code> bei der Höhe <code>height==7</code>). Die Anzahl der auszugebenden Leerzeichen ist also einerseits abhängig von der Gesamthöhe (<code>height</code>) und andererseits von der aktuellen Zeile <code>row</code>. Wir überlegen uns, mit welchem Startwert wir beginnen: am Anfang wollen wir <code>6</code> Leerzeichen ausgeben, das sind <code>height-1</code> viele. Danach ziehen wir von diesem Wert immer so viele ab, wie <code>row</code> groß ist, also erst <code>-0</code>, dann <code>-1</code>, dann <code>-2</code> usw. Der Startwert ist also <code>height -1 - row</code>. In der letzten Zeile hat <code>row</code> den Wert <code>6</code>. Dann wäre unser Startwert <code>height -1 - 6 == 7 - 1 - 6 == 0</code>. In der letzten Zeile wollen wir aber gar kein Leerzeichen mehr ausgeben, also muss dort schon unsere Bedingung <code>false</code> sein. Also setzen wir die Bedingung auf <code>&gt;0</code>. Die Schleife für die Ausgabe der Leerzeichen ist dann wie folgt:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1185,7 +1185,7 @@ Zeile <span class="m">7</span>:  <span class="nv">row</span> <span class="o">==<
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Für viele ist eine solche Schleife schwer zu lesen, da sich der Wert der ALufvariablen reduziert und die Ermittlung des Initialwertes gleich 2 Subtraktionen enthält. Wir haben ja bereits eingangs gesagt, dass eine solche Schleife auch äquivalent in anderer Form geschrieben werden kann. Das gleiche Ergebnis erhalten wir mit der folgenden Implementierung:</p>
+<p>Für viele ist eine solche Schleife schwer zu lesen, da sich der Wert der Laufvariablen reduziert und die Ermittlung des Initialwertes gleich 2 Subtraktionen enthält. Wir haben ja bereits eingangs gesagt, dass eine solche Schleife auch äquivalent in anderer Form geschrieben werden kann. Das gleiche Ergebnis erhalten wir mit der folgenden Implementierung:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1291,7 +1291,7 @@ sondern folgende:
 <p>Wir haben <code>for</code>-Schleifen kennengelernt und können damit nun auch Iterationen implementieren. <code>for</code>-Schleifen verwenden wir, wenn wir einen Anweisungsblock eine bestimmte Anzahl oft wiederholt ausführen möchten. Wir haben auch <code>for</code>-Schleifen verschachtelt, um variabel in mehrere Dimensionen zu sein. und wir haben mehrere <code>for</code>-Schleifen innerhalb einer <code>for</code>-Schleife verwendet. Nun lernen wir noch zwei weitere Schleifen kennen.</p>
 </div>
 <h2 id="die-while-schleife">Die <code>while</code>-Schleife.<a class="headerlink" href="#die-while-schleife" title="Permanent link">&para;</a></h2>
-<p>Während die Anzahl der Ausführungen einer <code>for</code>-Schleife von einem <em>numerischen Wert</em> festgelegt wird, ist die Anzahl der Ausführungen einer <code>while</code>-Schleife von einem <em>logischen Ausdruck</em> abhängig. Prinzipiell muss man jedoch sagen, dass es auch völlig genügen würde, wenn man nur <code>for</code>-Schleifen oder nur <code>while</code>-Schleifen in einer Programmiersprache zur Verfügung hätte. Man kann mit beiden Schleifenarten (und später auch mit der <code>do..while</code>-Schleife) alle Iterationen implemnetieren, die programmierbar sind. </p>
+<p>Während die Anzahl der Ausführungen einer <code>for</code>-Schleife von einem <em>numerischen Wert</em> festgelegt wird, ist die Anzahl der Ausführungen einer <code>while</code>-Schleife von einem <em>logischen Ausdruck</em> abhängig. Prinzipiell muss man jedoch sagen, dass es auch völlig genügen würde, wenn man nur <code>for</code>-Schleifen oder nur <code>while</code>-Schleifen in einer Programmiersprache zur Verfügung hätte. Man kann mit beiden Schleifenarten (und später auch mit der <code>do..while</code>-Schleife) alle Iterationen implementieren, die programmierbar sind. </p>
 <p>Schauen wir uns zunächst die allgemeine Syntax einer <code>while</code>-Schleife an:</p>
 <div class="highlight"><pre><span></span><code><span class="k">while</span><span class="p">(</span><span class="n">BEDINGUNG</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1316,7 +1316,7 @@ sondern folgende:
 </code></pre></div>
 </td></tr></table>
 <p>Diese <code>while</code>-Schleife macht genau das gleiche, wie unser erstes Beispiel für die <code>for</code>-Schleife. Es wird eine Variable <code>i</code> deklariert und mit <code>0</code> initialisiert. Als Bedingung unserer <code>while</code>-Schleife wird geprüft, ob der Wert von <code>i</code> kleiner als <code>5</code> ist. Wenn ja, wird dieser Wert ausgegeben und der Wert von <code>i</code> um <code>1</code> erhöht. Nun wird wieder geprüft, ob der Wert von <code>i</code>immer noch kleiner als <code>5</code> ist. Wenn ja, wird der Wert ausgegeben und um <code>1</code>erhöht usw. </p>
-<p>Es scheint zunächst, als wäre diese beiden Schleifenarten völlig redundant. Was bedeutet es nun, dass eine <code>for</code>-Schleife von einer bestimmten Anzahl und eine <code>while</code>-Schleife von einer Bedingung abhängig ist? Sehen wir uns dazu nochmal unsere beiden Beispielalgorithmen vom Anfang an:</p>
+<p>Es scheint zunächst, als wären diese beiden Schleifenarten völlig redundant. Was bedeutet es nun, dass eine <code>for</code>-Schleife von einer bestimmten Anzahl und eine <code>while</code>-Schleife von einer Bedingung abhängig ist? Sehen wir uns dazu nochmal unsere beiden Beispielalgorithmen vom Anfang an:</p>
 <ul>
 <li>der <a href="../start/#beispiel-euklidischer-algorithmus">Euklidische Algrorithmus</a> und </li>
 <li>die <a href="../start/#beispiel-3n1-vermutung-collatz-problem">(3n+1)-Vermutung (Collatz-Problem)</a></li>
@@ -1440,8 +1440,8 @@ sondern folgende:
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Auch hier kopieren wir zunächst den Wert des Parameters, um diesen nicht zu ändern. Mithilfe von <code>number%2 == 0</code> prüfen wir, ob <code>number</code> gerade oder ungerade ist. Ist <code>number</code> gerade, teilen wir den Wert durch <code>2</code>, ist <code>number</code> ungerade, multiplizieren wir den Wert mit <code>3</code> und addieren <code>1</code>, um jeweils den Nachfolger zu ermitteln. Solange dieser NAchfolger ungleich <code>1</code> ist, wird der nächste Nachfolger berechnet usw. </p>
-<p>Die Ausführung der methode mit z.B. <code>printCollatzFolge(17);</code> erzeugt folgende Ausgabe: <code>17 52 26 13 40 20 10 5 16 8 4 2 1</code>. Wir beginnen mit <code>17</code>. Diese Zahl ist ungerade, also ist der Nachfolger <code>52</code>. Diese Zahl und auch der Nachfolger <code>26</code> sind gerade. Der nächste Nachfolger <code>13</code> ist ungerade, dann kommen drei gerade Zahlen <code>40</code>, <code>20</code> und <code>10</code> und erst dann wieder eine ungerade Zahl <code>5</code>. <code>16</code> ist dann aber schon eine Potenz von <code>2</code> und somit endet die Folge mit der <code>1</code>. </p>
+<p>Auch hier kopieren wir zunächst den Wert des Parameters, um diesen nicht zu ändern. Mithilfe von <code>number%2 == 0</code> prüfen wir, ob <code>number</code> gerade oder ungerade ist. Ist <code>number</code> gerade, teilen wir den Wert durch <code>2</code>, ist <code>number</code> ungerade, multiplizieren wir den Wert mit <code>3</code> und addieren <code>1</code>, um jeweils den Nachfolger zu ermitteln. Solange dieser Nachfolger ungleich <code>1</code> ist, wird der nächste Nachfolger berechnet usw. </p>
+<p>Die Ausführung der Methode mit z.B. <code>printCollatzFolge(17);</code> erzeugt folgende Ausgabe: <code>17 52 26 13 40 20 10 5 16 8 4 2 1</code>. Wir beginnen mit <code>17</code>. Diese Zahl ist ungerade, also ist der Nachfolger <code>52</code>. Diese Zahl und auch der Nachfolger <code>26</code> sind gerade. Der nächste Nachfolger <code>13</code> ist ungerade, dann kommen drei gerade Zahlen <code>40</code>, <code>20</code> und <code>10</code> und erst dann wieder eine ungerade Zahl <code>5</code>. <code>16</code> ist dann aber schon eine Potenz von <code>2</code> und somit endet die Folge mit der <code>1</code>. </p>
 <details class="note"><summary>Übungen <code>while</code>-Schleife</summary><p>Natürlich kann eine <code>while</code>-Schleife genau wie die <code>for</code>-Schleife verschachtelt werden. 
 Implementieren Sie </p>
 <ul>
@@ -1452,7 +1452,7 @@ Implementieren Sie </p>
 <p>mithilfe von verschachtelten <code>while</code>-Schleifen.</p>
 </details>
 <h2 id="die-dowhile-schleife">Die <code>do...while</code>-Schleife<a class="headerlink" href="#die-dowhile-schleife" title="Permanent link">&para;</a></h2>
-<p>Wir haben ja bereits bei den <code>for</code>- und <code>while</code>-Schleifen erwähnt, dass eines der beiden Konzepte genügt hätte, um alle Iterationen zu implementieren. Da man aber ganz gute Unterscheidungsmöglichkeiten hat, um sich entweder für die <code>for</code>-Schleife (bestimmte Anzahl) oder für die <code>while</code>-Schleife (bestimmte Bedingung) zu entscheiden, haben beide Schleifenarten ihre Berechtigungsexistenz. Für die <code>do ... while</code> fällt die Abgrenzung zur <code>while</code>-Schleife noch schwerer. Generell lässt sich sagen, dass eine <code>while</code>-Schleife nicht unebdingt ausgeführt werden muss (nämlich dann, wenn die Bedingung bereits ganz zu Anfang schon <code>false</code> ist), eine <code>do ... while</code>-Schleife wird aber zumindest ein Mal ausgeführt, da die Prüfung der Bedingung erst nach dem Schleifendurchlauf erfolgt. Die allgemeine Syntax einer <code>do ... while</code>-Schleife ist wie folgt: </p>
+<p>Wir haben ja bereits bei den <code>for</code>- und <code>while</code>-Schleifen erwähnt, dass eines der beiden Konzepte genügt hätte, um alle Iterationen zu implementieren. Da man aber ganz gute Unterscheidungsmöglichkeiten hat, um sich entweder für die <code>for</code>-Schleife (bestimmte Anzahl) oder für die <code>while</code>-Schleife (bestimmte Bedingung) zu entscheiden, haben beide Schleifenarten ihre Berechtigungsexistenz. Für die <code>do ... while</code> fällt die Abgrenzung zur <code>while</code>-Schleife noch schwerer. Generell lässt sich sagen, dass eine <code>while</code>-Schleife nicht unbedingt ausgeführt werden muss (nämlich dann, wenn die Bedingung bereits ganz zu Anfang schon <code>false</code> ist), eine <code>do ... while</code>-Schleife wird aber zumindest ein Mal ausgeführt, da die Prüfung der Bedingung erst nach dem Schleifendurchlauf erfolgt. Die allgemeine Syntax einer <code>do ... while</code>-Schleife ist wie folgt: </p>
 <p><div class="highlight"><pre><span></span><code><span class="k">do</span>
 <span class="p">{</span>
     <span class="cm">/*</span>

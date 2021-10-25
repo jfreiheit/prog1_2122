@@ -73,7 +73,7 @@ for(int i=5; i>0; i--)
 }
 ```
 
-Hier ist der initiale Wert der Laufvariablen `5`. Die Bedingung prüft, ob `i` größer ist als `0`. nach jedem Schleifendurchlauf wird der Wert der Laufvriablen `i` um `1` rediziert. Es entsteht folgende Ausgabe:
+Hier ist der initiale Wert der Laufvariablen `5`. Die Bedingung prüft, ob `i` größer ist als `0`. nach jedem Schleifendurchlauf wird der Wert der Laufvriablen `i` um `1` reduziert. Es entsteht folgende Ausgabe:
 
 ```bash
 5
@@ -98,7 +98,7 @@ for(int i=1; i<10; i*=2)
 ```
 
 !!! hint "Deklaration von Variablen in der `for`-Schleife"
-	In dem oberen Beispiel ist die Laufvariable `i` zwei Mal deklariert, einmal für die erste `for`-Schleife und ein weiteres Mal für die zweite `for`-Schleife. Eigentlich hatten wir ja gesagt, dass eine Variable immer nur genau ein Mal deklariert wird. Korrekt ist es, dass eine Variable immer nur in dem Anweisungsblock existiert, in dem sie deklariert wird. Außerhalb dieses Anweisungsblockes existiert sie nicht. Wir hatten das auch schon bei Methoden erwähnt. Dort hatten wir gesagt, dass die Variablen, die in zwei verschiedenen Methoden deklariert werden, miteinander nichts zu tun haben, sondern dass es sich dabei um verschiedene Variablen handelt. Wenn wir eine Variable innerhalb der `for`-Schleife deklarieren, dann exitiert sie für die `for`-Schleife. Davor und danch existiert die Variable nicht (mehr). Deshalb müssen wir `i` in der zweiten `for`-Schleife auch erneut deklarieren. Wir kommen darauf nochmal ausführlicher zu sprechen, wenn es um die [Lebensdauer und Sichtbarkeit von Variablen](../methodenstack/#lebensdauer-und-sichtbarkeit-von-variablen) geht. 
+	In dem oberen Beispiel ist die Laufvariable `i` zwei Mal deklariert, einmal für die erste `for`-Schleife und ein weiteres Mal für die zweite `for`-Schleife. Eigentlich hatten wir ja gesagt, dass eine Variable immer nur genau ein Mal deklariert wird. Korrekt ist es, dass eine Variable immer nur in dem Anweisungsblock existiert, in dem sie deklariert wird. Außerhalb dieses Anweisungsblockes existiert sie nicht. Wir hatten das auch schon bei Methoden erwähnt. Dort hatten wir gesagt, dass die Variablen, die in zwei verschiedenen Methoden deklariert werden, miteinander nichts zu tun haben, sondern dass es sich dabei um verschiedene Variablen handelt. Wenn wir eine Variable innerhalb der `for`-Schleife deklarieren, dann existiert sie für die `for`-Schleife. Davor und danach existiert die Variable nicht (mehr). Deshalb müssen wir `i` in der zweiten `for`-Schleife auch erneut deklarieren. Wir kommen darauf nochmal ausführlicher zu sprechen, wenn es um die [Lebensdauer und Sichtbarkeit von Variablen](../methodenstack/#lebensdauer-und-sichtbarkeit-von-variablen) geht. 
 
 ### Weitere Beispiele für einfache `for`-Schleifen
 
@@ -124,11 +124,11 @@ Wir betrachten noch einige Beispiele für einfache `for`-Schleifen, um uns mit d
 	}
 	```
 
-In der Methode `computeSumFrom1ToN(int n)` wird die Summe von `1 + 2 + ... + n` berechnet, wobai `n` als Parameterwert der Methode übergeben wird. Jeder einzelne Schritt wird ausgegeben. Dazu wird ein `String s` erzeugt, der initial den Wert `"1"` hat. Für jede Weitere Addition kommt `" + 2"`, `" + 3"` usw. zu diesem String hinzu. 
+In der Methode `computeSumFrom1ToN(int n)` wird die Summe von `1 + 2 + ... + n` berechnet, wobei `n` als Parameterwert der Methode übergeben wird. Jeder einzelne Schritt wird ausgegeben. Dazu wird ein `String s` erzeugt, der initial den Wert `"1"` hat. Für jede weitere Addition kommt `" + 2"`, `" + 3"` usw. zu diesem String hinzu. 
 
 - Beachten Sie, dass wir die Variable `s` außerhalb der `for`-Schleife deklariert haben. Wäre sie innerhalb der `for`-Schleife deklariert, dann würde sie bei jedem Schleifendurchlauf neu erzeugt werden. So wird ihr Wert bei jedem Schleifendurchlauf aktualisiert. 
 - Die Selektion wurde eingefügt, damit beim ersten Schleifendurchlauf (für `i==1`) nichts an den String `s` angehängt wird, sondern nur für alle weiteren Schleifendurchläufe. 
-- Beachten Sie auch, dass die Laufvariable `i` von `1` bis einschließlich `n` laäuft und wir dadurch die Summe von `1 + 2 + ... + n` erzeugen. Wird als Parameterwert eine Zahl kleiner als `1` übergeben, erfolgt keine Ausgabe, denn dann ist die Bedingung `1<=n` bereits vor dem ersten Schleifendurchlauf `false`. 
+- Beachten Sie auch, dass die Laufvariable `i` von `1` bis einschließlich `n` läuft und wir dadurch die Summe von `1 + 2 + ... + n` erzeugen. Wird als Parameterwert eine Zahl kleiner als `1` übergeben, erfolgt keine Ausgabe, denn dann ist die Bedingung `1<=n` bereits vor dem ersten Schleifendurchlauf `false`. 
 
 === "Ausgabe für den Aufruf `computeSumFrom1ToN(10)`"
 	```bash 
@@ -170,7 +170,7 @@ Die Fakultät von n ist definiert als `n! = 1 * 2 * ... * n` für alle Natürlic
 	}
 	```
 
-In der Variablen `product` speichern wir das Produkt aus den Faktoren `1 * 2 * ... * n`. beachten Sie, dass `product` am Anfang den Wert `1` haben muss, um nicht immer mit `0` zu multiplizieren und somit wäre das Produkt immer `0`. Anstelle von `product *= i;` hätten wir auch `product = product * i;` schreiben können. Weil wir unseren Ausgabestring `s` noch ein wenig komplizierter gestalttet haben, ist hier sogar eine Fallunterscheidung zwischen `i==2` und `i>2)` notwendig. 
+In der Variablen `product` speichern wir das Produkt aus den Faktoren `1 * 2 * ... * n`. beachten Sie, dass `product` am Anfang den Wert `1` haben muss, um nicht immer mit `0` zu multiplizieren und somit wäre das Produkt immer `0`. Anstelle von `product *= i;` hätten wir auch `product = product * i;` schreiben können. Weil wir unseren Ausgabestring `s` noch ein wenig komplizierter gestaltet haben, ist hier sogar eine Fallunterscheidung zwischen `i==2` und `i>2)` notwendig. 
 
 === "Ausgabe für den Aufruf `fakultaetVonN(8)`"
 	```bash 
@@ -235,7 +235,7 @@ for(int row = 0; row < height; row++)
 }
 ```
 
-Wir geben also in einer Schleife eine Anzahl `height` von Zeilen aus aus. In jeder Zeile soll die Anzahl `width` von Sternen ausgegeben werden. Wir müssen also die Schleife für die Sterne in die Schleife für die Zeilen einsetzen: 
+Wir geben also in einer Schleife eine Anzahl `height` von Zeilen aus. In jeder Zeile soll die Anzahl `width` von Sternen ausgegeben werden. Wir müssen also die Schleife für die Sterne in die Schleife für die Zeilen einsetzen: 
 
 ```java linenums="1"
 for(int row = 0; row < height; row++)
@@ -247,7 +247,7 @@ for(int row = 0; row < height; row++)
 }
 ```
 
-Jetzt heben wir nur noch ein kleines Problem. Nachdem wir unsere Zeile mit Sternen ausgegeben haben, steht der Kursor noch hinter dem zuletzt ausgegebenen Stern. Er sollte danach aber an den Anfang der neuen Zeile wandern. Wir müssen also noch für einen Zeilenumbruch sorgen. das erledigen wir mit `System.out.println();`. Diese Anweisung kommt nach der *inneren* Schleife in die *äußere* Schleife. Die gesamte Methode sieht dann so aus:
+Jetzt haben wir nur noch ein kleines Problem. Nachdem wir unsere Zeile mit Sternen ausgegeben haben, steht der Kursor noch hinter dem zuletzt ausgegebenen Stern. Er sollte danach aber an den Anfang der neuen Zeile wandern. Wir müssen also noch für einen Zeilenumbruch sorgen. das erledigen wir mit `System.out.println();`. Diese Anweisung kommt nach der *inneren* Schleife in die *äußere* Schleife. Die gesamte Methode sieht dann so aus:
 
 ```java linenums="1"
 public void printRectangle(int width, int height)
@@ -303,7 +303,7 @@ Für den Aufruf der Methode `printRectangle(10,5);` erhalten wir dann folgende A
 
 Durch die Verschachtelung der `for`-Schleife erzeugen wir somit eine 2-dimensionale Ausgabe. Die innere Schleife entwickelt die horizontale Dimension (eine Zeile mit `width` Sternen) und die äußere `for`-Schleife entwickelt entwickelt die vertikale Dimension (`height` viele Zeilen). 
 
-Wir schauen uns noch ein Beispiel an. Nun ist die Bedingung der inneren Schleife vom Wert der Alufvariablen der äußeren Schleife abhängig. 
+Wir schauen uns noch ein Beispiel an. Nun ist die Bedingung der inneren Schleife vom Wert der Laufvariablen der äußeren Schleife abhängig. 
 
 #### Dreieck
 
@@ -442,7 +442,7 @@ for(int row = 0; row < height; row++)
 }
 ```
 
-So wie die Anzahl von Sternen abhängig von der Zeile ist, in der wir die Sterne ausgeben, so ist auch die Anzahl der Leerzeichen davon abhängig. Allerdings beginnen wir mit einem größeren Wert und werden dann immer kleiner (von `6` bis `0` bei der Höhe `height==7`). Die Anzahl der auszugebenden Leerzeichen ist also einerseits abhängig von der Gesamthöhe (`height`) und andererseits von der aktuellen Zeile `row`. Wir überlegen uns, mit welchem Startwert wir beginnen: am Anfang wollen wir `6` leerzeichen ausgeben, das sind `height-1` viele. Danach ziehen wir von diesem Wert immer so viele ab, wie `row` groß ist, also erst `-0`, dann `-1`, dann `-2` usw. Der Startwert ist also `height -1 - row`. In der letzten Zeile hat `row` den Wert `6`. Dann wäre unser Startwert `height -1 - 6 == 7 - 1 - 6 == 0`. In der letzten Zeile wollen wir aber gar kein Leerzeichen mehr ausgeben, also muss dort schon unsere Bedingung `false` sein. Also setzen wir die Bedingung auf `>0`. Die Schleife für die Ausgabe der Leerzeichen ist dann wie folgt:
+So wie die Anzahl von Sternen abhängig von der Zeile ist, in der wir die Sterne ausgeben, so ist auch die Anzahl der Leerzeichen davon abhängig. Allerdings beginnen wir mit einem größeren Wert und werden dann immer kleiner (von `6` bis `0` bei der Höhe `height==7`). Die Anzahl der auszugebenden Leerzeichen ist also einerseits abhängig von der Gesamthöhe (`height`) und andererseits von der aktuellen Zeile `row`. Wir überlegen uns, mit welchem Startwert wir beginnen: am Anfang wollen wir `6` Leerzeichen ausgeben, das sind `height-1` viele. Danach ziehen wir von diesem Wert immer so viele ab, wie `row` groß ist, also erst `-0`, dann `-1`, dann `-2` usw. Der Startwert ist also `height -1 - row`. In der letzten Zeile hat `row` den Wert `6`. Dann wäre unser Startwert `height -1 - 6 == 7 - 1 - 6 == 0`. In der letzten Zeile wollen wir aber gar kein Leerzeichen mehr ausgeben, also muss dort schon unsere Bedingung `false` sein. Also setzen wir die Bedingung auf `>0`. Die Schleife für die Ausgabe der Leerzeichen ist dann wie folgt:
 
 ```java linenums="1"
 for(int spaces = height -1 -row; spaces > 0; spaces--)
@@ -451,7 +451,7 @@ for(int spaces = height -1 -row; spaces > 0; spaces--)
 }
 ```
 
-Für viele ist eine solche Schleife schwer zu lesen, da sich der Wert der ALufvariablen reduziert und die Ermittlung des Initialwertes gleich 2 Subtraktionen enthält. Wir haben ja bereits eingangs gesagt, dass eine solche Schleife auch äquivalent in anderer Form geschrieben werden kann. Das gleiche Ergebnis erhalten wir mit der folgenden Implementierung:
+Für viele ist eine solche Schleife schwer zu lesen, da sich der Wert der Laufvariablen reduziert und die Ermittlung des Initialwertes gleich 2 Subtraktionen enthält. Wir haben ja bereits eingangs gesagt, dass eine solche Schleife auch äquivalent in anderer Form geschrieben werden kann. Das gleiche Ergebnis erhalten wir mit der folgenden Implementierung:
 
 ```java linenums="1"
 for(int spaces = 1; spaces < height - row; spaces++)
@@ -546,7 +546,7 @@ public static void printTriangleR(int height)
 
 ## Die `while`-Schleife. 
 
-Während die Anzahl der Ausführungen einer `for`-Schleife von einem *numerischen Wert* festgelegt wird, ist die Anzahl der Ausführungen einer `while`-Schleife von einem *logischen Ausdruck* abhängig. Prinzipiell muss man jedoch sagen, dass es auch völlig genügen würde, wenn man nur `for`-Schleifen oder nur `while`-Schleifen in einer Programmiersprache zur Verfügung hätte. Man kann mit beiden Schleifenarten (und später auch mit der `do..while`-Schleife) alle Iterationen implemnetieren, die programmierbar sind. 
+Während die Anzahl der Ausführungen einer `for`-Schleife von einem *numerischen Wert* festgelegt wird, ist die Anzahl der Ausführungen einer `while`-Schleife von einem *logischen Ausdruck* abhängig. Prinzipiell muss man jedoch sagen, dass es auch völlig genügen würde, wenn man nur `for`-Schleifen oder nur `while`-Schleifen in einer Programmiersprache zur Verfügung hätte. Man kann mit beiden Schleifenarten (und später auch mit der `do..while`-Schleife) alle Iterationen implementieren, die programmierbar sind. 
 
 Schauen wir uns zunächst die allgemeine Syntax einer `while`-Schleife an:
 
@@ -573,7 +573,7 @@ while(i<5)
 
 Diese `while`-Schleife macht genau das gleiche, wie unser erstes Beispiel für die `for`-Schleife. Es wird eine Variable `i` deklariert und mit `0` initialisiert. Als Bedingung unserer `while`-Schleife wird geprüft, ob der Wert von `i` kleiner als `5` ist. Wenn ja, wird dieser Wert ausgegeben und der Wert von `i` um `1` erhöht. Nun wird wieder geprüft, ob der Wert von `i`immer noch kleiner als `5` ist. Wenn ja, wird der Wert ausgegeben und um `1`erhöht usw. 
 
-Es scheint zunächst, als wäre diese beiden Schleifenarten völlig redundant. Was bedeutet es nun, dass eine `for`-Schleife von einer bestimmten Anzahl und eine `while`-Schleife von einer Bedingung abhängig ist? Sehen wir uns dazu nochmal unsere beiden Beispielalgorithmen vom Anfang an:
+Es scheint zunächst, als wären diese beiden Schleifenarten völlig redundant. Was bedeutet es nun, dass eine `for`-Schleife von einer bestimmten Anzahl und eine `while`-Schleife von einer Bedingung abhängig ist? Sehen wir uns dazu nochmal unsere beiden Beispielalgorithmen vom Anfang an:
 
 - der [Euklidische Algrorithmus](../start/#beispiel-euklidischer-algorithmus) und 
 - die [(3n+1)-Vermutung (Collatz-Problem)](../start/#beispiel-3n1-vermutung-collatz-problem)
@@ -658,9 +658,9 @@ public void printCollatzFolge(int n)
 }
 ```
 
-Auch hier kopieren wir zunächst den Wert des Parameters, um diesen nicht zu ändern. Mithilfe von `number%2 == 0` prüfen wir, ob `number` gerade oder ungerade ist. Ist `number` gerade, teilen wir den Wert durch `2`, ist `number` ungerade, multiplizieren wir den Wert mit `3` und addieren `1`, um jeweils den Nachfolger zu ermitteln. Solange dieser NAchfolger ungleich `1` ist, wird der nächste Nachfolger berechnet usw. 
+Auch hier kopieren wir zunächst den Wert des Parameters, um diesen nicht zu ändern. Mithilfe von `number%2 == 0` prüfen wir, ob `number` gerade oder ungerade ist. Ist `number` gerade, teilen wir den Wert durch `2`, ist `number` ungerade, multiplizieren wir den Wert mit `3` und addieren `1`, um jeweils den Nachfolger zu ermitteln. Solange dieser Nachfolger ungleich `1` ist, wird der nächste Nachfolger berechnet usw. 
 
-Die Ausführung der methode mit z.B. `printCollatzFolge(17);` erzeugt folgende Ausgabe: `17 52 26 13 40 20 10 5 16 8 4 2 1`. Wir beginnen mit `17`. Diese Zahl ist ungerade, also ist der Nachfolger `52`. Diese Zahl und auch der Nachfolger `26` sind gerade. Der nächste Nachfolger `13` ist ungerade, dann kommen drei gerade Zahlen `40`, `20` und `10` und erst dann wieder eine ungerade Zahl `5`. `16` ist dann aber schon eine Potenz von `2` und somit endet die Folge mit der `1`. 
+Die Ausführung der Methode mit z.B. `printCollatzFolge(17);` erzeugt folgende Ausgabe: `17 52 26 13 40 20 10 5 16 8 4 2 1`. Wir beginnen mit `17`. Diese Zahl ist ungerade, also ist der Nachfolger `52`. Diese Zahl und auch der Nachfolger `26` sind gerade. Der nächste Nachfolger `13` ist ungerade, dann kommen drei gerade Zahlen `40`, `20` und `10` und erst dann wieder eine ungerade Zahl `5`. `16` ist dann aber schon eine Potenz von `2` und somit endet die Folge mit der `1`. 
 
 ??? note "Übungen `while`-Schleife"
 	Natürlich kann eine `while`-Schleife genau wie die `for`-Schleife verschachtelt werden. 
@@ -674,7 +674,7 @@ Die Ausführung der methode mit z.B. `printCollatzFolge(17);` erzeugt folgende A
 
 ## Die `do...while`-Schleife
 
-Wir haben ja bereits bei den `for`- und `while`-Schleifen erwähnt, dass eines der beiden Konzepte genügt hätte, um alle Iterationen zu implementieren. Da man aber ganz gute Unterscheidungsmöglichkeiten hat, um sich entweder für die `for`-Schleife (bestimmte Anzahl) oder für die `while`-Schleife (bestimmte Bedingung) zu entscheiden, haben beide Schleifenarten ihre Berechtigungsexistenz. Für die `do ... while` fällt die Abgrenzung zur `while`-Schleife noch schwerer. Generell lässt sich sagen, dass eine `while`-Schleife nicht unebdingt ausgeführt werden muss (nämlich dann, wenn die Bedingung bereits ganz zu Anfang schon `false` ist), eine `do ... while`-Schleife wird aber zumindest ein Mal ausgeführt, da die Prüfung der Bedingung erst nach dem Schleifendurchlauf erfolgt. Die allgemeine Syntax einer `do ... while`-Schleife ist wie folgt: 
+Wir haben ja bereits bei den `for`- und `while`-Schleifen erwähnt, dass eines der beiden Konzepte genügt hätte, um alle Iterationen zu implementieren. Da man aber ganz gute Unterscheidungsmöglichkeiten hat, um sich entweder für die `for`-Schleife (bestimmte Anzahl) oder für die `while`-Schleife (bestimmte Bedingung) zu entscheiden, haben beide Schleifenarten ihre Berechtigungsexistenz. Für die `do ... while` fällt die Abgrenzung zur `while`-Schleife noch schwerer. Generell lässt sich sagen, dass eine `while`-Schleife nicht unbedingt ausgeführt werden muss (nämlich dann, wenn die Bedingung bereits ganz zu Anfang schon `false` ist), eine `do ... while`-Schleife wird aber zumindest ein Mal ausgeführt, da die Prüfung der Bedingung erst nach dem Schleifendurchlauf erfolgt. Die allgemeine Syntax einer `do ... while`-Schleife ist wie folgt: 
 
 ```java
 do
