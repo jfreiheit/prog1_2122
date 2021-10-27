@@ -103,8 +103,37 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 
 
 #### Aufgabe 2 (Abgabe bis 01.11.2021 24:00 Uhr)
-??? "Aufgabe2 - Refactoring: Square mit Circles"
-	- Verwenden Sie BlueJ das Projekt `aufgabe1` und speichern Sie es als `aufgabe2` ab. 
-	- In Ihrer Lösung für Aufgabe 1 hatten Sie (sehr wahrscheinlich) ziemlich viel doppelten Code. Überlegen Sie sie sich, was Sie machen könnten, um möglichst gar keinen doppelten Code mehr zu haben. 
-	- Das nachträgliche "Verbessern" von Programmen wird *refactoring* genannt. Dabei wird das Programm so umgeschrieben, dass wesentliche Programmierprinzipien eingehalten werden, z.B. sprechende Namen für Variablen und Methoden, Vermeidung von doppeltem Code, jede Methode erledigt nur genau eine Aufgabe. Wir wollen hier unsere Lösung aus Aufgabe 1 "refactoren". Refactoring ist ein wesentlicher Teil des Programmierens.
-	- Zippen Sie Ihr Projekt `aufgabe2` und laden es in Moodle hoch.
+??? "Aufgabe2 - Methoden und Ausgaben"
+	- Erstellen Sie sich ein neues Projekt `aufgabe2` und darin eine neue Klasse `Aufgabe2`, die wie folgt aussieht:
+		```java
+					
+		public class Aufgabe2
+		{
+		    public Aufgabe2()
+		    {
+		        
+		    }
+
+		    public void start()
+		    {
+		        // rufen Sie hier Ihre Methoden auf:
+		        
+		    }
+		}
+
+		```
+	- Implementieren Sie eine Methode `computeSum(double number1, double number2)`, die die Summe der beiden Zahlen `number1` und `number2` als `double` *zurückgibt*. 
+	- Implementieren Sie eine Methode `printSum(double number1, double number2`, die die Summe der beiden Zahlen `number1` und `number2` in der folgenden Form *ausgibt*. Die Ausgabe sieht für die Beispielwerte `number1 = 4.0` und `number2 = 5.0` so aus:
+		```bash
+		4.0 + 5.0 = 9.0
+		```
+		Rufen Sie in der `printSum(double number1, double number2`-Methode die Methode `computeSum(double number1, double number2)` auf!
+	- Implementieren Sie ähnliche Methoden auch für die Subtraktion, Multiplikation und Division von zwei `double`-Zahlen. Verwenden Sie jeweils die `computeXXX()`-Methoden in den `printXXX()`-Methoden. 
+	- Erstellen Sie eine Methode `printComputations(double number1, double number2)`, in der alle vier `printXXX()`-Methoden aufgerufen werden, so dass durch den Aufruf der `printComputations(double number1, double number2)`-Methode folgende Ausgabe erscheint (Beispielwerte `4.0` und `5.0`):
+		```bash
+		4.0 + 5.0 = 9.0
+		4.0 - 5.0 = -1.0
+		4.0 * 5.0 = 20.0
+		4.0 / 5.0 = 0.8
+		```
+	- Zippen Sie Ihr Projekt `aufgabe2` und laden es in Moodle hoch. 

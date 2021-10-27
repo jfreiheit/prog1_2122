@@ -689,11 +689,35 @@ Zur offiziellen Abgabe einer Aufgabe gehören also</p>
 </ul>
 </details>
 <h4 id="aufgabe-2-abgabe-bis-01112021-2400-uhr">Aufgabe 2 (Abgabe bis 01.11.2021 24:00 Uhr)<a class="headerlink" href="#aufgabe-2-abgabe-bis-01112021-2400-uhr" title="Permanent link">&para;</a></h4>
-<details><summary>Aufgabe2 - Refactoring: Square mit Circles</summary><ul>
-<li>Verwenden Sie BlueJ das Projekt <code>aufgabe1</code> und speichern Sie es als <code>aufgabe2</code> ab. </li>
-<li>In Ihrer Lösung für Aufgabe 1 hatten Sie (sehr wahrscheinlich) ziemlich viel doppelten Code. Überlegen Sie sie sich, was Sie machen könnten, um möglichst gar keinen doppelten Code mehr zu haben. </li>
-<li>Das nachträgliche "Verbessern" von Programmen wird <em>refactoring</em> genannt. Dabei wird das Programm so umgeschrieben, dass wesentliche Programmierprinzipien eingehalten werden, z.B. sprechende Namen für Variablen und Methoden, Vermeidung von doppeltem Code, jede Methode erledigt nur genau eine Aufgabe. Wir wollen hier unsere Lösung aus Aufgabe 1 "refactoren". Refactoring ist ein wesentlicher Teil des Programmierens.</li>
-<li>Zippen Sie Ihr Projekt <code>aufgabe2</code> und laden es in Moodle hoch.</li>
+<details><summary>Aufgabe2 - Methoden und Ausgaben</summary><ul>
+<li>Erstellen Sie sich ein neues Projekt <code>aufgabe2</code> und darin eine neue Klasse <code>Aufgabe2</code>, die wie folgt aussieht:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Aufgabe2</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Aufgabe2</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// rufen Sie hier Ihre Methoden auf:</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Implementieren Sie eine Methode <code>computeSum(double number1, double number2)</code>, die die Summe der beiden Zahlen <code>number1</code> und <code>number2</code> als <code>double</code> <em>zurückgibt</em>. </li>
+<li>Implementieren Sie eine Methode <code>printSum(double number1, double number2</code>, die die Summe der beiden Zahlen <code>number1</code> und <code>number2</code> in der folgenden Form <em>ausgibt</em>. Die Ausgabe sieht für die Beispielwerte <code>number1 = 4.0</code> und <code>number2 = 5.0</code> so aus:
+    <div class="highlight"><pre><span></span><code><span class="m">4</span>.0 + <span class="m">5</span>.0 <span class="o">=</span> <span class="m">9</span>.0
+</code></pre></div>
+    Rufen Sie in der <code>printSum(double number1, double number2</code>-Methode die Methode <code>computeSum(double number1, double number2)</code> auf!</li>
+<li>Implementieren Sie ähnliche Methoden auch für die Subtraktion, Multiplikation und Division von zwei <code>double</code>-Zahlen. Verwenden Sie jeweils die <code>computeXXX()</code>-Methoden in den <code>printXXX()</code>-Methoden. </li>
+<li>Erstellen Sie eine Methode <code>printComputations(double number1, double number2)</code>, in der alle vier <code>printXXX()</code>-Methoden aufgerufen werden, so dass durch den Aufruf der <code>printComputations(double number1, double number2)</code>-Methode folgende Ausgabe erscheint (Beispielwerte <code>4.0</code> und <code>5.0</code>):
+    <div class="highlight"><pre><span></span><code><span class="m">4</span>.0 + <span class="m">5</span>.0 <span class="o">=</span> <span class="m">9</span>.0
+<span class="m">4</span>.0 - <span class="m">5</span>.0 <span class="o">=</span> -1.0
+<span class="m">4</span>.0 * <span class="m">5</span>.0 <span class="o">=</span> <span class="m">20</span>.0
+<span class="m">4</span>.0 / <span class="m">5</span>.0 <span class="o">=</span> <span class="m">0</span>.8
+</code></pre></div></li>
+<li>Zippen Sie Ihr Projekt <code>aufgabe2</code> und laden es in Moodle hoch. </li>
 </ul>
 </details>
                 
