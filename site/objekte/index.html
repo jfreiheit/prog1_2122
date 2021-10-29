@@ -1,0 +1,1350 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I">
+      
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/objekte/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Klassen und Objekte - Programmieren I</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#klassen-und-objekte" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmieren I" class="md-header__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmieren I
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Klassen und Objekte
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmieren I" class="md-nav__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    Programmieren I
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluej/" class="md-nav__link">
+        BlueJ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variablen/" class="md-nav__link">
+        Variablen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ausdruecke/" class="md-nav__link">
+        Ausdrücke
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methoden/" class="md-nav__link">
+        Methoden
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Klassen und Objekte
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Klassen und Objekte
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ein-erster-eigener-datentyp-adresse" class="md-nav__link">
+    Ein erster eigener Datentyp Adresse
+  </a>
+  
+    <nav class="md-nav" aria-label="Ein erster eigener Datentyp Adresse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eigenschaften-definieren" class="md-nav__link">
+    Eigenschaften definieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektvariablen-sind-global" class="md-nav__link">
+    Objektvariablen sind global!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektmethode-hinzufugen" class="md-nav__link">
+    Objektmethode hinzufügen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objekte-erzeugen-der-konstruktor" class="md-nav__link">
+    Objekte erzeugen - der Konstruktor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zugriff-auf-objekteigenschaften-punktnotation" class="md-nav__link">
+    Zugriff auf Objekteigenschaften - Punktnotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datenkapselung-information-hiding-das-schlusselwort-private" class="md-nav__link">
+    Datenkapselung (Information Hiding) - das Schlüsselwort private
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ein-eigener-konstruktor" class="md-nav__link">
+    Ein eigener Konstruktor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getxxx-methoden-getter" class="md-nav__link">
+    getXXX()-Methoden - Getter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aufgaben/" class="md-nav__link">
+        Aufgaben
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ein-erster-eigener-datentyp-adresse" class="md-nav__link">
+    Ein erster eigener Datentyp Adresse
+  </a>
+  
+    <nav class="md-nav" aria-label="Ein erster eigener Datentyp Adresse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eigenschaften-definieren" class="md-nav__link">
+    Eigenschaften definieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektvariablen-sind-global" class="md-nav__link">
+    Objektvariablen sind global!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektmethode-hinzufugen" class="md-nav__link">
+    Objektmethode hinzufügen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objekte-erzeugen-der-konstruktor" class="md-nav__link">
+    Objekte erzeugen - der Konstruktor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zugriff-auf-objekteigenschaften-punktnotation" class="md-nav__link">
+    Zugriff auf Objekteigenschaften - Punktnotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datenkapselung-information-hiding-das-schlusselwort-private" class="md-nav__link">
+    Datenkapselung (Information Hiding) - das Schlüsselwort private
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ein-eigener-konstruktor" class="md-nav__link">
+    Ein eigener Konstruktor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getxxx-methoden-getter" class="md-nav__link">
+    getXXX()-Methoden - Getter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/prog1/edit/master/docs/objekte.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="klassen-und-objekte">Klassen und Objekte<a class="headerlink" href="#klassen-und-objekte" title="Permanent link">&para;</a></h1>
+<p>Wir haben bereits grob die Begriffe <em>Klassen</em>  und <em>Objekte</em> kennengelernt. Nun wollen wir das Verständnis dafür vertiefen. Dazu erstellen wir uns unsere erste "richtige" eigene Klasse.</p>
+<h3 id="ein-erster-eigener-datentyp-adresse">Ein erster eigener Datentyp <code>Adresse</code><a class="headerlink" href="#ein-erster-eigener-datentyp-adresse" title="Permanent link">&para;</a></h3>
+<p>Wir erstellen uns ein neues BlueJ-Projekt und nennen es <code>adresse</code>. Darin erstellen wir eine neue Klasse <code>Adresse</code>. Wir löschen alles aus dieser Klasse, so dass nur </p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>übrig bleibt. Von dieser Klasse erzeugen wir uns eine Testklasse - BlueJ nennt sie <code>AdresseTest</code>. Ein Doppelklick auf das grüne Rechteck der Testklasse öffnet den Editor und zeigt</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">AdresseTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="kn">import static</span> <span class="nn">org.junit.jupiter.api.Assertions.*</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.BeforeEach</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The test class AdresseTest.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @author  (your name)</span>
+<span class="cm">     * @version (a version number or a date)</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdresseTest</span>
+    <span class="p">{</span>
+        <span class="cm">/**</span>
+<span class="cm">         * Default constructor for test class AdresseTest</span>
+<span class="cm">         */</span>
+        <span class="kd">public</span> <span class="nf">AdresseTest</span><span class="p">()</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * Sets up the test fixture.</span>
+<span class="cm">         *</span>
+<span class="cm">         * Called before every test case method.</span>
+<span class="cm">         */</span>
+        <span class="nd">@BeforeEach</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="p">()</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * Tears down the test fixture.</span>
+<span class="cm">         *</span>
+<span class="cm">         * Called after every test case method.</span>
+<span class="cm">         */</span>
+        <span class="nd">@AfterEach</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="p">()</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>In diese Testklasse fügen wir eine Methode <code>testAdresse()</code> wie folgt hinzu:</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">AdresseTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import static</span> <span class="nn">org.junit.jupiter.api.Assertions.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.BeforeEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * The test class AdresseTest.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author  (your name)</span>
+<span class="cm"> * @version (a version number or a date)</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdresseTest</span>
+<span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Default constructor for test class AdresseTest</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">AdresseTest</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+<span class="hll">    <span class="nd">@Test</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAdresse</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="n">Adresse</span> <span class="n">adresse1</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Sets up the test fixture.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Called before every test case method.</span>
+<span class="cm">     */</span>
+    <span class="nd">@BeforeEach</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Tears down the test fixture.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Called after every test case method.</span>
+<span class="cm">     */</span>
+    <span class="nd">@AfterEach</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir wollen uns zunächst um diese Testklasse nicht weiter kümmern und ignorieren auch zunächst den gesamten Rest. Um Platz zu sparen, zeigen wir von nun an immer nur noch die <code>testAdresse()</code>-Methode. In dieser Methode sehen wir aber bereits die Deklaration einer Variablen <code>adresse1</code> vom Typ <code>Adresse</code>. Das bedeutet, dass unser neuer Datentyp <code>Adresse</code> bereits zur Verfügung steht und wir ihn verwenden können. Wir haben unseren ersten eigenen Datentyp erstellt!</p>
+<h4 id="eigenschaften-definieren">Eigenschaften definieren<a class="headerlink" href="#eigenschaften-definieren" title="Permanent link">&para;</a></h4>
+<p>Unser Datentyp <code>Adresse</code> hat noch keine Eigenschaften. Als erstes definieren wir uns <strong>Objektvariablen</strong> für unsere Klasse:</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">strasse</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">nummer</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">postleitzahl</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">wohnort</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Die <em>Struktur</em> aller Objekte unserer Klasse sieht also wie folgt aus. <strong>Jedes Objekt</strong> vom Typ <code>Adresse</code> hat </p>
+<ul>
+<li><strong>eine eigene</strong> Variable <code>strasse</code> (vom Typ <code>String</code>),</li>
+<li><strong>eine eigene</strong> Variable <code>nummer</code> (vom Typ <code>int</code>),</li>
+<li><strong>eine eigene</strong> Variable <code>postleitzahl</code> (vom Typ <code>int</code>),</li>
+<li><strong>eine eigene</strong> Variable <code>wohnort</code> (vom Typ <code>String</code>).</li>
+</ul>
+<h4 id="objektvariablen-sind-global">Objektvariablen sind global!<a class="headerlink" href="#objektvariablen-sind-global" title="Permanent link">&para;</a></h4>
+<p>Bis jetzt hatten wir unsere Variablen immer <em>lokal</em> in einer Methode deklariert. Diese Variablen waren nur in der Methode sichtbar und existierten auch nur in der Methode, in der sie deklariert wurden. Siehe dazu <a href="../methodenstack/#lebensdauer-und-sichtbarkeit-von-lokalen-variablen">Sichtbarkeit und Lebensdauer von lokalen Variablen</a>. </p>
+<p>Objektvariablen sind in der <strong>Klasse</strong> deklariert, nicht in einer Methode - sie sind <em>global</em>. Objektvariablen sind deshalb in der gesamten Klasse sichtbar, d.h. es kann in der gesamten Klasse daruf zugegriffen werden (in jeder Methode der Klasse). Objektvariablen existieren für ein konkretes Objekt. Jedes Objekt hat seine eigenen Objektvariablen. Diese existieren für das Objekt also so lange, solange das Objekt existiert. </p>
+<blockquote>
+<p>Objektvariablen sind <em>global</em> und sind in allen Methoden der Klasse sichtbar, d.h. es kann in allen Methoden der Klasse auf die Objektvariablen zugegriffen werden.</p>
+</blockquote>
+<h4 id="objektmethode-hinzufugen">Objektmethode hinzufügen<a class="headerlink" href="#objektmethode-hinzufugen" title="Permanent link">&para;</a></h4>
+<p>Jetzt wollen wir auch noch ein <em>Verhalten</em> implementieren und definieren uns dazu eine <strong>Objektmethode</strong>:</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">strasse</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">nummer</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">postleitzahl</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">wohnort</span><span class="p">;</span>
+
+    <span class="c1">// --- Objektmethoden ------</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAdresse</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">strasse</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">nummer</span> <span class="o">+</span> <span class="s">&quot; in &quot;</span> <span class="o">+</span> <span class="n">postleitzahl</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">wohnort</span><span class="p">;</span>
+    <span class="p">}</span>       
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h4 id="objekte-erzeugen-der-konstruktor">Objekte erzeugen - der Konstruktor<a class="headerlink" href="#objekte-erzeugen-der-konstruktor" title="Permanent link">&para;</a></h4>
+<p>Wir haben jetzt einen "Bauplan" für alle Objekte vom Datentyp <code>Adresse</code> erzeugt. Nun wollen wir nach diesem Bauplan Objekte von der Klasse (vom Datentyp) <code>Adresse</code> erzeugen. Das geschieht mithilfe des <em>Konstruktors</em>.</p>
+<blockquote>
+<p>der Konstruktor einer Klasse heißt genau wie die Klasse selbst, ist aber eine Methode (z.B. <code>Adresse()</code>)</p>
+</blockquote>
+<p>Um ein Objekt der Klasse zu erzeugen, verwenden wir das Schlüsselwort <code>new</code> und rufen dann den Konstruktor der Klasse auf:</p>
+<blockquote>
+<p><code>new Klassenname();</code> </p>
+</blockquote>
+<p>Wir erzeugen in der <code>testAdresse()</code>-Methode der <code>Testklasse</code> zwei Objekte der Klasse <code>Adresse</code>:</p>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">AdresseTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAdresse</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Adresse</span> <span class="n">adresse1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>
+    <span class="n">Adresse</span> <span class="n">adresse2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Das generelle Vorgehen bei der Erzeugung eines Objektes zeigt die folgende Abbildung:</p>
+<p><img alt="konstruktor" src="../files/68_konstruktor.png" /></p>
+<p>Wir haben nun zwei Objekte vom Typ <code>Adresse</code> erstellt. Die <em>Referenzvariable</em> <code>adresse1</code> zeigt auf das erste Objekt (Sie können auch sagen, dass <code>adresse1</code> der Name des ersten Objektes ist) und die Referenzvariable <code>adresse2</code> zeigt auf das zweite Objekt. <strong>Jedes</strong> dieser beiden Objekte hat seine eigenen Objektvariablen <code>strasse</code>, <code>nummer</code>, <code>postleitzahl</code> und <code>wohnort</code> und seine eigene Objektmethode <code>getAdresse()</code>. Wir werden jetzt auf diese Eigenschaften zugreifen.</p>
+<h4 id="zugriff-auf-objekteigenschaften-punktnotation">Zugriff auf Objekteigenschaften - Punktnotation<a class="headerlink" href="#zugriff-auf-objekteigenschaften-punktnotation" title="Permanent link">&para;</a></h4>
+<p>Auf die Eigenschaften eines Objektes können wir über die Referenzvariable mittels <em>Punktnotation</em> zugreifen. Die Syntax ist also wie folgt:</p>
+<blockquote>
+<p><code>referenzVariable.eigenschaft</code> </p>
+</blockquote>
+<p>Wir verwenden die Punktnotation für unsere Objekte vom Typ <code>Adresse</code>, um ihnen Werte für die Objektvariablen zuzuweisen und jeweils auf die Objektmethode zuzugreifen:</p>
+<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">AdresseTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAdresse</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Adresse</span> <span class="n">adresse1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>
+    <span class="n">Adresse</span> <span class="n">adresse2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>
+
+    <span class="n">adresse1</span><span class="p">.</span><span class="na">strasse</span> <span class="o">=</span> <span class="s">&quot;Wilhelminenhofstr.&quot;</span><span class="p">;</span>
+    <span class="n">adresse1</span><span class="p">.</span><span class="na">nummer</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+    <span class="n">adresse1</span><span class="p">.</span><span class="na">postleitzahl</span> <span class="o">=</span> <span class="mi">12459</span><span class="p">;</span>
+    <span class="n">adresse1</span><span class="p">.</span><span class="na">wohnort</span> <span class="o">=</span> <span class="s">&quot;Berlin&quot;</span><span class="p">;</span>
+
+    <span class="n">adresse2</span><span class="p">.</span><span class="na">strasse</span> <span class="o">=</span> <span class="s">&quot;Treskowallee&quot;</span><span class="p">;</span>
+    <span class="n">adresse2</span><span class="p">.</span><span class="na">nummer</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="n">adresse2</span><span class="p">.</span><span class="na">postleitzahl</span> <span class="o">=</span> <span class="mi">10318</span><span class="p">;</span>
+    <span class="n">adresse2</span><span class="p">.</span><span class="na">wohnort</span> <span class="o">=</span> <span class="s">&quot;Berlin&quot;</span><span class="p">;</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse1</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse2</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir weisen also den jeweiligen Objektvariablen der beiden Objekte Werte zu und geben diese jeweils mithilfe der <code>getAdresse()</code>-Methode aus. Es ist ganz wichtig, zu verstehen, dass jedes Objekt seine eigenen Objektvariablen und seine eigenen Objektmethoden hat. Zugriff auf diese Variablen und Methoden gibt es stets nur über ein Objekt!</p>
+<p>Die Ausgabe für obiges Beispiel sieht so aus:</p>
+<div class="highlight"><pre><span></span><code>Wilhelminenhofstr. <span class="m">75</span> <span class="k">in</span> <span class="m">12459</span> Berlin
+Treskowallee <span class="m">8</span> <span class="k">in</span> <span class="m">10318</span> Berlin
+</code></pre></div>
+<p>Alle Objekte werden also nach dem gleichen "Bauplan" erstellt. Alle Objekte vom Typ <code>Adresse</code> haben die Eigenschaften:</p>
+<ul>
+<li><code>strasse</code>, </li>
+<li><code>nummer</code>, </li>
+<li><code>postleitzahl</code>,  </li>
+<li><code>wohnort</code> und </li>
+<li><code>getAdresse()</code></li>
+</ul>
+<p>Wenn wir die Klasse <code>Adresse</code> ändern, dann ändern sich auch die Eigenschaften entsprechend für <strong>alle</strong> Objekte dieser Klasse. </p>
+<h4 id="datenkapselung-information-hiding-das-schlusselwort-private">Datenkapselung (Information Hiding) - das Schlüsselwort <code>private</code><a class="headerlink" href="#datenkapselung-information-hiding-das-schlusselwort-private" title="Permanent link">&para;</a></h4>
+<p>Ein wesentlicher Grundsatz der objektorientierten Programmierung ist das Prinzip der <em>Datenkapselung</em> (auch <em>data hiding</em> oder <em>information hiding</em> genannt). Dieses Prinzip dient dem Datenschutz. Wir wollen vermeiden, dass</p>
+<ul>
+<li>Unbefugte die Struktur (die Daten) unserer Objekte kennen und</li>
+<li>Unbefugte die Daten ändern können, ohne dass wir es erlauben. </li>
+</ul>
+<p>Angenommen, Sie haben eine Klasse <code>Konto</code> und es wäre möglich, ganz einfach auf ihre <code>pin</code> zuzugreifen. Das wäre fatal. Bereits der lesende Zugriff darauf könnte schädlich sein, aber genau so ärgerlich wäre es, wenn die <code>pin</code> einfach durch Fremde geändert werden könnte. Wir wollen deshalb sowohl den lesenden als auch den schreibenden Zugriff auf unsere Daten (auf unsere Objektvariablen) verbieten. Dazu deklarieren wir unsere Objektvariablen als <code>private</code>:</p>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">strasse</span><span class="p">;</span>         <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nummer</span><span class="p">;</span>             <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">postleitzahl</span><span class="p">;</span>       <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">wohnort</span><span class="p">;</span>         <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+
+    <span class="c1">// --- Objektmethoden ------</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAdresse</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">strasse</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">nummer</span> <span class="o">+</span> <span class="s">&quot; in &quot;</span> <span class="o">+</span> <span class="n">postleitzahl</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">wohnort</span><span class="p">;</span>
+    <span class="p">}</span>       
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir haben die <em>Sichtbarkeit</em> der Objektvariablen in unserer Klasse geändert. Vorher waren die Objektvariablen als <code>public</code> deklariert. Das führte dazu, dass sie von allen anderen Klassen gelesen und geschrieben werden konnten (z.B. von unserer Testklasse <code>AdresseTest</code>). Indem wir die Variablen als <code>private</code> deklarieren, ist der Zugriff darauf außerhalb unserer Klasse nicht mehr möglich. </p>
+<p>Wenn wir uns jetzt unsere Testklasse <code>AdresseTest</code> anschauen, dann sehen wir Fehler:</p>
+<p><img alt="adresse" src="../files/200_adresse.png" /></p>
+<p>Die <code>Testklasse</code> lässt sich nun nicht mehr compilieren und ausführen. Auch lesende Zugriffe, z.B. <code>System.out.println(adresse1.wohnort);</code> sind nicht mehr möglich. Beachten Sie aber, dass wir weiterhin die Methode <code>getAdresse()</code> aufrufen können. Sie ist als <code>public</code> deklariert und deshalb in anderen Klassen durch <code>Adresse</code>-Objekte ausführbar. Wir könnten auch die Methode als <code>private</code> deklarieren, dann würde auch sie nicht mehr ausführbar in anderen Klassen sein. </p>
+<blockquote>
+<p>Auf eine als <code>private</code> deklarierte Variable kann außerhalb der Klasse, in der sie deklariert ist, nicht zugegriffen werden.</p>
+<p>Eine als <code>private</code> deklarierte Methode kann außerhalb der Klasse, in der sie definiert ist, nicht ausgeführt (aufgerufen) werden. </p>
+</blockquote>
+<p>Wie können wir unseren Objektvariablen aber nun Werte zuweisen? Dafür gibt es zwei Antworten</p>
+<ol>
+<li>durch einen parametrisierten Konstruktor und</li>
+<li>durch sogenannte <em>Getter</em></li>
+</ol>
+<p>Wir betrachten zunächst den parametrisierten Konstruktor. </p>
+<h4 id="ein-eigener-konstruktor">Ein eigener Konstruktor<a class="headerlink" href="#ein-eigener-konstruktor" title="Permanent link">&para;</a></h4>
+<p>Wir haben einen <em>Konstruktor</em> bereits kennengelernt. Ein Konstruktor ist eine Methode, die genau wie die Klasse heißt (also auch großgeschrieben) und mit runden Klammern. Wir haben den Konstruktor auch bereits verwendet, nämlich zur Erzeugung von Objekten (genau dafür ist er auch da). Betrachten wir nochmal die beiden Aufrufe:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Adresse</span> <span class="n">adresse1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>   <span class="c1">// Aufruf des Standardkonstruktors</span>
+<span class="n">Adresse</span> <span class="n">adresse2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>   <span class="c1">// Aufruf des Standardkonstruktors</span>
+</code></pre></div>
+<p>Wir konnten die Objekte vom Typ <code>Adresse</code> mithilfe des Konstrutors <code>Adresse()</code> erzeugen. Dies ist ein sogenannter <em>Standardkonstruktor</em>, denn er existiert automatisch für jede neue Klasse (für jeden Datentyp), die wir erstellen. Jetzt wollen wir aber einen eigenen Konstruktor definieren, den wir in Zukunft zur Erzeugung unserer <code>Adresse</code>-Objekte verwenden wollen. In unserem neuen Konstruktor wollen wir nämlich bereits Werte als Parameter übergeben, die für die Initialisierung der Objektvariablen verwendet werden sollen. Wir erweitern unsere Klasse <code>Adresse</code> um einen solchen Konstruktor:</p>
+<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">strasse</span><span class="p">;</span>         <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nummer</span><span class="p">;</span>             <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">postleitzahl</span><span class="p">;</span>       <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">wohnort</span><span class="p">;</span>         <span class="c1">// Zugriff nur innerhalb der Klasse</span>
+
+    <span class="c1">// --- Konstruktor ---------</span>
+    <span class="kd">public</span> <span class="nf">Adresse</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">plz</span><span class="p">,</span> <span class="n">String</span> <span class="n">ort</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">strasse</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span>
+        <span class="n">nummer</span> <span class="o">=</span> <span class="n">nr</span><span class="p">;</span>
+        <span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span><span class="p">;</span>
+        <span class="n">wohnort</span> <span class="o">=</span> <span class="n">ort</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- Objektmethoden ------</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAdresse</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">strasse</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">nummer</span> <span class="o">+</span> <span class="s">&quot; in &quot;</span> <span class="o">+</span> <span class="n">postleitzahl</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">wohnort</span><span class="p">;</span>
+    <span class="p">}</span>       
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>In den Zeilen <code>10-16</code> haben wir einen solchen Konstruktor hinzugefügt. Wir übergeben dem Konstruktor vier Parameterwerte. Diese Werte werden verwendet, um unsere Objektvariablen zu initialisieren. Der Konstruktor wird aufgerufen, um ein neues Objekt zu erzeugen. Wir verwenden ihn hinter dem Schlüsselwort <code>new</code>. </p>
+<p>Bei der Definition eines solchen Konstruktors sind zwei Dinge zu beachten: </p>
+<ol>
+<li>Der Konstruktor heißt exakt wie die Klasse (also auch Großschreibung beachten).</li>
+<li>Der Konstruktor hat <strong>keinen</strong> Rückgabetyp (auch nicht <code>void</code>).</li>
+</ol>
+<p>Die Aufgabe eines Konstruktors ist einzig und allein Objekte der Klasse zu erzeugen. Die "Rückgabe" eines solchen Konstruktors ist also ein Objekt der Klasse. Theoretisch wäre der Rückhgabetyp hier also <code>Adresse</code>. Aber wie gesagt, bei der Definition eines Konstruktors gibt man keinen Rückgabetyp an!</p>
+<p>Wenn wir uns nun erneut die Testklasse <code>AdresseTest</code> anschauen, dann sind durch die Definition eines eigenen Konstruktors weitere Fehler hinzugekommen:</p>
+<p><img alt="adresse" src="../files/201_adresse.png" /></p>
+<p>Dadurch, dass wir einen eigenen Konstruktor geschrieben haben, existiert der Standardkonstruktor <code>Adresse()</code> nicht mehr. Wir müssen (und wollen ja auch) nun unseren eigenen Konstruktor verwenden, um Objekte zu erzeugen. Wir passen die Testklasse <code>AdresseTest</code> entsprechend an:</p>
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">AdresseTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAdresse</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">Adresse</span> <span class="n">adresse1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">(</span><span class="s">&quot;Wilhelminenhofstr.&quot;</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">12459</span><span class="p">,</span> <span class="s">&quot;Berlin&quot;</span><span class="p">);</span>          
+</span><span class="hll">    <span class="n">Adresse</span> <span class="n">adresse2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">(</span><span class="s">&quot;Treskowallee&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10318</span><span class="p">,</span> <span class="s">&quot;Berlin&quot;</span><span class="p">);</span>         
+</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse1</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse2</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>In den Zeilen <code>4</code> und <code>5</code> verwenden wir nun den eigenen Konstruktor und übergeben die Werte für die Objektvariablen als Parameter. Bei der Erzeugung der Objekte werden die Objektvariablen nun gleich initialisiert. Der direkte Zugriff auf die Objektvariablen wurde entfernt, da dieser aufgrund der <code>private</code>-Deklaration nicht mehr möglich ist. Die Ausgaben in Zeilen <code>7</code> und <code>8</code> zeigen aber, dass die Objekte die entsprechenden Werte enthalten:</p>
+<div class="highlight"><pre><span></span><code>Wilhelminenhofstr. <span class="m">75</span> <span class="k">in</span> <span class="m">12459</span> Berlin
+Treskowallee <span class="m">8</span> <span class="k">in</span> <span class="m">10318</span> Berlin
+</code></pre></div>
+<p>Die Objekte erhalten somit gleich bei der Erzeugung alle Werte für die Objektvariablen und es ist nun auch nicht mehr möglich, diese Werte zu ändern. Ein direkter Zugriff auf die Objektvariablen ist nicht möglich. Die einzigen Wertzuweisungen finden im Konstruktor statt. Objekte, deren Werte nicht mehr geändert werden können, heißen <em>immutable objects</em> (<em>unveränderliche Objekte</em>). Sehr häufig ist es wünschenswert, dass Objekte <em>immutable</em> sind - das vermeidet Fehler. Wir kommen (sehr viel später) nochmal darauf zu sprechen. </p>
+<p>Die einzige Schnittstelle (also die Möglichkeiten anderer Klassen unseren neuen Datentyp <code>Adresse</code> zu nutzen) unserer Klasse besteht nun aus zwei Methoden: dem Konstruktor zum Erzeugen eines Objektes und der Methode <code>getAdresse()</code>. Wenn wir aber z.B. nur den <code>wohnort</code> wissen wollen, dann ist es derzeit noch nicht möglich. Wir wollen deshalb den <strong>lesenden</strong> Zugriff auf unsere Objektvariablen erlauben und definieren uns dafür sogenannte <em>Getter</em>.</p>
+<h4 id="getxxx-methoden-getter"><code>getXXX()</code>-Methoden - Getter<a class="headerlink" href="#getxxx-methoden-getter" title="Permanent link">&para;</a></h4>
+<p>Da die Objektvariablen alle als <code>private</code> deklariert sind, ist außerhalb der Klasse <code>Adresse</code> kein Zugriff auf diese Variablen möglich. Wir können ihnen weder Werte zuweisen, noch deren Werte auslesen. Wir haben bereits gesagt, dass dies ein Feature der objektorientierten Programmierung ist, ein solches <em>information hiding</em> einfach durchführen zu können. </p>
+<p>Wir können jetzt steuern, ob und wie der Zugriff doch möglich sein soll. Wenn man bspw. den lesenden Zugriff erlauben möchte, dann definiert man sich innerhalb der Klasse sogenannte <code>get</code>-Methoden (<em>Getter</em>). Eine solche <code>get</code>-methode gibt den Wert einer Objektvariablen zurück. Es wird somit ein <em>lesender</em> Zugriff auf den Wert der Variablen ermöglicht. Für unsere Klasse schreiben wir uns nun für jede Objektvariable einen eigenen Getter:</p>
+<ul>
+<li><code>getWohnort()</code> gibt den Wert von <code>wohnort</code> zurück, ist also vom Rückgabetyp <code>String</code></li>
+<li><code>getPostleitzahl()</code> gibt den Wert von <code>postleitzahl</code> zurück, ist also vom Rückgabetyp <code>int</code></li>
+<li><code>getStrasse()</code> gibt den Wert von <code>strasse</code> zurück, ist also vom Rückgabetyp <code>String</code></li>
+<li><code>getNummer()</code> gibt den Wert von <code>nummer</code> zurück, ist also vom Rückgabetyp <code>int</code></li>
+</ul>
+<p>Unsere Klasse <code>Adresse</code> sieht nun wie folgt aus:</p>
+<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">strasse</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nummer</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">postleitzahl</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">wohnort</span><span class="p">;</span>
+
+    <span class="c1">// --- Konstruktor ---------</span>
+    <span class="kd">public</span> <span class="nf">Adresse</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">plz</span><span class="p">,</span> <span class="n">String</span> <span class="n">ort</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">strasse</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span>
+        <span class="n">nummer</span> <span class="o">=</span> <span class="n">nr</span><span class="p">;</span>
+        <span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span><span class="p">;</span>
+        <span class="n">wohnort</span> <span class="o">=</span> <span class="n">ort</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- Objektmethoden ------</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAdresse</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">strasse</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">nummer</span> <span class="o">+</span> <span class="s">&quot; in &quot;</span> <span class="o">+</span> <span class="n">postleitzahl</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">wohnort</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getStrasse</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">strasse</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNummer</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">nummer</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPostleitzahl</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">postleitzahl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getWohnort</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">wohnort</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Unsere Schnittstelle hat sich also erweitert. Es sind jetzt auch mehr Methoden unserer Klasse <code>Adresse</code> nutzbar. Wir probieren die Methoden in unserer Testklasse <code>AdresseTest</code> aus:</p>
+<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">AdresseTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAdresse</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Adresse</span> <span class="n">adresse1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">(</span><span class="s">&quot;Wilhelminenhofstr.&quot;</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">12459</span><span class="p">,</span> <span class="s">&quot;Berlin&quot;</span><span class="p">);</span>          
+    <span class="n">Adresse</span> <span class="n">adresse2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">(</span><span class="s">&quot;Treskowallee&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10318</span><span class="p">,</span> <span class="s">&quot;Berlin&quot;</span><span class="p">);</span>         
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse1</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse2</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+
+<span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Strasse Nr  : &quot;</span> <span class="o">+</span> <span class="n">adresse1</span><span class="p">.</span><span class="na">getStrasse</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>  <span class="n">adresse1</span><span class="p">.</span><span class="na">getNummer</span><span class="p">());</span>
+</span><span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;PLZ Wohnort : &quot;</span> <span class="o">+</span> <span class="n">adresse1</span><span class="p">.</span><span class="na">getPostleitzahl</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">adresse1</span><span class="p">.</span><span class="na">getWohnort</span><span class="p">());</span>
+</span>
+<span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Strasse Nr  : &quot;</span> <span class="o">+</span> <span class="n">adresse2</span><span class="p">.</span><span class="na">getStrasse</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>  <span class="n">adresse1</span><span class="p">.</span><span class="na">getNummer</span><span class="p">());</span>
+</span><span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;PLZ Wohnort : &quot;</span> <span class="o">+</span> <span class="n">adresse2</span><span class="p">.</span><span class="na">getPostleitzahl</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>  <span class="n">adresse1</span><span class="p">.</span><span class="na">getWohnort</span><span class="p">());</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Beachten Sie, dass der Aufruf unserer <code>get</code>-Methoden auch wieder nur für konkrete Objekte erfolgen kann, hier also für <code>adresse1</code> und <code>adresse2</code>. Wir greifen also wieder mittels Punktnotation auf diese Methoden zu. Wir sehen, dass wir nun mithilfe der Getter lesenden Zugriff auf die Objektvariablen haben - in der Testklasse <code>AdresseTest</code> können also die einzelnen Werte der Objektvariablen der jeweiligen <code>Adresse</code>-Objekte ausgelesen werden. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben unseren ersten eigenen Datentyp erstellt! Wir haben dazu eine Klasse geschrieben. Die Klasse enthält Objektvariablen und Objektmethoden. Wir haben mithilfe des Schlüsselwortes <code>new</code> und dem Aufruf eines Konstruktors Objekte dieser Klasse erzeugt. Über die Punktnotation können wir auf die Objektmethoden zugreifen und diese ausführen. Wir haben außerdem das Schlüsselwort <code>private</code> kennengelernt. Auf Objektvariablen und Objektmethoden, die als <code>private</code> deklariert sind, kann außerhalb der Klasse nicht zugegriffen werden. Um doch einen lesenden Zugriff auf die Werte der Objektvariablen zu ermöglichen, haben wir Getter definiert. </p>
+</div>
+<hr />
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../methodenstack/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Methodenstack" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Methodenstack
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../uebungen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Übungen" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Übungen
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>
