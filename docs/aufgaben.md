@@ -137,3 +137,48 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 		4.0 / 5.0 = 0.8
 		```
 	- Zippen Sie Ihr Projekt `aufgabe2` und laden es in Moodle hoch. 
+
+
+#### Aufgabe 3 (Abgabe bis 08.11.2021 24:00 Uhr)
+??? "Aufgabe3 - Rechteck"
+	- Erstellen Sie sich ein neues Projekt `aufgabe3` und darin eine neue Klasse `Aufgabe3`, die wie folgt aussieht:
+		```java
+					
+		public class Aufgabe3
+		{
+		    public Aufgabe3()
+		    {
+		        
+		    }
+
+		    public void start()
+		    {
+		        // rufen Sie hier Ihre Methoden auf:
+		        
+		    }
+		}
+
+		```
+	- Implementieren Sie eine Methode `public void printRectangle(int width, int height, boolean filled){}`
+	- Ist der Parameterwert von `filled` `true`, dann soll ein Rechteck wie folgt auf die Konsole ausgegeben werden (Beispielausgabe für `width=11` und `height=5`):
+		```bash
+		***********
+		***********
+		***********
+		***********
+		***********
+		```
+	- Ist der Parameterwert von `filled` `false`, dann soll das Rechteck ungefüllt sein, also so:
+		```bash
+		***********
+		*		  *
+		*		  *
+		*		  *
+		***********
+		```
+	- Die obere Ausgabe ist also durch die Anweisung `printRectangle(11, 5, true);` und die untere durch die Anweisung `printRectangle(11, 5, false);` entstanden.
+	- **Tipp:**: Schreiben Sie sich zwei weitere Methoden `public void printRectangleFilled(int width, int height){}` und `public void printRectangleUnfilled(int width, int height){}`, die Sie entsprechend des Wertes von `filled` aufrufen. In der einen Methode erstellen Sie das ausgefüllte Rechteck und in der anderen das ungefüllte. Dann wird Ihr Programm nicht zu unübersichtlich. Fangen Sie am besten mit der ausgefüllten an, die ist etwas leichter. 
+	- Das Programm soll für beliebige (nicht so große - max. Werte für `width` und `height` je `100`) positive Zahlen (also `> 0`) funktionieren. Insbesondere sind die Tests für `width=1` und `height=1` bzw. `height=2` interessant. 
+	- Zippen Sie Ihr Projekt `aufgabe3` und laden es in Moodle hoch. Viel Spaß und viel Erfolg!
+
+

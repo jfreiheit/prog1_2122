@@ -773,6 +773,41 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
 <li>Wie könnten (und sollten!) Sie die <code>computeSeconds()</code>-Methode in der <code>printSeconds()</code>-Methode verwenden? Warum?</li>
 </ol>
 </details>
+<details class="note"><summary>Übung 4 (10.11.2021)</summary><ol>
+<li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung4</code>. </li>
+<li>Erstellen Sie darin eine Klasse <code>Uebung4</code>. </li>
+<li>Ersetzen Sie den gesamten Code der Klasse <code>Uebung4</code> durch folgenden Code:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung4</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Uebung4</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myLesson4Method</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Definieren Sie alle Ihre Methoden außerhalb dieser Methode</span>
+        <span class="c1">// Rufen Sie alle Ihre Methoden hier auf</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Schreiben Sie eine Methode <code>isLeapYear(int year)</code>, die ein <code>true</code> zurückgibt, wenn <code>year</code> ein Schaltjahr ist und ein <code>false</code>, wenn nicht. Ein Jahr ist ein Schaltjahr, wenn die Jahreszahl durch <code>4</code> teilbar ist, aber nicht durch <code>100</code>, außer sie ist durch <code>400</code> teilbar. </li>
+<li>Schreiben Sie eine Methode <code>printleapYear(int year)</code>, die für <code>year</code> auf die Konsole ausgibt (Beispielwerte):
+    <div class="highlight"><pre><span></span><code><span class="m">2021</span> ist kein Schaltjahr. 
+<span class="m">2020</span> war ein Schaltjahr. 
+<span class="m">2000</span> war ein Schaltjahr. 
+<span class="m">2024</span> wird ein Schaltjahr.
+<span class="m">2025</span> wird kein Schaltjahr.
+</code></pre></div></li>
+<li>Schreiben Sie eine Methode <code>isPrime(int number)</code>, die ein <code>true</code> zurückgibt, wenn <code>number</code> eine Primzahl ist Schaltjahr ist und ein <code>false</code>, wenn nicht. Eine Primzahl ist eine natürliche Zahl größer als <code>1</code>, die nur durch <code>1</code> und sich selbst teilbar ist.   </li>
+<li>Schreiben Sie eine Methode <code>printprimeNumbers(int maximum)</code>, die alle Primzahlen von <code>1</code> bis einschließlich <code>maximum</code> wie folgt auf der Konsole ausgibt (Bsp. für <code>maximum=61</code>):
+    <div class="highlight"><pre><span></span><code>Zahl : <span class="m">61</span>
+.2 <span class="m">3</span> .5 .7 ...11 .13 ...17 .19 ...23 .....29 .31 .....37 ...41 .43 ...47 .....53 .....59 .61
+</code></pre></div>
+    d.h. es werden die Zahlen, die Primzahlen sind, ausgegeben und für die anderen Zahlen erscheint nur ein Punkt. Verwenden Sie in der Methode <code>printPrimenumbers(int)</code> die Methode <code>isPrime(int)</code>.</li>
+</ol>
+</details>
                 
               
               
