@@ -177,6 +177,96 @@
 	```
 
 
+??? question "Eine mögliche Lösung für Übung2"
+	```java
+	public class Uebung2
+	{
+	    public Uebung2()
+	    {
+	        
+	    }
+
+	    public void printLesson2()
+	    {
+	        // Schreiben Sie Ihren gesamten Code in diese Methode
+	        // und fuehren Sie diese Methode aus
+
+	        int in = 123;
+			long lo = 456789;
+			char ch = 'a';
+			byte by = 127;
+			short sh = 32767;
+			float fl = 4.23f;
+			double d1 = 6.98;
+			boolean b1 = true;
+			String s1 = "Hallo!";
+			
+			System.out.println(" --- Aufgabe 3 -------");
+			System.out.println();
+			System.out.println("Wert vom Typ int     : " + in );
+			System.out.println("Wert vom Typ long    : " + lo );
+			System.out.println("Wert vom Typ char    : " + ch );
+			System.out.println("Wert vom Typ byte    : " + by );
+			System.out.println("Wert vom Typ short   : " + sh );
+			System.out.println("Wert vom Typ float   : " + fl );
+			System.out.println("Wert vom Typ double  : " + d1 );
+			System.out.println("Wert vom Typ boolean : " + b1 );
+			System.out.println("Wert vom Typ String  : " + s1 );
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 4 -------");
+			System.out.println();
+			in = 2147483647;
+			System.out.println("Wert vom Typ int     : " + in );
+			in = in + 1;		// in++;
+			System.out.println("Wert vom Typ int     : " + in );
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 5 -------");
+			System.out.println();
+			lo = 2147483647L;
+			System.out.println("Wert vom Typ long    : " + lo );
+			lo = lo +1 ;
+			System.out.println("Wert vom Typ long    : " + lo );
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 6 -------");
+			System.out.println();
+			ch = 65;
+			System.out.println("Wert vom Typ char    : " + ch );
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 7 -------");
+			System.out.println();
+			int nr1 = 17;
+			int nr2 = 4;
+			int quotient = nr1 / nr2;
+			int rest = nr1 % nr2;
+			if(rest==0)
+			{
+				System.out.println(nr1 + " geteilt durch " + nr2 + " ergibt " + quotient + " ohne Rest.");
+			}
+			else
+			{
+				System.out.println(nr1 + " geteilt durch " + nr2 + " ergibt " + quotient 
+					+ ". Es bleibt ein Rest von " + rest);
+			}
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 8 -------");
+			System.out.println();
+			int number1 = 17;
+			int number2 = 4;
+			int result = number1 / number2;
+			System.out.println(number1 + "/" + number2 + " = " + result);
+			
+			int rest = number1 % number2;
+			System.out.println(number1 + " mod " + number2 + " = " + rest);
+		}
+	}
+	```
+
+
 
 ??? note "Übung 3 (3.11.2021)"
 	1. Öffnen Sie `BlueJ` und erstellen Sie ein neues Projekt `uebung3`. 
@@ -218,6 +308,92 @@
 	5. Wie könnten (und sollten!) Sie die `computeSeconds()`-Methode in der `printSeconds()`-Methode verwenden? Warum?
 
 
+??? question "Eine mögliche Lösung für Übung3"
+	```java
+	public class Uebung3
+		{
+		    public Uebung3()
+		    {
+		        
+		    }
+
+		    public void printSeconds(int seconds)
+			{
+				int minute = 60;
+				int hour = 60 * minute;		// 3600
+				int day = 24 * hour;		// 86400
+				
+				int days = seconds / day;
+				int remainingSeconds = seconds - (days * day);
+				int hours = remainingSeconds / hour;
+				remainingSeconds = remainingSeconds - (hours * hour);
+				int minutes = remainingSeconds / minute;
+				remainingSeconds = remainingSeconds - (minutes * minute);
+				
+				/*
+				System.out.println(seconds + " Sekunden sind " + days + " Tage, " 
+				+ hours + " Stunden, " + minutes + " Minuten, " + remainingSeconds + " Sekunden.");
+				 */
+				
+				String output = seconds + " Sekunden sind ";
+				if(days==1)
+				{
+					output = output + " 1 Tag, ";
+				}
+				else
+				{
+					if(days > 1)
+					{
+						output = output + days + " Tage, ";
+					}
+				}
+				if(hours==1)
+				{
+					output = output + " 1 Stunde, ";
+				}
+				else
+				{
+					if(hours > 1)
+					{
+						output = output + hours + " Stunden, ";
+					}
+				}
+				if(minutes==1)
+				{
+					output = output + " 1 Minute, ";
+				}
+				else
+				{
+					if(minutes > 1)
+					{
+						output = output + minutes + " Minuten, ";
+					}
+				}
+				if(remainingSeconds==1)
+				{
+					output = output + " 1 Sekunde.";
+				}
+				else
+				{
+					if(remainingSeconds > 1)
+					{
+						output = output + remainingSeconds + " Sekunden.";
+					}
+				}
+				System.out.println(output);
+			}
+
+			public void myLesson3Method()
+		    {
+				printSeconds(3456789);
+				printSeconds(2345678);
+				printSeconds(123456);
+				printSeconds(12345);        
+		    }
+	}
+	```
+
+
 
 ??? note "Übung 4 (10.11.2021)"
 	1. Öffnen Sie `BlueJ` und erstellen Sie ein neues Projekt `uebung4`. 
@@ -239,8 +415,18 @@
 		    }
 		}
 		```
-	3. Schreiben Sie eine Methode `isLeapYear(int year)`, die ein `true` zurückgibt, wenn `year` ein Schaltjahr ist und ein `false`, wenn nicht. Ein Jahr ist ein Schaltjahr, wenn die Jahreszahl durch `4` teilbar ist, aber nicht durch `100`, außer sie ist durch `400` teilbar. 
-	4. Schreiben Sie eine Methode `printleapYear(int year)`, die für `year` auf die Konsole ausgibt (Beispielwerte):
+	4. Schreiben Sie eine Methode `isPrime(int number)`, die ein `true` zurückgibt, wenn `number` eine Primzahl ist Schaltjahr ist und ein `false`, wenn nicht. Eine Primzahl ist eine natürliche Zahl größer als `1`, die nur durch `1` und sich selbst teilbar ist.   
+	5. Schreiben Sie eine Methode `printprimeNumbers(int maximum)`, die alle Primzahlen von `1` bis einschließlich `maximum` wie folgt auf der Konsole ausgibt (Bsp. für `maximum=61`):
+		```bash
+		Zahl : 61
+		.2 3 .5 .7 ...11 .13 ...17 .19 ...23 .....29 .31 .....37 ...41 .43 ...47 .....53 .....59 .61
+		```
+		d.h. es werden die Zahlen, die Primzahlen sind, ausgegeben und für die anderen Zahlen erscheint nur ein Punkt. Verwenden Sie in der Methode `printPrimenumbers(int)` die Methode `isPrime(int)`.
+
+	***Zusatzaufgabe (gute Wiederholung/Vertiefung von Übung 3)***
+
+	1. Schreiben Sie eine Methode `isLeapYear(int year)`, die ein `true` zurückgibt, wenn `year` ein Schaltjahr ist und ein `false`, wenn nicht. Ein Jahr ist ein Schaltjahr, wenn die Jahreszahl durch `4` teilbar ist, aber nicht durch `100`, außer sie ist durch `400` teilbar. 
+	2. Schreiben Sie eine Methode `printleapYear(int year)`, die für `year` auf die Konsole ausgibt (Beispielwerte):
 		```bash
 		2021 ist kein Schaltjahr. 
 		2020 war ein Schaltjahr. 
@@ -248,10 +434,3 @@
 		2024 wird ein Schaltjahr.
 		2025 wird kein Schaltjahr.
 		```
-	5. Schreiben Sie eine Methode `isPrime(int number)`, die ein `true` zurückgibt, wenn `number` eine Primzahl ist Schaltjahr ist und ein `false`, wenn nicht. Eine Primzahl ist eine natürliche Zahl größer als `1`, die nur durch `1` und sich selbst teilbar ist.   
-	6. Schreiben Sie eine Methode `printprimeNumbers(int maximum)`, die alle Primzahlen von `1` bis einschließlich `maximum` wie folgt auf der Konsole ausgibt (Bsp. für `maximum=61`):
-		```bash
-		Zahl : 61
-		.2 3 .5 .7 ...11 .13 ...17 .19 ...23 .....29 .31 .....37 ...41 .43 ...47 .....53 .....59 .61
-		```
-		d.h. es werden die Zahlen, die Primzahlen sind, ausgegeben und für die anderen Zahlen erscheint nur ein Punkt. Verwenden Sie in der Methode `printPrimenumbers(int)` die Methode `isPrime(int)`.
