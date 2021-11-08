@@ -203,7 +203,7 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 		}
 
 		```
-	- Implementieren Sie eine Methode `public static void printRhombus(int upperHalf, boolean filled){}`
+	- Implementieren Sie eine Methode `public void printRhombus(int upperHalf, boolean filled){}`
 	- Ist der Parameterwert von `filled` `true`, dann soll ein Rhombus (eine Raute) wie folgt auf die Konsole ausgegeben werden:
 		```bash
 		      *
