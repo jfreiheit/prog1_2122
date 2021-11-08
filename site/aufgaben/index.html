@@ -331,8 +331,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../methodenstack/" class="md-nav__link">
-        Methodenstack
+      <a href="../objekte/" class="md-nav__link">
+        Klassen und Objekte
       </a>
     </li>
   
@@ -346,8 +346,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../objekte/" class="md-nav__link">
-        Klassen und Objekte
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
       </a>
     </li>
   
@@ -477,6 +477,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aufgabe-4-abgabe-bis-15112021-2400-uhr" class="md-nav__link">
+    Aufgabe 4 (Abgabe bis 15.11.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -595,6 +602,13 @@
           <li class="md-nav__item">
   <a href="#aufgabe-3-abgabe-bis-08112021-2400-uhr" class="md-nav__link">
     Aufgabe 3 (Abgabe bis 08.11.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-4-abgabe-bis-15112021-2400-uhr" class="md-nav__link">
+    Aufgabe 4 (Abgabe bis 15.11.2021 24:00 Uhr)
   </a>
   
 </li>
@@ -785,6 +799,65 @@ Zur offiziellen Abgabe einer Aufgabe gehören also</p>
 <li><strong>Tipp:</strong>: Schreiben Sie sich zwei weitere Methoden <code>public void printRectangleFilled(int width, int height){}</code> und <code>public void printRectangleUnfilled(int width, int height){}</code>, die Sie entsprechend des Wertes von <code>filled</code> aufrufen. In der einen Methode erstellen Sie das ausgefüllte Rechteck und in der anderen das ungefüllte. Dann wird Ihr Programm nicht zu unübersichtlich. Fangen Sie am besten mit der ausgefüllten an, die ist etwas leichter. </li>
 <li>Das Programm soll für beliebige (nicht so große - max. Werte für <code>width</code> und <code>height</code> je <code>100</code>) positive Zahlen (also <code>&gt; 0</code>) funktionieren. Insbesondere sind die Tests für <code>width=1</code> und <code>height=1</code> bzw. <code>height=2</code> interessant. </li>
 <li>Zippen Sie Ihr Projekt <code>aufgabe3</code> und laden es in Moodle hoch. Viel Spaß und viel Erfolg!</li>
+</ul>
+</details>
+<h4 id="aufgabe-4-abgabe-bis-15112021-2400-uhr">Aufgabe 4 (Abgabe bis 15.11.2021 24:00 Uhr)<a class="headerlink" href="#aufgabe-4-abgabe-bis-15112021-2400-uhr" title="Permanent link">&para;</a></h4>
+<details><summary>Aufgabe4 - Rhombus</summary><ul>
+<li>Erstellen Sie sich ein neues Projekt <code>aufgabe4</code> und darin eine neue Klasse <code>Aufgabe4</code>, die wie folgt aussieht:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Aufgabe4</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Aufgabe4</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// rufen Sie hier Ihre Methoden auf:</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Implementieren Sie eine Methode <code>public static void printRhombus(int upperHalf, boolean filled){}</code></li>
+<li>Ist der Parameterwert von <code>filled</code> <code>true</code>, dann soll ein Rhombus (eine Raute) wie folgt auf die Konsole ausgegeben werden:
+    <div class="highlight"><pre><span></span><code>      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+  *********
+   *******
+    *****
+     ***
+      *
+</code></pre></div></li>
+<li>Ist der Parameterwert von <code>filled</code> <code>false</code>, dann soll der Rhombus ungefüllt sein, also so:
+    <div class="highlight"><pre><span></span><code>      *
+     * *
+    *   *
+   *     *
+  *       *
+ *         *
+  *       *
+   *     *
+    *   *
+     * *
+      *
+</code></pre></div></li>
+<li>der Wert für <code>upperHalf</code> gibt die Höhe einer Hälfte des Rhombus an. Die Gesamthöhe des Rhombus berechnet sich aus `
+    <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">upperHalf</span> <span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div></li>
+<li>In unserem oben gezeigten Beispiel ist der Wert von <code>upperHalf</code> <code>5</code> und die Gesamthöhe des Rhombus <code>11</code>. </li>
+<li>Die obere Ausgabe ist also durch die Anweisung <code>printRhombus(5, true);</code> und die untere durch die Anweisung <code>printRhombus(5, false);</code> entstanden.</li>
+<li>Die Berechnung der Höhe aus dem Parameterwert <code>upperHalf</code> hat die Vorteile, <ul>
+<li>dass die Höhe dadurch immer eine ungerade Zahl ist (was notwendig ist) und </li>
+<li>dass Sie den Wert <code>upperHalf</code> gut verwenden können (was ebenfalls notwendig ist, wie Sie merken werden)</li>
+</ul>
+</li>
+<li><strong>Tipp:</strong>: Schreiben Sie sich zwei weitere Methoden <code>public static void printRhombusFilled(int upperHalf){}</code> und <code>public static void printRhombusUnfilled(int upperHalf){}</code>, die Sie entsprechend des Wertes von <code>filled</code> aufrufen. In der einen Methode erstellen Sie die ausgefüllte Raute und in der anderen die ungefüllte. Dann wird Ihr Programm nicht zu unübersichtlich. Fangen Sie am besten mit der ausgefüllten an, die ist etwas leichter. </li>
+<li>Das Programm soll für beliebige (nicht so große - max. Wert <code>100</code>) positive Zahlen (also <code>&gt; 0</code>) von <code>upperHalf</code> funktionieren. Insbesondere sind die Tests für <code>upperhalf == 1</code> interssant. </li>
+<li>Zippen Sie Ihr Projekt <code>aufgabe4</code> und laden es in Moodle hoch. Viel Spaß und viel Erfolg!</li>
 </ul>
 </details>
                 
