@@ -996,6 +996,57 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
 </code></pre></div></li>
 </ol>
 </details>
+<details class="note"><summary>Übung 5 (17.11.2021)</summary><ol>
+<li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung5</code>. </li>
+<li>Erstellen Sie darin eine Klasse <code>Uebung5</code>. </li>
+<li>Ersetzen Sie den gesamten Code der Klasse <code>Uebung5</code> durch folgenden Code:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung5</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Uebung5</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Definieren Sie alle Ihre Methoden außerhalb dieser Methode</span>
+        <span class="c1">// Rufen Sie alle Ihre Methoden hier auf</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Wir schreiben uns zwei Methoden, die mathematische Funktionen umsetzen. Die eine Funktion berechnet die Potenz <code>base^exp</code> und die andere Funktion bereechnet die Quadratwurzel einer Zahl. Ziel der Übung ist es insbesondere, uns vorab die algorithmische Idee zu überlegen. Programmieren Sie also nicht gleich los, sondern überlegen Sie gemeinsam, wie Sie die beiden Funktionen umsetzen wollen!</li>
+<li>Schreiben Sie eine Methode <code>public double pow(int base, int exp)</code>. Dabei steht <code>pow</code> für <em>power</em>. Es soll <code>base^exp</code> berechnet werden. Überlegen Sie sich zunächst z.B.:<ul>
+<li>Wenn <code>exp</code> positiv ist, dann wollen wir <code>base * base * ... * base</code> berechnen, wobei <code>base</code> <code>exp</code> oft miteinander multipliziert wird. Welche Kontrollstruktur verwenden wir? Was sind die einzelnen "Teile" dieser Kontrollstruktur?</li>
+<li>Wir müssen uns irgendwie das <code>product</code> dieser Multiplikationen merken. Wie ist der initiale Wert von <code>product</code> und warum?</li>
+<li>Funktioniert Ihre Idee auch, wenn <code>exp</code> den Wert <code>0</code> hat? Warum bzw. warum nicht?</li>
+<li>Wenn <code>exp</code> negativ ist, dann ist <code>base^-exp = 1/(base^exp)</code>. Was müssen wir ändern? </li>
+<li>Warum ist der Rückgabetyp <code>double</code>? Warum nicht <code>int</code>? </li>
+</ul>
+</li>
+<li>Implementieren Sie eine Methode <code>public void printPow(int base, int exp)</code>, um Werte der Methodenaufrufe von <code>pow()</code> auf die Konsole auszugeben! Rufen Sie <code>printPow(int base, int exp)</code> in <code>start()</code> auf!</li>
+</ol>
+<p><strong><em>Zusatzaufgabe (falls noch Zeit ist)</em></strong></p>
+<ol>
+<li>
+<p>Schreiben Sie eine Methode <code>public double sqrt(int number)</code>, die die Quadratwurzel der Zahl <code>number</code> berechnet. Wir verfolgen dabei folgende Idee (<a href="https://de.wikipedia.org/wiki/Heron-Verfahren">Heron-Verfahren</a>):</p>
+<ul>
+<li>Wir stellen uns ein Rechteck vor, dessen Seitenlängen <code>number</code> und <code>1</code> sind. Die Fläche dieses Rechtecks ist also <code>number</code>. Nun versuchen wir, aus diesem Rechteck ein Quadrat zu machen (rein virtuell natürlich). Der Flächeninhalt von diesem Quadrat soll <code>number</code> sein/bleiben. Ein Quadrat mit dem Flächeninhalt <code>numbeer</code> hat die Seitenlängen <code>sqrt(number)</code>, also das, was wir wollen. </li>
+<li>Um aus dem Rechteck ein Quadrat zu machen, gehen wir schrittweise vor: die eine Seite des Rechteckes/Quadrates wird der Mittelwert aus den Seiten des Rechtecks. Nun berechnen wir die andere Seite indem wir den Flächeninhalt des Rechtecks (<code>number</code>) durch die neue Seitenlänge teilen. Somit haben wir 2 neue Seitenlängen, das Rechteck behält aber den Flächeninhalt <code>number</code>. </li>
+<li>Wir berechnen erneut die neue Seitenlänge des Rechtecks, indem wir den Mittelwert der beiden Seitenlängen berechnen und ermitteln dann wieder die andere Seitenlänge, indem wir den Flächeninhalt durch die Seitenlänge teilen. Die beiden Seitenlängen nähern sich dann zunehmend an und sind irgendwann fast identisch, also ein Quadrat. </li>
+<li>Wie lange müssen wir das wiederholen? Was ist am Ende unser Ergebnis? Von welchem Datentyp sollten die Seitenlängen sein?</li>
+<li>Überlegen Sie sich das Vorgehen genau, ehe Sie programmieren!</li>
+<li>
+<p>Beispiel zur Berechnung der Wurzel aus 8:</p>
+<p><img alt="uebung5" src="../files/202_heron.png" width="250" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public void printSqrt(int number)</code>, um Werte der Methodenaufrufe von <code>sqrt()</code> auf die Konsole auszugeben! Rufen Sie <code>printSqrt(int number)</code> in <code>start()</code> auf!</p>
+</li>
+</ol>
+</details>
                 
               
               
