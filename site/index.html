@@ -257,6 +257,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#code-aus-der-vorlesung" class="md-nav__link">
+    Code aus der Vorlesung
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -445,6 +452,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hilfsklassen/" class="md-nav__link">
+        Hilfsklassen
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -480,6 +502,13 @@
         <li class="md-nav__item">
   <a href="#planung-vorlaufig-kann-sich-noch-andern" class="md-nav__link">
     Planung (vorläufig - kann sich noch ändern)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-aus-der-vorlesung" class="md-nav__link">
+    Code aus der Vorlesung
   </a>
   
 </li>
@@ -565,21 +594,21 @@
 <tr>
 <td>4.</td>
 <td>01.-05.11.2021</td>
-<td>Sequenzen, Iterationen und Selektion</td>
-<td>Aufgabe 3</td>
+<td><a href="./selektion/#selektion">Selektion</a> (<a href="./selektion/#ifelse">if</a>) und <a href="./iteration/#iteration">Iteration</a> (<a href="./iteration/#die-for-schleife">for</a>)</td>
+<td><a href="./aufgaben/#aufgabe-3-abgabe-bis-08112021-2400-uhr">Aufgabe 3</a></td>
 <td>08.11.2021</td>
 </tr>
 <tr>
 <td>5.</td>
 <td>08.-12.11.2021</td>
-<td>Nützliche Klassen, Einführung Arrays</td>
-<td>Aufgabe 4</td>
+<td><a href="./iteration/#die-while-schleife">Iteration (while)</a></td>
+<td><a href="./aufgaben/#aufgabe-4-abgabe-bis-15112021-2400-uhr">Aufgabe 4</a></td>
 <td>15.11.2021</td>
 </tr>
 <tr>
 <td>6.</td>
 <td>15.-19.11.2021</td>
-<td>Sortieren von Arrays</td>
+<td><a href="./objekte/#klassen-und-objekte">Klassen und Objekte</a></td>
 <td>Aufgabe 5</td>
 <td>22.11.2021</td>
 </tr>
@@ -669,6 +698,289 @@
 </tr>
 </tbody>
 </table>
+<h2 id="code-aus-der-vorlesung">Code aus der Vorlesung<a class="headerlink" href="#code-aus-der-vorlesung" title="Permanent link">&para;</a></h2>
+<details class="note"><summary>Vorlesung Variablen -- 19. und 20.10.2021</summary><div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Variablen.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Variablen</span>
+<span class="p">{</span>
+    <span class="c1">// instance variables - replace the example below with your own </span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Variablen</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// initialise instance variables</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printObjectState</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;endlich programmieren!&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;endlich programmieren!&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="kt">int</span> <span class="n">intVariable</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">intVariable</span><span class="p">);</span>
+        <span class="n">intVariable</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">intVariable</span><span class="p">);</span>  
+        <span class="n">intVariable</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1234566</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">intVariable</span><span class="p">);</span>  
+
+        <span class="kt">long</span> <span class="n">longVariable</span> <span class="o">=</span> <span class="mi">123456</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">longVariable</span><span class="p">);</span>
+
+        <span class="kt">double</span> <span class="n">doubleVariable</span><span class="p">;</span>
+        <span class="n">doubleVariable</span> <span class="o">=</span> <span class="mf">1555.0507897865437654321872</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">doubleVariable</span><span class="p">);</span>  
+
+        <span class="kt">double</span> <span class="n">doubleVariable1</span><span class="p">;</span>
+        <span class="n">doubleVariable1</span> <span class="o">=</span> <span class="mf">15.0507897865437654321872</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">doubleVariable1</span><span class="p">);</span>  
+
+        <span class="kt">float</span> <span class="n">floatVariable</span><span class="p">;</span>
+        <span class="n">floatVariable</span> <span class="o">=</span> <span class="mf">0.3f</span><span class="p">;</span>
+
+        <span class="kt">char</span> <span class="n">charVariable</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">charVariable</span><span class="p">);</span>
+
+        <span class="n">charVariable</span> <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">charVariable</span><span class="p">);</span>
+
+        <span class="n">charVariable</span> <span class="o">=</span> <span class="sc">&#39;\u00A9&#39;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">charVariable</span><span class="p">);</span>
+
+        <span class="n">charVariable</span> <span class="o">=</span> <span class="sc">&#39;©&#39;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">charVariable</span><span class="p">);</span>
+
+        <span class="n">charVariable</span> <span class="o">=</span> <span class="mi">12337</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">charVariable</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">summe</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// 11</span>
+        <span class="kt">int</span> <span class="n">produkt</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Postfix und Prefix&quot;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">a1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+        <span class="n">a1</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+        <span class="o">++</span><span class="n">a1</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">a1</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="n">a1</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="o">++</span><span class="n">a1</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+
+        <span class="n">a1</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+        <span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="kc">true</span> <span class="o">^</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+        <span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Informatik &quot;</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;und &quot;</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">&quot;Wirtschaft!&quot;</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">s4</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">s3</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">s3</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">nr1</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nr2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nr1</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="o">+</span> <span class="n">nr2</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">nr1</span> <span class="o">+</span> <span class="n">nr2</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<details class="note"><summary>Vorlesung Methoden -- 26. und 27.10.2021</summary><div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Methods.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Methods</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Methods</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nr1</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="o">+</span> <span class="n">nr2</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="n">computeSum</span><span class="p">(</span><span class="n">nr1</span><span class="p">,</span><span class="n">nr2</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">computeSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">nr1</span> <span class="o">+</span> <span class="n">nr2</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEven</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">boolean</span> <span class="n">isEven</span> <span class="o">=</span> <span class="p">((</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">isEven</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Heute Methoden!&quot;</span><span class="p">);</span>
+     <span class="n">printSum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+     <span class="n">printSum</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+
+     <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">computeSum</span><span class="p">(</span><span class="n">computeSum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">computeSum</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<details class="note"><summary>Vorlesung Selektion if und Iteration for -- 2. und 3.11.2021</summary><div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">SelektionIteration.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SelektionIteration</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">SelektionIteration</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEven</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">number</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printSumFrom1ToN</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">term</span> <span class="o">=</span> <span class="s">&quot;0&quot;</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">summand</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">summand</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">term</span> <span class="o">=</span> <span class="n">term</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="o">+</span> <span class="n">summand</span><span class="p">;</span>
+            <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">summand</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">term</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="n">sum</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">computeSumFrom1ToN</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">summand</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">summand</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">summand</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">summand</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printSomething</span><span class="p">(</span><span class="kt">int</span> <span class="n">height</span><span class="p">,</span> <span class="kt">int</span> <span class="n">width</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span> <span class="n">row</span>  <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span><span class="o">--</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// String output = &quot;row = &quot; + row + &quot; : &quot;;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">row</span> <span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// output += &quot; col=&quot; + col;</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isOdd</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">isEven</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="n">isEven</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">isOdd</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; ist ungerade&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; ist gerade&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Wert von i &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">);</span> 
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ende der Schleife. Wert von i &quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="p">);</span> 
+
+        <span class="n">printSumFrom1ToN</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+
+        <span class="n">printSomething</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<details class="note"><summary>Vorlesung Iteration while -- 9.11.2021</summary><div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">IterationWhile.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IterationWhile</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">IterationWhile</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printCollatz</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">number</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">number</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printGGT</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">number1</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">number2</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">number1</span><span class="o">!=</span><span class="n">number2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">number1</span><span class="o">&gt;</span><span class="n">number2</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">number1</span> <span class="o">=</span> <span class="n">number1</span> <span class="o">-</span> <span class="n">number2</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">number2</span> <span class="o">=</span> <span class="n">number2</span> <span class="o">-</span> <span class="n">number1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ggT von &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span><span class="s">&quot; und &quot;</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="s">&quot; ist &quot;</span> <span class="o">+</span> <span class="n">number1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">printGGT</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+        <span class="n">printCollatz</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
                 
               
               

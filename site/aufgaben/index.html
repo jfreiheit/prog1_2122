@@ -484,6 +484,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aufgabe-5-abgabe-bis-22112021-2400-uhr" class="md-nav__link">
+    Aufgabe 5 (Abgabe bis 22.11.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -507,6 +514,21 @@
     <li class="md-nav__item">
       <a href="../tools/" class="md-nav__link">
         Werkzeuge
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hilfsklassen/" class="md-nav__link">
+        Hilfsklassen
       </a>
     </li>
   
@@ -609,6 +631,13 @@
           <li class="md-nav__item">
   <a href="#aufgabe-4-abgabe-bis-15112021-2400-uhr" class="md-nav__link">
     Aufgabe 4 (Abgabe bis 15.11.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-5-abgabe-bis-22112021-2400-uhr" class="md-nav__link">
+    Aufgabe 5 (Abgabe bis 22.11.2021 24:00 Uhr)
   </a>
   
 </li>
@@ -855,9 +884,55 @@ Zur offiziellen Abgabe einer Aufgabe gehören also</p>
 <li>dass Sie den Wert <code>upperHalf</code> gut verwenden können (was ebenfalls notwendig ist, wie Sie merken werden)</li>
 </ul>
 </li>
-<li><strong>Tipp:</strong>: Schreiben Sie sich zwei weitere Methoden <code>public static void printRhombusFilled(int upperHalf){}</code> und <code>public static void printRhombusUnfilled(int upperHalf){}</code>, die Sie entsprechend des Wertes von <code>filled</code> aufrufen. In der einen Methode erstellen Sie die ausgefüllte Raute und in der anderen die ungefüllte. Dann wird Ihr Programm nicht zu unübersichtlich. Fangen Sie am besten mit der ausgefüllten an, die ist etwas leichter. </li>
+<li><strong>Tipp:</strong>: Schreiben Sie sich zwei weitere Methoden <code>public void printRhombusFilled(int upperHalf){}</code> und <code>public void printRhombusUnfilled(int upperHalf){}</code>, die Sie entsprechend des Wertes von <code>filled</code> aufrufen. In der einen Methode erstellen Sie die ausgefüllte Raute und in der anderen die ungefüllte. Dann wird Ihr Programm nicht zu unübersichtlich. Fangen Sie am besten mit der ausgefüllten an, die ist etwas leichter. </li>
 <li>Das Programm soll für beliebige (nicht so große - max. Wert <code>100</code>) positive Zahlen (also <code>&gt; 0</code>) von <code>upperHalf</code> funktionieren. Insbesondere sind die Tests für <code>upperhalf == 1</code> interssant. </li>
 <li>Zippen Sie Ihr Projekt <code>aufgabe4</code> und laden es in Moodle hoch. Viel Spaß und viel Erfolg!</li>
+</ul>
+</details>
+<h4 id="aufgabe-5-abgabe-bis-22112021-2400-uhr">Aufgabe 5 (Abgabe bis 22.11.2021 24:00 Uhr)<a class="headerlink" href="#aufgabe-5-abgabe-bis-22112021-2400-uhr" title="Permanent link">&para;</a></h4>
+<details><summary>Aufgabe5 - Knobeleien</summary><ul>
+<li>Diese Aufgabe ist hauptsächlich dazu da, um das algorithmische Denken zu schulen. Sie werden im Netz jeweils viele Lösungen finden, aber Sie sollten versuchen, alleine auf eine Lösung zu kommen. Versuchen Sie es! Ich gebe zu jeder Aufgabe kleine Tipps. </li>
+<li>Erstellen Sie sich ein neues Projekt <code>aufgabe5</code> und darin eine neue Klasse <code>Aufgabe5</code>, die wie folgt aussieht:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Aufgabe5</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Aufgabe5</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// rufen Sie hier Ihre Methoden auf:</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Implementieren Sie eine Methode <code>public int computeChecksum(int number){}</code>. Diese Methode berechnet die Quersumme der Zahl <code>number</code> und gibt diese zurück. Hier ein paar Beispiele:
+    <div class="highlight"><pre><span></span><code>number: 123456      -&gt; checksum: 21
+number: -123456     -&gt; checksum: -21
+number: 0           -&gt; checksum: 0
+number: 2147483647  -&gt; checksum: 46
+number: -2147483648 -&gt; checksum: -47
+</code></pre></div>
+    <strong>Tipp</strong>: "Laufen" Sie am besten von hinten nach vorne durch die Zahl <code>number</code> und lösen immer die letzte Ziffer von der Zahl, um diese dann zur Quersumme zu addieren. Welchen Operator kennen Sie, um als Ergebnis die letzte Ziffer einer Dezimalzahl zu erhalten? Wie lange müssen Sie "laufen"?</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public void printCombinations36(){}</code>. Diese Methode gibt alle Kombinationen für 3 <strong>ganze</strong> Zahlen <code>x</code>, <code>y</code> und <code>z</code> auf der Konsole aus, für die Folgendes gilt:
+    <div class="highlight"><pre><span></span><code>x &lt;= y &lt;= z und
+x * y * z = 36
+</code></pre></div>
+    <strong>Tipp</strong>: Überlegen Sie sich zuerst, wie man z.B. alle Kombinationen ermitteln kann, wenn <code>x</code>, <code>y</code> und <code>z</code> jeweils Werte zwischen <code>-50</code> und <code>50</code> annehmen können (das sind dann <code>100^3</code>, also <code>1000000</code> Kombinationen). Überlegen Sie dann, wie Sie diese Wertebereiche mithilfe der beiden Bedingungen einschränken können. Es gibt übrigens 28 Kombinationen, für die die beiden obigen Bedingungen gelten.  </p>
+<hr />
+<p><strong><em>Wenn Sie diese beiden Aufgaben erledigt haben, dann haben Sie genug geknobelt. Herzlichen Glückwunsch - Aufgabe erfüllt! Nur für diejenigen unter Ihnen, die vom Knobeln nicht genug bekommen können, gibt es die folgende Zusatzaufgabe. Ist aber wirklich keine Pflicht, sondern soll nur Vergnügen sein :-)</em></strong></p>
+<hr />
+</li>
+<li>
+<p><strong>Zusatzaufgabe</strong>: Implementieren Sie eine Methode <code>public void printPrimeFactors(int number){}</code>, die für die übergebene Zahl <code>number</code> die Primzahlfaktorzerlegung auf die Konsole ausgibt, also z.B. so:
+    <div class="highlight"><pre><span></span><code>480 --&gt; 2 2 2 2 2 3 5 
+17 --&gt; 17 
+12345 --&gt; 3 5 823
+</code></pre></div>
+    <strong>Tipp:</strong>: Nützliche Methoden sind sicherlich <code>boolean isPrime(int number)</code> und <code>boolean isDivider(int factor, int number)</code>, wobei Letztere prüft, ob <code>factor</code> ein ganzzahliger Teiler von <code>number</code> ist. Achten Sie darauf, dass wenn Sie einen Primfaktor gefunden haben, es auch derselbe Primfaktor wiederholt sein kann. Ist knifflig!  </p>
+</li>
 </ul>
 </details>
                 

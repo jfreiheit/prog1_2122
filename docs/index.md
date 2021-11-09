@@ -45,9 +45,9 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 1. | 11.-15.10.2021 | [Einführung](./start/#was-ist-programmieren) und [Organisatorisches](./#organisatorisches), [Klassen und Objekte - BlueJ](./bluej/#bluej) | -  | - | 
 | 2. | 18.-22.10.2021 | [Variablen und Datentypen](./variablen/#variablen-und-datentypen) und [Operatoren und Ausdrücke](./ausdruecke/#operatoren-und-ausdrucke) | [Aufgabe 1](./aufgaben/#aufgabe-1-abgabe-bis-25102021-2400-uhr)  | 25.10.2021 | 
 | 3. | 25.-29.10.2021 | [Methoden](./methoden/#methoden) | [Aufgabe 2](./aufgaben/#aufgabe-2-abgabe-bis-01112021-2400-uhr)  | 01.11.2021 | 
-| 4. | 01.-05.11.2021 | Sequenzen, Iterationen und Selektion | Aufgabe 3 | 08.11.2021 | 
-| 5. | 08.-12.11.2021 | Nützliche Klassen, Einführung Arrays | Aufgabe 4 | 15.11.2021 | 
-| 6. | 15.-19.11.2021 | Sortieren von Arrays | Aufgabe 5  | 22.11.2021 | 
+| 4. | 01.-05.11.2021 | [Selektion](./selektion/#selektion) ([if](./selektion/#ifelse)) und [Iteration](./iteration/#iteration) ([for](./iteration/#die-for-schleife))| [Aufgabe 3](./aufgaben/#aufgabe-3-abgabe-bis-08112021-2400-uhr) | 08.11.2021 | 
+| 5. | 08.-12.11.2021 | [Iteration (while)](./iteration/#die-while-schleife) | [Aufgabe 4](./aufgaben/#aufgabe-4-abgabe-bis-15112021-2400-uhr) | 15.11.2021 | 
+| 6. | 15.-19.11.2021 | [Klassen und Objekte](./objekte/#klassen-und-objekte) | Aufgabe 5  | 22.11.2021 | 
 | 7. | 22.-26.11.2021 | Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten | Aufgabe 6  | 29.11.2021 | 
 | 8. | 29.-03.12.2021 | Klassen- und Objekt-Variablen und -Methoden  | Aufgabe 7  | 06.12.2021 |
 | 9. | 06.-10.12.2021 | Vererbung | Aufgabe 8  | 13.12.2021 |
@@ -60,5 +60,293 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 15. | 24.-28.01.2021 | Neuerungen ab Java 8 | - | - |
 | 16. | 31.-03.02.2022 | Wiederholung, Klausurvorbereitung  | Fragen  | - |
 | 17. | 07.-11.02.2021 | Wiederholung, Klausurvorbereitung | Fragen | - |
+
+
+## Code aus der Vorlesung
+
+
+??? note "Vorlesung Variablen -- 19. und 20.10.2021"
+	=== "Variablen.java"
+		```java
+		public class Variablen
+		{
+		    // instance variables - replace the example below with your own 
+		    private int x;
+
+		    public Variablen()
+		    {
+		        // initialise instance variables
+		        x = 5;
+		    }
+
+		    public void printObjectState()
+		    {
+		        System.out.println("endlich programmieren!");
+		        System.out.println();
+		        System.out.println(x);
+		        System.out.println();
+		        System.out.println("endlich programmieren!");
+		        System.out.println();
+		        System.out.println(x);
+		        
+		        System.out.println();
+		                
+		        int intVariable = 123;
+		        System.out.println(intVariable);
+		        intVariable = 5;
+		        System.out.println(intVariable);  
+		        intVariable = -1234566;
+		        System.out.println(intVariable);  
+		        
+		        long longVariable = 123456;
+		        System.out.println(longVariable);
+		        
+		        double doubleVariable;
+		        doubleVariable = 1555.0507897865437654321872;
+		        System.out.println(doubleVariable);  
+		        
+		        double doubleVariable1;
+		        doubleVariable1 = 15.0507897865437654321872;
+		        System.out.println(doubleVariable1);  
+		        
+		        float floatVariable;
+		        floatVariable = 0.3f;
+		        
+		        char charVariable = 'a';
+		        System.out.println(charVariable);
+		        
+		        charVariable = 65;
+		        System.out.println(charVariable);
+		        
+		        charVariable = '\u00A9';
+		        System.out.println(charVariable);
+		        
+		        charVariable = '©';
+		        System.out.println(charVariable);
+		        
+		        charVariable = 12337;
+		        System.out.println(charVariable);
+		        
+		        int a = 4;
+		        int b = 7;
+		        
+		        int summe = a + b;  // 11
+		        int produkt = a * b;
+		        
+		        System.out.println("Postfix und Prefix");
+		        int a1 = 5;
+		        System.out.println(a1);
+		        a1++;
+		        System.out.println(a1);
+		        ++a1;
+		        System.out.println(a1);
+		        
+		        int b1 = a1;
+		        System.out.println(b1);
+		        b1 = a1++;
+		        System.out.println(b1);
+		        b1 = ++a1;
+		        System.out.println(b1);
+		        
+		        a1 = 7;
+		        b1 = 8;
+		        int c1 = 9;
+		        boolean result = (true ^ true);
+		        System.out.println(result);
+		        
+		        String s1 = "Informatik ";
+		        String s2 = "und ";
+		        String s3 = "Wirtschaft!";
+		        String s4 = s1 + s2 + s3;
+		        System.out.println(s1 + s2 + s3);
+		        
+		        int nr1 = 7;
+		        int nr2 = 4;
+		        System.out.println(nr1 + " + " + nr2 + " = " + (nr1 + nr2));
+		    }
+		}
+		```
+
+
+??? note "Vorlesung Methoden -- 26. und 27.10.2021"
+	=== "Methods.java"
+		```java
+		public class Methods
+		{
+		    public Methods()
+		    {
+
+		    }
+
+		    public void printSum(int nr1, int nr2)
+		    {
+		        System.out.println(nr1 + " + " + nr2 + " = " + computeSum(nr1,nr2));
+		    }
+		    
+		    public int computeSum(int nr1, int nr2)
+		    {
+		        int sum = nr1 + nr2;
+		        return sum;
+		    }
+		    
+		    public boolean isEven(int number)
+		    {
+		        boolean isEven = ((number % 2) == 0);
+		        return isEven;
+		    }
+		    
+		    public void start()
+		    {
+		     System.out.println("Heute Methoden!");
+		     printSum(3,4);
+		     printSum(-7, 6);
+		     
+		     int sum = computeSum(computeSum(1,2),4) + computeSum(-7, 6);
+		     System.out.println(sum);
+		    }
+		}
+		```
+
+??? note "Vorlesung Selektion if und Iteration for -- 2. und 3.11.2021"
+	=== "SelektionIteration.java"
+		```java
+		public class SelektionIteration
+		{
+		    public SelektionIteration()
+		    {
+
+		    }
+
+		    public boolean isEven(int number)
+		    {
+		        return (number%2 == 0);
+		    }
+		    
+		    public void printSumFrom1ToN(int n)
+		    {
+		        int sum = 0;
+		        String term = "0";
+		        for(int summand = 1; summand <= n; summand++)
+		        {
+		            term = term + " + " + summand;
+		            sum = sum + summand;
+		            System.out.println(term + " = " + sum);
+		        }
+		    }
+		    
+		    public int computeSumFrom1ToN(int n)
+		    {
+		        int sum = 0;
+		        for(int summand = 1; summand <= n; summand++)
+		        {
+		            sum += summand;
+		        }
+		        return sum;
+		    }
+		    
+		    
+		    public void printSomething(int height, int width)
+		    {
+		        for(int row = height; row  > 0; row--)
+		        {
+		            // String output = "row = " + row + " : ";
+		            for(int col = 0; col < row ; col++)
+		            {
+		                // output += " col=" + col;
+		                System.out.print("*");
+		            }
+		            System.out.println();
+		        }
+		    }
+		    
+		    public boolean isOdd(int number)
+		    {
+		        return !isEven(number);
+		    }
+		    
+		    public void start()
+		    {
+		        boolean result = isEven(4);
+		        int number = 7;
+		        int a = 3;
+		        int b = 2;
+		        if(isOdd(number))
+		        {
+		            System.out.println(number + " ist ungerade");
+		        }
+		        else
+		        {
+		            System.out.println(number + " ist gerade");
+		        }
+		        System.out.println(result);
+		        
+		        int i = 0;
+		        for(i = 0; i > 10; i = i + 1)
+		        {
+		            System.out.println("Wert von i " + (i+1) ); 
+		        }
+		        System.out.println("Ende der Schleife. Wert von i " + i ); 
+		        
+		        printSumFrom1ToN(7);
+		        
+		        printSomething(5, 4);
+		    }
+		}
+		```
+
+??? note "Vorlesung Iteration while -- 9.11.2021"
+	=== "IterationWhile.java"
+		```java
+		public class IterationWhile
+		{
+		    public IterationWhile()
+		    {
+
+		    }
+
+		    public void printCollatz(int start)
+		    {
+		        int number = start;
+		        while(number > 1)
+		        {
+		            System.out.print(number + " ");
+		            if(number%2==0)
+		            {
+		                number = number / 2;
+		            }
+		            else
+		            {
+		                number = 3 * number + 1;
+		            }
+		        }
+		    }
+		    
+		    public void printGGT(int a, int b)
+		    {
+		        int number1 = a;
+		        int number2 = b;
+		        while(number1!=number2)
+		        {
+		            if(number1>number2)
+		            {
+		                number1 = number1 - number2;
+		            }
+		            else
+		            {
+		                number2 = number2 - number1;
+		            }
+		        }
+		        
+		        System.out.println("ggT von " + a +" und " + b + " ist " + number1);
+		    }
+		    
+		    public void start()
+		    {
+		        printGGT(40, 24);
+		        printCollatz(7);
+		    }
+		}
+		```
+
 
 

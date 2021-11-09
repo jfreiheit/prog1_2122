@@ -241,8 +241,57 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 	- Die Berechnung der Höhe aus dem Parameterwert `upperHalf` hat die Vorteile, 
 		- dass die Höhe dadurch immer eine ungerade Zahl ist (was notwendig ist) und 
 		- dass Sie den Wert `upperHalf` gut verwenden können (was ebenfalls notwendig ist, wie Sie merken werden)
-	- **Tipp:**: Schreiben Sie sich zwei weitere Methoden `public static void printRhombusFilled(int upperHalf){}` und `public static void printRhombusUnfilled(int upperHalf){}`, die Sie entsprechend des Wertes von `filled` aufrufen. In der einen Methode erstellen Sie die ausgefüllte Raute und in der anderen die ungefüllte. Dann wird Ihr Programm nicht zu unübersichtlich. Fangen Sie am besten mit der ausgefüllten an, die ist etwas leichter. 
+	- **Tipp:**: Schreiben Sie sich zwei weitere Methoden `public void printRhombusFilled(int upperHalf){}` und `public void printRhombusUnfilled(int upperHalf){}`, die Sie entsprechend des Wertes von `filled` aufrufen. In der einen Methode erstellen Sie die ausgefüllte Raute und in der anderen die ungefüllte. Dann wird Ihr Programm nicht zu unübersichtlich. Fangen Sie am besten mit der ausgefüllten an, die ist etwas leichter. 
 	- Das Programm soll für beliebige (nicht so große - max. Wert `100`) positive Zahlen (also `> 0`) von `upperHalf` funktionieren. Insbesondere sind die Tests für `upperhalf == 1` interssant. 
 	- Zippen Sie Ihr Projekt `aufgabe4` und laden es in Moodle hoch. Viel Spaß und viel Erfolg!
 
 
+
+#### Aufgabe 5 (Abgabe bis 22.11.2021 24:00 Uhr)
+??? "Aufgabe5 - Knobeleien"
+	- Diese Aufgabe ist hauptsächlich dazu da, um das algorithmische Denken zu schulen. Sie werden im Netz jeweils viele Lösungen finden, aber Sie sollten versuchen, alleine auf eine Lösung zu kommen. Versuchen Sie es! Ich gebe zu jeder Aufgabe kleine Tipps. 
+	- Erstellen Sie sich ein neues Projekt `aufgabe5` und darin eine neue Klasse `Aufgabe5`, die wie folgt aussieht:
+		```java				
+		public class Aufgabe5
+		{
+		    public Aufgabe5()
+		    {
+		        
+		    }
+
+		    public void start()
+		    {
+		        // rufen Sie hier Ihre Methoden auf:
+		        
+		    }
+		}
+		```
+	- Implementieren Sie eine Methode `public int computeChecksum(int number){}`. Diese Methode berechnet die Quersumme der Zahl `number` und gibt diese zurück. Hier ein paar Beispiele:
+		```
+		number: 123456 		-> checksum: 21
+		number: -123456 	-> checksum: -21
+		number: 0 			-> checksum: 0
+		number: 2147483647 	-> checksum: 46
+		number: -2147483648	-> checksum: -47
+		```
+		**Tipp**: "Laufen" Sie am besten von hinten nach vorne durch die Zahl `number` und lösen immer die letzte Ziffer von der Zahl, um diese dann zur Quersumme zu addieren. Welchen Operator kennen Sie, um als Ergebnis die letzte Ziffer einer Dezimalzahl zu erhalten? Wie lange müssen Sie "laufen"?
+	- Implementieren Sie eine Methode `public void printCombinations36(){}`. Diese Methode gibt alle Kombinationen für 3 **ganze** Zahlen `x`, `y` und `z` auf der Konsole aus, für die Folgendes gilt:
+		```
+		x <= y <= z und
+		x * y * z = 36
+		``` 
+		**Tipp**: Überlegen Sie sich zuerst, wie man z.B. alle Kombinationen ermitteln kann, wenn `x`, `y` und `z` jeweils Werte zwischen `-50` und `50` annehmen können (das sind dann `100^3`, also `1000000` Kombinationen). Überlegen Sie dann, wie Sie diese Wertebereiche mithilfe der beiden Bedingungen einschränken können. Es gibt übrigens 28 Kombinationen, für die die beiden obigen Bedingungen gelten.  
+
+		---
+
+		***Wenn Sie diese beiden Aufgaben erledigt haben, dann haben Sie genug geknobelt. Herzlichen Glückwunsch - Aufgabe erfüllt! Nur für diejenigen unter Ihnen, die vom Knobeln nicht genug bekommen können, gibt es die folgende Zusatzaufgabe. Ist aber wirklich keine Pflicht, sondern soll nur Vergnügen sein :-)***
+
+		---
+
+	- **Zusatzaufgabe**: Implementieren Sie eine Methode `public void printPrimeFactors(int number){}`, die für die übergebene Zahl `number` die Primzahlfaktorzerlegung auf die Konsole ausgibt, also z.B. so:
+		```
+		480 --> 2 2 2 2 2 3 5 
+		17 --> 17 
+		12345 --> 3 5 823
+		```
+		**Tipp:**: Nützliche Methoden sind sicherlich `boolean isPrime(int number)` und `boolean isDivider(int factor, int number)`, wobei Letztere prüft, ob `factor` ein ganzzahliger Teiler von `number` ist. Achten Sie darauf, dass wenn Sie einen Primfaktor gefunden haben, es auch derselbe Primfaktor wiederholt sein kann. Ist knifflig!  

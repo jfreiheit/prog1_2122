@@ -432,6 +432,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#eine-weiterer-datentyp-point" class="md-nav__link">
+    Eine weiterer Datentyp Point
+  </a>
+  
+    <nav class="md-nav" aria-label="Eine weiterer Datentyp Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getter-und-eine-print-methode-fur-point" class="md-nav__link">
+    Getter und eine print()-Methode für Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektmethode-translate-fur-point" class="md-nav__link">
+    Objektmethode translate() für Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vergleiche-mit-anderen-objekten-gleichen-typs" class="md-nav__link">
+    Vergleiche mit anderen Objekten gleichen Typs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ein-weiterer-datentyp-circle" class="md-nav__link">
+    Ein weiterer Datentyp Circle
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -495,6 +536,21 @@
     <li class="md-nav__item">
       <a href="../tools/" class="md-nav__link">
         Werkzeuge
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hilfsklassen/" class="md-nav__link">
+        Hilfsklassen
       </a>
     </li>
   
@@ -591,6 +647,47 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eine-weiterer-datentyp-point" class="md-nav__link">
+    Eine weiterer Datentyp Point
+  </a>
+  
+    <nav class="md-nav" aria-label="Eine weiterer Datentyp Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getter-und-eine-print-methode-fur-point" class="md-nav__link">
+    Getter und eine print()-Methode für Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektmethode-translate-fur-point" class="md-nav__link">
+    Objektmethode translate() für Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vergleiche-mit-anderen-objekten-gleichen-typs" class="md-nav__link">
+    Vergleiche mit anderen Objekten gleichen Typs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ein-weiterer-datentyp-circle" class="md-nav__link">
+    Ein weiterer Datentyp Circle
+  </a>
   
 </li>
       
@@ -1265,6 +1362,1291 @@ Treskowallee <span class="m">8</span> <span class="k">in</span> <span class="m">
 <p class="admonition-title">Success</p>
 <p>Wir haben unseren ersten eigenen Datentyp erstellt! Wir haben dazu eine Klasse geschrieben. Die Klasse enthält Objektvariablen und Objektmethoden. Wir haben mithilfe des Schlüsselwortes <code>new</code> und dem Aufruf eines Konstruktors Objekte dieser Klasse erzeugt. Über die Punktnotation können wir auf die Objektmethoden zugreifen und diese ausführen. Wir haben außerdem das Schlüsselwort <code>private</code> kennengelernt. Auf Objektvariablen und Objektmethoden, die als <code>private</code> deklariert sind, kann außerhalb der Klasse nicht zugegriffen werden. Um doch einen lesenden Zugriff auf die Werte der Objektvariablen zu ermöglichen, haben wir Getter definiert. </p>
 </div>
+<hr />
+<p>Wir wollen jetzt das Neuerlernte an weiteren Beispielen festigen.</p>
+<h3 id="eine-weiterer-datentyp-point">Eine weiterer Datentyp <code>Point</code><a class="headerlink" href="#eine-weiterer-datentyp-point" title="Permanent link">&para;</a></h3>
+<p>Angenommen, wir wollen in einem kartesischen Koordinatensystem einen Punkt beschreiben, also soetwas wie in der folgenden Abbildung:</p>
+<p><img alt="punkt" src="../files/67_punkt.png" /></p>
+<p>Um uns eine eigene Klasse für <code>Point</code> zu schreiben, überlegen wir uns zunächst, was die allgemeine Struktur eines solchen Punktes ist. Das ist recht leicht aus der oberen Abbildung zu erkennen: ein Punkt wird durch zwei <code>int</code>-Werte <code>x</code> und <code>y</code> beschrieben. Dieses werden also unsere Objektvariablen:</p>
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Point.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir setzen die Objektvariablen nun gleich auf <code>private</code>. Wenn keine zwingenden Gründe dagegen sprechen (und das ist fast nie der Fall), deklarieren wir unsere Objektvariablen stets als <code>private</code>, um dem Prinzip des <em>information hiding</em> zu entsprechen. Hier nochmal eine Übersicht der bisherigen Begriffe und Bedeutungen:</p>
+<p><img alt="point" src="../files/69_point.png" /></p>
+<p>Wir erstellen uns auch gleich einen parametrisierten Konstruktor, um den Objektvariablen bereits beim Erzeugen der Objekte ihre Werte zuzuweisen:</p>
+<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Point.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="c1">// --- Konstruktor ---------</span>
+    <span class="kd">public</span> <span class="nf">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">px</span><span class="p">,</span> <span class="kt">int</span> <span class="n">py</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">px</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">py</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wie wir bereits wissen, heißt der Konstruktor exakt wie die Klasse und hat keinen Rückgabetyp (auch nicht <code>void</code>). Achten Sie darauf, dass die Parameter (derzeit noch) anders heißen, als die Objektvariablen. Wir haben ansonsten innerhalb des Konstruktors einen Namenskonflikt. Diesen werden wir auflösen, wenn wir das Schlüsselwort <code>this</code> kennenlernen. </p>
+<p>In unserer Testklasse (Testklasse <code>PointTest</code> erzeugen und Testmethode <code>testPoint()</code> anlegen) können wir uns nun einige <code>Point</code>-Objekte erzeugen:</p>
+<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">PointTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPoint</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Point</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir erstellen uns also vier <code>Point</code>-Objekte. Die Variablen <code>p1</code>, <code>p2</code>, <code>p3</code> und <code>p4</code> referenzieren jeweils ein <code>Point</code>-Objekt und sind vom Typ <code>Point</code>. Wir können uns die vier Objekte wie folgt veranschaulichen:</p>
+<p><img alt="point" src="../files/70_point.png" /></p>
+<p>Jedes <code>Point</code>-Objekt hat also seine eigenen Objektvariablen mit den dazugehörigen Werten.  </p>
+<h4 id="getter-und-eine-print-methode-fur-point">Getter und eine <code>print()</code>-Methode für <code>Point</code><a class="headerlink" href="#getter-und-eine-print-methode-fur-point" title="Permanent link">&para;</a></h4>
+<p>Wir wollen jetzt, dass außerhalb der Klasse die Werte von <code>x</code> und <code>y</code> ausgelesen werden können. Dazu definieren wir uns Getter, also eine <code>getX()</code>- und eine <code>getY()</code>-Methode. Außerdem wollen wir eine <code>print()</code>-Methode zur Klasse <code>Point</code> hinzufügen, um die Werte von <code>x</code> und <code>y</code> auf die Konsole auszugeben. Die Klasse <code>Point</code> sieht nun so aus:</p>
+<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">Point.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----------</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="c1">// --- Konstruktor ---------------</span>
+    <span class="kd">public</span> <span class="nf">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">px</span><span class="p">,</span> <span class="kt">int</span> <span class="n">py</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">px</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">py</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- Getter --------------------</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getX</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getY</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- weitere Objektmethoden ----</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[ x=&quot;</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="s">&quot;, y=&quot;</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir testen die neuerstellten Objektmethoden in unserer Testklasse <code>PointTest</code>:</p>
+<div class="tabbed-set" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">PointTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPoint</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Point</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p1 : ( &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p2 : ( &quot;</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p3 : ( &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>   
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p4 : ( &quot;</span> <span class="o">+</span> <span class="n">p4</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p4</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+
+    <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">p2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">p3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir greifen also wieder über die jeweilige Referenzvariable <code>p1</code>, <code>p2</code>, <code>p3</code> bzw. <code>p4</code> über Punktnotation auf die Objektmethoden zu. Beachten Sie, dass - genau wie für die Objektvariablen - auch bei den Objektmethoden jedes Objekt "seine eigene" Objektmethode hat. <code>p1.getX()</code> gibt also genau den <code>x</code>-Wert des Objektes aus, auf das <code>p1</code> zeigt (<code>1</code>) und <code>p2.getX()</code> gibt also genau den <code>x</code>-Wert des Objektes aus, auf das <code>p2</code> zeigt (<code>2</code>). Die <code>print()</code>-Methode gibt genau die <code>x</code>- und <code>y</code>-Werte des Objektes aus, das die <code>print()</code>-Methode aufgerufen hat. Unsere vier Objekte können wir uns nun also so veranschaulichen:</p>
+<p><img alt="point" src="../files/71_point.png" /></p>
+<p>Die Ausgabe sieht so aus:</p>
+<div class="highlight"><pre><span></span><code> p1 : <span class="o">(</span> <span class="m">1</span>, <span class="m">2</span> <span class="o">)</span>
+ p2 : <span class="o">(</span> <span class="m">2</span>, <span class="m">4</span> <span class="o">)</span>
+ p3 : <span class="o">(</span> <span class="m">4</span>, <span class="m">6</span> <span class="o">)</span>
+ p4 : <span class="o">(</span> <span class="m">5</span>, <span class="m">3</span> <span class="o">)</span>
+<span class="o">[</span> <span class="nv">x</span><span class="o">=</span><span class="m">1</span>, <span class="nv">y</span><span class="o">=</span><span class="m">2</span> <span class="o">]</span>
+<span class="o">[</span> <span class="nv">x</span><span class="o">=</span><span class="m">2</span>, <span class="nv">y</span><span class="o">=</span><span class="m">4</span> <span class="o">]</span>
+<span class="o">[</span> <span class="nv">x</span><span class="o">=</span><span class="m">4</span>, <span class="nv">y</span><span class="o">=</span><span class="m">6</span> <span class="o">]</span>
+<span class="o">[</span> <span class="nv">x</span><span class="o">=</span><span class="m">5</span>, <span class="nv">y</span><span class="o">=</span><span class="m">3</span> <span class="o">]</span>
+</code></pre></div>
+<p>Wir erstellen eine weitere Objektmethode für die Klasse <code>Point</code>, um einen Punkt zu verschieben. </p>
+<h4 id="objektmethode-translate-fur-point">Objektmethode <code>translate()</code> für <code>Point</code><a class="headerlink" href="#objektmethode-translate-fur-point" title="Permanent link">&para;</a></h4>
+<p>Wir wollen einen Punkt um ein <code>deltaX</code> nach links oder rechts und um ein <code>deltaY</code> nach oben oder unten verschieben:</p>
+<p><img alt="point" src="../files/72_point.png" /></p>
+<p>Angenommen, unser Punkt ist, wie in der obigen Abbildung gezeigt, bei <code>x=1</code> und <code>y=2</code> und er soll um <code>deltaX=4</code> nach rechts und um <code>deltaY=3</code> nach oben verschoben werden, dann ist er nach <code>translate(4,3)</code> bei <code>x=5</code> und <code>y=5</code>. Wir implementieren die Objektmethode in der Klasse <code>Point</code> wie folgt:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">translate</span><span class="p">(</span><span class="kt">int</span> <span class="n">deltaX</span><span class="p">,</span> <span class="kt">int</span> <span class="n">deltaY</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">deltaX</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">deltaY</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Beachten Sie, dass der Rückgabetyp <code>void</code> ist. Das hatten wir bisher immer nur bei Methoden, in denen eine Ausgabe auf die Konsole erfolgte. Bei Objektmethoden wird dies nun häufig vorkommen. In der Methode <code>translate()</code> werden die Werte von den Objektvariablen <code>x</code> und <code>y</code> neu gesetzt. Sie ergeben sich hier aus den alten Werten von <code>x</code> und <code>y</code> und der Addition mit <code>deltaX</code> bzw. <code>deltaY</code>. Beachten Sie auch, dass die Werte von <code>deltaX</code> und <code>deltaY</code> negativ sein können. Dann wird der Punkt nach links bzw. nach unten verschoben. Im Ergebnis der Ausführung der Methode <code>translate()</code> haben die Objektvariablen des Objektes, das diese Methode aufgerufen hat, neue Werte. Wir testen das in unserer Testklasse <code>PointTest</code>:</p>
+<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">PointTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPoint</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="cm">/* hier gekuerzt - siehe oben                       */</span>
+    <span class="cm">/* die Erzeugung der Objekte muss bleiben           */</span>
+    <span class="cm">/* Testen der Getter und print() kann auch bleiben  */</span> 
+
+    <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=1, y=2 ]</span>
+    <span class="n">p1</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=5, y=5 ]</span>
+
+    <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=5, y=3 ]</span>
+    <span class="n">p4</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=2, y=2 ]</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h4 id="vergleiche-mit-anderen-objekten-gleichen-typs">Vergleiche mit anderen Objekten gleichen Typs<a class="headerlink" href="#vergleiche-mit-anderen-objekten-gleichen-typs" title="Permanent link">&para;</a></h4>
+<p>Angenommen, ein Punkt möchte "wissen", ob er selbst weiter links positioniert ist, als ein anderer Punkt. Dann muss er seinen eigenen <code>x</code>-Wert mit dem <code>x</code>-Wert des anderen Punktes vergleichen. Wenn wir dafür eine Objektmethode schreiben wollen, dann müssen wir den anderen Punkt als Parameter übergeben. Das ist kein Problem:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isLeft</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Wir übergeben der Objektmethode ein Objekt vom Typ <code>Point</code>. Wir wissen, dass jedes <code>Point</code>-Objekt folgende Eigenschaften hat:</p>
+<ul>
+<li><code>x</code>, </li>
+<li><code>y</code>, </li>
+<li><code>getX()</code>, </li>
+<li><code>getY()</code>,</li>
+<li><code>print()</code> und </li>
+<li><code>translate()</code> </li>
+</ul>
+<p>Auf diese Eigenschaften können wir natürlich auch innerhalb der Klasse über die Punktnotation zugreifen. Hierbei ist anzumerken, dass wir innerhalb der Klasse auch direkt auf die <code>x</code>- und <code>y</code>-variablen zugreifen können. Der Sichtbarkeitsmodifizierer <code>private</code> besagt nur, dass wir <strong>nicht außerhalb</strong> der Klasse auf die Objektvariablen zugreifen können. Innerhalb der Klasse ist der direkte Zugriff erlaubt! Wir hätten aber auch über die <code>getX()</code>-Methode den Wert von <code>x</code> von <code>otherPoint</code> auslesen können. </p>
+<p>Wir erweitern um die Methoden <code>isRight()</code>, <code>isAbove()</code>, <code>isBelow()</code>. Die gesamte Klasse <code>Point</code> sieht dann so aus:</p>
+<div class="tabbed-set" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">Point.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----------</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="c1">// --- Konstruktor ---------------</span>
+    <span class="kd">public</span> <span class="nf">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">px</span><span class="p">,</span> <span class="kt">int</span> <span class="n">py</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">px</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">py</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- Getter --------------------</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getX</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getY</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- weitere Objektmethoden ----</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[ x=&quot;</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="s">&quot;, y=&quot;</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">translate</span><span class="p">(</span><span class="kt">int</span> <span class="n">deltaX</span><span class="p">,</span> <span class="kt">int</span> <span class="n">deltaY</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">deltaX</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">deltaY</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isLeft</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isRight</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAbove</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">y</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBelow</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">y</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir testen die Methoden in unserer Testklasse:</p>
+<div class="tabbed-set" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">PointTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPoint</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Point</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+    <span class="n">Point</span> <span class="n">p4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p1 : ( &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p2 : ( &quot;</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p3 : ( &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>   
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p4 : ( &quot;</span> <span class="o">+</span> <span class="n">p4</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p4</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+
+    <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">p2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">p3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=1, y=2 ]</span>
+    <span class="n">p1</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=5, y=5 ]</span>
+
+    <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=5, y=3 ]</span>
+    <span class="n">p4</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=2, y=2 ]</span>
+
+<span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p1 links  von p2 ? &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">isLeft</span><span class="p">(</span><span class="n">p2</span><span class="p">));</span>      <span class="c1">// p1.x=5 &gt; p2.x=2</span>
+</span><span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p1 rechts von p2 ? &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">isRight</span><span class="p">(</span><span class="n">p2</span><span class="p">));</span>
+</span><span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p3 ueber p4 ? &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">isAbove</span><span class="p">(</span><span class="n">p4</span><span class="p">));</span>          <span class="c1">// p3.y=6 &gt; p4.y=2</span>
+</span><span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p3 unter p4 ? &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">isBelow</span><span class="p">(</span><span class="n">p4</span><span class="p">));</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Beachten Sie, dass es immer ein Objekt gibt, das die Methode aufruft und ein Objekt, das der Methode als Parameter übergeben wird. Beispielsweise ist bei <code>p1.isLeft(p2)</code> das <code>Point</code>-Objekt <code>p1</code> das aufrufende Objekt und das <code>Point</code>-Objekt <code>p2</code> das Objekt, das der Methode als Parameter"wert" übergeben wird. <code>p1</code> vergleicht sich also selbst mit <code>p2</code>. Da der <code>x</code>-Wert von <code>p1</code> <code>5</code> ist und der <code>x</code>-Wert von <code>p2</code> ist <code>2</code> ergibt <code>p1.isLeft(p2)</code> <code>false</code>. Der Aufruf <code>p2.isLeft(p1)</code> würde dann <code>true</code> ergeben. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben einen weiteren Datentyp erstellt, nämlich <code>Point</code>. In diesem beispiel gibt es eine Methode <code>translate()</code>, in der die Werte der Objektvariablen <code>x</code> und <code>y</code> geändert werden. Objekte vom Typ <code>Point</code> sind somit nicht <em>immutable</em> (unveränderlich). Der Rückgabetyp solcher Objektmethoden, die die Werte von Objektvariablen ändern, ist typischerweise <code>void</code>. Wir haben außerdem Objektmethoden definiert, in denen sich das aufrufende Objekt mit einem anderen Objekt gleichen Typs vergleicht. Der Vergleich erfolgt über die Werte der Objektvariablen sowohl des aufrufenden Objektes, als auch der Werte der Objektvariablen des Objektes, mit dem verglichen wird (das als Parameter übergeben wird). </p>
+</div>
+<hr />
+<p>Wir festigen unserer neuen Erkenntnisse an noch einem weiteren Beispiel:</p>
+<h3 id="ein-weiterer-datentyp-circle">Ein weiterer Datentyp <code>Circle</code><a class="headerlink" href="#ein-weiterer-datentyp-circle" title="Permanent link">&para;</a></h3>
+<p>Wir erstellen uns einen Datentyp, der einen Kreis repräsentiert. Wir nennen den Datentyp <code>Circle</code>. Ein Kreis ist durch seinen <code>radius</code> eindeutig beschrieben. Wir könnten als Objektvariable auch den Durchmesser <code>diameter</code> wählen, das bleibt sich gleich und ist eine eigene Programmierentscheidung. Wir sollten aber keinesfalls <code>radius</code> <strong>und</strong> <code>diameter</code> als Objekteigenschaften wählen, da es ansonsten zu Inkonsistenten kommen könnte - angenommen, <code>radius</code> hätte den Wert <code>5</code> und <code>diameter</code> den Wert <code>11</code>, das wäre inkonsistent und würde nicht passen. Vielmehr kann der Durchmesser aus dem Radius berechnet werden. Wir implementieren also:</p>
+<div class="tabbed-set" data-tabs="21:1"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">Circle.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span>
+<span class="p">{</span>
+    <span class="c1">// ------- Objektvariable ---------------</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+
+    <span class="c1">// --------- Konstruktor ----------------</span>
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span> <span class="n">pRadius</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">pRadius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- Getter der Objektvariablen -----</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getRadius</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- weitere Objektmethoden ---------</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getDiameter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Radius      : &quot;</span> <span class="o">+</span> <span class="n">radius</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durchmesser : &quot;</span> <span class="o">+</span> <span class="n">getDiameter</span><span class="p">());</span>   <span class="c1">// Aufruf Objektmethode</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Die Objektvariable <code>radius</code> ist wieder als <code>private</code> deklariert - es gibt keinen Grund, dies nicht zu tun. Wir erlauben aber den lesenden Zugriff darauf durch die Erstellung der <code>getRadius()</code>-Methode, die <code>public</code> ist. Außerdem berechnen wir auch noch den Durchmesser und geben ihn mit der <code>getDiameter()</code>-Methode zurück. Beachten Sie, dass sowohl <code>radius</code> als auch <code>getDiameter()</code> vom Typ <code>double</code> sind. Damit wir die Werte auch ausgeben, haben wir eine <code>print()</code>-Methode erstellt. Beachten Sie, dass wir in der <code>print()</code>-Methode die Objektmethode <code>getDiameter()</code> aufrufen. </p>
+<p>Wir testen den Datentyp <code>Circle</code> in einer Testklasse <code>CircleTest</code>:</p>
+<div class="tabbed-set" data-tabs="22:1"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">CircleTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testCircle</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Circle</span> <span class="n">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mf">5.0</span><span class="p">);</span>
+    <span class="n">Circle</span> <span class="n">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mf">3.5</span><span class="p">);</span>
+
+    <span class="n">c1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="n">c2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Es werden folgende Ausgaben erzeugt:</p>
+<div class="highlight"><pre><span></span><code>Radius      : <span class="m">5</span>.0
+Durchmesser : <span class="m">10</span>.0
+
+Radius      : <span class="m">3</span>.5
+Durchmesser : <span class="m">7</span>.0
+</code></pre></div>
+<p>Für einen Kreis können wir auch noch den Umfang <code>circumference()</code> und den Flächeninhalt <code>area()</code> berechnen und verwenden dazu die Konstante <code>PI</code> aus der <code>Math</code>-Klasse (siehe <a href="../hilfsklassen/#die-klasse-math">Die Klasse <code>Math</code></a>). Mit den Ergebnissen der <code>circumference()</code>- und der <code>area()</code>-Methode erweitern wir auch die Ausgabe in <code>print()</code>: </p>
+<div class="tabbed-set" data-tabs="23:1"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><label for="__tabbed_23_1">Circle.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span>
+<span class="p">{</span>
+    <span class="c1">// ------- Objektvariable ---------------</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+
+    <span class="c1">// --------- Konstruktor ----------------</span>
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span> <span class="n">pRadius</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">pRadius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- Getter der Objektvariablen -----</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getRadius</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- weitere Objektmethoden ---------</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getDiameter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Radius         : &quot;</span> <span class="o">+</span> <span class="n">radius</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durchmesser    : &quot;</span> <span class="o">+</span> <span class="n">getDiameter</span><span class="p">());</span>    <span class="c1">// Aufruf Objektmethode</span>
+<span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Umfang         : &quot;</span> <span class="o">+</span> <span class="n">circumference</span><span class="p">());</span>  <span class="c1">// Aufruf Objektmethode</span>
+</span><span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Flaecheninhalt : &quot;</span> <span class="o">+</span> <span class="n">area</span><span class="p">());</span>   <span class="c1">// Aufruf Objektmethode</span>
+</span>    <span class="p">}</span>
+
+<span class="hll">    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">circumference</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">getDiameter</span><span class="p">();</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>
+<span class="hll">    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Das erneute Ausführen der <code>Testklasse</code> (in der <code>Testklasse</code> nichts geändert, aber die <code>print()</code>-Methode wurde geändert) ergibt:</p>
+<div class="highlight"><pre><span></span><code>Radius         : <span class="m">5</span>.0
+Durchmesser    : <span class="m">10</span>.0
+Umfang         : <span class="m">31</span>.41592653589793
+Flaecheninhalt : <span class="m">78</span>.53981633974483
+
+Radius         : <span class="m">3</span>.5
+Durchmesser    : <span class="m">7</span>.0
+Umfang         : <span class="m">21</span>.991148575128552
+Flaecheninhalt : <span class="m">38</span>.48451000647496
+</code></pre></div>
+<p>Zur Weiderholung und Festigung wollen wir auch hier zwei <code>Circle</code>-Objekte miteinander vergleichen. Auch hier gibt es immer ein aufrufendes <code>Circle</code>-Objekt und ein <code>Circle</code>-Objekt, das als Parameter übergeben wird. Wir schreiben drei Methoden, die jeweils ein <code>boolean</code> zurückgeben: <code>isSmaller()</code>, <code>isBigger()</code>, <code>isEqual()</code>:</p>
+<div class="tabbed-set" data-tabs="24:1"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><label for="__tabbed_24_1">Circle.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span>
+<span class="p">{</span>
+    <span class="c1">// ------- Objektvariable ---------------</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+
+    <span class="c1">// --------- Konstruktor ----------------</span>
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span> <span class="n">pRadius</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">pRadius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- Getter der Objektvariablen -----</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getRadius</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- weitere Objektmethoden ---------</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getDiameter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Radius         : &quot;</span> <span class="o">+</span> <span class="n">radius</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durchmesser    : &quot;</span> <span class="o">+</span> <span class="n">getDiameter</span><span class="p">());</span>    <span class="c1">// Aufruf Objektmethode</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Umfang         : &quot;</span> <span class="o">+</span> <span class="n">circumference</span><span class="p">());</span>  <span class="c1">// Aufruf Objektmethode</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Flaecheninhalt : &quot;</span> <span class="o">+</span> <span class="n">area</span><span class="p">());</span>   <span class="c1">// Aufruf Objektmethode</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">circumference</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">getDiameter</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="hll">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isSmaller</span><span class="p">(</span><span class="n">Circle</span> <span class="n">c</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="p">(</span><span class="n">radius</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">.</span><span class="na">radius</span><span class="p">);</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>
+<span class="hll">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBigger</span><span class="p">(</span><span class="n">Circle</span> <span class="n">c</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="p">(</span><span class="n">radius</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">.</span><span class="na">radius</span><span class="p">);</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>
+<span class="hll">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEqual</span><span class="p">(</span><span class="n">Circle</span> <span class="n">c</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="o">!</span><span class="n">isSmaller</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isBigger</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>In der <code>isEqual()</code>-Methode hätten wir natürlich auch <code>return radius==c.radius;</code> schreiben können. Aber wir wollten hier nochmal die Verwendung von Objektmethoden innerhalb der Klasse zeigen. Die Testklasse <code>CircleTest</code></p>
+<div class="tabbed-set" data-tabs="25:1"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><label for="__tabbed_25_1">CircleTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testCircle</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Circle</span> <span class="n">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mf">5.0</span><span class="p">);</span>
+    <span class="n">Circle</span> <span class="n">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mf">3.5</span><span class="p">);</span>
+
+    <span class="n">c1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="n">c2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>erzeugt folgende Ausgaben (nur die Vergleiche):</p>
+<div class="highlight"><pre><span></span><code>bash
+c1 groesser als c2 ? true
+c1 kleiner als c2  ? false
+c1 gleich c2       ? false
+
+c2 groesser als c1 ? false
+c2 kleiner als c1  ? true
+c2 gleich c1       ? false
+
+c1 groesser als c1 ? false
+c1 kleiner als c1  ? false
+c1 gleich c1       ? true
+</code></pre></div>
+<p>Beachten Sie, dass im dritten Vergleichsblock das <code>c1</code>-Objekt mit sich selbst verglichen wird. Auch das ist ohne Probleme möglich (aber normalerweise sinnlos).</p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben in diesem dritten Beispiel die ersten Erkenntnisse über das objektorientierte Programmieren wiederholt und gefestigt. In der Klasse <code>Circle</code> haben wir insbesondere häufiger die Objektmethoden innerhalb der Klasse aufgerufen. Die Einführung in die objektorientierte Programmierung ist hiermit zunächst beendet. Beim nächsten Mal werden wir mehrere Konstruktoren in der Klasse definieren, wir werden eigene Datentypen in neuen Datentypen verwenden und das Schlüsselwort <code>this</code> kennenlernen. Viel Spaß beim <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0">Üben</a>!</p>
+</div>
+<details><summary>Die Klassen <code>Adresse</code>, Point<code>,</code>Circle<code>und</code>Testklasse`</summary><div class="tabbed-set" data-tabs="26:4"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><label for="__tabbed_26_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">strasse</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nummer</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">postleitzahl</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">wohnort</span><span class="p">;</span>
+
+    <span class="c1">// --- Konstruktor ---------</span>
+    <span class="kd">public</span> <span class="nf">Adresse</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">plz</span><span class="p">,</span> <span class="n">String</span> <span class="n">ort</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">strasse</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span>
+        <span class="n">nummer</span> <span class="o">=</span> <span class="n">nr</span><span class="p">;</span>
+        <span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span><span class="p">;</span>
+        <span class="n">wohnort</span> <span class="o">=</span> <span class="n">ort</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- Objektmethoden ------</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAdresse</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">strasse</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">nummer</span> <span class="o">+</span> <span class="s">&quot; in &quot;</span> <span class="o">+</span> <span class="n">postleitzahl</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">wohnort</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getStrasse</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">strasse</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNummer</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">nummer</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPostleitzahl</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">postleitzahl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getWohnort</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">wohnort</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><label for="__tabbed_26_2">Point.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span>
+<span class="p">{</span>
+    <span class="c1">// --- Objektvariablen -----------</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="c1">// --- Konstruktor ---------------</span>
+    <span class="kd">public</span> <span class="nf">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">px</span><span class="p">,</span> <span class="kt">int</span> <span class="n">py</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">px</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">py</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- Getter --------------------</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getX</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getY</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// --- weitere Objektmethoden ----</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[ x=&quot;</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="s">&quot;, y=&quot;</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">translate</span><span class="p">(</span><span class="kt">int</span> <span class="n">deltaX</span><span class="p">,</span> <span class="kt">int</span> <span class="n">deltaY</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">deltaX</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">deltaY</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isLeft</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isRight</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAbove</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">y</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBelow</span><span class="p">(</span><span class="n">Point</span> <span class="n">otherPoint</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">otherPoint</span><span class="p">.</span><span class="na">y</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_26_3" name="__tabbed_26" type="radio" /><label for="__tabbed_26_3">Circle.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span>
+<span class="p">{</span>
+    <span class="c1">// ------- Objektvariable ---------------</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+
+    <span class="c1">// --------- Konstruktor ----------------</span>
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span> <span class="n">pRadius</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">pRadius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- Getter der Objektvariablen -----</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getRadius</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ----- weitere Objektmethoden ---------</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getDiameter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Radius         : &quot;</span> <span class="o">+</span> <span class="n">radius</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durchmesser    : &quot;</span> <span class="o">+</span> <span class="n">getDiameter</span><span class="p">());</span>    <span class="c1">// Aufruf Objektmethode</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Umfang         : &quot;</span> <span class="o">+</span> <span class="n">circumference</span><span class="p">());</span>  <span class="c1">// Aufruf Objektmethode</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Flaecheninhalt : &quot;</span> <span class="o">+</span> <span class="n">area</span><span class="p">());</span>   <span class="c1">// Aufruf Objektmethode</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">circumference</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">getDiameter</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isSmaller</span><span class="p">(</span><span class="n">Circle</span> <span class="n">c</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">radius</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">.</span><span class="na">radius</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBigger</span><span class="p">(</span><span class="n">Circle</span> <span class="n">c</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">radius</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">.</span><span class="na">radius</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEqual</span><span class="p">(</span><span class="n">Circle</span> <span class="n">c</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">isSmaller</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isBigger</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>       
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_26_4" name="__tabbed_26" type="radio" /><label for="__tabbed_26_4">Testklasse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span>
+<span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Tests fuer Adresse</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n ---------------- Testen des Datentyps Adresse ------------------ %n%n&quot;</span><span class="p">);</span>
+        <span class="n">Adresse</span> <span class="n">adresse1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">(</span><span class="s">&quot;Wilhelminenhofstr.&quot;</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">12459</span><span class="p">,</span> <span class="s">&quot;Berlin&quot;</span><span class="p">);</span>          
+        <span class="n">Adresse</span> <span class="n">adresse2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">(</span><span class="s">&quot;Treskowallee&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10318</span><span class="p">,</span> <span class="s">&quot;Berlin&quot;</span><span class="p">);</span>         
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse1</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse2</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Strasse Nr  : &quot;</span> <span class="o">+</span> <span class="n">adresse1</span><span class="p">.</span><span class="na">getStrasse</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>  <span class="n">adresse1</span><span class="p">.</span><span class="na">getNummer</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;PLZ Wohnort : &quot;</span> <span class="o">+</span> <span class="n">adresse1</span><span class="p">.</span><span class="na">getPostleitzahl</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">adresse1</span><span class="p">.</span><span class="na">getWohnort</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Strasse Nr  : &quot;</span> <span class="o">+</span> <span class="n">adresse2</span><span class="p">.</span><span class="na">getStrasse</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>  <span class="n">adresse1</span><span class="p">.</span><span class="na">getNummer</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;PLZ Wohnort : &quot;</span> <span class="o">+</span> <span class="n">adresse2</span><span class="p">.</span><span class="na">getPostleitzahl</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span>  <span class="n">adresse1</span><span class="p">.</span><span class="na">getWohnort</span><span class="p">());</span>
+
+        <span class="c1">// Tests fuer Point</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n ---------------- Testen des Datentyps Point ------------------ %n%n&quot;</span><span class="p">);</span>
+        <span class="n">Point</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">Point</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">Point</span> <span class="n">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+        <span class="n">Point</span> <span class="n">p4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p1 : ( &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p2 : ( &quot;</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p3 : ( &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>   
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; p4 : ( &quot;</span> <span class="o">+</span> <span class="n">p4</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p4</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; )&quot;</span><span class="p">);</span>
+
+        <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">p2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">p3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=1, y=2 ]</span>
+        <span class="n">p1</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=5, y=5 ]</span>
+
+        <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=5, y=3 ]</span>
+        <span class="n">p4</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">p4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>             <span class="c1">// [ x=2, y=2 ]</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p1 links  von p2 ? &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">isLeft</span><span class="p">(</span><span class="n">p2</span><span class="p">));</span>      <span class="c1">// p1.x=5 &gt; p2.x=2</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p1 rechts von p2 ? &quot;</span> <span class="o">+</span> <span class="n">p1</span><span class="p">.</span><span class="na">isRight</span><span class="p">(</span><span class="n">p2</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p3 ueber p4 ? &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">isAbove</span><span class="p">(</span><span class="n">p4</span><span class="p">));</span>          <span class="c1">// p3.y=6 &gt; p4.y=2</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;p3 unter p4 ? &quot;</span> <span class="o">+</span> <span class="n">p3</span><span class="p">.</span><span class="na">isBelow</span><span class="p">(</span><span class="n">p4</span><span class="p">));</span>
+
+
+        <span class="c1">// Tests fuer Circle</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n ---------------- Testen des Datentyps Circle ------------------ %n%n&quot;</span><span class="p">);</span>
+        <span class="n">Circle</span> <span class="n">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mf">5.0</span><span class="p">);</span>
+        <span class="n">Circle</span> <span class="n">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mf">3.5</span><span class="p">);</span>
+
+        <span class="n">c1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>   
+        <span class="n">c2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c1 groesser als c2 ? &quot;</span> <span class="o">+</span> <span class="n">c1</span><span class="p">.</span><span class="na">isBigger</span><span class="p">(</span><span class="n">c2</span><span class="p">));</span>      
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c1 kleiner als c2  ? &quot;</span> <span class="o">+</span> <span class="n">c1</span><span class="p">.</span><span class="na">isSmaller</span><span class="p">(</span><span class="n">c2</span><span class="p">));</span>     
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c1 gleich c2       ? &quot;</span> <span class="o">+</span> <span class="n">c1</span><span class="p">.</span><span class="na">isEqual</span><span class="p">(</span><span class="n">c2</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c2 groesser als c1 ? &quot;</span> <span class="o">+</span> <span class="n">c2</span><span class="p">.</span><span class="na">isBigger</span><span class="p">(</span><span class="n">c1</span><span class="p">));</span>      
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c2 kleiner als c1  ? &quot;</span> <span class="o">+</span> <span class="n">c2</span><span class="p">.</span><span class="na">isSmaller</span><span class="p">(</span><span class="n">c1</span><span class="p">));</span>     
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c2 gleich c1       ? &quot;</span> <span class="o">+</span> <span class="n">c2</span><span class="p">.</span><span class="na">isEqual</span><span class="p">(</span><span class="n">c1</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c1 groesser als c1 ? &quot;</span> <span class="o">+</span> <span class="n">c1</span><span class="p">.</span><span class="na">isBigger</span><span class="p">(</span><span class="n">c1</span><span class="p">));</span>      
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c1 kleiner als c1  ? &quot;</span> <span class="o">+</span> <span class="n">c1</span><span class="p">.</span><span class="na">isSmaller</span><span class="p">(</span><span class="n">c1</span><span class="p">));</span>     
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;c1 gleich c1       ? &quot;</span> <span class="o">+</span> <span class="n">c1</span><span class="p">.</span><span class="na">isEqual</span><span class="p">(</span><span class="n">c1</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>       
+    <span class="p">}</span>
+<span class="p">}</span>   
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</details>
 <hr />
                 
               
