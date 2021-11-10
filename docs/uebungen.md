@@ -177,7 +177,7 @@
 	```
 
 
-??? question "Eine mögliche Lösung für Übung2"
+??? question "Eine mögliche Lösung für Übung 2"
 	```java
 	public class Uebung2
 	{
@@ -308,7 +308,7 @@
 	5. Wie könnten (und sollten!) Sie die `computeSeconds()`-Methode in der `printSeconds()`-Methode verwenden? Warum?
 
 
-??? question "Eine mögliche Lösung für Übung3"
+??? question "Eine mögliche Lösung für Übung 3"
 	```java
 	public class Uebung3
 		{
@@ -436,6 +436,57 @@
 		```
 
 
+??? question "Eine mögliche Lösung für Übung 4"
+	```java
+		
+	public class Uebung4
+	{
+	    public Uebung4()
+	    {
+
+	    }
+	    
+	    public boolean isPrime(int number)
+	    {
+	        if(number>1)
+	        {
+	            for (int i=2;i<number;i++)
+	            {
+	                if(number%i==0) //ob i number ganzzahlig teilt (Division ohne Rest)
+	                {
+	                    return false;
+	                }
+	            }
+	            return true;
+	        }
+	        else 
+	        {
+	            return false;
+	        }
+	    }
+	    
+	    public void myLesson4Method()
+	    {
+	        //System.out.println(isPrime(1)); 
+	        printPrimeNumbers(61);
+	    }
+	    
+	    public void printPrimeNumbers(int maximum)
+	    {
+	        for (int i=2;i<=maximum;i++)
+	            {
+	                if(isPrime(i)) 
+	                {
+	                    System.out.print(i+" ");
+	                }
+	                else
+	                {
+	                    System.out.print(". ");
+	                }
+	            }
+	    }
+	}
+	```
 
 ??? note "Übung 5 (17.11.2021)"
 	1. Öffnen Sie `BlueJ` und erstellen Sie ein neues Projekt `uebung5`. 

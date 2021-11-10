@@ -349,4 +349,54 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? note "Vorlesung Schleifen -- 10.11.2021"
+	```java
+	public class Loops
+	{
+	    public Loops()
+	    {
+
+	    }
+
+	    public void collatz(int start)
+	    {
+	        int count = 0;
+	        int number = start;
+	        while(number > 1)
+	        {
+	            System.out.print(number + " ");
+	            count++;
+	            number = successor(number);   
+	        }
+	        count++;
+	        System.out.println(number + " --> " + count + " Zahlen");
+	    }
+	    
+	    public int successor(int nr1)
+	    {
+	        int successor = 0;
+	        if(isEven(nr1))
+	        {
+	            successor = nr1 / 2;
+	        }
+	        else
+	        {
+	            successor = 3 * nr1 +1;
+	        } 
+	        return successor;
+	    }
+	    
+	    public boolean isEven(int nr)
+	    {
+	        return (nr%2==0);
+	    }
+	    
+	    public void start()
+	    {
+	        collatz(7);
+
+	    }
+	}
+	```
+
 

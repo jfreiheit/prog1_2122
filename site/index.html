@@ -981,6 +981,54 @@
 </div>
 </div>
 </details>
+<details class="note"><summary>Vorlesung Schleifen -- 10.11.2021</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Loops</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Loops</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">collatz</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">number</span> <span class="o">=</span> <span class="n">successor</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>   
+        <span class="p">}</span>
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; --&gt; &quot;</span> <span class="o">+</span> <span class="n">count</span> <span class="o">+</span> <span class="s">&quot; Zahlen&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">successor</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">successor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="n">nr1</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">successor</span> <span class="o">=</span> <span class="n">nr1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">successor</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">nr1</span> <span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span> 
+        <span class="k">return</span> <span class="n">successor</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEven</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nr</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">collatz</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
                 
               
               

@@ -753,7 +753,7 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
 </code></pre></div></li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Übung2</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung2</span>
+<details class="question"><summary>Eine mögliche Lösung für Übung 2</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung2</span>
 <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">Uebung2</span><span class="p">()</span>
     <span class="p">{</span>
@@ -875,7 +875,7 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
 <li>Wie könnten (und sollten!) Sie die <code>computeSeconds()</code>-Methode in der <code>printSeconds()</code>-Methode verwenden? Warum?</li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Übung3</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung3</span>
+<details class="question"><summary>Eine mögliche Lösung für Übung 3</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung3</span>
     <span class="p">{</span>
         <span class="kd">public</span> <span class="nf">Uebung3</span><span class="p">()</span>
         <span class="p">{</span>
@@ -995,6 +995,55 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
 <span class="m">2025</span> wird kein Schaltjahr.
 </code></pre></div></li>
 </ol>
+</details>
+<details class="question"><summary>Eine mögliche Lösung für Übung 4</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung4</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Uebung4</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">number</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">number</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">number</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//ob i number ganzzahlig teilt (Division ohne Rest)</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> 
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myLesson4Method</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//System.out.println(isPrime(1)); </span>
+        <span class="n">printPrimeNumbers</span><span class="p">(</span><span class="mi">61</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printPrimeNumbers</span><span class="p">(</span><span class="kt">int</span> <span class="n">maximum</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">maximum</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
+                <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;. &quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 </details>
 <details class="note"><summary>Übung 5 (17.11.2021)</summary><ol>
 <li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung5</code>. </li>
