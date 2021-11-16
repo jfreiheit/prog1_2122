@@ -295,3 +295,205 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 		12345 --> 3 5 823
 		```
 		**Tipp:**: Nützliche Methoden sind sicherlich `boolean isPrime(int number)` und `boolean isDivider(int factor, int number)`, wobei Letztere prüft, ob `factor` ein ganzzahliger Teiler von `number` ist. Achten Sie darauf, dass wenn Sie einen Primfaktor gefunden haben, es auch derselbe Primfaktor wiederholt sein kann. Ist knifflig!  
+
+
+
+#### Aufgabe 6 (Abgabe bis 29.11.2021 24:00 Uhr)
+??? "Aufgabe6 - Triangle"
+	- Wir erstellen uns einen neuen Datentyp `Triangle`
+
+	- Erstellen Sie sich ein neues Projekt `aufgabe6` und darin eine neue Klasse `Triangle` sowie dafür eine Testklasse `TestTriangle` mit einer `testTriangle()`-Methode. 
+
+	- In der Klasse `Triangle` erstellen Sie drei Objektvariablen `a`, `b` und `c` jeweils vom Typ `int` und alle `private`. Das sollen die Seiten unseres Dreiecks sein. 
+
+	- Erstellen Sie einen Konstruktor, dem drei Parameterwerte übergeben werden `pa`, `pb` und `pc` alle vom Typ `int`. Mit diesen Werten werden die Objektvariablen initialisiert. 
+
+	- Schreiben Sie eine Objektmethode `print()`, die die Seitenlängen des Dreiecks in der folgenden Form ausgibt:
+		```bash
+		Seiten          : a=3, b=4, c=5
+		```
+		für den Fall, dass die Seitenlängen `3`, `4` und `5` sind. 
+
+	- Wenn Sie jetzt in der `testTriangle()`-Methode der Testklasse `TestTriangle` folgende Anweisungen ausführen
+		```java 
+		Triangle t1 = new Triangle(3, 4, 5);
+		Triangle t2 = new Triangle(4, 4, 7);
+		Triangle t3 = new Triangle(5, 5, 5);
+		Triangle t4 = new Triangle(4, 5, 3);
+		Triangle t5 = new Triangle(4, 3, 5);
+		Triangle t6 = new Triangle(3, 4, 5);
+		
+		t1.print();
+		t2.print();
+		t3.print();
+		t4.print();
+		t5.print();
+		t6.print();
+		```
+		dann sollte die Ausgabe ungefähr so aussehen:
+		```bash
+		Seiten          : a=3, b=4, c=5
+		Seiten          : a=4, b=4, c=7
+		Seiten          : a=5, b=5, c=5
+		Seiten          : a=4, b=5, c=3
+		Seiten          : a=4, b=3, c=5
+		Seiten          : a=3, b=4, c=5
+		```
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public int circumference()`, die den Umfang des Dreiecks zurückgibt (also die Summe der drei Seitenlängen).
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public double area()`, die den Flaecheninhalt des Dreiecks zurückgibt.  Der Flächeninhalt `A` eines Dreiecks lässt sich nach der [Heron'schen Formel](https://de.wikipedia.org/wiki/Satz_des_Heron) wie folgt berechnen:
+		- `A` = Math.sqrt(s * (s-a) * (s-b) * (s-c))
+		- wobei `s = (a + b + c) / 2`
+		- Achten Sie darauf, dass Sie stets mit `double` rechnen!
+		- Beachten Sie, dass in einem Dreieck keine Seite länger sein darf als die Summe der beiden anderen. Für die oben in der `testTriangle()`-Methode erstellten Objekte gilt das aber. Wir müssen deshalb nichts weiter beachten. 
+
+	- Erweitern Sie die Objektmethode `print()` nun so, dass auch der Umfang und der Flaecheninhalt in der folgenden Form ausgegeben werden (Sie können in die `print()`-methode auch die Leerzeile integrieren):
+		```bash
+		Seiten          : a=3, b=4, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+
+		Seiten          : a=4, b=4, c=7
+		Umfang          : 15
+		Flaecheninhalt  : 6.777720855862979
+
+		Seiten          : a=5, b=5, c=5
+		Umfang          : 15
+		Flaecheninhalt  : 10.825317547305483
+
+		Seiten          : a=4, b=5, c=3
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+
+		Seiten          : a=4, b=3, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+
+		Seiten          : a=3, b=4, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		```
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean equilateral()`, die ein `true` zurückgibt, wenn das Dreieck gleichseitig ist (also alle Seiten des Dreiecks gleich lang sind) und `false` sonst.
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean isosceles()`, die ein `true` zurückgibt, wenn das Dreieck gleichschenklig ist (also zwei Seiten des Dreiecks gleich lang sind) und `false` sonst.
+
+	- Erweitern Sie die Objektmethode `print()` nun so, dass die Prüfungen, ob sich um ein gleichseitiges oder gleichschenkliges (oder unregelmäßiges) Dreieck handelt, in der folgenden Form ausgegeben werden:
+		```bash
+		Seiten          : a=3, b=4, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+
+		Seiten          : a=4, b=4, c=7
+		Umfang          : 15
+		Flaecheninhalt  : 6.777720855862979
+		Das Dreieck ist gleichschenklig.
+
+		Seiten          : a=5, b=5, c=5
+		Umfang          : 15
+		Flaecheninhalt  : 10.825317547305483
+		Das Dreieck ist gleichseitig.
+
+		Seiten          : a=4, b=5, c=3
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+
+		Seiten          : a=4, b=3, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+
+		Seiten          : a=3, b=4, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+		```
+
+	- ---
+
+	**Wenn Sie das geschafft haben, dann haben Sie die Aufgabe erfüllt! Herzlichen Glückwunsch! Die folgenden Aufgaben sind optional (kann auch sein, dass wir die Objektvergleiche noch gar nicht haben, dann wird es erst recht knifflig :-) ):**
+
+	- ---
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean sameCircumference(Triangle t)`, die ein `true` zurückgibt, wenn das aufrufende Objekt den gleichen Umfang hat wie `t` und `false` sonst.
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean isSmaller(Triangle t)`, die ein `true` zurückgibt, wenn das aufrufende Objekt einen kleineren Flächeninhalt hat, als `t` und `false` sonst.
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean isBigger(Triangle t)`, die ein `true` zurückgibt, wenn das aufrufende Objekt einen größeren Flächeninhalt hat, als `t` und `false` sonst.
+
+	- Testen Sie in der `testTriangle()`-Methode der Testklasse `TestTriangle` die drei zuletztgeschriebenen Methoden, so dass folgende Ausgaben erzeugt werden:
+		```bash
+		t1 und t2 gleicher Umfang ? : false
+		t1 und t3 gleicher Umfang ? : false
+		t2 und t3 gleicher Umfang ? : true
+
+		t1 kleiner als t2 ? : true
+		t2 kleiner als t1 ? : false
+		t1 kleiner als t4 ? : false
+		t4 kleiner als t1 ? : false
+
+		t1 groesser als t2 ? : false
+		t2 groesser als t1 ? : true
+		t1 groesser als t4 ? : false
+		t4 groesser als t1 ? : false
+		```
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean sidesAreEqual(Triangle t)`, die ein `true` zurückgibt, wenn das aufrufende Objekt die gleichen Seitenlängen hat wie `t` und `false` sonst.
+		- Beachten Sie, dass folgende Dreiecke mit z.B. dem Dreieck (`a=3, b=4, c=5`) gleich sein sollen: (`a=3, b=4, c=5`), aber auch (`a=4, b=5, c=3`), aber auch (`a=5, b=3, c=4`) --> die "Benennung" der Seiten ist also egal
+		- Jedoch soll z.B. (`a=4, b=3, c=5`) nicht gleich zu (`a=3, b=4, c=5`) sein
+		- für die obigen Objekte soll somit gelten:
+			```bash
+			t1 und t2 gleiche Seiten ? : false
+			t1 und t4 gleiche Seiten ? : true
+			t1 und t5 gleiche Seiten ? : false
+			t1 und t6 gleiche Seiten ? : true
+			```
+			Erzeugen Sie diese Ausgabe in `testTriangle()`.
+
+	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean isRightAngled()`, die ein `true` zurückgibt, wenn das Dreieck rechtwinklig ist und `false` sonst.
+		- der [Satz des Pythagoras](https://de.wikipedia.org/wiki/Satz_des_Pythagoras) besagt, dass in einem rechtwinkligen Dreieck gilt: `a^2 + b^2 = c^2`
+		- es gilt aber auch die Umkehrung, d.h. wenn von 2 Seiten die Summe der Quadrate dem Quadrat der dritten Seite entspricht, dann ist das Dreieck rechtwinklig 
+	- Erweitern Sie die Objektmethode `print()` nun so, dass die Prüfungen, ob sich um ein rechtwinkliges Dreieck handelt, in der folgenden Form ausgegeben werden:
+		```bash
+		Seiten          : a=3, b=4, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+		Das Dreieck ist rechtwinklig.
+
+		Seiten          : a=4, b=4, c=7
+		Umfang          : 15
+		Flaecheninhalt  : 6.777720855862979
+		Das Dreieck ist gleichschenklig.
+		Das Dreieck ist nicht rechtwinklig.
+
+		Seiten          : a=5, b=5, c=5
+		Umfang          : 15
+		Flaecheninhalt  : 10.825317547305483
+		Das Dreieck ist gleichseitig.
+		Das Dreieck ist nicht rechtwinklig.
+
+		Seiten          : a=4, b=5, c=3
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+		Das Dreieck ist rechtwinklig.
+
+		Seiten          : a=4, b=3, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+		Das Dreieck ist rechtwinklig.
+
+		Seiten          : a=3, b=4, c=5
+		Umfang          : 12
+		Flaecheninhalt  : 6.0
+		Das Dreieck ist unregelmaessig.
+		Das Dreieck ist rechtwinklig.
+		```
+
+	- Viel Spaß und viel Erfolg!
+

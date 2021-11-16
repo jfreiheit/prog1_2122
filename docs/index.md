@@ -47,7 +47,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 3. | 25.-29.10.2021 | [Methoden](./methoden/#methoden) | [Aufgabe 2](./aufgaben/#aufgabe-2-abgabe-bis-01112021-2400-uhr)  | 01.11.2021 | 
 | 4. | 01.-05.11.2021 | [Selektion](./selektion/#selektion) ([if](./selektion/#ifelse)) und [Iteration](./iteration/#iteration) ([for](./iteration/#die-for-schleife))| [Aufgabe 3](./aufgaben/#aufgabe-3-abgabe-bis-08112021-2400-uhr) | 08.11.2021 | 
 | 5. | 08.-12.11.2021 | [Iteration (while)](./iteration/#die-while-schleife) | [Aufgabe 4](./aufgaben/#aufgabe-4-abgabe-bis-15112021-2400-uhr) | 15.11.2021 | 
-| 6. | 15.-19.11.2021 | [Klassen und Objekte](./objekte/#klassen-und-objekte) | Aufgabe 5  | 22.11.2021 | 
+| 6. | 15.-19.11.2021 | [Klassen und Objekte](./objekte/#klassen-und-objekte) | [Aufgabe 5](./aufgaben/#aufgabe-5-abgabe-bis-22112021-2400-uhr)  | 22.11.2021 | 
 | 7. | 22.-26.11.2021 | Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten | Aufgabe 6  | 29.11.2021 | 
 | 8. | 29.-03.12.2021 | Klassen- und Objekt-Variablen und -Methoden  | Aufgabe 7  | 06.12.2021 |
 | 9. | 06.-10.12.2021 | Vererbung | Aufgabe 8  | 13.12.2021 |

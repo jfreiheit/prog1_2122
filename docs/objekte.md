@@ -1191,10 +1191,16 @@ Beachten Sie, dass im dritten Vergleichsblock das `c1`-Objekt mit sich selbst ve
 
 	=== "Testklasse.java"
 		```java linenums="1"
+		import static org.junit.jupiter.api.Assertions.*;
+		import org.junit.jupiter.api.AfterEach;
+		import org.junit.jupiter.api.BeforeEach;
+		import org.junit.jupiter.api.Test;
+
 		public class Testklasse
 		{
 
-			public static void main(String[] args)
+			@Test
+			public void testAll()
 			{
 				// Tests fuer Adresse
 				System.out.printf("%n%n ---------------- Testen des Datentyps Adresse ------------------ %n%n");

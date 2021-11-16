@@ -2567,10 +2567,22 @@ c1 gleich c1       ? true
 72
 73
 74
-75</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span>
+75
+76
+77
+78
+79
+80
+81</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import static</span> <span class="nn">org.junit.jupiter.api.Assertions.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.BeforeEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span>
 <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAll</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// Tests fuer Adresse</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n ---------------- Testen des Datentyps Adresse ------------------ %n%n&quot;</span><span class="p">);</span>

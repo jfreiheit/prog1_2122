@@ -1096,6 +1096,108 @@ Erhöhen Sie nun den Wert der Variablen um <code>1</code> und geben Sie den Wert
 </li>
 </ol>
 </details>
+<details class="note"><summary>Übung 6 (24.11.2021)</summary><ol>
+<li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung6</code>. </li>
+<li>Erstellen Sie darin eine Klasse <code>Konto</code>. </li>
+<li>Erstellen Sie eine Testklasse <code>KontoTest</code> und fügen Sie darin folgende Methode ein:
+    <div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testKonto</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// hier die Kontoobjekte erzeugen</span>
+    <span class="c1">// und die Objektmethoden anwenden</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Erstellen Sie in der Klasse <code>Konto</code> zwei Objektvariablen<ul>
+<li><code>guthaben</code> vom Typ <code>double</code> &rarr; nur in der Klasse sichtbar!</li>
+<li><code>pin</code> vom Typ <code>int</code>   &rarr; ebenfalls nur in der Klasse sichtbar!</li>
+</ul>
+</li>
+<li>Erstellen Sie in der Klasse <code>Konto</code> einen Konstruktor für <code>Konto</code><ul>
+<li>diesem Konstruktor wird als Parameter <code>int pPin</code> übergeben</li>
+<li>mit dem Wert des Parameters wird innerhalb des Konstruktors der Wert von <code>pin</code> initialisiert</li>
+<li>Initialisieren Sie im Konstruktor auch die Objektvariable <code>guthaben</code>. Sie bekommt den Wert <code>0.0</code> (hierfür haben wir also keinen Parameter, wir setzen den initialen Wert einfach generell auf <code>0.0</code>)</li>
+</ul>
+</li>
+<li>Erstellen Sie in der Klasse <code>Konto</code> eine Objektmethode <code>einzahlen(double betrag)</code><ul>
+<li>diese Objektmethode ist <code>public</code> und gibt nichts zurück</li>
+<li>in dieser Methode wird der Wert der Objektvariablen <code>guthaben</code> um den Wert von <code>betrag</code> erhöht</li>
+<li>erzeugen Sie in dieser Methode außerdem eine Ausgabe in der Form:
+    <div class="highlight"><pre><span></span><code>Es wurden <span class="m">100</span>,00 Euro eingezahlt.
+</code></pre></div>
+    falls der <code>betrag</code> den Wert <code>100.0</code> hatte. Die Formatierung des Betrages wird bei Ihnen anders aussehen - siehe dazu auch <strong>Zusatzaufgabe</strong>.</li>
+</ul>
+</li>
+<li>Geben Sie in der <code>testKonto()</code>-Methode der Testklasse <code>KontoTest</code> ein:
+    <div class="highlight"><pre><span></span><code><span class="n">Konto</span> <span class="n">k1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Konto</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+
+<span class="n">k1</span><span class="p">.</span><span class="na">einzahlen</span><span class="p">(</span><span class="mf">100.0</span><span class="p">);</span>
+<span class="n">k1</span><span class="p">.</span><span class="na">einzahlen</span><span class="p">(</span><span class="mf">50.0</span><span class="p">);</span>
+<span class="n">k1</span><span class="p">.</span><span class="na">einzahlen</span><span class="p">(</span><span class="mf">150.0</span><span class="p">);</span>
+</code></pre></div>
+    und führen Sie die <code>testKonto()</code>-Methode aus. Es sollten folgende Ausgaben erzeugt werden:
+    <div class="highlight"><pre><span></span><code>Es wurden <span class="m">100</span>,00 Euro eingezahlt.
+Es wurden <span class="m">50</span>,00 Euro eingezahlt.
+Es wurden <span class="m">150</span>,00 Euro eingezahlt.
+</code></pre></div></li>
+<li>Erstellen Sie in der Klasse <code>Konto</code> eine Objektmethode <code>kontoauszug(int pPin)</code><ul>
+<li>diese Objektmethode ist <code>public</code> und gibt nichts zurück</li>
+<li>einen <code>kontoauszug(int pPin)</code> können Sie nur "ziehen", wenn der Parameterwert von <code>pPin</code> mit dem Wert der Objektvariablen <code>pin</code> übereinstimmt</li>
+<li>wird der richtige Wert für die <code>pin</code> übergeben, geben Sie das <code>guthaben</code> in der folgenden Form aus:
+    <div class="highlight"><pre><span></span><code>Ihr aktuelles Guthaben betraegt <span class="m">300</span>,00 Euro.
+</code></pre></div>
+    falls <code>guthaben</code> den Wert von <code>300.0</code> hat. </li>
+<li>wird ein falscher Wert für die <code>pin</code> übergeben, geben Sie folgende Ausgabe aus:
+    <div class="highlight"><pre><span></span><code>Falsche PIN!
+</code></pre></div></li>
+</ul>
+</li>
+<li>Erweitern Sie die <code>testKonto()</code>-Methode der Testklasse um folgende Anweisungen:
+    <div class="highlight"><pre><span></span><code><span class="n">k1</span><span class="p">.</span><span class="na">kontoauszug</span><span class="p">(</span><span class="mi">1235</span><span class="p">);</span>       <span class="c1">// Falsche PIN!</span>
+<span class="n">k1</span><span class="p">.</span><span class="na">kontoauszug</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>   
+</code></pre></div>
+    und führen Sie die <code>testKonto()</code>-Methode aus. Es sollten folgende (weitere) Ausgaben erzeugt werden:
+    <div class="highlight"><pre><span></span><code>Falsche PIN!
+Ihr aktuelles Guthaben betraegt <span class="m">300</span>,00 Euro.
+</code></pre></div></li>
+<li>Erstellen Sie in der Klasse <code>Konto</code> eine Objektmethode <code>auszahlen(int pPin, double betrag)</code><ul>
+<li>diese Objektmethode ist <code>public</code> und gibt nichts zurück</li>
+<li>es kann nur etwas ausgezahlt werden, wenn der Parameterwert von <code>pPin</code> mit dem Wert der Objektvariablen <code>pin</code> übereinstimmt</li>
+<li>stimmen die Werte nicht überein, geben Sie erneut 
+    <div class="highlight"><pre><span></span><code>Falsche PIN!
+</code></pre></div>
+    aus. </li>
+<li>stimmt der <code>pin</code>-Wert, dann müssen Sie prüfen, ob das <code>guthaben</code> reicht, um <code>betrag</code> auszuzahlen. Ist nicht genug <code>guthaben</code> vorhanden, dann geben Sie aus
+    <div class="highlight"><pre><span></span><code>Ihr Guthaben reicht nicht, um <span class="m">400</span>,00 Euro auszuzahlen.
+</code></pre></div>
+    falls <code>betrag</code> den Wert <code>400.0</code> hatte. </li>
+<li>wenn der <code>pin</code>-Wert stimmt und genug <code>guthaben</code> vorhanden ist, um den <code>betrag</code> auszuzahlen, dann reduzieren Sie <code>guthaben</code> um den entsprechenden <code>betrag</code> und geben aus
+    <div class="highlight"><pre><span></span><code>Es wurden <span class="m">100</span>,00 Euro ausgezahlt.
+</code></pre></div>
+    falls der <code>betrag</code> den Wert <code>100.0</code> hatte.</li>
+</ul>
+</li>
+<li>Erweitern Sie die <code>testKonto()</code>-Methode der Testklasse um folgende Anweisungen:
+    <div class="highlight"><pre><span></span><code><span class="n">k1</span><span class="p">.</span><span class="na">auszahlen</span><span class="p">(</span><span class="mi">1235</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">);</span>  <span class="c1">// Falsche PIN!</span>
+<span class="n">k1</span><span class="p">.</span><span class="na">auszahlen</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">);</span>  
+<span class="n">k1</span><span class="p">.</span><span class="na">kontoauszug</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>       
+<span class="n">k1</span><span class="p">.</span><span class="na">auszahlen</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">);</span>  <span class="c1">// Guthaben reicht nicht</span>
+<span class="n">k1</span><span class="p">.</span><span class="na">auszahlen</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">);</span>  
+<span class="n">k1</span><span class="p">.</span><span class="na">kontoauszug</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>   
+</code></pre></div>
+    und führen Sie die <code>testKonto()</code>-Methode aus. Es sollten folgende (weitere) Ausgaben erzeugt werden:
+    <div class="highlight"><pre><span></span><code>Falsche PIN!
+Es wurden <span class="m">100</span>,00 Euro ausgezahlt.
+Ihr aktuelles Guthaben betraegt <span class="m">200</span>,00 Euro.
+Ihr Guthaben reicht nicht, um <span class="m">300</span>,00 Euro auszuzahlen.
+Es wurden <span class="m">200</span>,00 Euro ausgezahlt.
+Ihr aktuelles Guthaben betraegt <span class="m">0</span>,00 Euro.
+</code></pre></div></li>
+<li><strong>Zusatzaufgabe (falls noch Zeit ist):</strong> <ul>
+<li>Informieren Sie sich über die <code>System.out.printf()</code>-Methode, um stets genau 2 Stellen nach dem Komma des Betrages auszugeben (siehe <a href="../hilfsklassen/#formatierung-von-gleikommazahlen">hier</a>). </li>
+</ul>
+</li>
+</ol>
+</details>
                 
               
               
