@@ -400,3 +400,92 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? note "Vorlesung Klassen und Objekte -- 16.11.2021"
+	=== "Adresse.java"
+		```java	linenums="1" 
+		public class Adresse
+		{
+		    public String street;
+		    public int number;
+		    public int zipcode;
+		    public String city;
+		    public String country;
+		    
+		    public String getAddress()
+		    {
+		        return street + " " + number + " " + zipcode + " " + city;
+		    }
+
+		    public void printAddress()
+		    {
+		        System.out.println(getAddress());
+		    }
+		}
+		```
+	=== "AdresseTest.java"
+		```java	linenums="1" hl_lines="31-50"
+		import static org.junit.jupiter.api.Assertions.*;
+		import org.junit.jupiter.api.AfterEach;
+		import org.junit.jupiter.api.BeforeEach;
+		import org.junit.jupiter.api.Test;
+
+		/**
+		 * The test class AdresseTest.
+		 *
+		 * @author  (your name)
+		 * @version (a version number or a date)
+		 */
+		public class AdresseTest
+		{
+		    /**
+		     * Default constructor for test class AdresseTest
+		     */
+		    public AdresseTest()
+		    {
+		    }
+
+		    /**
+		     * Sets up the test fixture.
+		     *
+		     * Called before every test case method.
+		     */
+		    @BeforeEach
+		    public void setUp()
+		    {
+		    }
+
+		    @Test
+		    public void testAdresse()
+		    {
+		        Adresse adresse1 = new Adresse();
+		        adresse1.street = "Wilhelminnenhofstr.";
+		        adresse1.number = 75;
+		        adresse1.zipcode = 12459;
+		        adresse1.city = "Berlin";
+		        adresse1.printAddress();
+		        System.out.println(adresse1.getAddress());
+		        
+		        Adresse adresse2 = new Adresse();
+		        adresse2.street = "Treskowallee";
+		        adresse2.number = 8;
+		        adresse2.zipcode = 10318;
+		        adresse2.city = "Berlin";
+		        adresse2.printAddress();
+		        System.out.println(adresse2.getAddress());
+		        
+		    }
+		    
+		    /**
+		     * Tears down the test fixture.
+		     *
+		     * Called after every test case method.
+		     */
+		    @AfterEach
+		    public void tearDown()
+		    {
+		    }
+		}
+		```
+
+??? info "Video zur Vorlesung Klassen und Objekte -- 16.11.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=3d2363e3873400f4808875f878bcd5ec&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>

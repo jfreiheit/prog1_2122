@@ -1029,6 +1029,174 @@
 <span class="p">}</span>
 </code></pre></div>
 </details>
+<details class="note"><summary>Vorlesung Klassen und Objekte -- 16.11.2021</summary><div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Adresse.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adresse</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">street</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">zipcode</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">city</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">country</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAddress</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">street</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">number</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">zipcode</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">city</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printAddress</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getAddress</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">AdresseTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import static</span> <span class="nn">org.junit.jupiter.api.Assertions.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.BeforeEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * The test class AdresseTest.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author  (your name)</span>
+<span class="cm"> * @version (a version number or a date)</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdresseTest</span>
+<span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Default constructor for test class AdresseTest</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">AdresseTest</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Sets up the test fixture.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Called before every test case method.</span>
+<span class="cm">     */</span>
+    <span class="nd">@BeforeEach</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+<span class="hll">    <span class="nd">@Test</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAdresse</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="n">Adresse</span> <span class="n">adresse1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">adresse1</span><span class="p">.</span><span class="na">street</span> <span class="o">=</span> <span class="s">&quot;Wilhelminnenhofstr.&quot;</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse1</span><span class="p">.</span><span class="na">number</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse1</span><span class="p">.</span><span class="na">zipcode</span> <span class="o">=</span> <span class="mi">12459</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse1</span><span class="p">.</span><span class="na">city</span> <span class="o">=</span> <span class="s">&quot;Berlin&quot;</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse1</span><span class="p">.</span><span class="na">printAddress</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse1</span><span class="p">.</span><span class="na">getAddress</span><span class="p">());</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="n">Adresse</span> <span class="n">adresse2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adresse</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">adresse2</span><span class="p">.</span><span class="na">street</span> <span class="o">=</span> <span class="s">&quot;Treskowallee&quot;</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse2</span><span class="p">.</span><span class="na">number</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse2</span><span class="p">.</span><span class="na">zipcode</span> <span class="o">=</span> <span class="mi">10318</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse2</span><span class="p">.</span><span class="na">city</span> <span class="o">=</span> <span class="s">&quot;Berlin&quot;</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">adresse2</span><span class="p">.</span><span class="na">printAddress</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">adresse2</span><span class="p">.</span><span class="na">getAddress</span><span class="p">());</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="p">}</span>
+</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Tears down the test fixture.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Called after every test case method.</span>
+<span class="cm">     */</span>
+    <span class="nd">@AfterEach</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</details>
+<details class="info"><summary>Video zur Vorlesung Klassen und Objekte -- 16.11.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=3d2363e3873400f4808875f878bcd5ec&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
                 
               
               
