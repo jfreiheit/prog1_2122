@@ -531,6 +531,111 @@
 
 	2. Implementieren Sie eine Methode `public void printSqrt(int number)`, um Werte der Methodenaufrufe von `sqrt()` auf die Konsole auszugeben! Rufen Sie `printSqrt(int number)` in `start()` auf!
 
+
+??? question "Eine mögliche Lösung für Übung 4"
+	```java
+	public class Uebung5
+	{
+	    public double pow(int base, int exp)
+	    {
+	        double product = 1.0;
+	        if(exp < 0)
+	        {
+	            for(int nr = 1; nr <= -exp; nr++)   // -exp !
+	            {
+	                product = product * base;
+	            }
+	            product = 1.0 / product;
+	        }
+	        else
+	        {
+	            for(int nr = 1; nr <= exp; nr++)
+	            {
+	                product = product * base;
+	            }
+	        }
+	        return product;
+	    }
+	    
+	    public double powDifferentSolution(int base, int exp)
+	    {
+	        double product = 1.0;
+	        int copyExp = exp;
+	        if(exp < 0)
+	        {
+	            copyExp = -exp;
+	        }
+	        for(int nr = 1; nr <= copyExp; nr++)
+	        {
+	            product = product * base;
+	        }
+	        if(exp < 0)
+	        {
+	            product = 1.0 / product;
+	        }
+	        return product;
+	    }
+    
+	    public double sqrt(int number)
+	    {
+	        double area = number;
+	        double a = number;
+	        double b = 1.0;
+	        double epsilon = 0.00000001;
+	        
+	        while( (a-b)*(a-b) > epsilon )
+	        {
+	            a = (a+b)/2.0;
+	            b = area/a;
+	        }
+	        return a;
+	    }
+	    
+	    public void start()
+	    {
+	        int base = 2;
+	        int exp = 4; 
+	        double result = pow(base, exp);
+	        System.out.println(base + "^" + exp + " = " + result);
+	        
+	        base = 2;
+	        exp = 0; 
+	        result = pow(base, exp);
+	        System.out.println(base + "^" + exp + " = " + result);
+	        
+	        base = 2;
+	        exp = -4; 
+	        result = pow(base, exp);
+	        System.out.println(base + "^" + exp + " = " + result);
+	        
+	        base = -2;
+	        exp = 4; 
+	        result = pow(base, exp);
+	        System.out.println(base + "^" + exp + " = " + result);
+	        
+	        base = -2;
+	        exp = -4; 
+	        result = pow(base, exp);
+	        System.out.println(base + "^" + exp + " = " + result);
+	               
+	        base = -2;
+	        exp = 3; 
+	        result = pow(base, exp);
+	        System.out.println(base + "^" + exp + " = " + result);       
+	                
+	        base = -2;
+	        exp = -3; 
+	        result = pow(base, exp);
+	        System.out.println(base + "^" + exp + " = " + result);
+
+	        System.out.println(sqrt(4));       
+        	System.out.println(sqrt(8));       
+        	System.out.println(sqrt(2));
+	    }
+	}
+
+	```		
+
 	
 ??? note "Übung 6 (24.11.2021)"
 	
