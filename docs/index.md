@@ -489,3 +489,101 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Vorlesung Klassen und Objekte -- 16.11.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=3d2363e3873400f4808875f878bcd5ec&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Klassen und Objekte -- 17.11.2021"
+	=== "Adress.java"
+		```java	linenums="1" 
+		public class Address
+		{
+		    private String street;
+		    private int number;
+		    private int zipcode;
+		    private String city;
+		    
+		    public Address(String pStreet, int pNumber, 
+		    int pZipcode, String pCity )
+		    {
+		        street = pStreet;
+		        number = pNumber;
+		        zipcode = pZipcode;
+		        city = pCity;
+		    }
+		    
+		    public void renameStreet(String newStreetName)
+		    {
+		        street = newStreetName;
+		    }
+		    
+		    public String getAddress()
+		    {
+		        return street +" "+number+"\n"+zipcode+" "+city;
+		    }
+		    
+		    public void printAddress()
+		    {
+		        System.out.println(getAddress());
+		    }
+		}
+		```
+	=== "AdressTest.java"
+		```java	linenums="1" hl_lines="31-41"
+
+		import static org.junit.jupiter.api.Assertions.*;
+		import org.junit.jupiter.api.AfterEach;
+		import org.junit.jupiter.api.BeforeEach;
+		import org.junit.jupiter.api.Test;
+
+		/**
+		 * The test class AddressTest.
+		 *
+		 * @author  (your name)
+		 * @version (a version number or a date)
+		 */
+		public class AddressTest
+		{
+		    /**
+		     * Default constructor for test class AddressTest
+		     */
+		    public AddressTest()
+		    {
+		    }
+
+		    /**
+		     * Sets up the test fixture.
+		     *
+		     * Called before every test case method.
+		     */
+		    @BeforeEach
+		    public void setUp()
+		    {
+		    }
+		    
+		    @Test
+		    public void testAddress()
+		    {
+		        Address htwWilh = new Address("Alte Strasse", 75, 1249 , "Berlin");
+		        htwWilh.printAddress();
+		        
+		        Address htwTres = new Address("Treskowallee", 8, 10318, "Berlin");
+		        htwTres.printAddress();
+		        htwTres.renameStreet("Neue Strasse");
+		        htwTres.printAddress();
+		    }
+		    
+		    /**
+		     * Tears down the test fixture.
+		     *
+		     * Called after every test case method.
+		     */
+		    @AfterEach
+		    public void tearDown()
+		    {
+		    }
+		}
+		```
+
+??? info "Video zur Vorlesung Klassen und Objekte -- 17.11.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=2439aaf7e8446bd2f96733041f3f7e23&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
