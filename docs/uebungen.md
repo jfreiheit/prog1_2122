@@ -738,6 +738,55 @@
 		Es wurden 200,00 Euro ausgezahlt.
 		Ihr aktuelles Guthaben betraegt 0,00 Euro.
 		```
+	12. Angenommen, die gesamte Testmethode sieht jetzt so aus: 
+		```java 
+		@Test
+		public void testKonto()
+		{
+		    Konto k1 = new Konto(1234);
+
+		    k1.einzahlen(100.0);
+		    k1.einzahlen(50.0);
+		    k1.einzahlen(150.0);
+
+		    k1.kontoauszug(1235);       // Falsche PIN!
+		    k1.kontoauszug(1234);       
+
+		    k1.auszahlen(1235, 100.0);  // Falsche PIN!
+		    k1.auszahlen(1234, 100.0);  
+		    k1.kontoauszug(1234);       
+		    k1.auszahlen(1234, 300.0);  
+		    k1.auszahlen(1234, 200.0);  
+		    k1.kontoauszug(1234); 
+
+		    k1.einzahlen(150.0);
+		    k1.kontoauszug(1234);       
+		    k1.zinsenZahlen();
+		    k1.kontoauszug(1234);       
+		    k1.einzahlen(1000.0);
+		    k1.kontoauszug(1234);
+		}
+		```
+		dann sollte die Ausgabe ungefähr so aussehen (wahrscheinlich nur eine Stelle nach dem Komma/Punkt):
+		```bash
+		Es wurden 100,00 Euro eingezahlt.
+		Es wurden 50,00 Euro eingezahlt.
+		Es wurden 150,00 Euro eingezahlt.
+		Falsche PIN!
+		Ihr aktuelles Guthaben betraegt 300,00 Euro.
+		Falsche PIN!
+		Es wurden 100,00 Euro ausgezahlt.
+		Ihr aktuelles Guthaben betraegt 200,00 Euro.
+		Es wurden 300,00 Euro ausgezahlt.
+		Es wurden 200,00 Euro ausgezahlt.
+		Ihr aktuelles Guthaben betraegt -300,00 Euro.
+		Es wurden 150,00 Euro eingezahlt.
+		Ihr aktuelles Guthaben betraegt -150,00 Euro.
+		Ihnen wurden 18,00 Euro Zinsen abgebucht.
+		Ihr aktuelles Guthaben betraegt -168,00 Euro.
+		Es wurden 1000,00 Euro eingezahlt.
+		Ihr aktuelles Guthaben betraegt 832,00 Euro.
+		```
 	12. **Zusatzaufgabe (falls noch Zeit ist):** 
 		- Informieren Sie sich über die `System.out.printf()`-Methode, um stets genau 2 Stellen nach dem Komma des Betrages auszugeben (siehe [hier](../hilfsklassen/#formatierung-von-gleikommazahlen)). 
 
