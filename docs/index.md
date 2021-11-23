@@ -48,7 +48,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 4. | 01.-05.11.2021 | [Selektion](./selektion/#selektion) ([if](./selektion/#ifelse)) und [Iteration](./iteration/#iteration) ([for](./iteration/#die-for-schleife))| [Aufgabe 3](./aufgaben/#aufgabe-3-abgabe-bis-08112021-2400-uhr) | 08.11.2021 | 
 | 5. | 08.-12.11.2021 | [Iteration (while)](./iteration/#die-while-schleife) | [Aufgabe 4](./aufgaben/#aufgabe-4-abgabe-bis-15112021-2400-uhr) | 15.11.2021 | 
 | 6. | 15.-19.11.2021 | [Klassen und Objekte](./objekte/#klassen-und-objekte) | [Aufgabe 5](./aufgaben/#aufgabe-5-abgabe-bis-22112021-2400-uhr)  | 22.11.2021 | 
-| 7. | 22.-26.11.2021 | Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten | Aufgabe 6  | 29.11.2021 | 
+| 7. | 22.-26.11.2021 | [Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten](./objekte/#eine-weiterer-datentyp-point) | [Aufgabe 6](./aufgaben/#aufgabe-6-abgabe-bis-29112021-2400-uhr)  | 29.11.2021 | 
 | 8. | 29.-03.12.2021 | Klassen- und Objekt-Variablen und -Methoden  | Aufgabe 7  | 06.12.2021 |
 | 9. | 06.-10.12.2021 | Vererbung | Aufgabe 8  | 13.12.2021 |
 | 10. | 13.-17.12.2021 | Object und Polymorphie | Aufgabe 9 | 20.12.2021 |
@@ -585,5 +585,93 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Vorlesung Klassen und Objekte -- 17.11.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=2439aaf7e8446bd2f96733041f3f7e23&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+
+??? note "Vorlesung Point und this -- 23.11.2021"
+	=== "Point.java"
+		```java	linenums="1" 
+
+		public class Point
+		{
+		    // Objektvariablen
+		    private int x;
+		    private int y;
+		    
+		    // Konstruktor
+		    public Point(int x, int y)
+		    {
+		        this.x = x;
+		        this.y = y;
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println("[ x=" + this.x + ", y=" + this.y + "]");
+		    }
+		    
+		    public int getX()
+		    {
+		        return this.x;
+		    }
+		    
+		    public int getY()
+		    {
+		        return this.y;
+		    }
+		    
+		    public void translate(int deltaX, int deltaY)
+		    {
+		        this.x = this.x + deltaX;
+		        this.y = this.y + deltaY;
+		    }
+		    
+		    public boolean isLeft(Point p)
+		    {
+		        return (this.x < p.x);
+		    }
+		    
+		    public boolean isAbove(Point p)
+		    {
+		        return (this.y > p.y);
+		    }
+		}
+		```
+	=== "Programmklasse.java"
+		```java	linenums="1" 
+
+		public class Programmklasse
+		{
+		    public void testPoint()
+		    {
+		        Point p1 = new Point(3,4);
+		        Point p2 = new Point(1,2);
+		        Point p3 = new Point(-3,6);
+		        
+		        p1.print();
+		        p2.print();
+		        p3.print();
+		        
+		        System.out.println("p1 : (" + p1.getX() + ", " + p1.getY() + ")");
+		        System.out.println("p2 : (" + p2.getX() + ", " + p2.getY() + ")");
+		        System.out.println("p3 : (" + p3.getX() + ", " + p3.getY() + ")");
+		        
+		        p1.translate(1,2);
+		        System.out.println("p1 : (" + p1.getX() + ", " + p1.getY() + ")");
+		        p1.print();
+		        p1.translate(-2,-4);
+		        p1.print();
+		        
+		        System.out.println("p1 links von p2 ? " + p1.isLeft(p2) );
+		        System.out.println("p2 links von p1 ? " + p2.isLeft(p1) );
+		        
+		    }
+		}
+
+		```
+
+??? info "Video zur Vorlesung Point und this -- 23.11.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=fd299b15d59eb74c91ea73c246676282&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
 
 

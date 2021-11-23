@@ -280,7 +280,7 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 		x <= y <= z und
 		x * y * z = 36
 		``` 
-		**Tipp**: Überlegen Sie sich zuerst, wie man z.B. alle Kombinationen ermitteln kann, wenn `x`, `y` und `z` jeweils Werte zwischen `-50` und `50` annehmen können (das sind dann `100^3`, also `1000000` Kombinationen). Überlegen Sie dann, wie Sie diese Wertebereiche mithilfe der beiden Bedingungen einschränken können. Es gibt übrigens 28 Kombinationen, für die die beiden obigen Bedingungen gelten.  
+		**Tipp**: Überlegen Sie sich zuerst, wie man z.B. alle Kombinationen ermitteln kann, wenn `x`, `y` und `z` jeweils Werte zwischen `-50` und `50` (das ist aber nicht der endgültige Wertebereich!!! - Sie können gerne auch anders anfangen) annehmen können (das sind dann `100^3`, also `1000000` Kombinationen). Überlegen Sie dann, wie Sie diese Wertebereiche mithilfe der beiden Bedingungen einschränken können. Es gibt übrigens 28 Kombinationen, für die die beiden obigen Bedingungen gelten.  
 
 		---
 
