@@ -497,3 +497,65 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 
 	- Viel Spaß und viel Erfolg!
 
+
+
+#### Aufgabe 7 (Abgabe bis 6.12.2021 24:00 Uhr)
+??? "Aufgabe7 - Time"
+	- Wir erstellen uns einen neuen Datentyp `Time`
+
+	- Erstellen Sie sich ein neues Projekt `aufgabe7` und darin eine neue Klasse `Time` sowie dafür eine Testklasse `TimeTest` mit einer `testTime()`-Methode. 
+
+	- In der Klasse `Time` erstellen Sie zwei Objektvariablen `hours` und `minutes`, jeweils vom Typ `int` und beide `private`. 
+
+	- Erstellen Sie einen parameterlosen Konstruktor, der die Objektvariablen mit jeweils `0` initialisiert. 
+
+	- Implementieren Sie eine Methode `public void changeTime(int diffMinutes)`. Dieser Methode wird als Parameterwert eine Anzahl von Minuten übergeben, um die sich die aktuelle Zeit ändern soll. Beachten Sie:
+
+		- die Objektvariable `minutes` soll nur Werte von `0` bis `59` annehmen dürfen,
+		- die Objektvariable `hours` soll nur Werte von `0` bis `23` annehmen dürfen,
+		- `diffMinutes` kann auch negativ sein.
+
+	- Implementieren Sie eine Methode `public String timeToString()`. Diese Methode gibt die aktuelle Zeit in der Form `hh:mm` als String zurück. Beachten Sie:
+
+		- Sowohl die Stunden als auch die Minuten haben eventuelle führende Nullen, d.h. Beispiele für den Rückgabestring können auch `01:00` sein oder `09:09`.
+
+	- Implementieren Sie eine Methode `public void printTime()`. Diese Methode gibt die aktuelle Uhrzeit unter Verwendung der Methode `timeToString()` auf die Konsole aus. 
+
+	- Wenn Sie die Testmethode `testTime()` z.B. wie folgt implementieren:
+		```java
+		@Test
+	    public void testTime()
+	    {
+	        Time t1 = new Time();
+	        t1.printTime();
+	        t1.changeTime(30);
+	        t1.printTime();
+	        t1.changeTime(30);
+	        t1.printTime();
+	        t1.changeTime(60);
+	        t1.printTime();
+	        t1.changeTime(600);
+	        t1.printTime();
+	        t1.changeTime(660);
+	        t1.printTime();
+	        t1.changeTime(60);
+	        t1.printTime();
+	        t1.changeTime(-60);
+	        t1.printTime();
+	    }
+		```
+		dann sollte folgende Ausgabe auf der Konsole erscheinen:
+		```bash
+		00:00
+		00:30
+		01:00
+		02:00
+		12:00
+		23:00
+		00:00
+		23:00
+		```
+
+	- Insbesondere für die `changeTime()`-Methode sollten Sie erst ausführlich überlegen, ehe Sie losprogrammieren. Nicht vergessen, dass Zettel und Stift die wichtigsten Werkzeuge der Programmiererin sind! 
+
+	- Viel Spaß und viel Erfolg!

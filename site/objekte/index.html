@@ -3349,12 +3349,12 @@ Max Mustermann wohnt <span class="k">in</span> Treskowallee <span class="m">8</s
         <span class="k">return</span> <span class="n">adresse</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAdresseString</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">adresse</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="hll"><span class="p">}</span>
-</span></code></pre></div>
+<span class="hll">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAdresseString</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">adresse</span><span class="p">.</span><span class="na">getAdresse</span><span class="p">();</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
 </td></tr></table>
 </div>
 </div>
@@ -3738,7 +3738,7 @@ Max Mustermann wohnt <span class="k">in</span> Treskowallee <span class="m">8</s
 </td></tr></table>
 </div>
 </div>
-<p>Insbesondere innerhalb der Mthode <code>getAdresseString()</code> erkennen wir gut, dass wir darin nicht auf die <code>getAdresse()</code>-Methode von <code>Person</code> zugreifen, sondern auf die <code>getAdresse()</code>-Methode von <code>Adresse</code>. Wir haben auch die Parameter des Konstruktors anegpasst, denn es ist völlig üblich, die Parameter so zu nennen, wie die Objektvariablen, die damit initialisiert werden sollen. Aber dann <strong>muss</strong> vor den Objektvariablen auch jeweils <code>this.</code> stehen!</p>
+<p>Insbesondere innerhalb der Methode <code>getAdresseString()</code> erkennen wir gut, dass wir darin nicht auf die <code>getAdresse()</code>-Methode von <code>Person</code> zugreifen, sondern auf die <code>getAdresse()</code>-Methode von <code>Adresse</code>. Wir haben auch die Parameter des Konstruktors anegpasst, denn es ist völlig üblich, die Parameter so zu nennen, wie die Objektvariablen, die damit initialisiert werden sollen. Aber dann <strong>muss</strong> vor den Objektvariablen auch jeweils <code>this.</code> stehen!</p>
 <details class="question"><summary>Integrieren Sie auch in den Klassen <code>Adresse</code> und <code>Point</code> die <code>this.</code>-Referenz!</summary></details>
 <h2 id="mehrere-konstruktoren">Mehrere Konstruktoren<a class="headerlink" href="#mehrere-konstruktoren" title="Permanent link">&para;</a></h2>
 <p>Es kann vorkommen, dass wir gar nicht allen Objektvariablen einen Wert im Konstruktor übergeben wollen. Wenn wir für eine Objektvariable keinen Wert im Konstruktor übergeben, dann soll dieser Objektvariablen ein Standardwert zugewiesen werden. Ein einfaches Beispiel wäre, dass wir für unsere Klasse <code>Circle</code> einen Konstruktor haben, dem ein Wert für <code>radius</code> übergeben wird und einen Konstruktor, der parameterlos ist, dem also kein Wert für <code>radius</code> übergeben wird. In diesem Fall soll <code>radius</code> den Wert <code>1.0</code> annhmen, also der <a href="https://de.wikipedia.org/wiki/Einheitskreis">Einheitskreis</a> sein. </p>
@@ -3823,7 +3823,7 @@ Flaecheninhalt : <span class="m">3</span>.141592653589793
 <ol>
 <li><code>method(int number)</code>                 // nur ein Parameter</li>
 <li><code>method(int nr1, int nr2)</code>           // zwei Parameter int, int</li>
-<li><code>method(double nr1, double nr2)</code>     // zwei parameter double, double</li>
+<li><code>method(double nr1, double nr2)</code>     // zwei Parameter double, double</li>
 <li><code>method(int nr1, double nr2)</code>        // zwei Parameter int, double</li>
 <li><code>method(double nr1, int nr2)</code>        // zwei parameter double, int</li>
 </ol>
@@ -3991,8 +3991,10 @@ Rudower Chaussee <span class="m">25</span> <span class="k">in</span> <span class
 <span class="o">[</span> <span class="nv">x</span><span class="o">=</span><span class="m">3</span>, <span class="nv">y</span><span class="o">=</span><span class="m">6</span> <span class="o">]</span>
 </code></pre></div>
 <p>Wesentlichster Unterschied zur ersten Variante ist, dass sich weder <code>p1</code> noch <code>p2</code> durch die Addition geändert haben. Wenn wir das Ziel verfolgen, möglichst unveränderliche Objekte zu erzeugen, dann ist die zweite Lösung auf jeden Fall die bessere. So oder so haben wir eine Methode kennengelernt, in der ein Objekt der Klasse erzeugt und dieses Objekt zurückgegeben wird. Solche Objekte kommen nicht selten vor - und nun kennen wir ein Beispiel. Weitere Beispiele werden wir in der Aufgabe <em>Bruch</em> erzeugen.  </p>
-<p>=== success 
-    Wir haben eigene Datentypen in der Definition eigener Datentypen verwendet. Wir haben das Schlüsselwort <code>this</code> kennengerlernt, mit dem wir innerhalb der Klasse das aufrufende Objekt referenzieren können. Wir haben das Überladen von Methoden betrachtet und Konstruktoren in Klassen mehrfach überladen. Das Überladen von Methoden lässt sich auf alle Methoden anwenden. Darüber hinaus haben wir Methoden erstellt, in denen Objekte erzeugt werden. Zuletzt gibt eine solche Methode das von ihr erzeugte Objekt auch zurück. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben eigene Datentypen in der Definition eigener Datentypen verwendet. Wir haben das Schlüsselwort <code>this</code> kennengerlernt, mit dem wir innerhalb der Klasse das aufrufende Objekt referenzieren können. Wir haben das Überladen von Methoden betrachtet und Konstruktoren in Klassen mehrfach überladen. Das Überladen von Methoden lässt sich auf alle Methoden anwenden. Darüber hinaus haben wir Methoden erstellt, in denen Objekte erzeugt werden. Zuletzt gibt eine solche Methode das von ihr erzeugte Objekt auch zurück. </p>
+</div>
                 
               
               

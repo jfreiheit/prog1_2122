@@ -740,3 +740,149 @@
 		```
 	12. **Zusatzaufgabe (falls noch Zeit ist):** 
 		- Informieren Sie sich über die `System.out.printf()`-Methode, um stets genau 2 Stellen nach dem Komma des Betrages auszugeben (siehe [hier](../hilfsklassen/#formatierung-von-gleikommazahlen)). 
+
+	
+??? note "Übung 7 (1.12.2021)"
+	
+	1. Öffnen Sie `BlueJ` und erstellen Sie ein neues Projekt `uebung7`. 
+	2. Erstellen Sie darin eine Klasse `Rectangle`. 
+	3. Erstellen Sie eine Testklasse `RectangleTest` und fügen Sie darin folgende Methode ein:
+		```java
+
+	    @Test
+	    public void testRectangle()
+	    {
+	        // hier die Rectangleobjekte erzeugen
+	        // und die Objektmethoden anwenden
+	    }
+		```	
+	4. Erstellen Sie in der Klasse `Rectangle` zwei Objektvariablen
+		- `a` vom Typ `int` --> nur in der Klasse sichtbar!
+		- `b` vom Typ `int`	--> ebenfalls nur in der Klasse sichtbar!
+		- `a` und `b` repräsentieren die Seiten des Rechtecks. 
+	5. Erstellen Sie für die Klasse `Rectangle` einen parameterlosen Konstruktor `Rectangle()`. Dieser setzt für die Seite `a` den Wert `10` und für die Seite `b` den Wert `20`.
+	6. Erstellen Sie außerdem einen parametrisierten Konstruktor `Rectangle(int a, int b)`. Dieser verwendet die Werte der Parameter, um den Objektvariablen Werte zuzuweisen.
+	7. Erstellen Sie eine Objektmethode `area()`, die den Flächeninhalt des Rechtecks als `int` zurückgibt. 
+	8. Erstellen Sie eine Objektmethode `perimeter()`, die den Umfang des Rechtecks als `int` zurückgibt. 
+	9. Erstellen Sie eine Objektmethode `toString()`, die Informationen über das Rechtecks als `String` in z.B. der folgenden Form (Beispielwerte):
+		```bash
+		Rectangle : ( a=10, b=20, area=200, perimeter=60 )
+		```
+		zurückgibt. 
+	
+	10. Implementieren Sie eine Objektmethode `public void print()`, die den durch `toString()` erzeugten `String` auf die Konsole ausgibt.
+	11. Geben Sie in der `testRectangle()`-Methode der `RectangleTest`-Klasse ein:
+		```java
+		// Objekte erzeugen
+		Rectangle r1 = new Rectangle();
+		Rectangle r2 = new Rectangle(12, 18);
+		Rectangle r3 = new Rectangle(40, 5);
+		Rectangle r4 = new Rectangle(20, 10);
+		Rectangle r5 = new Rectangle(11, 21);
+		
+		System.out.printf("%n%n--------------- print()-Methode -----------------%n%n");
+		r1.print();
+		r2.print();
+		r3.print();
+		r4.print();
+		r5.print();
+		```
+		und rufen Sie die `testRectangle()` auf. Es sollten folgende Ausgaben erzeugt werden:
+		```bash
+		--------------- print()-Methode -----------------
+
+		Rectangle : ( a=10, b=20, area=200, perimeter=60 )
+		Rectangle : ( a=12, b=18, area=216, perimeter=60 )
+		Rectangle : ( a=40, b= 5, area=200, perimeter=90 )
+		Rectangle : ( a=20, b=10, area=200, perimeter=60 )
+		Rectangle : ( a=11, b=21, area=231, perimeter=64 )
+		```
+	10. Erstellen Sie eine Methode `sidesAreEqual(Rectangle r)`, die ein `true` zurückgibt, wenn die Seiten des aufrufenden Objektes gleich der Seiten des Rechtecks `r` sind; `false` sonst. Sie können entscheiden, dass das Rechteck auch gedreht noch gleiche Seiten haben soll, also `a=10, b=20` ist nicht nur mit `a=10, b=20` gleich, sondern auch mit `a=20, b=10`. Wenn die Seiten ungleich sind, gibt die Methode ein `false` zurück.
+	11. Erstellen Sie eine Methode `areasAreEqual(Rectangle r)`, die ein `true` zurückgibt, wenn der Flächeninhalt des aufrufenden Objektes gleich dem Flächeninhalt des Rechtecks `r` ist; `false` sonst.
+	12. Erstellen Sie eine Methode `perimetersAreEqual(Rectangle r)`, die ein `true` zurückgibt, wenn der Umfang des aufrufenden Objektes gleich dem Umfang des Rechtecks `r` ist; `false` sonst.
+	13. Erstellen Sie eine Methode `printComparison(Rectangle r)`, die die Vergleiche mit `r` auf die Konsole ausgibt, z.B.:
+		```bash
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=12, b=18, area=216, perimeter=60 ) 
+		sides are not equal 
+		areas are not equal 
+		perimeters are equal 
+
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=40, b= 5, area=200, perimeter=90 ) 
+		sides are not equal 
+		areas are equal 
+		perimeters are not equal 
+
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=20, b=10, area=200, perimeter=60 ) 
+		sides are equal 
+		areas are equal 
+		perimeters are equal 
+
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=11, b=21, area=231, perimeter=64 ) 
+		sides are not equal 
+		areas are not equal 
+		perimeters are not equal 
+		```
+	14. Fügen Sie in der `testRectangle()`-Methode der `RectangleTest`-Klasse folgende Anweisungen hinzu:
+		```java	
+		System.out.printf("%n%n---------- printComparison()-Methode ------------%n%n");
+		r1.printComparison(r2);
+		r1.printComparison(r3);
+		r1.printComparison(r4);
+		r1.printComparison(r5);
+		```
+		und rufen Sie die `testRectangle()`-Methode auf. Es sollten folgende zusätzliche Ausgaben erzeugt werden:
+		```bash
+		---------- printComparison()-Methode ------------
+
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=12, b=18, area=216, perimeter=60 ) 
+		sides are not equal 
+		areas are not equal 
+		perimeters are equal 
+
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=40, b= 5, area=200, perimeter=90 ) 
+		sides are not equal 
+		areas are equal 
+		perimeters are not equal 
+
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=20, b=10, area=200, perimeter=60 ) 
+		sides are equal 
+		areas are equal 
+		perimeters are equal 
+
+		this      Rectangle : ( a=10, b=20, area=200, perimeter=60 ) 
+		the other Rectangle : ( a=11, b=21, area=231, perimeter=64 ) 
+		sides are not equal 
+		areas are not equal 
+		perimeters are not equal 
+		```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

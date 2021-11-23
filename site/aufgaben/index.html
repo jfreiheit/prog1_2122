@@ -498,6 +498,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aufgabe-7-abgabe-bis-6122021-2400-uhr" class="md-nav__link">
+    Aufgabe 7 (Abgabe bis 6.12.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -652,6 +659,13 @@
           <li class="md-nav__item">
   <a href="#aufgabe-6-abgabe-bis-29112021-2400-uhr" class="md-nav__link">
     Aufgabe 6 (Abgabe bis 29.11.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-7-abgabe-bis-6122021-2400-uhr" class="md-nav__link">
+    Aufgabe 7 (Abgabe bis 6.12.2021 24:00 Uhr)
   </a>
   
 </li>
@@ -1162,6 +1176,81 @@ Flaecheninhalt  : <span class="m">6</span>.0
 Das Dreieck ist unregelmaessig.
 Das Dreieck ist rechtwinklig.
 </code></pre></div></p>
+</li>
+<li>
+<p>Viel Spaß und viel Erfolg!</p>
+</li>
+</ul>
+</details>
+<h4 id="aufgabe-7-abgabe-bis-6122021-2400-uhr">Aufgabe 7 (Abgabe bis 6.12.2021 24:00 Uhr)<a class="headerlink" href="#aufgabe-7-abgabe-bis-6122021-2400-uhr" title="Permanent link">&para;</a></h4>
+<details><summary>Aufgabe7 - Time</summary><ul>
+<li>
+<p>Wir erstellen uns einen neuen Datentyp <code>Time</code></p>
+</li>
+<li>
+<p>Erstellen Sie sich ein neues Projekt <code>aufgabe7</code> und darin eine neue Klasse <code>Time</code> sowie dafür eine Testklasse <code>TimeTest</code> mit einer <code>testTime()</code>-Methode. </p>
+</li>
+<li>
+<p>In der Klasse <code>Time</code> erstellen Sie zwei Objektvariablen <code>hours</code> und <code>minutes</code>, jeweils vom Typ <code>int</code> und beide <code>private</code>. </p>
+</li>
+<li>
+<p>Erstellen Sie einen parameterlosen Konstruktor, der die Objektvariablen mit jeweils <code>0</code> initialisiert. </p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public void changeTime(int diffMinutes)</code>. Dieser Methode wird als Parameterwert eine Anzahl von Minuten übergeben, um die sich die aktuelle Zeit ändern soll. Beachten Sie:</p>
+<ul>
+<li>die Objektvariable <code>minutes</code> soll nur Werte von <code>0</code> bis <code>59</code> annehmen dürfen,<ul>
+<li>die Objektvariable <code>hours</code> soll nur Werte von <code>0</code> bis <code>23</code> annehmen dürfen,</li>
+<li><code>diffMinutes</code> kann auch negativ sein.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public String timeToString()</code>. Diese Methode gibt die aktuelle Zeit in der Form <code>hh:mm</code> als String zurück. Beachten Sie:</p>
+<ul>
+<li>Sowohl die Stunden als auch die Minuten haben eventuelle führende Nullen, d.h. Beispiele für den Rückgabestring können auch <code>01:00</code> sein oder <code>09:09</code>.</li>
+</ul>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public void printTime()</code>. Diese Methode gibt die aktuelle Uhrzeit unter Verwendung der Methode <code>timeToString()</code> auf die Konsole aus. </p>
+</li>
+<li>
+<p>Wenn Sie die Testmethode <code>testTime()</code> z.B. wie folgt implementieren:
+    <div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testTime</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Time</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">changeTime</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">changeTime</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">changeTime</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">changeTime</span><span class="p">(</span><span class="mi">600</span><span class="p">);</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">changeTime</span><span class="p">(</span><span class="mi">660</span><span class="p">);</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">changeTime</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">changeTime</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">);</span>
+    <span class="n">t1</span><span class="p">.</span><span class="na">printTime</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+    dann sollte folgende Ausgabe auf der Konsole erscheinen:
+    <div class="highlight"><pre><span></span><code><span class="m">00</span>:00
+<span class="m">00</span>:30
+<span class="m">01</span>:00
+<span class="m">02</span>:00
+<span class="m">12</span>:00
+<span class="m">23</span>:00
+<span class="m">00</span>:00
+<span class="m">23</span>:00
+</code></pre></div></p>
+</li>
+<li>
+<p>Insbesondere für die <code>changeTime()</code>-Methode sollten Sie erst ausführlich überlegen, ehe Sie losprogrammieren. Nicht vergessen, dass Zettel und Stift die wichtigsten Werkzeuge der Programmiererin sind! </p>
 </li>
 <li>
 <p>Viel Spaß und viel Erfolg!</p>

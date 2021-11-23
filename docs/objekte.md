@@ -1552,7 +1552,7 @@ Die Anweisung `maria.getAdresse()` gibt, wie gesagt, ein `Adresse`-Objekt zurüc
 Wir sehen bereits an diesem einfachen Beispiel, dass eine solche Hintereinanderreihung von Aufrufen von Objektmethoden leicht für Verwirrung Sorgen kann und schwer zu verstehen ist. Hier kommt noch gesondert hinzu, dass verschiedene Methoden gleich heißen. Eine solche Hintereinanderreihung von Objektmethoden sollten wir möglichst vermeiden. Wir könnten unserer `Person`-Klasse z.B. eine Methode `getAdresseString()` hinzufügen, die uns die Adresse als `String` zurückgibt:
 
 === "Person.java"
-	```java linenums="1" hl_lines="42-45"
+	```java linenums="1" hl_lines="38-41"
 	public class Person
 	{
 		// ------- Objektvariablen -----------
@@ -1840,7 +1840,7 @@ Wir passen auch unsere Klasse `Person` entsprechend an:
 	}
 	```
 
-Insbesondere innerhalb der Mthode `getAdresseString()` erkennen wir gut, dass wir darin nicht auf die `getAdresse()`-Methode von `Person` zugreifen, sondern auf die `getAdresse()`-Methode von `Adresse`. Wir haben auch die Parameter des Konstruktors anegpasst, denn es ist völlig üblich, die Parameter so zu nennen, wie die Objektvariablen, die damit initialisiert werden sollen. Aber dann **muss** vor den Objektvariablen auch jeweils `this.` stehen!
+Insbesondere innerhalb der Methode `getAdresseString()` erkennen wir gut, dass wir darin nicht auf die `getAdresse()`-Methode von `Person` zugreifen, sondern auf die `getAdresse()`-Methode von `Adresse`. Wir haben auch die Parameter des Konstruktors anegpasst, denn es ist völlig üblich, die Parameter so zu nennen, wie die Objektvariablen, die damit initialisiert werden sollen. Aber dann **muss** vor den Objektvariablen auch jeweils `this.` stehen!
 
 ??? question "Integrieren Sie auch in den Klassen `Adresse` und `Point` die `this.`-Referenz!"
 
@@ -1919,7 +1919,7 @@ Angenommen, unsere Methode heißt `method`, dann haben folgende Methoden eine un
 
 1. `method(int number)`					// nur ein Parameter
 2. `method(int nr1, int nr2)`			// zwei Parameter int, int
-3. `method(double nr1, double nr2)` 	// zwei parameter double, double
+3. `method(double nr1, double nr2)` 	// zwei Parameter double, double
 4. `method(int nr1, double nr2)`		// zwei Parameter int, double
 5. `method(double nr1, int nr2)` 		// zwei parameter double, int
 
@@ -2122,7 +2122,7 @@ mit der Ausgabe
 Wesentlichster Unterschied zur ersten Variante ist, dass sich weder `p1` noch `p2` durch die Addition geändert haben. Wenn wir das Ziel verfolgen, möglichst unveränderliche Objekte zu erzeugen, dann ist die zweite Lösung auf jeden Fall die bessere. So oder so haben wir eine Methode kennengelernt, in der ein Objekt der Klasse erzeugt und dieses Objekt zurückgegeben wird. Solche Objekte kommen nicht selten vor - und nun kennen wir ein Beispiel. Weitere Beispiele werden wir in der Aufgabe *Bruch* erzeugen.  
 
 
-=== success 
+!!! success 
 	Wir haben eigene Datentypen in der Definition eigener Datentypen verwendet. Wir haben das Schlüsselwort `this` kennengerlernt, mit dem wir innerhalb der Klasse das aufrufende Objekt referenzieren können. Wir haben das Überladen von Methoden betrachtet und Konstruktoren in Klassen mehrfach überladen. Das Überladen von Methoden lässt sich auf alle Methoden anwenden. Darüber hinaus haben wir Methoden erstellt, in denen Objekte erzeugt werden. Zuletzt gibt eine solche Methode das von ihr erzeugte Objekt auch zurück. 
 
 
