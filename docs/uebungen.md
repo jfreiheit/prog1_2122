@@ -761,10 +761,6 @@
 
 		    k1.einzahlen(150.0);
 		    k1.kontoauszug(1234);       
-		    k1.zinsenZahlen();
-		    k1.kontoauszug(1234);       
-		    k1.einzahlen(1000.0);
-		    k1.kontoauszug(1234);
 		}
 		```
 		dann sollte die Ausgabe ungefähr so aussehen (wahrscheinlich nur eine Stelle nach dem Komma/Punkt):
@@ -782,10 +778,6 @@
 		Ihr aktuelles Guthaben betraegt -300,00 Euro.
 		Es wurden 150,00 Euro eingezahlt.
 		Ihr aktuelles Guthaben betraegt -150,00 Euro.
-		Ihnen wurden 18,00 Euro Zinsen abgebucht.
-		Ihr aktuelles Guthaben betraegt -168,00 Euro.
-		Es wurden 1000,00 Euro eingezahlt.
-		Ihr aktuelles Guthaben betraegt 832,00 Euro.
 		```
 	12. **Zusatzaufgabe (falls noch Zeit ist):** 
 		- Informieren Sie sich über die `System.out.printf()`-Methode, um stets genau 2 Stellen nach dem Komma des Betrages auszugeben (siehe [hier](../hilfsklassen/#formatierung-von-gleikommazahlen)). 
