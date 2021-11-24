@@ -30,7 +30,7 @@ Wir betrachten das Speichermodell *Stack*, weil die Abarbeitung von Methoden nac
 		public void a(int vaa)
 		{
 			int vab = 1;
-			System.out.println("+--a()   --> va  = " + vaa + " vb  = " + vab);
+			System.out.println("+--a()   --> vaa  = " + vaa + " vab  = " + vab);
 			b(vaa, vab);
 		}
 		
@@ -63,15 +63,15 @@ Die Ausgabe des Programms ist wie folgt:
 
 ```bash
 start()  --> va  = 0
-+--a()   --> va  = 0 vb  = 1
++--a()   --> vaa = 0 vab = 1
 +----b() --> vba = 0 vbb = 1
 
 start()  --> va  = 1
-+--a()   --> va  = 1 vb  = 1
++--a()   --> vaa = 1 vab = 1
 +----b() --> vba = 1 vbb = 1
 
 start()  --> va  = 2
-+--a()   --> va  = 2 vb  = 1
++--a()   --> vaa = 2 vab = 1
 +----b() --> vba = 2 vbb = 1
 ```
 

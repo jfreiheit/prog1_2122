@@ -657,7 +657,7 @@
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="p">(</span><span class="kt">int</span> <span class="n">vaa</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kt">int</span> <span class="n">vab</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;+--a()   --&gt; va  = &quot;</span> <span class="o">+</span> <span class="n">vaa</span> <span class="o">+</span> <span class="s">&quot; vb  = &quot;</span> <span class="o">+</span> <span class="n">vab</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;+--a()   --&gt; vaa  = &quot;</span> <span class="o">+</span> <span class="n">vaa</span> <span class="o">+</span> <span class="s">&quot; vab  = &quot;</span> <span class="o">+</span> <span class="n">vab</span><span class="p">);</span>
         <span class="n">b</span><span class="p">(</span><span class="n">vaa</span><span class="p">,</span> <span class="n">vab</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -689,15 +689,15 @@
 <p>Die <code>start()</code>-Methode ruft die Methode <code>a()</code> auf und die <code>a()</code>-Methode ruft die <code>b()</code>-Methode auf. </p>
 <p>Die Ausgabe des Programms ist wie folgt:</p>
 <div class="highlight"><pre><span></span><code>start<span class="o">()</span>  --&gt; <span class="nv">va</span>  <span class="o">=</span> <span class="m">0</span>
-+--a<span class="o">()</span>   --&gt; <span class="nv">va</span>  <span class="o">=</span> <span class="m">0</span> <span class="nv">vb</span>  <span class="o">=</span> <span class="m">1</span>
++--a<span class="o">()</span>   --&gt; <span class="nv">vaa</span> <span class="o">=</span> <span class="m">0</span> <span class="nv">vab</span> <span class="o">=</span> <span class="m">1</span>
 +----b<span class="o">()</span> --&gt; <span class="nv">vba</span> <span class="o">=</span> <span class="m">0</span> <span class="nv">vbb</span> <span class="o">=</span> <span class="m">1</span>
 
 start<span class="o">()</span>  --&gt; <span class="nv">va</span>  <span class="o">=</span> <span class="m">1</span>
-+--a<span class="o">()</span>   --&gt; <span class="nv">va</span>  <span class="o">=</span> <span class="m">1</span> <span class="nv">vb</span>  <span class="o">=</span> <span class="m">1</span>
++--a<span class="o">()</span>   --&gt; <span class="nv">vaa</span> <span class="o">=</span> <span class="m">1</span> <span class="nv">vab</span> <span class="o">=</span> <span class="m">1</span>
 +----b<span class="o">()</span> --&gt; <span class="nv">vba</span> <span class="o">=</span> <span class="m">1</span> <span class="nv">vbb</span> <span class="o">=</span> <span class="m">1</span>
 
 start<span class="o">()</span>  --&gt; <span class="nv">va</span>  <span class="o">=</span> <span class="m">2</span>
-+--a<span class="o">()</span>   --&gt; <span class="nv">va</span>  <span class="o">=</span> <span class="m">2</span> <span class="nv">vb</span>  <span class="o">=</span> <span class="m">1</span>
++--a<span class="o">()</span>   --&gt; <span class="nv">vaa</span> <span class="o">=</span> <span class="m">2</span> <span class="nv">vab</span> <span class="o">=</span> <span class="m">1</span>
 +----b<span class="o">()</span> --&gt; <span class="nv">vba</span> <span class="o">=</span> <span class="m">2</span> <span class="nv">vbb</span> <span class="o">=</span> <span class="m">1</span>
 </code></pre></div>
 <p>Die <code>start()</code>-Methode ruft also drei Mal (innerhalb der Schleife) die <code>a()</code>-Methode auf, welche wiederum die <code>b()</code>-Methode aufruft. </p>

@@ -675,3 +675,71 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
+??? note "Vorlesung Circle -- 24.11.2021"
+	=== "Point.java"
+		```java	linenums="1" 
+
+		public class Circle
+		{
+		    private double radius;
+		    
+		    public Circle(double radius1)
+		    {
+		        this.radius = radius1;
+		    }
+		    
+		    public double getRadius()
+		    {
+		        return this.radius;
+		    }
+		    
+		    public double getDiameter()
+		    {
+		        return 2.0 * this.radius;
+		    }
+		    
+		    public boolean isSmaller(Circle otherCircle)
+		    {
+		        return this.radius < otherCircle.radius;
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println("Radius      : " + this.radius);
+		        System.out.println("Durchmesser : " + this.getDiameter() );
+		        
+		    }
+		}
+
+		```
+	=== "Programmklasse.java"
+		```java	linenums="1" 
+
+		public class Programmklasse
+		{
+
+			public void testCircle()
+		    {
+		        Circle c1 = new Circle(5.0);
+		        Circle c2 = new Circle(4.0);
+		        Circle c3 = c1;
+		        
+		        System.out.println(c1.getRadius());
+		        System.out.println(c2.getRadius());
+		        
+		        c1.print();
+		        c2.print();
+		        c3.print();
+		        
+		        System.out.println("c1 kleiner c2 ? " + c1.isSmaller(c2));
+		        System.out.println("c2 kleiner c1 ? " + c2.isSmaller(c1));
+		    }
+		}
+
+		```
+
+??? info "Video zur Vorlesung Circle -- 24.11.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=83773673af2c6de5c49fefa4d922e2df&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+

@@ -773,14 +773,112 @@
 		Falsche PIN!
 		Es wurden 100,00 Euro ausgezahlt.
 		Ihr aktuelles Guthaben betraegt 200,00 Euro.
-		Es wurden 300,00 Euro ausgezahlt.
+		Ihr Guthaben reicht nicht, um 300,00 Euro auszuzahlen.
 		Es wurden 200,00 Euro ausgezahlt.
-		Ihr aktuelles Guthaben betraegt -300,00 Euro.
-		Es wurden 150,00 Euro eingezahlt.
-		Ihr aktuelles Guthaben betraegt -150,00 Euro.
+		Ihr aktuelles Guthaben betraegt 0,00 Euro.
 		```
 	12. **Zusatzaufgabe (falls noch Zeit ist):** 
 		- Informieren Sie sich über die `System.out.printf()`-Methode, um stets genau 2 Stellen nach dem Komma des Betrages auszugeben (siehe [hier](../hilfsklassen/#formatierung-von-gleikommazahlen)). 
+
+
+??? question "Eine mögliche Lösung für Übung 6"
+	=== "Konto.java"
+		```java
+		public class Konto
+		{
+		    private double guthaben;
+		    private int pin;
+
+		    public Konto (int pin)
+		    {
+		        this.pin = pin;
+		        this.guthaben = 0.0;
+		        System.out.println("Neues Konto eroeffnet"); 	// Ausnahme, dass hier Ausgabe!!
+		        												// "Das ist des Teufels"
+		    }
+
+		    public void einzahlen(double betrag)
+		    {
+		        this.guthaben = betrag + this.guthaben;
+		        System.out.println("Es wurden " + betrag + "0 Euro eingezahlt.");
+		    }
+		    
+		    public void auszahlen(int pin, double betrag)
+		    {
+		        if(pin == this.pin) // if(pin == this.pin && this.guthaben <= betrag) dann wäre es kürzer, 
+		        //aber wir können nicht sehen, wo der fehler liegt, deswegen besser einzeln...)
+		        {
+		            if(betrag > this.guthaben)
+		            {
+		                System.out.println("Ihr Guthaben reicht nicht, um " + betrag + "0 Euro auszuzahlen.");
+		            }
+		            else
+		            {
+		                this.guthaben = this.guthaben - betrag;
+		                System.out.println("Es wurden " + betrag + "0 Euro ausgezahlt.");
+		            }
+		        }
+		        else
+		        {
+		            System.out.println("Falsche PIN!");
+		        }
+		    }
+		    
+		    public void kontoauszug(int pin)
+		    {
+		        if(pin == this.pin)
+		        {
+		            System.out.println("Ihr aktuelles Guthaben beträgt " + this.guthaben + "0 Euro.");
+		        }
+		        else
+		        {
+		            System.out.println("Falsche PIN!");
+		        }
+		    }
+		}
+		```		
+	=== "KontoTest.java"
+		```java
+
+		import static org.junit.jupiter.api.Assertions.*;
+		import org.junit.jupiter.api.AfterEach;
+		import org.junit.jupiter.api.BeforeEach;
+		import org.junit.jupiter.api.Test;
+
+		public class KontoTest
+		{
+		    @Test
+		    public void testKonto()
+		    {
+		        Konto k1 = new Konto(1234);
+		        
+		        k1.einzahlen(100.0);
+		        k1.einzahlen(50.0);
+		        k1.einzahlen(150.0);
+		        
+		        k1.kontoauszug(1235);       // Falsche PIN!
+		        k1.kontoauszug(1234);
+		        
+		        k1.auszahlen(1235, 100.0);  // Falsche PIN!
+		        k1.auszahlen(1234, 100.0);  
+		        k1.kontoauszug(1234);       
+		        k1.auszahlen(1234, 300.0);  // Guthaben reicht nicht
+		        k1.auszahlen(1234, 200.0);  
+		        k1.kontoauszug(1234);
+		    
+		        k1.einzahlen(150.0);
+		        k1.kontoauszug(1234);
+		        // hier die Kontoobjekte erzeugen
+		        // und die Objektmethoden anwenden
+		    }
+
+		    @Test
+		    public void teststart()
+		    {
+		    }
+		}
+
+		```		
 
 	
 ??? note "Übung 7 (1.12.2021)"
