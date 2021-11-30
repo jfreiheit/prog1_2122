@@ -361,6 +361,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../vererbung/" class="md-nav__link">
+        Vererbung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object/" class="md-nav__link">
+        Object
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../uebungen/" class="md-nav__link">
         Übungen
       </a>
@@ -501,6 +531,13 @@
           <li class="md-nav__item">
   <a href="#aufgabe-7-abgabe-bis-6122021-2400-uhr" class="md-nav__link">
     Aufgabe 7 (Abgabe bis 6.12.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-8-abgabe-bis-13122021-2400-uhr" class="md-nav__link">
+    Aufgabe 8 (Abgabe bis 13.12.2021 24:00 Uhr)
   </a>
   
 </li>
@@ -666,6 +703,13 @@
           <li class="md-nav__item">
   <a href="#aufgabe-7-abgabe-bis-6122021-2400-uhr" class="md-nav__link">
     Aufgabe 7 (Abgabe bis 6.12.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-8-abgabe-bis-13122021-2400-uhr" class="md-nav__link">
+    Aufgabe 8 (Abgabe bis 13.12.2021 24:00 Uhr)
   </a>
   
 </li>
@@ -1251,6 +1295,256 @@ Das Dreieck ist rechtwinklig.
 </li>
 <li>
 <p>Insbesondere für die <code>changeTime()</code>-Methode sollten Sie erst ausführlich überlegen, ehe Sie losprogrammieren. Nicht vergessen, dass Zettel und Stift die wichtigsten Werkzeuge der Programmiererin sind! </p>
+</li>
+<li>
+<p>Viel Spaß und viel Erfolg!</p>
+</li>
+</ul>
+</details>
+<h4 id="aufgabe-8-abgabe-bis-13122021-2400-uhr">Aufgabe 8 (Abgabe bis 13.12.2021 24:00 Uhr)<a class="headerlink" href="#aufgabe-8-abgabe-bis-13122021-2400-uhr" title="Permanent link">&para;</a></h4>
+<details><summary>Aufgabe8 - Counter und Clock</summary><ul>
+<li>
+<p>Wir erstellen uns zwei neue Datentypen <code>Counter</code> und <code>Clock</code></p>
+</li>
+<li>
+<p>Erstellen Sie sich ein neues Projekt <code>aufgabe8</code> und darin eine neue Klasse <code>Counter</code> sowie eine Programm-/Testklasse <code>Programclass</code> mit einer <code>start()</code>-Methode. </p>
+</li>
+<li>
+<p>Die Idee der Klasse <code>Counter</code> soll sein, einen <code>counter</code> bis zu einem bestimmten <code>limit</code> hochzuzählen. Bevor der <code>counter</code> das <code>limit</code> erreicht, wird er wieder auf <code>0</code> gesetzt. Angenommen also das <code>limit</code> ist <code>60</code> und der <code>counter</code> hat den aktuellen Wert <code>59</code> und soll erhöht werden, dann ist der nächste Wert von <code>counter</code> wieder <code>0</code>, da das <code>limit</code> erreicht wurde. </p>
+</li>
+<li>
+<p>In der Klasse <code>Counter</code> erstellen Sie zwei Objektvariablen <code>counter</code> und <code>limit</code>, jeweils vom Typ <code>int</code> (beide nur in der Klasse sichtbar). </p>
+</li>
+<li>
+<p>Erstellen Sie einen parametrisierten Konstruktor <code>public Counter(int limit)</code>, der den <code>counter</code> auf <code>0</code> initialisiert und das <code>limit</code> auf den Parameterwert. </p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public boolean increase()</code>. Diese Methode soll den Wert von <code>counter</code> um <code>1</code> erhöhen. Es muss jedoch geprüft werden, ob eventuell das <code>limit</code> erreicht wurde. Sollte dies der Fall sein, wird der Wert von <code>counter</code> wieder auf <code>0</code> gesetzt. Wird der <code>counter</code> tatsächlich um <code>1</code> erhöht, gibt die Methode ein <code>true</code> zurück, wurde der Wert von <code>counter</code> jedoch auf <code>0</code> gesetzt, gibt die Methode <code>false</code> zurück. Beispiel:</p>
+<ul>
+<li>Angenommen <code>counter</code> hat den Wert <code>58</code> und das <code>limit</code> ist <code>60</code>. Dann ist der neue Wert von <code>counter</code> <code>59</code> und die Methode gibt <code>true</code> zurück. <ul>
+<li>Angenommen <code>counter</code> hat den Wert <code>59</code> und das <code>limit</code> ist <code>60</code>. Dann ist der neue Wert von <code>counter</code> <code>0</code> und die Methode gibt <code>false</code> zurück. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public String toString()</code>. Diese Methode gibt den Wert von <code>counter</code> als zweistelligen String zurück. Beachten Sie</p>
+<ul>
+<li>Ist der Wert von <code>counter</code> einstellig, z.B. <code>5</code>, dann soll der String <code>"05"</code> zurückgegeben werden.</li>
+</ul>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public void print()</code>. Diese Methode gibt den aktuellen Wert von <code>counter</code> unter Verwendung der Methode <code>toString()</code> auf die Konsole aus. </p>
+</li>
+<li>
+<p>Wenn Sie die Methode <code>start()</code> in der <code>Programclass</code> z.B. wie folgt implementieren:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Counter</span> <span class="n">counter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">120</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">counter</span><span class="p">.</span><span class="na">increase</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%3d : &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="n">counter</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    dann sollte folgende Ausgabe auf der Konsole erscheinen:</p>
+<details><summary>Ausgabe auf der Konsole</summary><div class="highlight"><pre><span></span><code>  <span class="m">0</span> : <span class="m">01</span>
+  <span class="m">1</span> : <span class="m">02</span>
+  <span class="m">2</span> : <span class="m">03</span>
+  <span class="m">3</span> : <span class="m">04</span>
+  <span class="m">4</span> : <span class="m">05</span>
+  <span class="m">5</span> : <span class="m">06</span>
+  <span class="m">6</span> : <span class="m">07</span>
+  <span class="m">7</span> : <span class="m">08</span>
+  <span class="m">8</span> : <span class="m">09</span>
+  <span class="m">9</span> : <span class="m">10</span>
+ <span class="m">10</span> : <span class="m">11</span>
+ <span class="m">11</span> : <span class="m">12</span>
+ <span class="m">12</span> : <span class="m">13</span>
+ <span class="m">13</span> : <span class="m">14</span>
+ <span class="m">14</span> : <span class="m">15</span>
+ <span class="m">15</span> : <span class="m">16</span>
+ <span class="m">16</span> : <span class="m">17</span>
+ <span class="m">17</span> : <span class="m">18</span>
+ <span class="m">18</span> : <span class="m">19</span>
+ <span class="m">19</span> : <span class="m">20</span>
+ <span class="m">20</span> : <span class="m">21</span>
+ <span class="m">21</span> : <span class="m">22</span>
+ <span class="m">22</span> : <span class="m">23</span>
+ <span class="m">23</span> : <span class="m">24</span>
+ <span class="m">24</span> : <span class="m">25</span>
+ <span class="m">25</span> : <span class="m">26</span>
+ <span class="m">26</span> : <span class="m">27</span>
+ <span class="m">27</span> : <span class="m">28</span>
+ <span class="m">28</span> : <span class="m">29</span>
+ <span class="m">29</span> : <span class="m">30</span>
+ <span class="m">30</span> : <span class="m">31</span>
+ <span class="m">31</span> : <span class="m">32</span>
+ <span class="m">32</span> : <span class="m">33</span>
+ <span class="m">33</span> : <span class="m">34</span>
+ <span class="m">34</span> : <span class="m">35</span>
+ <span class="m">35</span> : <span class="m">36</span>
+ <span class="m">36</span> : <span class="m">37</span>
+ <span class="m">37</span> : <span class="m">38</span>
+ <span class="m">38</span> : <span class="m">39</span>
+ <span class="m">39</span> : <span class="m">40</span>
+ <span class="m">40</span> : <span class="m">41</span>
+ <span class="m">41</span> : <span class="m">42</span>
+ <span class="m">42</span> : <span class="m">43</span>
+ <span class="m">43</span> : <span class="m">44</span>
+ <span class="m">44</span> : <span class="m">45</span>
+ <span class="m">45</span> : <span class="m">46</span>
+ <span class="m">46</span> : <span class="m">47</span>
+ <span class="m">47</span> : <span class="m">48</span>
+ <span class="m">48</span> : <span class="m">49</span>
+ <span class="m">49</span> : <span class="m">50</span>
+ <span class="m">50</span> : <span class="m">51</span>
+ <span class="m">51</span> : <span class="m">52</span>
+ <span class="m">52</span> : <span class="m">53</span>
+ <span class="m">53</span> : <span class="m">54</span>
+ <span class="m">54</span> : <span class="m">55</span>
+ <span class="m">55</span> : <span class="m">56</span>
+ <span class="m">56</span> : <span class="m">57</span>
+ <span class="m">57</span> : <span class="m">58</span>
+ <span class="m">58</span> : <span class="m">59</span>
+ <span class="m">59</span> : <span class="m">00</span>
+ <span class="m">60</span> : <span class="m">01</span>
+ <span class="m">61</span> : <span class="m">02</span>
+ <span class="m">62</span> : <span class="m">03</span>
+ <span class="m">63</span> : <span class="m">04</span>
+ <span class="m">64</span> : <span class="m">05</span>
+ <span class="m">65</span> : <span class="m">06</span>
+ <span class="m">66</span> : <span class="m">07</span>
+ <span class="m">67</span> : <span class="m">08</span>
+ <span class="m">68</span> : <span class="m">09</span>
+ <span class="m">69</span> : <span class="m">10</span>
+ <span class="m">70</span> : <span class="m">11</span>
+ <span class="m">71</span> : <span class="m">12</span>
+ <span class="m">72</span> : <span class="m">13</span>
+ <span class="m">73</span> : <span class="m">14</span>
+ <span class="m">74</span> : <span class="m">15</span>
+ <span class="m">75</span> : <span class="m">16</span>
+ <span class="m">76</span> : <span class="m">17</span>
+ <span class="m">77</span> : <span class="m">18</span>
+ <span class="m">78</span> : <span class="m">19</span>
+ <span class="m">79</span> : <span class="m">20</span>
+ <span class="m">80</span> : <span class="m">21</span>
+ <span class="m">81</span> : <span class="m">22</span>
+ <span class="m">82</span> : <span class="m">23</span>
+ <span class="m">83</span> : <span class="m">24</span>
+ <span class="m">84</span> : <span class="m">25</span>
+ <span class="m">85</span> : <span class="m">26</span>
+ <span class="m">86</span> : <span class="m">27</span>
+ <span class="m">87</span> : <span class="m">28</span>
+ <span class="m">88</span> : <span class="m">29</span>
+ <span class="m">89</span> : <span class="m">30</span>
+ <span class="m">90</span> : <span class="m">31</span>
+ <span class="m">91</span> : <span class="m">32</span>
+ <span class="m">92</span> : <span class="m">33</span>
+ <span class="m">93</span> : <span class="m">34</span>
+ <span class="m">94</span> : <span class="m">35</span>
+ <span class="m">95</span> : <span class="m">36</span>
+ <span class="m">96</span> : <span class="m">37</span>
+ <span class="m">97</span> : <span class="m">38</span>
+ <span class="m">98</span> : <span class="m">39</span>
+ <span class="m">99</span> : <span class="m">40</span>
+<span class="m">100</span> : <span class="m">41</span>
+<span class="m">101</span> : <span class="m">42</span>
+<span class="m">102</span> : <span class="m">43</span>
+<span class="m">103</span> : <span class="m">44</span>
+<span class="m">104</span> : <span class="m">45</span>
+<span class="m">105</span> : <span class="m">46</span>
+<span class="m">106</span> : <span class="m">47</span>
+<span class="m">107</span> : <span class="m">48</span>
+<span class="m">108</span> : <span class="m">49</span>
+<span class="m">109</span> : <span class="m">50</span>
+<span class="m">110</span> : <span class="m">51</span>
+<span class="m">111</span> : <span class="m">52</span>
+<span class="m">112</span> : <span class="m">53</span>
+<span class="m">113</span> : <span class="m">54</span>
+<span class="m">114</span> : <span class="m">55</span>
+<span class="m">115</span> : <span class="m">56</span>
+<span class="m">116</span> : <span class="m">57</span>
+<span class="m">117</span> : <span class="m">58</span>
+<span class="m">118</span> : <span class="m">59</span>
+<span class="m">119</span> : <span class="m">00</span>
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>Erstellen Sie sich im Projekt <code>aufgabe8</code> eine weitere Klasse <code>Clock</code>. </p>
+</li>
+<li>
+<p>In der Klasse <code>Clock</code> verwenden Sie zwei <code>Counter</code>. Der eine <code>Counter</code> zählt die <code>minutes</code> und hat das <code>limit</code> <code>60</code> und der andere <code>Counter</code> zählt die <code>hours</code> udn hat das <code>limit</code> <code>24</code>.  </p>
+</li>
+<li>
+<p>In der Klasse <code>Clock</code> erstellen Sie zwei Objektvariablen <code>minutes</code> und <code>hours</code>, jeweils vom Typ <code>Counter</code> (beide nur in der Klasse sichtbar). </p>
+</li>
+<li>
+<p>Erstellen Sie einen parameterlosen Konstruktor <code>public Clock()</code>. Darin erzeugen Sie für <code>minutes</code> das <code>Counter</code>-Objekt mit dem <code>limit</code> <code>60</code> und für <code>hours</code> das <code>Counter</code>-Objekt mit dem <code>limit</code> <code>24</code>.  </p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public void increase()</code>. Diese Methode soll den Wert von <code>minutes</code> um <code>1</code> erhöhen. Sollte jedoch das <code>limit</code> von <code>minutes</code> erreicht sein, wird auch <code>hours</code> um <code>1</code> erhöht. Nutzen Sie die <code>increase()</code>-Methode von <code>Counter</code>!</p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public String toString()</code>. Diese Methode gibt die Werte von <code>minutes</code> und <code>hours</code> in der Form <code>hh:mm</code>als String zurück, also z.B. <code>"23:59"</code> oder <code>"01:09"</code>. Nutzen Sie die <code>toString()</code>-Methode von <code>Counter</code>!</p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public void print()</code>. Diese Methode gibt den aktuellen Wert von <code>Clock</code> unter Verwendung der Methode <code>toString()</code> auf die Konsole aus. </p>
+</li>
+<li>
+<p>Wenn Sie die Methode <code>start()</code> in der <code>Programclass</code> z.B. wie folgt erweitern (der Test von <code>Counter</code> ist hier gelöscht):
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Clock</span> <span class="n">clock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Clock</span><span class="p">();</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">1600</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">clock</span><span class="p">.</span><span class="na">increase</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">50</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%4d : &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+            <span class="n">clock</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    dann sollte folgende Ausgabe auf der Konsole erscheinen:</p>
+<details><summary>Ausgabe auf der Konsole</summary><div class="highlight"><pre><span></span><code>   <span class="m">0</span> : <span class="m">00</span>:01
+  <span class="m">50</span> : <span class="m">00</span>:51
+ <span class="m">100</span> : <span class="m">01</span>:41
+ <span class="m">150</span> : <span class="m">02</span>:31
+ <span class="m">200</span> : <span class="m">03</span>:21
+ <span class="m">250</span> : <span class="m">04</span>:11
+ <span class="m">300</span> : <span class="m">05</span>:01
+ <span class="m">350</span> : <span class="m">05</span>:51
+ <span class="m">400</span> : <span class="m">06</span>:41
+ <span class="m">450</span> : <span class="m">07</span>:31
+ <span class="m">500</span> : <span class="m">08</span>:21
+ <span class="m">550</span> : <span class="m">09</span>:11
+ <span class="m">600</span> : <span class="m">10</span>:01
+ <span class="m">650</span> : <span class="m">10</span>:51
+ <span class="m">700</span> : <span class="m">11</span>:41
+ <span class="m">750</span> : <span class="m">12</span>:31
+ <span class="m">800</span> : <span class="m">13</span>:21
+ <span class="m">850</span> : <span class="m">14</span>:11
+ <span class="m">900</span> : <span class="m">15</span>:01
+ <span class="m">950</span> : <span class="m">15</span>:51
+<span class="m">1000</span> : <span class="m">16</span>:41
+<span class="m">1050</span> : <span class="m">17</span>:31
+<span class="m">1100</span> : <span class="m">18</span>:21
+<span class="m">1150</span> : <span class="m">19</span>:11
+<span class="m">1200</span> : <span class="m">20</span>:01
+<span class="m">1250</span> : <span class="m">20</span>:51
+<span class="m">1300</span> : <span class="m">21</span>:41
+<span class="m">1350</span> : <span class="m">22</span>:31
+<span class="m">1400</span> : <span class="m">23</span>:21
+<span class="m">1450</span> : <span class="m">00</span>:11
+<span class="m">1500</span> : <span class="m">01</span>:01
+<span class="m">1550</span> : <span class="m">01</span>:51
+</code></pre></div>
+</details>
 </li>
 <li>
 <p>Viel Spaß und viel Erfolg!</p>

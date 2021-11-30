@@ -559,3 +559,240 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 	- Insbesondere für die `changeTime()`-Methode sollten Sie erst ausführlich überlegen, ehe Sie losprogrammieren. Nicht vergessen, dass Zettel und Stift die wichtigsten Werkzeuge der Programmiererin sind! 
 
 	- Viel Spaß und viel Erfolg!
+
+
+#### Aufgabe 8 (Abgabe bis 13.12.2021 24:00 Uhr)
+??? "Aufgabe8 - Counter und Clock"
+	- Wir erstellen uns zwei neue Datentypen `Counter` und `Clock`
+
+	- Erstellen Sie sich ein neues Projekt `aufgabe8` und darin eine neue Klasse `Counter` sowie eine Programm-/Testklasse `Programclass` mit einer `start()`-Methode. 
+
+	- Die Idee der Klasse `Counter` soll sein, einen `counter` bis zu einem bestimmten `limit` hochzuzählen. Bevor der `counter` das `limit` erreicht, wird er wieder auf `0` gesetzt. Angenommen also das `limit` ist `60` und der `counter` hat den aktuellen Wert `59` und soll erhöht werden, dann ist der nächste Wert von `counter` wieder `0`, da das `limit` erreicht wurde. 
+
+	- In der Klasse `Counter` erstellen Sie zwei Objektvariablen `counter` und `limit`, jeweils vom Typ `int` (beide nur in der Klasse sichtbar). 
+
+	- Erstellen Sie einen parametrisierten Konstruktor `public Counter(int limit)`, der den `counter` auf `0` initialisiert und das `limit` auf den Parameterwert. 
+
+	- Implementieren Sie eine Methode `public boolean increase()`. Diese Methode soll den Wert von `counter` um `1` erhöhen. Es muss jedoch geprüft werden, ob eventuell das `limit` erreicht wurde. Sollte dies der Fall sein, wird der Wert von `counter` wieder auf `0` gesetzt. Wird der `counter` tatsächlich um `1` erhöht, gibt die Methode ein `true` zurück, wurde der Wert von `counter` jedoch auf `0` gesetzt, gibt die Methode `false` zurück. Beispiel:
+
+		- Angenommen `counter` hat den Wert `58` und das `limit` ist `60`. Dann ist der neue Wert von `counter` `59` und die Methode gibt `true` zurück. 
+		- Angenommen `counter` hat den Wert `59` und das `limit` ist `60`. Dann ist der neue Wert von `counter` `0` und die Methode gibt `false` zurück. 
+
+	- Implementieren Sie eine Methode `public String toString()`. Diese Methode gibt den Wert von `counter` als zweistelligen String zurück. Beachten Sie
+
+		- Ist der Wert von `counter` einstellig, z.B. `5`, dann soll der String `"05"` zurückgegeben werden.
+
+	- Implementieren Sie eine Methode `public void print()`. Diese Methode gibt den aktuellen Wert von `counter` unter Verwendung der Methode `toString()` auf die Konsole aus. 
+
+	- Wenn Sie die Methode `start()` in der `Programclass` z.B. wie folgt implementieren:
+		```java
+		public void start()
+	    {
+	        Counter counter = new Counter(60);
+	        for(int i=0; i<120; i++)
+	        {
+	            counter.increase();
+	            System.out.printf("%3d : ", i);
+	            counter.print();
+	        }
+	    }
+		```
+		dann sollte folgende Ausgabe auf der Konsole erscheinen:
+
+		??? "Ausgabe auf der Konsole"
+
+			```bash
+			  0 : 01
+			  1 : 02
+			  2 : 03
+			  3 : 04
+			  4 : 05
+			  5 : 06
+			  6 : 07
+			  7 : 08
+			  8 : 09
+			  9 : 10
+			 10 : 11
+			 11 : 12
+			 12 : 13
+			 13 : 14
+			 14 : 15
+			 15 : 16
+			 16 : 17
+			 17 : 18
+			 18 : 19
+			 19 : 20
+			 20 : 21
+			 21 : 22
+			 22 : 23
+			 23 : 24
+			 24 : 25
+			 25 : 26
+			 26 : 27
+			 27 : 28
+			 28 : 29
+			 29 : 30
+			 30 : 31
+			 31 : 32
+			 32 : 33
+			 33 : 34
+			 34 : 35
+			 35 : 36
+			 36 : 37
+			 37 : 38
+			 38 : 39
+			 39 : 40
+			 40 : 41
+			 41 : 42
+			 42 : 43
+			 43 : 44
+			 44 : 45
+			 45 : 46
+			 46 : 47
+			 47 : 48
+			 48 : 49
+			 49 : 50
+			 50 : 51
+			 51 : 52
+			 52 : 53
+			 53 : 54
+			 54 : 55
+			 55 : 56
+			 56 : 57
+			 57 : 58
+			 58 : 59
+			 59 : 00
+			 60 : 01
+			 61 : 02
+			 62 : 03
+			 63 : 04
+			 64 : 05
+			 65 : 06
+			 66 : 07
+			 67 : 08
+			 68 : 09
+			 69 : 10
+			 70 : 11
+			 71 : 12
+			 72 : 13
+			 73 : 14
+			 74 : 15
+			 75 : 16
+			 76 : 17
+			 77 : 18
+			 78 : 19
+			 79 : 20
+			 80 : 21
+			 81 : 22
+			 82 : 23
+			 83 : 24
+			 84 : 25
+			 85 : 26
+			 86 : 27
+			 87 : 28
+			 88 : 29
+			 89 : 30
+			 90 : 31
+			 91 : 32
+			 92 : 33
+			 93 : 34
+			 94 : 35
+			 95 : 36
+			 96 : 37
+			 97 : 38
+			 98 : 39
+			 99 : 40
+			100 : 41
+			101 : 42
+			102 : 43
+			103 : 44
+			104 : 45
+			105 : 46
+			106 : 47
+			107 : 48
+			108 : 49
+			109 : 50
+			110 : 51
+			111 : 52
+			112 : 53
+			113 : 54
+			114 : 55
+			115 : 56
+			116 : 57
+			117 : 58
+			118 : 59
+			119 : 00
+			```
+
+	- Erstellen Sie sich im Projekt `aufgabe8` eine weitere Klasse `Clock`. 
+
+	- In der Klasse `Clock` verwenden Sie zwei `Counter`. Der eine `Counter` zählt die `minutes` und hat das `limit` `60` und der andere `Counter` zählt die `hours` udn hat das `limit` `24`.  
+
+	- In der Klasse `Clock` erstellen Sie zwei Objektvariablen `minutes` und `hours`, jeweils vom Typ `Counter` (beide nur in der Klasse sichtbar). 
+
+	- Erstellen Sie einen parameterlosen Konstruktor `public Clock()`. Darin erzeugen Sie für `minutes` das `Counter`-Objekt mit dem `limit` `60` und für `hours` das `Counter`-Objekt mit dem `limit` `24`.  
+
+	- Implementieren Sie eine Methode `public void increase()`. Diese Methode soll den Wert von `minutes` um `1` erhöhen. Sollte jedoch das `limit` von `minutes` erreicht sein, wird auch `hours` um `1` erhöht. Nutzen Sie die `increase()`-Methode von `Counter`!
+
+	- Implementieren Sie eine Methode `public String toString()`. Diese Methode gibt die Werte von `minutes` und `hours` in der Form `hh:mm`als String zurück, also z.B. `"23:59"` oder `"01:09"`. Nutzen Sie die `toString()`-Methode von `Counter`!
+
+	- Implementieren Sie eine Methode `public void print()`. Diese Methode gibt den aktuellen Wert von `Clock` unter Verwendung der Methode `toString()` auf die Konsole aus. 
+
+	- Wenn Sie die Methode `start()` in der `Programclass` z.B. wie folgt erweitern (der Test von `Counter` ist hier gelöscht):
+		```java
+		public void start()
+	    {
+	        Clock clock = new Clock();
+	        for(int i=0; i<1600; i++)
+	        {
+	            clock.increase();
+	            if(i%50==0)
+	            {
+	                System.out.printf("%4d : ", i);
+	                clock.print();
+	            }
+	        }
+	    }
+		```
+		dann sollte folgende Ausgabe auf der Konsole erscheinen:
+
+		??? "Ausgabe auf der Konsole"
+
+			```bash
+			   0 : 00:01
+			  50 : 00:51
+			 100 : 01:41
+			 150 : 02:31
+			 200 : 03:21
+			 250 : 04:11
+			 300 : 05:01
+			 350 : 05:51
+			 400 : 06:41
+			 450 : 07:31
+			 500 : 08:21
+			 550 : 09:11
+			 600 : 10:01
+			 650 : 10:51
+			 700 : 11:41
+			 750 : 12:31
+			 800 : 13:21
+			 850 : 14:11
+			 900 : 15:01
+			 950 : 15:51
+			1000 : 16:41
+			1050 : 17:31
+			1100 : 18:21
+			1150 : 19:11
+			1200 : 20:01
+			1250 : 20:51
+			1300 : 21:41
+			1350 : 22:31
+			1400 : 23:21
+			1450 : 00:11
+			1500 : 01:01
+			1550 : 01:51
+			```
+
+
+
+	- Viel Spaß und viel Erfolg!

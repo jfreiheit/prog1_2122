@@ -1002,9 +1002,112 @@
 		perimeters are not equal 
 		```
 
+	
+??? note "Übung 8 (8.12.2021)"
+	
+	1. Öffnen Sie `BlueJ` und erstellen Sie ein neues Projekt `uebung8`. 
+	2. Erstellen Sie darin eine Klasse `Date`. 
+	3. Erstellen Sie eine Programmklasse `Programclass` und fügen Sie darin folgende Methode ein:
+		```java
 
+	    public void start()
+	    {
+	        // hier die Rectangleobjekte erzeugen
+		    // und die Objektmethoden anwenden
+	    }
 
+		```	
+	4. Erstellen Sie in der Klasse `Date` drei Objektvariablen
+		- `day` vom Typ `int` --> nur in der Klasse sichtbar!
+		- `month` vom Typ `int`	--> ebenfalls nur in der Klasse sichtbar!
+		- `year` vom Typ `int`	--> ebenfalls nur in der Klasse sichtbar! 
 
+	5. Erstellen Sie für die Klasse `Date` einen parameterlosen Konstruktor `public Date()`. Dieser setzt das "Datum" auf den `1.1.1900`.
+	6. Erstellen Sie außerdem einen parametrisierten Konstruktor `public Date(int day, int month, int year)`. Dieser verwendet die Werte der Parameter, um den Objektvariablen Werte zuzuweisen.
+	7. Erstellen Sie eine Objektmethode `public String toString()`, die das Datum in der Form (Beispielwerte) `"1.1.1900"` als `String` zurückgibt. 
+	8. Implementieren Sie eine Objektmethode `public void print()`, die den durch `toString()` erzeugten `String` auf die Konsole ausgibt.
+	11. Geben Sie in der `start()`-Methode der `Programclass`-Klasse ein:
+		```java
+		// Date-Objekte erzeugen
+		Date d1 = new Date(11, 11, 2000);
+        Date d2 = new Date(20, 10, 2020);
+        Date d3 = new Date();
+		
+		System.out.printf("%n%n--------------- print()-Methode Date -----------------%n%n");
+		d1.print();
+        d2.print();
+        d3.print();
+		```
+		und rufen Sie die `start()`-Methode auf. Es sollten folgende Ausgaben erzeugt werden:
+		```bash
+		--------------- print()-Methode Date -----------------
+
+		11.11.2000
+		20.10.2020
+		1.1.1900
+		```
+
+	10. Erstellen Sie im Projekt eine weitere Klasse `Fruit`. 
+	11. Erstellen Sie in der Klasse `Fruit` zwei Objektvariablen
+		- `name` vom Typ `String` --> nur in der Klasse sichtbar!
+		- `expiry` vom Typ `Date`	--> ebenfalls nur in der Klasse sichtbar!
+
+	12. Erstellen Sie für die Klasse `Fruit` einen prametrisierten Konstruktor `public Fruit(String name, Date expiry)`. Dieser verwendet die Werte der Parameter, um den Objektvariablen Werte zuzuweisen.
+	13. Erstellen Sie eine Objektmethode `public String toString()`, die die Frucht in der Form (Beispielwerte) `"Banana expires on 11.11.2000"` als `String` zurückgibt. 
+	14. Implementieren Sie eine Objektmethode `public void print()`, die den durch `toString()` erzeugten `String` auf die Konsole ausgibt.
+	15. Geben Sie in der `start()`-Methode der `Programclass`-Klasse ein:
+		```java
+		// Fruit-Objekte erzeugen
+		Fruit banana = new Fruit("Banana", d1);
+        Fruit apple = new Fruit("Apple", d2);
+        Fruit pear = new Fruit("Pear", d3);
+		
+		System.out.printf("%n%n--------------- print()-Methode Fruit -----------------%n%n");
+		banana.print();
+        apple.print();
+        pear.print();
+		```
+		und rufen Sie die `start()`-Methode auf. Es sollten folgende Ausgaben erzeugt werden:
+		```bash
+		--------------- print()-Methode Fruit -----------------
+
+		Banana expires on 11.11.2000
+		Apple expires on 20.10.2020
+		Pear expires on 1.1.1900
+		```
+
+	16. Erweiteren Sie die Klasse `Date` um folgende Methode `public void later(int days)`. Bei Anwendung dieser Methode soll zum aktuellen Datum die als Parameter übergebenen `days` hinzugefügt werden. Dabei ist Folgendes zu beachten:
+
+		- Die Anzahl von `days` kann auch mehrere Jahre und mehrere Monate umfassen. Das soll eine Wiederholung von [Übung 3]() sein - aber nicht gleich dort nachgucken, sondern nochmal überlegen!
+		- Wir nehmen an, dass jeder Monat nur `30` Tage hat und ein Jahr immer nur `365`.
+
+	17. Erweiteren Sie die Klasse `Fruit` um die Methode `public Date getExpiryDate()`. 
+
+	18. Geben Sie in der `start()`-Methode der `Programclass`-Klasse ein:
+		```java
+		System.out.printf("%n%n------------ later() und getExpiryDate ----------------%n%n");
+        d1.later(12);
+        d2.later(123);
+        d3.later(1234);
+        
+        d1.print();
+        d2.print();
+        d3.print();
+        
+        banana.print();
+        apple.print();
+        pear.print();
+        
+        banana.getExpiryDate().later(12);
+        apple.getExpiryDate().later(123);
+        pear.getExpiryDate().later(1234);
+        
+        d1.print();
+        d2.print();
+        d3.print();
+		```
+
+	19. Was stellen Sie fest? Läuft etwas schief? Was sind die Probleme? Worin liegen sie begründet? Haben Sie Ideen, wie Sie diese Probleme vermeiden könnten? (*Übrings: das Thema, das wir hier ein wenig näher beleuchten, nennt sich [immutable objects](https://www.javatpoint.com/mutable-and-immutable-in-java)*)
 
 
 

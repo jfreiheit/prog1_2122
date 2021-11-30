@@ -359,6 +359,36 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../vererbung/" class="md-nav__link">
+        Vererbung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object/" class="md-nav__link">
+        Object
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -1551,6 +1581,126 @@ perimeters are not equal
 </code></pre></div></li>
 </ol>
 </details>
+<details class="note"><summary>Übung 8 (8.12.2021)</summary><ol>
+<li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung8</code>. </li>
+<li>Erstellen Sie darin eine Klasse <code>Date</code>. </li>
+<li>Erstellen Sie eine Programmklasse <code>Programclass</code> und fügen Sie darin folgende Methode ein:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// hier die Rectangleobjekte erzeugen</span>
+    <span class="c1">// und die Objektmethoden anwenden</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>
+<p>Erstellen Sie in der Klasse <code>Date</code> drei Objektvariablen</p>
+<ul>
+<li><code>day</code> vom Typ <code>int</code> &rarr; nur in der Klasse sichtbar!</li>
+<li><code>month</code> vom Typ <code>int</code> &rarr; ebenfalls nur in der Klasse sichtbar!</li>
+<li><code>year</code> vom Typ <code>int</code>  &rarr; ebenfalls nur in der Klasse sichtbar! </li>
+</ul>
+</li>
+<li>
+<p>Erstellen Sie für die Klasse <code>Date</code> einen parameterlosen Konstruktor <code>public Date()</code>. Dieser setzt das "Datum" auf den <code>1.1.1900</code>.</p>
+</li>
+<li>Erstellen Sie außerdem einen parametrisierten Konstruktor <code>public Date(int day, int month, int year)</code>. Dieser verwendet die Werte der Parameter, um den Objektvariablen Werte zuzuweisen.</li>
+<li>Erstellen Sie eine Objektmethode <code>public String toString()</code>, die das Datum in der Form (Beispielwerte) <code>"1.1.1900"</code> als <code>String</code> zurückgibt. </li>
+<li>Implementieren Sie eine Objektmethode <code>public void print()</code>, die den durch <code>toString()</code> erzeugten <code>String</code> auf die Konsole ausgibt.</li>
+<li>
+<p>Geben Sie in der <code>start()</code>-Methode der <code>Programclass</code>-Klasse ein:
+    <div class="highlight"><pre><span></span><code><span class="c1">// Date-Objekte erzeugen</span>
+<span class="n">Date</span> <span class="n">d1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="n">Date</span> <span class="n">d2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2020</span><span class="p">);</span>
+<span class="n">Date</span> <span class="n">d3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="p">();</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n--------------- print()-Methode Date -----------------%n%n&quot;</span><span class="p">);</span>
+<span class="n">d1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">d2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">d3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+</code></pre></div>
+    und rufen Sie die <code>start()</code>-Methode auf. Es sollten folgende Ausgaben erzeugt werden:
+    <div class="highlight"><pre><span></span><code>--------------- print<span class="o">()</span>-Methode Date -----------------
+
+<span class="m">11</span>.11.2000
+<span class="m">20</span>.10.2020
+<span class="m">1</span>.1.1900
+</code></pre></div></p>
+</li>
+<li>
+<p>Erstellen Sie im Projekt eine weitere Klasse <code>Fruit</code>. </p>
+</li>
+<li>
+<p>Erstellen Sie in der Klasse <code>Fruit</code> zwei Objektvariablen</p>
+<ul>
+<li><code>name</code> vom Typ <code>String</code> &rarr; nur in der Klasse sichtbar!</li>
+<li><code>expiry</code> vom Typ <code>Date</code>   &rarr; ebenfalls nur in der Klasse sichtbar!</li>
+</ul>
+</li>
+<li>
+<p>Erstellen Sie für die Klasse <code>Fruit</code> einen prametrisierten Konstruktor <code>public Fruit(String name, Date expiry)</code>. Dieser verwendet die Werte der Parameter, um den Objektvariablen Werte zuzuweisen.</p>
+</li>
+<li>Erstellen Sie eine Objektmethode <code>public String toString()</code>, die die Frucht in der Form (Beispielwerte) <code>"Banana expires on 11.11.2000"</code> als <code>String</code> zurückgibt. </li>
+<li>Implementieren Sie eine Objektmethode <code>public void print()</code>, die den durch <code>toString()</code> erzeugten <code>String</code> auf die Konsole ausgibt.</li>
+<li>
+<p>Geben Sie in der <code>start()</code>-Methode der <code>Programclass</code>-Klasse ein:
+    <div class="highlight"><pre><span></span><code><span class="c1">// Fruit-Objekte erzeugen</span>
+<span class="n">Fruit</span> <span class="n">banana</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">,</span> <span class="n">d1</span><span class="p">);</span>
+<span class="n">Fruit</span> <span class="n">apple</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="p">(</span><span class="s">&quot;Apple&quot;</span><span class="p">,</span> <span class="n">d2</span><span class="p">);</span>
+<span class="n">Fruit</span> <span class="n">pear</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="p">(</span><span class="s">&quot;Pear&quot;</span><span class="p">,</span> <span class="n">d3</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n--------------- print()-Methode Fruit -----------------%n%n&quot;</span><span class="p">);</span>
+<span class="n">banana</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">apple</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">pear</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+</code></pre></div>
+    und rufen Sie die <code>start()</code>-Methode auf. Es sollten folgende Ausgaben erzeugt werden:
+    <div class="highlight"><pre><span></span><code>--------------- print<span class="o">()</span>-Methode Fruit -----------------
+
+Banana expires on <span class="m">11</span>.11.2000
+Apple expires on <span class="m">20</span>.10.2020
+Pear expires on <span class="m">1</span>.1.1900
+</code></pre></div></p>
+</li>
+<li>
+<p>Erweiteren Sie die Klasse <code>Date</code> um folgende Methode <code>public void later(int days)</code>. Bei Anwendung dieser Methode soll zum aktuellen Datum die als Parameter übergebenen <code>days</code> hinzugefügt werden. Dabei ist Folgendes zu beachten:</p>
+<ul>
+<li>Die Anzahl von <code>days</code> kann auch mehrere Jahre und mehrere Monate umfassen. Das soll eine Wiederholung von <a href="">Übung 3</a> sein - aber nicht gleich dort nachgucken, sondern nochmal überlegen!<ul>
+<li>Wir nehmen an, dass jeder Monat nur <code>30</code> Tage hat und ein Jahr immer nur <code>365</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Erweiteren Sie die Klasse <code>Fruit</code> um die Methode <code>public Date getExpiryDate()</code>. </p>
+</li>
+<li>
+<p>Geben Sie in der <code>start()</code>-Methode der <code>Programclass</code>-Klasse ein:
+    <div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------------ later() und getExpiryDate ----------------%n%n&quot;</span><span class="p">);</span>
+<span class="n">d1</span><span class="p">.</span><span class="na">later</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+<span class="n">d2</span><span class="p">.</span><span class="na">later</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+<span class="n">d3</span><span class="p">.</span><span class="na">later</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+
+<span class="n">d1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">d2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">d3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+<span class="n">banana</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">apple</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">pear</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+<span class="n">banana</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">().</span><span class="na">later</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+<span class="n">apple</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">().</span><span class="na">later</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+<span class="n">pear</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">().</span><span class="na">later</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+
+<span class="n">d1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">d2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="n">d3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was stellen Sie fest? Läuft etwas schief? Was sind die Probleme? Worin liegen sie begründet? Haben Sie Ideen, wie Sie diese Probleme vermeiden könnten? (<em>Übrings: das Thema, das wir hier ein wenig näher beleuchten, nennt sich <a href="https://www.javatpoint.com/mutable-and-immutable-in-java">immutable objects</a></em>)</p>
+</li>
+</ol>
+</details>
                 
               
               
@@ -1570,7 +1720,7 @@ perimeters are not equal
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../methodenstack/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Methodenstack" rel="prev">
+        <a href="../object/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Object" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1579,7 +1729,7 @@ perimeters are not equal
               <span class="md-footer__direction">
                 Zurück
               </span>
-              Methodenstack
+              Object
             </div>
           </div>
         </a>

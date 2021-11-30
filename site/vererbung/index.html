@@ -1,0 +1,1456 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I">
+      
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/vererbung/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Vererbung - Programmieren I</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vererbung" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmieren I" class="md-header__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmieren I
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vererbung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmieren I" class="md-nav__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    Programmieren I
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluej/" class="md-nav__link">
+        BlueJ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variablen/" class="md-nav__link">
+        Variablen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ausdruecke/" class="md-nav__link">
+        Ausdrücke
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methoden/" class="md-nav__link">
+        Methoden
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objekte/" class="md-nav__link">
+        Klassen und Objekte
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vererbung
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Vererbung
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vererbung-in-java" class="md-nav__link">
+    Vererbung in Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ein-erstes-beispiel" class="md-nav__link">
+    Ein erstes Beispiel
+  </a>
+  
+    <nav class="md-nav" aria-label="Ein erstes Beispiel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-klasse-viereck" class="md-nav__link">
+    Die Klasse Viereck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-klasse-rechteck" class="md-nav__link">
+    Die Klasse Rechteck
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse Rechteck">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#der-konstruktor-von-rechteck-das-schlusselwort-super" class="md-nav__link">
+    Der Konstruktor von Rechteck - das Schlüsselwort super
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rechteck-hat-alle-eigenschaften-von-viereck-geerbt" class="md-nav__link">
+    Rechteck hat alle Eigenschaften von Viereck geerbt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-sichtbarkeitsmodifizierer-protected" class="md-nav__link">
+    Der Sichtbarkeitsmodifizierer protected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erweitern-der-klasse-rechteck-um-eine-weitere-eigenschaft" class="md-nav__link">
+    Erweitern der Klasse Rechteck um eine weitere Eigenschaft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uberschreiben-von-methoden" class="md-nav__link">
+    Überschreiben von Methoden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-quadrat" class="md-nav__link">
+    Die Klasse Quadrat
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object/" class="md-nav__link">
+        Object
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aufgaben/" class="md-nav__link">
+        Aufgaben
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hilfsklassen/" class="md-nav__link">
+        Hilfsklassen
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vererbung-in-java" class="md-nav__link">
+    Vererbung in Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ein-erstes-beispiel" class="md-nav__link">
+    Ein erstes Beispiel
+  </a>
+  
+    <nav class="md-nav" aria-label="Ein erstes Beispiel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-klasse-viereck" class="md-nav__link">
+    Die Klasse Viereck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-klasse-rechteck" class="md-nav__link">
+    Die Klasse Rechteck
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse Rechteck">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#der-konstruktor-von-rechteck-das-schlusselwort-super" class="md-nav__link">
+    Der Konstruktor von Rechteck - das Schlüsselwort super
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rechteck-hat-alle-eigenschaften-von-viereck-geerbt" class="md-nav__link">
+    Rechteck hat alle Eigenschaften von Viereck geerbt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-sichtbarkeitsmodifizierer-protected" class="md-nav__link">
+    Der Sichtbarkeitsmodifizierer protected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erweitern-der-klasse-rechteck-um-eine-weitere-eigenschaft" class="md-nav__link">
+    Erweitern der Klasse Rechteck um eine weitere Eigenschaft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uberschreiben-von-methoden" class="md-nav__link">
+    Überschreiben von Methoden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-quadrat" class="md-nav__link">
+    Die Klasse Quadrat
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/prog1/edit/master/docs/vererbung.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="vererbung">Vererbung<a class="headerlink" href="#vererbung" title="Permanent link">&para;</a></h1>
+<p>Vererbung (engl. <em>Inheritance</em>) gehört zu den grundlegenden Konzepten der objektorientierten Programmierung. Dieses Konzept basiert auf Beobachteungen aus der realen Welt:</p>
+<ul>
+<li>Dinge (Objekte) kommen in verschiedenen Varianten vor, die sich hierarchisch klassifizieren lassen</li>
+<li>Dinge (Objekte), die hierarchisch tiefer stehen, sind speziellere Varianten der übergeordneten, generelleren Dinge</li>
+<li>Speziellere Dinge besitzen die Eigenschaften der generelleren Dinge plus weitere, spezifischere Eigenschaften</li>
+</ul>
+<p>Häufig werden für solche Beispiele aus der Realen Welt die Klassifikationen von Tieren oder Pflanzen verwendet, z.B. <code>Säugetiere</code> sind eine Spezialisierung der <code>Tiere</code>, <code>Katzen</code> und <code>Hunde</code> wiederum sind Spezialisierungen von <code>Säugetieren</code> usw. Eine solche Hierarchie, wie z.B. in der folgenden Abbildung gezeigt, kommt jedenfalls in der realen Welt sehr häufig vor.</p>
+<p><img alt="hierarchie" src="../files/82_hierarchie.png" /></p>
+<p><code>Tiere</code> sind dabei die allgemeinste <em>Klasse</em>. Sie haben Eigenschaften, die für alle Tiere zutreffen, z.B. dass sie sich bewegen können und fortpflanzen. <code>Wirbeltiere</code> haben alle Eigenschaften der <code>Tiere</code>, aber zusätzlich noch <em>speziellerere</em> Eigenschaften, wie z.B. dass sie ein Skellett besitzen. <code>Säugetiere</code> besitzen alle Eigenschaften von <code>Wirbeltieren</code> (und also auch von <code>Tieren</code>) und darüber hinaus speziellere Eigenschaften, nämlich z.B. lebend gebärend usw. </p>
+<p>Für die <strong>Programmierung</strong> bedeutet das, dass Klassen von anderen Klassen die Eigenschaften <strong>erben</strong> können, d.h.</p>
+<ul>
+<li><em>Kindklassen</em> übernehmen (erben) Eigenschaften (Objektvaribalen und Objektmethoden) der <em>Elternklasse</em></li>
+<li><em>Kindklassen</em> können zusätzlich weitere Eigenschaften (Objektvaribalen und Objektmethoden) enthalten</li>
+</ul>
+<p>Wichtig für das Verständnis der Vererbung ist, dass zwischen den Kind- und der Elternklasse eine <strong>is-a</strong>- (<strong>ist-ein</strong>-) Relation besteht. Für unser Beispiel oben bedeutet das z.B. der <code>Hund</code> <strong>ist ein</strong> <code>Säugetier</code>, das <code>Säugetier</code> <strong>ist ein</strong> <code>Wirbeltier</code> usw. Wenn wir uns also eine Vererbungshierarchie aufmalen, dann gehen die Pfleile immer von der Kind- zur Elternklasse:</p>
+<p><img alt="hierarchie" src="../files/83_hierarchie.png" /></p>
+<p>Für die Vererbung gilt also:</p>
+<ul>
+<li>Die Vererbung ist eine sehr bedeutende Möglichkeit der Wiederverwendbarkeit von Klassen</li>
+<li>Vererbung basiert auf der Idee, dass <em>Elternklassen</em> ihren <em>Kindern</em> Variablen und Methoden vererben</li>
+<li>Durch Vererbung entsteht eine Klassenhierarchie:</li>
+</ul>
+<p><img alt="hierarchie" src="../files/84_hierarchie.png" /></p>
+<h2 id="vererbung-in-java">Vererbung in Java<a class="headerlink" href="#vererbung-in-java" title="Permanent link">&para;</a></h2>
+<p>Angenommen, wir haben eine Klasse <code>Elternklasse</code> und eine <code>Kindklasse</code> soll von dieser Klasse erben. Wir verwenden das Schlüsselwort <code>extends</code>, um die <code>Kindklasse</code> von der <code>Elternklasse</code> erben zu lassen:</p>
+<blockquote>
+<p><code>public class Kindklasse extends Elternklasse</code>
+<code>{</code>
+<code>}</code></p>
+</blockquote>
+<p>In Java kann eine Klasse nur von <strong>genau einer</strong> Klasse erben. <em>Mehrfachvererbung</em> (das Erben von mehreren Klassen) ist <strong>nicht</strong> möglich. </p>
+<h2 id="ein-erstes-beispiel">Ein erstes Beispiel<a class="headerlink" href="#ein-erstes-beispiel" title="Permanent link">&para;</a></h2>
+<p>Wir betrachten ein erstes Beispiel. Wir werden eine Klasse <code>Viereck</code> erstellen. Von dieser Klasse wird eine Klasse <code>Rechteck</code> <strong>abgeleitet</strong>, d.h. <code>Rechteck</code> <strong>erbt</strong> von <code>Viereck</code>. Danach erzeugen wir noch eine weitere Klasse <code>Quadrat</code>, die wiederum von <code>Rechteck</code> erbt. </p>
+<h3 id="die-klasse-viereck">Die Klasse <code>Viereck</code><a class="headerlink" href="#die-klasse-viereck" title="Permanent link">&para;</a></h3>
+<p>Als Objektvaribalen der Klasse <code>Viereck</code> wählen wir die vier Seitenlängen eines Vierecks <code>a</code>, <code>b</code>, <code>c</code> und <code>d</code>. Außerdem definieren wir uns noch einen Konstruktor und zwei Objektmethoden, die Methode <code>umfang()</code>, die den Umfang des Rechtecks zurückgibt und die Methode <code>print()</code>, die die vier Seitenlängen auf die Konsole ausgibt und den Umfang:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>            <span class="c1">// Seiten</span>
+
+    <span class="kd">public</span> <span class="nf">Viereck</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">umfang</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+                <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Umfang des Vierecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>In einer <code>TestViereck</code>-Klasse erzeugen wir Objekte von <code>Viereck</code> und testen die Methoden:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestViereck</span>
+<span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+        <span class="n">v1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">Viereck</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+        <span class="n">v2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Auf der Konsole erscheint folgende Ausgabe:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">30</span>, <span class="nv">d</span><span class="o">=</span><span class="m">40</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">15</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">25</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">80</span>
+</code></pre></div>
+<p>Soweit nichts Neues. Jetzt wollen wir aber von dieser Klasse erben und erzeugen eine Klasse <code>Rechteck</code>. Ein rechteck <strong>ist ein</strong> Viereck.</p>
+<h3 id="die-klasse-rechteck">Die Klasse <code>Rechteck</code><a class="headerlink" href="#die-klasse-rechteck" title="Permanent link">&para;</a></h3>
+<p>Die Klasse <code>Rechteck</code> erbt von <code>Viereck</code>, d.h. wir verwenden das Schlüsselwort <code>extends</code>. Wir erzeugen uns im gleichen package, in dem auch <code>Viereck</code> und <code>TestViereck</code> liegen, eine Klasse <code>Rechteck</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rechteck</span> <span class="kd">extends</span> <span class="n">Viereck</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Hinter den Klassennamen <code>Rechteck</code> schreiben wir nun <code>extends</code> und den Namen der Klasse, von der geerbt werden soll, hier <code>Viereck</code>. </p>
+<p>Das ist soweit gut, jedoch wird leider ein Fehler angezeigt:</p>
+<div class="highlight"><pre><span></span><code>Implicit super constructor Viereck<span class="o">()</span> is undefined <span class="k">for</span> default constructor. Must define an explicit constructor
+</code></pre></div>
+<h4 id="der-konstruktor-von-rechteck-das-schlusselwort-super">Der Konstruktor von <code>Rechteck</code> - das Schlüsselwort <code>super</code><a class="headerlink" href="#der-konstruktor-von-rechteck-das-schlusselwort-super" title="Permanent link">&para;</a></h4>
+<p>Wir <a href="../objekte/#objekte-erzeugen-der-konstruktor">erinnern uns</a>:</p>
+<ol>
+<li>Wenn wir eine neue Klasse erstellen und <strong>keinen</strong> Konstruktor definieren, dann existiert immer ein sogenannter <em>impliziter</em> Konstruktor (oder <em>Standardkonstruktor</em>). Dieser heißt exakt wie die Klasse und ist parameterlos. </li>
+<li>Wenn wir uns einen <a href="../objekte/#ein-eigener-konstruktor">eigenen Konstruktor definieren</a>, dann existiert dieser <em>implizite</em> Konstruktor (<em>Standardkonstruktor</em>) nicht mehr. </li>
+</ol>
+<p>In der Klasse <code>Viereck</code> haben wir uns einen eigenen Konstruktor erstellt (<code>Viereck(int a, int b, int c, int d)</code>), d.h. es gibt keinen <em>impliziten</em> Konstruktor <code>Vierck()</code> (mehr). In Java gilt nun aber folgendes:</p>
+<blockquote>
+<p>Wird in Java ein Objekt einer Kindklasse erzeugt, wird auch <strong>immer</strong> ein Objekt der Elternklasse erzeugt. </p>
+</blockquote>
+<p>Wir müssen nun dafür sorgen, dass beim Erzeugen eines Objektes von <code>Rechteck</code> auch ein Objekt von <code>Viereck</code> erzeugt werden kann. Dies machen wir wie folgt:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rechteck</span> <span class="kd">extends</span> <span class="n">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Rechteck</span><span class="p">(</span><span class="kt">int</span> <span class="n">laenge</span><span class="p">,</span> <span class="kt">int</span> <span class="n">breite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">,</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">);</span>  <span class="c1">// Aufruf des Konstruktors von Viereck</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Erläuterung:</p>
+<ul>
+<li>in den Zeilen <code>3-6</code> wird der Konstruktor von <code>Rechteck</code> definiert. bei einem Rechteck sind die gegenüberliegenden Seiten gleich lang, deshalb benötigen wir für die Seitenlängen auch nur noch zwei Werte, nämlich <code>laenge</code> und <code>breite</code>. </li>
+<li>in Zeile <code>5</code> wird der <strong>Konstruktor von <code>Viereck</code></strong> aufgerufen! Das passiert in der Kindklasse nicht durch <code>Viereck(int, int, int, int)</code>, sondern durch die Verwendung des Schlüsselwortes <code>super</code>. Hier wird also explizit der Konstruktor der Elternklasse aufgerufen! Wenn wir uns den Konstruktor von <code>Viereck</code> nochmal anschauen, dann sehen wir, dass nun der Wert von <code>laenge</code> der Seite <code>a</code> zugeordnet wird, der Wert von <code>breite</code> der Seite <code>b</code>, der Wert von <code>laenge</code> der Seite <code>c</code> und der Wert von <code>breite</code> der Seite <code>d</code>.</li>
+</ul>
+<blockquote>
+<p>Wenn wir in einer <em>Kindklasse</em>  einen Konstruktor definieren, sollten wir immer explizit den Konstruktor der Elternklasse aufrufen (mithilfe von <code>super()</code>). Dieser Aufruf muss die erste Anweisung innerhalb des Konstruktors sein!</p>
+</blockquote>
+<p>Der Umgang mit den Konstruktoren ist schon das Komplizierteste in Bezug auf Vererbung. Wir kommen später nochmal darauf zurück. </p>
+<h4 id="rechteck-hat-alle-eigenschaften-von-viereck-geerbt"><code>Rechteck</code> hat alle Eigenschaften von <code>Viereck</code> geerbt<a class="headerlink" href="#rechteck-hat-alle-eigenschaften-von-viereck-geerbt" title="Permanent link">&para;</a></h4>
+<p>Unsere Klasse <code>Rechteck</code> ist nun anwendbar. Die Klasse <code>rechteck</code> hat alle Eigenschaften der Klasse <code>Viereck</code> geerbt, d.h.</p>
+<ul>
+<li>die Objektvariablen <code>a</code>, <code>b</code>, <code>c</code> und <code>d</code> sowie</li>
+<li>die Objektmethoden <code>umfang()</code> und <code>print()</code>.</li>
+</ul>
+<p>Das testen wir gleich in der <code>TestViereck</code>-Klasse und erzeugen uns Objekte von <code>Rechteck</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestViereck</span>
+<span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Viereck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+
+        <span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+        <span class="n">v1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">Viereck</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+        <span class="n">v2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Rechteck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+        <span class="n">r1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">Rechteck</span> <span class="n">r2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+        <span class="n">r2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Auf der Konsole erscheinen folgende Ausgaben:</p>
+<div class="highlight"><pre><span></span><code>------- Objekte von Viereck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">30</span>, <span class="nv">d</span><span class="o">=</span><span class="m">40</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">15</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">25</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">80</span>
+
+
+------- Objekte von Rechteck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">10</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">60</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">20</span>, <span class="nv">b</span><span class="o">=</span><span class="m">30</span>, <span class="nv">c</span><span class="o">=</span><span class="m">20</span>, <span class="nv">d</span><span class="o">=</span><span class="m">30</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
+</code></pre></div>
+<p>Wir erzeugen uns also zwei Objekte von <code>Rechteck</code> und rufen für beide Objekte die Objektmethode <code>print()</code> auf. Diese Methode hat <code>Rechteck</code> von <code>Viereck</code> geerbt. Diese Methode gibt nun korrekt die jeweiligen Seitenlängen aus (<code>laenge</code> wird <code>a</code> und <code>c</code> zugewiesen und <code>breite</code> den Seiten <code>b</code> und <code>d</code> - siehe Aufruf des Konstruktors von <code>Viereck</code> im Konstruktor von <code>Rechteck</code>: <code>super(laenge, breite, laenge, breite)</code>).</p>
+<p>In der Methode <code>print()</code> wird die Methode <code>umfang()</code> aufgerufen, die ebenfalls geerbt wurde. Wir könnten diese Methode zum Testen auch direkt in der Testklasse für die <code>Rechteck</code>-Objekte aufrufen, z.B. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Rechteck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+<span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="n">r1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="hll"><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Umfang des Rechtecks : &quot;</span> <span class="o">+</span> <span class="n">r1</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+</span>
+<span class="n">Rechteck</span> <span class="n">r2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+<span class="n">r2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="hll"><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Umfang des Rechtecks : &quot;</span> <span class="o">+</span> <span class="n">r2</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+</span></code></pre></div>
+</td></tr></table>
+<p>und erhalten dann die Ausgaben:</p>
+<div class="highlight"><pre><span></span><code>------- Objekte von Rechteck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">10</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">60</span>
+Umfang des Rechtecks : <span class="m">60</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">20</span>, <span class="nv">b</span><span class="o">=</span><span class="m">30</span>, <span class="nv">c</span><span class="o">=</span><span class="m">20</span>, <span class="nv">d</span><span class="o">=</span><span class="m">30</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
+Umfang des Rechtecks : <span class="m">100</span>
+</code></pre></div>
+<p>Wichtig ist, dass <code>Rechteck</code> alle Objektvariablen und Objektmethoden der Klasse <code>Viereck</code> geerbt hat. Allerdings sind die Objektvariablen <code>a</code>, <code>b</code>, <code>c</code> und <code>d</code> in <code>Viereck</code> als <code>private</code> deklariert und deshalb kann nur in <code>Viereck</code> auf diese Objektvariablen zugegriffen werden. Wenn wir auch in <code>Rechteck</code> darauf zugreifen wollen, dann müssen wir die Sichtbarkeit der Objektvariablen ändern. Das wollen wir im nächsten Schritt machen.</p>
+<h4 id="der-sichtbarkeitsmodifizierer-protected">Der Sichtbarkeitsmodifizierer <code>protected</code><a class="headerlink" href="#der-sichtbarkeitsmodifizierer-protected" title="Permanent link">&para;</a></h4>
+<p>Wir kennen bisher zwei <em>Sichtbarkeitsmodifizierer</em> (auch <em>Zugriffsmodifizierer</em>): <code>private</code> und <code>public</code>. </p>
+<ul>
+<li>auf Objektvariablen und -methoden, die als <code>private</code> deklariert wurden, kann nur innerhalb der Klasse zugegriffen werden,</li>
+<li>auf Objektvariablen und -methoden, die als <code>public</code> deklariert wurden, kann in allen anderen Klassen (auch Klassen aus anderen Paketen) zugegriffen werden. </li>
+</ul>
+<p>Wir lernen jetzt einen weiteren Sichtbarkeitsmodifizierer kennen: <code>protected</code>.</p>
+<blockquote>
+<p>Auf Objektvariablen und -methoden, die als <code>protected</code> deklariert wurden, kann in den Klassen einer Vererbungshierarchie zugegriffen werden. </p>
+</blockquote>
+<p>Bis jetzt können wir in der Klasse <code>Rechteck</code> nicht auf die Objektvariablen <code>a</code>, <code>b</code>, <code>c</code> und <code>d</code> zugreifen, da diese in <code>Viereck</code> als <code>private</code> deklariert wurden und deshalb nur innerhalb von <code>Viereck</code> zugreifbar sind. Aus Gründen der <a href="../objekte/#datenkapselung-information-hiding-das-schlusselwort-private">Datenkapselung</a> sollen diese aber auch nicht <code>public</code> sein. Wir deklarieren sie deshalb als <code>protected</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Viereck</span>
+<span class="p">{</span>
+<span class="hll">    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>          <span class="c1">// Seiten innerhalb der Vererbungshierarchie sichtbar</span>
+</span>
+    <span class="kd">public</span> <span class="nf">Viereck</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">umfang</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+                <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Umfang des Vierecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Nun kann auf die Objektvariablen in allen abgeleiteten Klassen (also in <code>Rechteck</code>) zugegriffen werden. Nicht aber in anderen Klassen. Man muss also von <code>Viereck</code> erben, um Zugriff auf die als <code>protected</code> deklarierten Variablen zu bekommen. </p>
+<h4 id="erweitern-der-klasse-rechteck-um-eine-weitere-eigenschaft">Erweitern der Klasse <code>Rechteck</code> um eine weitere Eigenschaft<a class="headerlink" href="#erweitern-der-klasse-rechteck-um-eine-weitere-eigenschaft" title="Permanent link">&para;</a></h4>
+<p><code>Rechteck</code> hat alle Eigenschaften von <code>Viereck</code> geerbt. Ganz am Anfang des Vererbungskapitels haben wir aber gesagt, dass speziellere Klassen auch speziellere Eigenschaften haben können. Wir wollen <code>Rechteck</code> nun eine weitere Eigenschaft hinzufügen: die Objektmethode <code>flaecheninhalt()</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rechteck</span> <span class="kd">extends</span> <span class="n">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Rechteck</span><span class="p">(</span><span class="kt">int</span> <span class="n">laenge</span><span class="p">,</span> <span class="kt">int</span> <span class="n">breite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">,</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">);</span>  <span class="c1">// Aufruf des Konstruktors von Viereck</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     *  neue Objektmethode</span>
+<span class="cm">     *  spezielle Eigenschaft fuer Rechteck </span>
+<span class="cm">     *  gilt nicht für Viereck</span>
+<span class="cm">     *  </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">flaecheninhalt</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">;</span>     <span class="c1">// Zugriff moeglich wegen protected in Viereck</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Die Klasse <code>Rechteck</code> hat somit eine weitere Eigenschaft. Diese ist nicht von <code>Viereck</code> geerbt, sondern ist eine spezielle Eigenschaft von <code>Rechteck</code>. Die Klasse <code>Viereck</code> besitzt diese Eigenschaft nicht! Das bedeutet, dass für Objekte der Klasse <code>Viereck</code> existiert die Eigenschaft <code>flaecheninhalt()</code> nicht, für Objekte der Klasse <code>Rechteck</code> aber schon. In der TEstklasse können wir die neue Methode testen:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Viereck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+
+    <span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+    <span class="n">v1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">Viereck</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">v2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Rechteck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+    <span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="n">r1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Umfang des Rechtecks : &quot;</span> <span class="o">+</span> <span class="n">r1</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+<span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Flaecheninhalt des Rechtecks &quot;</span> <span class="o">+</span> <span class="n">r1</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+</span>
+    <span class="n">Rechteck</span> <span class="n">r2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="n">r2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Umfang des Rechtecks : &quot;</span> <span class="o">+</span> <span class="n">r2</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+<span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Flaecheninhalt des Rechtecks &quot;</span> <span class="o">+</span> <span class="n">r2</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>und erhalten dann die Ausgaben (hier nur für <code>Rechteck</code> gezeigt):</p>
+<div class="highlight"><pre><span></span><code>------- Objekte von Rechteck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">10</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">60</span>
+Umfang des Rechtecks : <span class="m">60</span>
+Flaecheninhalt des Rechtecks <span class="m">200</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">20</span>, <span class="nv">b</span><span class="o">=</span><span class="m">30</span>, <span class="nv">c</span><span class="o">=</span><span class="m">20</span>, <span class="nv">d</span><span class="o">=</span><span class="m">30</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
+Umfang des Rechtecks : <span class="m">100</span>
+Flaecheninhalt des Rechtecks <span class="m">600</span>
+</code></pre></div>
+<p>Beachten Sie, es ist <strong>nicht</strong> möglich, die Objektmethode <code>flaecheninhalt()</code> für die Objekte von <code>Viereck</code> aufzurufen! Für diese Objekte existiert die Eigenschaft <strong>nicht!</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Viereck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+
+    <span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+    <span class="n">v1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="hll">    <span class="c1">// System.out.println(&quot;Flaecheninhalt des Vierecks &quot; + v1.flaecheninhalt());    // existiert nicht!!!</span>
+</span>
+    <span class="n">Viereck</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">v2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="hll">    <span class="c1">// System.out.println(&quot;Flaecheninhalt des Vierecks &quot; + v1.flaecheninhalt());    // existiert nicht!!!</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="uberschreiben-von-methoden">Überschreiben von Methoden<a class="headerlink" href="#uberschreiben-von-methoden" title="Permanent link">&para;</a></h4>
+<p>Die Klasse <code>Rechteck</code> hat unter anderem die Objektmethode <code>print()</code> von der Klasse <code>Viereck</code> geerbt. Wir können geerbte Methoden entweder so lassen, wie wir sie geerbt haben oder wir implementieren sie neu. Das neuimplementieren von geerbten Methoden nennt sich <strong>Überschreiben</strong>. </p>
+<blockquote>
+<p>Wir eine Methode von der Elternklasse geerbt, diese Methode in der Kindklasse jedoch neu implemntiert, so wird diese Methode <strong>überschrieben</strong>. </p>
+</blockquote>
+<p>Die geerbte <code>print()</code>-Methode gefällt uns nicht wirklich gut, denn </p>
+<ol>
+<li>erfolgt innerhalb der Methode die Ausschrift <code>Umfang des Vierecks</code> anstelle von <code>Umfang des Rechtecks</code> und</li>
+<li>könnten wir die <code>print()</code>-Methode in <code>Rechteck</code> um die Ausgabe des Flächeninhaltes des Rechteckes erweitern. </li>
+</ol>
+<p>Wir wollen deshalb diese Methode <strong>überschreiben</strong>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rechteck</span> <span class="kd">extends</span> <span class="n">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Rechteck</span><span class="p">(</span><span class="kt">int</span> <span class="n">laenge</span><span class="p">,</span> <span class="kt">int</span> <span class="n">breite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">,</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">);</span>  <span class="c1">// Aufruf des Konstruktors von Viereck</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     *  neue Objektmethode</span>
+<span class="cm">     *  spezielle Eigenschaft fuer Rechteck </span>
+<span class="cm">     *  gilt nicht für Viereck</span>
+<span class="cm">     *  </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">flaecheninhalt</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">;</span>     <span class="c1">// Zugriff moeglich wegen protected in Viereck</span>
+    <span class="p">}</span>
+
+<span class="hll">    <span class="nd">@Override</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+</span><span class="hll">                <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">);</span>
+</span><span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; Umfang des Rechtecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+</span><span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Flaecheninhalt des Rechtecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>In den Zeilen <code>20-26</code> haben wir nun die Methode <code>print()</code> neu implementiert, d.h. wir haben sie überschrieben. Beachten Sie die sogenannte <em>Annotation</em> <code>@Override</code>, die direkt über dem Methodenkopf steht. Mit dieser <em>Annotation</em> geben wir dem Compiler an, dass die folgende Methode <strong>überschrieben</strong> wird. Der Compiler prüft nun, ob wir die Methode überhaupt so geerbt haben, wie wir sie überschreiben, d.h. es wird überprüft, ob</p>
+<ol>
+<li>der Name der Methode korrekt ist (wir müssen eine Methode geerbt haben, die genau so heißt - auch hier Groß- und Kleinschreibung beachten), </li>
+<li>die Anzahl und die Typreihenfolge der Parameter mit der geerbten Methode übereinstimmen (die Namen der Parameter sind egal),</li>
+<li>der Rückgabetyp der Methode mit der geerbten Methode übereinstimmt (der kann innerhalb der Vererbungshierarchie geändert werden, aber das ist ein späteres Thema),</li>
+<li>die Sichtbarkeit nicht eingeschränkt wird (eine Methode, die in der Elternklasse als <code>public</code> deklariert wurde, darf beim Überschreiben nicht <code>protected</code> oder <code>private</code> werden).</li>
+</ol>
+<p>Wir müssen in der Testklasse nun gar nichts ändern, es wird für die Rechteck-Objekte die neue Implementierung der <code>print()</code>-Methode verwendet:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Viereck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+
+    <span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+    <span class="n">v1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">Viereck</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">v2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Rechteck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+    <span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="n">r1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">Rechteck</span> <span class="n">r2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="n">r2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>erzeugt folgende Ausgaben:</p>
+<div class="highlight"><pre><span></span><code>------- Objekte von Viereck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">30</span>, <span class="nv">d</span><span class="o">=</span><span class="m">40</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">15</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">25</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">80</span>
+
+
+------- Objekte von Rechteck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">10</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Rechtecks : <span class="m">60</span> Flaecheninhalt des Rechtecks : <span class="m">200</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">20</span>, <span class="nv">b</span><span class="o">=</span><span class="m">30</span>, <span class="nv">c</span><span class="o">=</span><span class="m">20</span>, <span class="nv">d</span><span class="o">=</span><span class="m">30</span> <span class="o">]</span>  Umfang des Rechtecks : <span class="m">100</span> Flaecheninhalt des Rechtecks : <span class="m">600</span>
+</code></pre></div>
+<p>Wir werden auf das Überschreiben von Methoden noch weiter üben, wenn wir uns mit der Klasse <code>Object</code> beschäftigen. Wir merken uns zunächst, dass wir geerbte Methoden überschreiben können und dass wir die Annotation <code>@Override</code> verwenden sollten, wenn wir eine Methode überschreiben, um zu vermeiden, dass wir - z.B. weil wir den Namen der Methode falsch schreiben - die Methode gar nicht überschreiben, sondern eine neue Methode hinzufügen. </p>
+<p><strong>Übrigens :</strong> Wir kennen das Schlüsselwort <code>final</code> ja bereits von Variablen. Eine als <code>final</code> deklarierte Variable kann ihren einmal zugewiesenen Wert nicht mehr ändern. Wir haben mit <code>final</code> sogenannte <em>Konstanten</em> definiert. </p>
+<blockquote>
+<p>Eine als <code>final</code> deklarierte Methode kann <strong>nicht</strong> überschrieben werden!</p>
+<p>Von einer als <code>final</code> deklarierten Klasse kann <strong>nicht</strong> geerbt werden!</p>
+</blockquote>
+<h2 id="die-klasse-quadrat">Die Klasse <code>Quadrat</code><a class="headerlink" href="#die-klasse-quadrat" title="Permanent link">&para;</a></h2>
+<p>Das folgende Beispiel dient nur zur Wiederholung. Wir erben nun eine Klasse <code>Quadrat</code> von der Klasse <code>Rechteck</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="kd">extends</span> <span class="n">Rechteck</span>
+<span class="p">{</span>
+    <span class="n">Quadrat</span><span class="p">(</span><span class="kt">int</span> <span class="n">seite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">seite</span><span class="p">,</span> <span class="n">seite</span><span class="p">);</span>    <span class="c1">// Aufruf des Konstruktors von Rechteck</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+                <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; Umfang des Quadrats : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Flaecheninhalt des Quadrats : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>In Zeile <code>1</code> geben wir mithilfe von <code>extends Rechteck</code> an, dass die Klasse <code>Quadrat</code> von der Klasse <code>Rechteck</code> erbt.</li>
+<li>In den Zeilen <code>3-6</code> definieren wir den Konstruktor von <code>Quadrat</code>. Darin rufen wir als erstes den Konstruktor von <code>Rechteck</code> auf. Der Konstruktor von <code>Quadrat</code> erwartet nur noch eine Parameter, da im Quadrat alle Seiten gleich lang sind. Den Wert des Parameters übergeben wir dem Konstruktor von <code>Rechteck</code>, der zwei Parameterwerte erwartet (für <code>laenge</code> und <code>breite</code>). </li>
+<li>In den Zeilen <code>8-15</code> überschreiben wir wieder die <code>print()</code>-Methode und passen sie an das Quadrat an. </li>
+</ul>
+<p>Beachten Sie, dass <code>Quadrat</code> alle Eigenschaften von <code>Rechteck</code> erbt, also </p>
+<ul>
+<li>die Objektvariablen <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code> und</li>
+<li>die Objektmethoden <code>print()</code>, <code>umfang()</code> und <code>flaecheninhalt()</code>.</li>
+</ul>
+<p>Die Testklasse könnten wir nun wie folgt erweiteren:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Viereck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+
+    <span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+    <span class="n">v1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">Viereck</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">v2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Rechteck erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+    <span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="n">r1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">Rechteck</span> <span class="n">r2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="n">r2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+<span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------- Objekte von Quadrat erzeugen ------------%n%n&quot;</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">Quadrat</span> <span class="n">q1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">q1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="n">Quadrat</span> <span class="n">q2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">q2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>und bekämen folgende Ausgaben:</p>
+<div class="highlight"><pre><span></span><code>------- Objekte von Viereck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">30</span>, <span class="nv">d</span><span class="o">=</span><span class="m">40</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">15</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">25</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">80</span>
+
+
+------- Objekte von Rechteck erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">10</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Rechtecks : <span class="m">60</span> Flaecheninhalt des Rechtecks : <span class="m">200</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">20</span>, <span class="nv">b</span><span class="o">=</span><span class="m">30</span>, <span class="nv">c</span><span class="o">=</span><span class="m">20</span>, <span class="nv">d</span><span class="o">=</span><span class="m">30</span> <span class="o">]</span>  Umfang des Rechtecks : <span class="m">100</span> Flaecheninhalt des Rechtecks : <span class="m">600</span>
+
+
+------- Objekte von Quadrat erzeugen ------------
+
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">30</span>, <span class="nv">b</span><span class="o">=</span><span class="m">30</span>, <span class="nv">c</span><span class="o">=</span><span class="m">30</span>, <span class="nv">d</span><span class="o">=</span><span class="m">30</span> <span class="o">]</span>  Umfang des Quadrats : <span class="m">120</span> Flaecheninhalt des Quadrats : <span class="m">900</span>
+<span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">40</span>, <span class="nv">b</span><span class="o">=</span><span class="m">40</span>, <span class="nv">c</span><span class="o">=</span><span class="m">40</span>, <span class="nv">d</span><span class="o">=</span><span class="m">40</span> <span class="o">]</span>  Umfang des Quadrats : <span class="m">160</span> Flaecheninhalt des Quadrats : <span class="m">1600</span>
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Mit Vererbung haben wir ein wichtiges Konzept der objektorientierten Programmierung kennengelernt. Um von einer Klasse zu erben, verwenden wir das Schlüsselwort <code>extends</code>. Eine Kindklasse erbt von ihrer Elternklasse alle Eigenschaften, also alle Objektvariablen und Objektmethoden. Eine geerbte Methode kann in der Kindklasse überschrieben werden. Wird eine Methode überschrieben, verwenden wir die Annotation <code>@Override</code>. Im Konstruktor der Kindklasse wird der Konstruktor der Elternklasse aufgerufen. Dies kann implizit erfolgen, wenn der implizite Konstruktor der Elternklasse existiert, oder es erfolgt explizit durch die Verwendung des Schlüsselwortes <code>super</code>. Mithilfe von Vererbung erhöhen wir die Wiederverwendbarkeit von Code und vermeiden doppelte Implementierungen. Außerdem sorgen wir für eine bessere Strukturierung des Codes. </p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../methodenstack/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Methodenstack" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Methodenstack
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../object/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Object" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Object
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

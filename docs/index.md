@@ -49,10 +49,10 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 5. | 08.-12.11.2021 | [Iteration (while)](./iteration/#die-while-schleife) | [Aufgabe 4](./aufgaben/#aufgabe-4-abgabe-bis-15112021-2400-uhr) | 15.11.2021 | 
 | 6. | 15.-19.11.2021 | [Klassen und Objekte](./objekte/#klassen-und-objekte) | [Aufgabe 5](./aufgaben/#aufgabe-5-abgabe-bis-22112021-2400-uhr)  | 22.11.2021 | 
 | 7. | 22.-26.11.2021 | [Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten](./objekte/#eine-weiterer-datentyp-point) | [Aufgabe 6](./aufgaben/#aufgabe-6-abgabe-bis-29112021-2400-uhr)  | 29.11.2021 | 
-| 8. | 29.-03.12.2021 | Klassen- und Objekt-Variablen und -Methoden  | Aufgabe 7  | 06.12.2021 |
-| 9. | 06.-10.12.2021 | Vererbung | Aufgabe 8  | 13.12.2021 |
-| 10. | 13.-17.12.2021 | Object und Polymorphie | Aufgabe 9 | 20.12.2021 |
-| 11. | 20.-24.12.2021 | return  | Aufgabe 10  | 03.01.2022 |
+| 8. | 29.-03.12.2021 | [Eigene Datentypen in Datentypen verwenden](./objekte/#eigene-datentypen-in-eigenen-datentypen-verwenden)  | [Aufgabe 7](./aufgaben/#aufgabe-7-abgabe-bis-6122021-2400-uhr)  | 06.12.2021 |
+| 9. | 06.-10.12.2021 | Vererbung, Object und Polymorphie | Aufgabe 8  | 13.12.2021 |
+| 10. | 13.-17.12.2021 | Arrays I | Aufgabe 9 | 20.12.2021 |
+| 11. | 20.-24.12.2021 | Arrays II  | Aufgabe 10  | 03.01.2022 |
 | | | | | | | |
 | 12. | 03.-07.01.2022 | Enumerations | Aufgabe 11  | 10.01.2022 |
 | 13. | 10.-14.01.2022 | Exceptions | Aufgabe 12 | 17.01.2022 |
@@ -676,7 +676,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 ??? note "Vorlesung Circle -- 24.11.2021"
-	=== "Point.java"
+	=== "Circle.java"
 		```java	linenums="1" 
 
 		public class Circle
@@ -740,6 +740,199 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Vorlesung Circle -- 24.11.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=83773673af2c6de5c49fefa4d922e2df&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Person, Address, Circle -- 30.11.2021"
+	=== "Circle.java"
+		```java	linenums="1" 
+		public class Circle
+		{
+		    private double radius;
+		    
+		    public Circle(double radius)
+		    {
+		        this.radius = radius;
+		    }
+		    
+		    public Circle()
+		    {
+		        this.radius = 1.0;
+		    }
+		    
+		    public double getRadius()
+		    {
+		        return this.radius;
+		    }
+		    
+		    public double getDiameter()
+		    {
+		        return 2.0 * this.radius;
+		    }
+		    
+		    public double area()
+		    {
+		        return Math.PI * this.radius * this.radius;
+		    }
+		    
+		    public boolean isSmaller(Circle otherCircle)
+		    {
+		        return this.radius < otherCircle.radius;
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println("Radius         : " + this.radius);
+		        System.out.println("Durchmesser    : " + this.getDiameter() );
+		        System.out.println("Flaecheninhalt : " + this.area() );
+		        System.out.println();
+		    }
+		}
+		```
+
+		=== "Address.java"
+		```java	linenums="1" 
+		public class Address
+		{
+		    private String street;
+		    private int number;
+		    private int zipcode;
+		    private String city;
+
+		    public Address(String street, int number, 
+		    int zipcode, String city )
+		    {
+		        this.street = street;
+		        this.number = number;
+		        this.zipcode = zipcode;
+		        this.city = city;
+		    }
+
+		    public void renameStreet(String newStreetName)
+		    {
+		        this.street = newStreetName;
+		    }
+
+		    public String getAddressAsString()
+		    {
+		        return this.street + " " + this.number + "\n" + this.zipcode + " " + this.city;
+		    }
+
+		    public void printAddress()
+		    {
+		        System.out.println( this.getAddressAsString() );
+		    }
+		}		
+		```
+
+		=== "Person.java"
+		```java	linenums="1" 
+		public class Person
+		{
+		    private String name;
+		    private String forename;
+		    private Address address;
+		    
+		    public Person(String name, String forename, Address address)
+		    {
+		        this.name = name;
+		        this.forename = forename;
+		        this.address = address;
+		    }
+		    
+		    public Address getAddress()
+		    {
+		        return this.address;
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println(this.forename + " " + this.name);
+		        //this.address.printAddress();
+		        System.out.println(this.address.getAddressAsString());
+		        System.out.println();
+		    }
+		}
+		```
+
+	=== "Programmklasse.java"
+		```java	linenums="1" 
+		public class Programmklasse
+		{
+		    public void testCircle()
+		    {
+		        Circle c1 = new Circle(5.0);
+		        Circle c2 = new Circle(4.0);
+		        Circle c3 = c1;
+		        Circle c4 = new Circle();
+		        Circle c5 = new Circle(6);
+		        
+		        System.out.println(c1.getRadius());
+		        System.out.println(c2.getRadius());
+		        
+		        c1.print();
+		        c2.print();
+		        c3.print();
+		        c4.print();
+		        c5.print();
+		        
+		        System.out.println("c1 kleiner c2 ? " + c1.isSmaller(c2));
+		        System.out.println("c2 kleiner c1 ? " + c2.isSmaller(c1));
+		    }
+		    
+		    public void testPoint()
+		    {
+		        Point p1 = new Point(3,4);
+		        Point p2 = new Point(1,2);
+		        Point p3 = new Point(-3,6);
+		        
+		        p1.print();
+		        p2.print();
+		        p3.print();
+		        
+		        System.out.println("p1 : (" + p1.getX() + ", " + p1.getY() + ")");
+		        System.out.println("p2 : (" + p2.getX() + ", " + p2.getY() + ")");
+		        System.out.println("p3 : (" + p3.getX() + ", " + p3.getY() + ")");
+		        
+		        p1.translate(1,2);
+		        System.out.println("p1 : (" + p1.getX() + ", " + p1.getY() + ")");
+		        p1.print();
+		        p1.translate(-2,-4);
+		        p1.print();
+		        
+		        System.out.println("p1 links von p2 ? " + p1.isLeft(p2) );
+		        System.out.println("p2 links von p1 ? " + p2.isLeft(p1) );
+		        
+		    }
+		    
+		    public void testAddress()
+		    {
+		        Address htwTA = new Address("Treskowallee", 8, 10431, "Berlin");
+		        Address htwWH = new Address("Wilhelminenhofstr.", 75, 12459, "Berlin");
+		        
+		        htwTA.printAddress();
+		        htwWH.printAddress();
+		        
+		        Person maria = new Person("Musterfrau", "Maria", htwTA);
+		        maria.print();
+		        Person max = new Person("Mustermann", "Max", new Address("Musterstr.", 4, 11111, "Berlin"));
+		        max.print();
+		        
+		        htwTA.renameStreet("Neue Str.");
+		        htwTA.printAddress();
+		        
+		        //maria.address.renameStreet("Teststr.");
+		        Address mariasAddress = maria.getAddress();
+		        String mariasAddressAsString = mariasAddress.getAddressAsString();
+		        // System.out.println( maria.getAddress().getAddressAsString() );
+		        System.out.println(mariasAddressAsString);
+		        maria.getAddress().renameStreet("Teststr. ");
+		        htwTA.printAddress();
+		    }
+		}
+		```
+
+??? info "Video zur Vorlesung Person, Address, Circle -- 30.11.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=40f30ef3aabee358897562f7ac9b47c5&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
 
 

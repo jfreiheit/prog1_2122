@@ -1,0 +1,1669 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I">
+      
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/object/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Object - Programmieren I</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#die-klasse-object" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmieren I" class="md-header__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmieren I
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Object
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmieren I" class="md-nav__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    Programmieren I
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluej/" class="md-nav__link">
+        BlueJ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variablen/" class="md-nav__link">
+        Variablen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ausdruecke/" class="md-nav__link">
+        Ausdrücke
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methoden/" class="md-nav__link">
+        Methoden
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objekte/" class="md-nav__link">
+        Klassen und Objekte
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vererbung/" class="md-nav__link">
+        Vererbung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Object
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Object
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objektmethoden-von-object" class="md-nav__link">
+    Objektmethoden von Object
+  </a>
+  
+    <nav class="md-nav" aria-label="Objektmethoden von Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-getclass" class="md-nav__link">
+    Die Objektmethode getClass()
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Objektmethode getClass()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilertyp-vs-laufzeittyp" class="md-nav__link">
+    Compilertyp vs. Laufzeittyp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#welche-objektmethoden-anwendbar-typecast" class="md-nav__link">
+    Welche Objektmethoden anwendbar? - Typecast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instanceof-vs-getclass" class="md-nav__link">
+    instanceof vs. getClass()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-tostring" class="md-nav__link">
+    Die Objektmethode toString()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-equals" class="md-nav__link">
+    Die Objektmethode equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-hashcode" class="md-nav__link">
+    Die Objektmethode hashCode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-clone" class="md-nav__link">
+    Die Objektmethode clone()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphie" class="md-nav__link">
+    Polymorphie
+  </a>
+  
+    <nav class="md-nav" aria-label="Polymorphie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statische-polymorphie" class="md-nav__link">
+    Statische Polymorphie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamische-polymorphie" class="md-nav__link">
+    Dynamische Polymorphie
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aufgaben/" class="md-nav__link">
+        Aufgaben
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hilfsklassen/" class="md-nav__link">
+        Hilfsklassen
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objektmethoden-von-object" class="md-nav__link">
+    Objektmethoden von Object
+  </a>
+  
+    <nav class="md-nav" aria-label="Objektmethoden von Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-getclass" class="md-nav__link">
+    Die Objektmethode getClass()
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Objektmethode getClass()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilertyp-vs-laufzeittyp" class="md-nav__link">
+    Compilertyp vs. Laufzeittyp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#welche-objektmethoden-anwendbar-typecast" class="md-nav__link">
+    Welche Objektmethoden anwendbar? - Typecast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instanceof-vs-getclass" class="md-nav__link">
+    instanceof vs. getClass()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-tostring" class="md-nav__link">
+    Die Objektmethode toString()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-equals" class="md-nav__link">
+    Die Objektmethode equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-hashcode" class="md-nav__link">
+    Die Objektmethode hashCode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-objektmethode-clone" class="md-nav__link">
+    Die Objektmethode clone()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphie" class="md-nav__link">
+    Polymorphie
+  </a>
+  
+    <nav class="md-nav" aria-label="Polymorphie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statische-polymorphie" class="md-nav__link">
+    Statische Polymorphie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamische-polymorphie" class="md-nav__link">
+    Dynamische Polymorphie
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/prog1/edit/master/docs/object.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="die-klasse-object">Die Klasse <code>Object</code><a class="headerlink" href="#die-klasse-object" title="Permanent link">&para;</a></h1>
+<p>Die Klasse <code>java.lang.Object</code> ist die Basisklasse (Elternklasse) aller in Java existierenden Klassen. <code>Object</code> wird häufig auch als <em>die Mutter aller Klassen</em> in Java bezeichnet. 
+Eine Klasse kann entweder <em>explizit</em> von einer anderen Klasse erben (mithilfe von <code>extends</code>) oder sie erbt <em>implizit</em> von der Klasse <code>Object</code>. 
+Das bedeutet, dass <em>jede</em> Klasse von der Klasse <code>Object</code> erbt. </p>
+<p>Betrachten wir nochmal zur Wiederholung unsere Vererbungshierarchie aus dem vorherigen Abschnitt <a href="../vererbung/#vererbung">Vererbung</a>: </p>
+<ul>
+<li>Dort hatten wir zunächst die Klasse <code>Viereck</code> erstellt, die <em>explizit von keiner</em> Klasse geerbt hat. <code>Viereck</code> erbt somit <em>implizit</em>  von <code>Object</code>.  </li>
+<li>Die Klasse <code>Rechteck</code> erbt von <code>Viereck</code> und somit <strong>auch von</strong> <code>Object</code>. </li>
+<li>Die Klasse <code>Quadrat</code> erbt von <code>Rechteck</code> und somit auch von <code>Viereck</code> und somit <strong>auch von</strong> <code>Object</code>. </li>
+</ul>
+<p>Wenn wir uns nun noch daran erinnern, dass wir beim <a href="../vererbung/#der-konstruktor-von-rechteck-das-schlusselwort-super">Erstellen der Konstruktoren</a> gesagt haben, dass bei der Objekterzeugung auch immer ein Objekt der Elternklasse erzeugt wird, dann bedeutet das, dass für jedes Objekt auch immer ein Objekt der Klasse <code>Object</code> erzeugt wird. </p>
+<p>Wenn wir uns nun auch noch daran erinnern, dass in einer Vererbungshierarchie immer die <em>is-a-*Relation (*ist ein</em>) gilt (jedes <code>Rechteck</code> ist ein <code>Viereck</code>, jedes <code>Quadrat</code> ist ein <code>Rechteck</code> ist ein <code>Viereck</code>), dann gilt dass <strong>jedes</strong> Obejkt auch ein Objekt vom Typ <code>Object</code> ist. Das bedeutet insbesondere, dass jedes Objekt alle Objekteigenschaften (Objektmethoden) der Klasse <code>Object</code> geerbt hat. </p>
+<blockquote>
+<p>Jedes Objekt (egal von welchem Referenztyp) ist auch ein Objekt vom Typ <code>Object</code> und hat alle Objektmethoden von <code>Object</code> geerbt.</p>
+</blockquote>
+<h2 id="objektmethoden-von-object">Objektmethoden von <code>Object</code><a class="headerlink" href="#objektmethoden-von-object" title="Permanent link">&para;</a></h2>
+<p>Jedes Objekt in Java hat also automatisch die <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html">Methoden von <code>Object</code></a> geerbt. Einige davon betrachten wir nun etwas genauer:</p>
+<table>
+<thead>
+<tr>
+<th>Objektmethode von <code>Object</code></th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getClass()</code></td>
+<td>gibt den Laufzeittyp der Klasse zurück</td>
+</tr>
+<tr>
+<td><code>toString()</code></td>
+<td>gibt einen <code>String</code> zurück &rarr; sollte in jeder Klasse überschrieben werden, um eine geeignete textuelle Beschreibung der Objekte zu haben</td>
+</tr>
+<tr>
+<td><code>equals(Object)</code></td>
+<td>für den Vergleich zweier Objekte &rarr; sollte in jeder Klasse überschrieben werden, um Gleichheit von Objekten zu beschreiben (default: Referenzvergleich)</td>
+</tr>
+<tr>
+<td><code>hashCode()</code></td>
+<td>gibt einen HashCode (ein <code>int</code>) für ein Objekt zurück, wird benötigt zum Einsortieren in hashbasierten Containern &rarr; später in Collections</td>
+</tr>
+<tr>
+<td><code>clone()</code></td>
+<td>gibt eine Kopie (einen Clone) des Objektes zurück</td>
+</tr>
+<tr>
+<td><code>wait()</code>, <code>notify()</code>, <code>notifyAll()</code></td>
+<td>für Threads &rarr; machen wir viel später</td>
+</tr>
+<tr>
+<td><code>finalize()</code></td>
+<td>für die Garbage Collection &rarr; ist seit Java 9 deprecated</td>
+</tr>
+</tbody>
+</table>
+<p>Die Objektmethoden aus den letzten beiden Zeilen der Tabelle betrachten wir hier nicht weiter. Die anderen Objektmethoden werden im Folgenden genauer untersucht. Wir beginnen mit <code>getClass()</code>. </p>
+<h3 id="die-objektmethode-getclass">Die Objektmethode <code>getClass()</code><a class="headerlink" href="#die-objektmethode-getclass" title="Permanent link">&para;</a></h3>
+<p>Angenommen, wir haben die Klassen <code>Viereck</code>, <code>Rechteck</code> und <code>Quadrat</code> aus dem vorherigen Kapitel <a href="../vererbung/#vererbung">Vererbung</a> gegeben:</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Viereck.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>          <span class="c1">// Seiten</span>
+
+    <span class="kd">public</span> <span class="nf">Viereck</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">umfang</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+                <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Umfang des Vierecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Rechteck.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rechteck</span> <span class="kd">extends</span> <span class="n">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Rechteck</span><span class="p">(</span><span class="kt">int</span> <span class="n">laenge</span><span class="p">,</span> <span class="kt">int</span> <span class="n">breite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">,</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">);</span>  <span class="c1">// Aufruf des Konstruktors von Viereck</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     *  neue Objektmethode</span>
+<span class="cm">     *  spezielle Eigenschaft fuer Rechteck </span>
+<span class="cm">     *  gilt nicht für Viereck</span>
+<span class="cm">     *  </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">flaecheninhalt</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">;</span>     <span class="c1">// Zugriff moeglich wegen protected in Viereck</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+                <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; Umfang des Rechtecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Flaecheninhalt des Rechtecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Quadrat.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="kd">extends</span> <span class="n">Rechteck</span>
+<span class="p">{</span>
+    <span class="n">Quadrat</span><span class="p">(</span><span class="kt">int</span> <span class="n">seite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">seite</span><span class="p">,</span> <span class="n">seite</span><span class="p">);</span>    <span class="c1">// Aufruf des Konstruktors von Rechteck</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+                <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; Umfang des Quadrats : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Flaecheninhalt des Quadrats : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wenn wir nun in z.B. einer <code>main()</code>-Methode folgende Anweisungen haben:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="n">Quadrat</span> <span class="n">q1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>, dann wissen wir, dass <code>v1</code> vom Typ <code>Viereck</code> ist, <code>r1</code> vom Typ <code>Rechteck</code> und <code>q1</code> vom Typ <code>Quadrat</code>. Die Deklarationen dieser Variablen geben den sogenannten <em>Compilertyp</em> an. Und tatsächlich haben wir ja im obigen Fall auch die dazu passenden Objekte erzeugt, die genau dem jeweiligen Typ entsprechen. Wenn wir nun also jeweils die <code>getClass()</code>-Methode aufrufen, dann bekommen wir die jeweiligen Typen zurückgegeben:</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="n">Quadrat</span> <span class="n">q1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>  <span class="c1">// von Object geerbt</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">r1</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>  <span class="c1">// von Viereck -&gt; Object geerbt</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">q1</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>  <span class="c1">// von Rechteck -&gt; Viereck -&gt; Object geerbt</span>
+</code></pre></div>
+</td></tr></table>
+Die Ausgaben sind:
+<div class="highlight"><pre><span></span><code>class themen.vererbung.Viereck
+class themen.vererbung.Rechteck
+class themen.vererbung.Quadrat
+</code></pre></div>
+, wobei <code>themen.vererbung</code> das package ist, in dem die Klassen <code>Viereck.java</code>, <code>Rechteck.java</code> und <code>Quadrat.java</code> liegen. <code>getClass()</code> gibt jedoch nicht den <em>Compilertyp</em>, sondern den <em>Laufzeittyp</em> zurück. </p>
+<h4 id="compilertyp-vs-laufzeittyp">Compilertyp vs. Laufzeittyp<a class="headerlink" href="#compilertyp-vs-laufzeittyp" title="Permanent link">&para;</a></h4>
+<p>Was sind <em>Compiler-</em> und <em>Laufzeittypen</em>? <em>Compilertyp</em> wissen wir schon. Bei der Deklaration einer Variablen geben wir den Compilertypen der Variablen an. Was wir aber auch wissen, ist, dass jedes <code>Rechteck</code> <strong>ist auch ein</strong> <code>Viereck</code>. Das erlaubt uns, auch Folgendes zu schreiben:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>Jetzt ist <code>v</code> vom (Compiler-)Typ <code>Viereck</code>, aber vom <em>Laufzeittyp</em> <code>Rechteck</code>. Die Referenzvariable <code>v</code> zeigt auf ein <code>Rechteck</code>-Objekt. Mit <code>getClass()</code> erfragen wir den <em>Laufzeittyp</em>, d.h.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>       <span class="c1">// Compilertyp von v ist Viereck</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>       <span class="c1">// Laufzeittyp von v ist Rechteck</span>
+</code></pre></div>
+</td></tr></table>
+erzeugt die Ausgabe
+<div class="highlight"><pre><span></span><code>class themen.vererbung.Rechteck
+</code></pre></div></p>
+<p>Wir können also auch soetwas machen:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span><span class="o">[]</span> <span class="n">va</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+<span class="n">va</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>       <span class="c1">// Compilertyp von va[0] ist Viereck, Laufzeittyp ist Viereck</span>
+<span class="n">va</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>           <span class="c1">// Compilertyp von va[1] ist Viereck, Laufzeittyp ist Rechteck</span>
+<span class="n">va</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>                <span class="c1">// Compilertyp von va[2] ist Viereck, Laufzeittyp ist Quadrat</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">va</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>   <span class="c1">// Viereck</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">va</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>   <span class="c1">// Rechteck</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">va</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>   <span class="c1">// Quadrat</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Das bedeutet auch, dass sogar soetwas möglich ist:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Object</span> <span class="n">o1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>   <span class="c1">// Compilertyp von o1 ist Object, Laufzeittyp ist Viereck</span>
+<span class="n">Object</span> <span class="n">o2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>       <span class="c1">// Compilertyp von o2 ist Object, Laufzeittyp ist Rechteck</span>
+<span class="n">Object</span> <span class="n">o3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>            <span class="c1">// Compilertyp von o3 ist Object, Laufzeittyp ist Quadrat</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o1</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>      <span class="c1">// Viereck</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o2</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>      <span class="c1">// Rechteck</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o3</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>      <span class="c1">// Quadrat</span>
+</code></pre></div>
+</td></tr></table></p>
+<blockquote>
+<p>Der Compilertyp einer (Referenz-)Variablen wird durch die Deklaration bestimmt. Der Laufzeittyp wird bestimmt durch das konkrete Objekt, auf das die Referenzvariable zeigt. </p>
+</blockquote>
+<h4 id="welche-objektmethoden-anwendbar-typecast">Welche Objektmethoden anwendbar? - Typecast<a class="headerlink" href="#welche-objektmethoden-anwendbar-typecast" title="Permanent link">&para;</a></h4>
+<p>Wenn wir schonmal bei der Unterscheidung zwischen Compilertyp und Laufzeittyp sind, dann können wir gleich der Frage nachgehen, welche Objektmethoden anwendbar sind. Erinnern wir uns dazu nochmal an die Erweiterung der Klasse <code>Rechteck</code>. Dort hatten wir eine Objektmethode <code>flaecheninhalt()</code> definiert, die in der Klasse <code>Viereck</code> nicht existiert. </p>
+<p>Wir hatten folgenden Fall:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="c1">// System.out.println(v1.flaecheninhalt());     // flaecheninhalt() existiert für Viereck nicht</span>
+<span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">r1</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>        <span class="c1">// flaecheninhalt() existiert für Rechteck (=200)</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Wenn wir nun 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+haben, <code>v</code> also den Compilertyp <code>Viereck</code> hat und den Laufzeittyp <code>Rechteck</code>. Können wir dann 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>     <span class="c1">// Fehler!</span>
+</code></pre></div>
+</td></tr></table>
+aufrufen? Die Antwort ist <strong>nein!</strong> Das ist auch insofern logisch, als dass dieser Aufruf ja bereits zum Compilezeit möglich sein muss. Dem Typ <code>Viereck</code> steht diese Methode aber nicht zur Verfügung. Das geht also nicht. Was wir aber in diesem Fall machen können, ist eine <a href="../variablen/#explizite-typkonvertierung">explizite Typkonvertierung</a>. 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="n">Rechteck</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">Rechteck</span><span class="p">)</span><span class="n">v</span><span class="p">;</span>           <span class="c1">// geht, weil der Laufzeittyp Rechteck ist</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>     <span class="c1">// geht, weil der Compilertyp von r Rechteck ist</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Nochmal im Detail: </p>
+<ul>
+<li>In Zeile <code>1</code> definieren wir eine Referenzvariable <code>v</code> vom <em>Compilertyp</em> <code>Viereck</code>. </li>
+<li>In Zeile <code>2</code> definieren wir eine Referenzvariable <code>r</code> vom <em>Compilertyp</em> <code>Rechteck</code>. </li>
+<li>Weil <code>r</code> vom <em>Compilertyp</em> <code>Rechteck</code> ist, können wir für <code>r</code> die Objektmethode <code>flaecheninhalt()</code> aufrufen (für <code>v</code> nicht!). </li>
+<li>Dass die Typkonvertierung in Zeile <code>2</code> auch tatsächlich gelingt, liegt (zur <em>Laufzeit</em>) daran, dass der <em>Laufzeittyp</em> von <code>v</code> <code>Rechteck</code> ist. Wäre das nicht der Fall, würde die Typkonvertierung scheitern - aber erst zur Laufzeit (mit einer <code>ClassCastException</code>). </li>
+</ul>
+<h4 id="instanceof-vs-getclass"><code>instanceof</code> vs. <code>getClass()</code><a class="headerlink" href="#instanceof-vs-getclass" title="Permanent link">&para;</a></h4>
+<p>Wie gesagt, ermitteln wir mit <code>getClass()</code> den Laufzeittypen einer Referenzvariablen. Dafür gibt es auch noch ein anderes Schlüsselwort in Java, nämlich <code>instanceof</code>. Das ist ein Operator, mit dessen Hilfe wir einen Vergleich mit Typen anstellen können. Zunächst ein Beispiel:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="n">v</span> <span class="k">instanceof</span> <span class="n">Viereck</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;v ist vom Typ Viereck&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>In Zeile <code>2</code> sehen wir die Anwendung des <code>instanceof</code>-Operators. Er gibt ein <code>boolean</code> zurück, je nachdem die Variable vom angegebenen Typen ist oder nicht. Der obige Code erzeugt also die Ausgabe 
+<div class="highlight"><pre><span></span><code>v ist vom Typ Viereck
+</code></pre></div>
+auf der Konsole. Angenommen, wir haben nun folgendes Beispiel:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span> <span class="c1">// Compilertyp Object, Laufzeittyp Quadrat</span>
+<span class="k">if</span><span class="p">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Object</span><span class="p">)</span>     <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;o ist vom Typ Object&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Viereck</span><span class="p">)</span>    <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;o ist vom Typ Viereck&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Rechteck</span><span class="p">)</span>   <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;o ist vom Typ Rechteck&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Quadrat</span><span class="p">)</span>    <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;o ist vom Typ Quadrat&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+, dann sind alle Bedingungen <code>true</code>, d.h. es wird folgende Ausgabe erzeugt:
+<div class="highlight"><pre><span></span><code>o ist vom Typ Object
+o ist vom Typ Viereck
+o ist vom Typ Rechteck
+o ist vom Typ Quadrat
+</code></pre></div>
+<code>instanceof</code> prüft also jeden möglichen Laufzeittyp (wir wissen ja, dass ein Objekt vom Typ <code>Quadrat</code> <strong>ist ein</strong> Objekt vom Typ <code>Rechteck</code> <strong>ist ein</strong> Objekt vom Typ <code>Viereck</code> <strong>ist ein</strong> Objekt vom Typ <code>Object</code>). Das gleiche gilt auch für:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Quadrat</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span> <span class="c1">// Compilertyp Quadrat, Laufzeittyp Quadrat</span>
+<span class="k">if</span><span class="p">(</span><span class="n">q</span> <span class="k">instanceof</span> <span class="n">Object</span><span class="p">)</span>     <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;q ist vom Typ Object&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">q</span> <span class="k">instanceof</span> <span class="n">Viereck</span><span class="p">)</span>    <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;q ist vom Typ Viereck&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">q</span> <span class="k">instanceof</span> <span class="n">Rechteck</span><span class="p">)</span>   <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;q ist vom Typ Rechteck&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">q</span> <span class="k">instanceof</span> <span class="n">Quadrat</span><span class="p">)</span>    <span class="c1">// true</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;q ist vom Typ Quadrat&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+, dann sind alle Bedingungen <code>true</code>, d.h. es wird folgende Ausgabe erzeugt:
+<div class="highlight"><pre><span></span><code>q ist vom Typ Object
+q ist vom Typ Viereck
+q ist vom Typ Rechteck
+q ist vom Typ Quadrat
+</code></pre></div></p>
+<blockquote>
+<p>Die Methode <code>getClass()</code> liefert also den <strong>konkretesten (speziellsten)</strong> Laufzeittypen zurück. Mit <code>instanceof</code> können <strong>alle</strong> Laufzeittypen abgefragt werden. Für eine beliebige Variable <code>var</code>, egal welchen Referenztyps, gilt immer, dass <code>var instanceof Object</code> <code>true</code> ergibt, d.h. jede Referenzvariable ist immer auch vom (Laufzeit-)Typ <code>Object</code>. </p>
+</blockquote>
+<h3 id="die-objektmethode-tostring">Die Objektmethode <code>toString()</code><a class="headerlink" href="#die-objektmethode-tostring" title="Permanent link">&para;</a></h3>
+<p>In jeder Klasse, die wir erstellen, erben wir von <code>Object</code> die Objektmethode <code>toString()</code>. Wenden wir diese Methode also einmal für unsere Klasse <code>Viereck</code>an:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+</code></pre></div>
+</td></tr></table>
+Dann erhalten wir eine etwas kryptische Ausgabe:
+<div class="highlight"><pre><span></span><code>themen.vererbung.Viereck@279f2327
+</code></pre></div>
+wobei <code>themen.vererbung</code> das Paket ist, in dem die Klasse <code>Viereck</code> ligt und <code>@279f2327</code> scheint irgendeine Referenzadresse zu sein. Interessant an der <code>toString()</code>-Methode ist, dass wir die gleiche Ausgabe auch dann erzielen, wenn wir nur 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+aufrufen, also der Methode <code>System.out.println()</code> nur <code>v</code> und nicht <code>v.toString()</code> übergeben. Das liegt daran, dass <code>System.out.println()</code> <a href="../objekte/#uberladen-von-methoden">überladen</a> ist und - unter anderem - die beiden Implementierungen 
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">)</span> <span class="p">{}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div>
+existieren. Wenn wir <code>System.out.println(v.toString());</code> aufrufen, wird die Implementierung von <code>System.out.println(String s) {}</code> verwendet (der <code>String s</code> wird ausgegeben). Wenn wir <code>System.out.println(v);</code> aufrufen, wird die Implementierung von <code>System.out.println(Object o) {}</code> verwendet und dabei wird nämlich <code>System.out.println(o.toString());</code> aufgerufen. </p>
+<p>Wenn wir nun also die Methode <code>toString()</code> <strong>überschreiben</strong> (ist ja von <code>Object</code> geerbt), dann gewinnen wir zwei Effekte:</p>
+<ol>
+<li>wir erstellen eine textuelle Reprässentation unserer Objekte und</li>
+<li>wir müssen <code>System.out.println()</code> nur noch die Referenzvariable <code>ref</code> auf unser Obejkt übergeben (und nicht <code>ref.toString()</code>)</li>
+</ol>
+<p>Erweitern wir also die Klasse <code>Viereck</code> um eine Implementierung der <code>toString()</code>-Methode:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>          <span class="c1">// Seiten</span>
+
+    <span class="kd">public</span> <span class="nf">Viereck</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">umfang</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>      <span class="c1">// siehe unten</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Umfang des Vierecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+    <span class="p">}</span>
+
+<span class="hll">    <span class="nd">@Override</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Wir verwenden auch hier die <code>@Override</code>-Annotation, um dem Compiler zu sagen, dass wir die <code>toString()</code>-Methode von <code>Object</code> überschreiben wollen (nicht, dass wir z.B. ausversehen <code>tostring()</code> schreiben und somit eine neue Objektmethode erstellen). In der <code>toString()</code>-Methode implementieren wir eine geeignete Repräsentation des Objektes (hier die Seitenlängen des Vierecks). Nun erzeugen die Anweisungen
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>      <span class="c1">// entspricht System.out.println(v.toString());</span>
+</code></pre></div>
+</td></tr></table>
+eine deutlich bessere Ausgabe, nämlich
+<div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">30</span>, <span class="nv">d</span><span class="o">=</span><span class="m">40</span> <span class="o">]</span>
+</code></pre></div></p>
+<blockquote>
+<p>Wir sollten uns angewöhnen, die <code>toString()</code>-Methode <strong>immer</strong>, d.h. in allen Klassen, die wir erstellen, zu überschreiben!</p>
+</blockquote>
+<h3 id="die-objektmethode-equals">Die Objektmethode <code>equals()</code><a class="headerlink" href="#die-objektmethode-equals" title="Permanent link">&para;</a></h3>
+<p>Wir wiederholen zunächst nochmal in Kürze den Abschnitt über <a href="../methodenstack/#referenzvergleiche-mit">Referenzvergleiche von Objekten</a>. Angenommen, wir haben folgende Vierecke:
+<div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">Viereck</span> <span class="n">v4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v3</span><span class="o">==</span><span class="n">v4</span><span class="p">);</span>     <span class="c1">// Referenzvergleich!! false - zwei Objekte</span>
+</code></pre></div>
+Wir könnten auf die Idee kommen, dass <code>v3==v4</code> <code>true</code> ergibt, weil für uns die beiden Objekte von <code>Viereck</code> gleich sind. Aber woher soll der Compiler oder die Laufzeitumgebung <em>wissen</em>, dass diese <code>Viereck</code>-Objekte gleich sind? </p>
+<blockquote>
+<p>Der Operator <code>==</code> vergleicht nur die Referenzen und ist <code>false</code>, wenn die Referenzen auf zwei verschiedene Objekte zeigen. </p>
+</blockquote>
+<p>Mithilfe der <code>equals()</code>-Methode können wir definieren, wann Objekte der Klasse <strong>gleich</strong> sein sollen. Wir können aber nicht den Operator <code>==</code> überschreiben. Dieser bleibt für Referenztypen immer ein Referenzvergleich!</p>
+<p>Wir wollen unsere Klasse <code>Viereck</code> also um eine <code>equals()</code>-Methode erweitern und in dieser <code>equals()</code>-Methode festelegen, wann zwei <code>Viereck</code>-Objekte gleich sein sollen (wenn ihre Seitenlängen gleich sind). Wir versuchen folgendes:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>          <span class="c1">// Seiten</span>
+
+    <span class="kd">public</span> <span class="nf">Viereck</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">umfang</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>      <span class="c1">// siehe unten</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Umfang des Vierecks : &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;[ a=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="s">&quot;, b=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> 
+        <span class="o">+</span> <span class="s">&quot;, c=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;, d=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">+</span> <span class="s">&quot; ] &quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="hll">    <span class="nd">@Override</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Viereck</span> <span class="n">v</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="c1">// Implementierung von equals()</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Das führt leider zu einem Fehler. Der Compiler beschwert sich darüber, dass wir die geerbte <code>equals()</code>-Methode so gar nicht überschreiben. Tatsächlich erben wir nicht <code>equals(Viereck v)</code>, sondern <code>equals(Object o)</code> (woher sollte <code>Object</code> auch <code>Viereck</code> kennen?). Wir müssen also folgende Methode überschreiben:
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implementierung von equals()</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Natürlich erwarten wir, dass sich das aufrufende Viereck mit einem anderen Viereck vergleicht. Die Methode ist aber so implementiert, dass jedes beliebige Objekt als Parameter übergeben werden kann. Theoretisch wäre also z.B. folgender Aufruf möglich:
+<div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">Point</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">Systems</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
+</code></pre></div></p>
+<p>Das soll natürlich <code>false</code> ergeben. Die Implementierung von <code>equals(Object o)</code> muss folgende Bedingungen erfüllen:</p>
+<ol>
+<li><em>Null-Akzeptanz:</em> für jede Referenz <code>x</code> ungleich <code>null</code> liefert <code>x.equals(null)</code> den Wert <code>false</code></li>
+<li><em>Reflexivität:</em> für jede Referenz <code>x</code> ungleich <code>null</code> liefert <code>x.equals(x)</code> den Wert <code>true</code></li>
+<li><em>Symmetrie:</em> wenn <code>x.equals(y)</code> <code>true</code> ergibt, dann muss auch <code>y.equals(x)</code> <code>true</code> ergeben (und umgedreht)</li>
+<li><em>Transitivität:</em> wenn <code>x.equals(y)</code> und <code>y.equals(z)</code> jeweils <code>true</code> ergeben, dann muss auch <code>x.equals(z)</code> <code>true</code> ergeben</li>
+<li><em>Konsistenz:</em> der Aufruf <code>x.equals(y)</code> muss immer den gleichen Wert ergeben</li>
+</ol>
+<p>Das hört sich komplizierter an, als es ist. Wir werden sehen, dass wir bei der Implementierung von <code>equals(Object o)</code> immer gleich vorgehen. Wir führen zunächst ein paar Prüfungen durch:</p>
+<ol>
+<li>prüfen, ob <code>null</code>-Referenzen vorliegen &rarr; (wenn ja, dann <code>false</code>)</li>
+<li>prüfen, ob keine identischen Objekte verglichen werden (dasselbe Objekt vergleicht sich mit sich selbst) &rarr; (wenn ja, dann <code>true</code>)</li>
+<li>prüfen, ob Objekte des gewünschten Typs verglichen werden &rarr; (wenn nein, dann <code>false</code>)</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">other</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">other</span><span class="o">==</span><span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>       <span class="c1">// Null-Akzeptanz</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="o">==</span><span class="n">other</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>        <span class="c1">// Reflexivität</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">()</span> <span class="o">!=</span> <span class="n">other</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>           <span class="c1">// ungleiche Typen</span>
+
+    <span class="c1">// wenn wir hier die Methode noch nicht verlassen haben, dann</span>
+    <span class="c1">// wissen wir, dass other vom Typ Viereck ist und auf ein </span>
+    <span class="c1">// Viereck-Objekt zeigt</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>in Zeile <code>4</code> prüfen wir, ob das als Parameter übergebene Objekt überhaupt existiert. Wenn nicht (Referenz <code>null</code>), geben wir <code>false</code> zurück. </li>
+<li>in Zeile <code>5</code> prüfen wir, ob das aufrufende Objekt dasselbe ist, wie das als Parameter übergebene Objekt (vergleich mit sich selbst). Wenn ja, geben wir <code>true</code> zurück. </li>
+<li>in Zeile <code>6</code> prüfen wir, ob das aufrufende Objekt und das als Parameter übergebene Objekt den gleichen Typ haben (also hier <code>Viereck</code>). Wenn nicht, geben wir <code>false</code> zurück. </li>
+</ul>
+<p>Wenn diese Prüfungen alle <code>false</code> waren, dann wissen wir danach, dass <code>other</code> vom (Laufzeit-)Typ <code>Viereck</code> ist und auf ein <code>Viereck</code>-Objekt zeigt. Nun können wir den <strong>eigentlichen Objektvergleich</strong> durchführen. Dazu müssen wir jedoch <code>other</code> in den Typ <code>Viereck</code> konvertieren:</p>
+<ol>
+<li>da beide Objekte vom gleichen Typ sind (<code>Viereck</code>), kann das Objekt aus dem Parameter in den vergleichenden Typ umgewandelt werden (z.B. <code>Object</code> nach <code>Viereck</code>)</li>
+<li>dann können wir die Eigenschaften vergleichen, die für die „Gleichheit“ relevant sind (z.B. <code>radius</code> bei <code>Circle</code>, <code>kontonummer</code> bei <code>Konto</code>, <code>a</code> und <code>b</code> bei <code>Rectangle</code> usw. - hier: die vier Seiten des Vierecks <code>a</code>, <code>b</code>, <code>c</code> und <code>d</code>)</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">other</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">other</span><span class="o">==</span><span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>       <span class="c1">// Null-Akzeptanz</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="o">==</span><span class="n">other</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>        <span class="c1">// Reflexivität</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">()</span> <span class="o">!=</span> <span class="n">other</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>           <span class="c1">// ungleiche Typen</span>
+
+    <span class="c1">// wenn wir hier die Methode noch nicht verlassen haben, dann</span>
+    <span class="c1">// wissen wir, dass other vom Typ Viereck ist und auf ein </span>
+    <span class="c1">// Viereck-Objekt zeigt</span>
+
+    <span class="c1">// jetzt kommt der eigentliche Objektvergleich auf Gleichheit</span>
+    <span class="c1">// damit wir ueberhaupt auf die Objektvariablen a, b, c, d von other</span>
+    <span class="c1">// zugreifen können, muessen wir es nach Viereck konvertieren</span>
+    <span class="n">Viereck</span> <span class="n">otherV</span> <span class="o">=</span> <span class="p">(</span><span class="n">Viereck</span><span class="p">)</span><span class="n">other</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="o">==</span><span class="n">otherV</span><span class="p">.</span><span class="na">a</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="o">==</span><span class="n">otherV</span><span class="p">.</span><span class="na">b</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span><span class="o">==</span><span class="n">otherV</span><span class="p">.</span><span class="na">c</span>  <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="o">==</span><span class="n">otherV</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>in Zeile <code>15</code> führen wir eine explizite Typkonvertierung durch. Wir wissen an dieser Stelle ja bereits (aus Zeile <code>6</code>), dass es sich bei <code>other</code> um den Laufzeittyp <code>Viereck</code> handelt. Die Konvertierung klappt also. Weil <code>other</code> den Compilertyp <code>Object</code> hat, können wir für <code>other</code> nicht auf die Objektvariablen <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code> zugreifen. Wir müssen also konvertieren. </li>
+<li>in Zeile <code>16</code> führen wir dann den eigentlichen Vergleich durch. Hier vergleichen wir die Seiten miteinander. Wir berücksichtigen nicht, dass Vierecke auch gedreht gleich sein können. Das ist Auslegungssache und Ihre Entscheidung, wann Objekte tatsächlich gleich sein sollen. </li>
+</ul>
+<p>Jetzt können wir die Gleichheit von zwei <code>Viereck</code>-Objekten mithilfe von <code>equals()</code> ermitteln:
+<div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">Viereck</span> <span class="n">v4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">Viereck</span> <span class="n">v5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">44</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v3</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">v4</span><span class="p">));</span>  <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v3</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">v3</span><span class="p">));</span>  <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v4</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">v3</span><span class="p">));</span>  <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v3</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">v5</span><span class="p">));</span>      <span class="c1">// false</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v3</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="kc">null</span><span class="p">));</span>    <span class="c1">// false</span>
+</code></pre></div></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Mithilfe der <code>equals()</code>-Methode haben wir eine einheitliche Möglichkeit, die Gleichheit von Objekten zu definieren. Die Implementierung der <code>equals()</code>-Methode folgt immer dem gleichen Schema. Wir führen zunächst die drei Prüfungen auf Null-Akzeptanz, Reflexivität und ungleiche Typen aus, konvertieren <code>other</code> dann in unseren Klassentyp und führen den eigentlichen Vergleich auf Gleichheit der Objekte durch. Wir sollten <code>equals()</code>, wie auch <code>toString()</code>, von nun an für alle unsere Klassen implmentieren. </p>
+</div>
+<h3 id="die-objektmethode-hashcode">Die Objektmethode <code>hashCode()</code><a class="headerlink" href="#die-objektmethode-hashcode" title="Permanent link">&para;</a></h3>
+<p>Die Idee der <code>hashCode()</code>-Methode besteht darin, ein Objekt durch eine ganze Zahl zu repäsentieren. Diese Zahl wird verwendet, um Objekte in sogenannte <em>hashbasierte Container</em> einzusortieren. Das sind Datenstrukturen, in denen viele Objekte gespeichert werden und die Speicherung über einen <em>Hashwert</em> verteilt wird. Wir werden solche <em>hashbasierten Container</em> im 2. Semester kennenlernen, wenn wir uns mit <em>Collections</em> beschäftigen. Zum jetzigen Stand kümmern wir uns um diese Methode nicht weiter, wollen sie aber doch immer genau dann überschreiben, wenn wir die <code>equals()</code>-Methode implementieren. Es soll folgendes gelten:</p>
+<blockquote>
+<p>Wenn zwei Objekte laut <code>equals()</code>-Methode gleich sind, dann erzeugen sie auch den gleichen Hashcode mit der <code>hashCode()</code>-Methode. </p>
+</blockquote>
+<p>Es soll also gelten: wenn <code>x.equals(y)==true</code>, dann <code>x.hashCode()==y.hashCode()</code>. Wenn wir also die <code>equals()</code>-Methode überschreiben, dann überschreiben wir auch die <code>hashCode()</code>-Methode, um die genannte Bedingung zu erfüllen. Da wir für das <code>Viereck</code> die Seitenlängen verwendet haben, um die Gleichheit von zwei Vierecken zu definieren, können wir diese Seitenlängen auch verwenden, um einen HashCode zu erzeugen:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Mit dieser Implementierung ist gegeben, dass zwei Vierecke, die laut <code>equals()</code>-Methode gleich sind (haben die gleichen Seitenlängen), auch den gleichen HashCode haben. Es muss (zum Glück) nicht gelten, dass zwei Vierecke, die laut <code>equals()</code>-Methode ungleich sind, einen unterschiedlichen HashCode haben müssen. </p>
+<h3 id="die-objektmethode-clone">Die Objektmethode <code>clone()</code><a class="headerlink" href="#die-objektmethode-clone" title="Permanent link">&para;</a></h3>
+<p>Die Objektmethode <code>clone()</code> liefert einen identischen Clone (eine identische Kopie) des aufrufenden Objektes zurück. Wir wollen uns an dieser Stelle gar nicht weiter detailliert um <code>clone()</code> kümmern. Wir kommen darauf zurück, wenn wir im 2. Semester <em>Interfaces</em> kennenlernen. Die Methode <code>clone()</code> ist auch <a href="https://dzone.com/articles/java-cloning-copy-constructor-vs-cloning">nicht unumstritten</a> - das aber nur zur Information, wie auch ein Beispiel für die folgende mögliche Implementierung der Methode in der Klasse <code>Viereck</code>. </p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="n">Object</span> <span class="nf">clone</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Das dient nur zum Verständinis der Idee von <code>clone()</code>. Im Gegensatz zu <code>toString()</code> und <code>equals()</code> (und also auch <code>hashCode()</code>) werden wir <code>clone()</code> nicht so oft überschreiben. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben mit <code>Object</code> die <em>Mutter aller Klassen</em> in Java kennengelernt. Jede Klasse in Java erbt (implizit) von <code>Object</code>. Jede Referenzvariable ist somit (auch) vom Laufzeittyp <code>Object</code>. Für alle Klassen, die wir in Zukunft schreiben, werden wir die Objektmethoden <code>toString()</code> und <code>equals()</code> (und also auch <code>hashCode()</code>) überschreiben. </p>
+</div>
+<h2 id="polymorphie">Polymorphie<a class="headerlink" href="#polymorphie" title="Permanent link">&para;</a></h2>
+<p><em>Polymorphie</em> gehört neben der Datenkapselung und der Vererbung zu den wesentlichen Konzepten der objektorientierten Programmierung. Die Grundidee der Polymorphie ist, dass es verschiedene Methoden gibt, die gleich heißen und dass entweder der Compiler (statisch) oder die Laufzeitumgebung (dynamisch) auswählt, welche dieser Methoden ausgeführt wird. Man unterscheidet zwischen <em>statischer</em> und <em>dynamischer Polymorphie</em>. </p>
+<h3 id="statische-polymorphie">Statische Polymorphie<a class="headerlink" href="#statische-polymorphie" title="Permanent link">&para;</a></h3>
+<p><em>Statische Polymorphie</em> haben wir in Verbindung mit dem <strong>Überladen von Methoden</strong>. Der Compiler kann (an der Methodensignatur) erkennen, welche Methode aufgerufen wird. Angenommen, wir haben folgende Methoden:
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Ausgabe eines int[]-Arrays</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Ausgabe eines char[]-Arrays</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Ausgabe eines double[]-Arrays</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Ausgabe eines String[]-Arrays</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="n">Object</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Ausgabe eines Object[]-Arrays</span>
+<span class="p">}</span>
+</code></pre></div>
+, dann wird durch den Typs des als Parameter übergebenen Arrays klar, welche dieser Methoden aufgerufen wird. Es wird also unter vielen Implementierungen durch den Compiler die "richtige" ausgewählt. </p>
+<h3 id="dynamische-polymorphie">Dynamische Polymorphie<a class="headerlink" href="#dynamische-polymorphie" title="Permanent link">&para;</a></h3>
+<p><em>Dynamische Polymorphie</em> wird durch Vererbung und insbesondere durch das <strong>Überschreiben von Methoden</strong> ermöglicht. Wir betrachten folgendes Beispiel - gegeben sind drei Klassen <code>Base</code>, <code>Sub</code> und <code>SubSub</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Base</span> 
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodBase</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Base&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sub</span> <span class="kd">extends</span> <span class="n">Base</span> 
+<span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodBase</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sub&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SubSub</span> <span class="kd">extends</span> <span class="n">Sub</span> 
+<span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodBase</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;SubSub&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Die Klasse <code>Sub</code> erbt von <code>Base</code> und die Klasse <code>SubSub</code> erbt von <code>Sub</code>. In beiden Kindklassen wird die Methode <code>methodBase()</code> überschrieben, die in <code>Base</code> erstmalig definiert wird. Angenommen, wir haben nun folgende <code>main()</code>-Methode:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="p">{</span>
+    <span class="n">Base</span><span class="o">[]</span> <span class="n">base</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Base</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">base</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Base</span><span class="p">();</span>       <span class="c1">// Compilertyp Base, Laufzeittyp Base</span>
+    <span class="n">base</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sub</span><span class="p">();</span>        <span class="c1">// Compilertyp Base, Laufzeittyp Sub</span>
+    <span class="n">base</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubSub</span><span class="p">();</span>     <span class="c1">// Compilertyp Base, Laufzeittyp SubSub</span>
+
+    <span class="n">base</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">methodBase</span><span class="p">();</span>       <span class="c1">// Base</span>
+    <span class="n">base</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">methodBase</span><span class="p">();</span>       <span class="c1">// Sub</span>
+    <span class="n">base</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">.</span><span class="na">methodBase</span><span class="p">();</span>       <span class="c1">// SubSub</span>
+<span class="p">}</span>   
+</code></pre></div>
+</td></tr></table>
+<p>Wir erstellen uns also ein Array, deren Elemente vom Compilertyp <code>Base</code> sind. Das erste Element ist eine Referenz auf ein <code>Base</code>-Objekt, das zweite Element ist eine Referenz auf ein <code>Sub</code>-Objekt und das dritte zeigt auf ein <code>SubSub</code>-Objekt. Für alle drei Referenzvariablen wird nun die <code>methodBase()</code>-Methode aufgerufen. Es werden folgende Ausgaben erzeugt:</p>
+<div class="highlight"><pre><span></span><code>Base
+Sub
+SubSub
+</code></pre></div>
+<p>Das bedeutet, dass die Laufzeitumgebung von Java die <em>speziellstmögliche</em> Implementierung der Methode auswählt. Mit <em>speziellstmöglich</em> ist gemeint, dass die Implementierung des speziellsten Laufzeittypen ausgewählt wird. In der Vererbungshierarchie <code>SubSub</code>&rarr; <code>Sub</code> &rarr; <code>Base</code> ist <code>SubSub</code> der speziellste Typ, <code>Sub</code> ist spezieller als <code>Base</code>, aber allgemeiner als <code>Sub</code> und <code>Base</code> ist allgemeiner als <code>Sub</code> und erst recht als <code>SubSub</code>. </p>
+<ul>
+<li>Der speziellste Laufzeittyp von <code>base[0]</code> ist <code>Base</code> und somit wird die <code>methodBase()</code>-Implementierung der Klasse <code>Base</code> verwendet. </li>
+<li>Der speziellste Laufzeittyp von <code>base[1]</code> ist <code>Sub</code> und somit wird die <code>methodBase()</code>-Implementierung der Klasse <code>Sub</code> verwendet. </li>
+<li>Der speziellste Laufzeittyp von <code>base[2]</code> ist <code>SubSub</code> und somit wird die <code>methodBase()</code>-Implementierung der Klasse <code>SubSub</code> verwendet. </li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p><em>Polymorphie</em> ist ein tolles Konzept der objektorientierten Programmierung. Der Nutzen von Polymorphie wird uns jetzt noch nicht vollständig deutlich. Wir werden aber immer wieder darauf hinweisen, wenn wir Polymorphie im Einsatz sehen. Vielleicht erkennen Sie ja jetzt besser, warum z.B. die Methode <code>System.out.println(Object o)</code> so funktioniert. Spätestens, wenn wir <em>Interfaces</em> behandeln, kommen wir auf dieses Konzept zurück. </p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../vererbung/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Vererbung" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Vererbung
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../uebungen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Übungen" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Übungen
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

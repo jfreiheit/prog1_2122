@@ -73,6 +73,8 @@ nav:
     - Iteration: iteration.md 
     - Klassen und Objekte: objekte.md 
     - Methodenstack: methodenstack.md 
+    - Vererbung: vererbung.md
+    - Object: object.md
     - Übungen: uebungen.md
     - Aufgaben: aufgaben.md
     - Werkzeuge: tools.md
