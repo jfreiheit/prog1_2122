@@ -1002,6 +1002,138 @@
 		perimeters are not equal 
 		```
 
+
+??? question "Eine mögliche Lösung für Übung 7"
+	=== "Rectangle.java"
+		```java
+		public class Rectangle
+		{
+		    private int a;
+		    private int b;
+		    // a,b repräsentieren Seiten des Rechtecks
+		    public Rectangle()
+		    {
+		        this.a = 10;
+		        this.b = 20;
+		    }
+
+		    public Rectangle(int a, int b)
+		    {
+		        this.a = a;
+		        this.b = b;
+		    }
+
+		    public int area()
+		    {
+		        return this.a * this.b;
+		    }
+
+		    public int perimeter()
+		    {
+		        return 2 * this.a + 2 * this.b;
+		    }
+
+		    public String toString()
+		    {
+		        
+		        /*String output = "Rectangle : ( a=" + this.a + ",  b=" + this.b + ", area="; 
+		        output = output + " this.area() + ", perimeter=" + this.perimeter() + " )"
+		        */
+		        String output = String.format("Rectangle : ( a=%2d, b=%2d, area=%3d, perimeter=%2d )", this.a, this.b, this.area(), this.perimeter() );
+		        return output;
+		    }
+
+		    public void print()
+		    {
+		        System.out.println(this.toString());
+		    }
+
+		    public boolean sidesAreEqual(Rectangle r)
+		    {
+		        boolean equals = false;
+		        if((this.a == r.a && this.b == r.b) || (this.a == r.b && this.b == r.a))
+		        {
+		            equals = true;
+		        }
+		        return equals;
+		    }
+
+		    public boolean areasAreEqual(Rectangle r)
+		    {
+		        return (this.area() == r.area());
+		    }
+		    
+		    public boolean perimetersAreEqual(Rectangle r)
+		    {
+		        return (this.perimeter() == r.perimeter());
+		    }
+		    
+		    public void printComparison(Rectangle r)
+		    {
+		        System.out.printf("%-9s %s %n", "this", this.toString());
+		        System.out.printf("%-9s %s %n", "the other", r.toString());
+		        if(this.sidesAreEqual(r))
+		        {
+		            System.out.println("sides are equal");
+		        }
+		        else
+		        {
+		            System.out.println("sides are not equal");
+		        }
+		        if(this.areasAreEqual(r))
+		        {
+		            System.out.println("areas are equal");
+		        }
+		        else
+		        {
+		            System.out.println("areas are not equal");
+		        }
+		        if(this.perimetersAreEqual(r))
+		        {
+		            System.out.println("perimeters are equal");
+		        }
+		        else
+		        {
+		            System.out.println("perimeters are not equal");
+		        }
+		        System.out.println();
+		    }
+		}
+		```		
+	=== "RectangleTest.java"
+		```java
+		import static org.junit.jupiter.api.Assertions.*;
+		import org.junit.jupiter.api.AfterEach;
+		import org.junit.jupiter.api.BeforeEach;
+		import org.junit.jupiter.api.Test;
+
+		public class RectangleTest
+		{
+		    @Test
+		    public void testRectangle()
+		    {
+		        // Objekte erzeugen
+		        Rectangle r1 = new Rectangle();
+		        Rectangle r2 = new Rectangle(12, 18);
+		        Rectangle r3 = new Rectangle(40, 5);
+		        Rectangle r4 = new Rectangle(20, 10);
+		        Rectangle r5 = new Rectangle(11, 21);
+
+		        System.out.printf("%n%n--------------- print()-Methode -----------------%n%n");
+		        r1.print();
+		        r2.print();
+		        r3.print();
+		        r4.print();
+		        r5.print();
+
+		        System.out.printf("%n%n---------- printComparison()-Methode ------------%n%n");
+		        r1.printComparison(r2);
+		        r1.printComparison(r3);
+		        r1.printComparison(r4);
+		        r1.printComparison(r5);
+		    }
+		}
+		```		
 	
 ??? note "Übung 8 (8.12.2021)"
 	

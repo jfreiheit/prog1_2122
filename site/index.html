@@ -659,8 +659,8 @@
 <tr>
 <td>9.</td>
 <td>06.-10.12.2021</td>
-<td>Vererbung, Object und Polymorphie</td>
-<td>Aufgabe 8</td>
+<td><a href="./vererbung/#vererbung">Vererbung</a>, <a href="./object/#die-klasse-object">Object und Polymorphie</a></td>
+<td><a href="./aufgaben/#aufgabe-8-abgabe-bis-13122021-2400-uhr">Aufgabe 8</a></td>
 <td>13.12.2021</td>
 </tr>
 <tr>
@@ -2026,6 +2026,234 @@
 </div>
 </details>
 <details class="info"><summary>Video zur Vorlesung Person, Address, Circle -- 30.11.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=40f30ef3aabee358897562f7ac9b47c5&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
+<details class="note"><summary>Vorlesung Methodenstack -- 1.12.2021</summary><div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Methodenstack.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Methodenstack</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="p">(</span><span class="kt">int</span> <span class="n">vaa</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">vab</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;+--a()   --&gt; vaa = &quot;</span> <span class="o">+</span> <span class="n">vaa</span> <span class="o">+</span> <span class="s">&quot; vab = &quot;</span> <span class="o">+</span> <span class="n">vab</span><span class="p">);</span>
+        <span class="n">b</span><span class="p">(</span><span class="n">vaa</span><span class="p">,</span> <span class="n">vab</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">b</span><span class="p">(</span><span class="kt">int</span> <span class="n">vba</span><span class="p">,</span> <span class="kt">int</span> <span class="n">vbb</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;+----b() --&gt; vba = &quot;</span> <span class="o">+</span> <span class="n">vba</span> <span class="o">+</span> <span class="s">&quot; vbb = &quot;</span> <span class="o">+</span> <span class="n">vbb</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">va</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">va</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">va</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;start()  --&gt; va  = &quot;</span> <span class="o">+</span> <span class="n">va</span><span class="p">);</span>
+            <span class="n">a</span><span class="p">(</span><span class="n">va</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Programclass.java</label><div class="tabbed-content"></div>
+</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programclass</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Methodenstack</span> <span class="n">ms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Methodenstack</span><span class="p">();</span>
+        <span class="n">ms</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>       
+</code></pre></div>
+</td></tr></table>
+<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Point.java</label><div class="tabbed-content"></div>
+</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span>
+<span class="p">{</span>
+    <span class="c1">// Objektvariablen</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="c1">// Konstruktor</span>
+    <span class="kd">public</span> <span class="nf">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[ x=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">x</span> <span class="o">+</span> <span class="s">&quot;, y=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">y</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getX</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getY</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">translate</span><span class="p">(</span><span class="kt">int</span> <span class="n">deltaX</span><span class="p">,</span> <span class="kt">int</span> <span class="n">deltaY</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">x</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">x</span> <span class="o">+</span> <span class="n">deltaX</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">y</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">y</span> <span class="o">+</span> <span class="n">deltaY</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isLeft</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">x</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAbove</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">y</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">.</span><span class="na">y</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">UsePoint.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsePoint</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">UsePoint</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Point</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+        <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">doSomething</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+        <span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a = &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
+        <span class="n">doSomething</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a = &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</details>
+<details class="info"><summary>Video zur Vorlesung Methodenstack -- 1.12.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=59840a2894bd8a77392219ce9dc37776&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
 </details>
                 
               

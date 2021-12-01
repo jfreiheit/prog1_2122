@@ -50,7 +50,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 6. | 15.-19.11.2021 | [Klassen und Objekte](./objekte/#klassen-und-objekte) | [Aufgabe 5](./aufgaben/#aufgabe-5-abgabe-bis-22112021-2400-uhr)  | 22.11.2021 | 
 | 7. | 22.-26.11.2021 | [Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten](./objekte/#eine-weiterer-datentyp-point) | [Aufgabe 6](./aufgaben/#aufgabe-6-abgabe-bis-29112021-2400-uhr)  | 29.11.2021 | 
 | 8. | 29.-03.12.2021 | [Eigene Datentypen in Datentypen verwenden](./objekte/#eigene-datentypen-in-eigenen-datentypen-verwenden)  | [Aufgabe 7](./aufgaben/#aufgabe-7-abgabe-bis-6122021-2400-uhr)  | 06.12.2021 |
-| 9. | 06.-10.12.2021 | Vererbung, Object und Polymorphie | Aufgabe 8  | 13.12.2021 |
+| 9. | 06.-10.12.2021 | [Vererbung](./vererbung/#vererbung), [Object und Polymorphie](./object/#die-klasse-object) | [Aufgabe 8](./aufgaben/#aufgabe-8-abgabe-bis-13122021-2400-uhr)  | 13.12.2021 |
 | 10. | 13.-17.12.2021 | Arrays I | Aufgabe 9 | 20.12.2021 |
 | 11. | 20.-24.12.2021 | Arrays II  | Aufgabe 10  | 03.01.2022 |
 | | | | | | | |
@@ -934,5 +934,131 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? info "Video zur Vorlesung Person, Address, Circle -- 30.11.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=40f30ef3aabee358897562f7ac9b47c5&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
+
+??? note "Vorlesung Methodenstack -- 1.12.2021"
+	=== "Methodenstack.java"
+		```java	linenums="1" 
+		public class Methodenstack
+		{
+		    public void a(int vaa)
+		    {
+		        int vab = 1;
+		        System.out.println("+--a()   --> vaa = " + vaa + " vab = " + vab);
+		        b(vaa, vab);
+		    }
+
+		    public void b(int vba, int vbb)
+		    {
+		        System.out.println("+----b() --> vba = " + vba + " vbb = " + vbb);
+		        System.out.println();
+		    }
+
+		    public void start()
+		    {
+		        for(int va=0; va<3; va++)
+		        {
+		            System.out.println("start()  --> va  = " + va);
+		            a(va);
+		        }
+		    }
+		}
+		```
+
+		=== "Programclass.java"
+		```java	linenums="1" 
+		public class Programclass
+		{
+		    public void main()
+		    {
+		        Methodenstack ms = new Methodenstack();
+		        ms.start();
+		    }
+		}		
+		```
+
+		=== "Point.java"
+		```java	linenums="1" 
+		public class Point
+		{
+		    // Objektvariablen
+		    private int x;
+		    private int y;
+		    
+		    // Konstruktor
+		    public Point(int x, int y)
+		    {
+		        this.x = x;
+		        this.y = y;
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println("[ x=" + this.x + ", y=" + this.y + "]");
+		    }
+		    
+		    public int getX()
+		    {
+		        return this.x;
+		    }
+		    
+		    public int getY()
+		    {
+		        return this.y;
+		    }
+		    
+		    public void translate(int deltaX, int deltaY)
+		    {
+		        this.x = this.x + deltaX;
+		        this.y = this.y + deltaY;
+		    }
+		    
+		    public boolean isLeft(Point p)
+		    {
+		        return (this.x < p.x);
+		    }
+		    
+		    public boolean isAbove(Point p)
+		    {
+		        return (this.y > p.y);
+		    }
+		}
+		```
+
+	=== "UsePoint.java"
+		```java	linenums="1" 
+		public class UsePoint
+		{
+		    public UsePoint()
+		    {
+
+		    }
+
+		    public void doSomething(Point p)
+		    {
+		        p.translate(2,2);
+		    }
+		    
+		    public void doSomething(int a)
+		    {
+		        a = 6;
+		    }
+		    
+		    public void main()
+		    {
+		        Point p1 = new Point(3,4);
+		        p1.print();
+		        doSomething(p1);
+		        p1.print();
+		        
+		        int a = 5;
+		        System.out.println("a = " + a);
+		        doSomething(a);
+		        System.out.println("a = " + a);
+		    }
+		}
+		```
+
+??? info "Video zur Vorlesung Methodenstack -- 1.12.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=59840a2894bd8a77392219ce9dc37776&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
 

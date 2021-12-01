@@ -1581,6 +1581,138 @@ perimeters are not equal
 </code></pre></div></li>
 </ol>
 </details>
+<details class="question"><summary>Eine mögliche Lösung für Übung 7</summary><div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Rectangle.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+    <span class="c1">// a,b repräsentieren Seiten des Rechtecks</span>
+    <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">area</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">perimeter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+
+        <span class="cm">/*String output = &quot;Rectangle : ( a=&quot; + this.a + &quot;,  b=&quot; + this.b + &quot;, area=&quot;; </span>
+<span class="cm">        output = output + &quot; this.area() + &quot;, perimeter=&quot; + this.perimeter() + &quot; )&quot;</span>
+<span class="cm">        */</span>
+        <span class="n">String</span> <span class="n">output</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Rectangle : ( a=%2d, b=%2d, area=%3d, perimeter=%2d )&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">area</span><span class="p">(),</span> <span class="k">this</span><span class="p">.</span><span class="na">perimeter</span><span class="p">()</span> <span class="p">);</span>
+        <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">sidesAreEqual</span><span class="p">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">boolean</span> <span class="n">equals</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">((</span><span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="na">a</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="na">b</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="na">b</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="na">a</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">equals</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">equals</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">areasAreEqual</span><span class="p">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">area</span><span class="p">()</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="na">area</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">perimetersAreEqual</span><span class="p">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">perimeter</span><span class="p">()</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="na">perimeter</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printComparison</span><span class="p">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%-9s %s %n&quot;</span><span class="p">,</span> <span class="s">&quot;this&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%-9s %s %n&quot;</span><span class="p">,</span> <span class="s">&quot;the other&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">sidesAreEqual</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;sides are equal&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;sides are not equal&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">areasAreEqual</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;areas are equal&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;areas are not equal&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">perimetersAreEqual</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;perimeters are equal&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;perimeters are not equal&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">RectangleTest.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import static</span> <span class="nn">org.junit.jupiter.api.Assertions.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.BeforeEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RectangleTest</span>
+<span class="p">{</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testRectangle</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Objekte erzeugen</span>
+        <span class="n">Rectangle</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span>
+        <span class="n">Rectangle</span> <span class="n">r2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+        <span class="n">Rectangle</span> <span class="n">r3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="n">Rectangle</span> <span class="n">r4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="n">Rectangle</span> <span class="n">r5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n--------------- print()-Methode -----------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">r1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">r2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">r3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">r4</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">r5</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n---------- printComparison()-Methode ------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">r1</span><span class="p">.</span><span class="na">printComparison</span><span class="p">(</span><span class="n">r2</span><span class="p">);</span>
+        <span class="n">r1</span><span class="p">.</span><span class="na">printComparison</span><span class="p">(</span><span class="n">r3</span><span class="p">);</span>
+        <span class="n">r1</span><span class="p">.</span><span class="na">printComparison</span><span class="p">(</span><span class="n">r4</span><span class="p">);</span>
+        <span class="n">r1</span><span class="p">.</span><span class="na">printComparison</span><span class="p">(</span><span class="n">r5</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
 <details class="note"><summary>Übung 8 (8.12.2021)</summary><ol>
 <li>Öffnen Sie <code>BlueJ</code> und erstellen Sie ein neues Projekt <code>uebung8</code>. </li>
 <li>Erstellen Sie darin eine Klasse <code>Date</code>. </li>
