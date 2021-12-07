@@ -2255,6 +2255,242 @@
 </details>
 <details class="info"><summary>Video zur Vorlesung Methodenstack -- 1.12.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=59840a2894bd8a77392219ce9dc37776&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
 </details>
+<details class="note"><summary>Vorlesung Vererbung -- 7.12.2021</summary><div class="tabbed-set" data-tabs="15:5"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">Viereck.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Viereck</span>
+<span class="p">{</span>
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>    <span class="c1">// Seiten des Vierecks</span>
+
+    <span class="kd">public</span> <span class="nf">Viereck</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+        <span class="c1">// System.out.println(&quot;Objekt von Viereck erzeugt&quot;);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">umfang</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;[ a=%d, b=%d, c=%d, d=%d ], Umfang des Vierecks : %d %n&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">c</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">d</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">Rechteck.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rechteck</span> <span class="kd">extends</span> <span class="n">Viereck</span>   <span class="c1">// Rechteck erbt von Viereck</span>
+<span class="p">{</span>
+    <span class="c1">// es werden alle Objekteigenschaften der Klasse Viereck geerbt</span>
+    <span class="c1">// a, b, c, d, umfang(), toString(), print()</span>
+
+    <span class="kd">public</span> <span class="nf">Rechteck</span><span class="p">(</span><span class="kt">int</span> <span class="n">laenge</span><span class="p">,</span> <span class="kt">int</span> <span class="n">breite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">,</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">breite</span><span class="p">);</span>      <span class="c1">// Aufruf des Konstruktors von Viereck</span>
+        <span class="c1">// System.out.println(&quot;Objekt von Rechteck erzeugt&quot;);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">flaecheninhalt</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;[ laenge=%d, breite=%d ], Umfang des Rechtecks : %d  und Flaecheninhalt : %d %n&quot;</span><span class="p">,</span> 
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">(),</span> <span class="k">this</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>  
+    <span class="p">}</span>
+<span class="p">}</span>   
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><label for="__tabbed_15_3">Quadrat.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="kd">extends</span> <span class="n">Rechteck</span>       <span class="c1">// Quadrat erbt von Rechteck</span>
+<span class="p">{</span>
+    <span class="c1">// es werden alle Objekteigenschaften der Klasse Rechteck geerbt</span>
+    <span class="c1">// a, b, c, d, umfang(), toString() (neu), print(), flaecheninhalt()</span>
+
+    <span class="kd">public</span> <span class="nf">Quadrat</span><span class="p">(</span><span class="kt">int</span> <span class="n">seite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">seite</span><span class="p">,</span> <span class="n">seite</span><span class="p">);</span>    <span class="c1">// Aufruf des Konstruktors von Rechteck</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;[ seitenlaenge=%d ], Umfang des Quadrats : %d  und Flaecheninhalt : %d %n&quot;</span><span class="p">,</span> 
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">umfang</span><span class="p">(),</span> <span class="k">this</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_15_4" name="__tabbed_15" type="radio" /><label for="__tabbed_15_4">Programclass.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programclass</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Viereck</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span> 
+        <span class="n">v1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">Viereck</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">);</span>
+        <span class="n">v2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="c1">// System.out.println(&quot;Flaecheninhalt des Vierecks : &quot; + v2.flaecheninhalt());  // Error!</span>
+
+        <span class="n">Rechteck</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+        <span class="n">r1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Flaecheninhalt des Rechtecks : &quot;</span> <span class="o">+</span> <span class="n">r1</span><span class="p">.</span><span class="na">flaecheninhalt</span><span class="p">());</span>
+
+        <span class="n">Quadrat</span> <span class="n">q1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+        <span class="n">q1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_15_5" name="__tabbed_15" type="radio" /><label for="__tabbed_15_5">ProgramclassTest.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import static</span> <span class="nn">org.junit.jupiter.api.Assertions.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.BeforeEach</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProgramclassTest</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">ProgramclassTest</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testMain</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Programclass</span> <span class="n">pc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Programclass</span><span class="p">();</span>
+        <span class="n">pc</span><span class="p">.</span><span class="na">main</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p><img alt="vererbung" src="files/203_vererbung.png" /></p>
+</details>
+<details class="info"><summary>Video zur Vorlesung Vererbung -- 7.12.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=bc4a067615f619fd6d7725bd90ad4c30&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
                 
               
               

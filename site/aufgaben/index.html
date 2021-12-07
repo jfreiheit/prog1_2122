@@ -542,6 +542,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aufgabe-9-abgabe-bis-20122021-2400-uhr" class="md-nav__link">
+    Aufgabe 9 (Abgabe bis 20.12.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -710,6 +717,13 @@
           <li class="md-nav__item">
   <a href="#aufgabe-8-abgabe-bis-13122021-2400-uhr" class="md-nav__link">
     Aufgabe 8 (Abgabe bis 13.12.2021 24:00 Uhr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-9-abgabe-bis-20122021-2400-uhr" class="md-nav__link">
+    Aufgabe 9 (Abgabe bis 20.12.2021 24:00 Uhr)
   </a>
   
 </li>
@@ -1549,6 +1563,110 @@ Das Dreieck ist rechtwinklig.
 <li>
 <p>Viel Spaß und viel Erfolg!</p>
 </li>
+</ul>
+</details>
+<h4 id="aufgabe-9-abgabe-bis-20122021-2400-uhr">Aufgabe 9 (Abgabe bis 20.12.2021 24:00 Uhr)<a class="headerlink" href="#aufgabe-9-abgabe-bis-20122021-2400-uhr" title="Permanent link">&para;</a></h4>
+<details><summary>Aufgabe9 - Bruch</summary><ul>
+<li>
+<p>Wir erstellen uns einen Datentyp <code>Bruch</code> (extra mal etwas Mathematisches ;-))</p>
+</li>
+<li>
+<p>Erstellen Sie sich ein neues Projekt <code>aufgabe9</code> und darin eine neue Klasse <code>Bruch</code> sowie eine Programm-/Testklasse <code>Programclass</code> mit einer <code>main()</code>-Methode. </p>
+</li>
+<li>
+<p>In der Klasse <code>Bruch</code> erstellen Sie zwei Objektvariablen <code>zaehler</code> und <code>nenner</code> jeweils vom Typ <code>int</code> und <code>private</code>. </p>
+</li>
+<li>
+<p>Implementieren Sie für die Klasse <code>Bruch</code> zwei verschiedene Konstruktoren</p>
+<ul>
+<li>parameterlos &rarr; <code>zaehler</code> und <code>nenner</code> erhalten jeweils den Wert <code>1</code></li>
+<li>mit zwei Parametern (<code>int zaehler, int nenner</code>) &rarr; entspr. Werte der Objektvariablen </li>
+</ul>
+</li>
+<li>
+<p>Implementieren Sie folgende Objektmethoden</p>
+<ul>
+<li><code>public Bruch plus(Bruch b)</code> &rarr; gibt den gekürzten Bruch aus der Addition eines Bruchs mit <code>b</code> zurück</li>
+<li><code>public Bruch minus(Bruch b)</code> &rarr; gibt den gekürzten Bruch aus der Subtraktion eines Bruchs mit <code>b</code> zurück</li>
+<li><code>public Bruch mal(Bruch b)</code> &rarr; gibt den gekürzten Bruch aus der Multiplikation eines Bruchs mit <code>b</code> zurück</li>
+<li><code>public Bruch geteilt(Bruch b)</code> &rarr; gibt den gekürzten Bruch aus der Division eines Bruchs mit <code>b</code> zurück</li>
+<li><code>public Bruch kuerzen()</code> &rarr; gibt den gekürzten Bruch zurück (Sie brauchen dazu den <code>ggT</code>)
+_ <code>public String toString()</code> &rarr; gibt einen Bruch als <code>String</code> in der Form <code>zaehler / nenner</code> zurück (annotieren Sie diese Methode als <strong>überschrieben</strong>!)</li>
+<li><code>public int ggT(int zahl1, int zahl2)</code> &rarr; gibt den größten gemeinsamen Teiler (ggT) der beiden Zahlen <code>zahl1</code> und <code>zahl2</code> als <code>int</code> zurück - siehe <a href="../start/#beispiel-euklidischer-algorithmus">Euklidischer Algorithmus</a></li>
+</ul>
+</li>
+<li>
+<p>Geben Sie in die <code>main()</code>-Methode der <code>Programclass</code>-Klasse mindestens folgende Anweisungen ein:
+    <div class="highlight"><pre><span></span><code><span class="n">Bruch</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
+<span class="n">Bruch</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">);</span>
+<span class="n">Bruch</span> <span class="n">b3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">Bruch</span> <span class="n">b4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">);</span>
+<span class="n">Bruch</span> <span class="n">b5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">();</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------------------------- Rechnen -----------------------------------%n%n&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s + %5s = %5s %n&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b2</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">plus</span><span class="p">(</span><span class="n">b2</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s - %5s = %5s %n&quot;</span><span class="p">,</span> <span class="n">b3</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b4</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b3</span><span class="p">.</span><span class="na">minus</span><span class="p">(</span><span class="n">b4</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s * %5s = %5s %n&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b3</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">mal</span><span class="p">(</span><span class="n">b3</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s / %5s = %5s %n&quot;</span><span class="p">,</span> <span class="n">b2</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b2</span><span class="p">.</span><span class="na">geteilt</span><span class="p">(</span><span class="n">b1</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s + %5s = %5s %n&quot;</span><span class="p">,</span> <span class="n">b5</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b4</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b5</span><span class="p">.</span><span class="na">plus</span><span class="p">(</span><span class="n">b4</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>  
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s - %5s = %5s %n&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">minus</span><span class="p">(</span><span class="n">b1</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>     <span class="c1">// nenner sollte ungleich 0 bleiben!    </span>
+</code></pre></div>
+    und führen Sie die <code>main()</code>-Methode aus. Es sollten folgende Augaben entstehen:
+    <div class="highlight"><pre><span></span><code>------------------------- Rechnen -----------------------------------
+
+  <span class="m">3</span>/7 +   <span class="m">4</span>/8 <span class="o">=</span> <span class="m">13</span>/14 
+  <span class="m">2</span>/5 -  <span class="m">5</span>/11 <span class="o">=</span> -3/55 
+  <span class="m">3</span>/7 *   <span class="m">2</span>/5 <span class="o">=</span>  <span class="m">6</span>/35 
+  <span class="m">4</span>/8 /   <span class="m">3</span>/7 <span class="o">=</span>   <span class="m">7</span>/6 
+  <span class="m">1</span>/1 +  <span class="m">5</span>/11 <span class="o">=</span> <span class="m">16</span>/11
+  <span class="m">3</span>/7 -   <span class="m">3</span>/7 <span class="o">=</span>   <span class="m">0</span>/1 
+</code></pre></div></p>
+</li>
+<li>
+<p>Implementieren Sie folgende Objektmethoden</p>
+<ul>
+<li><code>public boolean istGroesser(Bruch b)</code> &rarr; gibt <code>true</code> zurück, wenn der aufrufende Bruch größer als <code>b</code> ist, <code>false</code> sonst</li>
+<li><code>public boolean istKleiner(Bruch b)</code> &rarr; gibt <code>true</code> zurück, wenn der aufrufende Bruch kleiner als <code>b</code> ist, <code>false</code> sonst</li>
+<li><code>public boolean equals(Bruch b)</code> &rarr; gibt <code>true</code> zurück, wenn der aufrufende Bruch gleich <code>b</code> ist, <code>false</code> sonst (annotieren Sie diese Methode als <strong>überschrieben</strong>!)</li>
+</ul>
+</li>
+<li>
+<p>Fügen Sie in die Klasse <code>Bruch</code> noch folgende Methode ein:
+    <div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">zaehler</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">nenner</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Geben Sie in die <code>main()</code>-Methode der <code>Programclass</code>-Klasse mindestens folgende weitere Anweisungen ein:
+    <div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------------------------- Vergleichen -----------------------------------%n%n&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s  &gt; %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b2</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">istGroesser</span><span class="p">(</span><span class="n">b2</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s  &lt; %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b2</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">istKleiner</span><span class="p">(</span><span class="n">b2</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s == %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b2</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b2</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s  &gt; %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b3</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b4</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b3</span><span class="p">.</span><span class="na">istGroesser</span><span class="p">(</span><span class="n">b4</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s  &lt; %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b3</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b4</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b3</span><span class="p">.</span><span class="na">istKleiner</span><span class="p">(</span><span class="n">b4</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s == %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b3</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b4</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b3</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b4</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s  &gt; %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b5</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b5</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b5</span><span class="p">.</span><span class="na">istGroesser</span><span class="p">(</span><span class="n">b5</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s  &lt; %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b5</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b5</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b5</span><span class="p">.</span><span class="na">istKleiner</span><span class="p">(</span><span class="n">b5</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%5s == %5s ? %b %n&quot;</span><span class="p">,</span> <span class="n">b5</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b5</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span> <span class="n">b5</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b5</span><span class="p">));</span>
+</code></pre></div>
+    und führen Sie die <code>main()</code>-Methode aus. Es sollten folgende weitere Ausgaben entstehen:
+    <div class="highlight"><pre><span></span><code>------------------------- Vergleichen -----------------------------------
+
+  <span class="m">3</span>/7  &gt;   <span class="m">4</span>/8 ? <span class="nb">false</span> 
+  <span class="m">3</span>/7  &lt;   <span class="m">4</span>/8 ? <span class="nb">true</span> 
+  <span class="m">3</span>/7 <span class="o">==</span>   <span class="m">4</span>/8 ? <span class="nb">false</span> 
+  <span class="m">2</span>/5  &gt;  <span class="m">5</span>/11 ? <span class="nb">false</span> 
+  <span class="m">2</span>/5  &lt;  <span class="m">5</span>/11 ? <span class="nb">true</span> 
+  <span class="m">2</span>/5 <span class="o">==</span>  <span class="m">5</span>/11 ? <span class="nb">false</span> 
+  <span class="m">1</span>/1  &gt;   <span class="m">1</span>/1 ? <span class="nb">false</span> 
+  <span class="m">1</span>/1  &lt;   <span class="m">1</span>/1 ? <span class="nb">false</span> 
+  <span class="m">1</span>/1 <span class="o">==</span>   <span class="m">1</span>/1 ? <span class="nb">true</span> 
+</code></pre></div></p>
+</li>
+<li>Viel Spaß und viel Erfolg!</li>
 </ul>
 </details>
                 

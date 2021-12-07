@@ -793,6 +793,98 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 			1550 : 01:51
 			```
 
-
-
 	- Viel Spaß und viel Erfolg!
+
+
+#### Aufgabe 9 (Abgabe bis 20.12.2021 24:00 Uhr)
+??? "Aufgabe9 - Bruch"
+	- Wir erstellen uns einen Datentyp `Bruch` (extra mal etwas Mathematisches ;-))
+
+	- Erstellen Sie sich ein neues Projekt `aufgabe9` und darin eine neue Klasse `Bruch` sowie eine Programm-/Testklasse `Programclass` mit einer `main()`-Methode. 
+
+	- In der Klasse `Bruch` erstellen Sie zwei Objektvariablen `zaehler` und `nenner` jeweils vom Typ `int` und `private`. 
+
+	- Implementieren Sie für die Klasse `Bruch` zwei verschiedene Konstruktoren
+		- parameterlos --> `zaehler` und `nenner` erhalten jeweils den Wert `1`
+		- mit zwei Parametern (`int zaehler, int nenner`) --> entspr. Werte der Objektvariablen 
+
+	- Implementieren Sie folgende Objektmethoden
+		- `public Bruch plus(Bruch b)` --> gibt den gekürzten Bruch aus der Addition eines Bruchs mit `b` zurück
+		- `public Bruch minus(Bruch b)` --> gibt den gekürzten Bruch aus der Subtraktion eines Bruchs mit `b` zurück
+		- `public Bruch mal(Bruch b)` --> gibt den gekürzten Bruch aus der Multiplikation eines Bruchs mit `b` zurück
+		- `public Bruch geteilt(Bruch b)` --> gibt den gekürzten Bruch aus der Division eines Bruchs mit `b` zurück
+		- `public Bruch kuerzen()` --> gibt den gekürzten Bruch zurück (Sie brauchen dazu den `ggT`)
+		_ `public String toString()` --> gibt einen Bruch als `String` in der Form `zaehler / nenner` zurück (annotieren Sie diese Methode als **überschrieben**!)
+		- `public int ggT(int zahl1, int zahl2)` --> gibt den größten gemeinsamen Teiler (ggT) der beiden Zahlen `zahl1` und `zahl2` als `int` zurück - siehe [Euklidischer Algorithmus](../start/#beispiel-euklidischer-algorithmus)
+
+	- Geben Sie in die `main()`-Methode der `Programclass`-Klasse mindestens folgende Anweisungen ein:
+		```java 
+		Bruch b1 = new Bruch(3,7);
+		Bruch b2 = new Bruch(4,8);
+		Bruch b3 = new Bruch(2,5);
+		Bruch b4 = new Bruch(5,11);
+		Bruch b5 = new Bruch();
+		
+		System.out.printf("%n%n------------------------- Rechnen -----------------------------------%n%n");
+		System.out.printf("%5s + %5s = %5s %n", b1.toString(), b2.toString(), b1.plus(b2).toString());
+		System.out.printf("%5s - %5s = %5s %n", b3.toString(), b4.toString(), b3.minus(b4).toString());
+		System.out.printf("%5s * %5s = %5s %n", b1.toString(), b3.toString(), b1.mal(b3).toString());
+		System.out.printf("%5s / %5s = %5s %n", b2.toString(), b1.toString(), b2.geteilt(b1).toString());
+		System.out.printf("%5s + %5s = %5s %n", b5.toString(), b4.toString(), b5.plus(b4).toString());	
+		System.out.printf("%5s - %5s = %5s %n", b1.toString(), b1.toString(), b1.minus(b1).toString());		// nenner sollte ungleich 0 bleiben!	
+		``` 
+		und führen Sie die `main()`-Methode aus. Es sollten folgende Augaben entstehen:
+		```bash
+		------------------------- Rechnen -----------------------------------
+
+		  3/7 +   4/8 = 13/14 
+		  2/5 -  5/11 = -3/55 
+		  3/7 *   2/5 =  6/35 
+		  4/8 /   3/7 =   7/6 
+		  1/1 +  5/11 = 16/11
+		  3/7 -   3/7 =   0/1 
+		```
+	
+	- Implementieren Sie folgende Objektmethoden
+		- `public boolean istGroesser(Bruch b)` --> gibt `true` zurück, wenn der aufrufende Bruch größer als `b` ist, `false` sonst
+		- `public boolean istKleiner(Bruch b)` --> gibt `true` zurück, wenn der aufrufende Bruch kleiner als `b` ist, `false` sonst
+		- `public boolean equals(Bruch b)` --> gibt `true` zurück, wenn der aufrufende Bruch gleich `b` ist, `false` sonst (annotieren Sie diese Methode als **überschrieben**!)
+
+	- Fügen Sie in die Klasse `Bruch` noch folgende Methode ein:
+		```java
+		@Override
+		public int hashCode()
+		{
+			return this.zaehler * this.nenner;
+		}
+		```
+
+	- Geben Sie in die `main()`-Methode der `Programclass`-Klasse mindestens folgende weitere Anweisungen ein:
+		```java 
+		System.out.printf("%n%n------------------------- Vergleichen -----------------------------------%n%n");
+		System.out.printf("%5s  > %5s ? %b %n", b1.toString(), b2.toString(), b1.istGroesser(b2));
+		System.out.printf("%5s  < %5s ? %b %n", b1.toString(), b2.toString(), b1.istKleiner(b2));
+		System.out.printf("%5s == %5s ? %b %n", b1.toString(), b2.toString(), b1.equals(b2));
+		System.out.printf("%5s  > %5s ? %b %n", b3.toString(), b4.toString(), b3.istGroesser(b4));
+		System.out.printf("%5s  < %5s ? %b %n", b3.toString(), b4.toString(), b3.istKleiner(b4));
+		System.out.printf("%5s == %5s ? %b %n", b3.toString(), b4.toString(), b3.equals(b4));
+		System.out.printf("%5s  > %5s ? %b %n", b5.toString(), b5.toString(), b5.istGroesser(b5));
+		System.out.printf("%5s  < %5s ? %b %n", b5.toString(), b5.toString(), b5.istKleiner(b5));
+		System.out.printf("%5s == %5s ? %b %n", b5.toString(), b5.toString(), b5.equals(b5));
+		``` 
+		und führen Sie die `main()`-Methode aus. Es sollten folgende weitere Ausgaben entstehen:
+		```bash
+		------------------------- Vergleichen -----------------------------------
+
+		  3/7  >   4/8 ? false 
+		  3/7  <   4/8 ? true 
+		  3/7 ==   4/8 ? false 
+		  2/5  >  5/11 ? false 
+		  2/5  <  5/11 ? true 
+		  2/5 ==  5/11 ? false 
+		  1/1  >   1/1 ? false 
+		  1/1  <   1/1 ? false 
+		  1/1 ==   1/1 ? true 
+		```
+	- Viel Spaß und viel Erfolg!
+

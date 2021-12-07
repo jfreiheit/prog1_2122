@@ -135,11 +135,11 @@ System.out.println(q1.getClass());	// von Rechteck -> Viereck -> Object geerbt
 ```
 Die Ausgaben sind:
 ```bash
-class themen.vererbung.Viereck
-class themen.vererbung.Rechteck
-class themen.vererbung.Quadrat
+class Viereck
+class Rechteck
+class Quadrat
 ```
-, wobei `themen.vererbung` das package ist, in dem die Klassen `Viereck.java`, `Rechteck.java` und `Quadrat.java` liegen. `getClass()` gibt jedoch nicht den *Compilertyp*, sondern den *Laufzeittyp* zurück. 
+Wichtig: `getClass()` gibt jedoch nicht den *Compilertyp*, sondern den *Laufzeittyp* zurück. 
 
 #### Compilertyp vs. Laufzeittyp
 

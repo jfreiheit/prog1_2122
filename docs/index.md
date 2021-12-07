@@ -1062,3 +1062,137 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=59840a2894bd8a77392219ce9dc37776&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
 
+??? note "Vorlesung Vererbung -- 7.12.2021"
+	=== "Viereck.java"
+		```java	linenums="1" 
+		public class Viereck
+		{
+		    protected int a,b,c,d;    // Seiten des Vierecks
+		    
+		    public Viereck(int a, int b, int c, int d)
+		    {
+		        this.a = a;
+		        this.b = b;
+		        this.c = c;
+		        this.d = d;
+		        // System.out.println("Objekt von Viereck erzeugt");
+		    }
+		    
+		    public int umfang()
+		    {
+		        return this.a + this.b + this.c + this.d;
+		    }
+		    
+		    public String toString()
+		    {
+		        String s = String.format("[ a=%d, b=%d, c=%d, d=%d ], Umfang des Vierecks : %d %n", this.a, this.b, this.c, this.d, this.umfang());
+		        return s;
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println( this.toString() );
+		    }
+		}
+		```
+
+	=== "Rechteck.java"
+		```java	linenums="1" 
+		public class Rechteck extends Viereck   // Rechteck erbt von Viereck
+		{
+		    // es werden alle Objekteigenschaften der Klasse Viereck geerbt
+		    // a, b, c, d, umfang(), toString(), print()
+
+		    public Rechteck(int laenge, int breite)
+		    {
+		        super(laenge, breite, laenge, breite);      // Aufruf des Konstruktors von Viereck
+		        // System.out.println("Objekt von Rechteck erzeugt");
+		    }
+
+		    public int flaecheninhalt()
+		    {
+		        return this.a * this.b;
+		    }
+
+		    @Override
+		    public String toString()
+		    {
+		        String s = String.format("[ laenge=%d, breite=%d ], Umfang des Rechtecks : %d  und Flaecheninhalt : %d %n", 
+		        this.a, this.b, this.umfang(), this.flaecheninhalt());
+		        return s;  
+		    }
+		}	
+		```
+
+	=== "Quadrat.java"
+		```java	linenums="1" 
+		public class Quadrat extends Rechteck       // Quadrat erbt von Rechteck
+		{
+		    // es werden alle Objekteigenschaften der Klasse Rechteck geerbt
+		    // a, b, c, d, umfang(), toString() (neu), print(), flaecheninhalt()
+		    
+		    public Quadrat(int seite)
+		    {
+		        super(seite, seite);    // Aufruf des Konstruktors von Rechteck
+		    }
+		    
+		    @Override
+		    public String toString()
+		    {
+		        String s = String.format("[ seitenlaenge=%d ], Umfang des Quadrats : %d  und Flaecheninhalt : %d %n", 
+		        this.a, this.umfang(), this.flaecheninhalt());
+		        return s;
+		    }
+		}
+		```
+
+	=== "Programclass.java"
+		```java	linenums="1" 
+		public class Programclass
+		{
+		    public void main()
+		    {
+		        Viereck v1 = new Viereck(10, 20, 30, 40); 
+		        v1.print();
+
+		        Viereck v2 = new Viereck(11, 22, 33, 44);
+		        v2.print();
+		        // System.out.println("Flaecheninhalt des Vierecks : " + v2.flaecheninhalt());  // Error!
+
+		        Rechteck r1 = new Rechteck(15, 25);
+		        r1.print();
+		        System.out.println("Flaecheninhalt des Rechtecks : " + r1.flaecheninhalt());
+
+		        Quadrat q1 = new Quadrat(15);
+		        q1.print();
+		    }
+		}
+		```
+
+	=== "ProgramclassTest.java"
+		```java	linenums="1" 
+		import static org.junit.jupiter.api.Assertions.*;
+		import org.junit.jupiter.api.AfterEach;
+		import org.junit.jupiter.api.BeforeEach;
+		import org.junit.jupiter.api.Test;
+
+		public class ProgramclassTest
+		{
+		    public ProgramclassTest()
+		    {
+		    }
+
+		    @Test
+		    public void testMain()
+		    {
+		        Programclass pc = new Programclass();
+		        pc.main();
+		    }
+		}
+		```
+
+	![vererbung](./files/203_vererbung.png)
+
+??? info "Video zur Vorlesung Vererbung -- 7.12.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=bc4a067615f619fd6d7725bd90ad4c30&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+

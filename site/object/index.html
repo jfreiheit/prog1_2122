@@ -947,11 +947,11 @@ Das bedeutet, dass <em>jede</em> Klasse von der Klasse <code>Object</code> erbt.
 </code></pre></div>
 </td></tr></table>
 Die Ausgaben sind:
-<div class="highlight"><pre><span></span><code>class themen.vererbung.Viereck
-class themen.vererbung.Rechteck
-class themen.vererbung.Quadrat
+<div class="highlight"><pre><span></span><code>class Viereck
+class Rechteck
+class Quadrat
 </code></pre></div>
-, wobei <code>themen.vererbung</code> das package ist, in dem die Klassen <code>Viereck.java</code>, <code>Rechteck.java</code> und <code>Quadrat.java</code> liegen. <code>getClass()</code> gibt jedoch nicht den <em>Compilertyp</em>, sondern den <em>Laufzeittyp</em> zurück. </p>
+Wichtig: <code>getClass()</code> gibt jedoch nicht den <em>Compilertyp</em>, sondern den <em>Laufzeittyp</em> zurück. </p>
 <h4 id="compilertyp-vs-laufzeittyp">Compilertyp vs. Laufzeittyp<a class="headerlink" href="#compilertyp-vs-laufzeittyp" title="Permanent link">&para;</a></h4>
 <p>Was sind <em>Compiler-</em> und <em>Laufzeittypen</em>? <em>Compilertyp</em> wissen wir schon. Bei der Deklaration einer Variablen geben wir den Compilertypen der Variablen an. Was wir aber auch wissen, ist, dass jedes <code>Rechteck</code> <strong>ist auch ein</strong> <code>Viereck</code>. Das erlaubt uns, auch Folgendes zu schreiben:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rechteck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
