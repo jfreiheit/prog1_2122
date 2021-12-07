@@ -733,7 +733,7 @@ Das bedeutet, dass <em>jede</em> Klasse von der Klasse <code>Object</code> erbt.
 <li>Die Klasse <code>Quadrat</code> erbt von <code>Rechteck</code> und somit auch von <code>Viereck</code> und somit <strong>auch von</strong> <code>Object</code>. </li>
 </ul>
 <p>Wenn wir uns nun noch daran erinnern, dass wir beim <a href="../vererbung/#der-konstruktor-von-rechteck-das-schlusselwort-super">Erstellen der Konstruktoren</a> gesagt haben, dass bei der Objekterzeugung auch immer ein Objekt der Elternklasse erzeugt wird, dann bedeutet das, dass für jedes Objekt auch immer ein Objekt der Klasse <code>Object</code> erzeugt wird. </p>
-<p>Wenn wir uns nun auch noch daran erinnern, dass in einer Vererbungshierarchie immer die <em>is-a-*Relation (*ist ein</em>) gilt (jedes <code>Rechteck</code> ist ein <code>Viereck</code>, jedes <code>Quadrat</code> ist ein <code>Rechteck</code> ist ein <code>Viereck</code>), dann gilt dass <strong>jedes</strong> Obejkt auch ein Objekt vom Typ <code>Object</code> ist. Das bedeutet insbesondere, dass jedes Objekt alle Objekteigenschaften (Objektmethoden) der Klasse <code>Object</code> geerbt hat. </p>
+<p>Wenn wir uns nun auch noch daran erinnern, dass in einer Vererbungshierarchie immer die <em>is-a</em>-Relation (<em>ist ein</em>) gilt (jedes <code>Rechteck</code> ist ein <code>Viereck</code>, jedes <code>Quadrat</code> ist ein <code>Rechteck</code> ist ein <code>Viereck</code>), dann gilt dass <strong>jedes</strong> Objekt auch ein Objekt vom Typ <code>Object</code> ist. Das bedeutet insbesondere, dass jedes Objekt alle Objekteigenschaften (Objektmethoden) der Klasse <code>Object</code> geerbt hat. </p>
 <blockquote>
 <p>Jedes Objekt (egal von welchem Referenztyp) ist auch ein Objekt vom Typ <code>Object</code> und hat alle Objektmethoden von <code>Object</code> geerbt.</p>
 </blockquote>
@@ -1149,9 +1149,9 @@ q ist vom Typ Quadrat
 </code></pre></div>
 </td></tr></table>
 Dann erhalten wir eine etwas kryptische Ausgabe:
-<div class="highlight"><pre><span></span><code>themen.vererbung.Viereck@279f2327
+<div class="highlight"><pre><span></span><code>Viereck@279f2327
 </code></pre></div>
-wobei <code>themen.vererbung</code> das Paket ist, in dem die Klasse <code>Viereck</code> ligt und <code>@279f2327</code> scheint irgendeine Referenzadresse zu sein. Interessant an der <code>toString()</code>-Methode ist, dass wir die gleiche Ausgabe auch dann erzielen, wenn wir nur 
+wobei <code>Viereck</code> für die Klasse steht und <code>@279f2327</code> scheint irgendeine Referenzadresse zu sein. Interessant an der <code>toString()</code>-Methode ist, dass wir die gleiche Ausgabe auch dann erzielen, wenn wir nur 
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Viereck</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Viereck</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
@@ -1250,7 +1250,7 @@ Wir könnten auf die Idee kommen, dass <code>v3==v4</code> <code>true</code> erg
 <p>Der Operator <code>==</code> vergleicht nur die Referenzen und ist <code>false</code>, wenn die Referenzen auf zwei verschiedene Objekte zeigen. </p>
 </blockquote>
 <p>Mithilfe der <code>equals()</code>-Methode können wir definieren, wann Objekte der Klasse <strong>gleich</strong> sein sollen. Wir können aber nicht den Operator <code>==</code> überschreiben. Dieser bleibt für Referenztypen immer ein Referenzvergleich!</p>
-<p>Wir wollen unsere Klasse <code>Viereck</code> also um eine <code>equals()</code>-Methode erweitern und in dieser <code>equals()</code>-Methode festelegen, wann zwei <code>Viereck</code>-Objekte gleich sein sollen (wenn ihre Seitenlängen gleich sind). Wir versuchen folgendes:</p>
+<p>Wir wollen unsere Klasse <code>Viereck</code> also um eine <code>equals()</code>-Methode erweitern und in dieser <code>equals()</code>-Methode festlegen, wann zwei <code>Viereck</code>-Objekte gleich sein sollen (wenn ihre Seitenlängen gleich sind). Wir versuchen folgendes:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3

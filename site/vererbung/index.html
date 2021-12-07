@@ -683,7 +683,7 @@
                 
                 
                 <h1 id="vererbung">Vererbung<a class="headerlink" href="#vererbung" title="Permanent link">&para;</a></h1>
-<p>Vererbung (engl. <em>Inheritance</em>) gehört zu den grundlegenden Konzepten der objektorientierten Programmierung. Dieses Konzept basiert auf Beobachteungen aus der realen Welt:</p>
+<p>Vererbung (engl. <em>Inheritance</em>) gehört zu den grundlegenden Konzepten der objektorientierten Programmierung. Dieses Konzept basiert auf Beobachtungen aus der realen Welt:</p>
 <ul>
 <li>Dinge (Objekte) kommen in verschiedenen Varianten vor, die sich hierarchisch klassifizieren lassen</li>
 <li>Dinge (Objekte), die hierarchisch tiefer stehen, sind speziellere Varianten der übergeordneten, generelleren Dinge</li>
@@ -694,8 +694,8 @@
 <p><code>Tiere</code> sind dabei die allgemeinste <em>Klasse</em>. Sie haben Eigenschaften, die für alle Tiere zutreffen, z.B. dass sie sich bewegen können und fortpflanzen. <code>Wirbeltiere</code> haben alle Eigenschaften der <code>Tiere</code>, aber zusätzlich noch <em>speziellerere</em> Eigenschaften, wie z.B. dass sie ein Skellett besitzen. <code>Säugetiere</code> besitzen alle Eigenschaften von <code>Wirbeltieren</code> (und also auch von <code>Tieren</code>) und darüber hinaus speziellere Eigenschaften, nämlich z.B. lebend gebärend usw. </p>
 <p>Für die <strong>Programmierung</strong> bedeutet das, dass Klassen von anderen Klassen die Eigenschaften <strong>erben</strong> können, d.h.</p>
 <ul>
-<li><em>Kindklassen</em> übernehmen (erben) Eigenschaften (Objektvaribalen und Objektmethoden) der <em>Elternklasse</em></li>
-<li><em>Kindklassen</em> können zusätzlich weitere Eigenschaften (Objektvaribalen und Objektmethoden) enthalten</li>
+<li><em>Kindklassen</em> übernehmen (erben) Eigenschaften (Objektvariablen und Objektmethoden) der <em>Elternklasse</em></li>
+<li><em>Kindklassen</em> können zusätzlich weitere Eigenschaften (Objektvariablen und Objektmethoden) enthalten</li>
 </ul>
 <p>Wichtig für das Verständnis der Vererbung ist, dass zwischen den Kind- und der Elternklasse eine <strong>is-a</strong>- (<strong>ist-ein</strong>-) Relation besteht. Für unser Beispiel oben bedeutet das z.B. der <code>Hund</code> <strong>ist ein</strong> <code>Säugetier</code>, das <code>Säugetier</code> <strong>ist ein</strong> <code>Wirbeltier</code> usw. Wenn wir uns also eine Vererbungshierarchie aufmalen, dann gehen die Pfleile immer von der Kind- zur Elternklasse:</p>
 <p><img alt="hierarchie" src="../files/83_hierarchie.png" /></p>
@@ -717,7 +717,7 @@
 <h2 id="ein-erstes-beispiel">Ein erstes Beispiel<a class="headerlink" href="#ein-erstes-beispiel" title="Permanent link">&para;</a></h2>
 <p>Wir betrachten ein erstes Beispiel. Wir werden eine Klasse <code>Viereck</code> erstellen. Von dieser Klasse wird eine Klasse <code>Rechteck</code> <strong>abgeleitet</strong>, d.h. <code>Rechteck</code> <strong>erbt</strong> von <code>Viereck</code>. Danach erzeugen wir noch eine weitere Klasse <code>Quadrat</code>, die wiederum von <code>Rechteck</code> erbt. </p>
 <h3 id="die-klasse-viereck">Die Klasse <code>Viereck</code><a class="headerlink" href="#die-klasse-viereck" title="Permanent link">&para;</a></h3>
-<p>Als Objektvaribalen der Klasse <code>Viereck</code> wählen wir die vier Seitenlängen eines Vierecks <code>a</code>, <code>b</code>, <code>c</code> und <code>d</code>. Außerdem definieren wir uns noch einen Konstruktor und zwei Objektmethoden, die Methode <code>umfang()</code>, die den Umfang des Rechtecks zurückgibt und die Methode <code>print()</code>, die die vier Seitenlängen auf die Konsole ausgibt und den Umfang:</p>
+<p>Als Objektvariablen der Klasse <code>Viereck</code> wählen wir die vier Seitenlängen eines Vierecks <code>a</code>, <code>b</code>, <code>c</code> und <code>d</code>. Außerdem definieren wir uns noch einen Konstruktor und zwei Objektmethoden, die Methode <code>umfang()</code>, die den Umfang des Rechtecks zurückgibt und die Methode <code>print()</code>, die die vier Seitenlängen auf die Konsole ausgibt und den Umfang:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -801,7 +801,7 @@
 <div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">30</span>, <span class="nv">d</span><span class="o">=</span><span class="m">40</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">100</span>
 <span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">15</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">25</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Vierecks : <span class="m">80</span>
 </code></pre></div>
-<p>Soweit nichts Neues. Jetzt wollen wir aber von dieser Klasse erben und erzeugen eine Klasse <code>Rechteck</code>. Ein rechteck <strong>ist ein</strong> Viereck.</p>
+<p>Soweit nichts Neues. Jetzt wollen wir aber von dieser Klasse erben und erzeugen eine Klasse <code>Rechteck</code>. Ein Rechteck <strong>ist ein</strong> Viereck.</p>
 <h3 id="die-klasse-rechteck">Die Klasse <code>Rechteck</code><a class="headerlink" href="#die-klasse-rechteck" title="Permanent link">&para;</a></h3>
 <p>Die Klasse <code>Rechteck</code> erbt von <code>Viereck</code>, d.h. wir verwenden das Schlüsselwort <code>extends</code>. Wir erzeugen uns im gleichen package, in dem auch <code>Viereck</code> und <code>TestViereck</code> liegen, eine Klasse <code>Rechteck</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -823,7 +823,7 @@
 <li>Wenn wir eine neue Klasse erstellen und <strong>keinen</strong> Konstruktor definieren, dann existiert immer ein sogenannter <em>impliziter</em> Konstruktor (oder <em>Standardkonstruktor</em>). Dieser heißt exakt wie die Klasse und ist parameterlos. </li>
 <li>Wenn wir uns einen <a href="../objekte/#ein-eigener-konstruktor">eigenen Konstruktor definieren</a>, dann existiert dieser <em>implizite</em> Konstruktor (<em>Standardkonstruktor</em>) nicht mehr. </li>
 </ol>
-<p>In der Klasse <code>Viereck</code> haben wir uns einen eigenen Konstruktor erstellt (<code>Viereck(int a, int b, int c, int d)</code>), d.h. es gibt keinen <em>impliziten</em> Konstruktor <code>Vierck()</code> (mehr). In Java gilt nun aber folgendes:</p>
+<p>In der Klasse <code>Viereck</code> haben wir uns einen eigenen Konstruktor erstellt (<code>Viereck(int a, int b, int c, int d)</code>), d.h. es gibt keinen <em>impliziten</em> Konstruktor <code>Viereck()</code> (mehr). In Java gilt nun aber folgendes:</p>
 <blockquote>
 <p>Wird in Java ein Objekt einer Kindklasse erzeugt, wird auch <strong>immer</strong> ein Objekt der Elternklasse erzeugt. </p>
 </blockquote>
@@ -1046,7 +1046,7 @@ Umfang des Rechtecks : <span class="m">100</span>
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Die Klasse <code>Rechteck</code> hat somit eine weitere Eigenschaft. Diese ist nicht von <code>Viereck</code> geerbt, sondern ist eine spezielle Eigenschaft von <code>Rechteck</code>. Die Klasse <code>Viereck</code> besitzt diese Eigenschaft nicht! Das bedeutet, dass für Objekte der Klasse <code>Viereck</code> existiert die Eigenschaft <code>flaecheninhalt()</code> nicht, für Objekte der Klasse <code>Rechteck</code> aber schon. In der TEstklasse können wir die neue Methode testen:</p>
+<p>Die Klasse <code>Rechteck</code> hat somit eine weitere Eigenschaft. Diese ist nicht von <code>Viereck</code> geerbt, sondern ist eine spezielle Eigenschaft von <code>Rechteck</code>. Die Klasse <code>Viereck</code> besitzt diese Eigenschaft nicht! Das bedeutet, dass für Objekte der Klasse <code>Viereck</code> existiert die Eigenschaft <code>flaecheninhalt()</code> nicht, für Objekte der Klasse <code>Rechteck</code> aber schon. In der Testklasse können wir die neue Methode testen:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1129,9 +1129,9 @@ Flaecheninhalt des Rechtecks <span class="m">600</span>
 </code></pre></div>
 </td></tr></table>
 <h4 id="uberschreiben-von-methoden">Überschreiben von Methoden<a class="headerlink" href="#uberschreiben-von-methoden" title="Permanent link">&para;</a></h4>
-<p>Die Klasse <code>Rechteck</code> hat unter anderem die Objektmethode <code>print()</code> von der Klasse <code>Viereck</code> geerbt. Wir können geerbte Methoden entweder so lassen, wie wir sie geerbt haben oder wir implementieren sie neu. Das neuimplementieren von geerbten Methoden nennt sich <strong>Überschreiben</strong>. </p>
+<p>Die Klasse <code>Rechteck</code> hat unter anderem die Objektmethode <code>print()</code> von der Klasse <code>Viereck</code> geerbt. Wir können geerbte Methoden entweder so lassen, wie wir sie geerbt haben oder wir implementieren sie neu. Das Neuimplementieren von geerbten Methoden nennt sich <strong>Überschreiben</strong>. </p>
 <blockquote>
-<p>Wir eine Methode von der Elternklasse geerbt, diese Methode in der Kindklasse jedoch neu implemntiert, so wird diese Methode <strong>überschrieben</strong>. </p>
+<p>Wird eine Methode von der Elternklasse geerbt, diese Methode in der Kindklasse jedoch neu implementiert, so wird diese Methode <strong>überschrieben</strong>. </p>
 </blockquote>
 <p>Die geerbte <code>print()</code>-Methode gefällt uns nicht wirklich gut, denn </p>
 <ol>
@@ -1249,7 +1249,7 @@ Flaecheninhalt des Rechtecks <span class="m">600</span>
 <span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">10</span>, <span class="nv">b</span><span class="o">=</span><span class="m">20</span>, <span class="nv">c</span><span class="o">=</span><span class="m">10</span>, <span class="nv">d</span><span class="o">=</span><span class="m">20</span> <span class="o">]</span>  Umfang des Rechtecks : <span class="m">60</span> Flaecheninhalt des Rechtecks : <span class="m">200</span>
 <span class="o">[</span> <span class="nv">a</span><span class="o">=</span><span class="m">20</span>, <span class="nv">b</span><span class="o">=</span><span class="m">30</span>, <span class="nv">c</span><span class="o">=</span><span class="m">20</span>, <span class="nv">d</span><span class="o">=</span><span class="m">30</span> <span class="o">]</span>  Umfang des Rechtecks : <span class="m">100</span> Flaecheninhalt des Rechtecks : <span class="m">600</span>
 </code></pre></div>
-<p>Wir werden auf das Überschreiben von Methoden noch weiter üben, wenn wir uns mit der Klasse <code>Object</code> beschäftigen. Wir merken uns zunächst, dass wir geerbte Methoden überschreiben können und dass wir die Annotation <code>@Override</code> verwenden sollten, wenn wir eine Methode überschreiben, um zu vermeiden, dass wir - z.B. weil wir den Namen der Methode falsch schreiben - die Methode gar nicht überschreiben, sondern eine neue Methode hinzufügen. </p>
+<p>Wir werden das Überschreiben von Methoden noch weiter üben, wenn wir uns mit der Klasse <code>Object</code> beschäftigen. Wir merken uns zunächst, dass wir geerbte Methoden überschreiben können und dass wir die Annotation <code>@Override</code> verwenden sollten, wenn wir eine Methode überschreiben, um zu vermeiden, dass wir - z.B. weil wir den Namen der Methode falsch schreiben - die Methode gar nicht überschreiben, sondern eine neue Methode hinzufügen. </p>
 <p><strong>Übrigens :</strong> Wir kennen das Schlüsselwort <code>final</code> ja bereits von Variablen. Eine als <code>final</code> deklarierte Variable kann ihren einmal zugewiesenen Wert nicht mehr ändern. Wir haben mit <code>final</code> sogenannte <em>Konstanten</em> definiert. </p>
 <blockquote>
 <p>Eine als <code>final</code> deklarierte Methode kann <strong>nicht</strong> überschrieben werden!</p>

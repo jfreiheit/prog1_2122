@@ -12,7 +12,7 @@ Betrachten wir nochmal zur Wiederholung unsere Vererbungshierarchie aus dem vorh
 
 Wenn wir uns nun noch daran erinnern, dass wir beim [Erstellen der Konstruktoren](../vererbung/#der-konstruktor-von-rechteck-das-schlusselwort-super) gesagt haben, dass bei der Objekterzeugung auch immer ein Objekt der Elternklasse erzeugt wird, dann bedeutet das, dass für jedes Objekt auch immer ein Objekt der Klasse `Object` erzeugt wird. 
 
-Wenn wir uns nun auch noch daran erinnern, dass in einer Vererbungshierarchie immer die *is-a-*Relation (*ist ein*) gilt (jedes `Rechteck` ist ein `Viereck`, jedes `Quadrat` ist ein `Rechteck` ist ein `Viereck`), dann gilt dass **jedes** Obejkt auch ein Objekt vom Typ `Object` ist. Das bedeutet insbesondere, dass jedes Objekt alle Objekteigenschaften (Objektmethoden) der Klasse `Object` geerbt hat. 
+Wenn wir uns nun auch noch daran erinnern, dass in einer Vererbungshierarchie immer die *is-a*-Relation (*ist ein*) gilt (jedes `Rechteck` ist ein `Viereck`, jedes `Quadrat` ist ein `Rechteck` ist ein `Viereck`), dann gilt dass **jedes** Objekt auch ein Objekt vom Typ `Object` ist. Das bedeutet insbesondere, dass jedes Objekt alle Objekteigenschaften (Objektmethoden) der Klasse `Object` geerbt hat. 
 
 > Jedes Objekt (egal von welchem Referenztyp) ist auch ein Objekt vom Typ `Object` und hat alle Objektmethoden von `Object` geerbt.
 
@@ -300,9 +300,9 @@ System.out.println(v.toString());
 ```
 Dann erhalten wir eine etwas kryptische Ausgabe:
 ```bash
-themen.vererbung.Viereck@279f2327
+Viereck@279f2327
 ```
-wobei `themen.vererbung` das Paket ist, in dem die Klasse `Viereck` ligt und `@279f2327` scheint irgendeine Referenzadresse zu sein. Interessant an der `toString()`-Methode ist, dass wir die gleiche Ausgabe auch dann erzielen, wenn wir nur 
+wobei `Viereck` für die Klasse steht und `@279f2327` scheint irgendeine Referenzadresse zu sein. Interessant an der `toString()`-Methode ist, dass wir die gleiche Ausgabe auch dann erzielen, wenn wir nur 
 ```java linenums="1"
 Viereck v = new Viereck(10,20,30,40);
 System.out.println(v);
@@ -379,7 +379,7 @@ Wir könnten auf die Idee kommen, dass `v3==v4` `true` ergibt, weil für uns die
 
 Mithilfe der `equals()`-Methode können wir definieren, wann Objekte der Klasse **gleich** sein sollen. Wir können aber nicht den Operator `==` überschreiben. Dieser bleibt für Referenztypen immer ein Referenzvergleich!
 
-Wir wollen unsere Klasse `Viereck` also um eine `equals()`-Methode erweitern und in dieser `equals()`-Methode festelegen, wann zwei `Viereck`-Objekte gleich sein sollen (wenn ihre Seitenlängen gleich sind). Wir versuchen folgendes:
+Wir wollen unsere Klasse `Viereck` also um eine `equals()`-Methode erweitern und in dieser `equals()`-Methode festlegen, wann zwei `Viereck`-Objekte gleich sein sollen (wenn ihre Seitenlängen gleich sind). Wir versuchen folgendes:
 
 ```java linenums="1" hl_lines="31-35"
 public class Viereck

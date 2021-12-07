@@ -1,6 +1,6 @@
 # Vererbung
 
-Vererbung (engl. *Inheritance*) gehört zu den grundlegenden Konzepten der objektorientierten Programmierung. Dieses Konzept basiert auf Beobachteungen aus der realen Welt:
+Vererbung (engl. *Inheritance*) gehört zu den grundlegenden Konzepten der objektorientierten Programmierung. Dieses Konzept basiert auf Beobachtungen aus der realen Welt:
 
 - Dinge (Objekte) kommen in verschiedenen Varianten vor, die sich hierarchisch klassifizieren lassen
 - Dinge (Objekte), die hierarchisch tiefer stehen, sind speziellere Varianten der übergeordneten, generelleren Dinge
@@ -14,8 +14,8 @@ Häufig werden für solche Beispiele aus der Realen Welt die Klassifikationen vo
 
 Für die **Programmierung** bedeutet das, dass Klassen von anderen Klassen die Eigenschaften **erben** können, d.h.
 
-- *Kindklassen* übernehmen (erben) Eigenschaften (Objektvaribalen und Objektmethoden) der *Elternklasse*
-- *Kindklassen* können zusätzlich weitere Eigenschaften (Objektvaribalen und Objektmethoden) enthalten
+- *Kindklassen* übernehmen (erben) Eigenschaften (Objektvariablen und Objektmethoden) der *Elternklasse*
+- *Kindklassen* können zusätzlich weitere Eigenschaften (Objektvariablen und Objektmethoden) enthalten
 
 Wichtig für das Verständnis der Vererbung ist, dass zwischen den Kind- und der Elternklasse eine **is-a**- (**ist-ein**-) Relation besteht. Für unser Beispiel oben bedeutet das z.B. der `Hund` **ist ein** `Säugetier`, das `Säugetier` **ist ein** `Wirbeltier` usw. Wenn wir uns also eine Vererbungshierarchie aufmalen, dann gehen die Pfleile immer von der Kind- zur Elternklasse:
 
@@ -45,7 +45,7 @@ Wir betrachten ein erstes Beispiel. Wir werden eine Klasse `Viereck` erstellen. 
 
 ### Die Klasse `Viereck`
 
-Als Objektvaribalen der Klasse `Viereck` wählen wir die vier Seitenlängen eines Vierecks `a`, `b`, `c` und `d`. Außerdem definieren wir uns noch einen Konstruktor und zwei Objektmethoden, die Methode `umfang()`, die den Umfang des Rechtecks zurückgibt und die Methode `print()`, die die vier Seitenlängen auf die Konsole ausgibt und den Umfang:
+Als Objektvariablen der Klasse `Viereck` wählen wir die vier Seitenlängen eines Vierecks `a`, `b`, `c` und `d`. Außerdem definieren wir uns noch einen Konstruktor und zwei Objektmethoden, die Methode `umfang()`, die den Umfang des Rechtecks zurückgibt und die Methode `print()`, die die vier Seitenlängen auf die Konsole ausgibt und den Umfang:
 
 ```java linenums="1"
 public class Viereck
@@ -100,7 +100,7 @@ Auf der Konsole erscheint folgende Ausgabe:
 [ a=15, b=20, c=25, d=20 ]  Umfang des Vierecks : 80
 ```
 
-Soweit nichts Neues. Jetzt wollen wir aber von dieser Klasse erben und erzeugen eine Klasse `Rechteck`. Ein rechteck **ist ein** Viereck.
+Soweit nichts Neues. Jetzt wollen wir aber von dieser Klasse erben und erzeugen eine Klasse `Rechteck`. Ein Rechteck **ist ein** Viereck.
 
 ### Die Klasse `Rechteck`
 
@@ -128,7 +128,7 @@ Wir [erinnern uns](../objekte/#objekte-erzeugen-der-konstruktor):
 1. Wenn wir eine neue Klasse erstellen und **keinen** Konstruktor definieren, dann existiert immer ein sogenannter *impliziter* Konstruktor (oder *Standardkonstruktor*). Dieser heißt exakt wie die Klasse und ist parameterlos. 
 2. Wenn wir uns einen [eigenen Konstruktor definieren](../objekte/#ein-eigener-konstruktor), dann existiert dieser *implizite* Konstruktor (*Standardkonstruktor*) nicht mehr. 
 
-In der Klasse `Viereck` haben wir uns einen eigenen Konstruktor erstellt (`Viereck(int a, int b, int c, int d)`), d.h. es gibt keinen *impliziten* Konstruktor `Vierck()` (mehr). In Java gilt nun aber folgendes:
+In der Klasse `Viereck` haben wir uns einen eigenen Konstruktor erstellt (`Viereck(int a, int b, int c, int d)`), d.h. es gibt keinen *impliziten* Konstruktor `Viereck()` (mehr). In Java gilt nun aber folgendes:
 
 > Wird in Java ein Objekt einer Kindklasse erzeugt, wird auch **immer** ein Objekt der Elternklasse erzeugt. 
 
@@ -298,7 +298,7 @@ public class Rechteck extends Viereck
 }
 ```
 
-Die Klasse `Rechteck` hat somit eine weitere Eigenschaft. Diese ist nicht von `Viereck` geerbt, sondern ist eine spezielle Eigenschaft von `Rechteck`. Die Klasse `Viereck` besitzt diese Eigenschaft nicht! Das bedeutet, dass für Objekte der Klasse `Viereck` existiert die Eigenschaft `flaecheninhalt()` nicht, für Objekte der Klasse `Rechteck` aber schon. In der TEstklasse können wir die neue Methode testen:
+Die Klasse `Rechteck` hat somit eine weitere Eigenschaft. Diese ist nicht von `Viereck` geerbt, sondern ist eine spezielle Eigenschaft von `Rechteck`. Die Klasse `Viereck` besitzt diese Eigenschaft nicht! Das bedeutet, dass für Objekte der Klasse `Viereck` existiert die Eigenschaft `flaecheninhalt()` nicht, für Objekte der Klasse `Rechteck` aber schon. In der Testklasse können wir die neue Methode testen:
 
 ```java linenums="1" hl_lines="15 20"
 public void main()
@@ -357,9 +357,9 @@ public void main()
 
 #### Überschreiben von Methoden
 
-Die Klasse `Rechteck` hat unter anderem die Objektmethode `print()` von der Klasse `Viereck` geerbt. Wir können geerbte Methoden entweder so lassen, wie wir sie geerbt haben oder wir implementieren sie neu. Das neuimplementieren von geerbten Methoden nennt sich **Überschreiben**. 
+Die Klasse `Rechteck` hat unter anderem die Objektmethode `print()` von der Klasse `Viereck` geerbt. Wir können geerbte Methoden entweder so lassen, wie wir sie geerbt haben oder wir implementieren sie neu. Das Neuimplementieren von geerbten Methoden nennt sich **Überschreiben**. 
 
-> Wir eine Methode von der Elternklasse geerbt, diese Methode in der Kindklasse jedoch neu implemntiert, so wird diese Methode **überschrieben**. 
+> Wird eine Methode von der Elternklasse geerbt, diese Methode in der Kindklasse jedoch neu implementiert, so wird diese Methode **überschrieben**. 
 
 Die geerbte `print()`-Methode gefällt uns nicht wirklich gut, denn 
 
@@ -442,7 +442,7 @@ erzeugt folgende Ausgaben:
 [ a=20, b=30, c=20, d=30 ]  Umfang des Rechtecks : 100 Flaecheninhalt des Rechtecks : 600
 ```
 
-Wir werden auf das Überschreiben von Methoden noch weiter üben, wenn wir uns mit der Klasse `Object` beschäftigen. Wir merken uns zunächst, dass wir geerbte Methoden überschreiben können und dass wir die Annotation `@Override` verwenden sollten, wenn wir eine Methode überschreiben, um zu vermeiden, dass wir - z.B. weil wir den Namen der Methode falsch schreiben - die Methode gar nicht überschreiben, sondern eine neue Methode hinzufügen. 
+Wir werden das Überschreiben von Methoden noch weiter üben, wenn wir uns mit der Klasse `Object` beschäftigen. Wir merken uns zunächst, dass wir geerbte Methoden überschreiben können und dass wir die Annotation `@Override` verwenden sollten, wenn wir eine Methode überschreiben, um zu vermeiden, dass wir - z.B. weil wir den Namen der Methode falsch schreiben - die Methode gar nicht überschreiben, sondern eine neue Methode hinzufügen. 
 
 **Übrigens :** Wir kennen das Schlüsselwort `final` ja bereits von Variablen. Eine als `final` deklarierte Variable kann ihren einmal zugewiesenen Wert nicht mehr ändern. Wir haben mit `final` sogenannte *Konstanten* definiert. 
 
