@@ -1242,6 +1242,189 @@
 	19. Was stellen Sie fest? Läuft etwas schief? Was sind die Probleme? Worin liegen sie begründet? Haben Sie Ideen, wie Sie diese Probleme vermeiden könnten? (*Übrings: das Thema, das wir hier ein wenig näher beleuchten, nennt sich [immutable objects](https://www.javatpoint.com/mutable-and-immutable-in-java)*)
 
 
+??? question "Eine mögliche Lösung für Übung 8"
+	=== "Date.java"
+		```java
+		public class Date
+		{
+		    private int day;
+		    private int month;
+		    private int year;
+		    
+		    public Date(int day, int month, int year)
+		    {
+		        this.day = day;
+		        this.month = month;
+		        this.year = year;
+		    }
+
+		    public Date()
+		    {
+		        this.day = 1;
+		        this.month = 1;
+		        this.year = 1900;
+		    }
+		    
+		    /*
+		     * Die folgende Implementierung stellt eine Möglichkeit dar, 
+		     * ein späteres Datum zu bestimmen. Diese Methode ändert aber
+		     * das Objekt selbst, d.h. die Werte der Objektvariablen 
+		     * werden neu gesetzt. Dadurch wird das Objekt veränderlich.
+		     */
+		    public void later(int days)
+		    {
+		        int years = days / 365;
+		        int remainder = days % 365;
+		        int months = remainder / 30;
+		        remainder = remainder % 30;
+		        
+		        this.year += years;
+		        this.day += remainder;
+		        this.month += months;
+		        
+		        if(this.day > 30)
+		        {
+		            this.month++;
+		            this.day %= 30;
+		        }
+		        
+		        if(this.month > 12)
+		        {
+		            this.year++;
+		            this.month %= 12;
+		        }
+		    }
+		    
+		    /*
+		     * Die folgende Implementierung stellt eine Möglichkeit dar, 
+		     * ein späteres Datum zu bestimmen. Diese Methode ändert aber
+		     * das Objekt selbst, d.h. die Werte der Objektvariablen 
+		     * werden neu gesetzt. Dadurch wird das Objekt veränderlich.
+		     */
+		    public Date laterImmutable(int days)
+		    {
+		        int years = days / 365;
+		        int remainder = days % 365;
+		        int months = remainder / 30;
+		        remainder = remainder % 30;
+		        
+		        // nur noch lesenden Zugriff auf die 
+		        // Werte der Objektvariablen -->
+		        // Werte bleiben unverändert
+		        int newYears = this.year + years;
+		        int newDays = this.day + remainder;
+		        int newMonths = this.month + months;
+		        
+		        if(newDays > 30)
+		        {
+		            newMonths++;
+		            newDays %= 30;
+		        }
+		        
+		        if(newMonths > 12)
+		        {
+		            newYears++;
+		            newMonths %= 12;
+		        }
+		        
+		        return new Date(newDays, newMonths, newYears);
+		    }
+		    
+		    public String toString()
+		    {
+		        return this.day + "." + this.month + "." + this.year;
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println(this.toString());
+		    }
+		}
+		```		
+	=== "Fruit.java"
+		```java
+		public class Fruit
+		{
+		    private String name;
+		    private Date expiry;
+
+		    public Fruit(String name, Date expiry)
+		    {
+		        this.name = name;
+		        this.expiry = expiry;
+		        // man könnte hier überlegen, ob man wirklich die Referenz auf
+		        // das übergebene Date-Objekt speichern möchte oder lieber
+		        // eine eigene Kopie des Objektes erzeugen und diese speichern
+		        // dazu fehlen allerdings die Getter der Date-Objektvariablen :-(
+		    }
+
+		    public String toString()
+		    {
+		        return this.name + " expires on " + this.expiry.toString();
+		    }
+		    
+		    public void print()
+		    {
+		        System.out.println( this.toString() );
+		    }
+		    
+		    public Date getExpiryDate()
+		    {
+		        return this.expiry;
+		        // hier wäre es auch besser, nicht die Referenz, sondern
+		        // ein neues Date-Objekt zurückzugeben
+		        // dazu fehlen allerdings die Getter der Date-Objektvariablen :-(
+		    }
+		}
+		```		
+	=== "Programclass.java"
+		```java
+		public class Programclass
+		{
+		    public void start()
+		    {
+		        Date d1 = new Date(11, 11, 2000);
+		        Date d2 = new Date(20, 10, 2020);
+		        Date d3 = new Date();
+		        
+		        System.out.printf("%n%n--------------- print()-Methode Date -----------------%n%n");
+		        d1.print();
+		        d2.print();
+		        d3.print();
+		        
+		        Fruit banana = new Fruit("Banana", d1);
+		        Fruit apple = new Fruit("Apple", d2);
+		        Fruit pear = new Fruit("Pear", d3);
+		        
+		        System.out.printf("%n%n--------------- print()-Methode Fruit -----------------%n%n");
+		        banana.print();
+		        apple.print();
+		        pear.print();
+		        
+		        System.out.printf("%n%n------------ later() und getExpiryDate ----------------%n%n");
+		        d1.later(12);
+		        d2.later(123);
+		        d3.later(1234);
+		        
+		        d1.print();
+		        d2.print();
+		        d3.print();
+		        
+		        banana.print();
+		        apple.print();
+		        pear.print();
+		        
+		        banana.getExpiryDate().later(12);
+		        apple.getExpiryDate().later(123);
+		        pear.getExpiryDate().later(1234);
+		        
+		        d1.print();
+		        d2.print();
+		        d3.print();
+		    }
+		}
+		```		
+
 
 
 

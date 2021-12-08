@@ -1196,3 +1196,81 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? info "Video zur Vorlesung Vererbung -- 7.12.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=bc4a067615f619fd6d7725bd90ad4c30&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
+
+??? note "Vorlesung Object -- 8.12.2021"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		public class Programclass
+		{
+		    public void main()
+		    {
+		        Viereck v1 = new Viereck(10, 20, 30, 40); 
+		        Viereck v2 = new Viereck(11, 22, 33, 44);
+		        Rechteck r1 = new Rechteck(15, 25);
+		        Quadrat q1 = new Quadrat(15);
+		        
+		        /*
+		        v1.print();
+		        v2.print();
+		        r1.print();
+		        q1.print();
+		        */
+		       
+		       System.out.println(v1.toString());
+		        System.out.println(r1.toString());
+		       System.out.println(q1.toString());
+		       
+		        System.out.println(v1.getClass());
+		        System.out.println(r1.getClass());
+		        System.out.println(q1.getClass());
+		        
+		        Viereck vn1 = new Viereck(11, 22, 33, 44);
+		        Viereck vn2 = new Rechteck(23, 34);
+		        Viereck vn3 = new Quadrat(7);
+		        
+		        Rechteck rn1 = (Rechteck)vn2;
+		        
+		        // vn2 = new Viereck(1, 2, 3, 4);
+		        
+		        System.out.println(((Rechteck)vn2).flaecheninhalt());
+		        System.out.println(vn2.getClass());
+		        
+		        Object o1 = new Quadrat(1);
+		        
+		        if(vn2 instanceof Rechteck)
+		        {
+		            System.out.println("bin Rechteck");
+		        }
+
+		        if(vn2 instanceof Viereck)
+		        {
+		            System.out.println("bin Viereck");
+		        }
+		        
+		        if(vn2 instanceof Quadrat)
+		        {
+		            System.out.println("bin Quadrat");
+		        }
+		        
+		        System.out.printf("%n%n----------- toString() -----%n%n");
+		        System.out.println(vn1.toString());
+		        System.out.println(vn2.toString());
+		        System.out.println(vn3.toString());
+		       
+		        System.out.printf("%n%n----------- vn1, n2, vn3 -----%n%n");
+		        System.out.println(vn1);
+		        System.out.println(vn2);
+		        System.out.println(vn3);
+		    }
+		}
+
+		```
+
+
+??? info "Video zur Vorlesung Object -- 8.12.2021"
+
+	=== "Teil1 (bis zum Absturz :-( )"
+		<iframe src="https://mediathek.htw-berlin.de/media/embed?key=3b54ef0c799502a2cba8b00b5366a704&width=720&height=540&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="540" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+	=== "Teil2 (nach dem Absturz ;-) )"
+		<iframe src="https://mediathek.htw-berlin.de/media/embed?key=6169600634360a352aef0f64dd740d7f&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>

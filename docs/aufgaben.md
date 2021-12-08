@@ -848,29 +848,20 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 	- Implementieren Sie folgende Objektmethoden
 		- `public boolean istGroesser(Bruch b)` --> gibt `true` zurück, wenn der aufrufende Bruch größer als `b` ist, `false` sonst
 		- `public boolean istKleiner(Bruch b)` --> gibt `true` zurück, wenn der aufrufende Bruch kleiner als `b` ist, `false` sonst
-		- `public boolean equals(Bruch b)` --> gibt `true` zurück, wenn der aufrufende Bruch gleich `b` ist, `false` sonst (annotieren Sie diese Methode als **überschrieben**!)
-
-	- Fügen Sie in die Klasse `Bruch` noch folgende Methode ein:
-		```java
-		@Override
-		public int hashCode()
-		{
-			return this.zaehler * this.nenner;
-		}
-		```
+		- `public boolean istGleich(Bruch b)` --> gibt `true` zurück, wenn der aufrufende Bruch gleich `b` ist, `false` sonst 
 
 	- Geben Sie in die `main()`-Methode der `Programclass`-Klasse mindestens folgende weitere Anweisungen ein:
 		```java 
 		System.out.printf("%n%n------------------------- Vergleichen -----------------------------------%n%n");
 		System.out.printf("%5s  > %5s ? %b %n", b1.toString(), b2.toString(), b1.istGroesser(b2));
 		System.out.printf("%5s  < %5s ? %b %n", b1.toString(), b2.toString(), b1.istKleiner(b2));
-		System.out.printf("%5s == %5s ? %b %n", b1.toString(), b2.toString(), b1.equals(b2));
+		System.out.printf("%5s == %5s ? %b %n", b1.toString(), b2.toString(), b1.istGleich(b2));
 		System.out.printf("%5s  > %5s ? %b %n", b3.toString(), b4.toString(), b3.istGroesser(b4));
 		System.out.printf("%5s  < %5s ? %b %n", b3.toString(), b4.toString(), b3.istKleiner(b4));
-		System.out.printf("%5s == %5s ? %b %n", b3.toString(), b4.toString(), b3.equals(b4));
+		System.out.printf("%5s == %5s ? %b %n", b3.toString(), b4.toString(), b3.istGleich(b4));
 		System.out.printf("%5s  > %5s ? %b %n", b5.toString(), b5.toString(), b5.istGroesser(b5));
 		System.out.printf("%5s  < %5s ? %b %n", b5.toString(), b5.toString(), b5.istKleiner(b5));
-		System.out.printf("%5s == %5s ? %b %n", b5.toString(), b5.toString(), b5.equals(b5));
+		System.out.printf("%5s == %5s ? %b %n", b5.toString(), b5.toString(), b5.istGleich(b5));
 		``` 
 		und führen Sie die `main()`-Methode aus. Es sollten folgende weitere Ausgaben entstehen:
 		```bash
@@ -886,5 +877,8 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 		  1/1  <   1/1 ? false 
 		  1/1 ==   1/1 ? true 
 		```
+
+	- **Zusatzaufgabe**: Überschreiben Sie für `Bruch` die Methoden `public boolean equals(Object o)` und `public int hashCode()`.
+	 
 	- Viel Spaß und viel Erfolg!
 

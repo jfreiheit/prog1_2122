@@ -389,6 +389,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../arrays/" class="md-nav__link">
+        Arrays
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -1833,6 +1848,189 @@ Pear expires on <span class="m">1</span>.1.1900
 </li>
 </ol>
 </details>
+<details class="question"><summary>Eine mögliche Lösung für Übung 8</summary><div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Date.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Date</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">day</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">month</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Date</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">int</span> <span class="n">month</span><span class="p">,</span> <span class="kt">int</span> <span class="n">year</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">day</span> <span class="o">=</span> <span class="n">day</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">month</span> <span class="o">=</span> <span class="n">month</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">year</span> <span class="o">=</span> <span class="n">year</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Date</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">day</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">year</span> <span class="o">=</span> <span class="mi">1900</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     * Die folgende Implementierung stellt eine Möglichkeit dar, </span>
+<span class="cm">     * ein späteres Datum zu bestimmen. Diese Methode ändert aber</span>
+<span class="cm">     * das Objekt selbst, d.h. die Werte der Objektvariablen </span>
+<span class="cm">     * werden neu gesetzt. Dadurch wird das Objekt veränderlich.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">later</span><span class="p">(</span><span class="kt">int</span> <span class="n">days</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">years</span> <span class="o">=</span> <span class="n">days</span> <span class="o">/</span> <span class="mi">365</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">days</span> <span class="o">%</span> <span class="mi">365</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">months</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">/</span> <span class="mi">30</span><span class="p">;</span>
+        <span class="n">remainder</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">%</span> <span class="mi">30</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">year</span> <span class="o">+=</span> <span class="n">years</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">day</span> <span class="o">+=</span> <span class="n">remainder</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">month</span> <span class="o">+=</span> <span class="n">months</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">day</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">month</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">day</span> <span class="o">%=</span> <span class="mi">30</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">month</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">year</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">month</span> <span class="o">%=</span> <span class="mi">12</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     * Die folgende Implementierung stellt eine Möglichkeit dar, </span>
+<span class="cm">     * ein späteres Datum zu bestimmen. Diese Methode ändert aber</span>
+<span class="cm">     * das Objekt selbst, d.h. die Werte der Objektvariablen </span>
+<span class="cm">     * werden neu gesetzt. Dadurch wird das Objekt veränderlich.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">laterImmutable</span><span class="p">(</span><span class="kt">int</span> <span class="n">days</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">years</span> <span class="o">=</span> <span class="n">days</span> <span class="o">/</span> <span class="mi">365</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">days</span> <span class="o">%</span> <span class="mi">365</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">months</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">/</span> <span class="mi">30</span><span class="p">;</span>
+        <span class="n">remainder</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">%</span> <span class="mi">30</span><span class="p">;</span>
+
+        <span class="c1">// nur noch lesenden Zugriff auf die </span>
+        <span class="c1">// Werte der Objektvariablen --&gt;</span>
+        <span class="c1">// Werte bleiben unverändert</span>
+        <span class="kt">int</span> <span class="n">newYears</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">year</span> <span class="o">+</span> <span class="n">years</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">newDays</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">day</span> <span class="o">+</span> <span class="n">remainder</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">newMonths</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">month</span> <span class="o">+</span> <span class="n">months</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">newDays</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">newMonths</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">newDays</span> <span class="o">%=</span> <span class="mi">30</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">newMonths</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">newYears</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">newMonths</span> <span class="o">%=</span> <span class="mi">12</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Date</span><span class="p">(</span><span class="n">newDays</span><span class="p">,</span> <span class="n">newMonths</span><span class="p">,</span> <span class="n">newYears</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">day</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">month</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">year</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Fruit.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fruit</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Date</span> <span class="n">expiry</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Fruit</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">Date</span> <span class="n">expiry</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">expiry</span> <span class="o">=</span> <span class="n">expiry</span><span class="p">;</span>
+        <span class="c1">// man könnte hier überlegen, ob man wirklich die Referenz auf</span>
+        <span class="c1">// das übergebene Date-Objekt speichern möchte oder lieber</span>
+        <span class="c1">// eine eigene Kopie des Objektes erzeugen und diese speichern</span>
+        <span class="c1">// dazu fehlen allerdings die Getter der Date-Objektvariablen :-(</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot; expires on &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">expiry</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getExpiryDate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">expiry</span><span class="p">;</span>
+        <span class="c1">// hier wäre es auch besser, nicht die Referenz, sondern</span>
+        <span class="c1">// ein neues Date-Objekt zurückzugeben</span>
+        <span class="c1">// dazu fehlen allerdings die Getter der Date-Objektvariablen :-(</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Programclass.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programclass</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Date</span> <span class="n">d1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span>
+        <span class="n">Date</span> <span class="n">d2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2020</span><span class="p">);</span>
+        <span class="n">Date</span> <span class="n">d3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n--------------- print()-Methode Date -----------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">d1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">d2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">d3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">Fruit</span> <span class="n">banana</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">,</span> <span class="n">d1</span><span class="p">);</span>
+        <span class="n">Fruit</span> <span class="n">apple</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="p">(</span><span class="s">&quot;Apple&quot;</span><span class="p">,</span> <span class="n">d2</span><span class="p">);</span>
+        <span class="n">Fruit</span> <span class="n">pear</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="p">(</span><span class="s">&quot;Pear&quot;</span><span class="p">,</span> <span class="n">d3</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n--------------- print()-Methode Fruit -----------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">banana</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">apple</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">pear</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------------ later() und getExpiryDate ----------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">d1</span><span class="p">.</span><span class="na">later</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+        <span class="n">d2</span><span class="p">.</span><span class="na">later</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+        <span class="n">d3</span><span class="p">.</span><span class="na">later</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+
+        <span class="n">d1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">d2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">d3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">banana</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">apple</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">pear</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">banana</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">().</span><span class="na">later</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+        <span class="n">apple</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">().</span><span class="na">later</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+        <span class="n">pear</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">().</span><span class="na">later</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+
+        <span class="n">d1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">d2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">d3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
                 
               
               
@@ -1852,7 +2050,7 @@ Pear expires on <span class="m">1</span>.1.1900
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../object/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Object" rel="prev">
+        <a href="../arrays/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Arrays" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1861,7 +2059,7 @@ Pear expires on <span class="m">1</span>.1.1900
               <span class="md-footer__direction">
                 Zurück
               </span>
-              Object
+              Arrays
             </div>
           </div>
         </a>
