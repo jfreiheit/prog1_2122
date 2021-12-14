@@ -47,8 +47,8 @@ Also in unserem Beispiel `numbers[0]`.
 
 Die Erzeugung und Initialisierung eines Arrays erfolgt in drei Schritten:
 
-1. Schritt: Definition einer Referenzvariablen, die auf das Array-Objekt zeigt	(siehe oben in Zeile `1`: `int[] numbers`t)
-2. Schritt: Erzeugen des Arrays, d. h. eines Array-Objektes, das aus Elementen eines bestimmten Datentyps besteht (und Zuweisung an die zuvor definiere Referenzvariable - siehe oben Zeile `1`: `new int[5]`)
+1. Schritt: Definition einer Referenzvariablen, die auf das Array-Objekt zeigt	(siehe oben in Zeile `1`: `int[] numbers`)
+2. Schritt: Erzeugen des Arrays, d. h. eines Array-Objektes, das aus Elementen eines bestimmten Datentyps besteht (und Zuweisung an die zuvor definierte Referenzvariable - siehe oben Zeile `1`: `new int[5]`)
 3. Schritt: Belegen der Array-Elemente mit Werten, d. h. Initialisierung des Arrays (siehe oben Zeilen `2-6`). 
 
 Beispiele verschiedene Arrays erzeugen:
@@ -126,7 +126,7 @@ System.out.println("Summe aller Elemente : " + sum);
 
 ### Mögliche andere Form der Erzeugung und Initialisierung
 
-Das Array kann auch in einer anderen Form erzeugt und initilisiert werden:
+Das Array kann auch in einer anderen Form erzeugt und initialisiert werden:
 
 ```java
 int[] numbers = {0, 1, 4, 9, 16};
@@ -154,6 +154,7 @@ satz[0] = "Das";
 satz[1] = "ist";
 satz[2] = "ein";
 satz[3] = "Satz";
+
 for(int index=0; index<satz.length-1; index++)
 {
 	System.out.print(satz[index] + " ");
@@ -872,7 +873,7 @@ public int getIndex(int[] a, int element)
 }
 ```
 
-Eine [Konstante](../variablen/#konstanten) ist eine Variable, die genau einmal einen Wert zugewiesen bekommt (initailisiert wird) und deren Wert nie wieder überschrieben werden kann. Die Namen von Konstanten schreiben wir durchgehend GROSS. 
+Eine [Konstante](../variablen/#konstanten) ist eine Variable, die genau einmal einen Wert zugewiesen bekommt (initialisiert wird) und deren Wert nie wieder überschrieben werden kann. Die Namen von Konstanten schreiben wir durchgehend GROSS. 
 
 ??? question "Angenommen, das `element` kommt mehrmals im Array `a` vor. Wird der erste Index des Auftretens von `element` im Array zurückgegeben oder der letzte Index? Wie könnte man das ändern?"
 	- Der letzte. Man könnte beim ersten Finden des Elementes die Schleife sofort verlassen (aber nicht `break;` verwenden!)
@@ -948,7 +949,7 @@ Im Vergleich zur `contains()`-Methode für unsortierte Arrays haben wir einen we
 Bis jetzt sind wir immer sequenziell durch das Array durchgelaufen, also von vorne nach hinten, beginnend mit dem Index `0` bis wir bei `array.length` angekommen waren. In sortierten Arrays können wir das Prinzip ändern: 
 
 - Wir fangen einfach in der Mitte des Arrays an und wenn der Wert, den wir suchen, kleiner ist, als der Wert in der Mitte, dann suchen wir links weiter und sonst suchen wir rechts weiter. 
-- Dann gehen wir mit der linken bzw. rechten Hälft egenau so vor usw.
+- Dann gehen wir mit der linken bzw. rechten Hälfte genau so vor usw.
 
 Diese Suche nennt sich **binäre Suche** (*binary search*), in jedem Schritt wird der (verbliebene) Suchraum halbiert. Angenommen, wir suchen in dem folgenden Array die **25**:
 
@@ -1087,8 +1088,8 @@ System.out.println("index : " + index + " duration : " + duration);
 - Zeile `3`: Mithilfe der `Instant`-Klasse (aus `java.time`) und deren Methode `now()` ermitteln wir die aktuelle Zeit und speichern sie in der Variablen `start` (vom Typ `Instant`); die Klasse kennen wir noch nicht
 - Zeile `4`: Wir verwenden die Methode `getIndex()`, um das Element mit dem Wert `8.000.000` im Array `test` zu suchen
 - Zeile `5`: Mithilfe `Instant.now()` ermitteln wir erneut die aktuelle Zeit und speichern sie in der Variablen `finish`
-- Zeile `6`: wir berechnen die Differenz zwischen `finish` und `start` in Millisekunden und speichern sie in der Variablen `duration` vom Typ `long` (zur Differenzberechnung verwenden wir die Klassae `Duration` aus dem `java.time`-Paket; die Klasse kennen wir noch nicht)
-- Zeile `7`: wir geben die Index und die Dauer der Ausführung aus
+- Zeile `6`: wir berechnen die Differenz zwischen `finish` und `start` in Millisekunden und speichern sie in der Variablen `duration` vom Typ `long` (zur Differenzberechnung verwenden wir die Klasse `Duration` aus dem `java.time`-Paket; die Klasse kennen wir noch nicht)
+- Zeile `7`: wir geben den Index und die Dauer der Ausführung aus
 - Zeile `10`: wir wiederholen alles mit der `getIndexSorted()`-Methode
 - Zeile `16`: wir wiederholen alles mit der `getIndexBinarySearch()`-Methode
 
@@ -1100,7 +1101,7 @@ index : -1 duration : 94
 index : -1 duration : 0
 ```
 
-`getIndexBinarySearch()` verbraucht also (fast) keine Zeit. Es überrrascht vielleicht, dass `getIndexSorted()` doppelt so viel Zeit verbraucht, wie `getIndex()`. Das liegt aber daran, dass in `getIndex()` einerseits die Bedingung der `for`-Schleife nur eine Prüfung enthält, während es in `getIndexSorted()` drei Teilbedingungen sind, die verknüpft werden müssen und es außerdem in `getIndex()` innerhalb der `for`-Schleife nur eine Bedingung zur Prüfung gibt, während es in `getIndexSorted()` zwei sind. Da das gesuchte Element mit dem Wert `8 Mio` relativ weit hinten im Array liegen würde (der Bereich der Zufallszahlen ist `[0 ... 9999999]` Zufallszahlen in den `100 Mio`Einträgen des Arrays), ist der Vorteil der Suche im sortierten Array hier zu gering. 
+`getIndexBinarySearch()` verbraucht also (fast) keine Zeit. Es überrascht vielleicht, dass `getIndexSorted()` doppelt so viel Zeit verbraucht, wie `getIndex()`. Das liegt aber daran, dass in `getIndex()` einerseits die Bedingung der `for`-Schleife nur eine Prüfung enthält, während es in `getIndexSorted()` drei Teilbedingungen sind, die verknüpft werden müssen und es außerdem in `getIndex()` innerhalb der `for`-Schleife nur eine Bedingung zur Prüfung gibt, während es in `getIndexSorted()` zwei sind. Da das gesuchte Element mit dem Wert `8 Mio` relativ weit hinten im Array liegen würde (der Bereich der Zufallszahlen ist `[0 ... 9999999]` Zufallszahlen in den `100 Mio`Einträgen des Arrays), ist der Vorteil der Suche im sortierten Array hier zu gering. 
 
 Würden wir z.B. stattdessen nach der Zahl `100000` suchen, wäre das Ergebnis so:
 
@@ -1114,7 +1115,7 @@ index : 1000575 duration : 0
 
 ### Einfügen in Arrays
 
-Hier geht es darum, dass wir ein Element in ein Array einfügen wollen. Wir unterscheiden wieder zwischen dem Einfügen in ein unsortiertes und dem Einfügen in ein sortiertes Array. Wir betrachten zunächst das EInfügen in ein unsortiertes Array. 
+Hier geht es darum, dass wir ein Element in ein Array einfügen wollen. Wir unterscheiden wieder zwischen dem Einfügen in ein unsortiertes und dem Einfügen in ein sortiertes Array. Wir betrachten zunächst das Einfügen in ein unsortiertes Array. 
 
 #### Einfügen in ein unsortiertes Array
 

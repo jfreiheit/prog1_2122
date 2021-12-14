@@ -400,9 +400,66 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          IDE (Eclipse)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         IDE (Eclipse)
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starten-mit-eclipse" class="md-nav__link">
+    Starten mit Eclipse
+  </a>
+  
+    <nav class="md-nav" aria-label="Starten mit Eclipse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-main-methode" class="md-nav__link">
+    Die main()-Methode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubersetzen-und-ausfuhren-des-programms" class="md-nav__link">
+    Übersetzen und Ausführen des Programms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordnerstruktur" class="md-nav__link">
+    Ordnerstruktur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -502,6 +559,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starten-mit-eclipse" class="md-nav__link">
+    Starten mit Eclipse
+  </a>
+  
+    <nav class="md-nav" aria-label="Starten mit Eclipse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-main-methode" class="md-nav__link">
+    Die main()-Methode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubersetzen-und-ausfuhren-des-programms" class="md-nav__link">
+    Übersetzen und Ausführen des Programms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordnerstruktur" class="md-nav__link">
+    Ordnerstruktur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -527,6 +626,72 @@
 <p><a href="https://www.jetbrains.com/de-de/idea/">IntelliJ IDEA</a> wird nun auch bereits seit über 20 Jahren von der Firma <em>JetBrains</em> entwickelt, ist in Java geschrieben und war ursprünglich für die reine Java-Entwicklung geplant, kann aber nun für die Programmierung mit vielen verschiedenen Programmiersprachen verwendet werden. Die Produktauswahl ist mittlerweile sehr vielfältig. Die <em>Ultimate Version</em> ist kostenpflichtig, kann jedoch von Studentinnen kostenlos verwendet werden. Dazu ist allerdings die Registrierung mit der <code>...htw-berlin.de</code>-Adresse notwendig. Interessant, wenn auch leider teilweise kostenpflichtig, sind in diesem Zusammenhang auch die Angebote <a href="https://www.jetbrains.com/de-de/academy/">JetBrains Academy</a> und <a href="https://www.jetbrains.com/de-de/idea-edu/">IntelliJ IDEA Edu</a>.</p>
 <p><strong>VSCode</strong></p>
 <p>setzt sich zunehmend immer mehr bei WebTech-Programmiererinnen durch, ist aber auch sehr geeignet für die Implementierung mit Java. Ein guter Startpunkt für die Java-Entwicklung mit <em>VSCode</em> findet sich <a href="https://code.visualstudio.com/docs/java/java-tutorial">hier</a>. Folgen Sie dort den Links <code>Install the Coding Pack for Java - ...</code> und <code>Install the Extension for Java</code>. Das wirklich Tolle an <em>VSCode</em> ist, dass es sich um eine Webanwendung handelt (eine sogenannte <em>progressive web app</em>). Sie läuft also eigentlich im Browser, was man aber gar nicht merkt. Die Unterstützung für die Java-Implementierung ist, wie auch bei <em>Eclipse</em> und <em>IntelliJ</em>, ausgezeichnet. </p>
+<h2 id="starten-mit-eclipse">Starten mit Eclipse<a class="headerlink" href="#starten-mit-eclipse" title="Permanent link">&para;</a></h2>
+<p>Bei ersten Start von Eclipse werden Sie gefragt, wo Sie den <code>workspace</code> festlegen wollen. Der <code>workspace</code> ist der Ordner, in dem Sie Ihre Programme speichern. Wählen Sie einen Ordner, in dem Sie alle Schreibrechte haben, z.B. <code>Documents/HTW/Prog1/workspace</code>.</p>
+<p>Sobald Eclipse geöffnet ist, können Sie ein Java Projekt erstellen. Wählen Sie dazu <code>File --&gt; New --&gt; Java Project</code>. Im ersten Semester kommen Sie mit einem projekt aus, d.h. Sie können Ihr Java-Projekt z.B. <code>WS21</code> nennen. </p>
+<p>Markieren auf der linken Seite (im <code>Package Explorer</code>) das Projekt <code>WS21</code> und wählen dann <code>File --&gt; New --&gt; Package</code>. Mit <em>Paketen</em> strukturieren wir Java-Projekte. <em>Pakete</em> können wir uns wie Ordner vorstellen (sind sie auch). Paketnamen werden <em>kleingschrieben</em> und mit einem Punkt getrennt. Wir geben für unser neues Package z.B. den Namen <code>themen.eclipse</code> an. Es entsteht ein ordner <code>themen</code> und darin ein Unterordner <code>eclipse</code>. Wenn Sie zukünftig weitere <em>Themen</em>  bearbeiten, können Sie das dann im Package <code>themen.unterthema</code> machen (wobei <code>unterthema</code> für einen Themennamen steht). </p>
+<p>Wir markieren das Package <code>themen.eclipse</code> und wählen <code>File --&gt; New --&gt; Class</code>. Es öffnet sich ein Eingabefenster:</p>
+<p><img alt="eclipse" src="../files/204_eclipse.png" /></p>
+<p>In dieses Fenster tragen wir den Namen unserer Klasse ein, z.B. <code>QuickStart</code>. Außerdem klicken wir das Häkchen dem dem Label <code>public static void main(String[] args)</code> an und klicken dann auf den Button <code>Finish</code>.</p>
+<p>Es erscheint unsere Klasse im Editor-Fenster:</p>
+<p><img alt="eclipse" src="../files/205_eclipse.png" /></p>
+<p>Die Klasse <code>Quickstart</code> wird in der folgenden Form erzeugt:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">themen.eclipse</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuickStart</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// TODO Auto-generated method stub</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>In Zeile <code>1</code> steht die <code>package</code>-Deklaration. Darin wird angegeben, dass sich unsere Klasse im Paket <code>themen.eclipse</code> befindet. Die zeilen <code>3-10</code> enthalten die Klasse <code>QuickStart</code>. Diese Klasse enthält eine einzige Methode, die <code>main()-Methode</code>.</p>
+<h3 id="die-main-methode">Die <code>main()</code>-Methode<a class="headerlink" href="#die-main-methode" title="Permanent link">&para;</a></h3>
+<p>In <code>BlueJ</code> hatten wir immer eine Methode ausgewählt, die wir ausgeführt haben. Von nun an ist es so, dass <strong>immer</strong> die <code>main()</code>-Methode ausgeführt wird (automatisch durch Programmstart). Wenn wir also unser Programm übersetzen und starten, wird genau die <code>main()</code>-Methode ausgeführt - ohne dass wir ein Objekt der Klasse <code>QuickStart</code> erzeugen müssen. Es wird nun immer eine <em>Programmklasse</em> geben, die die <code>main()</code>-Methode enthält. Ohne die <code>main()</code>-Methode kann auch nichts ausgeführt werden. </p>
+<p>Dass wir von der Klasse kein Objekt erzeugen müssen, um die <code>main()</code>-Methode zu starten, erkennen wir am Schlüsselwort <code>static</code> im Methodenkopf. Eine Methode, die als <code>static</code> deklariert wird, kann ausgeführt werden, ohne ein Objekt der Klasse zu erzeugen. </p>
+<h3 id="ubersetzen-und-ausfuhren-des-programms">Übersetzen und Ausführen des Programms<a class="headerlink" href="#ubersetzen-und-ausfuhren-des-programms" title="Permanent link">&para;</a></h3>
+<p>Geben Sie in die <code>main()</code>-Methode <code>syso</code> ein, drücken Sie <code>Strg + Leer</code>-Taste (<code>Control + Leer</code>) und dann <code>Enter</code>. Es erscheint <code>System.out.println()</code>. Erweitern Sie die Methode um die Ausgabe der Zeichenkette <code>"Hello FIW!</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">themen.eclipse</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuickStart</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello FIW!&quot;</span><span class="p">);</span>
+</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Wählen Sie dann <code>Run --&gt; Run</code> oder klicken Sie auf den grünen runden Button mit dem weißen Pfeil in der Werkzeugleiste <img alt="eclipse" src="../files/205_eclipse.png" />. Das Programm wird <em>compiliert</em> und ausgeführt. Es öffnet sich unten das <em>Konsolen</em>-Fenster und dort erscheint <code>Hello FIW!</code>:</p>
+<p><img alt="eclipse" src="../files/207_eclipse.png" /></p>
+<p>Fertig. Sie haben Eclipse eingerichtet.</p>
+<h3 id="ordnerstruktur">Ordnerstruktur<a class="headerlink" href="#ordnerstruktur" title="Permanent link">&para;</a></h3>
+<p>gehen Sie im <code>Finder</code> oder im <code>Datei Explorer</code> in den <code>wiorkspace</code>-Ordner. Darin sehen Sie den Ordner <code>WS21</code> (das Java-Projekt). In dem <code>WS21</code> gibt es einen <code>bin</code>- und einen <code>src</code>-Ordner. </p>
+<p>Im <code>src</code>-Ordner finden Sie den Ordner <code>themen</code> (ein <code>package</code>) und darin den Ordner <code>eclipse</code> (ebenfalls ein <code>package</code>). Darin liegt die <code>QuickStart.java</code>. </p>
+<p>Der <code>bin</code>-Ordner ist genauso aufgebaut, wie der <code>src</code>-Ordner, nur dass darin die <code>*.class</code>-Dateien gespeichert sind und nicht die <code>*.java</code>-Dateien. </p>
+<p>Die Ordnerstruktur zeigt nochmal, dass Pakete der Strukturierung unserer Dateien dienen. </p>
                 
               
               

@@ -942,8 +942,8 @@
 <h2 id="erzeugung-und-initialisierung-eines-arrays">Erzeugung und Initialisierung eines Arrays<a class="headerlink" href="#erzeugung-und-initialisierung-eines-arrays" title="Permanent link">&para;</a></h2>
 <p>Die Erzeugung und Initialisierung eines Arrays erfolgt in drei Schritten:</p>
 <ol>
-<li>Schritt: Definition einer Referenzvariablen, die auf das Array-Objekt zeigt  (siehe oben in Zeile <code>1</code>: <code>int[] numbers</code>t)</li>
-<li>Schritt: Erzeugen des Arrays, d. h. eines Array-Objektes, das aus Elementen eines bestimmten Datentyps besteht (und Zuweisung an die zuvor definiere Referenzvariable - siehe oben Zeile <code>1</code>: <code>new int[5]</code>)</li>
+<li>Schritt: Definition einer Referenzvariablen, die auf das Array-Objekt zeigt  (siehe oben in Zeile <code>1</code>: <code>int[] numbers</code>)</li>
+<li>Schritt: Erzeugen des Arrays, d. h. eines Array-Objektes, das aus Elementen eines bestimmten Datentyps besteht (und Zuweisung an die zuvor definierte Referenzvariable - siehe oben Zeile <code>1</code>: <code>new int[5]</code>)</li>
 <li>Schritt: Belegen der Array-Elemente mit Werten, d. h. Initialisierung des Arrays (siehe oben Zeilen <code>2-6</code>). </li>
 </ol>
 <p>Beispiele verschiedene Arrays erzeugen:</p>
@@ -1011,7 +1011,7 @@
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Summe aller Elemente : &quot;</span> <span class="o">+</span> <span class="n">sum</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="mogliche-andere-form-der-erzeugung-und-initialisierung">Mögliche andere Form der Erzeugung und Initialisierung<a class="headerlink" href="#mogliche-andere-form-der-erzeugung-und-initialisierung" title="Permanent link">&para;</a></h3>
-<p>Das Array kann auch in einer anderen Form erzeugt und initilisiert werden:</p>
+<p>Das Array kann auch in einer anderen Form erzeugt und initialisiert werden:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">};</span>
 </code></pre></div>
 <p>Diese Form erzeugt ein <code>int[]</code>-Array der Länge <code>5</code> mit den Werten </p>
@@ -1033,11 +1033,13 @@
  7
  8
  9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span> <span class="n">satz</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span> <span class="n">satz</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
 <span class="n">satz</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Das&quot;</span><span class="p">;</span>
 <span class="n">satz</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;ist&quot;</span><span class="p">;</span>
 <span class="n">satz</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;ein&quot;</span><span class="p">;</span>
 <span class="n">satz</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Satz&quot;</span><span class="p">;</span>
+
 <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">satz</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">satz</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
@@ -1775,7 +1777,7 @@ copy     : <span class="o">[</span> <span class="m">1</span>, <span class="m">18
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Eine <a href="../variablen/#konstanten">Konstante</a> ist eine Variable, die genau einmal einen Wert zugewiesen bekommt (initailisiert wird) und deren Wert nie wieder überschrieben werden kann. Die Namen von Konstanten schreiben wir durchgehend GROSS. </p>
+<p>Eine <a href="../variablen/#konstanten">Konstante</a> ist eine Variable, die genau einmal einen Wert zugewiesen bekommt (initialisiert wird) und deren Wert nie wieder überschrieben werden kann. Die Namen von Konstanten schreiben wir durchgehend GROSS. </p>
 <details class="question"><summary>Angenommen, das <code>element</code> kommt mehrmals im Array <code>a</code> vor. Wird der erste Index des Auftretens von <code>element</code> im Array zurückgegeben oder der letzte Index? Wie könnte man das ändern?</summary><ul>
 <li>Der letzte. Man könnte beim ersten Finden des Elementes die Schleife sofort verlassen (aber nicht <code>break;</code> verwenden!)</li>
 </ul>
@@ -1838,7 +1840,7 @@ copy     : <span class="o">[</span> <span class="m">1</span>, <span class="m">18
 <p>Bis jetzt sind wir immer sequenziell durch das Array durchgelaufen, also von vorne nach hinten, beginnend mit dem Index <code>0</code> bis wir bei <code>array.length</code> angekommen waren. In sortierten Arrays können wir das Prinzip ändern: </p>
 <ul>
 <li>Wir fangen einfach in der Mitte des Arrays an und wenn der Wert, den wir suchen, kleiner ist, als der Wert in der Mitte, dann suchen wir links weiter und sonst suchen wir rechts weiter. </li>
-<li>Dann gehen wir mit der linken bzw. rechten Hälft egenau so vor usw.</li>
+<li>Dann gehen wir mit der linken bzw. rechten Hälfte genau so vor usw.</li>
 </ul>
 <p>Diese Suche nennt sich <strong>binäre Suche</strong> (<em>binary search</em>), in jedem Schritt wird der (verbliebene) Suchraum halbiert. Angenommen, wir suchen in dem folgenden Array die <strong>25</strong>:</p>
 <p><img alt="binary" src="../files/33_binary.png" /></p>
@@ -2015,8 +2017,8 @@ copy     : <span class="o">[</span> <span class="m">1</span>, <span class="m">18
 <li>Zeile <code>3</code>: Mithilfe der <code>Instant</code>-Klasse (aus <code>java.time</code>) und deren Methode <code>now()</code> ermitteln wir die aktuelle Zeit und speichern sie in der Variablen <code>start</code> (vom Typ <code>Instant</code>); die Klasse kennen wir noch nicht</li>
 <li>Zeile <code>4</code>: Wir verwenden die Methode <code>getIndex()</code>, um das Element mit dem Wert <code>8.000.000</code> im Array <code>test</code> zu suchen</li>
 <li>Zeile <code>5</code>: Mithilfe <code>Instant.now()</code> ermitteln wir erneut die aktuelle Zeit und speichern sie in der Variablen <code>finish</code></li>
-<li>Zeile <code>6</code>: wir berechnen die Differenz zwischen <code>finish</code> und <code>start</code> in Millisekunden und speichern sie in der Variablen <code>duration</code> vom Typ <code>long</code> (zur Differenzberechnung verwenden wir die Klassae <code>Duration</code> aus dem <code>java.time</code>-Paket; die Klasse kennen wir noch nicht)</li>
-<li>Zeile <code>7</code>: wir geben die Index und die Dauer der Ausführung aus</li>
+<li>Zeile <code>6</code>: wir berechnen die Differenz zwischen <code>finish</code> und <code>start</code> in Millisekunden und speichern sie in der Variablen <code>duration</code> vom Typ <code>long</code> (zur Differenzberechnung verwenden wir die Klasse <code>Duration</code> aus dem <code>java.time</code>-Paket; die Klasse kennen wir noch nicht)</li>
+<li>Zeile <code>7</code>: wir geben den Index und die Dauer der Ausführung aus</li>
 <li>Zeile <code>10</code>: wir wiederholen alles mit der <code>getIndexSorted()</code>-Methode</li>
 <li>Zeile <code>16</code>: wir wiederholen alles mit der <code>getIndexBinarySearch()</code>-Methode</li>
 </ul>
@@ -2025,7 +2027,7 @@ copy     : <span class="o">[</span> <span class="m">1</span>, <span class="m">18
 index : -1 duration : <span class="m">94</span>
 index : -1 duration : <span class="m">0</span>
 </code></pre></div>
-<p><code>getIndexBinarySearch()</code> verbraucht also (fast) keine Zeit. Es überrrascht vielleicht, dass <code>getIndexSorted()</code> doppelt so viel Zeit verbraucht, wie <code>getIndex()</code>. Das liegt aber daran, dass in <code>getIndex()</code> einerseits die Bedingung der <code>for</code>-Schleife nur eine Prüfung enthält, während es in <code>getIndexSorted()</code> drei Teilbedingungen sind, die verknüpft werden müssen und es außerdem in <code>getIndex()</code> innerhalb der <code>for</code>-Schleife nur eine Bedingung zur Prüfung gibt, während es in <code>getIndexSorted()</code> zwei sind. Da das gesuchte Element mit dem Wert <code>8 Mio</code> relativ weit hinten im Array liegen würde (der Bereich der Zufallszahlen ist <code>[0 ... 9999999]</code> Zufallszahlen in den <code>100 Mio</code>Einträgen des Arrays), ist der Vorteil der Suche im sortierten Array hier zu gering. </p>
+<p><code>getIndexBinarySearch()</code> verbraucht also (fast) keine Zeit. Es überrascht vielleicht, dass <code>getIndexSorted()</code> doppelt so viel Zeit verbraucht, wie <code>getIndex()</code>. Das liegt aber daran, dass in <code>getIndex()</code> einerseits die Bedingung der <code>for</code>-Schleife nur eine Prüfung enthält, während es in <code>getIndexSorted()</code> drei Teilbedingungen sind, die verknüpft werden müssen und es außerdem in <code>getIndex()</code> innerhalb der <code>for</code>-Schleife nur eine Bedingung zur Prüfung gibt, während es in <code>getIndexSorted()</code> zwei sind. Da das gesuchte Element mit dem Wert <code>8 Mio</code> relativ weit hinten im Array liegen würde (der Bereich der Zufallszahlen ist <code>[0 ... 9999999]</code> Zufallszahlen in den <code>100 Mio</code>Einträgen des Arrays), ist der Vorteil der Suche im sortierten Array hier zu gering. </p>
 <p>Würden wir z.B. stattdessen nach der Zahl <code>100000</code> suchen, wäre das Ergebnis so:</p>
 <div class="highlight"><pre><span></span><code>index : <span class="m">1000579</span> duration : <span class="m">53</span>
 index : <span class="m">1000579</span> duration : <span class="m">4</span>
@@ -2033,7 +2035,7 @@ index : <span class="m">1000575</span> duration : <span class="m">0</span>
 </code></pre></div>
 <hr />
 <h3 id="einfugen-in-arrays">Einfügen in Arrays<a class="headerlink" href="#einfugen-in-arrays" title="Permanent link">&para;</a></h3>
-<p>Hier geht es darum, dass wir ein Element in ein Array einfügen wollen. Wir unterscheiden wieder zwischen dem Einfügen in ein unsortiertes und dem Einfügen in ein sortiertes Array. Wir betrachten zunächst das EInfügen in ein unsortiertes Array. </p>
+<p>Hier geht es darum, dass wir ein Element in ein Array einfügen wollen. Wir unterscheiden wieder zwischen dem Einfügen in ein unsortiertes und dem Einfügen in ein sortiertes Array. Wir betrachten zunächst das Einfügen in ein unsortiertes Array. </p>
 <h4 id="einfugen-in-ein-unsortiertes-array">Einfügen in ein unsortiertes Array<a class="headerlink" href="#einfugen-in-ein-unsortiertes-array" title="Permanent link">&para;</a></h4>
 <p>Angenommen, wir haben folgendes <code>int</code>-Array <code>a</code>:</p>
 <p><img alt="unsortiert" src="../files/34_array.png" /></p>
