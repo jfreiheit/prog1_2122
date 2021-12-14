@@ -1426,6 +1426,251 @@
 		```		
 
 
+	
+??? note "Übung 9 (15.12.2021)"
+	
+	1. Diese Übung wird **nicht am Rechner** durchgeführt, sondern es geht um Programmverständinis und algorithmische Ideen!
+
+	2. Zunächst ein Beispiel für eine *“Erklären Sie den folgenden Code in einem Satz”*-Aufgabe:
+		```java
+		if (a < b)
+		{
+		    System.out.print(a);
+		}
+		else
+		{
+		    System.out.print(b);
+		}
+		```
+		Antwort: *Der kleinere Wert der Variablen a und b wird ausgegeben.*
+
+	3. Was wird durch folgenden Code auf der Konsole ausgegeben?:
+		```java
+		public class PrinterClass 
+		{
+			public static void main ( String[] args ) 
+			{
+				System.out.print ( "answer=" );
+				System.out.println ( 40 + 2 );
+			}
+		}
+		```	
+
+	4. Was wird durch folgenden Code auf der Konsole ausgegeben?:
+		```java
+		int number = 3;
+		while (number == 3)
+		{
+		     System.out.print(number + " + " );
+		     number++;
+		}
+		```	
+
+
+	5. Was wird durch folgenden Code auf der Konsole ausgegeben?:
+		```java
+		int number = 3;
+		while (number == 3)
+		{
+		     System.out.print(number + " + " );
+		     number++;
+		}
+		```	
+
+	6. Was wird durch folgenden Code auf der Konsole ausgegeben?:
+		```java
+		for (int count=0; count<4; count--) 
+		{
+		     System.out.print(count);
+		}
+		```	
+
+	7. Erklären Sie den folgenden Code in einem Satz.
+		```java
+		int sum = 0;
+		for ( int n=1 ; n<=20 ; n++ )
+		{
+		      sum = sum + n; 			
+		} 	
+		System.out.println(sum);
+		```	
+
+	8. Erklären Sie den folgenden Code in einem Satz.
+		```java
+		if (a < b)
+		{
+			if (b < c)
+			{
+				System.out.println(c);
+			}
+			else
+			{
+				System.out.println(b);
+			}
+		}
+		else if (a < c)
+		{
+			System.out.println(c);
+		}
+		else
+		{
+			System.out.println(a);
+		}
+		```	
+		Welche Kombination von Werten sorgt dafür, dass `b` ausgegeben wird?
+
+	9. Was macht der folgende Code?
+		```java
+		public class Student {
+			private String name ;
+			private int age ;
+
+			public Student ( String name , int age ) {
+				this.name = name ;
+				this.age = age ;
+			}
+
+			public int getAge ( ) {
+				return age ;
+			}
+
+			public int hadBirthday ( ) {
+				return age = age + 1 ;
+			}
+
+			public void main ( ) {
+				Student willi = new Student ( "Willi" , 25 ) ;
+				willi.hadBirthday ( ) ;
+				System.out.print ( willi.getAge ( ) ) ;
+			}
+		}
+		```	
+
+	10. Welchen Wert liefert `rect2.area( )` ?
+		```java
+		public class Rectangle {
+		   private int x1, y1, x2, y2;
+
+		   public Rectangle (int x1 , int y1 , int x2 , int y2) {
+			this.x1 = x1;
+			this.y1 = y1;
+			this.x2 = x2;
+			this.y2 = y2;
+		   }
+
+		   public int width() { 
+		   	return this.x2 - this.x1; 
+		   }
+
+		   public int height() { 
+		   	return this.y2 - this.y1; 
+		   }
+
+		   public double area() { 
+		   	return this.width() * this.height(); 
+		   }
+
+		   public void main () {
+				Rectangle rect1 = new Rectangle(0 , 0 , 10 , 10);
+				System.out.println(rect1.area());
+				Rectangle rect2 = new Rectangle(5 , 5 , 10 , 10);
+				System.out.println(rect2.area());
+		   }
+		}
+		```	
+
+	10. Was macht der folgende Code?
+		```java
+		public class Vehicle {
+			String producer, type;
+			int topSpeed, currentSpeed;
+
+			public Vehicle ( String p , String t , int tp ) {
+				this.producer = p;
+				this.type = t;
+				this.topSpeed = tp;
+				this.currentSpeed = 0;
+			}
+
+			public int accelerate ( int kmh ) {
+				if ( ( this.currentSpeed + kmh ) > this.topSpeed ) {
+					this.currentSpeed = this.topSpeed;
+				} else {
+					this.currentSpeed = this.currentSpeed + kmh ;
+				}
+				return this.currentSpeed;
+			}
+
+			public static void main (String args[ ]) {
+				Vehicle v = new Vehicle ( "Audi" , "A6" , 200 ) ;
+				v.accelerate ( 10 ) ;
+			}
+		}
+		```	
+
+	11. Was wird durch folgenden Code auf der Konsole ausgegeben?
+		```java
+		int iNum = 3;
+		for(int iX = 0; iX < iNum; iX++)
+		{
+			for(int iY = 0; iY < iNum; iY++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		```	
+
+	12. Was wird durch folgenden Code auf der Konsole ausgegeben?
+		```java
+		public class PrintPattern {
+
+			public void printMethod ( int numberOfRows ) {
+				for ( int row = 1 ; row <= numberOfRows ; row ++ ) {
+					for ( int col = 1 ; col <= row ; col ++ ) {
+						System.out.print ( '*' ) ;
+					}
+					System.out.println ( ) ;
+				}
+			}
+
+			public void main ( ) {
+				PrintPattern p = new PrintPattern();
+				p.printMethod ( 3 ) ;
+			}
+		}
+		```	
+
+	13. Was berechnet der folgende Code?
+		```java
+		public int calculate ( int number1 , int number2 ) {
+			int result = number1 ;
+			for ( int i = 2 ; i <= number2 ; i += 1 ) {
+				result = result * number1 ;
+			}
+			return result ;
+		}
+		```	
+
+	14. Was wird durch folgenden Code auf der Konsole ausgegeben?
+		```java
+		int n = 4;
+		for (int row=1; row<=n; row++) {
+			for (int column=1; column<=n; column++) {
+				if (row==1 || row==n || column==1 || column==n)
+					System.out.print ("* ");
+				else
+					System.out.print ("  "); 				
+				}
+				System.out.println( );
+			}
+		}
+		```	
+
+
+
+
+
 
 
 

@@ -75,6 +75,7 @@ nav:
     - Methodenstack: methodenstack.md 
     - Vererbung: vererbung.md
     - Object: object.md
+    - IDE (Eclipse): ide.md 
     - Arrays: arrays.md
     - Übungen: uebungen.md
     - Aufgaben: aufgaben.md

@@ -1274,3 +1274,116 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	=== "Teil2 (nach dem Absturz ;-) )"
 		<iframe src="https://mediathek.htw-berlin.de/media/embed?key=6169600634360a352aef0f64dd740d7f&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Object (equals())-- 14.12.2021"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		public class Programclass
+		{
+		    public void main()
+		    {
+		        Viereck v1 = new Viereck(10, 20, 30, 40); 
+		        Rechteck r1 = new Rechteck(15, 25);
+		        Quadrat q1 = new Quadrat(15);
+		        
+		        Viereck vn1 = new Viereck(11, 22, 33, 44);
+		        Viereck vn2 = new Rechteck(23, 34);
+		        Viereck vn3 = new Quadrat(7);
+		        vn1.umfang();
+		        //vn2.flaecheninhalt();
+		        
+		        Object o1 = new Viereck(11, 22, 33, 44);
+		        Object o2 = new Rechteck(23, 34);
+		        Object o3 = new Quadrat(7);
+		        // o1.umfang();
+		        
+		        
+		        if(vn3 instanceof Quadrat)
+		        {
+		           // true 
+		        }
+		        
+		        // if(v instanceof Object) {} // IMMER true
+		        
+		        // Polymorphie!!
+		        System.out.println(vn1.toString());
+		        System.out.println(vn2.toString());
+		        System.out.println(vn3.toString());
+		        
+		        // exakt gleich zu Zeilen 20-31
+		        System.out.println(vn1);
+		        System.out.println(vn2);
+		        System.out.println(vn3);
+		        
+		        Viereck v2 = new Viereck(10, 20, 30, 40); 
+		        Viereck v3 = v1;
+		        
+		        v1.equals(v1);
+		        v1.equals(v3);
+		        
+		        Viereck v4;         // "Wert" von v4 ist null
+		        // v4.equals(v1)    // null.equals()
+		        
+		        
+		        
+		        System.out.println("v1 gleich v2 ? " + (v1 == v2));  // Referenzvergleich!!!
+		        System.out.println("v1 gleich v3 ? " + (v1 == v3));  // Referenzvergleich!!!
+		        
+		        System.out.println("v1 gleich v2 ? " + (v1.equals(v2)));  // Objektvergleich!!!
+		        System.out.println("v1 gleich v3 ? " + (v1.equals(v3)));  // Objektvergleich!!!
+		        
+		    }
+		}
+
+		```
+	=== "Viereck.java"
+		```java	linenums="1" hl_lines="31-41"
+		public class Viereck
+		{
+		    protected int a,b,c,d;    // Seiten des Vierecks
+		    
+		    public Viereck(int a, int b, int c, int d)
+		    {
+		        this.a = a;
+		        this.b = b;
+		        this.c = c;
+		        this.d = d;
+		        // System.out.println("Objekt von Viereck erzeugt");
+		    }
+		    
+		    public int umfang()
+		    {
+		        return this.a + this.b + this.c + this.d;
+		    }
+		    
+		    @Override
+		    public String toString()
+		    {
+		        String s = String.format("[ a=%d, b=%d, c=%d, d=%d ], Umfang des Vierecks : %d %n", this.a, this.b, this.c, this.d, this.umfang());
+		        return s;
+		    }
+		   
+		    public void print()
+		    {
+		        System.out.println( this.toString() );
+		    }
+		    
+		    @Override
+		    public boolean equals(Object other)
+		    {
+		        if(this == null) return false;
+		        if(this == other) return true;
+		        if(other.getClass() != this.getClass()) return false;
+		        
+		        Viereck otherV = (Viereck)other;
+		        
+		        return (this.a == otherV.a && this.b == otherV.b && this.c == otherV.c && this.d == otherV.d);
+		    }
+		}
+		```
+
+
+??? info "Video zur Vorlesung Object (equals())-- 14.12.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=c7cc23933293c7378cd08df3c8b756e7&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+

@@ -391,6 +391,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../ide/" class="md-nav__link">
+        IDE (Eclipse)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../arrays/" class="md-nav__link">
         Arrays
       </a>
@@ -2030,6 +2045,247 @@ Pear expires on <span class="m">1</span>.1.1900
 </code></pre></div>
 </div>
 </div>
+</details>
+<details class="note"><summary>Übung 9 (15.12.2021)</summary><ol>
+<li>
+<p>Diese Übung wird <strong>nicht am Rechner</strong> durchgeführt, sondern es geht um Programmverständinis und algorithmische Ideen!</p>
+</li>
+<li>
+<p>Zunächst ein Beispiel für eine <em>“Erklären Sie den folgenden Code in einem Satz”</em>-Aufgabe:
+    <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+    Antwort: <em>Der kleinere Wert der Variablen a und b wird ausgegeben.</em></p>
+</li>
+<li>
+<p>Was wird durch folgenden Code auf der Konsole ausgegeben?:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PrinterClass</span> 
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span> <span class="n">String</span><span class="o">[]</span> <span class="n">args</span> <span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span> <span class="s">&quot;answer=&quot;</span> <span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span> <span class="p">(</span> <span class="mi">40</span> <span class="o">+</span> <span class="mi">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was wird durch folgenden Code auf der Konsole ausgegeben?:
+    <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="p">);</span>
+     <span class="n">number</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was wird durch folgenden Code auf der Konsole ausgegeben?:
+    <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="p">);</span>
+     <span class="n">number</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was wird durch folgenden Code auf der Konsole ausgegeben?:
+    <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">count</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">count</span><span class="o">--</span><span class="p">)</span> 
+<span class="p">{</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Erklären Sie den folgenden Code in einem Satz.
+    <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">20</span> <span class="p">;</span> <span class="n">n</span><span class="o">++</span> <span class="p">)</span>
+<span class="p">{</span>
+      <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">n</span><span class="p">;</span>            
+<span class="p">}</span>   
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Erklären Sie den folgenden Code in einem Satz.
+    <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+    Welche Kombination von Werten sorgt dafür, dass <code>b</code> ausgegeben wird?</p>
+</li>
+<li>
+<p>Was macht der folgende Code?
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span> <span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span> <span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Student</span> <span class="p">(</span> <span class="n">String</span> <span class="n">name</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">age</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span> <span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span> <span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span> <span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">age</span> <span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hadBirthday</span> <span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">Student</span> <span class="n">willi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span> <span class="p">(</span> <span class="s">&quot;Willi&quot;</span> <span class="p">,</span> <span class="mi">25</span> <span class="p">)</span> <span class="p">;</span>
+        <span class="n">willi</span><span class="p">.</span><span class="na">hadBirthday</span> <span class="p">(</span> <span class="p">)</span> <span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span> <span class="n">willi</span><span class="p">.</span><span class="na">getAge</span> <span class="p">(</span> <span class="p">)</span> <span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Welchen Wert liefert <code>rect2.area( )</code> ?
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">Rectangle</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x1</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">y1</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">x2</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">x1</span> <span class="o">=</span> <span class="n">x1</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">y1</span> <span class="o">=</span> <span class="n">y1</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">x2</span> <span class="o">=</span> <span class="n">x2</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">y2</span> <span class="o">=</span> <span class="n">y2</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">width</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">x2</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="na">x1</span><span class="p">;</span> 
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">height</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">y2</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="na">y1</span><span class="p">;</span> 
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="p">()</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="p">();</span> 
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">Rectangle</span> <span class="n">rect1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">10</span> <span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rect1</span><span class="p">.</span><span class="na">area</span><span class="p">());</span>
+        <span class="n">Rectangle</span> <span class="n">rect2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">5</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">10</span> <span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rect2</span><span class="p">.</span><span class="na">area</span><span class="p">());</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was macht der folgende Code?
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicle</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">producer</span><span class="p">,</span> <span class="n">type</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">topSpeed</span><span class="p">,</span> <span class="n">currentSpeed</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Vehicle</span> <span class="p">(</span> <span class="n">String</span> <span class="n">p</span> <span class="p">,</span> <span class="n">String</span> <span class="n">t</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">tp</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">producer</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">topSpeed</span> <span class="o">=</span> <span class="n">tp</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">currentSpeed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">accelerate</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">kmh</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="na">currentSpeed</span> <span class="o">+</span> <span class="n">kmh</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="na">topSpeed</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">currentSpeed</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">topSpeed</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">currentSpeed</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">currentSpeed</span> <span class="o">+</span> <span class="n">kmh</span> <span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">currentSpeed</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[</span> <span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Vehicle</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vehicle</span> <span class="p">(</span> <span class="s">&quot;Audi&quot;</span> <span class="p">,</span> <span class="s">&quot;A6&quot;</span> <span class="p">,</span> <span class="mi">200</span> <span class="p">)</span> <span class="p">;</span>
+        <span class="n">v</span><span class="p">.</span><span class="na">accelerate</span> <span class="p">(</span> <span class="mi">10</span> <span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was wird durch folgenden Code auf der Konsole ausgegeben?
+    <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">iNum</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">iX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">iX</span> <span class="o">&lt;</span> <span class="n">iNum</span><span class="p">;</span> <span class="n">iX</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">iY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">iY</span> <span class="o">&lt;</span> <span class="n">iNum</span><span class="p">;</span> <span class="n">iY</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was wird durch folgenden Code auf der Konsole ausgegeben?
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PrintPattern</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMethod</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">numberOfRows</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">row</span> <span class="o">&lt;=</span> <span class="n">numberOfRows</span> <span class="p">;</span> <span class="n">row</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">col</span> <span class="o">&lt;=</span> <span class="n">row</span> <span class="p">;</span> <span class="n">col</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span> <span class="sc">&#39;*&#39;</span> <span class="p">)</span> <span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span> <span class="p">(</span> <span class="p">)</span> <span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">PrintPattern</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintPattern</span><span class="p">();</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">printMethod</span> <span class="p">(</span> <span class="mi">3</span> <span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was berechnet der folgende Code?
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">calculate</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">number1</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">number2</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">number1</span> <span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">number2</span> <span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">*</span> <span class="n">number1</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span> <span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Was wird durch folgenden Code auf der Konsole ausgegeben?
+    <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">row</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">column</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">column</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="o">==</span><span class="mi">1</span> <span class="o">||</span> <span class="n">row</span><span class="o">==</span><span class="n">n</span> <span class="o">||</span> <span class="n">column</span><span class="o">==</span><span class="mi">1</span> <span class="o">||</span> <span class="n">column</span><span class="o">==</span><span class="n">n</span><span class="p">)</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span><span class="s">&quot;* &quot;</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>                
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
 </details>
                 
               
