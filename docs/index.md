@@ -51,8 +51,8 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 7. | 22.-26.11.2021 | [Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten](./objekte/#eine-weiterer-datentyp-point) | [Aufgabe 6](./aufgaben/#aufgabe-6-abgabe-bis-29112021-2400-uhr)  | 29.11.2021 | 
 | 8. | 29.-03.12.2021 | [Eigene Datentypen in Datentypen verwenden](./objekte/#eigene-datentypen-in-eigenen-datentypen-verwenden)  | [Aufgabe 7](./aufgaben/#aufgabe-7-abgabe-bis-6122021-2400-uhr)  | 06.12.2021 |
 | 9. | 06.-10.12.2021 | [Vererbung](./vererbung/#vererbung), [Object und Polymorphie](./object/#die-klasse-object) | [Aufgabe 8](./aufgaben/#aufgabe-8-abgabe-bis-13122021-2400-uhr)  | 13.12.2021 |
-| 10. | 13.-17.12.2021 | Arrays I | [Aufgabe 9](./aufgaben/#aufgabe-9-abgabe-bis-03012022-2400-uhr) | 03.01.2022 |
-| 11. | 20.-24.12.2021 | Arrays II  | [Aufgabe 10](./aufgaben/#aufgabe-10-abgabe-bis-10012022-2400-uhr)  | 10.01.2022 |
+| 10. | 13.-17.12.2021 | [Arrays](./arrays/#arrays) | [Aufgabe 9](./aufgaben/#aufgabe-9-abgabe-bis-03012022-2400-uhr) | 03.01.2022 |
+| 11. | 20.-24.12.2021 | [Algorithmen über Arrays](./arrays/#algorithmen-uber-arrays)  | [Aufgabe 10](./aufgaben/#aufgabe-10-abgabe-bis-10012022-2400-uhr)  | 10.01.2022 |
 | | | | | | | |
 | 12. | 03.-07.01.2022 | Enumerations | [Aufgabe 11](./aufgaben/#aufgabe-11-abgabe-bis-17012022-2400-uhr)  | 17.01.2022 |
 | 13. | 10.-14.01.2022 | Exceptions | [Aufgabe 12](./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr) | 24.01.2022 |

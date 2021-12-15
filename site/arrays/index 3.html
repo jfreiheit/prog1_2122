@@ -1,0 +1,2248 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I">
+      
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/arrays/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Arrays - Programmieren I</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arrays" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmieren I" class="md-header__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmieren I
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arrays
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmieren I" class="md-nav__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    Programmieren I
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluej/" class="md-nav__link">
+        BlueJ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variablen/" class="md-nav__link">
+        Variablen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ausdruecke/" class="md-nav__link">
+        Ausdrücke
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methoden/" class="md-nav__link">
+        Methoden
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objekte/" class="md-nav__link">
+        Klassen und Objekte
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vererbung/" class="md-nav__link">
+        Vererbung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object/" class="md-nav__link">
+        Object
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ide/" class="md-nav__link">
+        IDE (Eclipse)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Arrays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Arrays
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erzeugung-und-initialisierung-eines-arrays" class="md-nav__link">
+    Erzeugung und Initialisierung eines Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Erzeugung und Initialisierung eines Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-eigenschaft-length" class="md-nav__link">
+    Die Eigenschaft length
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe-der-werte" class="md-nav__link">
+    Ausgabe der Werte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verwenden-der-werte" class="md-nav__link">
+    Verwenden der Werte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mogliche-andere-form-der-erzeugung-und-initialisierung" class="md-nav__link">
+    Mögliche andere Form der Erzeugung und Initialisierung
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weitere-beispiele-von-arrays" class="md-nav__link">
+    Weitere Beispiele von Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithmen-uber-arrays" class="md-nav__link">
+    Algorithmen über Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithmen über Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methoden-mit-arrays-als-parameter" class="md-nav__link">
+    Methoden mit Arrays als Parameter
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden mit Arrays als Parameter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe-der-werte-auf-die-konsole" class="md-nav__link">
+    Ausgabe der Werte auf die Konsole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximumwert-ermitteln" class="md-nav__link">
+    Maximumwert ermitteln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zwei-arrays-auf-gleichheit-prufen" class="md-nav__link">
+    Zwei Arrays auf Gleichheit prüfen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methoden-mit-array-als-ruckgabe" class="md-nav__link">
+    Methoden mit Array als Rückgabe
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden mit Array als Rückgabe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-kopieren" class="md-nav__link">
+    Array kopieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-verketten" class="md-nav__link">
+    Array verketten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suchen-in-arrays" class="md-nav__link">
+    Suchen in Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Suchen in Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suche-in-unsortierten-arrays" class="md-nav__link">
+    Suche in unsortierten Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suche-in-sortierten-arrays" class="md-nav__link">
+    Suche in sortierten Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#einfugen-in-arrays" class="md-nav__link">
+    Einfügen in Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Einfügen in Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einfugen-in-ein-unsortiertes-array" class="md-nav__link">
+    Einfügen in ein unsortiertes Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#einfugen-in-ein-sortiertes-array" class="md-nav__link">
+    Einfügen in ein sortiertes Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aufgaben/" class="md-nav__link">
+        Aufgaben
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hilfsklassen/" class="md-nav__link">
+        Hilfsklassen
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erzeugung-und-initialisierung-eines-arrays" class="md-nav__link">
+    Erzeugung und Initialisierung eines Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Erzeugung und Initialisierung eines Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-eigenschaft-length" class="md-nav__link">
+    Die Eigenschaft length
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe-der-werte" class="md-nav__link">
+    Ausgabe der Werte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verwenden-der-werte" class="md-nav__link">
+    Verwenden der Werte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mogliche-andere-form-der-erzeugung-und-initialisierung" class="md-nav__link">
+    Mögliche andere Form der Erzeugung und Initialisierung
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weitere-beispiele-von-arrays" class="md-nav__link">
+    Weitere Beispiele von Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithmen-uber-arrays" class="md-nav__link">
+    Algorithmen über Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithmen über Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methoden-mit-arrays-als-parameter" class="md-nav__link">
+    Methoden mit Arrays als Parameter
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden mit Arrays als Parameter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe-der-werte-auf-die-konsole" class="md-nav__link">
+    Ausgabe der Werte auf die Konsole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximumwert-ermitteln" class="md-nav__link">
+    Maximumwert ermitteln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zwei-arrays-auf-gleichheit-prufen" class="md-nav__link">
+    Zwei Arrays auf Gleichheit prüfen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methoden-mit-array-als-ruckgabe" class="md-nav__link">
+    Methoden mit Array als Rückgabe
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden mit Array als Rückgabe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-kopieren" class="md-nav__link">
+    Array kopieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-verketten" class="md-nav__link">
+    Array verketten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suchen-in-arrays" class="md-nav__link">
+    Suchen in Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Suchen in Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suche-in-unsortierten-arrays" class="md-nav__link">
+    Suche in unsortierten Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suche-in-sortierten-arrays" class="md-nav__link">
+    Suche in sortierten Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#einfugen-in-arrays" class="md-nav__link">
+    Einfügen in Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Einfügen in Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einfugen-in-ein-unsortiertes-array" class="md-nav__link">
+    Einfügen in ein unsortiertes Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#einfugen-in-ein-sortiertes-array" class="md-nav__link">
+    Einfügen in ein sortiertes Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/prog1/edit/master/docs/arrays.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h1>
+<p>In einer Variable können wir genau einen Wert speichern. Wenn wir 5 Werte speichern wollen, benötigen wir 5 Variablen und wenn wir 1000 Werte speichern wollen, benötigen wir 1000 Variablen. Das ist natürlich unzweckmäßig. Wenn Sie mehrere Werte gleichen Typs speichern wollen, dann verwenden Sie dazu besser <em>Arrays</em> (<em>Felder</em>). Arrays sind Objekte.</p>
+<p>Wir schauen uns mal ein einführendes Beispiel an. Angenommen, wir wollen 5 <code>int</code>-Werte <code>0</code>, <code>1</code>, <code>4</code>, <code>9</code> und <code>16</code> speichern. Bis jetzt benötigten wir dazu 5 Variablen:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">number1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number3</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number4</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number5</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+</code></pre></div>
+<p>Jetzt wollen wir dazu ein Array verwenden. Die Erzeugung und Initialisierung sieht so aus:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>     <span class="c1">// Array der Laenge 5</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                 <span class="c1">// erstes Element Wert 0</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                 <span class="c1">// zweites Element Wert 1</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                 <span class="c1">// drittes Element Wert 4</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>                 <span class="c1">// viertes Element Wert 9</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>                <span class="c1">// fuenftes Element Wert 16</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>Ein Array erkennen wir an den eckigen Klammern <code>[]</code>. </li>
+<li>Unser Array im Beispiel ist vom Typ <code>int</code>, d.h. jedes <em>Element</em> in diesem Array ist vom Typ <code>int</code>. Arrays können von einem beliebigen Typ sein, sowohl Wertetypen als auch Referenztypen. Ein Array wird immer für genau einen Typ deklariert, bei uns <code>int</code> &rarr; deshalb <code>int[]</code>. Bestünde das Array aus lauter Strings, dann wäre der Typ <code>String[]</code>.</li>
+<li>In unserem Beispiel ist <code>numbers</code> die Referenzvariable, die auf unser Array-Objekt zeigt. </li>
+<li>Mithilfe des Schlüsselwortes <code>new</code> wird unser Array erzeugt. Nach <code>new</code> kommt nochmal das Array (<code>Typ[]</code>), aber in den eckigen Klammern steht die Länge des Arrays. In unserem Beispiel <code>5</code>. Bei der Erzeugung des Arrays muss immer die Länge angegeben werden. Die Länge eines Arrays kann sich <strong>nicht</strong> ändern.</li>
+<li>Der Zugriff auf die einzelnen Elemente erfolgt über den <em>Index</em>. Jedes Array ist automatisch "nummeriert". Die "Nummerierung" (der Index) beginnt immer mit <code>0</code> und erhöht sich für jedes Element um <code>1</code>. Der Index eines Arrays ist immer vom Typ <code>int</code>.</li>
+</ol>
+<p>Wir können uns unser Array <code>numbers</code> so vorstellen:</p>
+<p><img alt="arrays" src="../files/30_arrays.png" /></p>
+<p>Wir haben 5 Elemente (Länge <code>5</code>), die jeweils durch den Index nummeriert sind. Diese Elemente können nun Werte enthalten:</p>
+<p><img alt="arrays" src="../files/31_arrays.png" /></p>
+<p>Der Zugriff auf die Werte eines Arrays erfolgt dann immer unter Verwendung der Referenzvariable, dahinter eckige Klammern und in den Klammern der entsprechende Index:</p>
+<blockquote>
+<p><code>Referenzvariable[Index]=Wert;</code></p>
+</blockquote>
+<p>Also in unserem Beispiel <code>numbers[0]</code>.</p>
+<h2 id="erzeugung-und-initialisierung-eines-arrays">Erzeugung und Initialisierung eines Arrays<a class="headerlink" href="#erzeugung-und-initialisierung-eines-arrays" title="Permanent link">&para;</a></h2>
+<p>Die Erzeugung und Initialisierung eines Arrays erfolgt in drei Schritten:</p>
+<ol>
+<li>Schritt: Definition einer Referenzvariablen, die auf das Array-Objekt zeigt  (siehe oben in Zeile <code>1</code>: <code>int[] numbers</code>)</li>
+<li>Schritt: Erzeugen des Arrays, d. h. eines Array-Objektes, das aus Elementen eines bestimmten Datentyps besteht (und Zuweisung an die zuvor definierte Referenzvariable - siehe oben Zeile <code>1</code>: <code>new int[5]</code>)</li>
+<li>Schritt: Belegen der Array-Elemente mit Werten, d. h. Initialisierung des Arrays (siehe oben Zeilen <code>2-6</code>). </li>
+</ol>
+<p>Beispiele verschiedene Arrays erzeugen:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="o">[]</span> <span class="n">noten</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>        <span class="c1">// Array aus double-Elemente Laenge 10</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">satz</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">30</span><span class="o">]</span><span class="p">;</span>         <span class="c1">// Array aus Zeichenketten Laenge 30</span>
+<span class="kt">boolean</span><span class="o">[]</span> <span class="n">filled</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span>    <span class="c1">// Array aus boolean-Elementen Laenge 100</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">statistics</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10000</span><span class="o">]</span><span class="p">;</span>      <span class="c1">// Array aus int-Elementen Laenge 10000</span>
+</code></pre></div>
+<p>Die Initialisierung erfolgt elementweise über den Zugriff auf den Index, z.B. (siehe oben):</p>
+<div class="highlight"><pre><span></span><code><span class="n">numbers</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                 <span class="c1">// erstes Element Wert 0</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                 <span class="c1">// zweites Element Wert 1</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                 <span class="c1">// drittes Element Wert 4</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>                 <span class="c1">// viertes Element Wert 9</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>                <span class="c1">// fuenftes Element Wert 16</span>
+</code></pre></div>
+<p>Da der Index stets vom Typ <code>int</code> ist, hätten wir unser Array auch wie folgt initialisieren können:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">numbers</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span><span class="o">*</span><span class="n">index</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Beachten Sie:</p>
+<ol>
+<li>Der größte Index ist immer um eins kleiner als die Länge des Arrays (Länge ist <code>5</code>, größter Index ist <code>4</code> &rarr; deshalb <code>index &lt; 5</code>)</li>
+<li>Der Index ist immer <code>int</code>, egal von welchem Typ das Array ist</li>
+<li>In unserem Beispiel entsprechen die Werte der einzelnen Elementen Quadratzahlen. Deshalb konnten wir als Wert <code>(index * index)</code> verwenden.</li>
+</ol>
+<h3 id="die-eigenschaft-length">Die Eigenschaft <code>length</code><a class="headerlink" href="#die-eigenschaft-length" title="Permanent link">&para;</a></h3>
+<p>Jedes Array besitzt die Eigenschaft <code>length</code>. Darüber können wir die Länge des Arrays auslesen. Der Wert von <code>length</code> kann nicht neu gesetzt werden (ist konstant). Wir benutzen die Eigenschaft <code>length</code> insbesondere in den Schleifen, mit denen wir auf den Index zugreifen.</p>
+<blockquote>
+<p><code>Referenzvariable.length</code></p>
+</blockquote>
+<p>Unser obiges Initialisierungsbeispiel hätte also besser so ausgesehen:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">numbers</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span><span class="o">*</span><span class="n">index</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="ausgabe-der-werte">Ausgabe der Werte<a class="headerlink" href="#ausgabe-der-werte" title="Permanent link">&para;</a></h3>
+<p>Den jetzt bereits bekannten Zugriff auf die einzelnen Elemente können wir auch für das Auslesen der Werte eines Arrays verwenden:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="verwenden-der-werte">Verwenden der Werte<a class="headerlink" href="#verwenden-der-werte" title="Permanent link">&para;</a></h3>
+<p>Wir erläutern ein einfaches Beispiel zur Verwendung der Werte, wir bilden die Summe aller Werte über das Array (wir gehen davon aus, dass das <code>numbers</code>-Array so wie oben erzeugt un initialisiert wurde):</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">numbers</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Summe aller Elemente : &quot;</span> <span class="o">+</span> <span class="n">sum</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="mogliche-andere-form-der-erzeugung-und-initialisierung">Mögliche andere Form der Erzeugung und Initialisierung<a class="headerlink" href="#mogliche-andere-form-der-erzeugung-und-initialisierung" title="Permanent link">&para;</a></h3>
+<p>Das Array kann auch in einer anderen Form erzeugt und initialisiert werden:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">};</span>
+</code></pre></div>
+<p>Diese Form erzeugt ein <code>int[]</code>-Array der Länge <code>5</code> mit den Werten </p>
+<div class="highlight"><pre><span></span><code><span class="n">numbers</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                 <span class="c1">// erstes Element Wert 0</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                 <span class="c1">// zweites Element Wert 1</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                 <span class="c1">// drittes Element Wert 4</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>                 <span class="c1">// viertes Element Wert 9</span>
+<span class="n">numbers</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>                <span class="c1">// fuenftes Element Wert 16</span>
+</code></pre></div>
+<p>Es handelt sich um eine einfache Form der Erzeugung und Initialisierung in einem Schritt. </p>
+<h3 id="weitere-beispiele-von-arrays">Weitere Beispiele von Arrays<a class="headerlink" href="#weitere-beispiele-von-arrays" title="Permanent link">&para;</a></h3>
+<p>Wir zeigen einige Beispiele anderer Arrays:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span> <span class="n">satz</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+<span class="n">satz</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Das&quot;</span><span class="p">;</span>
+<span class="n">satz</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;ist&quot;</span><span class="p">;</span>
+<span class="n">satz</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;ein&quot;</span><span class="p">;</span>
+<span class="n">satz</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Satz&quot;</span><span class="p">;</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">satz</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">satz</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">satz</span><span class="o">[</span><span class="n">satz</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>Das Beispiel zeigt die Erzeugung und Initialisierung eines Arrays, in dem alle Elemente vom Typ <code>String</code> sind. Nach der Erzeugung und Initialisierung in den Zeilen <code>1</code> bis <code>5</code> folgt die Ausgabe der Werte des Arrays. Es werden alle Werte ausgegeben und ein Leerzeichen angehängt. Das gilt aber nur für alle Elemente einschließlich des vorletzten (<code>index&lt;satz.length-1</code>). Hinter das letzte Element (<code>satz[satz.length-1]</code>) folgt kein Leerzeichen, sondern ein Punkt.</p>
+<p>Wir hätten das Array auch so erzeugen und initialisieren können: <code>String[] satz = {"Das", "ist", "ein", "Satz"};</code></p>
+<p>Ein weiteres Beispiel mit einem <code>char</code>-Array:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="o">[]</span> <span class="n">alphabet</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">26</span><span class="o">]</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">alphabet</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">65</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">alphabet</span><span class="o">[</span><span class="n">index</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Es wird zunächst ein <code>char</code>-Array erzeugt (Zeile <code>1</code>) und initialisiert (Zeilen <code>2</code> bis <code>5</code>). Anschließend wird es ausgelesen Zeilen <code>6</code> bis <code>9</code>). Es entsteht folgende Ausgabe:</p>
+<div class="highlight"><pre><span></span><code>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir können uns Arrays erzeugen und initialisieren. Wir können Werte in diesen Arrays ändern und aus den Arrays auslesen. Wir kennen die <code>length</code>-Variable von Arrays und können den Index verwenden, um auf die einzelnen Elemente zuzugreifen. 
+Nächste Woche geht es mit Arrays weiter!</p>
+</div>
+<h2 id="algorithmen-uber-arrays">Algorithmen über Arrays<a class="headerlink" href="#algorithmen-uber-arrays" title="Permanent link">&para;</a></h2>
+<p>Wir werden uns mit verschiedenen Algorithmen beschäftigen, die alle Arrays zur Grundlage haben. Wir beginnen zur Auffrischung mal mit einer kleinen Übung. Wir wollen ein Array erstellen, in dem die <a href="https://de.wikipedia.org/wiki/Fibonacci-Folge"><strong>Fibonacci-Folge</strong></a> enthalten ist. Diese geht so, dass das erste Element den Wert <code>0</code> hat und das zweite Element den Wert <code>1</code> und alle nachfolgenden Elemente als Wert die Summe der Werte ihrer beiden Vorgänger hat, also <code>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...</code>. </p>
+<p>Ausgangspunkt ist also etwas in der folgenden Art:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">fibonacci</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">fibonacci</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">fibonacci</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="question"><summary>Befüllen Sie den Rest des <code>fibonacci</code>-Arrays!</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">fibonacci</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">fibonacci</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">fibonacci</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">fibonacci</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fibonacci</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="o">[</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="o">[</span><span class="n">index</span><span class="o">-</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<p>Wir wollen dieses Array nun mehrfach verwenden, um anhand von Beispielen einige Algorithmen über Arrays kennenzulernen. Beachten Sie, dass wir für das <code>fibonacci</code>-Array die Länge auf <code>20</code> festgesetzt hatten. Dies können wir aber problemlos ändern und deutlich längere <code>fibonacci</code>-Arrays erstellen. Alles, was wir dazu tun müssen, ist den Wert von <code>length</code> zu ändern. Beachten Sie außerdem, dass <code>length</code> eine von uns erzeugte Variable ist, aber <code>fibonacci.length</code> eine Variable des Arrays (deren Wert wir nicht ändern, sondern nur auslesen könnnen). </p>
+<h3 id="methoden-mit-arrays-als-parameter">Methoden mit Arrays als Parameter<a class="headerlink" href="#methoden-mit-arrays-als-parameter" title="Permanent link">&para;</a></h3>
+<p>Wir werden uns einige Methoden erstellen, um z.B. ein als Parameter übergebenes Array auszugeben oder einige Berechnungen über die Werte des Arrays durchzuführen. Wir beginnen damit, uns eine Methode zu schreiben, die ein als Parameter übergebenes Array auf die Konsole ausgibt.</p>
+<h4 id="ausgabe-der-werte-auf-die-konsole">Ausgabe der Werte auf die Konsole<a class="headerlink" href="#ausgabe-der-werte-auf-die-konsole" title="Permanent link">&para;</a></h4>
+<p>Zunächst wollen wir alle Werte nur durch Leerzeichen getrennt auf die Konsole ausgeben. Die dazugehörige Methode sieht so aus:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Wir übergeben also ein <code>int[]</code>-Array als Parameter und durchlaufen es in einer Schleife vollständig von <code>index=0</code> bis <code>index=a.length-1</code> und geben alle Werte von <code>a[index]</code> auf die Konsole durch Leerzeichen getrennt aus. </p>
+<p>Wenn wir nun in <code>main()</code> <code>printArray(fibonacci);</code> aufrufen, bekommen wir folgende Ausgabe:</p>
+<div class="highlight"><pre><span></span><code><span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">5</span> <span class="m">8</span> <span class="m">13</span> <span class="m">21</span> <span class="m">34</span> <span class="m">55</span> <span class="m">89</span> <span class="m">144</span> <span class="m">233</span> <span class="m">377</span> <span class="m">610</span> <span class="m">987</span> <span class="m">1597</span> <span class="m">2584</span> <span class="m">4181</span> 
+</code></pre></div>
+<hr />
+<p>Jetzt wollen wir die Ausgabe ändern. Das Array soll in folgender Form ausgegeben werden:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="m">0</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">5</span>, <span class="m">8</span>, <span class="m">13</span>, <span class="m">21</span>, <span class="m">34</span>, <span class="m">55</span>, <span class="m">89</span>, <span class="m">144</span>, <span class="m">233</span>, <span class="m">377</span>, <span class="m">610</span>, <span class="m">987</span>, <span class="m">1597</span>, <span class="m">2584</span>, <span class="m">4181</span> <span class="o">]</span>
+</code></pre></div>
+<p>Das heißt, die Werte sollen alle innerhalb von eckigen Klammern erscheinen und die Werte sind durch Komma getrennt. Das Hauptproblem dabei ist, dass nach dem letzten Wert kein Komma ausgegeben werden soll. Angenommen, wir ändern obigen Code nur geringfügig:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ &quot;</span><span class="p">);</span>
+</span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+<span class="hll">            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">);</span>
+</span>        <span class="p">}</span>
+<span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; ]&quot;</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>dann hätten wir eine Ausgabe in der Form:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="m">0</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">5</span>, <span class="m">8</span>, <span class="m">13</span>, <span class="m">21</span>, <span class="m">34</span>, <span class="m">55</span>, <span class="m">89</span>, <span class="m">144</span>, <span class="m">233</span>, <span class="m">377</span>, <span class="m">610</span>, <span class="m">987</span>, <span class="m">1597</span>, <span class="m">2584</span>, <span class="m">4181</span>,  <span class="o">]</span>
+</code></pre></div>
+<p>Wir hätten also schonmal die eckigen Klammern, aber nach dem letzten Wert käme noch ein Komma. Deshalb lassen wir nun die Schleife nur noch bis <code>index&lt;a.length-1</code> laufen und behandeln das letzte Element extra. <em>Welchen Index hat das letzte Element von <code>a</code>?</em> Wir kennen die Länge nicht, wir kennen aber <code>a.length</code>. Das letzte Element hat den Index <code>a.length-1</code>, d.h. der größte Index ist stets die Länge des Arrays minus 1. Wir könnten die Methode also so schreiben:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ &quot;</span><span class="p">);</span>
+<span class="hll">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+</span>        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+</span>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<hr />
+<p>Jetzt gibt es nur noch ein kleines Problem: Was passiert, wenn die Länge des Arrays <code>0</code> ist, das als Parameter übergebene Array also gar keine Elemente besitzt? Ein solches Array ließe sich z.B. durch </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div>
+<p>erzeugen. Wenn <code>a</code> die Länge <code>0</code> hätte, dann würden wir mit <code>a[a.length-1]</code> auf das Element von <code>a</code> mit dem Index <code>-1</code> zugreifen wollen und ein solches Element/ein solcher Index existiert nicht. Es würde eine <code>ArrayIndexOutOfBounds</code>-Exception geworfen werden. Um sich dagegen zu schützen, prüfen wir vor diesem Zugriff noch, ob die Länge grßer als <code>0</code> ist:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ &quot;</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="hll">        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span><span class="hll">        <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="hll">        <span class="p">}</span>
+</span>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<details class="question"><summary>Was wird ausgegeben, wenn <code>a</code> die Länge <code>0</code> hat?</summary><div class="highlight"><pre><span></span><code><span class="o">[</span>  <span class="o">]</span>
+</code></pre></div>
+</details>
+<details class="question"><summary>Schreiben Sie die obige Methode so, dass die Ausgabe nicht auf der Konsole erfolgt, sondern der Ausgabe-String zurückgegeben wird!</summary><div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getOutputStringOfArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;[ &quot;</span><span class="p">;</span> 
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">a</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+</details>
+<h4 id="maximumwert-ermitteln">Maximumwert ermitteln<a class="headerlink" href="#maximumwert-ermitteln" title="Permanent link">&para;</a></h4>
+<p>Angenommen, wir bekommen ein <code>int[]</code>-Array als Parameter übergeben und sollen den größten Wert innerhalb dieses Arrays ermitteln (und zurückgeben). Eine Idee für einen solchen Algorithmus wäre:</p>
+<ul>
+<li>wir merken uns das aktuelle Maximum in einer Variablen</li>
+<li>wir laufen durch das Array durch und immer wenn der aktuelle Wert im Array größer ist, als unser aktuelles Maximum, speichern wir den Wert als (neues) aktuelles Maximum</li>
+<li>wenn wir vollständig durch das Array durchgelaufen sind, haben wir den größten Wert als aktuelles Maximum gespeichert und können ihn zurückgeben</li>
+</ul>
+<p>Eine solche Implementierung könnte so aussehen:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMaximum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">currentMaximum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]&gt;</span><span class="n">currentMaximum</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">currentMaximum</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>       
+        <span class="k">return</span> <span class="n">currentMaximum</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Das sieht zunächst exakt wie die Implementierung des oben beschriebenen Algorithmus' aus. In Zeile <code>3</code> erstellen wir unsere Variable <code>currentMaximum</code>, mit der wir uns das aktuelle Maximum speichern wollen. Mit der <code>for</code>-Schleife laufen wir durch alle Elemente unseres Arrays (Zeile <code>4</code>) und wenn ein Wert aus dem Array größer ist als das bis dahin gespeicherte Maximum (Zeile <code>6</code>), speichern wir den Wert des Elements als neues Maximum (Zeile <code>8</code>). Nach dem Verlassen der <code>for</code>-Schleife ist der größte Wert in <code>currentMaximum</code> gespeichert und kann zurückgegeben werden. </p>
+<p>Wir testen das mal in <code>main()</code> mit unserer Fibonacci-Folge und rufen <code>System.out.println(getMaximum(fibonacci));</code> auf. Wir erhalten:</p>
+<div class="highlight"><pre><span></span><code><span class="m">4181</span>
+</code></pre></div>
+<p>Es scheint also zu funktionieren. Wir haben jedoch ein Problem: Was passiert, wenn die Werte in <code>a</code> alle negativ sind? Dann würde der Vergleich in Zeile <code>6</code> nie <code>true</code> sein und <code>currentMaximum</code> nie den Wert ändern, da der initiale Wert von <code>currentMaximum</code> größer als alle Werte aus dem Array ist. Wir müssen also etwas am initialen Wert von <code>currentMaximum</code> ändern. Eine Idee ist, dass wir <code>currentMaximum</code> mit dem ersten Wert aus dem <code>a</code>-Array initialisieren:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMaximum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">currentMaximum</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>  
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]&gt;</span><span class="n">currentMaximum</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">currentMaximum</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>       
+        <span class="k">return</span> <span class="n">currentMaximum</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Dann müssen wir beim Schleifendurchlauf nur noch alle Elemente betrachten, deren Index <code>&gt;=1</code> ist, da wir das Element mit dem Index <code>0</code> (das erste Element aus <code>a</code>) bereits bei der Initialisierung von <code>currentMaximum</code> betrachtet haben. Nun funktioniert unsere Methode auch für Arrays, die nur negative Werte enthalten. </p>
+<p>Ein Problem bleibt noch: Was passiert, wenn das Array <code>a</code> leer ist, also eine Länge von <code>0</code> hat? Dann können wir nämlich auch nicht <code>a[0]</code> aufrufen, da dieses Element (der Index <code>0</code>) nicht existiert. Wir bekämen eine <code>ArrayIndexOutOfBounds</code>-Exception. Hierbei stellt sich die grundsätzliche Frage, was durch unsere Methode zurückgegeben werden soll, wenn das übergebene Array gar kein Maximum hat, nämlich dann, wenn es leer ist? Darauf gibt es keine befriedigende Antwort. Wür müssen ein <code>int</code> zurückgeben, aber kein <code>int</code> aus dem Wertebereich wäre korrekt. Grundsätzlich sollte so etwas vor Aufruf der Methode geprüft werden. Wir könnten uns z.B. eine Methode <code>isEmpty()</code> schreiben:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">==</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Diese Methode gibt <code>true</code> zurück, wenn das Array <code>a</code> leer ist (also die Länge <code>0</code>) hat und <code>false</code> sonst. Diese Methode kann man für den Aufruf von <code>getMaximum()</code> verwenden:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span><span class="n">arr1</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">maximum</span> <span class="o">=</span> <span class="n">getMaximum</span><span class="p">(</span><span class="n">arr1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Das heißt, wir rufen die Methode <code>getMaximum()</code> für ein Array nur dann auf, wenn wir wissen, dass dieses Array nicht leer ist. Dann arbeitet unsere Methode nämlich korrekt - und nur dann.</p>
+<h4 id="zwei-arrays-auf-gleichheit-prufen">Zwei Arrays auf Gleichheit prüfen<a class="headerlink" href="#zwei-arrays-auf-gleichheit-prufen" title="Permanent link">&para;</a></h4>
+<p>Wir wollen eine Methode schreiben, die überprüft, ob 2 Arrays gleich sind - also vollständig gleiche Werte enthalten. Z.B. sollen diese Arrays gleich sein:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
+</code></pre></div>
+aber 
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr3</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
+</code></pre></div></p>
+<p>ist ungleich zu <code>arr1</code> und <code>arr2</code>, da <code>arr3</code> an 6. Stelle den Wert <code>5</code> statt <code>4</code> hat.</p>
+<p>Die algorithmische Idee ist:</p>
+<ul>
+<li>wir laufen gleichzeitig durch beide Arrays durch</li>
+<li>solange die Werte bei gleichem Index gleich sind, machen wir weiter</li>
+<li>sobald zwei Werte bei gleichem Index ungleich sind, wissen wir, dass die Arrays ungleich sind</li>
+<li>wenn wir alle Elemente betrachtet haben und alle waren gleich, dann sind auch unsere Arrays gleich</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">areEqual</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>   
+    <span class="kt">boolean</span> <span class="n">areEqual</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]!=</span><span class="n">b</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">areEqual</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">areEqual</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Diese Methode setzt unseren Algorithmus um und wenn wir die Methode mit den obigen Arrays testen</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">areEqual</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">areEqual</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr3</span><span class="p">));</span>
+</code></pre></div>
+<p>, dann wird auch korrekt </p>
+<div class="highlight"><pre><span></span><code><span class="nb">true</span>
+<span class="nb">false</span>
+</code></pre></div>
+<p>ausgegeben. Doch was passiert, wenn wir die Methode für diese beiden Arrays aufrufen:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr4</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr5</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</code></pre></div>
+<details class="question"><summary>Welcher Wert wird bei Aufruf <code>System.out.println(areEqual(arr4, arr5));</code> ausgegeben?</summary><div class="highlight"><pre><span></span><code><span class="nb">true</span>
+</code></pre></div>
+</details>
+<p>Wollen wir das?</p>
+<details class="question"><summary>Welcher Wert wird bei Aufruf <code>System.out.println(areEqual(arr5, arr4));</code> ausgegeben?</summary><ul>
+<li>keiner, sondern 
+<div class="highlight"><pre><span></span><code>Exception <span class="k">in</span> thread <span class="s2">&quot;main&quot;</span> java.lang.ArrayIndexOutOfBoundsException: Index <span class="m">3</span> out of bounds <span class="k">for</span> length <span class="m">3</span>
+</code></pre></div></li>
+</ul>
+</details>
+<p>Warum?</p>
+<p>Grundsätzlich sollte es bei einer solchen Methode egal sein, welche Reihenfolge die übergebenen Arrays in der Parameterliste haben, d.h. <code>areEqual(arr4, arr5)</code> und <code>areEqual(arr5, arr4)</code> sollten den gleichen Wert zurückliefern, denn entweder sind sie gleich <code>true</code> oder sie sind es nicht <code>false</code>. Die Gleichheit ist eine <a href="https://de.wikipedia.org/wiki/Symmetrische_Relation"><em>symmetrische Relation</em></a>. </p>
+<hr />
+<p>Was ist das Problem unserer bisherigen Lösung? Wir durchlaufen die Schleife auch dann, wenn die Arrays unterschiedliche Länge haben. In dem Aufruf <code>areEqual(arr4, arr5)</code> wird das letzte Element von <code>arr5</code> gar nicht mehr geprüft, da der <code>index</code> in der Schleife nur bis <code>arr4.length-1</code> läuft. In dem Aufruf <code>areEqual(arr5, arr4)</code> wird versucht, das letzte Element von <code>arr5</code> mit einem Element von <code>arr4</code> zu vergleichen, das gar nicht existiert. Der Zugriff auf <code>arr4[3]</code> führt zu einer <code>ArrayIndexOutOfBoundsException</code>. Wir werden deshalb zunächst prüfen, ob die beiden Arrays überhaupt gleich lang sind und nur dann durchlaufen wir die beiden Arrays:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">areEqual</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>   
+    <span class="kt">boolean</span> <span class="n">areEqual</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="hll">    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="n">areEqual</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="hll">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">areEqual</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+</span>    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]!=</span><span class="n">b</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">areEqual</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">areEqual</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Außerdem haben wir in die <code>for</code>-Schleife die Bedingung um <code>&amp;&amp; areEqual</code> erweitert. Das hat zwei Gründe:</p>
+<ul>
+<li>erstens betreten wir die <code>for</code>-Schleife dann gar nicht, wenn die beiden Arrays unterschiedliche Längen haben, denn dann ist <code>areEqual==fasle</code> und somit ist die gesamte Bedingung <code>index &lt; a.length &amp;&amp; areEqual</code> <code>false</code>. &rarr; das ist also notwendig, um korrekt zu sein (wir könnten auch die <code>for</code>-Schleife in den <code>else</code>-Block der Selektion packen)</li>
+<li>zweitens beenden wir das Durchlaufen der <code>for</code>-Schleife sofort, wenn wir ungleiche Elemente gefunden haben, denn dann setzen wir ja auch <code>areEqual</code> auf <code>false</code>. Es genügt ja, zwei ungleiche Elemente zu finden, dann sind die Arrays ungleich und wir müssen gar nicht weiter suchen. &rarr; das ist also nicht notwendig, aber performanter</li>
+</ul>
+<p>Zur Übung mit einem Array als Parameter können Sie:</p>
+<details class="question"><summary>Bestimmen Sie die Summe aller Werte eines <code>int</code>-Arrays, welches als Parameter der Methode übergeben wird. Geben Sie die Summe zurück.</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSumme</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="question"><summary>Bestimmen Sie den Durchschnitt/Mittelwert aller Werte eines <code>int</code>-Arrays, welches als Parameter der Methode übergeben wird. Geben Sie den Durchschnitt zurück zurück.</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">double</span> <span class="nf">getAverage</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/*</span>
+<span class="cm">     * diese Aufgabe ist leider komplizierter, da wir </span>
+<span class="cm">     * das Problem haben, dass getSumme(a) ein int</span>
+<span class="cm">     * zurueckliefert und a.length ebenfalls ein int ist</span>
+<span class="cm">     * und wir somit int / int rechnen, also eine</span>
+<span class="cm">     * ganzzahlige Division durchführen</span>
+<span class="cm">     * Mithilfe des Typkonvertierungsoperators (double) </span>
+<span class="cm">     * können wir aber aus einem int ein double machen,</span>
+<span class="cm">     * z.B. wird mit (double)a.length aus der Laenge ein </span>
+<span class="cm">     * double</span>
+<span class="cm">     * int / double ist eine Gleitkommadivision</span>
+<span class="cm">     * Probieren Sie es einmal ohne (double) und</span>
+<span class="cm">     * einmal mit (double) aus</span>
+<span class="cm">     */</span>
+    <span class="kt">double</span> <span class="n">average</span> <span class="o">=</span> <span class="n">getSumme</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">average</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<h3 id="methoden-mit-array-als-ruckgabe">Methoden mit Array als Rückgabe<a class="headerlink" href="#methoden-mit-array-als-ruckgabe" title="Permanent link">&para;</a></h3>
+<p>Wir betrachten nun Methoden, die ein Array zurückgeben. Wir fangen an mit einer Methode, der eine <code>int length</code> übergeben wird und die damit ein <code>int[]</code> der Länge <code>length</code> erzeugt und dieses Array mit Zufallszahlen befüllt:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">createAndFillArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>                    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Betrachten wir die Methode genauer:</p>
+<ul>
+<li>in Zeile <code>3</code> wird eine Variable <code>a</code> vom Typ <code>int[]</code> deklariert und ein <code>int[]</code>-Array der Länge <code>length</code> erzeugt. Die Variable <code>a</code> zeigt auf dieses neu erzeugte Array. </li>
+<li>in Zeile <code>4</code> erzeugen wir ein <code>Random</code>-Objekt und die Referenzvariable <code>r</code> vom Typ <code>Random</code> zeigt auf dieses Objekt. Beachten Sie, dass Sie die Klasse <code>Random</code> aus dem <code>java.util</code>-Paket importieren müssen!</li>
+<li>in den Zeilen <code>5-8</code> laufen wir durch das Array durch und belegen jedes Element mit einer Zufallszahl indem wir <code>r.nextInt()</code> aufrufen. </li>
+<li>in Zeile <code>9</code> wird das Array zurückgegeben. </li>
+</ul>
+<p>Aufruf der Methode in <code>main()</code> (oder einer anderen Methode):</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr6</span> <span class="o">=</span> <span class="n">createAndFillArray</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">arr6</span><span class="p">);</span>
+</code></pre></div>
+<p>Wir rufen die Methode mit einem Wert <code>5</code> für <code>length</code> auf. Das bedeutet, dass die Methode ein Array der Länge <code>5</code> erzeugt und mit Zufallszahlen befüllt. Das zurückgegebene Arry speichern wir in der Variablen <code>arr6</code>, die ebenfalls vom Typ <code>int[]</code> ist. Wir geben das Array mithilfe der von uns erzeugten Methode <code>printArray(arr6);</code> aus (wir hätten auch direkt <code>printArray(createAndFillArray(5));</code> aufrufen können, dann hätten wir das erzeugte Array aber nirgendwo gespeichert). Es erscheint z.B. eine Ausgabe wie:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="m">1463666318</span>, -2121738539, -1174806146, <span class="m">337579240</span>, -108604609 <span class="o">]</span>
+</code></pre></div>
+<hr />
+<p>Wenn wir den Wertebereich der zufällig erzeugten Zahlen eingrenzen möchten, z.B. nur Werte aus dem Bereich <code>[0, 1, ..., 19]</code>, können wir die <code>nextInt(int bound)</code>-Methode von <code>Random</code> verwenden (<a href="../hilfsklassen/#nextintint-bound">siehe</a>). Wir erweitern die Methode <code>createAndFillArray()</code> um einen solchen <code>bound</code>-Parameter:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">createAndFillArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bound</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>                    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">bound</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Beachten Sie, dass bei <code>nextInt(int bound)</code> der Wert von <code>bound</code> exklusiv ist, d.h. dieser Wert gibt die erste Zahl an, die <strong>nicht</strong> mehr zufällig erzeugt wird. Wenn wir also zufällig Zahlen aus dem Bereich <code>[0, 1, ..., 19]</code> erzeugen wollen, dann muss <code>bound=20</code> sein. </p>
+<p>Der Aufruf von </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr7</span> <span class="o">=</span> <span class="n">createAndFillArray</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">arr7</span><span class="p">);</span>
+</code></pre></div>
+<p>erzeugt dann z.B. eine solche Ausgabe (bei Ihnen natürlich anders - sind ja Zufallszahlen):</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="m">2</span>, <span class="m">17</span>, <span class="m">7</span>, <span class="m">5</span>, <span class="m">17</span>, <span class="m">3</span>, <span class="m">19</span>, <span class="m">8</span>, <span class="m">6</span>, <span class="m">18</span> <span class="o">]</span>
+</code></pre></div>
+<h4 id="array-kopieren">Array kopieren<a class="headerlink" href="#array-kopieren" title="Permanent link">&para;</a></h4>
+<p>Wir erstellen eine Methode, der ein Array als Parameter übergeben wird und die davon eine Kopie erstellt und diese Kopie zurückgibt. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">copyArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">original</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">original</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">copy</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">copy</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">original</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">copy</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>in Zeile <code>1</code> wird das Original-Array übergeben und in der Referenzvariablen <code>original</code> gespeichert,</li>
+<li>in Zeile <code>3</code> erstellen wir uns eine Variable <code>length</code> vom Typ <code>int</code>, in der die Länge des Original-Arrays gespeichert wird,</li>
+<li>in Zeile <code>4</code> wird das <code>copy</code>-Array erstellt, das genau so lang ist, wie das Original,</li>
+<li>In den Zeilen <code>5-8</code> kopieren wir jeden einzelnen Wert aus dem Original-Array in das <code>copy</code>-Array (elementweise),</li>
+<li>in Zeile <code>9</code> geben wir das <code>copy</code>-Array zurück<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </li>
+</ul>
+<p>Der Aufruf der Methode, z.B. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">original</span> <span class="o">=</span> <span class="n">createAndFillArray</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;original : &quot;</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">original</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">copyArray</span><span class="p">(</span><span class="n">original</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;copy     : &quot;</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">copy</span><span class="p">);</span>
+</code></pre></div>
+<p>erzeugt folgende Ausgabe (Zufallszahlen):</p>
+<div class="highlight"><pre><span></span><code>original : <span class="o">[</span> <span class="m">2</span>, <span class="m">2</span>, <span class="m">5</span>, <span class="m">19</span>, <span class="m">19</span>, <span class="m">6</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">4</span>, <span class="m">8</span> <span class="o">]</span>
+copy     : <span class="o">[</span> <span class="m">2</span>, <span class="m">2</span>, <span class="m">5</span>, <span class="m">19</span>, <span class="m">19</span>, <span class="m">6</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">4</span>, <span class="m">8</span> <span class="o">]</span>
+</code></pre></div>
+<p>Angenommen, wir übergeben unserer Methode nicht nur das Original-Array, sondern auch eine Länge, bis zu der das Original-Array kopiert werden soll. Der Methodenkopf würde dann also so aussehen:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">copyArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">original</span><span class="p">,</span> <span class="kt">int</span> <span class="n">newLength</span><span class="p">)</span>
+</code></pre></div>
+<p>Dann gibt es 3 verschiedene Varianten:</p>
+<ul>
+<li>Original-Array und Kopie des Arrays gleich lang (wenn <code>newLength == original.length</code>)</li>
+<li>Original-Array kürzer als Kopie (z.B. falls Original-Array zu klein geworden ist, um weitere Elemente einzufügen; wenn <code>newLength &gt; original.length</code>)
+Original-Array länger als Kopie (falls nur ein Teil kopiert werden soll; wenn <code>newLength &lt; original.length</code>)</li>
+</ul>
+<p>Wir fügen in unsere Methode eine entsprechende Fallunterscheidung ein:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">copyArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">original</span><span class="p">,</span> <span class="kt">int</span> <span class="n">newLength</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">copy</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">newLength</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">original</span><span class="p">.</span><span class="na">length</span><span class="o">&lt;=</span><span class="n">newLength</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">original</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">copy</span><span class="o">[</span><span class="n">index</span><span class="o">]=</span><span class="n">original</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">copy</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">copy</span><span class="o">[</span><span class="n">index</span><span class="o">]=</span><span class="n">original</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">copy</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>in Zeile <code>1</code> wurde der neue Parameter <code>newLength</code> hinzugefügt, der die Länge des <code>copy</code>-Arrays bestimmt,</li>
+<li>in Zeile <code>3</code> wird das <code>copy</code>-Array mit der Länge <code>newLength</code> erzeugt, </li>
+<li>in Zeile <code>4</code> erfolgt die Fallunterscheidung:<ul>
+<li>falls die Kopie mindestens so lang ist wie das Original, werden alle Elemente aus dem Original in die Kopie kopiert (Zeilen <code>6-9</code>) &rarr; Beachten Sie Verwendung von <strong>original.length</strong> in der Bedingung der <code>for</code>-Schleife,</li>
+<li>falls die Kopie kürzer ist als das Original, werden nur die ersten <code>newLength</code> Elemente aus dem Original-Array kopiert (Zeilen <code>13-16</code>) &rarr; Beachten Sie Verwendung von <strong>copy.length</strong> in der Bedingung der <code>for</code>-Schleife,</li>
+</ul>
+</li>
+</ul>
+<p>Bei dem Aufruf von </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">original</span> <span class="o">=</span> <span class="n">createAndFillArray</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>    <span class="c1">// Original Laenge 10</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;original : &quot;</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">original</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">copyArray</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>            <span class="c1">// Kopie Laenge 8</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;copy     : &quot;</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">copy</span><span class="p">);</span>
+</code></pre></div>
+<p>erfolgt folgende Ausgabe (Zufallszahlen):</p>
+<div class="highlight"><pre><span></span><code>original : <span class="o">[</span> <span class="m">8</span>, <span class="m">13</span>, <span class="m">11</span>, <span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>, <span class="m">5</span>, <span class="m">1</span>, <span class="m">15</span>, <span class="m">5</span> <span class="o">]</span>
+copy     : <span class="o">[</span> <span class="m">8</span>, <span class="m">13</span>, <span class="m">11</span>, <span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>, <span class="m">5</span>, <span class="m">1</span> <span class="o">]</span>
+</code></pre></div>
+<p>Bei dem Aufruf von </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">original</span> <span class="o">=</span> <span class="n">createAndFillArray</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>    <span class="c1">// Original Laenge 10</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;original : &quot;</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">original</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">copyArray</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>           <span class="c1">// Kopie Laenge 18</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;copy     : &quot;</span><span class="p">);</span>
+<span class="n">printArray</span><span class="p">(</span><span class="n">copy</span><span class="p">);</span>
+</code></pre></div>
+<p>erfolgt folgende Ausgabe (Zufallszahlen):</p>
+<div class="highlight"><pre><span></span><code>original : <span class="o">[</span> <span class="m">1</span>, <span class="m">18</span>, <span class="m">0</span>, <span class="m">9</span>, <span class="m">12</span>, <span class="m">18</span>, <span class="m">2</span>, <span class="m">8</span>, <span class="m">17</span>, <span class="m">12</span> <span class="o">]</span>
+copy     : <span class="o">[</span> <span class="m">1</span>, <span class="m">18</span>, <span class="m">0</span>, <span class="m">9</span>, <span class="m">12</span>, <span class="m">18</span>, <span class="m">2</span>, <span class="m">8</span>, <span class="m">17</span>, <span class="m">12</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span> <span class="o">]</span>    
+</code></pre></div>
+<p>Beachten Sie, dass Elementen, denen kein Wert zugewiesen wurde, den Wert <code>0</code> haben (Standardwert von <code>int</code>). </p>
+<h4 id="array-verketten">Array verketten<a class="headerlink" href="#array-verketten" title="Permanent link">&para;</a></h4>
+<p>Wir erstellen eine Methode, der zwei Arrays als Parameter übergeben werden und die daraus ein neues Array erstellt, welche alle Elemente des einen <strong>und</strong> alle Elemente des anderen Arrays enthält. Die algorithmische Idee dabei ist wie folgt:</p>
+<p>Array <code>a</code> und Array <code>b</code> aneinanderhängen:</p>
+<ul>
+<li>neues Array <code>c</code> erzeugen (die Länge von <code>c</code> ergibt sich aus <code>a.length + b.length</code>),</li>
+<li>Elemente von <code>a</code> nach <code>c</code> kopieren (bis Index <code>a.length-1</code>),</li>
+<li>Elemente von <code>b</code> nach <code>c</code> kopieren (ab Index <code>a.length</code>),  </li>
+<li><code>c</code> zurückgeben</li>
+</ul>
+<p>Die folgende Abbildung verdeutlicht ein Beispiel mit <code>a.length==6</code> und <code>b.length==4</code>. Es wird ein Array <code>c</code> mit Länge <code>10</code> erzeugt. In die ersten 6 Elemente von <code>c</code>werden die Werte von <code>a</code> kopiert und in die folgenden 4 Elemente die Werte von <code>b</code>. Beachten Sie, dass in dem Beispiel z.B. <code>c[6]=b[0]</code>kopiert wird. </p>
+<p><img alt="verketten" src="../files/32_verketten.png" /></p>
+<p>Eine mögliche Methode könnte so aussehen:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">concatArrays</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">+</span><span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">c</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">c</span><span class="o">[</span><span class="n">index</span><span class="o">+</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">b</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Wichtig ist hier, unbedingt zu verstehen, warum wir innerhalb der zweiten <code>for</code>-Schleife <code>c[index+a.length] = b[index];</code> verwenden! </p>
+<h4 id="suchen-in-arrays">Suchen in Arrays<a class="headerlink" href="#suchen-in-arrays" title="Permanent link">&para;</a></h4>
+<p>Bei der Suche in Arrays geht es darum, einen bestimmten Wert zu finden, der im Array enthalten ist (oder er wird nicht gefunden, falls er nicht im Array existiert.) Grundsätzlich müssen wir zwischen der Suche in </p>
+<ul>
+<li>unsortierten und</li>
+<li>sortierten </li>
+</ul>
+<p>Arrays unterscheiden. In sortierten Arrays sind die Elemente alle hinsichtlich ihrer Werte geordnet, also z.B. numerisch bei Zahlen oder alphanumerisch bei Zeichen und Zeichenketten. Wir beginnen mit der Suche in unsortierten Arrays.</p>
+<h5 id="suche-in-unsortierten-arrays">Suche in unsortierten Arrays<a class="headerlink" href="#suche-in-unsortierten-arrays" title="Permanent link">&para;</a></h5>
+<p>Wir wollen eine Methode erstellen, der ein Array übergeben wird und ein Element gleichen Typs. Die Methode soll ein <code>true</code> zurückgeben, wenn das Element in dem Array enthalten ist und ein <code>false</code>, wenn nicht. Die Idee dabei ist</p>
+<ul>
+<li>wir durchlaufen das Array solange, bis <ul>
+<li>wir entweder das Element gefunden haben &rarr; dann können wir die Suche beenden und ein <code>true</code> zurückgeben</li>
+<li>oder wir am Ende des Arrays angekommen sind und das Element nicht gefunden haben &rarr; dann geben wir ein <code>false</code> zurück</li>
+</ul>
+</li>
+</ul>
+<p>Eine solche Methode könnte so aussehen: </p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">contains</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">boolean</span> <span class="n">found</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">found</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]==</span><span class="n">element</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">found</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Wir prüfen also, ob <code>element</code> als Wert in <code>a</code> enthalten ist. </p>
+<ul>
+<li>in Zeile <code>3</code> definieren wir uns eine Variable <code>found</code>, deren Wert initial auf <code>false</code> gesetzt wird (<code>element</code> noch nicht gefunden)</li>
+<li>in Zeilen <code>4-10</code> durchlaufen wir das Array, entweder so lange <ul>
+<li>bis wir das <code>element</code> gefunden haben (Zeilen <code>6-9</code>) &rarr; <code>found==true</code> oder</li>
+<li>bis wir das Ende des Arrays erreicht haben (<code>index==a.length</code>) &rarr; <code>found==false</code></li>
+</ul>
+</li>
+<li>in Zeile <code>11</code> geben wir den Wert von <code>found</code> zurück</li>
+</ul>
+<p>Beachten Sie, dass es wichtig ist, dass <code>found</code> initial den Wert <code>false</code> bekommt und dass die Schleife sofort verlassen wird, sobald wir das Element gefunden haben (Schleifen bedingung <code>&amp;&amp; !found</code>). </p>
+<hr />
+<p>Wir bleiben bei der Suche in unsortierten Arrays. Jetzt soll unsere Methode aber den Index zurückgeben, an dem das Element im Array enthalten ist. Wir wissen, dass der Index nur Werte zwischen <code>0</code> und <code>array.length-1</code> annehmen kann, also nur positive Werte. Wenn das Element nicht im Array enthalten ist, dann geben wir eine <code>-1</code> zurück. Hierbei sind zwei Sachen zu beachten:</p>
+<ul>
+<li>Erstens sollten wir solche "Codierungen" von Rückgabewerten vermeiden. Die aufrufende Methode muss ja "wissen", dass ein negativer Rückgabewert bedeutet, dass das Element gar nicht im Array enthalten ist. Auf der anderen Seite müssen wir aber ein <code>int</code> zurückgeben. Im Gegensatz zur <code>getMaximum()</code>-Methode oben, gibt es hier jedoch zumindest eine "Lösung" für das Problem, dass das Element nicht enthalten ist. Trotzdem sollte man auf jeden Fall zunächst <code>contains()</code> aufrufen und nur, wenn <code>contains()</code> ein <code>true</code>zurückliefert, dann die <code>getIndex()</code>-Methode.</li>
+<li>Zweitens ist die <code>-1</code> eine sogenannte <em>magic number</em>. Wir sollten ihr einen Namen geben. Wir betrachten die Methode zunächst ohne einen Namen für die <code>-1</code>:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndex</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">indexAtElement</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]==</span><span class="n">element</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">indexAtElement</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">indexAtElement</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Wir durchlaufen das Array und sobald wir das <code>element</code> "finden" (Zeile <code>6</code>), merken wir uns den aktuellen Index (Zeile <code>8</code>). Am Ende wird der gemerkte Index zurückgegeben (Zeile <code>11</code>). Wenn Zeile <code>8</code> nie ausgeführt wurde, dann wird der initiale Wert von <code>indexAtElement</code> zurückgegeben, nämlich <code>-1</code>. Diese <code>-1</code> ist eine sogenannte <em>magic number</em>. Man kennt die Bedeutung dieses Wertes nicht. Es ist deshalb besser, dafür einen Namen einzuführen - als Konstante (zu <a href="../variablen/#konstanten">Konstanten siehe hier</a>). </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndex</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">indexAtElement</span> <span class="o">=</span> <span class="n">NOT_FOUND</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]==</span><span class="n">element</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">indexAtElement</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">indexAtElement</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Eine <a href="../variablen/#konstanten">Konstante</a> ist eine Variable, die genau einmal einen Wert zugewiesen bekommt (initialisiert wird) und deren Wert nie wieder überschrieben werden kann. Die Namen von Konstanten schreiben wir durchgehend GROSS. </p>
+<details class="question"><summary>Angenommen, das <code>element</code> kommt mehrmals im Array <code>a</code> vor. Wird der erste Index des Auftretens von <code>element</code> im Array zurückgegeben oder der letzte Index? Wie könnte man das ändern?</summary><ul>
+<li>Der letzte. Man könnte beim ersten Finden des Elementes die Schleife sofort verlassen (aber nicht <code>break;</code> verwenden!)</li>
+</ul>
+</details>
+<hr />
+<h5 id="suche-in-sortierten-arrays">Suche in sortierten Arrays<a class="headerlink" href="#suche-in-sortierten-arrays" title="Permanent link">&para;</a></h5>
+<p>In sortierten Arrays sucht es sich etwas schneller nach einem <code>element</code>. Dafür gibt es zwei Gründe:</p>
+<ul>
+<li>einerseits kann eine sequentielle Suche (also das Durchlaufen des Arrays) schneller abgebrochen werden, falls das Element nicht im Array enthalten ist, denn sobald man einen Wert im Array erreicht, der größer ist, als der gesuchte Wert, kann das <code>element</code> ja gar nicht mehr vorkommen (falls das Array <em>aufsteigend</em> sortiert ist)</li>
+<li>andererseits kann man Algorithmen anwenden, die den Suchraum schnell einschränken, eine sogenannte <em>binäre Suche</em>.</li>
+</ul>
+<p>Wir betrachten zunächst die sequentielle Suche. Angenommen, wir haben folgendes aufsteigend sortiertes Array:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span> <span class="m">0</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span>, <span class="m">11</span>, <span class="m">11</span>, <span class="m">11</span>, <span class="m">14</span>, <span class="m">16</span>, <span class="m">16</span>, <span class="m">18</span>, <span class="m">18</span>, <span class="m">18</span>, <span class="m">19</span> <span class="o">]</span>
+</code></pre></div>
+<p>und angenommen, wir wollen prüfen, ob die <code>10</code> im Array enthalten ist. In einem unsortierten Array müssten wir das gesamte Array durchlaufen, um zu merken, dass die <code>10</code> nicht enthalten ist. Hier, bei dem sortierten Array, merken wir das schon, wenn wir die erste <code>11</code> gefunden haben, denn danach kann die <code>10</code> nicht mehr kommen. Die <code>contains()</code>-Methode kann also ein weiteres Abbruchkriterium der Suche enthalten:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">containsSorted</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">aSorted</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">boolean</span> <span class="n">found</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kt">boolean</span> <span class="n">greater</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">aSorted</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">found</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">greater</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">aSorted</span><span class="o">[</span><span class="n">index</span><span class="o">]==</span><span class="n">element</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">aSorted</span><span class="o">[</span><span class="n">index</span><span class="o">]&gt;</span><span class="n">element</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">greater</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">found</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Im Vergleich zur <code>contains()</code>-Methode für unsortierte Arrays haben wir einen weiteren "Schalter" hinzugefügt, <code>greater</code>. Damit haben wir auch die Bedingung in der <code>for</code>-Schleife erweitert (<code>&amp;&amp; !greater</code>). Sollten wir das <code>element</code> noch nicht gefunden haben, der Wert <code>aSorted[index]</code> aber größer als <code>element</code> sein (Zeile <code>11</code>), setzen wir <code>greater</code> auf <code>true</code> und die Schleife wird verlassen. </p>
+<details class="question"><summary>Funktioniert die <code>contains()</code>-Methode, die wir für unsortierte Arrays implementiert haben, auch für sortierte Arrays?</summary><ul>
+<li>Ja, wir nutzen nur die Möglichkeit des früheren Abbruchs der Suche nicht aus. </li>
+</ul>
+</details>
+<details class="question"><summary>Schreiben Sie eine Methode <code>getIndexSorted(int[] aSorted, int element)</code>, die den Index von <code>element</code> in <code>a</code> zurückgibt (und sonst <code>-1</code>). Genau wie <code>getIndex()</code> für unsortierte Arrays, aber auch hier nutzen Sie die frühere Abbruchmöglichkeit der Suche aus.</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndexSorted</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">aSorted</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">boolean</span> <span class="n">greater</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">indexAtElement</span> <span class="o">=</span> <span class="n">NOT_FOUND</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">aSorted</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">greater</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">aSorted</span><span class="o">[</span><span class="n">index</span><span class="o">]==</span><span class="n">element</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">indexAtElement</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span> 
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">aSorted</span><span class="o">[</span><span class="n">index</span><span class="o">]&gt;</span><span class="n">element</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">greater</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">indexAtElement</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<hr />
+<p>Bis jetzt sind wir immer sequenziell durch das Array durchgelaufen, also von vorne nach hinten, beginnend mit dem Index <code>0</code> bis wir bei <code>array.length</code> angekommen waren. In sortierten Arrays können wir das Prinzip ändern: </p>
+<ul>
+<li>Wir fangen einfach in der Mitte des Arrays an und wenn der Wert, den wir suchen, kleiner ist, als der Wert in der Mitte, dann suchen wir links weiter und sonst suchen wir rechts weiter. </li>
+<li>Dann gehen wir mit der linken bzw. rechten Hälfte genau so vor usw.</li>
+</ul>
+<p>Diese Suche nennt sich <strong>binäre Suche</strong> (<em>binary search</em>), in jedem Schritt wird der (verbliebene) Suchraum halbiert. Angenommen, wir suchen in dem folgenden Array die <strong>25</strong>:</p>
+<p><img alt="binary" src="../files/33_binary.png" /></p>
+<ol>
+<li>wir ermitteln zunächst den Index, der in der Mitte des Arrays ist (<code>mid</code>). Dieser ergibt sich aus dem Mittelwert von <code>lo</code> (das ist der kleinste Index, der ist am Anfang <code>0</code>) und <code>hi</code> (das ist der größte Index, der ist am Anfang <code>14</code>, da unser Beispiel-Array die Länge 15 hat). Unserer Index in der Mitte ist also <code>mid=7</code>. </li>
+<li>Wir greifen über diesen Index <code>mid</code> auf den Wert in dem Array zu; der Wert ist <code>34</code>. </li>
+<li><code>34</code> ist größer als die gesuchte <code>25</code> &rarr; wir suchen also in dem linken Teil des Arrays weiter. Wir ermitteln den größten Index <code>hi</code> in diesem Teil (der ist um <code>1</code> kleiner als <code>mid</code> davor, also <code>6</code>). Der Wert von <code>lo</code> bleibt <code>0</code>. Der neue Wert von <code>mid</code> ist <code>3</code>.</li>
+<li>Wir greifen über diesen Index <code>mid</code> auf den Wert in dem Array zu; der Wert ist <code>16</code>. </li>
+<li><code>16</code> ist kleiner als die gesuchte <code>25</code> &rarr; wir suchen also in dem rechten Teil des Arrays weiter. Wir ermitteln den größten Index <code>lo</code> in diesem Teil (der ist um <code>1</code> größer als <code>mid</code> davor, also <code>4</code>). Der Wert von <code>hi</code> bleibt <code>6</code>. Der neue Wert von <code>mid</code> ist <code>5</code>.</li>
+<li>Wir greifen über diesen Index <code>mid</code> auf den Wert in dem Array zu; der Wert ist <code>25</code>. Wir haben das Element gefunden. </li>
+</ol>
+<details class="question"><summary>Ehe Sie sich die Implementierung der binären Suche anschauen, sollten Sie in dem Beispiel aus dem Bild noch die <code>41</code> suchen. Achten Sie insbesondere darauf, wie sich die Werte von <code>lo</code>, <code>mid</code> und <code>high</code> in jedem Suchschritt ändern.</summary><ol>
+<li>wir beginnen mit <code>lo=0</code>, <code>hi=14</code> und also <code>mid=7</code>. Der Wert im Index <code>7</code> ist <code>34</code> und somit kleiner als die gesuchte <code>41</code> &rarr; wir suchen rechts weiter</li>
+<li><code>lo=8</code>, <code>hi=14</code> und also <code>mid=11</code>. Der Wert im Index <code>11</code> ist <code>46</code> und somit größer als die gesuchte <code>41</code> &rarr; wir suchen links weiter</li>
+<li><code>lo=8</code>, <code>hi=10</code> und also <code>mid=9</code>. Der Wert im Index <code>9</code> ist <code>41</code> &rarr; gefunden</li>
+</ol>
+</details>
+<details class="question"><summary>Ehe Sie sich die Implementierung der binären Suche anschauen, sollten Sie in dem Beispiel aus dem Bild noch die <code>42</code> suchen. Wann stellen Sie fest, dass die <code>42</code> nicht im Array enthalten ist?</summary><ol>
+<li>wir beginnen mit <code>lo=0</code>, <code>hi=14</code> und also <code>mid=7</code>. Der Wert im Index <code>7</code> ist <code>34</code> und somit kleiner als die gesuchte <code>42</code> &rarr; wir suchen rechts weiter</li>
+<li><code>lo=8</code>, <code>hi=14</code> und also <code>mid=11</code>. Der Wert im Index <code>11</code> ist <code>46</code> und somit größer als die gesuchte <code>42</code> &rarr; wir suchen links weiter</li>
+<li><code>lo=8</code>, <code>hi=10</code> und also <code>mid=9</code>. Der Wert im Index <code>9</code> ist <code>41</code> und somit kleiner als die gesuchte <code>42</code> &rarr; wir suchen rechts weiter</li>
+<li><code>lo=10</code>, <code>hi=10</code> und also <code>mid=10</code>. Der Wert im Index <code>10</code> ist <code>46</code> &rarr; nicht gefunden (<code>hi</code> und <code>lo</code> haben den gleichen Wert &rarr; zu Ende)</li>
+</ol>
+</details>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">containsBinarySearch</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">aSorted</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">boolean</span> <span class="n">found</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">lo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">aSorted</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">lo</span><span class="o">&lt;=</span><span class="n">hi</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">found</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">hi</span><span class="o">+</span><span class="n">lo</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">element</span> <span class="o">==</span> <span class="n">aSorted</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span><span class="p">)</span>     <span class="c1">// gefunden</span>
+        <span class="p">{</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>                            <span class="c1">// nicht gefunden</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">element</span> <span class="o">&lt;</span> <span class="n">aSorted</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span><span class="p">)</span>          <span class="c1">// links weitersuchen</span>
+            <span class="p">{</span>
+                <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>    <span class="c1">//  element &gt; aSorted[mid]     rechts weitersuchen</span>
+            <span class="p">{</span>
+                <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> 
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">found</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>in Zeile <code>4</code> wir die <code>lo</code>-Variable mit dem Index-Wert <code>0</code> initialisiert (kleinster Index),</li>
+<li>in Zeile <code>5</code> wir die <code>hi</code>-Variable mit dem Index-Wert <code>aSorted.length-1</code> initialisiert (größter Index),</li>
+<li>in Zeile <code>6</code> steht die Bedingung, wie lange die Suche fortgesetzt werden soll:<ul>
+<li>solange das Element noch nicht gefunden wurde (<code>!found</code>) oder</li>
+<li>solange der kleinere Index <code>lo</code> kleiner (gleich) <code>hi</code> ist; falls <code>element</code> nicht gefunden wurde</li>
+</ul>
+</li>
+<li>in Zeile <code>8</code> steht die Berechnung des mittleren Index <code>mid</code>. Beachten Sie, dass es sich um eine Integer-Division handelt. Es könnte also auch sein, dass die Summe von <code>lo</code> und <code>hi</code> ungerade ist, aber selbst dann ist <code>mid</code> eine ganze positive Zahl</li>
+<li>wenn das <code>element</code> gefunden wird (Bedingung in Zeile <code>9</code> ist <code>true</code>), dann wird <code>found</code> auf <code>true</code> gesetzt und die <code>while</code>-Schleife wird verlassen</li>
+<li>wenn links weiter gesucht wird (Bedingung in Zeile <code>15</code> ist <code>true</code>), dann  wird <code>hi</code> neu gesetzt und die Schleifenbedingung erneut geprüft</li>
+<li>wenn rechts weiter gesucht wird (Bedingung in Zeile <code>15</code> ist <code>false</code>), dann  wird <code>lo</code> neu gesetzt und die Schleifenbedingung erneut geprüft</li>
+<li>zurückgegeben (Zeile <code>25</code>)  wird <code>true</code>, wenn das <code>element</code> gefunden wurde (Zeilen <code>9-12</code>oder <code>false</code>, wenn es nicht gefunden wurde - initialer Wert von <code>found</code>)</li>
+</ul>
+<details class="question"><summary>Implementieren Sie eine <code>getIndexBinarySearch()</code>-Methode unter Verwendung des Prinzips der binären Suche!</summary><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndexBinarySearch</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">aSorted</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">boolean</span> <span class="n">found</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">indexAtElement</span> <span class="o">=</span> <span class="n">NOT_FOUND</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">lo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">aSorted</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">lo</span><span class="o">&lt;=</span><span class="n">hi</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">found</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">hi</span><span class="o">+</span><span class="n">lo</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">element</span> <span class="o">==</span> <span class="n">aSorted</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span><span class="p">)</span>     <span class="c1">// gefunden</span>
+        <span class="p">{</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="n">indexAtElement</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>                            <span class="c1">// nicht gefunden</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">element</span> <span class="o">&lt;</span> <span class="n">aSorted</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span><span class="p">)</span>          <span class="c1">// links weitersuchen</span>
+            <span class="p">{</span>
+                <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>    <span class="c1">//  element &gt; aSorted[mid]     rechts weitersuchen</span>
+            <span class="p">{</span>
+                <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> 
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">indexAtElement</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<hr />
+<p><strong>Nur zur Info :</strong> </p>
+<p>Mithilfe der binären Suche ist die Suche nach einem Element in einem sortierten Array enorm beschleunigt. Unter der <strong>Komplexität</strong> eines Algorithmus wird der Bedarf des Algorithmus an den zur Verfügung stehenden Ressourcen </p>
+<ul>
+<li>Laufzeit (wie schnell?) &rarr; sogenannte <em>Zeitkomplexität</em> </li>
+<li>Speicherplatz (wie viel Speicherplatz nötig?)  &rarr; sogenannte Speicherkomplexität</li>
+</ul>
+<p>verstanden. Die Komplexität eines Algorithmus in Abhängigkeit von der Größe <code>n</code> der von ihm bearbeiteten Daten ausgedrückt. Dafür hat sich die <em>Landau-Notation</em> durchgesetzt. Diese beschreibt mit <code>O(n)</code> sogenannte <em>Komplexitätsklassen</em>. Beispielsweise wird die Verkettung von zwei Arrays der Länge <code>n</code> und <code>m</code> mit der Komplexitätsklasse <code>O(n+m)</code> angegeben (maximale Zeit- und Speicherkomplexität), während die Komplexitätsklasse der sequentiellen Suche in unsortierten und sortierten Arrays <code>O(n)</code> ist und die binäre Suche in sortierten Arrays <code>O(log n)</code>. </p>
+<p>Wir messen im Folgenden einmal den Zeitverbrauch der Methoden <code>getIndex()</code>, <code>getIndexSorted()</code> und <code>getIndexBinarySearch()</code> unter Verweung der Klassen <code>Instant</code> und <code>Duration</code> aus dem Paket <code>java.time</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">test</span> <span class="o">=</span> <span class="n">createAndFillArray</span><span class="p">(</span><span class="mi">100000000</span><span class="p">,</span> <span class="mi">10000000</span><span class="p">);</span>
+<span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">test</span><span class="p">);</span>
+<span class="n">Instant</span> <span class="n">start</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">getIndex</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="mi">80000000</span><span class="p">);</span>
+<span class="n">Instant</span> <span class="n">finish</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="kt">long</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">finish</span><span class="p">).</span><span class="na">toMillis</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;index : &quot;</span> <span class="o">+</span> <span class="n">index</span> <span class="o">+</span> <span class="s">&quot; duration : &quot;</span> <span class="o">+</span> <span class="n">duration</span><span class="p">);</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">getIndexSorted</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="mi">80000000</span><span class="p">);</span>
+<span class="n">finish</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">finish</span><span class="p">).</span><span class="na">toMillis</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;index : &quot;</span> <span class="o">+</span> <span class="n">index</span> <span class="o">+</span> <span class="s">&quot; duration : &quot;</span> <span class="o">+</span> <span class="n">duration</span><span class="p">);</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">getIndexBinarySearch</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="mi">80000000</span><span class="p">);</span>
+<span class="n">finish</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">finish</span><span class="p">).</span><span class="na">toMillis</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;index : &quot;</span> <span class="o">+</span> <span class="n">index</span> <span class="o">+</span> <span class="s">&quot; duration : &quot;</span> <span class="o">+</span> <span class="n">duration</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Zeile <code>1</code>: Wir erstellen uns mithilfe der Methode <code>createAndFillArray()</code> ein Array mit 100 Millionen Einträgen. </li>
+<li>Zeile <code>2</code>: Unter Verwendung der Klasse <code>Arrays</code> (aus dem <code>java.util</code>-Paket) wird dieses Array sortiert (die Klasse kennen wir noch nicht). </li>
+<li>Zeile <code>3</code>: Mithilfe der <code>Instant</code>-Klasse (aus <code>java.time</code>) und deren Methode <code>now()</code> ermitteln wir die aktuelle Zeit und speichern sie in der Variablen <code>start</code> (vom Typ <code>Instant</code>); die Klasse kennen wir noch nicht</li>
+<li>Zeile <code>4</code>: Wir verwenden die Methode <code>getIndex()</code>, um das Element mit dem Wert <code>8.000.000</code> im Array <code>test</code> zu suchen</li>
+<li>Zeile <code>5</code>: Mithilfe <code>Instant.now()</code> ermitteln wir erneut die aktuelle Zeit und speichern sie in der Variablen <code>finish</code></li>
+<li>Zeile <code>6</code>: wir berechnen die Differenz zwischen <code>finish</code> und <code>start</code> in Millisekunden und speichern sie in der Variablen <code>duration</code> vom Typ <code>long</code> (zur Differenzberechnung verwenden wir die Klasse <code>Duration</code> aus dem <code>java.time</code>-Paket; die Klasse kennen wir noch nicht)</li>
+<li>Zeile <code>7</code>: wir geben den Index und die Dauer der Ausführung aus</li>
+<li>Zeile <code>10</code>: wir wiederholen alles mit der <code>getIndexSorted()</code>-Methode</li>
+<li>Zeile <code>16</code>: wir wiederholen alles mit der <code>getIndexBinarySearch()</code>-Methode</li>
+</ul>
+<p>Es erfolgt folgende Ausgabe (Element wurde in diesem Fall nicht gefunden):</p>
+<div class="highlight"><pre><span></span><code>index : -1 duration : <span class="m">47</span>
+index : -1 duration : <span class="m">94</span>
+index : -1 duration : <span class="m">0</span>
+</code></pre></div>
+<p><code>getIndexBinarySearch()</code> verbraucht also (fast) keine Zeit. Es überrascht vielleicht, dass <code>getIndexSorted()</code> doppelt so viel Zeit verbraucht, wie <code>getIndex()</code>. Das liegt aber daran, dass in <code>getIndex()</code> einerseits die Bedingung der <code>for</code>-Schleife nur eine Prüfung enthält, während es in <code>getIndexSorted()</code> drei Teilbedingungen sind, die verknüpft werden müssen und es außerdem in <code>getIndex()</code> innerhalb der <code>for</code>-Schleife nur eine Bedingung zur Prüfung gibt, während es in <code>getIndexSorted()</code> zwei sind. Da das gesuchte Element mit dem Wert <code>8 Mio</code> relativ weit hinten im Array liegen würde (der Bereich der Zufallszahlen ist <code>[0 ... 9999999]</code> Zufallszahlen in den <code>100 Mio</code>Einträgen des Arrays), ist der Vorteil der Suche im sortierten Array hier zu gering. </p>
+<p>Würden wir z.B. stattdessen nach der Zahl <code>100000</code> suchen, wäre das Ergebnis so:</p>
+<div class="highlight"><pre><span></span><code>index : <span class="m">1000579</span> duration : <span class="m">53</span>
+index : <span class="m">1000579</span> duration : <span class="m">4</span>
+index : <span class="m">1000575</span> duration : <span class="m">0</span>
+</code></pre></div>
+<hr />
+<h3 id="einfugen-in-arrays">Einfügen in Arrays<a class="headerlink" href="#einfugen-in-arrays" title="Permanent link">&para;</a></h3>
+<p>Hier geht es darum, dass wir ein Element in ein Array einfügen wollen. Wir unterscheiden wieder zwischen dem Einfügen in ein unsortiertes und dem Einfügen in ein sortiertes Array. Wir betrachten zunächst das Einfügen in ein unsortiertes Array. </p>
+<h4 id="einfugen-in-ein-unsortiertes-array">Einfügen in ein unsortiertes Array<a class="headerlink" href="#einfugen-in-ein-unsortiertes-array" title="Permanent link">&para;</a></h4>
+<p>Angenommen, wir haben folgendes <code>int</code>-Array <code>a</code>:</p>
+<p><img alt="unsortiert" src="../files/34_array.png" /></p>
+<p>und wir wollen ein weiteres Element mit dem Wert <code>13</code> einfügen. Man könnte auf die Idee kommen, dass die Elemente mit dem Index <code>10</code> bis <code>14</code> dafür zur Verfügung stehen, da diese mit dem Standartwert für <code>int</code>, der <code>0</code> belegt sind. Aber woher sollen wir wissen, dass dies gar keine "richtigen" Werte sind? Da das Array ein unsortiertes <code>int</code>-Array ist, können Nullen an allen Stellen vorkommen. Bei dem Einfügen in ein unsortiertes Array handelt es sich eigentlich um ein Anhängen (<code>append</code>) des neuen Elementes an das alte Array. Wir benötigen dazu ein neues Array, das um <code>1</code> länger ist als das ursprüngliche Array. Wir gehen also wie folgt vor: </p>
+<ol>
+<li>wir erzeugen ein neues Array <code>b</code>, das um <code>1</code> länger ist als das Array <code>a</code></li>
+<li>wir kopieren alle Werte aus <code>a</code> nach <code>b</code></li>
+<li>wir speichern in das letzte Element von <code>b</code> den neuen Wert <code>element</code></li>
+</ol>
+<p>Eine mögliche Implementierung dafür sieht so aus:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">append</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">b</span><span class="o">[</span><span class="n">index</span><span class="o">]=</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">b</span><span class="o">[</span><span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">element</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>in Zeile <code>3</code> wird das neue Array <code>b</code> erzeugt, das um <code>1</code> änger ist als <code>a</code></li>
+<li>in den Zeilen <code>4-7</code> werden alle Werte aus <code>a</code> nach <code>b</code> kopiert</li>
+<li>in Zeile <code>9</code> wird dem letzten Element von <code>b</code> der Wert <code>element</code> zugewiesen</li>
+</ul>
+<p>Es geschieht also folgendes:</p>
+<p><img alt="unsortiert" src="../files/35_array.png" /></p>
+<p>Wir merken uns also: das Einfügen in ein unsortiertes Array ist in Wirklichkeit ein Anhängen des Elementes an ein unsortiertes Array. Dazu muss ein neues Array erzeugt werden, das um <code>1</code> länger ist als das Array, an das angehängt werden soll. </p>
+<h4 id="einfugen-in-ein-sortiertes-array">Einfügen in ein sortiertes Array<a class="headerlink" href="#einfugen-in-ein-sortiertes-array" title="Permanent link">&para;</a></h4>
+<p>Das Einfügen in ein sortiertes Array ist deutlich komplizierter, denn das einzufügende Element muss korrekt, d.h. an die richtige Stelle entsprechend der Sortierung, eingefügt werden. Angenommen, wir haben folgende Ausgangsposition:</p>
+<p><img alt="unsortiert" src="../files/36_array.png" /></p>
+<p>Das einzufügende Element mit dem Wert <code>13</code> muss zwischen die beiden Elemente mit den Werten <code>12</code> und <code>14</code> eingefügt werden. Wir gehen dabei wie folgt vor:</p>
+<ol>
+<li>wir erzeugen ein neues Array <code>b</code>, das um <code>1</code> länger ist als <code>a</code></li>
+<li>wir kopieren alle Werte aus <code>a</code> nach <code>b</code> <strong>solange</strong> die Werte kleiner sind als das einzufügende Element</li>
+<li><strong>wenn</strong> wir auf das erste Element in <code>a</code> stoßen, das größer ist als das einzufügende Element, fügen wir das Element ein</li>
+<li>danach kopieren wir die restlichen Werte aus <code>a</code> nach <code>b</code> </li>
+</ol>
+<p><img alt="unsortiert" src="../files/37_array.png" /></p>
+<p>Wir setzen obigen Algorithmus in folgender Methode um: </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">insertIntoSortedArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">indexB</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">indexA</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">indexA</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">]&lt;</span><span class="n">element</span><span class="p">)</span>  
+    <span class="p">{</span>
+        <span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">++]=</span><span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">++]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">++]</span> <span class="o">=</span> <span class="n">element</span><span class="p">;</span>  <span class="c1">// from now on indexB = indexA+1</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">indexB</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">++]=</span><span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">++]</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>in Zeile <code>3</code> wird das Array <code>b</code> erzeugt, welches um <code>1</code> länger ist als <code>a</code></li>
+<li>in Zeilen <code>5-8</code> kopieren wir alle Werte aus <code>a</code> nach <code>b</code>, die kleiner sind als unser <code>element</code></li>
+<li>in Zeile <code>10</code> wird <code>element</code> in <code>b</code> eingefügt</li>
+<li>in Zeilen <code>12-15</code> kopieren wir die restlichen Werte aus <code>a</code> nach <code>b</code></li>
+</ul>
+<p>Beachten Sie:</p>
+<ul>
+<li>in der Anweisung <code>b[indexB++]=a[indexA++];</code> passieren mehrere Sachen auf einmal: <ul>
+<li>einerseits <code>b[indexB]=a[indexA];</code> und</li>
+<li>außerdem noch <code>indexB++;</code> </li>
+<li>und <code>indexA++</code>; </li>
+</ul>
+</li>
+<li>nach der Anweisung <code>b[indexB++] = element;</code> ist <code>indexB</code> um <code>1</code> größer als <code>indexA</code> (was ja auch gut ist, siehe im Bild das "rote" Kopieren)</li>
+</ul>
+<details class="question"><summary>Spielen Sie den Fall durch, dass eine <code>0</code> in das Beispiel-Array aus der Abbildung eingefügt werden soll!</summary><ul>
+<li>Dann wird die erste <code>while</code>-Schleife gar nicht betreten, da die (Teil-)Bedingung <code>a[indexA]&lt;element</code> gleich <code>false</code> ist</li>
+</ul>
+</details>
+<details class="question"><summary>Spielen Sie den Fall durch, dass eine <code>27</code> in das Beispiel-Array aus der Abbildung eingefügt werden soll!</summary><ul>
+<li>Dann wird die zweite <code>while</code>-Schleife gar nicht betreten, da die Bedingung <code>indexB&lt;b.length</code> gleich <code>false</code> ist</li>
+</ul>
+</details>
+<details class="question"><summary>Die Bedingung der ersten <code>while</code>-Schleife lautet <code>indexA&lt;a.length &amp;&amp; a[indexA]&lt;element</code>. Könnte man das auch umdrehen und <code>a[indexA]&lt;element &amp;&amp; indexA&lt;a.length</code> schreiben?</summary><ul>
+<li>Nein, das könnte zu einem Fehler führen. Der Operator <code>&amp;&amp;</code> hat (im Gegensatz zum Operator <code>&amp;</code>) die Eigenschaft, dass die zweite Teilbedingung (also <code>a[indexA]&lt;element</code>) gar nicht mehr geprüft wird, wenn die erste bereits <code>false</code> ist. Angenommen, die Teilbedingung <code>indexA&lt;a.length</code> ist <code>false</code>, dann ist <code>indexA==a.length</code>. Dann können wir aber nicht mehr mit <code>a[indexA]</code> auf ein Element in <code>a</code> zugreifen, da der Index <code>a.length</code> nicht existiert. Wir würden eine <code>ArrayIndexOutOfBoundsException</code> geworfen bekommen. Für den Fall also, dass das neu einzufügende Element ganz an das Ende des neuen Arrays <code>b</code> kommt, muss die Bedingung genau in dieser Reihenfolge formuliert werden. </li>
+</ul>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir kennen jetzt Arrays. Wir können sie erzeugen, wir können sie miteinander verbinden. Wir können Elemente darin suchen, sowohl in sortierten als auch in unsortierten Arrays. Wir können Elemente einfügen. Bitte beachten Sie, dass die Elemente eines Arrays von jedem beliebigen Typ sein können, auch Referenztypen. Jetzt lernen wir noch, wie wir Arrays sortieren können und werden uns später nochmal mit Arrays beschäftigen, deren Elemente von Referenztypen sind und somit Objekte beinhalten. </p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>ganz genau geben wir die Referenz auf das <code>copy</code>-Array zurück, aber dazu später&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../ide/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: IDE (Eclipse)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              IDE (Eclipse)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../uebungen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Übungen" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Übungen
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>
