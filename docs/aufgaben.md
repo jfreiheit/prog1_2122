@@ -796,7 +796,7 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 	- Viel Spaß und viel Erfolg!
 
 
-#### Aufgabe 9 (Abgabe bis 20.12.2021 24:00 Uhr)
+#### Aufgabe 9 (Abgabe bis 03.01.2022 24:00 Uhr)
 ??? "Aufgabe9 - Bruch"
 	- Wir erstellen uns einen Datentyp `Bruch` (extra mal etwas Mathematisches ;-))
 
@@ -881,4 +881,378 @@ Zur offiziellen Abgabe einer Aufgabe gehören also
 	- **Zusatzaufgabe**: Überschreiben Sie für `Bruch` die Methoden `public boolean equals(Object o)` und `public int hashCode()`.
 	 
 	- Viel Spaß und viel Erfolg!
+
+
+#### Aufgabe 10 (Abgabe bis 10.01.2022 24:00 Uhr)
+
+??? "Aufgabe 10 - Arrays ausgeben"
+	- Lösen Sie die Aufgabe mit [Eclipse](../ide/#integrated-developmemt-environment-ide) oder einer [IDE](../ide/#integrated-developmemt-environment-ide) Ihrer Wahl. Wir geben Arrays in verschiedenen Arten auf der Konsole aus. 
+
+	- Erstellen Sie sich ein package `aufgaben.aufgabe10` und in diesem package zwei Klassen `Programmklasse` (mit `main()`-Methode) und `Aufgabe10`. 
+
+	- Implementieren Sie in der Klasse `Aufgabe10` eine Methode `public int[] createAndFillArray(int length, int fromInclusive, int toInclusive)`. Diese Methode soll genau so sein, wie die `createAndFillArray(int length, int bound)`-Methode in [Methoden mit Array als Rückgabe](../arrays/#methoden-mit-array-als-ruckgabe) mit dem einzigen Unterschied, dass wir nicht den `bound` angeben (der sorgt ja dafür, dass wir Zufallswerte aus dem Bereich `[0, 1, ... , bound-1]` erzeugen), sondern `fromInclusive` und `toExclusive`, so dass wir Zufallswerte aus dem Wertebereich `[fromInclusive, ... , toInclusive]` erzeugen. Siehe dazu auch [`nextInt(bound)`](../hilfsklassen/#nextintint-bound).
+
+	- Implementieren Sie eine Methode `public void printArray(int[] a)` so, dass sie ein `int`-Array in der Form `[ 27, 30, 25, 26, 23, 20, 30, 30, 22, 21, 29, 29, 21, 20 ]` (also Werte durch Komma getrennt in eckigen Klammern) ausgibt. Siehe dazu [Ausgabe von Arrays](../arrays/#ausgabe-der-werte-auf-die-konsole).  
+
+	- Rufen Sie in der `main()` die beiden Methoden wie folgt auf:
+		```java
+		Random r = new Random(); 		// java.util.Random importieren
+		Aufgab10 a10 = new Aufgabe10();
+		int length = r.nextInt(10)+10;
+		int[] arr1 = a10.createAndFillArray(length, 20, 30);
+		
+		System.out.printf("%n%n%n----------- printArray -----------------%n%n%n");
+		a10.printArray(arr1);
+		```
+
+	- Implementieren Sie eine Methode `public void printTable(int[] a)`. Diese gibt das Array `a` als Tabelle in folgender Form aus:
+		```bash
+		| Index :    |   0  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |  10  |  11  |  12  |  13  |
+		|------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
+		| Wert :     |  27  |  30  |  25  |  26  |  23  |  20  |  30  |  30  |  22  |  21  |  29  |  29  |  21  |  20  |
+		```
+	
+	- Rufen Sie in der `main()` die Methode `printTable()` wie folgt auf:
+		```java
+		System.out.printf("%n%n%n----------- printTable -----------------%n%n%n");
+		a10.printTable(arr1);
+		```		
+
+	- Implementieren Sie eine Methode `public void printHorizontal(int[] a)`. Diese gibt das Array `a` in folgender Form aus:
+		```bash
+		    | 
+		  0 | ***************************
+		    | 
+		  1 | ******************************
+		    | 
+		  2 | *************************
+		    | 
+		  3 | **************************
+		    | 
+		  4 | ***********************
+		    | 
+		  5 | ********************
+		    | 
+		  6 | ******************************
+		    | 
+		  7 | ******************************
+		    | 
+		  8 | **********************
+		    | 
+		  9 | *********************
+		    | 
+		 10 | *****************************
+		    | 
+		 11 | *****************************
+		    | 
+		 12 | *********************
+		    | 
+		 13 | ********************
+		    | 
+		```
+		Das heißt, für jeden Wert im Array wird die entsprechende Anzahl von Sternen ausgegeben. Ganz links steht jeweils der Index, unter dem der Wert im Array gespeichert wird. 
+		
+	- Rufen Sie in der `main()` die Methode `printTable()` wie folgt auf:
+		```java
+		System.out.printf("%n%n%n----------- printHorizontal ------------%n%n%n");
+		a10.printHorizontal(arr1);
+		```	
+
+	- ---
+
+	- **Wenn Sie das geschafft haben, dann haben Sie die Aufgabe erfüllt! Herzlichen Glückwunsch! Die folgende(n) Aufgabe(n) sind optional :**
+
+	- ---
+
+	- Implementieren Sie eine Methode `public void printUpsideDown(int[] a)` oder eine Methode `public void printVertical(int[] a)` (beide gleicher Aufwand). Diese geben das Array `a` in folgender Form aus:
+	```bash
+
+	----------- printUpsideDown ------------
+
+
+	    |   0    1    2    3    4    5    6    7    8    9   10   11   12   13  
+	----+----------------------------------------------------------------------
+	  1 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  2 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  3 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  4 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  5 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  6 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  7 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  8 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  9 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 10 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 11 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 12 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 13 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 14 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 15 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 16 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 17 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 18 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 19 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 20 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 21 |   *    *    *    *    *         *    *    *    *    *    *    *       
+	 22 |   *    *    *    *    *         *    *    *         *    *            
+	 23 |   *    *    *    *    *         *    *              *    *            
+	 24 |   *    *    *    *              *    *              *    *            
+	 25 |   *    *    *    *              *    *              *    *            
+	 26 |   *    *         *              *    *              *    *            
+	 27 |   *    *                        *    *              *    *            
+	 28 |        *                        *    *              *    *            
+	 29 |        *                        *    *              *    *            
+	 30 |        *                        *    *                                
+
+
+
+
+	----------- printVertical --------------
+
+
+	 30 |        *                        *    *                                
+	 29 |        *                        *    *              *    *            
+	 28 |        *                        *    *              *    *            
+	 27 |   *    *                        *    *              *    *            
+	 26 |   *    *         *              *    *              *    *            
+	 25 |   *    *    *    *              *    *              *    *            
+	 24 |   *    *    *    *              *    *              *    *            
+	 23 |   *    *    *    *    *         *    *              *    *            
+	 22 |   *    *    *    *    *         *    *    *         *    *            
+	 21 |   *    *    *    *    *         *    *    *    *    *    *    *       
+	 20 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 19 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 18 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 17 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 16 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 15 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 14 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 13 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 12 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 11 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	 10 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  9 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  8 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  7 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  6 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  5 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  4 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  3 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  2 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	  1 |   *    *    *    *    *    *    *    *    *    *    *    *    *    *  
+	----+----------------------------------------------------------------------
+	    |   0    1    2    3    4    5    6    7    8    9   10   11   12   13  
+
+	```
+
+	- Rufen Sie in der `main()` die beiden Methoden (oder die, die Sie implememntiert haben) wie folgt auf:
+		```java
+		System.out.printf("%n%n%n----------- printUpsideDown ------------%n%n%n");
+		a10.printUpsideDown(arr1);
+		System.out.printf("%n%n%n----------- printVertical --------------%n%n%n");
+		a10.printVertical(arr1);
+		```	
+
+	- **Tipps zum Lösen der Zusatzaufgabe:** 
+		- Sie müssen zunächst ermitteln, welcher der größte Wert innerhalb des Arrays ist, denn dieser gibt Ihnen die Anzahl der Zeilen im Diagramm vor.
+		- Stellen Sie sich das Problem als eine Matrix aus Zeilen und Spalten vor. Die Spalten lassen sich auf den Index des Arrays mappen und die Zeilen auf die Werte im Array. 
+
+	- Viel Spaß und viel Erfolg!
+
+
+#### Aufgabe 11 (Abgabe bis 17.01.2022 24:00 Uhr)
+
+??? "Aufgabe 11 - Arrays befüllen"
+	- Lösen Sie die Aufgabe mit [Eclipse](../ide/#integrated-developmemt-environment-ide) oder einer [IDE](../ide/#integrated-developmemt-environment-ide) Ihrer Wahl. Wir befüllen ein `char`-Array, aber das ist leider gar nicht so einfach ;-)
+
+	- Erstellen Sie sich ein package `aufgaben.aufgabe11` und in diesem package zwei Klassen `Programmklasse` (mit `main()`-Methode) und `Aufgabe11`. 
+
+	- **einleitende Vorbetrachtung:** angenommen, wir haben die folgende Schleife: 
+
+		```java linenums="1"
+		for(int asciiValue = 97; asciiValue<123; asciiValue++)
+		{
+			char c = (char) asciiValue;
+			System.out.print(c + " ");
+		}
+		```
+
+	-  Durch diese wird uns das gesamte Alphabet in Kleinbuchstaben ausgegeben:
+
+	  	```bash
+	  	a b c d e f g h i j k l m n o p q r s t u v w x y z 
+	  	```
+
+	-  Kopieren Sie die Schleife einfach in Ihre `main()`-Methode und führen Sie sie aus, dann erhalten Sie obige Ausgabe. Dahinter steckt, dass wir der `int`-Variablen `asciiValue` den ASCII-Code der Kleinbuchstaben zuweisen (beginnend bei `97` - das ist ein `a`). Siehe z.B. [hier](../variablen/#char). Der letzte kleine Buchstabe `z` hat den ASCII-Wert `122`, deshalb läuft die Schleife auch bis `<123`. In Zeile `3` der Schleife findet eine [Typkonvertierung](../variablen/#typkonvertierung-type-cast) statt. Aus dem `int` wird ein `char`. Dies geschieht durch den Typkonvertierungsoperator `(char)`. In Zeile `4` wird das Zeichen `c` vom Typ `char` ausgegeben. 
+
+	- **Aufgabe** Die Aufgabe ist es nun, ein `char`-Array zu befüllen. Es gelten folgende Bedingungen:
+	 	- das Array hat (nur) die Länge `25`
+	 	- in dem Array darf es keine Doppelungen geben (also kein Zeichen darf doppelt enthalten sein)
+	 	- die Zeichen werden zufällig erzeugt, d.h. mithilfe der Klasse `Random` und der Methode `nextInt(bound)`, die Werte zwischen `97` und einschließlich `122` erzeugen soll
+
+	- Schreiben Sie dafür eine Methode `public char[] createAndFillCharArray()`
+	 	- in dieser Methode erzeugen Sie das `char[]`der Länge `25`,
+	 	- ein `Random`-Objekt, mit dem Sie unter Verwendung der `nextInt(bound)`-Methode zufällig Zahlen zwischen `97` und einschließlich `122`erzeugen,
+	 	- die erzeugten `int`-Werte konvertieren Sie mithilfe des `(char)`-Typecast-Operators nach `char`,
+	 	- dann befüllen Sie das `char[]` --> passen Sie aber auf, dass Sie kein Zeichen hinzufügen, das bereits im Array enthalten ist --> dazu benötigen Sie die `contains()`-Methode:
+
+	- Schreiben Sie eine Methode `public boolean contains(char[] ca, char c)`. Diese gibt ein `true` zurück, wenn `c` in `ca` enthalten ist und ein `false`, wenn nicht.
+
+	- Schreiben Sie eine Methode `public char[] sort(char[] a)`. Diese gibt ein `char[]` zurück, welches sortiert ist. Das übergebene Array `a` ist unsortiert. Siehe dazu [Sortieren von Arrays](../sortieren/#sortieren-von-arrays).
+
+	- Schreiben Sie eine Methode `public void print(char[] a)`, die ein übergebenes `char[]` in der Form
+
+	 	```bash
+	 	[ o, g, f, p, a, c, s, i, e, q, h, l, t, r, w, z, v, x, y, u, b, j, k, m, n ]
+	 	```
+
+	 	ausgibt.
+
+	- Geben Sie in Ihre `main()`-Methode folgende Anweisungen ein:
+
+	 	```java	
+	 	Aufgabe11 a11 = new Aufgabe11();		
+		System.out.printf("%n%n----------------- Erzeugen ------------------%n%n");
+		char[] ca1 = a11.createAndFillCharArray();
+		a11.print(ca1);
+		
+		System.out.printf("%n%n----------------- Sortieren ------------------%n%n");		
+		char[] ca2 = a11.sort(ca1);
+		a11.print(ca2); 
+		```
+
+		Es sollten Ausgaben in der Form:
+
+		```bash
+
+		----------------- Erzeugen ------------------
+
+		[ o, g, f, p, a, c, s, i, e, q, h, l, t, r, w, z, v, x, y, u, b, j, k, m, n ]
+
+
+		----------------- Sortieren ------------------
+
+		[ a, b, c, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z ]
+
+		```
+
+		erscheinen. Beachten Sie, dass die Einträge im Array zufällig erzeugt wurden. Beachten Sie außerdem, dass ein Buchstabe aus dem Alphabet fehlt, hier z.B. `d` (das Array hat die Länge `25`, das Alphabet hat `26` Buchstaben). 
+
+	- ---
+
+	- **Wenn Sie das geschafft haben, dann haben Sie die Aufgabe erfüllt! Herzlichen Glückwunsch! Die folgende(n) Aufgabe(n) sind optional :**
+
+	- ---
+
+	- Schreiben Sie eine Methode `public char getMissingLetter(char[] a)`. Dieser Methode wird ein durch die obige Methode `createAndFillCharArray()` erstelltes `char`-Array übergeben. Das Array hat also die Länge `25` hat und aus dem Alphabet fehlt genau ein kleiner Buchstabe. Finden Sie den Buchstaben und geben ihn zurück. 
+
+	- Schreiben Sie eine Methode `public void findWord(String word)`. Dieser Methode wird eine Zeichenkette übergeben, die nur aus Buchstaben besteht. Sie können annehmen, dass es nur kleine Buchstaben sind, Sie können aber erstmal die `toLowerCase()`-Methode anwenden (siehe [String](../hilfsklassen/#die-klasse-string)). Rufen Sie für jedes Zeichen aus dem String die beiden Methoden `createAndFillCharArray()` und `getMissingLetter()` auf, bis das von der `getMissingLetter()`-Methode zurückgegebene Zeichen dem Zeichen des Strings entspricht, das Sie gerade betrachten. Eine Ausgabe als Beispiel:
+
+		```bash
+		w..........w (11)
+		e.e (2)
+		i..i (3)
+		h............h (13)
+		n..............................n (31)
+		a........a (9)
+		c..c (3)
+		h...........................................................h (60)
+		t....t (5)
+		e.....e (6)
+		nn (1)
+		```
+
+		Die Ausgabe erfolgte durch den Aufruf von `findWord("weihnachten");`. Ganz links in der Zeile steht immer das Zeichen des Strings, das gerade betrachtet wird. Dann kommen für jeden fehlgeschlagenen Versuch, durch `getMissingLetter()` das `'w' zurück zu bekommen, die Ausgabe eines Punktes. Sollte `getMissingLetter()` das `'w'` zurückgeben, wird es ausgegeben und außerdem noch in Klammern die Anzahl der Versuche. Der Cursor wechselt in die nächste Zeile und das nächste Zeichen des Strings ist dran. 
+
+	- Viel Spaß und viel Erfolg!
+
+
+#### Aufgabe 12 (Abgabe bis 24.01.2022 24:00 Uhr)
+
+??? "Aufgabe 12 - SortedArray"
+	- Wir erstellen uns einen neuen Datentyp `SortedArray`
+
+	- **Idee**: Ein Objekt dieser Klasse beschreibt (enthält) ein `int`-Array, in dem 
+		- die Elemente aufsteigend sortiert sind und 
+		- kein Element doppelt vorkommt.
+
+		Das Array ist stets genau so groß, so viele Elemente es enthält!
+
+	- Erstellen Sie im package `aufgaben.aufgabe12` eine Klasse `SortedArray` ohne `main()`-Methode und eine Klasse `SortedArrayTest` mit `main()`-Methode. 
+
+	- In der Klasse `SortedArray` erstellen Sie eine Objektvariable `s` vom Typ `int[]` (`private`). 
+
+	- Implementieren Sie für die Klasse `SortedArray` zwei verschiedene Konstruktoren
+		- parameterlos --> der Konstruktor erzeugt ein leeres Array `s` (mit der Länge `0`)
+		- mit einem Parameter (`int element`) --> der Konstruktor erzeugt ein einelementiges Array `s` (mit der Länge `1`), wobei `s[0]` den Wert von `element` annimmt.
+
+	- Implementieren Sie eine Objektmethode `public boolean insert(int element)`. Diese Methode gibt ein `false` zurück, wenn `element` bereits in `s` enthalten ist. Dann wird das `element` **nicht** dem Array hinzugefügt. Die Methode gibt `true` zurück, wenn `element` in `s` eingefügt wurde. Um `element` einzufügen, wird ein neues Array für `s` erzeugt, in dem alle vorherigen Werte aus `s` und das neue `element` (an der richtigen Stelle einsortiert) enthalten sind.
+
+	- Implementieren Sie eine Objektmethode `public boolean delete(int element)`. Diese Methode gibt ein `false` zurück, wenn `element` nicht in `s` enthalten ist. Die Methode gibt `true` zurück, wenn `element` aus `s` gelöscht wurde. Beachten Sie, dass nach Löschen aus `s` die Länge von `s` um eins kleiner ist, als vor dem Löschen. Es muss also auch hier wieder ein neues Array erzeugt werden, welches nach dem Löschen dem "Wert" von `s` entspricht. 
+
+	- Implementieren Sie eine Objektmethode `public void print()`, die das Array `s` in der Form `[ 4, 5, 9 ]` (Beispielwerte) ausgibt. 
+
+	- **Tipp**: 
+		- Um zu überprüfen, ob ein `int element` in `s` enthalten ist, sollten Sie sich eine Methode `boolean contains(int element)` schreiben (diese kann `private` sein, wenn sie nur innerhalb der Klasse verwendet werden soll; sogenannte  *Servicemethode*). 
+		- Angenommen, Sie haben zwei Arrays: `s = [ 4, 9 ]` und `copy = [ 4, 5, 9]`, dann gilt nach `s = copy;`, dass `s == [ 4, 5, 9 ]`. 
+
+	- Geben Sie in die `main()`-Methode der `SortedArrayTest`-Klasse mindestens folgende Anweisungen ein:
+		```java 
+		System.out.printf("%n%n------------------------- Test a1 -----------------------------------%n%n");
+		SortedArray a1 = new SortedArray();
+		a1.print();
+		a1.delete(5);		a1.print();
+		a1.insert(5);		a1.print();
+		a1.insert(7);		a1.print();
+		a1.delete(5);		a1.print();
+		a1.insert(6);		a1.print();
+		a1.insert(4);		a1.print();
+		a1.insert(8);		a1.print();
+		a1.delete(8);		a1.print();
+		a1.delete(6);		a1.print();
+		
+		System.out.printf("%n%n------------------------- Test a2 -----------------------------------%n%n");
+		SortedArray a2 = new SortedArray(9);
+		a2.print();
+		a2.insert(5);		a2.print();
+		a2.insert(9);		a2.print();
+		a2.insert(5);		a2.print();
+		a2.insert(4);		a2.print();
+		a2.insert(4);		a2.print();
+		a2.delete(5);		a2.print();
+		a2.delete(9);		a2.print();
+		a2.delete(4);		a2.print();
+		a2.delete(4);		a2.print();	
+		``` 
+		und führen Sie die `SortedArrayTest`-Klasse aus. Es sollten folgende Augaben entstehen:
+		```bash
+		------------------------- Test a1 -----------------------------------
+
+		[ ]
+		[ ]
+		[ 5 ]
+		[ 5, 7 ]
+		[ 7 ]
+		[ 6, 7 ]
+		[ 4, 6, 7 ]
+		[ 4, 6, 7, 8 ]
+		[ 4, 6, 7 ]
+		[ 4, 7 ]
+
+
+		------------------------- Test a2 -----------------------------------
+
+		[ 9 ]
+		[ 5, 9 ]
+		[ 5, 9 ]
+		[ 5, 9 ]
+		[ 4, 5, 9 ]
+		[ 4, 5, 9 ]
+		[ 4, 9 ]
+		[ 4 ]
+		[ ]
+		[ ]
+		```
+	- Viel Spaß und viel Erfolg!
+
+
 

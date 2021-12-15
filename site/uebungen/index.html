@@ -460,6 +460,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#selbstandiges-uben" class="md-nav__link">
+    Selbständiges Üben
+  </a>
+  
+    <nav class="md-nav" aria-label="Selbständiges Üben">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ausdrucke" class="md-nav__link">
+    Ausdrücke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schleifen" class="md-nav__link">
+    Schleifen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -542,6 +576,40 @@
   <a href="#ubungsblatter-wochenweise" class="md-nav__link">
     Übungsblätter (wochenweise)
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selbstandiges-uben" class="md-nav__link">
+    Selbständiges Üben
+  </a>
+  
+    <nav class="md-nav" aria-label="Selbständiges Üben">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ausdrucke" class="md-nav__link">
+    Ausdrücke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schleifen" class="md-nav__link">
+    Schleifen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2087,16 +2155,6 @@ Pear expires on <span class="m">1</span>.1.1900
 </li>
 <li>
 <p>Was wird durch folgenden Code auf der Konsole ausgegeben?:
-    <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
-<span class="p">{</span>
-     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="p">);</span>
-     <span class="n">number</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Was wird durch folgenden Code auf der Konsole ausgegeben?:
     <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">count</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">count</span><span class="o">--</span><span class="p">)</span> 
 <span class="p">{</span>
      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
@@ -2286,6 +2344,103 @@ Pear expires on <span class="m">1</span>.1.1900
 </code></pre></div></p>
 </li>
 </ol>
+</details>
+<details class="note"><summary>Übung 10 (22.12.2021)</summary><ol>
+<li><strong>Wir nutzen von nun an <a href="../ide/#integrated-developmemt-environment-ide">Eclipse</a> in den Übungen und in den Vorlesungen. Bitte installieren!</strong></li>
+<li>Erstellen Sie ein package <code>uebungen.uebung10</code>. </li>
+<li>
+<p>Erstellen Sie in diesem package eine Klasse <code>Programmklasse</code> mit <code>main()</code>-Methode und eine Klasse <code>Uebung10</code>.</p>
+</li>
+<li>
+<p>Implementieren Sie in der Klasse <code>Uebung10</code> folgende Methoden: </p>
+<ul>
+<li>
+<p>Implementieren Sie eine <code>public void print(char[] ca)</code>-Methode, so dass das <code>char[] ca</code> auf die Konsole ausgegeben wird. Achten Sie darauf, dass hinter dem letzten Element kein Komma steht. Testen Sie Ihre Methode auch für ein leeres Array.<br/>
+Bsp:  <code>print(['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'])</code> <br/>
+Ausgabe auf Konsole: <code>[a, b, c, a, c, a, b, c]</code></p>
+</li>
+<li>
+<p>Kopieren Sie die <code>print</code>-Methode vollständig und ändern Sie den Typ des Parameters von <code>char[]</code> in <code>int[]</code>. (Die Methode ist jetzt <em>überladen</em> und <code>print()</code> kann jetzt entweder ein <code>char[]</code> oder ein <code>int[]</code> übergeben werden, welches auf die Konsole ausgegeben wird.)</p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public char[] stringToCharArray(String s)</code>. Diese Methode wandelt einen <code>String</code> in ein <code>char[]</code> um, so dass jedes Zeichen des Strings im <code>char[]</code> enthalten ist. Das <code>char[]</code> wird zurückgegeben. <br/>
+    Tipps: die Länge eines Strings wird mit der Objektmethode <code>length()</code> ermittelt. Die einzelnen Zeichen eines Strings können mithilfe der <code>charAt(index)</code>-Objektmethode von Strings ermittelt werden. Siehe <a href="../hilfsklassen/#die-klasse-string">String</a> <br/>
+    Bsp.: <code>stringToCharArray("hallo!")</code> &rarr; <code>['h','a','l','l','o','!']</code> </p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public char[] filter(char[] carr, char filter)</code>, der als Parameter ein <code>char</code>-Array und ein <code>char</code> übergeben wird. Die Methode soll ein <code>char</code>-Array zurückgeben, das dem als Parameter übergeben Array entspricht, außer dass jedes Vorkommen des als Parameter übergeben <code>carr</code> entfernt wurde <br/>
+    Bsp: <code>filter(['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'], 'c')</code> &rarr; <code>['a', 'b', 'a', 'a', 'b']</code></p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public int[] minAndMax(int[] iarr)</code>, der ein <code>int</code>-Array als Parameter übergeben wird und die ein zweielementiges Array zurückgibt. Das erste Element des zurückgegeben Arrays ist das Minimum des als Parameter übergebenen Arrays und das zweite Element ist das Maximum. <br/>
+    Bsp.:   <code>minAndMax([4,2,8,1,6,2,4,1,8])</code> &rarr; <code>[1,8]</code> <br/>
+            <code>minAndMax([4])</code> &rarr; <code>[4,4]</code></p>
+</li>
+<li>
+<p>Implementieren Sie eine Methode <code>public int[] reverse(int[] iarr)</code>, der ein <code>int</code>-Array übergeben wird und die die Reihenfolge der Elemente des Arrays umdreht (das letzte zuerst usw.) Das neuerstellte Array wird zurückgegeben. <br/>
+    Bsp.: <code>reverse([4,2,8,1,6,2,4,1,8])</code> &rarr; <code>[8,1,4,2,6,1,8,2,4]</code>  <br/>
+          <code>reverse([4])</code> &rarr; <code>[4]</code></p>
+</li>
+<li>
+<p><strong>Zusatz:</strong> Implementieren Sie eine Methode <code>public boolean containsDoublets(char[] ca)</code> die ein <code>true</code> zurückgibt, wenn <em>mindestens</em> ein Wert in <code>ca</code> <em>mindestens</em> zwei Mal vorkommt (wenn Sie schon dabei sind, können Sie sich auch überlegen, wenn <em>genau</em> ein Wert <em>genau</em> zwei Mal vorkommt - oder <em>mindestens</em> ein Wert <em>genau</em> zwei Mal - oder <em>genau</em> ein Wert <em>mindestens</em> zwei Mal) und <code>false</code> sonst.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Erzeugen Sie in der <code>main()</code>-Methode der <code>Programmklasse</code> </p>
+<ul>
+<li>ein <code>char</code>-Array mit den Werten <code>['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c']</code>,</li>
+<li>ein <code>int</code>-Array mit den Werten <code>[4,2,8,1,6,2,4,1,8]</code> und</li>
+<li>ein Objekt der Klasse <code>Uebung4</code> und 
+testen Sie alle Methoden der Klasse <code>Uebung4</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<hr />
+<h2 id="selbstandiges-uben">Selbständiges Üben<a class="headerlink" href="#selbstandiges-uben" title="Permanent link">&para;</a></h2>
+<p><strong><em>Falls Sie noch Lust und Zeit haben, ein wenig selbständig zu üben, hier einige Aufgaben:</em></strong></p>
+<h3 id="ausdrucke">Ausdrücke<a class="headerlink" href="#ausdrucke" title="Permanent link">&para;</a></h3>
+<details class="note"><summary>gleich 12</summary><p>Welche der folgenden Ausdrücke haben den Wert 12?
+<div class="highlight"><pre><span></span><code>a<span class="o">)</span> <span class="m">12</span> % <span class="m">13</span>
+b<span class="o">)</span> <span class="m">24</span> % <span class="m">2</span>
+c<span class="o">)</span> <span class="m">24</span>/2
+d<span class="o">)</span> <span class="m">25</span>/2
+</code></pre></div>
+Versuchen Sie zunächst, die richtige Antwort im Kopf zu ermitteln und erstellen dann ein geeignetes Programm, das Ihnen den jeweiligen Wert des Ausdrucks ausgibt.</p>
+</details>
+<details class="note"><summary>Pre- und Postoperator</summary><p>Welchen Wert hat die Variable <code>c</code> nach Ausführen der Anweisungen?
+<div class="highlight"><pre><span></span><code>int <span class="nv">a</span> <span class="o">=</span> <span class="m">300</span><span class="p">;</span>
+int <span class="nv">b</span> <span class="o">=</span> a++<span class="p">;</span>
+int <span class="nv">c</span> <span class="o">=</span> --b<span class="p">;</span>
+</code></pre></div>
+Begründen Sie die richtige Antwort! Was passiert durch die Anweisungen?</p>
+</details>
+<h3 id="schleifen">Schleifen<a class="headerlink" href="#schleifen" title="Permanent link">&para;</a></h3>
+<details class="note"><summary>Laufvariablen</summary><p>Welche der Schleifen gibt alle Elemente des Arrays <code>nums</code> aus? Das Array enthält genau 4 Zahlen.
+<div class="highlight"><pre><span></span><code>a<span class="o">)</span> <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> i &lt; nums.length<span class="p">;</span> i++<span class="o">)</span> <span class="o">{</span> System.out.println<span class="o">(</span>nums<span class="o">[</span>i<span class="o">])</span><span class="p">;</span> <span class="o">}</span>
+b<span class="o">)</span> <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> i &lt;<span class="o">=</span> <span class="m">3</span><span class="p">;</span> i++<span class="o">)</span> <span class="o">{</span> System.out.println<span class="o">(</span>nums<span class="o">[</span>i<span class="o">])</span><span class="p">;</span> <span class="o">}</span>
+c<span class="o">)</span> <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> i &lt;<span class="o">=</span> <span class="m">3</span><span class="p">;</span> i++<span class="o">)</span> <span class="o">{</span> System.out.println<span class="o">(</span>nums<span class="o">[</span>i<span class="o">])</span><span class="p">;</span> <span class="o">}</span>
+d<span class="o">)</span> <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> i &lt;<span class="o">=</span> <span class="m">3</span><span class="p">;</span> i++<span class="o">)</span> <span class="o">{</span> System.out.println<span class="o">(</span>nums<span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="p">;</span> <span class="o">}</span>
+e<span class="o">)</span> <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span> <span class="o">=</span> nums.length - <span class="m">1</span><span class="p">;</span> i &gt;<span class="o">=</span> <span class="m">0</span><span class="p">;</span> i--<span class="o">)</span> <span class="o">{</span> System.out.println<span class="o">(</span>nums<span class="o">[</span>i<span class="o">])</span><span class="p">;</span> <span class="o">}</span>
+</code></pre></div></p>
+</details>
+<details class="note"><summary>Quadratzahl</summary><p>Schreiben Sie eine Methode <code>istQuadratzahl(int zahl)</code>, die ein <code>true</code> zurückgibt, wenn <code>zahl</code> eine Quadratzahl ist und ein <code>false</code> sonst. Die <code>Math</code>-Klasse soll nicht verwendet werden.</p>
+</details>
+<details class="note"><summary>Primzahl</summary><p>Schreiben Sie eine Methode <code>printPrimzahlenBisN(int n)</code>, die alle Primzahlen bis <code>n</code> auf die Konsole ausgibt. Schreiben Sie sich dazu eine Hilfsmethode <code>istPrimzahl(int zahl)</code>, die ein <code>true</code> zurückgibt, wenn <code>zahl</code> eine Primzahl ist und ein <code>false</code>, wenn nicht.  </p>
+</details>
+<details class="note"><summary>int-Zahl umdrehen</summary><p>Schreiben Sie eine Methode <code>int reverseInt(int number)</code>, die die übergebene <code>number</code> umdreht und die umgedrehte <code>int</code>-Zahl zurückgibt, also z.B. aus <code>1234</code> wird <code>4321</code>. Weitere Beispiele: aus <code>-123</code> wird <code>-321</code> und aus <code>1200</code> wird <code>21</code>. </p>
+</details>
+<details class="note"><summary>Zahlen raten</summary><p>Schreiben Sie folgendes Programm. Mithilfe von <code>Random</code> "denkt" sich das Programm eine Zahl zwischen <code>0</code> und <code>100</code> aus. Sie können über die Konsole dann eine Zahl eingeben. Das Programm sagt Ihnen, ob die "gedachte" Zahl größer oder kleiner als die von Ihnen eingegebene Zahl ist. Sie geben solange eine Zahl ein, bis Sie die "gedachte" Zahl erraten haben. </p>
+</details>
+<details class="note"><summary>Binärzahl</summary><p>Schreiben Sie eine Methode, die eine <code>short</code>-Zahl in eine Binärzahl umwandelt. Diese Binärzahl speichern Sie als <code>long</code>. Z.B. ist <code>32</code> binär <code>100000</code>, <code>63</code> ist <code>111111</code>, <code>48</code> ist <code>110000</code> usw.</p>
+</details>
+<h3 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h3>
+<details class="note"><summary>Sotierte Arrays zusammenfügen</summary><p>Implementieren Sie eine Methode, die zwei als Parameter übergebene sortierte <code>int</code>-Arrays zu einem sortierten <code>int</code>-Array zusammenfügt. Geben Sie das neue sortierte Array zurück.</p>
+</details>
+<details class="note"><summary>Unsortierte Arrays sortiert zusammenfügen</summary><p>Implementieren Sie eine Methode, die zwei als Parameter übergebene unsortierte <code>int</code>-Arrays zu einem sortierten <code>int</code>-Array zusammenfügt. Geben Sie das neue sortierte Array zurück.</p>
+</details>
+<details class="note"><summary>Explode</summary><p>Implementieren Sie eine Methode <code>int[] explode(int number)</code>. Diese Methode erstellt ein <code>int[]</code>-Array, das wie folgt befüllt ist: Bsp. <code>number=5</code> &rarr; <code>{1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5}</code>. Für jede Zahl <code>x</code> gibt es also <code>x</code> Einträge im Array bis einschließlich <code>number</code>.</p>
 </details>
                 
               

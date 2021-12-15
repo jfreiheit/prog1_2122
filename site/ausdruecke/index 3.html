@@ -1,0 +1,1186 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I">
+      
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/ausdruecke/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>Ausdrücke - Programmieren I</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operatoren-und-ausdrucke" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmieren I" class="md-header__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmieren I
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ausdrücke
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmieren I" class="md-nav__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    Programmieren I
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/prog1/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluej/" class="md-nav__link">
+        BlueJ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variablen/" class="md-nav__link">
+        Variablen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ausdrücke
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ausdrücke
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetische-operatoren" class="md-nav__link">
+    Arithmetische Operatoren
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetische Operatoren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pra-und-postfix-operatoren" class="md-nav__link">
+    Prä- und Postfix-Operatoren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verkurzte-schreibweisen-fur-arithmetische-operatoren" class="md-nav__link">
+    Verkürzte Schreibweisen für arithmetische Operatoren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vergleichsoperatoren" class="md-nav__link">
+    Vergleichsoperatoren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wertzuweisungsoperator" class="md-nav__link">
+    Wertzuweisungsoperator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logische-operatoren" class="md-nav__link">
+    Logische Operatoren
+  </a>
+  
+    <nav class="md-nav" aria-label="Logische Operatoren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wahrheitstabellen" class="md-nav__link">
+    Wahrheitstabellen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ausdrucke-und-anweisungen" class="md-nav__link">
+    Ausdrücke und Anweisungen
+  </a>
+  
+    <nav class="md-nav" aria-label="Ausdrücke und Anweisungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literale" class="md-nav__link">
+    Literale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausdrucke-mit-operatoren" class="md-nav__link">
+    Ausdrücke mit Operatoren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methoden/" class="md-nav__link">
+        Methoden
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objekte/" class="md-nav__link">
+        Klassen und Objekte
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vererbung/" class="md-nav__link">
+        Vererbung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object/" class="md-nav__link">
+        Object
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ide/" class="md-nav__link">
+        IDE (Eclipse)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arrays/" class="md-nav__link">
+        Arrays
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aufgaben/" class="md-nav__link">
+        Aufgaben
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hilfsklassen/" class="md-nav__link">
+        Hilfsklassen
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetische-operatoren" class="md-nav__link">
+    Arithmetische Operatoren
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetische Operatoren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pra-und-postfix-operatoren" class="md-nav__link">
+    Prä- und Postfix-Operatoren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verkurzte-schreibweisen-fur-arithmetische-operatoren" class="md-nav__link">
+    Verkürzte Schreibweisen für arithmetische Operatoren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vergleichsoperatoren" class="md-nav__link">
+    Vergleichsoperatoren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wertzuweisungsoperator" class="md-nav__link">
+    Wertzuweisungsoperator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logische-operatoren" class="md-nav__link">
+    Logische Operatoren
+  </a>
+  
+    <nav class="md-nav" aria-label="Logische Operatoren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wahrheitstabellen" class="md-nav__link">
+    Wahrheitstabellen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ausdrucke-und-anweisungen" class="md-nav__link">
+    Ausdrücke und Anweisungen
+  </a>
+  
+    <nav class="md-nav" aria-label="Ausdrücke und Anweisungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literale" class="md-nav__link">
+    Literale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausdrucke-mit-operatoren" class="md-nav__link">
+    Ausdrücke mit Operatoren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/prog1/edit/master/docs/ausdruecke.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="operatoren-und-ausdrucke">Operatoren und Ausdrücke<a class="headerlink" href="#operatoren-und-ausdrucke" title="Permanent link">&para;</a></h1>
+<p>Im vorherigen Abschnitt haben wir <em>Variablen</em> und <em>Datentypen</em> kennengelernt. Wir können Variablen deklarieren und initialisieren und ihnen neue Werte zuweisen. Nun führen wir Operationen ein, die wir in den jeweiligen Datentypen verwenden können, um neue Werte zu erzeugen. Wir beginnen bei den arithmetischen Operatoren, d.h. mit den Operatoren, die wir für die ganzzahligen Datentypen und die Gleitkomma-Datentypen verwenden können. </p>
+<h2 id="arithmetische-operatoren">Arithmetische Operatoren<a class="headerlink" href="#arithmetische-operatoren" title="Permanent link">&para;</a></h2>
+<p>Arithmetische Operationen kennen wir natürlich schon. Die einfachsten arithmetischen Operatoren sind die <em>unären</em> Operatoren, auch Vorzeichenoperatoren genannt. Ansonsten gibt es die Addition <code>+</code>, die Subtraktion <code>-</code>, die Multiplikation <code>*</code> und die Division <code>/</code>. Außerdem gibt es auch einen Restwertoperator (auch <em>modulo</em> genannt), der bei der ganzzahligen Division den verbleibenden Rest als Ergebnis ermittelt (<code>%</code>). </p>
+<p>Ganz <strong>wichtig</strong> ist, dass das Divisionssymbol <code>/</code> eine unterschiedliche Bedeutung hat, je nachdem, ob wir ganze Zahlen dividieren oder Gleitkommazahlen. Bei der Division von ganzen Zahlen ist das Ergebnis der Division der ganzzahlige Wert (also z.B. <code>5 / 4</code> ergibt <code>1</code>), aber bei der Division von Gleitkommazahlen ein Gleitkommawert (also z.B. <code>5.0 / 4.0</code> ergibt <code>1.25</code>). </p>
+<p>Der Restwertoperator wird wirklich sinnvoll eigentlich nur für ganze Zahlen verwendet (also z.B. <code>7 % 4</code> ergibt <code>3</code> - der verbleibende Rest der ganzzahligen Divsion ist <code>3</code>). Trotzdem kann der Restwertoperator auch auf Gleitkommazahlen angewendet werden (obwohl dort ja eigentlich kein Rest bleibt). So ergibt <code>7.0 % 4.0</code> auch <code>3.0</code> und/aber <code>7.5 % 4.0</code>  ergibt <code>3.5</code>.  </p>
+<table>
+    <thead>
+        <tr>
+            <td> Operatorsymbol(e)</td>
+            <td> Bedeutung  </td>
+            <td> Beispiel   </td>
+        </tr>
+    </thead>    
+    <tbody>
+        <tr><td colspan="3" style="text-align: center;"><b>Unäre Operatoren</b></td></tr>
+        <tr>
+            <td> <code>+</code> </td>       
+            <td>
+                Wird als Vorzeichen vor ganzen Zahlen (z.B. <code>+5</code>) oder vor Gleikommazahlen (z.B. <code>+5.5</code>) verwendet. <code>+</code> ändert nichts und kann immer weggelassen werden. Verhalten für ganze Zahlen und Gleitkommazahlen gleich. 
+            </td>
+            <td>
+                <code>int x = -5;</code> <code>x = +x; </code> Wert von <code>x</code> ist <code>-5</code>
+            </td>
+        </tr>
+        <tr>
+            <td> <code>-</code> </td>       
+            <td>
+                Wird als Vorzeichen vor ganzen Zahlen (z.B. <code>-5</code>) oder vor Gleikommazahlen (z.B. <code>-5.5</code>) verwendet. <code>-x</code> dreht das Vorzeichen von <code>x</code> um. Verhalten für ganze Zahlen und Gleitkommazahlen gleich. 
+            </td>
+            <td>
+                <code>int x = -5;</code> <code>x = -x;</code> Wert von <code>x</code> ist <code>+5</code> 
+                <code>double y = -5.5;</code> <code>y = -y;</code> Wert von <code>y</code> ist <code>+5.5</code>
+            </td>
+        </tr>
+        <tr><td colspan="3" style="text-align: center;"><b>Binäre Operatoren</b></td></tr>
+        <tr>
+            <td> <code>+</code></td>       
+            <td>
+                Addition von Zahlen. Verhalten für ganze Zahlen und Gleitkommazahlen gleich.
+            </td>
+            <td>
+                <code>int x = -5 + 6;</code>  Wert von <code>x: +1</code> 
+                <code>double y = -5.5 + 6.5;</code>  Wert von <code>y: +1.0</code>
+            </td>
+        </tr>
+        <tr>
+            <td> <code>-</code></td>       
+            <td>
+                Subtraktion von Zahlen. Verhalten für ganze Zahlen und Gleitkommazahlen gleich.
+            </td>
+            <td>
+                <code>int x = -5 - 6;</code>  Wert von <code>x</code> ist <code>-11</code> 
+                <code>double y = -5.5 - 6.5;</code>  Wert von <code>y: -12.0</code>
+            </td>
+        </tr>
+        <tr>
+            <td> <code>*</code></td>       
+            <td>
+                Multiplikation von Zahlen. Verhalten für ganze Zahlen und Gleitkommazahlen gleich.
+            </td>
+            <td>
+                <code>int x = -5 * 6;</code>  Wert von <code>x: -30</code> 
+                <code>double y = -5.0 * 6.0;</code>  Wert von <code>y: -30.0</code>
+            </td>
+        </tr>
+        <tr>
+            <td> <code>/</code></td>       
+            <td>
+                Division von Zahlen. <b>Achtung! Sie müssen unterscheiden, ob Sie ganze Zahlen dividieren oder Gleitkommazahlen!</b> Bei ganzen Zahlen handelt es sich um die <b>ganzzahlige</b> Division! 
+            </td>
+            <td>
+                <code>int x = 5 / 4;</code>  Wert von <code>x: +1</code> 
+                <code>double y = 5.0 / 4.0;</code>  Wert von <code>y: +1.25</code>
+            </td>
+        </tr>
+        <tr>
+            <td> <code>%</code></td>       
+            <td>
+                Restwertoperator. Ergebnis ist der Rest, der bei ganzzahliger Division übrig bleibt. Wirklich sinnvoll nur bei ganzzahligen Werten, geht aber auch bei Gleitkommazahlen.
+            </td>
+            <td>
+                <code>int x = 7 % 4;</code>  Wert von <code>x</code> ist <code>3</code> 
+                <code>double y = 6.5 % 5.0;</code>  Wert von <code>y</code> ist <code>1.5</code>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="pra-und-postfix-operatoren">Prä- und Postfix-Operatoren<a class="headerlink" href="#pra-und-postfix-operatoren" title="Permanent link">&para;</a></h3>
+<p>Darüber hinaus gibt es noch besondere Operatoren, die eingeführt wurden, weil sie eine häufig vorkommende Operation in der Schreibweise verkürzen. </p>
+<p>Angenommen, wir haben eine Variable <code>int x = 5;</code>. Da es (insbesondere später in Schleifen) häufig vorkommt, dass der Wert dieser Variablen um <code>1</code> erhöht werden soll, hat man dafür einen eigenen Operator eingeführt: <code>++</code>. Dieser Operator steht für die Erhöhung des Wertes um den Summanden <code>1</code>. Er kann sowohl als Präfix-Operator (<code>++x</code>) als auch als Postfix-Operator eingesetzt werden. Man spricht hier von Prä- und Postfix-<strong>Inkrement</strong>-Operatoren.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="o">++</span><span class="p">);</span>        <span class="c1">// 5</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>          <span class="c1">// 6</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="o">++</span><span class="n">x</span><span class="p">);</span>        <span class="c1">// 7</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>          <span class="c1">// 7</span>
+</code></pre></div>
+</td></tr></table>
+<p>Der Unterschied zwischen den beiden wird im obigen Beispiel deutlich. <code>x</code> hat nach der Initialisierung den Wert <code>5</code>. In Zeile <code>2</code> geben wir den Wert aus und erhöhen <code>x</code> <strong>danach</strong> um <code>1</code>. Ausgegeben wird also der Wert <code>5</code>, aber nach der Ausgabe ist der Wert um <code>1</code> erhöht auf <code>6</code> (siehe Zeile <code>3</code>). Bei dem Prefix-Operator (Zeile <code>4</code>) wird der Wert <strong>erst</strong> erhöht und dann ausgelesen. Es wird also bereits der neue Wert <code>7</code> ausgegeben. Im Prinzip entsprechen beide Operatoren aber der Anweisung <code>x = x + 1;</code>.</p>
+<p>Den äquivalenten Operator gibt es auch für die Subtraktion minus <code>1</code>. Dies wird mit dem Prefix-Operator <code>--x;</code> sowie mit dem Postfix-Operator <code>x--;</code> erreicht. Diese heißen Prä- und Postfix-<strong>Dekrement</strong>-Operatoren.</p>
+<h3 id="verkurzte-schreibweisen-fur-arithmetische-operatoren">Verkürzte Schreibweisen für arithmetische Operatoren<a class="headerlink" href="#verkurzte-schreibweisen-fur-arithmetische-operatoren" title="Permanent link">&para;</a></h3>
+<p>Aus dieser Verwendung haben sich weitere Schreibweisen etabliert:</p>
+<table>
+    <thead>
+        <tr>
+            <td> Operatoren (Beispiele) </td>
+            <td> Bedeutung  </td>
+        </tr>
+    </thead>    
+    <tbody>
+        <tr> 
+            <td> <code> x+=7; </code> </td>
+            <td> <code> x = x + 7; </code> </td>
+        </tr>
+        <tr> 
+            <td> <code> x-=7; </code> </td>
+            <td> <code> x = x - 7; </code> </td>
+        </tr>
+        <tr> 
+            <td> <code> x*=7; </code> </td>
+            <td> <code> x = x * 7; </code> </td>
+        </tr>
+        <tr> 
+            <td> <code> x/=7; </code> </td>
+            <td> <code> x = x / 7; </code> </td>
+        </tr>
+        <tr> 
+            <td> <code> x%=7; </code> </td>
+            <td> <code> x = x % 7; </code> </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="vergleichsoperatoren">Vergleichsoperatoren<a class="headerlink" href="#vergleichsoperatoren" title="Permanent link">&para;</a></h3>
+<p>Werden die oben genannten Operatoren auf arithmetische Datentypen angewendet, so ist das Ergebnis selbst wieder von einem arithmetischen Datentyp (<code>int</code> oder <code>double</code>). Bei den folgenden <em>Vergleichsoperatoren</em> ist das anders. Die Operanden sind zwar auch wieder von arithmetischen Datentypen, aber das Ergebnis ist ein <code>boolean</code>, das heißt, der Vergleich resultiert in einem Wert <code>true</code> oder in einem Wert <code>false</code>. </p>
+<table>
+    <thead>
+        <tr>
+            <td> Vergleichsoperator </td>
+            <td> Beispiel   </td>
+            <td> Bedeutung  </td>
+        </tr>
+    </thead>    
+    <tbody>
+        <tr> 
+            <td> <code> == </code> </td>
+            <td> <code> x == y </code> </td>
+            <td> Vergleich auf Gleichheit. Ergibt <code>true</code>, wenn <code>x</code> den gleichen Wert hat wie <code>y</code>, sonst <code>false</code></td>
+        </tr>
+        <tr>            
+            <td> <code> < </code> </td>
+            <td> <code> x < y </code> </td>
+            <td> Kleiner als. Ergibt <code>true</code>, wenn <code>x</code> einen echt kleineren Wert hat als <code>y</code>, sonst <code>false</code></td>
+        </tr>
+        <tr> 
+            <td> <code> > </code> </td>
+            <td> <code> x > y </code> </td>
+            <td> Größer als. Ergibt <code>true</code>, wenn <code>x</code> einen echt größeren Wert hat als <code>y</code>, sonst <code>false</code></td>
+        </tr>
+        <tr> 
+            <td> <code> <= </code> </td>
+            <td> <code> x <= y </code> </td>
+            <td> Kleiner gleich. Ergibt <code>true</code>, wenn <code>x</code> einen kleineren als oder den gleichen Wert wie <code>y</code> hat, sonst <code>false</code></td>
+        </tr>
+        <tr> 
+            <td> <code> >= </code> </td>
+            <td> <code> x >= y </code> </td>
+            <td> Größer gleich. Ergibt <code>true</code>, wenn <code>x</code> einen größeren als oder den gleichen Wert wie <code>y</code> hat, sonst <code>false</code></td>
+        </tr>
+        <tr> 
+            <td> <code> != </code> </td>
+            <td> <code> x != y </code> </td>
+            <td> Ungleich. Ergibt <code>true</code>, wenn <code>x</code> einen anderen  Wert hat als <code>y</code>, sonst <code>false</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="wertzuweisungsoperator">Wertzuweisungsoperator<a class="headerlink" href="#wertzuweisungsoperator" title="Permanent link">&para;</a></h2>
+<p>Einen weiteren Operator kennen wir bereits, den Wertzuweisungsoperator <code>=</code>. Auf der linken Seite der Zuweisung steht immer eine Variable und auf der rechten Seite ein Wert, der sich auch aus einem Ausdruck ergeben kann, z.B. <code>int x = 5 + 6;</code>. Dann wird <code>x</code>der Wert <code>11</code>zugeweisen. </p>
+<div class="admonition info">
+<p class="admonition-title">Beachte</p>
+<p>Der Zuweisungsoperator ist zunächst gewöhnungsbedürftig, denn eine Zuweisung der Form <code>x = x+1;</code> sieht ja aus mathematischer Sicht komisch aus, da in der Mathematik das Symbol <code>=</code> für die Gleichheit verwendet wird. In der (Java-)Programmierung hat dieses Symbol aber eine andere Bedeutung, nämlich die Zuweisung des Wertes auf der rechten Seite zur Variablen auf der linken Seite. In der Zuweisung <code>x = x+1;</code> wird also erst der Wert <code>x+1</code> berechnet und dieser Wert dann der Variablen <code>x</code> zugeordnet (die dann einen um <code>1</code> höheren Wert hat als zuvor). Der Operator für die Gleichheit ist übrigens <code>==</code>, wie wir gleich sehen werden.</p>
+</div>
+<h2 id="logische-operatoren">Logische Operatoren<a class="headerlink" href="#logische-operatoren" title="Permanent link">&para;</a></h2>
+<p>Die arithmetischen Operatoren werden auf Operanden angewendet, die von einem ganzzahligen Datentyp oder von einem Gleitkomma-Datentyp sind. Jetzt lernen wir Operatoren kennen, die auf Operanden vom Typ <code>boolean</code> angewendet werden.</p>
+<p>Nehmen wir in der folgenden Tabelle an, dass die Variablen <code>a</code> und <code>b</code> jeweils vom Typ <code>boolean</code> sind. Sie wurden also wie folgt deklariert: <code>boolean a;</code> und <code>boolean b;</code>.</p>
+<table>
+    <thead>
+        <tr>
+            <td> Logischer Operator </td>
+            <td> Beispiel   </td>
+            <td> Bedeutung  </td>
+        </tr>
+    </thead>    
+    <tbody>
+        <tr> 
+            <td> <code> && </code> </td>
+            <td> <code> a && b </code> </td>
+            <td> UND-Operator. Ergibt <code>true</code>, wenn <code>a</code> den Wert <code>true</code> hat <b>UND</b> <code>b</code> auch den Wert <code>true</code>, sonst <code>false</code></td>
+        </tr>
+        <tr> 
+            <td> <code> || </code> </td>
+            <td> <code> a || b </code> </td>
+            <td> ODER-Operator. Ergibt <code>true</code>, wenn <code>a</code> den Wert <code>true</code> hat <b>ODER</b> <code>b</code> den Wert <code>true</code> (oder beide), sonst <code>false</code></td>
+        </tr>
+        <tr> 
+            <td> <code> ^ </code> </td>
+            <td> <code> a ^ b </code> </td>
+            <td> EXCLUSIVES ODER. Ergibt <code>true</code>, wenn ENTWEDER <code>a</code> den Wert <code>true</code> hat <b>ODER</b> <code>b</code> den Wert <code>true</code> (aber NICHT beide), sonst <code>false</code></td>
+        </tr>
+        <tr> 
+            <td> <code> ! </code> </td>
+            <td> <code> !a </code> </td>
+            <td> NEGATION (unärer Operator). Ergibt <code>true</code>, wenn <code>a</code> den Wert <code>false</code> hat, ergibt <code>false</code>, wenn <code>a</code> den Wert <code>true</code> hat</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Es sein angemerkt, dass es für die Operatoren <code>&amp;&amp;</code> und <code>||</code> jeweils auch die Operatoren <code>&amp;</code> und <code>|</code> gibt. Das logische Prinzip ist das gleiche (also UND und ODER). Es gibt nur jeweils eine Unterscheidung und diese ist im folgenden Beispiel dargestellt:</p>
+<div class="highlight"><pre><span></span><code><span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="n">a</span>      <span class="c1">// a wird nicht mehr geprüft, Ausdruck ist false</span>
+<span class="kc">false</span> <span class="o">&amp;</span> <span class="n">a</span>       <span class="c1">// a wird geprüft, Ausdruck ist false</span>
+<span class="kc">true</span> <span class="o">||</span> <span class="n">b</span>       <span class="c1">// b wird nicht mehr geprüft, Ausdruck ist true</span>
+<span class="kc">true</span> <span class="o">|</span> <span class="n">b</span>        <span class="c1">// b wird geprüft, Ausdruck ist true</span>
+</code></pre></div>
+<p>Ist beim logischen UND bereits der erste Operand <code>false</code>, dann kann das Ergebnis nicht mehr <code>true</code> sein, sondern ist <code>false</code>. Egal, welchen Wert der zweite Operand hat. Bei dem Operator <code>&amp;&amp;</code> wird dann der zweite Operand auch gar nicht mehr geprüft. Bei dem Operator <code>&amp;</code> aber doch. <code>&amp;&amp;</code> ist somit effizienter.</p>
+<p>Ist beim logischen ODER bereits der erste Operand <code>true</code>, dann ist das Ergebnis bereits <code>true</code>, egal, welchen Wert der zweite Operand hat. Bei dem Operator <code>||</code> wird dann der zweite Operand auch gar nicht mehr geprüft. Bei dem Operator <code>|</code> aber doch. <code>||</code> ist somit effizienter. Wir verwenden deshalb immer <code>&amp;&amp;</code> und <code>||</code> anstatt <code>&amp;</code> und <code>|</code>.</p>
+<h3 id="wahrheitstabellen">Wahrheitstabellen<a class="headerlink" href="#wahrheitstabellen" title="Permanent link">&para;</a></h3>
+<p>Hier nochmal eine Veranschaulichung der obigen logischen Operatoren in einer Wahrheitstabelle. Wir nehmen wieder an, dass die Variablen <code>a</code> und <code>b</code> jeweils vom Typ <code>boolean</code> sind.</p>
+<table>
+    <thead>
+        <tr>
+            <td> <code>a</code> </td>
+            <td> <code>b</code> </td>
+            <td> <code>a && b</code> </td>
+            <td> <code>a || b</code> </td>
+            <td> <code>a ^ b</code> </td>
+            <td> <code>!a</code> </td>
+        </tr>
+    </thead>    
+    <tbody>
+        <tr> 
+            <td> <code>true</code> </td>
+            <td> <code>true</code>  </td>
+            <td> <code>true</code> </td>
+            <td> <code>true</code> </td>
+            <td> <code>false</code> </td>
+            <td> <code>false</code> </td>
+        </tr>
+        <tr> 
+            <td> <code>true</code> </td>
+            <td> <code>false</code> </td>
+            <td> <code>false</code> </td>
+            <td> <code>true</code> </td>
+            <td> <code>true</code> </td>
+            <td> <code>false</code> </td>
+        </tr>
+        <tr> 
+            <td> <code>false</code> </td>
+            <td> <code>true</code>  </td>
+            <td> <code>false</code> </td>
+            <td> <code>true</code> </td>
+            <td> <code>true</code> </td>
+            <td> <code>true</code> </td>
+        </tr>
+        <tr> 
+            <td> <code>false</code> </td>
+            <td> <code>false</code> </td>
+            <td> <code>false</code> </td>
+            <td> <code>false</code> </td>
+            <td> <code>false</code> </td>
+            <td> <code>true</code> </td>
+        </tr>
+    </tbody>
+</table>
+
+<details class="note"><summary>Übung Exclusives Oder</summary><p>Angenommen, es gäbe den Operator <code>^</code> für das Exclusive Oder nicht und Sie hätten nur die Operatoren <code>&amp;&amp;</code>, <code>||</code> und <code>!</code>. Wie können Sie mit <code>&amp;&amp;</code>, <code>||</code> und <code>!</code> das exclusive Oder "nachbauen"?</p>
+</details>
+<h2 id="ausdrucke-und-anweisungen">Ausdrücke und Anweisungen<a class="headerlink" href="#ausdrucke-und-anweisungen" title="Permanent link">&para;</a></h2>
+<p><em>Anweisungen</em> haben wir bereits kennengelernt. Zum Beispiel sind Deklarationen Anweisungen und Initialisierungen auch. Neben Anweisungen gibt es im Programmcode auch <em>Ausdrücke</em>. Ausdrücke unterscheiden sich von Anweisungen dahingehened, dass sie einen Wert (genauer einen <em>Rückgabewert</em>) haben. Jeder Wert in Java hat einen Typ. Wir schauen uns zunächst die einfachsten Ausdrücke an, die es gibt, nämlich sogenannte <em>Literale</em>. </p>
+<h3 id="literale">Literale<a class="headerlink" href="#literale" title="Permanent link">&para;</a></h3>
+<p>Ein <em>Literal</em> ist ein konstanter Wert im Java-Quellcode. Literale sind z.B. </p>
+<ul>
+<li>ganze Zahlen (z.B. <code>123</code> oder <code>-123</code>),</li>
+<li>Gleikommazahlen (z.B <code>5.5</code> oder <code>-6.0</code>),</li>
+<li>Wahrheitswerte (<code>true</code> oder <code>false</code>),</li>
+<li>ein Character (z.B. <code>'a'</code> oder <code>'A'</code>)</li>
+</ul>
+<p>Wir werden später noch andere Literale kennenlernen:</p>
+<ul>
+<li>Zeichenketten (Datentyp <code>String</code>), z.B. <code>"Hallo FIW!"</code></li>
+<li>die leere Referenz <code>null</code></li>
+</ul>
+<p>Jedes Literal ist ein Ausdruck. Der Rückgabewert des Literals ist der Wert des Literals. Jedes Literal ist von einem konkreten Datentyp. Die folgenden Anweisungen werden auch <em>Ausdrucksanweisung</em> genannt, da in der Anweisung ein Ausdruck verwendet wird und der Wert dieses Ausdrucks als <em>Nebeneffekt</em> zum Tragen kommt (nur die ersten beiden sind Ausdrucksanweisungen - die folgenden drei sind <strong>Fehler</strong>):</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>    <span class="c1">// auf der rechten Seite des Zuweisungsoperators steht ein Ausdruck; </span>
+                <span class="c1">// der Wert des Ausdrucks wird der Wert der Variablen x</span>
+<span class="n">x</span><span class="o">++</span><span class="p">;</span>            <span class="c1">// x++ ist ein Ausdruck - durch das Semikolon wird der Ausdruck hier zu einer Ausdrucksanweisung</span>
+
+<span class="n">x</span><span class="o">++</span>             <span class="c1">// der Ausdruck selbst kann so nicht stehen (Compilerfehler)</span>
+                <span class="c1">// da steht nur ein Wert mit dem nichts gemacht wird</span>
+
+<span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span>           <span class="c1">// gleicher Fehler wie oben; nur ein Ausdruck, kann so nicht alleine stehen</span>
+
+<span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span><span class="p">;</span>          <span class="c1">// geht auch nicht; hier gibt es keinen Nebeneffekt (keine Zuweisung)</span>
+                <span class="c1">// keine gültige Ausdrucksanweisung</span>
+</code></pre></div>
+<p>Ausdrücke sind</p>
+<ul>
+<li>Literale</li>
+<li>Literale, die mit (passenden) Operatoren verknüpft sind</li>
+<li>Ausdrücke, die mit passenden Operatoren verknüpft sind</li>
+</ul>
+<h3 id="ausdrucke-mit-operatoren">Ausdrücke mit Operatoren<a class="headerlink" href="#ausdrucke-mit-operatoren" title="Permanent link">&para;</a></h3>
+<p>Verbinden wir Literale mit Operatoren, entstehen dadurch Ausdrücke. Ausdrücke können wiederum mithilfe von Operatoren mit weiteren Literalen oder auch mit weiteren Ausdrücken verbunden werden. Beachten Sie, dass Ausdrücke</p>
+<ul>
+<li>immer einen Wert haben,</li>
+<li>der Wert ermittelt wird, indem der Ausdruck <em>aufgelöst</em> wird, d.h. die Operatoren angewendet werden. Dies erfolgt in folgender Reihenfolge:<ul>
+<li>wenn runde Klammern um einen Ausdruck gesetzt sind, wird zunächst der geklammerte Ausdruck aufgerufen, </li>
+<li>unäre (also einelementige) Operatoren binden stärker als binäre (also zweielementige) Operatoren, d.h. es werden zunächst die einelementigen Operatoren angewendet,</li>
+<li>bei arithmetischen Operatoren gilt "Punkt vor Strich-Rechnung",</li>
+<li>bei logischen Operatoren gilt folgende Reihenfolge (stärkere Bindung von links nach rechts) <code>==</code>, <code>!=</code> -&gt; <code>&amp;</code> &rarr; <code>^</code> &rarr; <code>|</code> &rarr; <code>&amp;&amp;</code> &rarr; <code>||</code> (lernen Sie das aber keinesfalls auswendig und verlassen sich dann auf Ihr Gedächtnis, sondern verwenden Sie Klammern!)</li>
+<li>der Zuweisungsoperator (<code>=</code>) sowie <code>+=</code>, <code>-=</code>, <code>/=</code>, <code>*=</code>, <code>%=</code> binden am schwächsten</li>
+<li>dann erfolgt die Auflösung von links nach rechts</li>
+</ul>
+</li>
+</ul>
+<p>Achten Sie darauf, dass Ausdrücke einen anderen Typ haben können als die Literale (bzw. Ausdrücke), die man im Ausdruck mithilfe von Operatoren miteinander verbindet, z.B. <code>3 == 4</code> ist vom Typ <code>boolean</code>, aber <code>3</code> und <code>4</code> sind jeweils vom Typ <code>int</code>.</p>
+<p>Beispiele für Ausdrücke sind:</p>
+<div class="highlight"><pre><span></span><code><span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">8</span>           <span class="c1">// Ergebnis (Wert) ist ein int</span>
+<span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span>       <span class="c1">// Ergebnis (Wert) ist ein boolean</span>
+<span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">6</span>               <span class="c1">// Ergebnis (Wert) ist ein boolean</span>
+<span class="mi">7</span> <span class="o">&gt;=</span> <span class="mi">7</span>              <span class="c1">// Ergebnis (Wert) ist ein boolean</span>
+<span class="mi">6</span> <span class="o">==</span> <span class="mi">6</span>              <span class="c1">// Ergebnis (Wert) ist ein boolean</span>
+<span class="mi">6</span> <span class="o">!=</span> <span class="mi">6</span>              <span class="c1">// Ergebnis (Wert) ist ein boolean</span>
+<span class="mf">5.5</span> <span class="o">*</span> <span class="mf">2.0</span>           <span class="c1">// Ergebnis (Wert) ist ein double</span>
+<span class="mf">7.0</span> <span class="o">/</span> <span class="mf">4.0</span>           <span class="c1">// Ergebnis (Wert) ist ein double</span>
+<span class="p">(</span><span class="mf">7.0</span> <span class="o">/</span> <span class="mf">4.0</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.0</span>  <span class="c1">// Ergebnis (Wert) ist ein boolean</span>
+</code></pre></div>
+<details class="note"><summary>Übung Ausdruck</summary><p>Angenommen, <code>a</code>, <code>b</code> und <code>c</code> seien vom Typ <code>int</code>. Was ist an diesem Ausdruck falsch: <code>a &lt; b &lt; c</code>? Wie wäre es richtig?</p>
+</details>
+<details class="note"><summary>Übung Durchschnitt berechnen</summary><p>Angenommen, Sie sollen die Durchschnittsnote von folgenden Noten berechnen: <code>1</code>, <code>1</code>, <code>1</code>, <code>1</code>, <code>2</code>, <code>2</code>, <code>3</code>, <code>4</code>. Sie überlegen sich folgendes Programm dafür:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">summe</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">anzahl</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">summe</span><span class="o">/</span><span class="n">anzahl</span><span class="p">);</span>
+</code></pre></div>
+Vom Ergebnis sind Sie aber enttäuscht. Welches Ergebnis wird ausgegeben? Welches wäre richtig gewesen? Was ist an Ihrem Programm falsch? Wie geht es besser?</p>
+</details>
+<p>Bei der Verwendung des Zuweisungsoperators gibt es auf der linken Seite immer eine Variable und auf der rechten Seite immer einen Ausdruck. Bevor die Zuweisung erfolgt, wird der Wert des Ausdrucks auf der rechten Seite ausgewertet. Beispiele:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>              <span class="c1">// Wert von x ist 0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>          <span class="c1">// Wert von x ist 9</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span>          <span class="c1">// Wert von y ist 3</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="o">++</span><span class="p">;</span>                <span class="c1">// Achtung Wert von x ist 3 (Postfix); Wert von y ist 4</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>                  <span class="c1">// Wert von x ist 4</span>
+
+<span class="kt">boolean</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">);</span>    <span class="c1">// Wert von a ist true</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">!</span><span class="n">a</span><span class="p">;</span>                 <span class="c1">// Wert von a ist false</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">||</span> <span class="kc">true</span><span class="p">);</span>        <span class="c1">// Wert von a ist true</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">!!</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">;</span>        <span class="c1">// Wert von a ist true</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Beachte</p>
+<p>Generell gilt bei der Zuweisung <strong>immer</strong>, dass der Ausdruck auf der rechten Seite erst vollständig ausgerechnet wird und der berechnete Wert dann der Variablen auf der linken Seite zugewiesen wird. "Leider" macht der Postfix-Operator dabei eine <strong>Ausnahme</strong>. Bei diesem Operator erfolgt erst die Zuweisung und dann die Berechnung:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>      <span class="c1">// x hat den Wert 3</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">++</span><span class="p">;</span>    <span class="c1">// y hat den Wert 3 und x den Wert 4</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>      <span class="c1">// a hat den Wert 3</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">--</span><span class="p">;</span>    <span class="c1">// b hat den Wert 3 und a den Wert 2</span>
+</code></pre></div>
+Das gilt nicht für den Präfix-Operator:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>      <span class="c1">// x hat den Wert 3</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="o">++</span><span class="n">x</span><span class="p">;</span>    <span class="c1">// y hat den Wert 4 und x den Wert 4</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>      <span class="c1">// a hat den Wert 3</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="o">--</span><span class="n">a</span><span class="p">;</span>    <span class="c1">// b hat den Wert 2 und a den Wert 2</span>
+</code></pre></div></p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../variablen/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Variablen" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Variablen
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../methoden/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Methoden" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Methoden
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>

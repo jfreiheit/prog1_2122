@@ -1466,18 +1466,7 @@
 		}
 		```	
 
-
 	5. Was wird durch folgenden Code auf der Konsole ausgegeben?:
-		```java
-		int number = 3;
-		while (number == 3)
-		{
-		     System.out.print(number + " + " );
-		     number++;
-		}
-		```	
-
-	6. Was wird durch folgenden Code auf der Konsole ausgegeben?:
 		```java
 		for (int count=0; count<4; count--) 
 		{
@@ -1485,7 +1474,7 @@
 		}
 		```	
 
-	7. Erklären Sie den folgenden Code in einem Satz.
+	6. Erklären Sie den folgenden Code in einem Satz.
 		```java
 		int sum = 0;
 		for ( int n=1 ; n<=20 ; n++ )
@@ -1495,7 +1484,7 @@
 		System.out.println(sum);
 		```	
 
-	8. Erklären Sie den folgenden Code in einem Satz.
+	7. Erklären Sie den folgenden Code in einem Satz.
 		```java
 		if (a < b)
 		{
@@ -1519,7 +1508,7 @@
 		```	
 		Welche Kombination von Werten sorgt dafür, dass `b` ausgegeben wird?
 
-	9. Was macht der folgende Code?
+	8. Was macht der folgende Code?
 		```java
 		public class Student {
 			private String name ;
@@ -1546,7 +1535,7 @@
 		}
 		```	
 
-	10. Welchen Wert liefert `rect2.area( )` ?
+	9. Welchen Wert liefert `rect2.area( )` ?
 		```java
 		public class Rectangle {
 		   private int x1, y1, x2, y2;
@@ -1667,7 +1656,111 @@
 		}
 		```	
 
+	
+??? note "Übung 10 (22.12.2021)"
+	
+	1. **Wir nutzen von nun an [Eclipse](../ide/#integrated-developmemt-environment-ide) in den Übungen und in den Vorlesungen. Bitte installieren!**
+	2. Erstellen Sie ein package `uebungen.uebung10`. 
+	3. Erstellen Sie in diesem package eine Klasse `Programmklasse` mit `main()`-Methode und eine Klasse `Uebung10`.
+	
+	4. Implementieren Sie in der Klasse `Uebung10` folgende Methoden: 
+		- Implementieren Sie eine `public void print(char[] ca)`-Methode, so dass das `char[] ca` auf die Konsole ausgegeben wird. Achten Sie darauf, dass hinter dem letzten Element kein Komma steht. Testen Sie Ihre Methode auch für ein leeres Array.<br/>
+		Bsp:  `print(['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'])` <br/>
+		Ausgabe auf Konsole: `[a, b, c, a, c, a, b, c]`
 
+		- Kopieren Sie die `print`-Methode vollständig und ändern Sie den Typ des Parameters von `char[]` in `int[]`. (Die Methode ist jetzt *überladen* und `print()` kann jetzt entweder ein `char[]` oder ein `int[]` übergeben werden, welches auf die Konsole ausgegeben wird.)
+
+		- Implementieren Sie eine Methode `public char[] stringToCharArray(String s)`. Diese Methode wandelt einen `String` in ein `char[]` um, so dass jedes Zeichen des Strings im `char[]` enthalten ist. Das `char[]` wird zurückgegeben. <br/>
+		Tipps: die Länge eines Strings wird mit der Objektmethode `length()` ermittelt. Die einzelnen Zeichen eines Strings können mithilfe der `charAt(index)`-Objektmethode von Strings ermittelt werden. Siehe [String](../hilfsklassen/#die-klasse-string) <br/>
+		Bsp.: `stringToCharArray("hallo!")` --> `['h','a','l','l','o','!']` 
+
+		- Implementieren Sie eine Methode `public char[] filter(char[] carr, char filter)`, der als Parameter ein `char`-Array und ein `char` übergeben wird. Die Methode soll ein `char`-Array zurückgeben, das dem als Parameter übergeben Array entspricht, außer dass jedes Vorkommen des als Parameter übergeben `carr` entfernt wurde <br/>
+		Bsp: `filter(['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'], 'c')` --> `['a', 'b', 'a', 'a', 'b']`
+
+		- Implementieren Sie eine Methode `public int[] minAndMax(int[] iarr)`, der ein `int`-Array als Parameter übergeben wird und die ein zweielementiges Array zurückgibt. Das erste Element des zurückgegeben Arrays ist das Minimum des als Parameter übergebenen Arrays und das zweite Element ist das Maximum. <br/>
+		Bsp.: 	`minAndMax([4,2,8,1,6,2,4,1,8])` --> `[1,8]` <br/>
+              	`minAndMax([4])` --> `[4,4]`
+
+		- Implementieren Sie eine Methode `public int[] reverse(int[] iarr)`, der ein `int`-Array übergeben wird und die die Reihenfolge der Elemente des Arrays umdreht (das letzte zuerst usw.) Das neuerstellte Array wird zurückgegeben. <br/>
+		Bsp.: `reverse([4,2,8,1,6,2,4,1,8])` --> `[8,1,4,2,6,1,8,2,4]`  <br/>
+              `reverse([4])` --> `[4]`
+
+        - **Zusatz:** Implementieren Sie eine Methode `public boolean containsDoublets(char[] ca)` die ein `true` zurückgibt, wenn *mindestens* ein Wert in `ca` *mindestens* zwei Mal vorkommt (wenn Sie schon dabei sind, können Sie sich auch überlegen, wenn *genau* ein Wert *genau* zwei Mal vorkommt - oder *mindestens* ein Wert *genau* zwei Mal - oder *genau* ein Wert *mindestens* zwei Mal) und `false` sonst.
+
+     5. Erzeugen Sie in der `main()`-Methode der `Programmklasse` 
+     	- ein `char`-Array mit den Werten `['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c']`,
+     	- ein `int`-Array mit den Werten `[4,2,8,1,6,2,4,1,8]` und
+     	- ein Objekt der Klasse `Uebung4` und 
+     	testen Sie alle Methoden der Klasse `Uebung4`.
+
+
+--- 
+
+## Selbständiges Üben
+
+***Falls Sie noch Lust und Zeit haben, ein wenig selbständig zu üben, hier einige Aufgaben:***
+
+
+### Ausdrücke
+
+??? note "gleich 12"
+	Welche der folgenden Ausdrücke haben den Wert 12?
+	``` bash
+	a) 12 % 13
+	b) 24 % 2
+	c) 24/2
+	d) 25/2
+	```
+	Versuchen Sie zunächst, die richtige Antwort im Kopf zu ermitteln und erstellen dann ein geeignetes Programm, das Ihnen den jeweiligen Wert des Ausdrucks ausgibt.
+
+
+??? note "Pre- und Postoperator"
+	Welchen Wert hat die Variable `c` nach Ausführen der Anweisungen?
+	``` bash
+	int a = 300;
+	int b = a++;
+	int c = --b;
+	```
+	Begründen Sie die richtige Antwort! Was passiert durch die Anweisungen?
+
+
+### Schleifen
+
+??? note "Laufvariablen"
+	Welche der Schleifen gibt alle Elemente des Arrays `nums` aus? Das Array enthält genau 4 Zahlen.
+	``` bash
+	a) for (int i = 0; i < nums.length; i++) { System.out.println(nums[i]); }
+	b) for (int i = 0; i <= 3; i++) { System.out.println(nums[i]); }
+	c) for (int i = 1; i <= 3; i++) { System.out.println(nums[i]); }
+	d) for (int i = 0; i <= 3; i++) { System.out.println(nums[0]); }
+	e) for (int i = nums.length - 1; i >= 0; i--) { System.out.println(nums[i]); }
+	```
+
+??? note "Quadratzahl"
+	Schreiben Sie eine Methode `istQuadratzahl(int zahl)`, die ein `true` zurückgibt, wenn `zahl` eine Quadratzahl ist und ein `false` sonst. Die `Math`-Klasse soll nicht verwendet werden.
+
+??? note "Primzahl"
+	Schreiben Sie eine Methode `printPrimzahlenBisN(int n)`, die alle Primzahlen bis `n` auf die Konsole ausgibt. Schreiben Sie sich dazu eine Hilfsmethode `istPrimzahl(int zahl)`, die ein `true` zurückgibt, wenn `zahl` eine Primzahl ist und ein `false`, wenn nicht.  
+
+??? note "int-Zahl umdrehen"
+	Schreiben Sie eine Methode `int reverseInt(int number)`, die die übergebene `number` umdreht und die umgedrehte `int`-Zahl zurückgibt, also z.B. aus `1234` wird `4321`. Weitere Beispiele: aus `-123` wird `-321` und aus `1200` wird `21`. 
+
+??? note "Zahlen raten"
+	Schreiben Sie folgendes Programm. Mithilfe von `Random` "denkt" sich das Programm eine Zahl zwischen `0` und `100` aus. Sie können über die Konsole dann eine Zahl eingeben. Das Programm sagt Ihnen, ob die "gedachte" Zahl größer oder kleiner als die von Ihnen eingegebene Zahl ist. Sie geben solange eine Zahl ein, bis Sie die "gedachte" Zahl erraten haben. 
+
+??? note "Binärzahl"
+	Schreiben Sie eine Methode, die eine `short`-Zahl in eine Binärzahl umwandelt. Diese Binärzahl speichern Sie als `long`. Z.B. ist `32` binär `100000`, `63` ist `111111`, `48` ist `110000` usw.
+
+### Arrays
+
+??? note "Sotierte Arrays zusammenfügen"
+	Implementieren Sie eine Methode, die zwei als Parameter übergebene sortierte `int`-Arrays zu einem sortierten `int`-Array zusammenfügt. Geben Sie das neue sortierte Array zurück.
+
+??? note "Unsortierte Arrays sortiert zusammenfügen"
+	Implementieren Sie eine Methode, die zwei als Parameter übergebene unsortierte `int`-Arrays zu einem sortierten `int`-Array zusammenfügt. Geben Sie das neue sortierte Array zurück.
+
+??? note "Explode"
+	Implementieren Sie eine Methode `int[] explode(int number)`. Diese Methode erstellt ein `int[]`-Array, das wie folgt befüllt ist: Bsp. `number=5` --> `{1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5}`. Für jede Zahl `x` gibt es also `x` Einträge im Array bis einschließlich `number`.
 
 
 
