@@ -1387,3 +1387,88 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? info "Video zur Vorlesung Object (equals())-- 14.12.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=c7cc23933293c7378cd08df3c8b756e7&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
+
+??? note "Vorlesung Arrays -- 15.12.2021"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		public class Programclass
+		{
+		    public void main()
+		    {
+		        System.out.printf("-------- Arrays ---------%n");
+		        int number1 = 0;
+		        int number2 = 1;
+		        int number3 = 4;
+		        int number4 = 9;
+		        int number5 = 16;
+		        
+		        int[] numbers = new int[25];
+		        /*
+		        numbers[0] = 0;
+		        numbers[1] = 1;
+		        numbers[2] = 4;
+		        numbers[3] = 9;
+		        numbers[4] = 16;
+		        */
+		       
+		        for(int index=0; index < numbers.length; index++)
+		        {
+		            numbers[index] = (index * index);
+		        }
+		        
+		        // numbers[5] = 25; // ArrayIndexOutBoundsException!
+		        
+		        Viereck v1 = new Viereck(2,3,4,5);
+		        v1.print();
+		        
+		        Viereck[] vierecke = new Viereck[3]; 
+		        
+		        vierecke[0] = new Viereck(10,20,30,40);
+		        vierecke[0].print();
+		        vierecke[1] = new Rechteck(11,22);
+		        vierecke[1].print();
+		        vierecke[2] = new Quadrat(15);
+		        vierecke[2].print();
+		        
+		        String[] satz1 = new String[4];
+		        satz1[0] = "Das";
+		        satz1[1] = "ist";
+		        satz1[2] = "ein";
+		        satz1[3] = "Satz";
+		        
+		        String[] satz2 = { "Das", "ist", "ein", "Satz" };
+		        
+		        System.out.printf("-------- Ausgabe von Arrays ---------%n");
+		        
+		        for(int index=0; index < numbers.length; index++)
+		        {
+		            System.out.printf("%d ", numbers[index] );
+		        }
+		        System.out.println();
+		        
+		        for(int i = 0; i < satz1.length - 1; i++)
+		        {
+		            System.out.print(satz1[i] + " ");
+		        }
+		        System.out.println(satz1[satz1.length-1] + ".");
+		        
+		        int[] randomnumbers = new int[20];
+		        Random r = new Random();
+		        for(int index=0; index < randomnumbers.length; index++)
+		        {
+		            randomnumbers[index] = r.nextInt(199)-99;
+		        }
+		        
+		        for(int index=0; index < randomnumbers.length; index++)
+		        {
+		            System.out.printf("%d ", randomnumbers[index] );
+		        }
+		        System.out.println();  
+		    }
+		}
+
+		```
+
+??? info "Video zur Vorlesung Arrays -- 15.12.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=38a8fe63059db15537019eba5efd5957&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
