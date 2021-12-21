@@ -1472,3 +1472,119 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? info "Video zur Vorlesung Arrays -- 15.12.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=38a8fe63059db15537019eba5efd5957&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
+
+??? note "Vorlesung Eclipse + Arrays -- 21.12.2021"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung1221;
+
+		public class Programclass {
+
+			public static void main(String[] args) {
+				System.out.println("Endlich Eclipse!");
+				System.out.println();
+				
+				char[] alphabet = new char[26];
+				alphabet[0] = 'A';
+				System.out.println("Laenge des Arrays: " + alphabet.length);
+				System.out.println("erstes Element : " + alphabet[0]);
+				
+				alphabet[1] = 66;
+				System.out.println("zweites Element : " + alphabet[1]);
+				
+				// alphabet befuellen
+				for(int index = 0; index < alphabet.length; index++)
+				{
+					alphabet[index] = (char)(index + 65);
+				}
+				
+				// alphabet ausgeben
+				for (int index = 0; index < alphabet.length; index++)
+				{
+					System.out.print(alphabet[index] + " ");		
+				}
+				System.out.println();
+
+				MyArrays ma = new MyArrays();
+				System.out.println(ma.arrayToString(alphabet));
+				ma.printArray(alphabet);
+				
+				char[] ca1 = { 'a', 'b', 'c', 'a', 'b', 'c' };
+				ma.printArray(ca1);
+				
+				char[] ca2 = new char[0];		// []
+				ma.printArray(ca2);
+				
+				char[] ca3 = { 'a' };
+				ma.printArray(ca3);
+				
+				int m = 10000;
+				int n = 10000;
+				for(int x = 0; x < m; x++)
+				{
+					for(int y = 0; y < n; y++)
+					{
+						// n * m  O(n^2)
+						System.out.println(x * y);	// 100.000.000 Ausgaben
+					}
+				}
+			}
+
+		}
+		```
+	=== "MyArrays.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung1221;
+
+		public class MyArrays {
+			
+			public String arrayToString(char[] carr)
+			{
+				// [ a, b, c, d, e, f ]
+				// bei Laenge 0: [ ]
+				String s = "[ ";
+				if(carr.length == 0)
+				{
+					s = s + "]";
+				}
+				else
+				{
+					for (int index = 0; index < carr.length - 1; index++) 
+					{
+						s = s + carr[index] + ", ";
+					}	
+					s = s + carr[carr.length - 1] + " ]";
+				}
+				
+				return s;
+			}
+			
+			public String arrayToString1(char[] carr)
+			{
+				// [ a, b, c, d, e, f ]
+				// bei Laenge 0: [ ]
+				String s = "[ ";
+				for (int index = 0; index < carr.length; index++) 
+				{
+					s = s + carr[index];
+					if(index != carr.length - 1)
+					{
+						s = s + ", ";
+					}		
+				}	
+				s = s + " ]";
+				
+				return s;
+			}
+			
+			public void printArray(char[] carr)
+			{
+				System.out.println(this.arrayToString1(carr));
+			}
+
+		}
+		```
+
+??? info "Video zur Vorlesung Eclipse + Arrays -- 21.12.2021"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=5a98021820b3b63391c1ae125198593e&width=720&height=420&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="420" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
