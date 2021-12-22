@@ -1690,8 +1690,8 @@
      5. Erzeugen Sie in der `main()`-Methode der `Programmklasse` 
      	- ein `char`-Array mit den Werten `['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c']`,
      	- ein `int`-Array mit den Werten `[4,2,8,1,6,2,4,1,8]` und
-     	- ein Objekt der Klasse `Uebung4` und 
-     	testen Sie alle Methoden der Klasse `Uebung4`.
+     	- ein Objekt der Klasse `Uebung10` und 
+     	testen Sie alle Methoden der Klasse `Uebung10`.
 
 
 --- 
