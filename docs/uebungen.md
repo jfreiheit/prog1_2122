@@ -1674,18 +1674,9 @@
 		Tipps: die Länge eines Strings wird mit der Objektmethode `length()` ermittelt. Die einzelnen Zeichen eines Strings können mithilfe der `charAt(index)`-Objektmethode von Strings ermittelt werden. Siehe [String](../hilfsklassen/#die-klasse-string) <br/>
 		Bsp.: `stringToCharArray("hallo!")` --> `['h','a','l','l','o','!']` 
 
-		- Implementieren Sie eine Methode `public char[] filter(char[] carr, char filter)`, der als Parameter ein `char`-Array und ein `char` übergeben wird. Die Methode soll ein `char`-Array zurückgeben, das dem als Parameter übergeben Array entspricht, außer dass jedes Vorkommen des als Parameter übergeben `carr` entfernt wurde <br/>
-		Bsp: `filter(['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'], 'c')` --> `['a', 'b', 'a', 'a', 'b']`
-
-		- Implementieren Sie eine Methode `public int[] minAndMax(int[] iarr)`, der ein `int`-Array als Parameter übergeben wird und die ein zweielementiges Array zurückgibt. Das erste Element des zurückgegeben Arrays ist das Minimum des als Parameter übergebenen Arrays und das zweite Element ist das Maximum. <br/>
-		Bsp.: 	`minAndMax([4,2,8,1,6,2,4,1,8])` --> `[1,8]` <br/>
-              	`minAndMax([4])` --> `[4,4]`
-
 		- Implementieren Sie eine Methode `public int[] reverse(int[] iarr)`, der ein `int`-Array übergeben wird und die die Reihenfolge der Elemente des Arrays umdreht (das letzte zuerst usw.) Das neuerstellte Array wird zurückgegeben. <br/>
 		Bsp.: `reverse([4,2,8,1,6,2,4,1,8])` --> `[8,1,4,2,6,1,8,2,4]`  <br/>
               `reverse([4])` --> `[4]`
-
-        - **Zusatz:** Implementieren Sie eine Methode `public boolean containsDoublets(char[] ca)` die ein `true` zurückgibt, wenn *mindestens* ein Wert in `ca` *mindestens* zwei Mal vorkommt (wenn Sie schon dabei sind, können Sie sich auch überlegen, wenn *genau* ein Wert *genau* zwei Mal vorkommt - oder *mindestens* ein Wert *genau* zwei Mal - oder *genau* ein Wert *mindestens* zwei Mal) und `false` sonst.
 
      5. Erzeugen Sie in der `main()`-Methode der `Programmklasse` 
      	- ein `char`-Array mit den Werten `['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c']`,
@@ -1693,6 +1684,121 @@
      	- ein Objekt der Klasse `Uebung10` und 
      	testen Sie alle Methoden der Klasse `Uebung10`.
 
+
+??? question "Eine mögliche Lösung für Übung 10"
+	=== "Programclass.java"
+		```java
+		package uebungen.uebung10;
+
+		public class Programclass {
+
+			public static void main(String[] args) 
+			{
+				char[] ca1 = {'a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'};
+				char[] ca2 = new char[0];
+				
+				int[] ia1 = {4,2,8,1,6,2,4,1,8};
+				int[] ia2 = { 4 };
+				
+				Uebung10 u1 = new Uebung10();
+				u1.print(ca1);
+				u1.print(ca2);
+				u1.print(ia1);
+				u1.print(ia2);
+				
+				char[] ca3 = u1.stringToCharArray("Hallo FIW!");
+				u1.print(ca3);
+				
+				int[] ia3 = u1.reverse(ia1);
+				u1.print(ia1);
+				u1.print(ia3);
+			}
+		}
+		```		
+	=== "Uebung10.java"
+		```java
+		package uebungen.uebung10;
+
+		public class Uebung10
+		{
+			public void print(char[] ca)
+		    {
+		        String s = "[ ";
+		        if(ca.length == 0)
+		        {
+		            s = s + "]";
+		        }
+		        else
+		        {
+		            for (int index = 0; index < ca.length - 1; index++) 
+		            {
+		                s = s + ca[index] + ", ";
+		            }   
+		            s = s + ca[ca.length - 1] + " ]";
+		        }
+		        System.out.println(s);
+		    }
+			
+			public void print(int[] ia)
+		    {
+		        String s = "[ ";
+		        if(ia.length == 0)
+		        {
+		            s = s + "]";
+		        }
+		        else
+		        {
+		            for (int index = 0; index < ia.length - 1; index++) 
+		            {
+		                s = s + ia[index] + ", ";
+		            }   
+		            s = s + ia[ia.length - 1] + " ]";
+		        }
+		        System.out.println(s);
+		    }
+			
+			public char[] stringToCharArray(String s)
+			{
+				char[] ca = new char[s.length()];
+				for (int index = 0; index < ca.length; index++)
+				{
+					ca[index] = s.charAt(index);
+				}
+				
+				return ca;
+			}
+			
+			public int[] reverse(int[] iarr)
+			{
+				int[] ia = new int[iarr.length];
+				for (int index = 0; index < ia.length; index++)
+				{
+					ia[index] = iarr[iarr.length-1 - index];
+				}
+				return ia;
+			}
+		}
+		```		
+	
+??? note "Übung 11 (05.01.2022)"
+	
+	2. Sie können einfach Ihre Lösung (die Klassen) aus Übung 10 weiterverwenden.
+	
+	4. Implementieren Sie in der Klasse `Uebung10` (oder wenn Sie doch eine neue Klasse `Uebung11` haben, dann darein) folgende Methoden: 
+		- Implementieren Sie eine Methode `public char[] filter(char[] carr, char filter)`, der als Parameter ein `char`-Array und ein `char` übergeben wird. Die Methode soll ein `char`-Array zurückgeben, das dem als Parameter übergeben Array entspricht, außer dass jedes Vorkommen des als Parameter übergeben `carr` entfernt wurde <br/>
+		Bsp: `filter(['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'], 'c')` --> `['a', 'b', 'a', 'a', 'b']`
+
+		- Implementieren Sie eine Methode `public int[] minAndMax(int[] iarr)`, der ein `int`-Array als Parameter übergeben wird und die ein zweielementiges Array zurückgibt. Das erste Element des zurückgegeben Arrays ist das Minimum des als Parameter übergebenen Arrays und das zweite Element ist das Maximum. <br/>
+		Bsp.: 	`minAndMax([4,2,8,1,6,2,4,1,8])` --> `[1,8]` <br/>
+              	`minAndMax([4])` --> `[4,4]`
+
+        - **Zusatz:** Implementieren Sie eine Methode `public boolean containsDoublets(char[] ca)` die ein `true` zurückgibt, wenn *mindestens* ein Wert in `ca` *mindestens* zwei Mal vorkommt (wenn Sie schon dabei sind, können Sie sich auch überlegen, wenn *genau* ein Wert *genau* zwei Mal vorkommt - oder *mindestens* ein Wert *genau* zwei Mal - oder *genau* ein Wert *mindestens* zwei Mal) und `false` sonst.
+
+     5. Erzeugen Sie in der `main()`-Methode der `Programmklasse` 
+     	- ein `char`-Array mit den Werten `['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c']`,
+     	- ein `int`-Array mit den Werten `[4,2,8,1,6,2,4,1,8]` und
+     	- ein Objekt der Klasse `Uebung10` (oder `Uebung11` - siehe oben) und 
+     	testen Sie alle Methoden der Klasse `Uebung10` (oder `Uebung11` - siehe oben).
 
 --- 
 
