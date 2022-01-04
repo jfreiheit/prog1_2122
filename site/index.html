@@ -717,43 +717,36 @@
 <tr>
 <td>12.</td>
 <td>03.-07.01.2022</td>
-<td>Enumerations</td>
+<td><a href="./arrays/#algorithmen-uber-arrays">Algorithmen über Arrays</a></td>
 <td><a href="./aufgaben/#aufgabe-11-abgabe-bis-17012022-2400-uhr">Aufgabe 11</a></td>
 <td>17.01.2022</td>
 </tr>
 <tr>
 <td>13.</td>
 <td>10.-14.01.2022</td>
-<td>Exceptions</td>
+<td>Enumerations, JavaDoc</td>
 <td><a href="./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr">Aufgabe 12</a></td>
 <td>24.01.2022</td>
 </tr>
 <tr>
 <td>14.</td>
 <td>17.-21.01.2022</td>
-<td>JavaDoc</td>
+<td>Wiederholung, Klausurvorbereitung</td>
 <td>-</td>
 <td>-</td>
 </tr>
 <tr>
 <td>15.</td>
-<td>24.-28.01.2021</td>
-<td>Neuerungen ab Java 8</td>
+<td>24.-28.01.2022</td>
+<td>Wiederholung, Klausurvorbereitung</td>
 <td>-</td>
 <td>-</td>
 </tr>
 <tr>
 <td>16.</td>
-<td>31.-03.02.2022</td>
-<td>Wiederholung, Klausurvorbereitung</td>
-<td>Fragen</td>
+<td>02.02.2022 14:00 Uhr</td>
+<td>Klausur</td>
 <td>-</td>
-</tr>
-<tr>
-<td>17.</td>
-<td>07.-11.02.2021</td>
-<td>Wiederholung, Klausurvorbereitung</td>
-<td>Fragen</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -3770,6 +3763,316 @@
 </div>
 </details>
 <details class="info"><summary>Video zur Vorlesung TicTacToe -- 22.12.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=3eac07cc13a908a94cdbfafefb61588b&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
+<details class="note"><summary>Vorlesung Arrays (getMaximum, areEqual) -- 04.01.2022</summary><div class="tabbed-set" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">Programclass.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">vorlesungen.vorlesung0104</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programclass</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// myArray wird erzeugt und befuellt --&gt; Objektvariable in MyArrays2</span>
+        <span class="n">MyArrays2</span> <span class="n">ma</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyArrays2</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+        <span class="n">ma</span><span class="p">.</span><span class="na">printArray</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="c1">// arr1 wird erzeugt und befuellt</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="n">ma</span><span class="p">.</span><span class="na">createAndFill</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;arr1 : &quot;</span><span class="p">);</span>
+        <span class="n">ma</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">arr1</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">max1</span> <span class="o">=</span> <span class="n">ma</span><span class="p">.</span><span class="na">getMaximum</span><span class="p">(</span><span class="n">arr1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Maximum von arr1 ist : &quot;</span> <span class="o">+</span> <span class="n">max1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="c1">// arr2 wird erzeugt und befuellt</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="n">ma</span><span class="p">.</span><span class="na">createAndFill</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;arr2 : &quot;</span><span class="p">);</span>
+        <span class="n">ma</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">arr2</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">max2</span> <span class="o">=</span> <span class="n">ma</span><span class="p">.</span><span class="na">getMaximum</span><span class="p">(</span><span class="n">arr2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Maximum von arr2 ist : &quot;</span> <span class="o">+</span> <span class="n">max2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr3</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;arr3 : &quot;</span><span class="p">);</span>
+        <span class="n">ma</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">arr3</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ma</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">arr3</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">max3</span> <span class="o">=</span> <span class="n">ma</span><span class="p">.</span><span class="na">getMaximum</span><span class="p">(</span><span class="n">arr3</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Maximum von arr3 ist : &quot;</span> <span class="o">+</span> <span class="n">max3</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;arr3 is empty!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr4</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;arr4 : &quot;</span><span class="p">);</span>
+        <span class="n">ma</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">arr4</span><span class="p">);</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr5</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;arr5 : &quot;</span><span class="p">);</span>
+        <span class="n">ma</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">arr5</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;arr4 gleich arr5 ? &quot;</span> <span class="o">+</span> <span class="n">ma</span><span class="p">.</span><span class="na">areEqual</span><span class="p">(</span><span class="n">arr4</span><span class="p">,</span> <span class="n">arr5</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr6</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;arr6 : &quot;</span><span class="p">);</span>
+        <span class="n">ma</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">arr6</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;arr6 gleich arr5 ? &quot;</span> <span class="o">+</span> <span class="n">ma</span><span class="p">.</span><span class="na">areEqual</span><span class="p">(</span><span class="n">arr6</span><span class="p">,</span> <span class="n">arr5</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><label for="__tabbed_22_2">MyArrays2.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">vorlesungen.vorlesung0104</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyArrays2</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">myArray</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">MyArrays2</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">myArray</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">createAndFill</span><span class="p">(</span><span class="n">length</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">createAndFill</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// create</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+
+        <span class="c1">// fill</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">length</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>  <span class="c1">// 0 ... length-1</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;myArray : [ &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">myArray</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">myArray</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">myArray</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">myArray</span><span class="o">[</span><span class="k">this</span><span class="p">.</span><span class="na">myArray</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMaximum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">aktMaximum</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">aktMaximum</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">aktMaximum</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">aktMaximum</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">areEqual</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">!=</span> <span class="n">b</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</details>
+<details class="info"><summary>Video zur Vorlesung Arrays (getMaximum, areEqual) -- 04.01.2022</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=19107e9734b3520eaed78b6e2413ee08&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
 </details>
                 
               

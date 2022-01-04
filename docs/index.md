@@ -54,12 +54,11 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 10. | 13.-17.12.2021 | [Arrays](./arrays/#arrays) | [Aufgabe 9](./aufgaben/#aufgabe-9-abgabe-bis-03012022-2400-uhr) | 03.01.2022 |
 | 11. | 20.-24.12.2021 | [Algorithmen über Arrays](./arrays/#algorithmen-uber-arrays)  | [Aufgabe 10](./aufgaben/#aufgabe-10-abgabe-bis-10012022-2400-uhr)  | 10.01.2022 |
 | | | | | | | |
-| 12. | 03.-07.01.2022 | Enumerations | [Aufgabe 11](./aufgaben/#aufgabe-11-abgabe-bis-17012022-2400-uhr)  | 17.01.2022 |
-| 13. | 10.-14.01.2022 | Exceptions | [Aufgabe 12](./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr) | 24.01.2022 |
-| 14. | 17.-21.01.2022 | JavaDoc  | -  | - |
-| 15. | 24.-28.01.2021 | Neuerungen ab Java 8 | - | - |
-| 16. | 31.-03.02.2022 | Wiederholung, Klausurvorbereitung  | Fragen  | - |
-| 17. | 07.-11.02.2021 | Wiederholung, Klausurvorbereitung | Fragen | - |
+| 12. | 03.-07.01.2022 | [Algorithmen über Arrays](./arrays/#algorithmen-uber-arrays)  | [Aufgabe 11](./aufgaben/#aufgabe-11-abgabe-bis-17012022-2400-uhr)  | 17.01.2022 |
+| 13. | 10.-14.01.2022 | Enumerations, JavaDoc | [Aufgabe 12](./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr) | 24.01.2022 |
+| 14. | 17.-21.01.2022 | Wiederholung, Klausurvorbereitung  | -  | - |
+| 15. | 24.-28.01.2022 | Wiederholung, Klausurvorbereitung | - | - |
+| 16. | 02.02.2022 14:00 Uhr| Klausur  | -  | - |
 
 
 ## Code aus der Vorlesung
@@ -1859,4 +1858,166 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Vorlesung TicTacToe -- 22.12.2021"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=3eac07cc13a908a94cdbfafefb61588b&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Arrays (getMaximum, areEqual) -- 04.01.2022"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0104;
+
+		public class Programclass
+		{
+			public static void main(String[] args)
+			{
+				// myArray wird erzeugt und befuellt --> Objektvariable in MyArrays2
+				MyArrays2 ma = new MyArrays2(10);
+				ma.printArray();
+				System.out.println();
+				
+				// arr1 wird erzeugt und befuellt
+				int[] arr1 = ma.createAndFill(20);
+				System.out.print("arr1 : ");
+				ma.printArray(arr1);
+				int max1 = ma.getMaximum(arr1);
+				System.out.println("Maximum von arr1 ist : " + max1);
+				System.out.println();
+				
+				// arr2 wird erzeugt und befuellt
+				int[] arr2 = ma.createAndFill(15);
+				System.out.print("arr2 : ");
+				ma.printArray(arr2);
+				int max2 = ma.getMaximum(arr2);
+				System.out.println("Maximum von arr2 ist : " + max2);
+				System.out.println();
+				
+				int[] arr3 = new int[0];
+				System.out.print("arr3 : ");
+				ma.printArray(arr3);
+				if(!ma.isEmpty(arr3))
+				{
+					int max3 = ma.getMaximum(arr3);
+					System.out.println("Maximum von arr3 ist : " + max3);
+				}
+				else
+				{
+					System.out.println("arr3 is empty!");
+				}
+				System.out.println();
+				
+				
+				int[] arr4 = { 8, 2, 4, 3 };
+				System.out.print("arr4 : ");
+				ma.printArray(arr4);
+				int[] arr5 = { 8, 2, 4, 3 };
+				System.out.print("arr5 : ");
+				ma.printArray(arr5);
+				System.out.println("arr4 gleich arr5 ? " + ma.areEqual(arr4, arr5));
+				System.out.println();
+				
+				int[] arr6 = new int[0];
+				System.out.print("arr6 : ");
+				ma.printArray(arr6);
+				System.out.println("arr6 gleich arr5 ? " + ma.areEqual(arr6, arr5));
+				System.out.println();
+			}
+
+		}
+		```
+	=== "MyArrays2.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0104;
+
+		import java.util.Random;
+
+		public class MyArrays2
+		{
+			int[] myArray;
+			
+			public MyArrays2(int length)
+			{
+				this.myArray = this.createAndFill(length);
+			}
+			
+			public int[] createAndFill(int length)
+			{
+				// create
+				int[] a = new int[length];
+				Random r = new Random();
+				
+				// fill
+				for (int index = 0; index < a.length; index++)
+				{
+					a[index] = (r.nextInt(length)+1);  // 0 ... length-1
+				}
+				
+				return a;
+			}
+			
+			public void printArray(int[] arr)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < arr.length-1; index++)
+				{
+					System.out.print(arr[index] + ", ");
+				}
+				if(arr.length > 0)
+				{
+					System.out.print(arr[arr.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+			
+			
+			public void printArray()
+			{
+				System.out.print("myArray : [ ");
+				for (int index = 0; index < this.myArray.length-1; index++)
+				{
+					System.out.print(this.myArray[index] + ", ");
+				}
+				if(this.myArray.length > 0)
+				{
+					System.out.print(this.myArray[this.myArray.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+			
+			public int getMaximum(int[] a)
+			{
+				int aktMaximum = a[0];
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] > aktMaximum)
+					{
+						aktMaximum = a[index];
+					}
+				}
+				return aktMaximum;
+			}
+			
+			public boolean isEmpty(int[] a)
+			{
+				return (a.length == 0);
+			}
+			
+			public boolean areEqual(int[] a, int[] b)
+			{
+				if(a.length != b.length)
+				{
+					return false;
+				}
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] != b[index])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+		```
+
+??? info "Video zur Vorlesung Arrays (getMaximum, areEqual) -- 04.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=19107e9734b3520eaed78b6e2413ee08&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
