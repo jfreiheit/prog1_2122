@@ -2527,6 +2527,224 @@ testen Sie alle Methoden der Klasse <code>Uebung10</code> (oder <code>Uebung11</
 </li>
 </ol>
 </details>
+<details class="question"><summary>Eine mögliche Lösung für Übung 11 (weiter Klasse Uebung10.java verwendet)</summary><div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Programclass.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">uebungen.uebung10</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programclass</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca1</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">};</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">ia1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">};</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">ia2</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">4</span> <span class="p">};</span>
+
+        <span class="n">Uebung10</span> <span class="n">u1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Uebung10</span><span class="p">();</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca1</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca2</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ia1</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ia2</span><span class="p">);</span>
+
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca3</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">stringToCharArray</span><span class="p">(</span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca3</span><span class="p">);</span>
+
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">ia3</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="n">ia1</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ia1</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ia3</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------------ Uebung 11 filter()---------------%n%n&quot;</span><span class="p">);</span>
+
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca1</span><span class="p">);</span>
+
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca4</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">ca1</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca4</span><span class="p">);</span>
+
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca5</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">ca1</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca5</span><span class="p">);</span>
+
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca6</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">ca1</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca6</span><span class="p">);</span>
+
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca7</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">ca1</span><span class="p">,</span> <span class="sc">&#39;d&#39;</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca7</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca3</span><span class="p">);</span>
+
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca8</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">ca3</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca8</span><span class="p">);</span>
+
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca9</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">stringToCharArray</span><span class="p">(</span><span class="s">&quot;superlangerTeststringzumFiltern kann auch Leerzeichen enthalten oder alle möglichen Zeichen ?%$§!*&quot;</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ca9</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">u1</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">ca9</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">));</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n------------ Uebung 11 minAndMax()---------------%n%n&quot;</span><span class="p">);</span>
+
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ia1</span><span class="p">);</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">mm1</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">minAndMax</span><span class="p">(</span><span class="n">ia1</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">mm1</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ia2</span><span class="p">);</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">mm2</span> <span class="o">=</span> <span class="n">u1</span><span class="p">.</span><span class="na">minAndMax</span><span class="p">(</span><span class="n">ia2</span><span class="p">);</span>
+        <span class="n">u1</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">mm2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Uebung10.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">uebungen.uebung10</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Uebung10</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">ca</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;[ &quot;</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">ca</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">ca</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">ca</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">;</span>
+            <span class="p">}</span>   
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">ca</span><span class="o">[</span><span class="n">ca</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">ia</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;[ &quot;</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">ia</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">ia</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">ia</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">;</span>
+            <span class="p">}</span>   
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">ia</span><span class="o">[</span><span class="n">ia</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">char</span><span class="o">[]</span> <span class="nf">stringToCharArray</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">ca</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">ca</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">ca</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">ca</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">reverse</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">iarr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">ia</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">iarr</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">ia</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">ia</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">iarr</span><span class="o">[</span><span class="n">iarr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">index</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ia</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">char</span><span class="o">[]</span> <span class="nf">filter</span><span class="p">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">carr</span><span class="p">,</span> <span class="kt">char</span> <span class="n">filter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">         * neues Array erzeugen -- Idee:</span>
+<span class="cm">         *      1. neues Array erzeugen (char[])</span>
+<span class="cm">         *      2. aber wie lang ist das neue Array?</span>
+<span class="cm">         *      3. Laenge von neuen Array ist (Laenge von carr - Anzahl des Vorkommens von filter in carr)</span>
+<span class="cm">         */</span>
+
+        <span class="c1">// wie oft kommt filter in carr vor?</span>
+        <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">carr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">carr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">==</span> <span class="n">filter</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">counter</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// jetzt wissen wir, wie oft filter in carr vorkommt: counter</span>
+        <span class="kt">int</span> <span class="n">laengeVomNeuenArray</span> <span class="o">=</span> <span class="n">carr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">counter</span><span class="p">;</span>
+
+        <span class="c1">// jetzt kann das neue Array erzeugt werden (jetzt kennen wir die Laenge)</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">filterArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">laengeVomNeuenArray</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * neues Array befuellen -- Idee:</span>
+<span class="cm">         *      1. wir laufen durch das komplette carr (for-Schleife)</span>
+<span class="cm">         *      2. fuer jedes Element aus carr pruefen, ob es dem filter entspricht</span>
+<span class="cm">         *          2a. wenn es nicht filter entspricht, dann kopieren</span>
+<span class="cm">         *          2b. wenn es filter entspricht, dann wird es nicht kopiert</span>
+<span class="cm">         *      3. wichtig: unterschiedlich indexCarr und indexNeuesArray (haben ja auch unter-</span>
+<span class="cm">         *          schiedliche Laengen)</span>
+<span class="cm">         */</span>
+
+        <span class="c1">// jetzt befuellen - zunaechst for-Schleife fuer carr</span>
+        <span class="kt">int</span> <span class="n">indexFilterArray</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">indexCarr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">indexCarr</span> <span class="o">&lt;</span> <span class="n">carr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">indexCarr</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">carr</span><span class="o">[</span><span class="n">indexCarr</span><span class="o">]</span> <span class="o">!=</span> <span class="n">filter</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// dann kopieren (sonst nicht)</span>
+                <span class="c1">// das geht nicht: --&gt; filterArray[indexCarr] = carr[indexCarr];</span>
+                <span class="n">filterArray</span><span class="o">[</span><span class="n">indexFilterArray</span><span class="o">]</span> <span class="o">=</span> <span class="n">carr</span><span class="o">[</span><span class="n">indexCarr</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">indexFilterArray</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">filterArray</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">minAndMax</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">iarr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// wir koennen davon ausgehen, dass iarr.length mind. 1 ist</span>
+        <span class="kt">int</span> <span class="n">curMin</span> <span class="o">=</span> <span class="n">iarr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">curMax</span> <span class="o">=</span> <span class="n">iarr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">iarr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">iarr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">curMin</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">curMin</span> <span class="o">=</span> <span class="n">iarr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>   <span class="c1">// iarr[index] ist nun mein neues aktuelles Minimum</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">iarr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">curMax</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">curMax</span> <span class="o">=</span> <span class="n">iarr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>   <span class="c1">// iarr[index] ist nun mein neues aktuelles Maximum</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// entweder so:</span>
+        <span class="cm">/*</span>
+<span class="cm">         * int[] minAndMax = new int[2]; </span>
+<span class="cm">         * minAndMax[0] = curMin; </span>
+<span class="cm">         * minAndMax[1] = curMax;</span>
+<span class="cm">         * return minAndMax;</span>
+<span class="cm">         */</span>
+
+        <span class="c1">// oder so:</span>
+        <span class="cm">/*</span>
+<span class="cm">         * int[] minAndMax = { curMin, curMax }; </span>
+<span class="cm">         * return minAndMax;</span>
+<span class="cm">         */</span>
+
+        <span class="c1">// oder so:</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span><span class="p">{</span> <span class="n">curMin</span><span class="p">,</span> <span class="n">curMax</span> <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
 <hr />
 <h2 id="selbstandiges-uben">Selbständiges Üben<a class="headerlink" href="#selbstandiges-uben" title="Permanent link">&para;</a></h2>
 <p><strong><em>Falls Sie noch Lust und Zeit haben, ein wenig selbständig zu üben, hier einige Aufgaben:</em></strong></p>

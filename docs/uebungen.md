@@ -1800,6 +1800,225 @@
      	- ein Objekt der Klasse `Uebung10` (oder `Uebung11` - siehe oben) und 
      	testen Sie alle Methoden der Klasse `Uebung10` (oder `Uebung11` - siehe oben).
 
+
+??? question "Eine mögliche Lösung für Übung 11 (weiter Klasse Uebung10.java verwendet)"
+	=== "Programclass.java"
+		```java
+		package uebungen.uebung10;
+
+		public class Programclass {
+
+			public static void main(String[] args) 
+			{
+				char[] ca1 = {'a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'};
+				char[] ca2 = new char[0];
+				
+				int[] ia1 = {4,2,8,1,6,2,4,1,8};
+				int[] ia2 = { 4 };
+				
+				Uebung10 u1 = new Uebung10();
+				u1.print(ca1);
+				u1.print(ca2);
+				u1.print(ia1);
+				u1.print(ia2);
+				
+				char[] ca3 = u1.stringToCharArray("Hallo FIW!");
+				u1.print(ca3);
+				
+				int[] ia3 = u1.reverse(ia1);
+				u1.print(ia1);
+				u1.print(ia3);
+				
+				System.out.printf("%n%n------------ Uebung 11 filter()---------------%n%n");
+				
+				u1.print(ca1);
+				
+				char[] ca4 = u1.filter(ca1, 'c');
+				u1.print(ca4);
+				
+				char[] ca5 = u1.filter(ca1, 'a');
+				u1.print(ca5);
+					
+				char[] ca6 = u1.filter(ca1, 'b');
+				u1.print(ca6);
+				
+				char[] ca7 = u1.filter(ca1, 'd');
+				u1.print(ca7);
+				
+				System.out.println();
+				
+				u1.print(ca3);
+				
+				char[] ca8 = u1.filter(ca3, 'l');
+				u1.print(ca8);
+				
+				char[] ca9 = u1.stringToCharArray("superlangerTeststringzumFiltern kann auch Leerzeichen enthalten oder alle möglichen Zeichen ?%$§!*");
+				u1.print(ca9);
+				u1.print(u1.filter(ca9, 'e'));
+				
+				System.out.printf("%n%n------------ Uebung 11 minAndMax()---------------%n%n");
+
+				u1.print(ia1);
+				int[] mm1 = u1.minAndMax(ia1);
+				u1.print(mm1);
+
+				System.out.println();
+				
+				u1.print(ia2);
+				int[] mm2 = u1.minAndMax(ia2);
+				u1.print(mm2);
+			}
+		}
+		```		
+	=== "Uebung10.java"
+		```java
+		package uebungen.uebung10;
+
+		public class Uebung10
+		{
+			public void print(char[] ca)
+		    {
+		        String s = "[ ";
+		        if(ca.length == 0)
+		        {
+		            s = s + "]";
+		        }
+		        else
+		        {
+		            for (int index = 0; index < ca.length - 1; index++) 
+		            {
+		                s = s + ca[index] + ", ";
+		            }   
+		            s = s + ca[ca.length - 1] + " ]";
+		        }
+		        System.out.println(s);
+		    }
+			
+			public void print(int[] ia)
+		    {
+		        String s = "[ ";
+		        if(ia.length == 0)
+		        {
+		            s = s + "]";
+		        }
+		        else
+		        {
+		            for (int index = 0; index < ia.length - 1; index++) 
+		            {
+		                s = s + ia[index] + ", ";
+		            }   
+		            s = s + ia[ia.length - 1] + " ]";
+		        }
+		        System.out.println(s);
+		    }
+			
+			public char[] stringToCharArray(String s)
+			{
+				char[] ca = new char[s.length()];
+				for (int index = 0; index < ca.length; index++)
+				{
+					ca[index] = s.charAt(index);
+				}
+				
+				return ca;
+			}
+			
+			public int[] reverse(int[] iarr)
+			{
+				int[] ia = new int[iarr.length];
+				for (int index = 0; index < ia.length; index++)
+				{
+					ia[index] = iarr[iarr.length-1 - index];
+				}
+				return ia;
+			}
+			
+			public char[] filter(char[] carr, char filter)
+			{
+				/*
+				 * neues Array erzeugen -- Idee:
+				 * 		1. neues Array erzeugen (char[])
+				 * 		2. aber wie lang ist das neue Array?
+				 * 		3. Laenge von neuen Array ist (Laenge von carr - Anzahl des Vorkommens von filter in carr)
+				 */
+				
+				// wie oft kommt filter in carr vor?
+				int counter = 0;
+				for (int index = 0; index < carr.length; index++)
+				{
+					if(carr[index] == filter)
+					{
+						counter++;
+					}
+				}
+				
+				// jetzt wissen wir, wie oft filter in carr vorkommt: counter
+				int laengeVomNeuenArray = carr.length - counter;
+				
+				// jetzt kann das neue Array erzeugt werden (jetzt kennen wir die Laenge)
+				char[] filterArray = new char[laengeVomNeuenArray];
+				
+				/*
+				 * neues Array befuellen -- Idee:
+				 * 		1. wir laufen durch das komplette carr (for-Schleife)
+				 * 		2. fuer jedes Element aus carr pruefen, ob es dem filter entspricht
+				 * 			2a. wenn es nicht filter entspricht, dann kopieren
+				 * 			2b. wenn es filter entspricht, dann wird es nicht kopiert
+				 * 		3. wichtig: unterschiedlich indexCarr und indexNeuesArray (haben ja auch unter-
+				 * 			schiedliche Laengen)
+				 */
+				
+				// jetzt befuellen - zunaechst for-Schleife fuer carr
+				int indexFilterArray = 0;
+				for (int indexCarr = 0; indexCarr < carr.length; indexCarr++)
+				{
+					if(carr[indexCarr] != filter)
+					{
+						// dann kopieren (sonst nicht)
+						// das geht nicht: --> filterArray[indexCarr] = carr[indexCarr];
+						filterArray[indexFilterArray] = carr[indexCarr];
+						indexFilterArray++;
+					}
+				}
+				return filterArray;
+			}
+			
+			public int[] minAndMax(int[] iarr)
+			{
+				// wir koennen davon ausgehen, dass iarr.length mind. 1 ist
+				int curMin = iarr[0];
+				int curMax = iarr[0];
+				for (int index = 0; index < iarr.length; index++)
+				{
+					if(iarr[index] < curMin)
+					{
+						curMin = iarr[index];	// iarr[index] ist nun mein neues aktuelles Minimum
+					}
+					if(iarr[index] > curMax)
+					{
+						curMax = iarr[index];	// iarr[index] ist nun mein neues aktuelles Maximum
+					}
+				}
+				// entweder so:
+				/*
+				 * int[] minAndMax = new int[2]; 
+				 * minAndMax[0] = curMin; 
+				 * minAndMax[1] = curMax;
+				 * return minAndMax;
+				 */
+				
+				// oder so:
+				/*
+				 * int[] minAndMax = { curMin, curMax }; 
+				 * return minAndMax;
+				 */
+				
+				// oder so:
+				return new int[]{ curMin, curMax };
+			}
+		}
+		```		
+
 --- 
 
 ## Selbständiges Üben
