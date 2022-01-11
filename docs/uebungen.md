@@ -2019,6 +2019,11 @@
 		}
 		```		
 
+	
+??? note "Übung 12 (12.01.2022)"
+	
+	1. siehe [Moodle](https://moodle.htw-berlin.de/course/view.php?id=33988)
+
 --- 
 
 ## Selbständiges Üben
