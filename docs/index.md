@@ -55,7 +55,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 11. | 20.-24.12.2021 | [Algorithmen über Arrays](./arrays/#algorithmen-uber-arrays)  | [Aufgabe 10](./aufgaben/#aufgabe-10-abgabe-bis-10012022-2400-uhr)  | 10.01.2022 |
 | | | | | | | |
 | 12. | 03.-07.01.2022 | [Sortieren von Arrays](./sortieren/#sortieren-von-arrays)  | [Aufgabe 11](./aufgaben/#aufgabe-11-abgabe-bis-17012022-2400-uhr)  | 17.01.2022 |
-| 13. | 10.-14.01.2022 | Enumerations, JavaDoc | [Aufgabe 12](./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr) | 24.01.2022 |
+| 13. | 10.-14.01.2022 | [Suchen und Einfügen in Arrays](./arrays/#suchen-in-arrays) | [Aufgabe 12](./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr) | 24.01.2022 |
 | 14. | 17.-21.01.2022 | Wiederholung, Klausurvorbereitung  | -  | - |
 | 15. | 24.-28.01.2022 | Wiederholung, Klausurvorbereitung | - | - |
 | 16. | 02.02.2022 14:00 Uhr| Klausur  | -  | - |
@@ -2228,4 +2228,197 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? info "Video zur Vorlesung Arrays Sortieren -- 05.01.2022"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=917ae99e9b23083e83622ea3714a3d60&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
+
+??? note "Vorlesung Bruch und Bubblesort -- 11.01.2022"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0111;
+
+		public class Programclass
+		{
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n-------------- Bruch -----------------------%n%n");
+				Bruch b1 = new Bruch(3,7);		// 12/28
+				Bruch b2 = new Bruch(3,4);		// 21/28
+				Bruch sumB1B2 = b1.plus(b2);
+				System.out.printf("Summe: (%d/%d) %n", sumB1B2.getZaehler(), sumB1B2.getNenner());
+				
+				Bruch diffB1B2 = b1.minus(b2);
+				System.out.printf("Differenz: (%d/%d) %n", diffB1B2.getZaehler(), diffB1B2.getNenner());
+				
+				Bruch diffB1B1 = b1.minus(b1);
+				System.out.printf("Differenz: (%d/%d) %n", diffB1B1.getZaehler(), diffB1B1.getNenner());
+				
+				
+				System.out.printf("%n%n-------------- Beispielarrays erzeugen -----------------------%n%n");
+				MyArrays3 m3 = new MyArrays3();
+				int[] a1 = m3.createAndFill(20);
+				m3.printArray(a1);
+				m3.bubblesort(a1);
+				m3.printArray(a1);
+			}
+
+		}
+		```
+	=== "MyArrays3.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0111;
+
+		import java.util.Random;
+
+		public class MyArrays3
+		{
+			
+			public void printArray(int[] arr)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < arr.length-1; index++)
+				{
+					System.out.print(arr[index] + ", ");
+				}
+				if(arr.length > 0)
+				{
+					System.out.print(arr[arr.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+			
+			public int[] createAndFill(int length)
+			{
+				int[] a = new int[length];
+				Random r = new Random();
+				
+				for(int index = 0; index < a.length; index++)
+				{
+					a[index] = r.nextInt(length) + 1;
+				}
+				
+				return a;
+			}
+			
+			public void bubblesort(int[] a)
+			{
+				boolean swapped = true;
+				for(int bubble = 0; bubble < a.length - 1  && swapped; bubble++)
+				{
+					swapped = false;
+					System.out.printf("%n------ Bubble-Phase %2d -------%n", bubble);
+					for(int index = 0; index < a.length - 1 - bubble; index++ )
+					{
+						if(a[index] > a[index + 1])
+						{
+							int tmp = a[index + 1];
+							a[index + 1] = a[index];
+							a[index] = tmp;
+							swapped = true;
+						}
+					}
+					this.printArray(a);
+				}
+			}
+		}
+		```
+	=== "Bruch.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0111;
+
+		public class Bruch
+		{
+			private int nenner;
+			private int zaehler;
+
+			public Bruch(int zaehler, int nenner)
+			{
+				this.nenner = nenner;
+				this.zaehler = zaehler;
+			}
+
+			public Bruch plus(Bruch b)
+			{
+				int gleichnamigerNenner = this.nenner * b.nenner;
+				int summeZaehler = this.zaehler * b.nenner + b.zaehler * this.nenner;
+
+				Bruch summeBruch = new Bruch(summeZaehler, gleichnamigerNenner);
+				Bruch gekuerzterBruch = summeBruch.kuerzen();
+
+				return gekuerzterBruch;
+			}
+			
+
+			public int getNenner()
+			{
+				return this.nenner;
+			}
+
+			public int getZaehler()
+			{
+				return this.zaehler;
+			}
+
+			public Bruch minus(Bruch b)
+			{
+				int gleichnamigerNenner = this.nenner * b.nenner;
+				int differenzZaehler = this.zaehler * b.nenner - b.zaehler * this.nenner;
+
+				Bruch differenzBruch = new Bruch(differenzZaehler, gleichnamigerNenner);
+				Bruch gekuerzterBruch = differenzBruch.kuerzen();
+
+				return gekuerzterBruch;
+			}
+
+			public Bruch kuerzen()
+			{
+				int ggT=this.ggT(this.zaehler, this.nenner);
+				this.zaehler=this.zaehler/ggT;
+				this.nenner=this.nenner/ggT;
+				// return new Bruch(this.zaehler, this.nenner);
+				return this;
+			}
+
+			public int ggT(int zahl1, int zahl2)
+			{
+				zahl1 = Math.abs(zahl1);
+				zahl2 = Math.abs(zahl2);
+				
+				/*
+				if(zahl1 < 0 )
+				{
+					zahl1 = -zahl1;
+				}
+				
+				zahl1 = (zahl1 < 0) ? -zahl1 : zahl1;
+				
+				if(zahl2 < 0)
+				{
+					zahl2 = -zahl2;
+				}
+				*/
+				
+				if(zahl1 != 0 && zahl2 != 0)
+				{
+					while(zahl1!=zahl2)
+					{
+						if (zahl1>zahl2)
+						{
+							zahl1=zahl1-zahl2;
+						}
+						else
+						{
+							zahl2=zahl2-zahl1;
+						}
+					}
+				}
+				else {
+					zahl1 = 1;
+				}
+				return zahl1;
+			}
+
+		}
+
+		``` 
+
+??? info "Video zur Vorlesung Bruch und Bubblesort -- 11.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=47ade407c18d1229cb024ec2f5bea350&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=47ade407c18d1229cb024ec2f5bea350&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 

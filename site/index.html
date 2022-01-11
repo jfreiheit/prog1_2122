@@ -739,7 +739,7 @@
 <tr>
 <td>13.</td>
 <td>10.-14.01.2022</td>
-<td>Enumerations, JavaDoc</td>
+<td><a href="./arrays/#suchen-in-arrays">Suchen und Einfügen in Arrays</a></td>
 <td><a href="./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr">Aufgabe 12</a></td>
 <td>24.01.2022</td>
 </tr>
@@ -4488,6 +4488,375 @@
 </div>
 </details>
 <details class="info"><summary>Video zur Vorlesung Arrays Sortieren -- 05.01.2022</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=917ae99e9b23083e83622ea3714a3d60&width=720&height=432&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="432" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
+<details class="note"><summary>Vorlesung Bruch und Bubblesort -- 11.01.2022</summary><div class="tabbed-set" data-tabs="24:3"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><label for="__tabbed_24_1">Programclass.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">vorlesungen.vorlesung0111</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programclass</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n-------------- Bruch -----------------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">Bruch</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>      <span class="c1">// 12/28</span>
+        <span class="n">Bruch</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>      <span class="c1">// 21/28</span>
+        <span class="n">Bruch</span> <span class="n">sumB1B2</span> <span class="o">=</span> <span class="n">b1</span><span class="p">.</span><span class="na">plus</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Summe: (%d/%d) %n&quot;</span><span class="p">,</span> <span class="n">sumB1B2</span><span class="p">.</span><span class="na">getZaehler</span><span class="p">(),</span> <span class="n">sumB1B2</span><span class="p">.</span><span class="na">getNenner</span><span class="p">());</span>
+
+        <span class="n">Bruch</span> <span class="n">diffB1B2</span> <span class="o">=</span> <span class="n">b1</span><span class="p">.</span><span class="na">minus</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Differenz: (%d/%d) %n&quot;</span><span class="p">,</span> <span class="n">diffB1B2</span><span class="p">.</span><span class="na">getZaehler</span><span class="p">(),</span> <span class="n">diffB1B2</span><span class="p">.</span><span class="na">getNenner</span><span class="p">());</span>
+
+        <span class="n">Bruch</span> <span class="n">diffB1B1</span> <span class="o">=</span> <span class="n">b1</span><span class="p">.</span><span class="na">minus</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Differenz: (%d/%d) %n&quot;</span><span class="p">,</span> <span class="n">diffB1B1</span><span class="p">.</span><span class="na">getZaehler</span><span class="p">(),</span> <span class="n">diffB1B1</span><span class="p">.</span><span class="na">getNenner</span><span class="p">());</span>
+
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%n-------------- Beispielarrays erzeugen -----------------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">MyArrays3</span> <span class="n">m3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyArrays3</span><span class="p">();</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">m3</span><span class="p">.</span><span class="na">createAndFill</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+        <span class="n">m3</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+        <span class="n">m3</span><span class="p">.</span><span class="na">bubblesort</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+        <span class="n">m3</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><label for="__tabbed_24_2">MyArrays3.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">vorlesungen.vorlesung0111</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyArrays3</span>
+<span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[ &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; ]&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">createAndFill</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bubblesort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">boolean</span> <span class="n">swapped</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">bubble</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">bubble</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span>  <span class="o">&amp;&amp;</span> <span class="n">swapped</span><span class="p">;</span> <span class="n">bubble</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">swapped</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n------ Bubble-Phase %2d -------%n&quot;</span><span class="p">,</span> <span class="n">bubble</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">bubble</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span> <span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+                    <span class="n">a</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+                    <span class="n">a</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+                    <span class="n">swapped</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">printArray</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_24_3" name="__tabbed_24" type="radio" /><label for="__tabbed_24_3">Bruch.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">vorlesungen.vorlesung0111</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bruch</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nenner</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">zaehler</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Bruch</span><span class="p">(</span><span class="kt">int</span> <span class="n">zaehler</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nenner</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">nenner</span> <span class="o">=</span> <span class="n">nenner</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">zaehler</span> <span class="o">=</span> <span class="n">zaehler</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Bruch</span> <span class="nf">plus</span><span class="p">(</span><span class="n">Bruch</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">gleichnamigerNenner</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">nenner</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="na">nenner</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">summeZaehler</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">zaehler</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="na">nenner</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="na">zaehler</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">nenner</span><span class="p">;</span>
+
+        <span class="n">Bruch</span> <span class="n">summeBruch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="n">summeZaehler</span><span class="p">,</span> <span class="n">gleichnamigerNenner</span><span class="p">);</span>
+        <span class="n">Bruch</span> <span class="n">gekuerzterBruch</span> <span class="o">=</span> <span class="n">summeBruch</span><span class="p">.</span><span class="na">kuerzen</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="n">gekuerzterBruch</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNenner</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">nenner</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getZaehler</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">zaehler</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Bruch</span> <span class="nf">minus</span><span class="p">(</span><span class="n">Bruch</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">gleichnamigerNenner</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">nenner</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="na">nenner</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">differenzZaehler</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">zaehler</span> <span class="o">*</span> <span class="n">b</span><span class="p">.</span><span class="na">nenner</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="na">zaehler</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="na">nenner</span><span class="p">;</span>
+
+        <span class="n">Bruch</span> <span class="n">differenzBruch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bruch</span><span class="p">(</span><span class="n">differenzZaehler</span><span class="p">,</span> <span class="n">gleichnamigerNenner</span><span class="p">);</span>
+        <span class="n">Bruch</span> <span class="n">gekuerzterBruch</span> <span class="o">=</span> <span class="n">differenzBruch</span><span class="p">.</span><span class="na">kuerzen</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="n">gekuerzterBruch</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Bruch</span> <span class="nf">kuerzen</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">ggT</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="na">ggT</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">zaehler</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">nenner</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">zaehler</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="na">zaehler</span><span class="o">/</span><span class="n">ggT</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">nenner</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="na">nenner</span><span class="o">/</span><span class="n">ggT</span><span class="p">;</span>
+        <span class="c1">// return new Bruch(this.zaehler, this.nenner);</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">ggT</span><span class="p">(</span><span class="kt">int</span> <span class="n">zahl1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">zahl2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">zahl1</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">zahl1</span><span class="p">);</span>
+        <span class="n">zahl2</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">zahl2</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">        if(zahl1 &lt; 0 )</span>
+<span class="cm">        {</span>
+<span class="cm">            zahl1 = -zahl1;</span>
+<span class="cm">        }</span>
+
+<span class="cm">        zahl1 = (zahl1 &lt; 0) ? -zahl1 : zahl1;</span>
+
+<span class="cm">        if(zahl2 &lt; 0)</span>
+<span class="cm">        {</span>
+<span class="cm">            zahl2 = -zahl2;</span>
+<span class="cm">        }</span>
+<span class="cm">        */</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">zahl1</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">zahl2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">zahl1</span><span class="o">!=</span><span class="n">zahl2</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">zahl1</span><span class="o">&gt;</span><span class="n">zahl2</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">zahl1</span><span class="o">=</span><span class="n">zahl1</span><span class="o">-</span><span class="n">zahl2</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">zahl2</span><span class="o">=</span><span class="n">zahl2</span><span class="o">-</span><span class="n">zahl1</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">zahl1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">zahl1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</details>
+<details class="info"><summary>Video zur Vorlesung Bruch und Bubblesort -- 11.01.2022</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=47ade407c18d1229cb024ec2f5bea350&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=47ade407c18d1229cb024ec2f5bea350&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
 </details>
                 
               
