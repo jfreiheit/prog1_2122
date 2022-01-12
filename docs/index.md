@@ -35,7 +35,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 Es wird ein Programmier-Tutorium angeboten. Dieses findet montags um 16:00 Uhr in C 639 statt - Start ist am 25.10.2021. Unsere Tutorin ist [Lisanne Delfs](mailto:Lisanne.Delfs@Student.HTW-Berlin.de).  
 
 
-## Planung (vorläufig - kann sich noch ändern)
+## Planung
 
 
 Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
@@ -55,13 +55,13 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 11. | 20.-24.12.2021 | [Algorithmen über Arrays](./arrays/#algorithmen-uber-arrays)  | [Aufgabe 10](./aufgaben/#aufgabe-10-abgabe-bis-10012022-2400-uhr)  | 10.01.2022 |
 | | | | | | | |
 | 12. | 03.-07.01.2022 | [Sortieren von Arrays](./sortieren/#sortieren-von-arrays)  | [Aufgabe 11](./aufgaben/#aufgabe-11-abgabe-bis-17012022-2400-uhr)  | 17.01.2022 |
-| 13. | 10.-14.01.2022 | [Suchen und Einfügen in Arrays](./arrays/#suchen-in-arrays) | [Aufgabe 12](./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr) | 24.01.2022 |
+| 13. | 10.-14.01.2022 | [Suchen in Arrays](./arrays/#suchen-in-arrays) | [Aufgabe 12](./aufgaben/#aufgabe-12-abgabe-bis-24012022-2400-uhr) | 24.01.2022 |
 | 14. | 17.-21.01.2022 | Wiederholung, Klausurvorbereitung  | -  | - |
 | 15. | 24.-28.01.2022 | Wiederholung, Klausurvorbereitung | - | - |
 | 16. | 02.02.2022 14:00 Uhr| Klausur  | -  | - |
 
 
-## Code aus der Vorlesung
+## Code (und Videos) aus der Vorlesung
 
 
 ??? note "Vorlesung Variablen -- 19. und 20.10.2021"
@@ -2421,4 +2421,181 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Vorlesung Bruch und Bubblesort -- 11.01.2022"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=47ade407c18d1229cb024ec2f5bea350&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=47ade407c18d1229cb024ec2f5bea350&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Suche in Arrays -- 12.01.2022"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0111;
+
+		public class Programclass
+		{
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n-------------- Suchen in unsortierten Arrays -----------------------%n%n");
+				
+				int[] a2 = m3.createAndFill(20);
+				m3.printArray(a2);
+				int nr = 6;
+				System.out.printf("%n%d in a2 ? : %b%n", nr, m3.containsUnsorted(a2, nr));
+				if(m3.containsUnsorted(a2, nr))
+				{
+					System.out.printf("%nIndex von %d in a2 ? : %d%n", nr, m3.getIndexUnsorted(a2, nr));			
+				}
+				else
+				{
+					System.out.println("Fehlercode : " + m3.getIndexUnsorted(a2, nr));
+				}
+				
+				System.out.printf("%n%n-------------- Suchen in sortierten Arrays -----------------------%n%n");
+				m3.bubblesort(a2);
+				m3.printArray(a2);
+				System.out.printf("%n%d in a2 ? : %b%n", nr, m3.containsSorted(a2, nr));
+				int[] a3 = { 10, 12, 15, 16, 23, 25, 29, 34, 38, 41, 43, 46, 49, 52, 55 };
+				m3.printArray(a3);
+				System.out.printf("%n%d in a3 ? : %b%n", 25, m3.binarySearch(a3, 25));
+			}
+
+		}
+		```
+	=== "MyArrays3.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0111;
+
+		import java.util.Random;
+
+		public class MyArrays3
+		{
+
+			public void printArray(int[] arr)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < arr.length-1; index++)
+				{
+					System.out.print(arr[index] + ", ");
+				}
+				if(arr.length > 0)
+				{
+					System.out.print(arr[arr.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+
+			public int[] createAndFill(int length)
+			{
+				int[] a = new int[length];
+				Random r = new Random();
+
+				for(int index = 0; index < a.length; index++)
+				{
+					a[index] = r.nextInt(length) + 1;
+				}
+
+				return a;
+			}
+
+			public void bubblesort(int[] a)
+			{
+				boolean swapped = true;
+				for(int bubble = 0; bubble < a.length - 1  && swapped; bubble++)
+				{
+					swapped = false;
+					// System.out.printf("%n------ Bubble-Phase %2d -------%n", bubble);
+					for(int index = 0; index < a.length - 1 - bubble; index++ )
+					{
+						if(a[index] > a[index + 1])
+						{
+							int tmp = a[index + 1];
+							a[index + 1] = a[index];
+							a[index] = tmp;
+							swapped = true;
+						}
+					}
+					// this.printArray(a);
+				}
+			}
+
+			public boolean containsUnsorted(int[] a, int element)
+			{
+				boolean found = false;
+				for (int index = 0; index < a.length && !found; index++)
+				{
+					if(a[index] == element)
+					{
+						found = true;
+					}
+				}
+				return found;
+			}
+
+			public int getIndexUnsorted(int[] a, int element)
+			{
+				final int NOT_FOUND = -1;
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] == element)
+					{
+						return index;
+					}
+				}
+				return NOT_FOUND;
+			}
+
+
+			public boolean containsSorted(int[] a, int element)
+			{
+				this.bubblesort(a);
+				boolean found = false;
+				boolean greater = false;
+				for (int index = 0; index < a.length && !found && !greater; index++)
+				{
+					if(a[index] == element)
+					{
+						found = true;
+					}
+					if(a[index] > element)
+					{
+						greater = true;
+					}
+				}
+				return found;
+			}
+
+			public boolean binarySearch(int[] a, int element)
+			{
+				int lo = 0; 
+				int hi = a.length - 1;
+				boolean found = false;
+				
+				while(lo <= hi && !found)
+				{
+					// suche
+					int mid = (lo + hi) / 2;
+					if(a[mid] == element)
+					{
+						found = true;
+					}
+					else
+					{
+						if(a[mid] > element)
+						{
+							// wir suchen links von mid weiter
+							hi = mid - 1;
+						}
+						else	// a[mid] < element
+						{
+							// wir suchen rechts weiter
+							lo = mid + 1;
+						}
+					}
+				}
+				
+				return found;
+			}
+		}
+		```
+
+
+??? info "Video zur Vorlesung Suche in Arrays -- 12.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=d77dad52e602b71b34657ed5b82b8d3a&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=d77dad52e602b71b34657ed5b82b8d3a&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 

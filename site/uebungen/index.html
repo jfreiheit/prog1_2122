@@ -2749,6 +2749,71 @@ testen Sie alle Methoden der Klasse <code>Uebung10</code> (oder <code>Uebung11</
 <li>siehe <a href="https://moodle.htw-berlin.de/course/view.php?id=33988">Moodle</a></li>
 </ol>
 </details>
+<details class="note"><summary>Übung 13 (19.01.2022)</summary><ol>
+<li>Erstellen Sie ein package <code>uebungen.uebung13</code>. </li>
+<li>
+<p>Erstellen Sie in diesem package eine Klasse <code>Lottery</code> mit </p>
+<ul>
+<li>
+<p>der privaten Objektvariablen <code>drawingResults</code> vom Typ <code>int[]</code>. </p>
+<ul>
+<li><strong>Information</strong>: <em>Lottery steht für eine Lotterie, bei der aus 9 Zahlen (1..9) 5 Zahlen zufällig gelost werden (5 aus 9). Das Array <code>drawingResults</code> dient zum Speichern der gezogenen 5 Zahlen.</em></li>
+</ul>
+</li>
+<li>
+<p>Schreiben Sie für die Klasse <code>Lottery</code> einen parameterlosen Konstruktor. In diesem Konstruktor wird das Array <code>drawingResults</code> mit der Länge 5 erzeugt. </p>
+<ul>
+<li>Schreiben Sie eine Objektmethode <code>contains(int number)</code>. Diese Methode gibt ein <code>true</code> zurück, wenn <code>number</code> in <code>drawingResults</code> enthalten ist und <code>false</code> sonst. </li>
+<li>Schreiben Sie eine Objektmethode <code>drawing()</code>. In dieser Methode werden die 5 Zufallszahlen gezogen (5 aus 9). Sie benötigen dafür ein Objekt der Klasse <code>Random</code> (<code>Random</code> muss aus <code>java.util</code> importiert werden). „Ziehen“ Sie nun zufällig 5 Zufallszahlen aus dem Bereich <code>1..9</code> (1 und 9 inklusive) und speichern Sie diese im Array <code>drawingResults</code>. <br/>
+<strong>Achtung</strong>: <em>Die gleiche Zahl darf nicht doppelt gezogen (gespeichert) werden! D.h. die 5 im Array gespeicherten Zufallszahlen müssen sich voneinander unterscheiden!</em></li>
+<li>Schreiben Sie eine Objektmethode <code>sort()</code>. Diese Methode sortiert das Array <code>drawingResults</code> aufsteigend (von klein nach groß).</li>
+</ul>
+</li>
+<li>
+<p>Überschreiben Sie die Objektmethode <code>toString()</code>, die das <code>drawingResult</code>-Array als <code>String</code> in folgender Form zurückgibt (Beispielwerte für den Fall, dass <code>1, 3, 5, 6, 7</code> gezogen wurden):
+        <div class="highlight"><pre><span></span><code><span class="o">(</span> <span class="m">1</span> - <span class="m">3</span> - <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> - - <span class="o">)</span>
+</code></pre></div></p>
+<ol>
+<li>das <code>dawingResult</code>-Array wird zunächst sortiert
+        2. ist die Zahl im Array enthalten, wird sie als Wert angezeigt
+        3. ist die Zahl nicht enthalten, wird ein <code>-</code> angezeigt
+        4. d.h. es werden immer die 5 gezogenen Zahlen ausgegeben und 4 Striche.</li>
+</ol>
+</li>
+<li>
+<p>Schreiben Sie eine Objektmethode <code>print()</code>, die den von <code>toString()</code>zurückgegebenen <code>String</code> auf der Konsole ausgibt.</p>
+<ul>
+<li>Überschreiben Sie die Objektmethode <code>equals(Object o)</code>. Diese Methode gibt <code>true</code> zurück, wenn wenn bei dem aufrufenden Objekt die gleichen Zahlen gezogen wurden, wie bei <code>o</code>. Sonst <code>false</code> (<code>hashCode()</code> muss nicht überschrieben werden). <br/>
+<strong>Tipp</strong>: <em>Implementieren Sie die Methode am einfachsten so, dass Sie die beiden <code>drawingResult</code>-Arrays erst sortieren und dann die sortierten Arrays elementweise miteinander vergleichen.</em>     </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Erstellen Sie im gleichen package eine Klasse <code>Programmklasse</code> mit <code>main()</code>-Methode. </p>
+<ul>
+<li>Erzeugen Sie in der <code>main()</code>-Methode in einer Schleife <code>10</code> Objekte der Klasse <code>Lottery</code> und rufen (auch in der Schleife) jeweils die <code>drawing()</code> und die <code>print()</code>-Methode auf. Es entsteht folgende Ausgabe (Beispielwerte sind zufällig und unterscheiden sich!):
+        <div class="highlight"><pre><span></span><code><span class="o">(</span> <span class="m">1</span> - <span class="m">3</span> - <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> - - <span class="o">)</span>
+<span class="o">(</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> - <span class="m">5</span> - <span class="m">7</span> - - <span class="o">)</span>
+<span class="o">(</span> <span class="m">1</span> - <span class="m">3</span> - - <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> - <span class="o">)</span>
+<span class="o">(</span> - - <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> - - <span class="m">9</span> <span class="o">)</span>
+<span class="o">(</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> - - - - <span class="m">9</span> <span class="o">)</span>
+<span class="o">(</span> <span class="m">1</span> <span class="m">2</span> - <span class="m">4</span> - <span class="m">6</span> - <span class="m">8</span> - <span class="o">)</span>
+<span class="o">(</span> - <span class="m">2</span> <span class="m">3</span> - - - <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="o">)</span>
+<span class="o">(</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> - - <span class="m">6</span> - - <span class="m">9</span> <span class="o">)</span>
+<span class="o">(</span> <span class="m">1</span> - - <span class="m">4</span> <span class="m">5</span> - <span class="m">7</span> <span class="m">8</span> - <span class="o">)</span>
+<span class="o">(</span> - <span class="m">2</span> <span class="m">3</span> - <span class="m">5</span> - - <span class="m">8</span> <span class="m">9</span> <span class="o">)</span>
+</code></pre></div><ul>
+<li>Erzeugen Sie ein Objekt von <code>Lottery</code> und rufen für dieses Objekt die <code>drawing()</code>-Methode auf. Erzeugen Sie in einer Schleife so lange ein weiteres Objekt von <code>Lottery</code> und rufen dafür die <code>drawing()</code>-Methode auf, bis die beiden Objekte die gleichen gezogenen Zahlen enthalten, d.h. laut <code>equals()</code>-Methode gleich sind. Geben Sie dann beide Objekte mithilfe der <code>print()</code>-Methode aus. Es entsteht folgende Ausgabe (zufällige Beispielwerte):
+    <div class="highlight"><pre><span></span><code><span class="o">(</span> <span class="m">1</span> - <span class="m">3</span> - - <span class="m">6</span> - <span class="m">8</span> <span class="m">9</span> <span class="o">)</span>
+<span class="o">(</span> <span class="m">1</span> - <span class="m">3</span> - - <span class="m">6</span> - <span class="m">8</span> <span class="m">9</span> <span class="o">)</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
 <hr />
 <h2 id="selbstandiges-uben">Selbständiges Üben<a class="headerlink" href="#selbstandiges-uben" title="Permanent link">&para;</a></h2>
 <p><strong><em>Falls Sie noch Lust und Zeit haben, ein wenig selbständig zu üben, hier einige Aufgaben:</em></strong></p>
