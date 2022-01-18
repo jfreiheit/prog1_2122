@@ -2599,3 +2599,131 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? info "Video zur Vorlesung Suche in Arrays -- 12.01.2022"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=d77dad52e602b71b34657ed5b82b8d3a&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=d77dad52e602b71b34657ed5b82b8d3a&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
+
+??? note "Vorlesung Klausurvorbereitung 1 -- 18.01.2022"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0118;
+
+		public class Programclass
+		{
+
+			public static void main(String[] args)
+			{
+				CharArrays caObj1 = new CharArrays();
+				
+				char[] ca1 = caObj1.createAndFillCharArray();
+				caObj1.print(ca1);
+				
+				if(caObj1.contains(ca1, 'b'))
+				{
+					System.out.println("b ist enthalten");
+				}
+				else
+				{
+					System.out.println("b ist nicht enthalten");
+				}
+			}
+
+		}
+		```
+	=== "CharArrays.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0118;
+
+		import java.util.Random;
+
+		public class CharArrays
+		{
+			char[] alphabet;
+			
+			public CharArrays()
+			{
+				this.alphabet = new char[25];
+			}
+			
+			
+			public char[] createAndFillCharArray() 
+			{
+				final int LAENGE_ALPHABET = 26;
+				final int ASCII_CODE_a = 97;
+				
+				char[] ca = new char[LAENGE_ALPHABET - 1];
+				Random r = new Random();
+				
+				for (int index = 0; index < ca.length; index++)
+				{
+					int anzVersuche = 1;
+					char c = (char)(r.nextInt(LAENGE_ALPHABET) + ASCII_CODE_a);
+					while(this.contains(ca, c))
+					{
+						c = (char)(r.nextInt(LAENGE_ALPHABET) + ASCII_CODE_a);
+						anzVersuche++;
+					}
+					ca[index] = c;
+					System.out.println(index + " : " + anzVersuche + " Versuche");
+				}
+
+				return ca;
+			}
+			
+			public void print(char[] arr)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < arr.length-1; index++)
+				{
+					System.out.print(arr[index] + ", ");
+				}
+				if(arr.length > 0)
+				{
+					System.out.print(arr[arr.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+			
+			
+			public void print()
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < this.alphabet.length-1; index++)
+				{
+					System.out.print(this.alphabet[index] + ", ");
+				}
+				if(this.alphabet.length > 0)
+				{
+					System.out.print(this.alphabet[this.alphabet.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+			
+			public boolean contains(char[] caFind, char element)
+			{
+				for (int index = 0; index < caFind.length; index++)
+				{
+					if(caFind[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			
+			public boolean contains(char element)
+			{
+				for (int index = 0; index < this.alphabet.length; index++)
+				{
+					if(this.alphabet[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+		```
+
+
+??? info "Video zur Vorlesung Klausurvorbereitung 1 -- 18.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=3c2e538513a6877d6daa410ee03cfa8c&width=720&height=405&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=3c2e538513a6877d6daa410ee03cfa8c&width=720&height=405&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+

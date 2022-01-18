@@ -2083,6 +2083,3879 @@
 ***Falls Sie noch Lust und Zeit haben, ein wenig selbständig zu üben, hier einige Aufgaben:***
 
 
+### Probeklausuren
+
+
+??? note "Punkt2D und Punkt3D"
+	
+	1. Erstellen Sie ein package `klausurvorbereitung1`. 
+	2. Erstellen Sie in diesem package eine Klasse `Punkt3D` mit 
+
+		- drei privaten Objektvariablen `x`, `y` und `z`, jeweils vom Typ `int`,
+		- einem parametrisierten Konstruktor `Punkt3D(int x, int y, int z)`. Mit den Parameterwerten werden die Objektvariablen initialisiert. 
+		- Getter für die drei Objektvariablen (`getX()`, `getY()` und `getZ()`). 
+		- Überschreiben Sie die Methode `toString()`, so dass folgende textuelle Reräsentation als `String` erzeugt wird (Beispielwerte):
+			```bash
+			(5,2,3)
+			```
+			also in runden Klammern die Werte von `x`, `y` und `z` durch Komma getrennt.
+		- Schreiben Sie eine Objektmethode `print()`, die den durch `toString()` erzeugten `String` auf die Konsole ausgibt.
+		- Überschreiben Sie die Methode `equals(Object o)` so, dass zwei `Punkt3D`-Objekte gleich sind, wenn ihre Objektvariablen `x`, `y` und `z` jeweils paarweise den gleichen Wert besitzen. 
+		- Schreiben Sie eine Objektmethode `xIsSmaller(Punkt3D p)`, die ein `true` zurückgibt, wenn das aufrufende Objekt einen kleineren `x`-Wert hat als `p`; `false` sonst.
+		- Schreiben Sie eine Objektmethode `yIsSmaller(Punkt3D p)`, die ein `true` zurückgibt, wenn das aufrufende Objekt einen kleineren `y`-Wert hat als `p`; `false` sonst.
+		- Schreiben Sie eine Objektmethode `zIsSmaller(Punkt3D p)`, die ein `true` zurückgibt, wenn das aufrufende Objekt einen kleineren `z`-Wert hat als `p`; `false` sonst.
+
+	3. Erstellen Sie im gleichen package eine Klasse `Punkt2D`. Diese Klasse erbt von `Punkt3D`. Bei einem Objekt vom Typ `Punkt2D` ist der Wert von `z` stets `0`! 
+
+		- Schreiben Sie einen parametrisierten Konstruktor `Punkt2D(int x, int y)`. Verwenden Sie die Parameterwerte, um den entsprechenden Objektvariablen Werte zuzuweisen und setzen Sie den Wert von `z` auf `0`.
+		- Überschreiben Sie die Methode `toString()`, so dass folgende textuelle Reräsentation als `String` erzeugt wird (Beispielwerte):
+			```bash
+			(5,2)
+			```
+			also in runden Klammern die Werte von `x` und `y` durch Komma getrennt. ( der Wert von `z` wird nicht mehr ausgewertet, er ist ja immer `0`). 
+
+	4. Testen Sie die Klassen `Punkt3D` und `Punkt2D` in einer `Testklasse` mit `main()`-Methode wie folgt:
+
+		- Erstellen Sie ein Array vom Typ `Punkt2D`. Es hat die Länge `3`. 
+		- Erzeugen Sie ein `Random`-Objekt. Sie müssen dazu die Klasse `Random` aus dem `java.util`-Paket importieren. 
+		- innerhalb einer Schleife soll nun Folgendes passieren:
+
+			- Sie erzeugen sich für `x`, `y` und `z` jeweils Zufallszahlen aus dem Bereich `[0, ... ,9]` (`0` und `9` inklusive, also `10` mögliche Zufallszahlen). 
+			- wenn `z` den Wert `0` hat, dann erzeugen Sie mit den zufällig erzeugten Werten von `x` und `y` ein Objekt vom Typ `Punkt2D` und speichern dieses im Array. Rufen Sie dafür die `print()`-Methode auf. 
+			- wenn `z` einen Wert ungleich `0` hat, dann erzeugen Sie mit den zufällig erzeugten Werten von `x`, `y` und `z` ein Objekt vom Typ `Punkt3D` und rufen dafür die `print()`-Methode auf. Ein solches Objekt wird nicht weiter gespeichert. 
+			- diesen Prozess wiederholen Sie so lange, bis das `Punkt2D[]`-Array befüllt ist, bis Sie also *drei*  `Punkt2D`-Objekte erzeugt und im Array gespeichert haben.  
+
+		- Eine mögliche Ausgabe könnte so sein (Zufallswerte):
+			```bash
+			---------------- Punkt2D und Punkt3D ---------------
+
+			(3,8,9)
+			(3,3,4)
+			(1,2,3)
+			(7,6,7)
+			(0,4,7)
+			(9,0,8)
+			(0,3,8)
+			(3,3,9)
+			(7,2,1)
+			(2,4)
+			(1,8)
+			(6,4,7)
+			(2,1,2)
+			(7,4,1)
+			(7,1,1)
+			(0,2,2)
+			(6,4,9)
+			(1,2,7)
+			(3,9,8)
+			(2,3)
+			```
+			das letzte Objekt ist immer ein `Punkt2D`-Objekt, denn nach dem dritten `Punkt2D`-Objekt hören Sie ja auf, Objekte zu erzeugen (Schleifenende).
+
+	5. Erstellen Sie im gleichen package eine Klasse `Strecke` mit 
+
+		- den privaten Objektvariablen `start` und `ende`, jeweils vom Typ `Punkt2D`,
+		- einem parametrisierten Konstruktor `Strecke(Punkt2D start, Punkt2D ende)`. Mit den Parameterwerten werden die Objektvariablen initialisiert. 
+		- einem weiteren parametrisierten Konstruktor `Strecke(int x1, int y1, int x2, int y2)`. Mit den Parameterwerten `x1` und `y1` erzeugen Sie sich ein `Punkt2D`-Objekt, das den `start`-Punkt bildet und mit den Parameterwerten `x2` und `y2` erzeugen Sie sich ein `Punkt2D`-Objekt, das den `ende`-Punkt bildet. 
+		- Schreiben Sie eine Objektmethode `laenge()`, die die Länge der `Strecke` als `double` zurückgibt. Sie können dazu die Methoden `Math.abs(number)` für den absoluten Betrag von `number` und `Math.sqrt(number)` für die Quadratwurzel von `number` (als `double`) verwenden. **Tipp:**
+			![strecke](./files/88_strecke.png)
+
+		- Überschreiben Sie die Methode `toString()`, so dass folgende textuelle Reräsentation der `Strecke` als `String` erzeugt wird (Beispielwerte):
+			```bash
+			Strecke [start=(2,4), ende=(1,8), Laenge= 4,1231cm]
+			```
+			also die Start- und Endpunkte ausgegeben werden und die Länge der Strecke in eckigen Klammern nach dem Wort `Strecke`.  
+		- Schreiben Sie eine Objektmethode `print()`, die den durch `toString()` erzeugten `String` auf die Konsole ausgibt.
+
+	6. Testen Sie die Klasse `Strecke` in der `Testklasse` mit `main()`-Methode wie folgt:
+
+		- Erzeugen Sie `3` Objekte der Klasse `Strecke`. Wählen Sie 
+
+			- als `start`-Punkt der *ersten* Strecke, den *ersten* Punkt aus dem `Punkt2D`-Array aus dem ersten Teil der Aufgabe, als `ende`-Punkt den *zweiten* Punkt aus dem `Punkt2D`-Array aus dem ersten Teil, 
+			- als `start`-Punkt der *zweiten* Strecke, den *zweiten* Punkt aus dem `Punkt2D`-Array aus dem ersten Teil der Aufgabe, als `ende`-Punkt den *dritten* Punkt aus dem `Punkt2D`-Array aus dem ersten Teil, 
+			- als `start`-Punkt der *dritten* Strecke, den *dritten* Punkt aus dem `Punkt2D`-Array aus dem ersten Teil der Aufgabe, als `ende`-Punkt den *ersten* Punkt aus dem `Punkt2D`-Array aus dem ersten Teil.
+		- Wenden Sie für alle drei `Strecke`-Objekte die `print()`-Methode an. Es sollte folgende Ausgabe erzeugt werden (Beispielwerte):
+			```bash
+			-------------------- Strecke -----------------------
+
+			Strecke [start=(7,1), ende=(6,4), Laenge= 3,1623cm]
+			Strecke [start=(6,4), ende=(4,6), Laenge= 2,8284cm]
+			Strecke [start=(4,6), ende=(7,1), Laenge= 5,8310cm]
+			```
+
+	7. Erstellen Sie im gleichen package eine Klasse `PunkteArray` mit 
+
+		- der privaten Objektvariablen `punkte` vom Typ `Punkt2D[]`,
+		- dem parametrisierten Konstruktor `PunkteArray(int anzahl)`, dem die Anzahl der Punkte, also die Länge des `punkte`-Arrays übergeben wird. Erzeugen Sie unter Verwendung dieser `anzahl` das `punkte`-Array.
+		- Schreiben Sie eine Objektmethode `contains(Punkt2D p)`. Diese Methode gibt ein `true` zurück, wenn `p` im `punkte`-Array enthalten ist und `false` sonst. **Tipp:** Beachten Sie, dass es sein kann, dass nicht alle Elemente im `punkte`-Array tatsächlich ein Objekt enthalten. Es kann also sein, dass manche Referenzvariablen `this.punkte[index]` den Wert `null` haben. Mithilfe von `this.punkte[index] != null` können Sie prüfen, ob `this.punkte[index]` **nicht** auf `null` zeigt. 
+		- Schreiben Sie eine Objektmethode `fillArray()`. Diese Methode befüllt das `punkte`-Array vollständig mit `Punkte2D`-Objekten. Beachten Sie:
+
+			- die Werte für `x` und `y` aller Objekte sollen jeweils zufällig mithilfe von `Random` erzeugt werden. Der Wertebereich ist dabei jeweils `[0, ... ,9]` (also `0` und `9` inklusive, insgesamt `10` verschiedene Zufallszahlen),
+			- `Punkt2D`-Objekte dürfen nicht doppelt im `punkte`-Array vorkommen, d.h. es gibt keine zwei Punkte `p1` und `p2` im `punkte`-Array für die `p1.equals(p2)` den Wert `true` hat. 
+
+		- Überschreiben Sie die Methode `toString()`, so dass folgende textuelle Reräsentation des `PunkteArray` als `String` erzeugt wird (Beispielwerte):
+			```bash
+			[ (6,7), (3,2), (1,4), (5,0), (4,6), (9,5), (1,5), (0,3), (4,9), (6,9), (5,2), (1,9), (7,6), (2,3), (4,4) ]
+			```
+			also alle Punkte in eckigen Klammern durch Komma getrennt.  
+		- Schreiben Sie eine Objektmethode `print()`, die den durch `toString()` erzeugten `String` auf die Konsole ausgibt.
+
+		- **Hinweis:** (für die folgenden Methoden) Ein *Polygon* ist ein geschlossener Linienezug aus Strecken. Die folgende Abbildung zeigt ein Polygon, das aus den Strecken `(p1, p2)`, `(p2, p3)`, `(p3, p4)`, `(p4, p5)` und `(p5, p1)` besteht. Es gibt darin also `5` Punkte und `5`Strecken:
+			![strecke](./files/91_polygon.png)
+
+		- Schreiben Sie eine Objektmethode `createPolygon()`, die ein `Strecke[]` zurückgibt. Das `Strecke[]` ist genau so lang wie das `punkte`-Array. Das `Strecke[]` wird mit Objekten vom Typ `Strecke` vollständig befüllt. Dabei sind die `start`- und `ende`-Punkte immer die Nachbarpunkte aus dem `punkte`-Array. Jeder Punkt aus dem `punkte`-Array wird also zwei Mal verwendet, einmal als `ende`-Punkt einer Strecke und einmal als `start`-Punkt der nächsten Strecke im `Strecke[]`. Beachten Sie, dass der `start`-Punkt der letzten Strecke im `Strecke[]` der letzte Punkte im `punkte`-Array und der `ende`-Punkt dieser Strecke der erste Punkt im `punkte`-Array ist - siehe Skizze:
+			![strecke](./files/90_punktearray.png)
+
+		- Schreiben Sie eine Objektmethode `gesamtLaenge()`, die die Gesamtlänge aller Strecken im Polygon ermittelt und diese als `double` zurückgibt. **Tipp:** Sie müssen sich in der Methode erst mithilfe der `createPolygon()`-Methode das Polygon erzeugen. 
+		- Schreiben Sie eine Objektmethode `amWeitestenLinks()`, die den `Punkt2D` aus dem `punkte`-Array zurückgibt, der am weitesten links von allen ist (den kleinsten `x`-Wert von allen hat). Geben Sie diesen Punkt zurück.  
+		- Schreiben Sie eine Objektmethode `amWeitestenOben()`, die den `Punkt2D` aus dem `punkte`-Array zurückgibt, der am weitesten oben von allen ist (den kleinsten `y`-Wert von allen hat). Geben Sie diesen Punkt zurück. 
+		- Schreiben Sie eine Objektmethode `laengsteStrecke()`, die die längste `Strecke` aller Strecken im Polygon ermittelt und diese zurückgibt. **Tipp:** Sie müssen sich in der Methode erst mithilfe der `createPolygon()`-Methode das Polygon erzeugen.  
+		- Schreiben Sie eine Objektmethode `printStrecken()`. Diese Methode gibt alle Strecken aus dem Polygon auf die Konsole aus. Außerdem wird die Gesamtlänge aller Strecken aus dem Polygon, der am weitesten links stehende Punkt aus dem `punkte`-Array und der am weitesten oben stehende Punkt aus dem `punkte`-Array ausgegeben. **Tipp:** Sie müssen sich in der Methode erst mithilfe der `createPolygon()`-Methode das Polygon erzeugen. Es sollte folgende Ausgabe erfolgen (Beispielwerte):
+			```bash
+			Strecke [start=(0,1), ende=(2,1), Laenge= 2,0000cm]
+			Strecke [start=(2,1), ende=(5,7), Laenge= 6,7082cm]
+			Strecke [start=(5,7), ende=(8,7), Laenge= 3,0000cm]
+			Strecke [start=(8,7), ende=(7,4), Laenge= 3,1623cm]
+			Strecke [start=(7,4), ende=(8,1), Laenge= 3,1623cm]
+			Strecke [start=(8,1), ende=(1,1), Laenge= 7,0000cm]
+			Strecke [start=(1,1), ende=(4,6), Laenge= 5,8310cm]
+			Strecke [start=(4,6), ende=(2,9), Laenge= 3,6056cm]
+			Strecke [start=(2,9), ende=(9,4), Laenge= 8,6023cm]
+			Strecke [start=(9,4), ende=(6,8), Laenge= 5,0000cm]
+			Strecke [start=(6,8), ende=(9,8), Laenge= 3,0000cm]
+			Strecke [start=(9,8), ende=(5,6), Laenge= 4,4721cm]
+			Strecke [start=(5,6), ende=(8,4), Laenge= 3,6056cm]
+			Strecke [start=(8,4), ende=(6,5), Laenge= 2,2361cm]
+			Strecke [start=(6,5), ende=(0,1), Laenge= 7,2111cm]
+			Gesamtlaenge der Strecken : 68,5964cm 
+			am weitesten links        : (0,1) 
+			am weitesten oben         : (0,1) 
+			laengste                  : Strecke [start=(2,9), ende=(9,4), Laenge= 8,6023cm] 
+			```
+
+	8. Testen Sie die Klasse `PunkteArray` in der `Testklasse` mit `main()`-Methode wie folgt:
+
+		- Erzeugen Sie ein Objekt der Klasse `PunkteArray` und übergeben Sie als Anzahl der `punkte` den Wert `15`.
+		- Rufen Sie für diese Objekt die Methoden `fillArray()`, `print()` und `printStrecken()` auf. 
+		- Es sollten folgende Ausgaben erzeugt werden (Beispielwerte):
+			```bash
+			------------------ PunkteArray ---------------------
+
+			[ (0,1), (2,1), (5,7), (8,7), (7,4), (8,1), (1,1), (4,6), (2,9), (9,4), (6,8), (9,8), (5,6), (8,4), (6,5) ]
+			Strecke [start=(0,1), ende=(2,1), Laenge= 2,0000cm]
+			Strecke [start=(2,1), ende=(5,7), Laenge= 6,7082cm]
+			Strecke [start=(5,7), ende=(8,7), Laenge= 3,0000cm]
+			Strecke [start=(8,7), ende=(7,4), Laenge= 3,1623cm]
+			Strecke [start=(7,4), ende=(8,1), Laenge= 3,1623cm]
+			Strecke [start=(8,1), ende=(1,1), Laenge= 7,0000cm]
+			Strecke [start=(1,1), ende=(4,6), Laenge= 5,8310cm]
+			Strecke [start=(4,6), ende=(2,9), Laenge= 3,6056cm]
+			Strecke [start=(2,9), ende=(9,4), Laenge= 8,6023cm]
+			Strecke [start=(9,4), ende=(6,8), Laenge= 5,0000cm]
+			Strecke [start=(6,8), ende=(9,8), Laenge= 3,0000cm]
+			Strecke [start=(9,8), ende=(5,6), Laenge= 4,4721cm]
+			Strecke [start=(5,6), ende=(8,4), Laenge= 3,6056cm]
+			Strecke [start=(8,4), ende=(6,5), Laenge= 2,2361cm]
+			Strecke [start=(6,5), ende=(0,1), Laenge= 7,2111cm]
+			Gesamtlaenge der Strecken : 68,5964cm 
+			am weitesten links        : (0,1) 
+			am weitesten oben         : (0,1) 
+			laengste                  : Strecke [start=(2,9), ende=(9,4), Laenge= 8,6023cm] 
+			```
+
+??? question "Eine mögliche Lösung für Punkt2D, Punkt3D"
+	=== "Punkt3D.java"
+		```java 
+		package klausurvorbereitung.punkte;
+
+		public class Punkt3D
+		{
+			private int x;
+			private int y;
+			private int z;
+			
+			public Punkt3D(int x, int y, int z)
+			{
+				this.x = x;
+				this.y = y;
+				this.z = z;
+			}
+
+			public int getX()
+			{
+				return this.x;
+			}
+
+			public int getY()
+			{
+				return this.y;
+			}
+			
+			public int getZ()
+			{
+				return this.z;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("(%d,%d,%d)", this.x, this.y, this.z);
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Punkt3D p = (Punkt3D)o;
+				return this.x == p.x && this.y == p.y && this.z == p.z;
+			}
+			
+			public boolean xIsSmaller(Punkt3D p)
+			{
+				return this.x < p.x;
+			}	
+			
+			public boolean yIsSmaller(Punkt3D p)
+			{
+				return this.y < p.y;
+			}
+			
+			public boolean zIsSmaller(Punkt3D p)
+			{
+				return this.z < p.z;
+			}
+		}
+		```
+
+	=== "Punkt2D.java"
+		```java linenums="1"
+		package klausurvorbereitung.punkte;
+
+		public class Punkt2D extends Punkt3D
+		{
+			public Punkt2D(int x, int y)
+			{
+				super(x,y,0);
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("(%d,%d)", this.getX(), this.getY());
+			}
+		}
+		```
+
+	=== "Strecke.java"
+		```java linenums="1" 
+		package klausurvorbereitung.punkte;
+
+		public class Strecke
+		{
+			private Punkt2D start;
+			private Punkt2D ende;
+			
+			public Strecke(Punkt2D start, Punkt2D ende)
+			{
+				this.start = start;
+				this.ende = ende;
+			}
+			
+			public Strecke(int x1, int y1, int x2, int y2)
+			{
+				this.start = new Punkt2D(x1, y1);
+				this.ende = new Punkt2D(x2, y2);
+			}
+			
+			public double laenge()
+			{
+				int diffX = Math.abs(start.getX() - ende.getX());
+				int diffY = Math.abs(start.getY() - ende.getY());
+				int diffX2 = diffX * diffX;
+				int diffY2 = diffY * diffY;
+				double laenge = Math.sqrt(diffX2 + diffY2);
+				return laenge;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("Strecke [start=%s, ende=%s, Laenge=%7.4fcm]", start.toString(), ende.toString(), this.laenge());
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+		```	
+
+	=== "PunkteArray.java"
+		```java linenums="1" 
+		package klausurvorbereitung.punkte;
+
+		import java.util.Random;
+
+		public class PunkteArray
+		{
+			private Punkt2D[] punkte;
+			
+			public PunkteArray(int anzahl)
+			{
+				this.punkte = new Punkt2D[anzahl];
+			}
+			
+			public boolean contains(Punkt2D p)
+			{
+				for (int index = 0; index < this.punkte.length; index++)
+				{
+					if(this.punkte[index] != null && this.punkte[index].equals(p)) 
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public void fillArray()
+			{
+				Random r = new Random();
+				for(int index=0; index < this.punkte.length; index++)
+				{
+					int x = r.nextInt(10);
+					int y = r.nextInt(10);
+					Punkt2D p = new Punkt2D(x,y);
+					while(this.contains(p))
+					{
+						x = r.nextInt(10);
+						y = r.nextInt(10);
+						p = new Punkt2D(x,y);
+					}
+					this.punkte[index] = p;
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = "[ ";
+				for(int index=0; index < this.punkte.length; index++)
+				{
+					if(index<this.punkte.length-1)
+					{
+						s += this.punkte[index].toString() + ", ";
+					}
+					else
+					{
+						s += this.punkte[index].toString();
+					}
+				}
+				s += " ]";
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public Strecke[] createPolygon()
+			{
+				Strecke[] polygon = new Strecke[this.punkte.length];
+				for(int index=0; index < this.punkte.length-1; index++)
+				{
+					polygon[index] = new Strecke(this.punkte[index], this.punkte[index+1]);
+				}
+				int index = this.punkte.length-1;
+				polygon[index] = new Strecke(this.punkte[index], this.punkte[0]);
+				return polygon;
+			}
+			
+			public void printStrecken()
+			{
+				Strecke[] polygon = this.createPolygon();
+				for(int index=0; index < polygon.length; index++)
+				{
+					polygon[index].print();
+				}
+				System.out.printf("Gesamtlaenge der Strecken : %7.4fcm %n", this.gesamtLaenge());
+				System.out.printf("am weitesten links        : %s %n", this.amWeitestenLinks().toString());
+				System.out.printf("am weitesten oben         : %s %n", this.amWeitestenOben().toString());
+				System.out.printf("laengste                  : %s %n", this.laengsteStrecke().toString());
+					
+			}
+			
+			public double gesamtLaenge()
+			{
+				Strecke[] polygon = this.createPolygon();
+				double gesamtLaenge = 0.0;
+				for(int index=0; index < polygon.length; index++)
+				{
+					gesamtLaenge += polygon[index].laenge();
+				}
+				return gesamtLaenge;
+			}
+			
+			public Punkt2D amWeitestenLinks()
+			{
+				int indexLinks = 0;
+				for(int index=0; index < this.punkte.length-1; index++)
+				{
+					if(this.punkte[index].xIsSmaller(this.punkte[indexLinks]))
+					{
+						indexLinks = index;
+					}
+				}
+				return this.punkte[indexLinks];
+			}
+			
+			public Punkt2D amWeitestenOben()
+			{
+				int indexOben = 0;
+				for(int index=0; index < this.punkte.length-1; index++)
+				{
+					if(this.punkte[index].yIsSmaller(this.punkte[indexOben]))
+					{
+						indexOben = index;
+					}
+				}
+				return this.punkte[indexOben];
+			}
+			
+			public Strecke laengsteStrecke()
+			{
+				Strecke[] polygon = this.createPolygon();
+				int indexLaengste = 0;
+				for(int index=0; index < polygon.length; index++)
+				{
+					if(polygon[index].laenge() > polygon[indexLaengste].laenge())
+					{
+						indexLaengste = index;
+					}
+				}
+				return polygon[indexLaengste];
+			}
+		}
+		```	
+
+	=== "Testklasse.java"
+		```java linenums="1" 
+		package klausurvorbereitung.punkte;
+
+		import java.util.Random;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n---------------- Punkt2D und Punkt3D ---------------%n%n");
+				Random r = new Random();
+				Punkt2D[] pa = new Punkt2D[3];
+				int anz2D = 0;
+				while(anz2D < 3)
+				{
+					int x = r.nextInt(10);
+					int y = r.nextInt(10);
+					int z = r.nextInt(10);
+					Punkt3D p;
+					if(z==0)
+					{
+						pa[anz2D] = new Punkt2D(x,y);
+						pa[anz2D].print();
+						anz2D++;
+					}
+					else
+					{
+						p = new Punkt3D(x,y,z);
+						p.print();
+					}
+				}
+				
+				System.out.printf("%n%n-------------------- Strecke -----------------------%n%n");
+				Strecke s1 = new Strecke(pa[0], pa[1]);
+				Strecke s2 = new Strecke(pa[1], pa[2]);
+				Strecke s3 = new Strecke(pa[2], pa[0]);
+				s1.print();
+				s2.print();
+				s3.print();
+				
+				System.out.printf("%n%n------------------ PunkteArray ---------------------%n%n");
+				PunkteArray parr = new PunkteArray(15);
+				parr.fillArray();
+				parr.print();
+				parr.printStrecken();
+			}
+
+		}
+		```	
+
+
+??? note "Wohnung"
+	
+	1. Erstellen Sie ein package `klausurvorbereitung.wohnung`. 
+	2. Erstellen Sie in diesem package eine Klasse `Wohnung` mit
+
+		- den privaten Objektvariablen 
+			- `qm` vom Typ `int`, (entspricht der Größe der Wohnung in m^2)
+			- `anzZimmer` vom Typ `int`,
+			- `etage` vom Typ `int` und 
+			- `qmMiete` vom Typ `double` (entspricht dem Mietpreis pro m^2). 
+		- einem parametrisierten Konstruktor Wohnung(int qm, int anzZimmer, int etage, double qmMiete). Die Werte der Parameter werden verwendet, um den Objektvariablen Werte zuzuweisen.
+		- Gettern für alle Objektvariablen (`getQm()`, `getAnzZimmer()`, `getEtage()`, `getQmMiete()`)
+		- einer Objektmethode `gesamtMiete()`, die die Gesamtmiete der Wohnung berechnet (`qm` * `qmMiete`) und diesen `double`-Wert zurückgibt. 
+		- einer Objektmethode `billiger(Wohnung w)`, die ein `true` zurückgibt, wenn die Gesamtmiete des aufrufenden Objektes kleiner ist als die Gesamtmiete von `w`; `false` sonst.
+		- einer Objektmethode `teurer(Wohnung w)`, die ein `true` zurückgibt, wenn die Gesamtmiete des aufrufenden Objektes größer ist als die Gesamtmiete von `w`; `false` sonst.
+		- einer Objektmethode `toString()` die Details der Wohnung in folgender Form (ab inkl. 1. Etage aufwärts) als `String` zurückgibt (Beispielwerte):
+			```bash
+			2-Zimmer Wohnung mit 40 qm in der 4. Etage. Monatliche Miete: 360.00 Euro
+			```
+			Achtung! Sollte sich die Wohnung in der 0.Etage befinden, geben Sie die Details bitte wie folgt zurück (Beispielwerte):
+			```bash
+			1-Zimmer Wohnung mit 60 qm im Erdgeschoss. Monatliche Miete: 750.00 Euro`
+			```
+
+		- und einer Objektmethode `print()`, die den von `toString()`zurückgegebenen `String` auf der Konsole ausgibt
+
+	2. Erstellen Sie im gleichen package eine Klasse `Testklasse` mit `main()`-Methode. Geben Sie in der `main()`-Methode Folgendes ein:
+		```java
+		System.out.printf("%n%n--------------------- Test Wohnung -------------------------%n%n");
+		Wohnung w1 = new Wohnung(70, 3, 4, 12.50);
+		Wohnung w2 = new Wohnung(40, 1, 0, 9.50);
+		Wohnung w3 = new Wohnung(90, 4, 2, 11.10);
+		Wohnung w4 = new Wohnung(60, 2, 0, 9.00);
+		
+		w1.print();
+		w2.print();
+		w3.print();
+		w4.print();
+		```	
+		und führen Sie die `Testklasse` aus. Es sollten folgende zusätzliche Ausgaben erzeugt werden:
+		```bash
+		--------------------- Test Wohnung -------------------------
+
+		3-Zimmer Wohnung mit 70qm in der 4. Etage. Monatliche Miete: 875,00 Euro
+		1-Zimmer Wohnung mit 40qm im Erdgeschoss. Monatliche Miete: 380,00 Euro
+		4-Zimmer Wohnung mit 90qm in der 2. Etage. Monatliche Miete: 999,00 Euro
+		2-Zimmer Wohnung mit 60qm im Erdgeschoss. Monatliche Miete: 540,00 Euro
+		```
+
+	2. Erstellen Sie im gleichen package eine Klasse `Dachgeschosswohnung`. Diese erbt von `Wohnung`. 
+
+		- Implementieren Sie einen parametrisierten Konstruktor `Dachgeschosswohnung(int qm, int anzZimmer, double qmMiete)`. Bei Aufruf des Konstruktors werden die entsprechenden Objektvariablen mit den Parameterwerten initialisiert. Die Objektvariable `etage` bekommt stets den Wert `5`. 
+		- Überschreiben Sie die Methode `toString()`, so dass eine Zeichenkette der Form (Beispielwerte)
+			```bash
+			4-Zimmer DG-Wohnung mit 100 qm in der 5. Etage. Monatliche Miete: 1250.00 Euro
+			```
+			zurückgegeben wird.  
+
+	3. Fügen Sie in der `main()`-Methode der `Testklasse` folgende Anweisungen hinzu:
+		```java	
+		System.out.printf("%n%n--------------- Test Dachgeschosswohnung -------------------%n%n");
+		Dachgeschosswohnung dg1 = new Dachgeschosswohnung(70, 3, 15.50);
+		Dachgeschosswohnung dg2 = new Dachgeschosswohnung(100, 4, 17.25);
+		
+		dg1.print();
+		dg2.print();
+		```
+		und führen Sie die `Testklasse` aus. Es sollten folgende zusätzliche Ausgaben erzeugt werden:
+		```bash
+		--------------- Test Dachgeschosswohnung -------------------
+
+		3-Zimmer DG-Wohnung mit 70qm in der 5. Etage. Monatliche Miete: 1085,00 Euro
+		4-Zimmer DG-Wohnung mit 100qm in der 5. Etage. Monatliche Miete: 1725,00 Euro
+		```
+
+	4. Erstellen Sie im gleichen package eine Klasse `Haus`.  
+
+		- Objektvariable ist `wohnungen` vom Typ `Wohnung[]` und nur in der Klasse sichtbar. 
+		- Implementieren Sie eine Objektmethode `neueWohnung()`. Diese Methode gibt ein Objekt vom Typ `Wohnung` zurück. In dieser Methode wird zunächst ein `Random`-Objekt erzeugt. Mithilfe dieses `Random`-Objektes und der Objektmethode `nextInt(int bound)` der Klasse `Random` sollen zunächst nacheinander folgende Werte zufällig erzeugt werden:
+			- Ein Wert für eine Quadratmeteranzahl `qm` aus dem Wertebereich `[20, 40, 60, 80, 100]` ( --> also zufällig eine dieser 5 Zahlen),
+			- Ein Wert für die Anzahl der Zimmer `anzZimmer` aus dem Wertebereich `[1, 2, 3, 4, 5]` ( --> also zufällig eine dieser 5 Zahlen),
+			- Ein Wert für die Etage `etage` aus dem Wertebereich `[0, 1, 2, 3, 4, 5]` ( --> also zufällig eine dieser 6 Zahlen),
+			- Ein Wert für den Mietpreis pro Quadratmeter `qmMiete` aus dem Wertebereich `[8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5]` ( --> also zufällig eine dieser 10 Zahlen – Achtung hier `double`, Sie können aber trotzdem `nextInt(int bound)` verwenden, müssen dann aber geeignet multiplizieren und addieren).
+		Erzeugen Sie mit diesen Werten ein neues `Wohnung`-Objekt und geben Sie dieses Objekt zurück.
+
+		- Implementieren Sie einen parametrisierten Konstruktor `Haus(int anzWohnungen)`. Darin wird das `wohnungen`-Array erzeugt. Die Länge von `wohnungen` entspricht dem Wert von `anzWohnungen`.
+		Befüllen Sie das `wohnungen`-Array vollständig mit Objekten vom Typ `Wohnungen`. Rufen Sie dazu für jedes Element des `wohnungen`-Arrays die Objektmethode `neueWohnung()` auf.<br/>
+		**Tipp :** Jedes Element des `wohnungen`-Arrays ist nach dem Befüllen mit Objekten vom Typ `Wohnung` eine Referenzvariable auf ein `Wohnung`-Objekt, d.h. z.B. ist `this.wohnungen[0]` vom Typ `Wohnung` und zeigt auf ein `Wohnung`-Objekt. Die folgende Abbildung verdeutlicht das für den Fall, dass das `wohnungen`-Array die Länge `10` hat:
+			![wohnungen](./files/85_wohnungen.png)	
+
+		- Implementieren Sie eine Objektmethode `print()`. Bei Aufruf der Methode soll das `wohnungen`-Array wie folgt ausgegeben werden (Beispielwerte für Array-Länge `5`:)
+			```bash 
+			Das Haus besteht aus : 
+			  5-Zimmer Wohnung mit 80qm im Erdgeschoss. Monatliche Miete: 1000,00 Euro
+			  4-Zimmer Wohnung mit 60qm in der 5. Etage. Monatliche Miete: 480,00 Euro
+			  2-Zimmer Wohnung mit 80qm in der 5. Etage. Monatliche Miete: 880,00 Euro
+			  5-Zimmer Wohnung mit 100qm in der 2. Etage. Monatliche Miete: 1100,00 Euro
+			  3-Zimmer Wohnung mit 80qm im Erdgeschoss. Monatliche Miete: 920,00 Euro
+			```
+
+
+	5. Fügen Sie in der `main()`-Methode der `Testklasse` folgende Anweisungen hinzu:
+		```java	
+		System.out.printf("%n%n---------------------- Test Haus ---------------------------%n%n");
+		Haus h1 = new Haus(10);
+		h1.print();
+		```
+		und führen Sie die `Testklasse` aus. Es sollten folgende zusätzliche Ausgaben erzeugt werden (Zufallswerte!):
+		```bash
+		---------------------- Test Haus ---------------------------
+
+		Das Haus besteht aus : 
+		  1-Zimmer Wohnung mit 80qm in der 4. Etage. Monatliche Miete: 840,00 Euro
+		  3-Zimmer Wohnung mit 60qm in der 3. Etage. Monatliche Miete: 540,00 Euro
+		  4-Zimmer Wohnung mit 80qm in der 3. Etage. Monatliche Miete: 1000,00 Euro
+		  5-Zimmer Wohnung mit 60qm in der 3. Etage. Monatliche Miete: 540,00 Euro
+		  2-Zimmer Wohnung mit 60qm im Erdgeschoss. Monatliche Miete: 510,00 Euro
+		  3-Zimmer Wohnung mit 60qm in der 4. Etage. Monatliche Miete: 600,00 Euro
+		  4-Zimmer Wohnung mit 20qm in der 3. Etage. Monatliche Miete: 250,00 Euro
+		  4-Zimmer Wohnung mit 100qm in der 5. Etage. Monatliche Miete: 850,00 Euro
+		  5-Zimmer Wohnung mit 20qm in der 2. Etage. Monatliche Miete: 160,00 Euro
+		  2-Zimmer Wohnung mit 40qm in der 2. Etage. Monatliche Miete: 400,00 Euro
+		```
+
+	6. **Zusatz:** Erweitern Sie die Klasse `Haus` um folgende Objektmethoden:
+
+		- eine Objektmethode `wohnungenInEtage(int etage)`. Diese Methode gibt ein `Wohnung[]`-Array zurück. Das zurückgegebene `Wohnung[]`-Array soll alle Wohnungen aus dem `wohnungen`-Array enthalten, die in der Etage liegen, die der Methode als Parameter übergeben wird (`etage`). Befindet sich keine Wohnung in der als Parameter übergeben Etage, so wird ein `Wohnung[]`-Array der Länge `0` zurückgegeben.
+		- eine Objektmethode `print(Wohnung[] warr)`. Diese Methode gibt das als Parameter übergebene `warr`-Array auf der Konsole aus, in der Form (Bsp.:):
+			```bash
+			2-Zimmer Wohnung mit 100 qm in der 2. Etage. Monatliche Miete: 1250.00 Euro
+			5-Zimmer Wohnung mit 100 qm in der 2. Etage. Monatliche Miete: 1000.00 Euro
+			```
+		- Testen der beiden Methoden in `main()`:
+			```java
+			System.out.printf("%n%n----- Test wohnungenInEtage() und print(Wohnung[]) ---------%n%n");
+			for(int etage=0; etage<6; etage++)
+			{
+				System.out.println("Etage " + etage + " ---------------------------------------");
+				h1.print(h1.wohnungenInEtage(etage));
+				System.out.println();
+			}
+			```
+			sollte folgende Ausgbabe erzeugen (Zufallswerte):
+			```bash
+			----- Test wohnungenInEtage() und print(Wohnung[]) ---------
+
+			Etage 0 ---------------------------------------
+			2-Zimmer Wohnung mit 60qm im Erdgeschoss. Monatliche Miete: 510,00 Euro
+
+			Etage 1 ---------------------------------------
+
+			Etage 2 ---------------------------------------
+			5-Zimmer Wohnung mit 20qm in der 2. Etage. Monatliche Miete: 160,00 Euro
+			2-Zimmer Wohnung mit 40qm in der 2. Etage. Monatliche Miete: 400,00 Euro
+
+			Etage 3 ---------------------------------------
+			3-Zimmer Wohnung mit 60qm in der 3. Etage. Monatliche Miete: 540,00 Euro
+			4-Zimmer Wohnung mit 80qm in der 3. Etage. Monatliche Miete: 1000,00 Euro
+			5-Zimmer Wohnung mit 60qm in der 3. Etage. Monatliche Miete: 540,00 Euro
+			4-Zimmer Wohnung mit 20qm in der 3. Etage. Monatliche Miete: 250,00 Euro
+
+			Etage 4 ---------------------------------------
+			1-Zimmer Wohnung mit 80qm in der 4. Etage. Monatliche Miete: 840,00 Euro
+			3-Zimmer Wohnung mit 60qm in der 4. Etage. Monatliche Miete: 600,00 Euro
+
+			Etage 5 ---------------------------------------
+			4-Zimmer Wohnung mit 100qm in der 5. Etage. Monatliche Miete: 850,00 Euro
+			```
+
+		- eine Objektmethode `teuersteWohnung()`. Diese Methode gibt die Wohnung aus dem `wohnungen`-Array zurück, die die höchste Gesamtmiete von allen Wohnungen aus dem `wohnungen`-Array hat.
+		- Testen der Methode in `main()`:
+			```java
+			System.out.printf("%n%n--------------- Test teuersteWohnung() ---------------------%n%n");
+			Wohnung teuerste = h1.teuersteWohnung();
+			teuerste.print();
+			```
+			sollte folgende Ausgbabe erzeugen (Zufallswerte):
+			```bash
+			--------------- Test teuersteWohnung() ---------------------
+
+			4-Zimmer Wohnung mit 80qm in der 3. Etage. Monatliche Miete: 1000,00 Euro
+			```
+
+		- eine Objektmethode `gesamtMieteHaus()`. Diese Methode gibt die Summe der Mieten aller Wohnungen im `wohnungen`-Array als `double` zurück. 
+		- Testen der Methode in `main()`:
+			```java
+			System.out.printf("%n%n---------------- Test gesamtMieteHaus() --------------------%n%n");
+			System.out.printf("Die Gesamtmiete fuer das Haus betraegt %.2f Euro.%n", h1.gesamtMieteHaus());
+			```
+			sollte folgende Ausgbabe erzeugen (Zufallswerte):
+			```bash
+			---------------- Test gesamtMieteHaus() --------------------
+
+			Die Gesamtmiete fuer das Haus betraegt 5690,00 Euro.
+			```
+
+		- eine Objektmethode `sortieren()`. Diese Methode sortiert das `wohnungen`-Array nach Gesamtmieten aufsteigend (beginnend mit der billigsten Wohnung und endend mit der teuersten).
+		- Testen der Methode in `main()`:
+			```java
+			System.out.printf("%n%n------------------- Test sortieren() -----------------------%n%n");
+			h1.sortieren();
+			h1.print();
+			```
+			sollte folgende Ausgbabe erzeugen (Zufallswerte):
+			```bash
+			------------------- Test sortieren() -----------------------
+
+			Das Haus besteht aus : 
+			  5-Zimmer Wohnung mit 20qm in der 2. Etage. Monatliche Miete: 160,00 Euro
+			  4-Zimmer Wohnung mit 20qm in der 3. Etage. Monatliche Miete: 250,00 Euro
+			  2-Zimmer Wohnung mit 40qm in der 2. Etage. Monatliche Miete: 400,00 Euro
+			  2-Zimmer Wohnung mit 60qm im Erdgeschoss. Monatliche Miete: 510,00 Euro
+			  3-Zimmer Wohnung mit 60qm in der 3. Etage. Monatliche Miete: 540,00 Euro
+			  5-Zimmer Wohnung mit 60qm in der 3. Etage. Monatliche Miete: 540,00 Euro
+			  3-Zimmer Wohnung mit 60qm in der 4. Etage. Monatliche Miete: 600,00 Euro
+			  1-Zimmer Wohnung mit 80qm in der 4. Etage. Monatliche Miete: 840,00 Euro
+			  4-Zimmer Wohnung mit 100qm in der 5. Etage. Monatliche Miete: 850,00 Euro
+			  4-Zimmer Wohnung mit 80qm in der 3. Etage. Monatliche Miete: 1000,00 Euro
+			```
+
+??? question "Eine mögliche Lösung für Wohnung"
+	=== "Wohnung.java"
+		```java 
+		package klausurvorbereitung.wohnung;
+
+		public class Wohnung
+		{
+			private int qm;
+			private int anzZimmer;
+			private int etage;
+			private double qmMiete;
+			
+			public Wohnung(int qm, int anzZimmer, int etage, double qmMiete)
+			{
+				this.qm = qm;
+				this.anzZimmer = anzZimmer;
+				this.etage = etage;
+				this.qmMiete = qmMiete;
+			}
+			
+			public int getQm()
+			{
+				return this.qm;
+			}
+
+			public int getAnzZimmer()
+			{
+				return this.anzZimmer;
+			}
+
+			public int getEtage()
+			{
+				return this.etage;
+			}
+
+			public double getQmMiete()
+			{
+				return this.qmMiete;
+			}
+
+			public double gesamtMiete()
+			{
+				return this.qm * this.qmMiete;
+			}
+			
+			public boolean billiger(Wohnung w)
+			{
+				return this.gesamtMiete() < w.gesamtMiete();
+			}
+			
+			public boolean teurer(Wohnung w)
+			{
+				return this.gesamtMiete() > w.gesamtMiete();
+			}
+			
+			public String toString()
+			{
+				String s = "";
+				if(this.etage == 0)
+				{
+					s = String.format("%d-Zimmer Wohnung mit %d qm im Erdgeschoss. Monatliche Miete: %.2f Euro", 
+							this.anzZimmer, this.qm, this.gesamtMiete() );
+				}
+				else
+				{
+					s = String.format("%d-Zimmer Wohnung mit %d qm in der %d. Etage. Monatliche Miete: %.2f Euro", 
+							this.anzZimmer, this.qm, this.etage, this.gesamtMiete() );
+				}
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+		}
+		```
+
+	=== "Dachgeschoss.java"
+		```java 
+		package klausurvorbereitung.wohnung;
+
+		public class Dachgeschosswohnung extends Wohnung
+		{
+			// alle Objektvariablen von Wohnung geerbt
+			// qm, anzZimmer, etage, qmMiete
+			// alle Objektmethoden von Wohnung geerbt
+			
+			public Dachgeschosswohnung(int qm, int anzZimmer, double qmMiete)
+			{
+				super(qm, anzZimmer, 5, qmMiete);	// Konstruktor Wohnung
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s= "";
+				s = String.format("%d-Zimmer Wohnung mit %d qm in der %d. Etage. Monatliche Miete: %.2f Euro", 
+						this.getAnzZimmer(), this.getQm(), this.getEtage(), this.gesamtMiete() );
+				return s;
+			}
+		}
+		```
+
+	=== "Haus.java"
+		```java 
+		package klausurvorbereitung.wohnung;
+
+		import java.util.Random;
+
+		public class Haus
+		{
+			private Wohnung[] wohnungen;
+			
+			public Wohnung neueWohnung()
+			{
+				Random r = new Random();
+				int qm = r.nextInt(5) * 20 + 20;
+				int anzZimmer = r.nextInt(5) + 1;
+				int etage = r.nextInt(6);
+				double qmMiete = r.nextInt(10) * 0.5 + 8.0;
+				
+				return new Wohnung(qm, anzZimmer, etage, qmMiete);
+			}
+			
+			public Haus(int anzWohnungen)
+			{
+				this.wohnungen = new Wohnung[anzWohnungen];
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					this.wohnungen[index] = this.neueWohnung();
+				}
+			}
+			
+			public void print()
+			{
+				System.out.println("Das Haus besteht aus :");
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					this.wohnungen[index].print(); 	// print()-Methode von Wohnung
+				}
+			}
+			
+			public Wohnung[] wohnungenInEtage(int etage)
+			{
+				int anzWohnungenInEtage = 0;
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					if(this.wohnungen[index].getEtage()==etage)
+					{
+						anzWohnungenInEtage++;
+					}
+				}
+				
+				Wohnung[] wohnungenInEtage = new Wohnung[anzWohnungenInEtage];
+				int indexWIE = 0;
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					if(this.wohnungen[index].getEtage()==etage)
+					{
+						wohnungenInEtage[indexWIE] = this.wohnungen[index];
+						indexWIE++;
+					}
+				}
+				return wohnungenInEtage;
+			}
+			
+			public void print(Wohnung[] warr)
+			{
+				for (int index = 0; index < warr.length; index++)
+				{
+					warr[index].print(); 	// print()-Methode von Wohnung
+				}
+			}
+			
+			public Wohnung teuersteWohnung()
+			{
+				int indexMax = 0;
+				
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					if(this.wohnungen[index].teurer(this.wohnungen[indexMax]))
+					{
+						indexMax = index;
+					}
+				}
+				
+				return this.wohnungen[indexMax];
+			}
+			
+			public double gesamtMieteHaus()
+			{
+				double gesamtMieteHaus = 0.0;
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					gesamtMieteHaus = gesamtMieteHaus + this.wohnungen[index].gesamtMiete();
+				}
+				return gesamtMieteHaus;
+			}
+			
+			public void sortieren()
+			{
+				for(int bubble = 1; bubble < this.wohnungen.length; bubble++)
+				{
+					for(int index = 0; index < this.wohnungen.length - bubble; index++)
+					{
+						if(this.wohnungen[index].teurer(this.wohnungen[index + 1]))
+						{
+							Wohnung tmp = this.wohnungen[index];
+							this.wohnungen[index] = this.wohnungen[index + 1];
+							this.wohnungen[index + 1] = tmp;
+						}
+					}
+				}
+			}
+		}
+		```
+
+	=== "Testklasse.java"
+		```java 
+		package klausurvorbereitung.wohnung;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n--------------------- Test Wohnung -------------------------%n%n");
+				Wohnung w1 = new Wohnung(70, 3, 4, 12.50);
+				Wohnung w2 = new Wohnung(40, 1, 0, 9.50);
+				Wohnung w3 = new Wohnung(90, 4, 2, 11.10);
+				Wohnung w4 = new Wohnung(60, 2, 0, 9.00);
+
+				w1.print();
+				w2.print();
+				w3.print();
+				w4.print();
+				
+				System.out.printf("%n%n--------------- Test Dachgeschosswohnung -------------------%n%n");
+				Dachgeschosswohnung dg1 = new Dachgeschosswohnung(70, 3, 15.50);
+				Dachgeschosswohnung dg2 = new Dachgeschosswohnung(100, 4, 17.25);
+
+				dg1.print();
+				dg2.print();
+				
+				System.out.printf("%n%n---------------------- Test Haus ---------------------------%n%n");
+				Haus h1 = new Haus(10);
+				h1.print();
+
+				System.out.printf("%n%n----- Test wohnungenInEtage() und print(Wohnung[]) ---------%n%n");
+				for(int etage=0; etage<6; etage++)
+				{
+				    System.out.println("Etage " + etage + " ---------------------------------------");
+				    h1.print(h1.wohnungenInEtage(etage));
+				    System.out.println();
+				}
+				
+				System.out.printf("%n%n--------------- Test teuersteWohnung() ---------------------%n%n");
+				Wohnung teuerste = h1.teuersteWohnung();
+				teuerste.print();
+				
+				System.out.printf("%n%n---------------- Test gesamtMieteHaus() --------------------%n%n");
+				System.out.printf("Die Gesamtmiete fuer das Haus betraegt %.2f Euro.%n", h1.gesamtMieteHaus());
+			
+				System.out.printf("%n%n------------------- Test sortieren() -----------------------%n%n");
+				h1.sortieren();
+				h1.print();
+			}
+
+		}
+		```
+
+??? question "Video zu Wohnung"
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=6576514d74c8203d934640551f153b64&width=720&height=385&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="385" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
+
+??? note "Pizza"
+	
+	1. Erstellen Sie ein package `klausurvorbereitung.pizza`. 
+	2. Erstellen Sie in diesem package eine Klasse `Pizza` mit
+
+		- den privaten Objektvariablen 
+			- `name` vom Typ `String` und
+			- `preis` vom Typ `float`. 
+		- einem parametrisierten Konstruktor `Pizza(String name, float preis)`. Die Werte der Parameter werden verwendet, um den Objektvariablen Werte zuzuweisen.
+		- Gettern für die Objektvariablen (`getName()`, `getPreis()`)
+		- Überschreiben Sie die Objektmethode `toString()`, die Details der Pizza in folgender Form als `String` zurückgibt (Beispielwerte):
+			```bash
+			Die Pizza Salami kostet 6.90 Euro.
+			```
+		- und einer Objektmethode `print()`, die den von `toString()`zurückgegebenen `String` auf der Konsole ausgibt.
+		- Überschreiben Sie die Objektmethode `equals(Object o)`. Diese Methode gibt `true` zurück, wenn der Name `name` des aufrufenden Objektes gleich dem Namen `name` des als Parameter übergebenen Objektes ist; `false` sonst. **Tipp :** Die Gleichheit von zwei Strings `s1` und `s2` können Sie mithilfe von `s1.equals(s2)` ermitteln. (`hashCode()` muss nicht überschrieben werden).
+
+	3. Erstellen Sie im gleichen package eine Klasse `Testklasse` mit `main()`-Methode. Geben Sie in der `main()`-Methode Folgendes ein:
+		```java
+		System.out.printf("%n%n------------------------- Test Pizza ---------------------------%n%n");
+		Pizza p1 = new Pizza("Salami", 6.9f);
+		Pizza p2 = new Pizza("Margheritha", 5.9f);
+		Pizza p3 = new Pizza("Tonno", 6.9f);
+		Pizza p4 = new Pizza("Hawaii", 6.9f);
+		Pizza p5 = new Pizza("Calzone", 7.9f);
+		Pizza p6 = new Pizza("Salami", 6.9f);
+		
+		p1.print();
+		p2.print();
+		p3.print();
+		p4.print();
+		p5.print();
+		
+		System.out.println("p1 gleich p2 ? : " + p1.equals(p2));
+		System.out.println("p1 gleich p1 ? : " + p1.equals(p1));
+		System.out.println("p1 gleich p6 ? : " + p1.equals(p6));
+		```	
+		und führen Sie die `Testklasse` aus. Es sollten folgende zusätzliche Ausgaben erzeugt werden:
+		```bash
+		------------------------- Test Pizza ---------------------------
+
+		Die Pizza Salami kostet 6,90 Euro.
+		Die Pizza Margheritha kostet 5,90 Euro.
+		Die Pizza Tonno kostet 6,90 Euro.
+		Die Pizza Hawaii kostet 6,90 Euro.
+		Die Pizza Calzone kostet 7,90 Euro.
+
+		p1 gleich p2 ? : false
+		p1 gleich p1 ? : true
+		p1 gleich p6 ? : true
+		```
+	4. Erstellen Sie im gleichen package eine Klasse `Pizzaverkauf` mit
+
+		- den privaten Objektvariablen 
+			- `pizza` vom Typ `Pizza` und
+			- `anzVerkaeufe` vom Typ `int`. 
+		- einem parametrisierten Konstruktor `Pizzaverkauf(Pizza pizza)`. Mit dem Parameterwert `pizza` wird die Objektvariable `pizza` initialisiert. Der Wert der Objektvariablen `anzVerkaeufe` wird auf `0` gesetzt. 
+		- einer Objektmethode `verkaufen()`. Darin wird der Wert der Objektvariablen `anzVerkaeufe` um `1` erhöht.
+		- Gettern für die Objektvariablen, also `getAnzVerkaeufe()` und `getPizza()`.
+		- einer Objektmethode `umsatz()`. Diese Methode gibt ein `double` zurück. Der Wert berechnet sich aus der Anzahl der Verkäufe der Pizza (`anzVerkaeufe`) mal dem Preis der Pizza. 
+		- einer Objektmethode `toString()` die Details der Pizzaverkaeufe in folgender Form als `String` zurückgibt (Beispielwerte):
+			```bash
+			Pizza Salami wurde 0 mal zum Preis von 6.90 Euro verkauft.
+			```
+
+		- und einer Objektmethode `print()`, die den von `toString()`zurückgegebenen `String` auf der Konsole ausgibt
+
+	5. Fügen Sie in der `main()`-Methode der `Testklasse` folgende Anweisungen hinzu:
+		```java	
+		System.out.printf("%n%n--------------------- Test Pizzaverkauf ------------------------%n%n");
+		Pizzaverkauf pv1 = new Pizzaverkauf(p1);
+		pv1.print();
+		pv1.verkaufen();
+		pv1.print();
+		```
+		und führen Sie die `Testklasse` aus. Es sollten folgende zusätzliche Ausgaben erzeugt werden:
+		```bash
+		--------------------- Test Pizzaverkauf ------------------------
+
+		Pizza Salami wurde 0 mal zum Preis von 6,90 Euro verkauft.
+		Pizza Salami wurde 1 mal zum Preis von 6,90 Euro verkauft.
+		```
+
+	6. Erstellen Sie im gleichen package eine Klasse `Speisekarte` mit
+
+		- der privaten Objektvariablen 
+			- `angebot` vom Typ `Pizza[]`. 
+		- einem parameterlosen Konstruktor `Speisekarte()`. In diesem Konstruktor wird für `angebot` ein `Pizza`-Array der Länge `0` erzeugt. 
+		- einer Objektmethode `pizzaHinzufuegen(Pizza pizza)`. Diese Methode fügt die als Parameter übergebene `pizza` dem angebot-Array hinzu. <br/>
+		**Beachten Sie:**
+
+			- Um dem `angebot`-Array eine neue Pizza hinzuzufügen, muss die Länge des Arrays um 1 erhöht werden.
+			- Kopieren Sie sich dazu das alte `angebot`-Array.
+			- Erzeugen Sie dann ein neues `angebot`-Array, das um 1 länger ist als das alte.
+			- Kopieren Sie das bisherige Angebot zurück in das neue `angebot`-Array.
+			- Fügen Sie die neue Pizza (Parameter `pizza`) als letztes Element im neuen `angebot`-Array hinzu.
+
+		- einer Objektmethode `getLength()`. Diese Methode gibt die Länge des `angebot`-Arrays zurück. 
+		- einer Objektmethode `pizzaIstImAngebot(Pizza pizza)`. Diese Methode gibt ein `true` zurück, wenn die als Parameter übergebene `pizza` im `angebot`-Array enthalten ist. Prüfen Sie die Gleichheit mithilfe der `equals()`-Methode von `Pizza`. 
+		- einer Objektmethode `pizzaLoeschen(Pizza pizza)`. Diese Methode löscht die als Parameter übergebene `pizza` aus dem `angebot`-Array (wenn Sie darin enthalten ist). <br/>
+		**Beachten Sie:**
+ 
+			- Nach dem Löschen der Pizza aus dem `angebot`-Array soll das `angebot`-Array wieder um 1 kleiner sein als vorher (falls die zu löschende Pizza überhaupt im `angebot`-Array enthalten war).
+			- Kopieren Sie also das alte `angebot`-Array außer die zu löschende Pizza. 
+			- Ihre Kopie ist dann das neue `angebot`-Array. 
+ 
+ 		- einer Objektmethode `getPizzaAtIndex(int index)`. Diese Methode gibt die Pizza zurück, die im `angebot`-Array beim Index `index` eingetragen ist. Prüfen Sie, ob der übergebene Parameter ein gültiger Index aus dem `angebot`-Array ist. Wenn nicht, geben Sie `null` zurück.
+
+		- Überschreiben Sie die Objektmethode `toString()`, die die Details der Speisekarte in folgender Form als `String` zurückgibt (Beispielwerte):
+			```bash
+			====== Speisekarte ======
+			Salami          6,90 Euro 
+			Margheritha     5,90 Euro 
+			Tonno           6,90 Euro 
+			Hawaii          6,90 Euro 
+			Calzone         7,90 Euro
+			```
+
+		- und einer Objektmethode `print()`, die den von `toString()`zurückgegebenen `String` auf der Konsole ausgibt
+
+	7. Fügen Sie in der `main()`-Methode der `Testklasse` folgende Anweisungen hinzu:
+		```java	
+		System.out.printf("%n%n--------------------- Test Speisekarte -------------------------%n%n");
+		Speisekarte s1 = new Speisekarte();
+		s1.pizzaHinzufuegen(p1);
+		s1.pizzaHinzufuegen(p2);
+		s1.pizzaHinzufuegen(p3);
+		s1.pizzaHinzufuegen(p4);
+		s1.pizzaHinzufuegen(p5);
+		s1.print();
+		
+		s1.pizzaLoeschen(p3);
+		s1.print();
+		```
+		und führen Sie die `Testklasse` aus. Es sollten folgende zusätzliche Ausgaben erzeugt werden:
+		```bash
+		--------------------- Test Speisekarte -------------------------
+
+		====== Speisekarte ======
+		Salami          6,90 Euro 
+		Margheritha     5,90 Euro 
+		Tonno           6,90 Euro 
+		Hawaii          6,90 Euro 
+		Calzone         7,90 Euro 
+
+		====== Speisekarte ======
+		Salami          6,90 Euro 
+		Margheritha     5,90 Euro 
+		Hawaii          6,90 Euro 
+		Calzone         7,90 Euro 
+		```
+
+	8. **Zusatz** Erstellen Sie im gleichen package eine Klasse `Pizzaria` mit
+
+		- der privaten Objektvariablen 
+			- `verkaeufe` vom Typ `Pizzaverkauf[]`. 
+		- einem parametrisierten Konstruktor `Pizzeria(Speisekarte karte)`. In diesem Konstruktor wird 
+
+			- das `verkaeufe`-Array erzeugt und hat die gleiche Länge wie das `angebot`-Array der Speisekarte `karte` (siehe `getLength()`-Methode aus `Speisekarte`).
+			- jedes Element des `verkaeufe`-Arrays zeigt auf ein `Pizzaverkauf`-Objekt. Erzeugen Sie alle `Pizzaverkauf`-Objekte. Übergeben Sie dem `Pizzaverkauf`-Konstruktor dazu die jeweiligen `Pizza`-Objekte aus der Speisekarte `karte`.
+
+		- einer Objektmethode `bestellen()`. Diese Methode gibt ein `int` zurück. In dieser Methode soll zufällig ein Index aus dem `verkaeufe`-Array erzeugt werden. Nutzen Sie dazu die Klasse `Random` aus dem `java.util`-Paket. Verwenden Sie die Objektmethode `nextInt(int bound)` der Klasse `Random`. Wenden Sie `nextInt()` so an, dass auch tatsächlich ein gültiger Index des `verkaeufe`-Arrays erzeugt wird. Geben Sie diesen zufällig erzeugten Index zurück (das Bestellen entspricht also dem Nennen einer Nummer aus der Speisekarte). 
+		- einer Objektmethode `verkaufen(int index)`. Durch den Aufruf der Methode wird die Pizza verkauft, die im `verkaeufe`-Array am Index `index` steht. Nutzen Sie für den Verkauf die `verkaufen()`-Methode der Klasse Pizzaverkauf. Überprüfen Sie, ob der als Parameter übergebene Wert für `index` tatsächlich einem Index im `verkaeufe`-Array entspricht. 
+		- einer Objektmethode `tagesVerkauf(int anzVerkaeufe)`. In dieser Methode wird `anzVerkaeufe` oft eine Pizza verkauft (`verkaufen(int index)`). Welche Pizza verkauft wird (also welcher `index`), wird durch die Methode `bestellen()` jeweils zufällig ermittelt. 
+		- einer Objektmethode `print()`. Diese Methode erzeugt folgende Ausgabe (Beispielwerte):
+			```bash
+			Salami          : ***********************************
+			Margheritha     : ************************************
+			Hawaii          : *****************************************
+			Calzone         : ************************************** 
+			```
+			Das heißt, es wird am Anfang der Zeile der Name der Pizza aus dem `verkaeufe`-Array ausgegeben und danach für die Anzahl der Verkäufe jeweils ein `*`.
+		- einer Objektmethode `meistverkauftePizza()`. Diese Methode gibt die Pizza aus dem `verkaeufe`-Array zurück, die am meisten verkauft wurde.
+		- einer Objektmethode `gesamtEinnahmen()`. Diese Methode gibt die Summe aller Einnahmen als `double` zurück. Die Einnahmen ergeben sich aus der Summe der Umsätze aller Pizzen (Methode `umsatz()` von `Pizzaverkauf`) aus dem `verkaeufe`-Array.
+
+	9. Fügen Sie in der `main()`-Methode der `Testklasse` folgende Anweisungen hinzu:
+		```java	
+		System.out.printf("%n%n------------------------ Test Pizzaria -------------------------%n%n");
+		Pizzeria pz1 = new Pizzeria(s1);
+		pz1.tagesVerkauf(150);
+		pz1.print();
+		System.out.println();
+		System.out.print("Meistverkaufte Pizza : ");
+		pz1.meistverkauftePizza().print();
+		System.out.printf("Die Gesamteinnahmen betragen %.2f Euro", pz1.gesamtEinnahmen());
+		```
+		und führen Sie die `Testklasse` aus. Es sollten folgende zusätzliche Ausgaben erzeugt werden (Zufallswerte):
+		```bash
+		------------------------ Test Pizzaria -------------------------
+
+		Salami          : ******************************
+		Margheritha     : *******************************************
+		Hawaii          : *******************************************
+		Calzone         : **********************************
+
+		Meistverkaufte Pizza : Die Pizza Margheritha kostet 5,90 Euro.
+		Die Gesamteinnahmen betragen 1026,00 Euro
+		```
+
+??? question "Eine mögliche Lösung für Übung 9"
+	=== "Pizza.java"
+		```java 
+		package klausurvorbereitung.pizza;
+
+		public class Pizza
+		{
+			private String name;
+			private float preis;
+			
+			public Pizza(String name, float preis)
+			{
+				this.name = name;
+				this.preis = preis;
+			}
+
+			public String getName()
+			{
+				return this.name;
+			}
+
+			public float getPreis()
+			{
+				return this.preis;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("Die Pizza %s kostet %.2f Euro.", this.name, this.preis);
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Pizza po = (Pizza)o;
+				return (this.name.equals(po.name));
+			}
+		}
+		```
+
+	=== "Pizzaverkauf.java"
+		```java 
+		package klausurvorbereitung.pizza;
+
+		public class Pizzaverkauf
+		{
+			private Pizza pizza;
+			private int anzVerkaeufe;
+			
+			public Pizzaverkauf(Pizza pizza)
+			{
+				this.pizza = pizza;
+				this.anzVerkaeufe = 0;
+			}
+			
+			public void verkaufen()
+			{
+				this.anzVerkaeufe++;
+			}
+
+			public Pizza getPizza()
+			{
+				return this.pizza;
+			}
+
+			public int getAnzVerkaeufe()
+			{
+				return this.anzVerkaeufe;
+			}
+			
+			public double umsatz()
+			{
+				return this.anzVerkaeufe * this.pizza.getPreis();
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("Pizza %s wurde %d mal zum Preis von %.2f Euro verkauft.", 
+						this.pizza.getName(), this.anzVerkaeufe, this.pizza.getPreis());
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+		```
+
+	=== "Speisekarte.java"
+		```java 
+		package klausurvorbereitung.pizza;
+
+		public class Speisekarte
+		{
+			private Pizza[] angebot;
+			
+			public Speisekarte()
+			{
+				this.angebot = new Pizza[0];
+			}
+			
+			public int getLength()
+			{
+				return this.angebot.length;
+			}
+			
+			public void pizzaHinzufuegen(Pizza pizza)
+			{
+				Pizza[] kopie = new Pizza[this.angebot.length + 1];
+				for (int index = 0; index < this.angebot.length; index++)
+				{
+					kopie[index] = this.angebot[index];
+				}
+				kopie[kopie.length - 1] = pizza;
+				this.angebot = kopie;
+			}
+			
+			public boolean pizzaIstImAngebot(Pizza pizza)
+			{
+				for (int index = 0; index < this.angebot.length; index++)
+				{
+					if(this.angebot[index].equals(pizza))
+					{
+						return true;
+					}
+				}
+				return false;
+				// System.out.println("dead code");
+			}
+			
+			public void pizzaLoeschen(Pizza pizza)
+			{
+				if(this.pizzaIstImAngebot(pizza))
+				{
+					Pizza[] kopie = new Pizza[this.angebot.length - 1];
+					int indexKopie = 0;
+					for (int indexAngebot = 0; indexAngebot < this.angebot.length; indexAngebot++)
+					{
+						if(!this.angebot[indexAngebot].equals(pizza))
+						{
+							kopie[indexKopie] = this.angebot[indexAngebot];
+							indexKopie++;
+						}
+					}
+					this.angebot = kopie;
+				}
+			}
+			
+			public Pizza getPizzaAtIndex(int index)
+			{
+				if(index>=0 && index<this.angebot.length)
+				{
+					return this.angebot[index];
+				}
+				else
+				{
+					return null;
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("====== Speisekarte ======%n");
+				for (int index = 0; index < this.angebot.length; index++)
+				{
+					s = s + String.format("%-15s %.2f Euro %n", 
+							this.angebot[index].getName(), this.angebot[index].getPreis());
+				}
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+		```
+
+	=== "Pizzeria.java"
+		```java 
+		package klausurvorbereitung.pizza;
+
+		import java.util.Random;
+
+		public class Pizzeria
+		{
+			private Pizzaverkauf[] verkaeufe;
+			
+			public Pizzeria(Speisekarte karte)
+			{
+				this.verkaeufe = new Pizzaverkauf[karte.getLength()];
+				for (int index = 0; index < this.verkaeufe.length; index++)
+				{
+					this.verkaeufe[index] = new Pizzaverkauf(karte.getPizzaAtIndex(index));
+				}
+			}
+			
+			public int bestellen()
+			{
+				Random r = new Random();
+				int index = r.nextInt(this.verkaeufe.length);
+				return index;	
+			}
+			
+			public void verkaufen(int index)
+			{
+				if(index>=0 && index<this.verkaeufe.length)
+				{
+					this.verkaeufe[index].verkaufen();
+				}
+			}
+			
+			public void tagesVerkauf(int anzVerkaeufe)
+			{
+				for(int i=0; i<anzVerkaeufe; i++)
+				{
+					int index = this.bestellen();
+					this.verkaufen(index);
+				}
+			}
+			
+			public void print()
+			{
+				for (int index = 0; index < this.verkaeufe.length; index++)
+				{
+					Pizza p = this.verkaeufe[index].getPizza();
+					int anzVerkaeufe = this.verkaeufe[index].getAnzVerkaeufe();
+					String s = String.format("%-13s : ", p.getName());
+					for(int stars = 0; stars < anzVerkaeufe; stars++)
+					{
+						s = s + "*";
+					}
+					System.out.println(s);
+				}
+			}
+			
+			public Pizza meistverkauftePizza()
+			{
+				int maxIndex = 0;
+				for (int index = 0; index < this.verkaeufe.length; index++)
+				{
+					if(this.verkaeufe[index].getAnzVerkaeufe() > this.verkaeufe[maxIndex].getAnzVerkaeufe())
+					{
+						maxIndex = index;
+					}
+				}
+				return this.verkaeufe[maxIndex].getPizza();
+			}
+			
+			
+			public double gesamtEinnahmen()
+			{
+				double gesamtEinnahmen = 0.0;
+				for (int index = 0; index < this.verkaeufe.length; index++)
+				{
+					gesamtEinnahmen += this.verkaeufe[index].umsatz();
+				}
+				return gesamtEinnahmen;
+			}
+		}
+		```	
+
+	=== "Testklasse.java"
+		```java 
+		package klausurvorbereitung.pizza;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------------------------- Test Pizza ---------------------------%n%n");
+				Pizza p1 = new Pizza("Salami", 6.9f);
+				Pizza p2 = new Pizza("Margheritha", 5.9f);
+				Pizza p3 = new Pizza("Tonno", 6.9f);
+				Pizza p4 = new Pizza("Hawaii", 6.9f);
+				Pizza p5 = new Pizza("Calzone", 7.9f);
+				Pizza p6 = new Pizza("Salami", 6.9f);
+
+				p1.print();
+				p2.print();
+				p3.print();
+				p4.print();
+				p5.print();
+
+				System.out.println("p1 gleich p2 ? : " + p1.equals(p2));
+				System.out.println("p1 gleich p1 ? : " + p1.equals(p1));
+				System.out.println("p1 gleich p6 ? : " + p1.equals(p6));
+
+				System.out.printf("%n%n--------------------- Test Pizzaverkauf ------------------------%n%n");
+				Pizzaverkauf pv1 = new Pizzaverkauf(p1);
+				pv1.print();
+				pv1.verkaufen();
+				pv1.print();
+				
+				System.out.printf("%n%n--------------------- Test Speisekarte -------------------------%n%n");
+				Speisekarte s1 = new Speisekarte();
+				s1.pizzaHinzufuegen(p1);
+				s1.pizzaHinzufuegen(p2);
+				s1.pizzaHinzufuegen(p3);
+				s1.pizzaHinzufuegen(p4);
+				s1.pizzaHinzufuegen(p5);
+				s1.print();
+
+				s1.pizzaLoeschen(p3);
+				s1.print();
+				
+				System.out.printf("%n%n------------------------ Test Pizzaria -------------------------%n%n");
+				Pizzeria pz1 = new Pizzeria(s1);
+				pz1.tagesVerkauf(150);
+				pz1.print();
+				System.out.println();
+
+				System.out.print("Meistverkaufte Pizza : ");
+				pz1.meistverkauftePizza().print();
+				System.out.printf("Die Gesamteinnahmen betragen %.2f Euro", pz1.gesamtEinnahmen());
+
+			}
+
+		}
+		```	
+
+
+??? note "Power"
+	- Implementieren Sie eine Klasse `Power`. 
+
+	- **Idee :** Die Klasse `Power` implementiert die *Potenz*. Eine *Potenz* besteht aus einer Basis (`base`) und dem Exponenten (`exp`): base^exp, z.B. `8^4 = 8 ∙ 8 ∙ 8 ∙ 8`
+
+	- Objektvariablen sind `base` und `exp` vom Typ `int`. Beide Objektvariablen sind nur innerhalb der Klasse sichtbar!
+	- Implementieren Sie getter für die Basis (`getBase()`) und für den Exponenten (`getExp()`) (Sichtbarkeit `public`). 
+	- Implementieren Sie für die Klasse `Power` einen parametrisierten Konstruktor `Power(int base, int exp)`. Die Werte der Parameter werden verwendet, um den Objektvariablen Werte zuzuweisen.
+	- Implementieren Sie eine Objektmethode `getValue()`, die ein `double` zurückgibt. Die Methode gibt den Wert der Potenz zurück, also z.B. für `8^4` den Wert `4096.0`. Beachten Sie: <br/>
+		![formel](./files/73_formel.png) <br/>
+		Die Verwendung der `Math`-Klasse ist nicht erlaubt!
+	- Überschreiben Sie die Methode `toString()`, so dass eine Potenz in der Form `(base, exp)` als `String` zurückgegeben wird, wobei `base` und `exp` die Werte der jeweiligen Objektvariablen sein sollen, also z.B. `(8, 4)`. 
+	- Implementieren Sie eine Objektmethode `print()`, die mithilfe von `toString()` eine Potenz auf der Konsole ausgibt. 
+	- Erstellen Sie eine Klasse `PowerTest` mit `main()`-Methode. Erzeugen Sie in der `main()`-Methode folgende fünf Objekte der Klasse `Power`: `3^4`, `-3^4`, `3^0`, `3^(-4)`, `-3^(-4)`. Wenden Sie jeweils die Methode `print()` an und geben Sie außerdem jeweils den Wert der Potenz auf die Konsole aus. Es sollte eine Ausgabe in ungefähr der folgenden Form erfolgen:
+	```bash
+	(3,4)
+	(3,4) = 81.0
+	(-3,4)
+	(-3,4) = 81.0
+	(3,0)
+	(3,0) = 1.0
+	(3,-4)
+	(3,-4) = 0.012345679012345678
+	(-3,-4)
+	(-3,-4) = 0.012345679012345678
+	```
+	---
+	- Erstellen Sie eine Klasse `PowerOfTwo`. Diese Klasse erbt von `Power`. 
+	- **Idee :** Ein Objekt der Klasse `PowerOfTwo` ist eine Potenz zur Basis `2`, also z.B. `2^4`.
+	- Implementieren Sie einen parametrisierten Konstruktor `PowerOfTwo(int exp)`. Beachten Sie, dass der Basis der Wert `2` zugewiesen wird. 
+	- Implementieren Sie eine Objektmethode `printBinary()`. Diese Methode gibt die Potenz als Binärzahl (bestehend aus Einsen und Nullen) auf die Konsole aus, z.B. `2^4`: `1 0 0 0 0`. **Tipp :** es kommt vorne immer eine `1` und danach kommen so viele Nullen, wie der Exponent groß ist. Wenn der Exponent kliner als `0` ist, dann geben Sie `Zahl ist kleiner als 1` auf die Konsole aus. Die Binärzahl für eine Potenz kleiner als `0` muss also **nicht** ermittelt werden. 
+	- Erzeugen Sie in der `main()`-Methode der Klasse `PowerTest` folgende drei Objekte der Klasse `PowerOfTwo`: `2^4`, `2^(-4)`, `2^0` und rufen Sie jeweils die Methoden `print()` und `printBinary()` auf. Es sollte eine Ausgabe in ungefähr der folgenden Form erfolgen:
+	```bash
+	(2,4)
+	1 0 0 0 0
+	(2,-4)
+	Zahl ist kleiner als 1
+	(2,0)
+	1
+	```
+	---
+	- Erstellen Sie eine Klasse `PowerArray`. Objektvariable ist `p` vom Typ `Power[]`. `p` ist nur innerhalb der Klasse sichtbar!
+	- Implementieren Sie einen parametrisierten Konstruktor `PowerArray(int length)`. Darin wird das `p`-Array erzeugt. Die Länge von `p` entspricht dem Wert von `length`.
+	- Implementieren Sie eine Objektmethode `fillArray()`. Bei Aufruf der Methode soll das Array `p` mit Objekten der Klasse `Power` gefüllt werden. Die Werte der Objektvariablen der `Power`-Objekte werden zufällig mit Hilfe der `Random`-Klasse erzeugt (um die `Random`-Klasse verwenden zu können, müssen Sie diese aus dem `java.util`-Paket importieren). Beachten Sie folgende Anforderungen:
+		1. Sowohl die Basis als auch der Exponent können Werte aus dem Wertebereich `1..5` (jeweils inklusive) annehmen
+		2. Die Basis soll nie einen größeren Wert als der Exponent haben (aber es können beide gleich sein).
+	- Implementieren Sie eine Objektmethode `createArrayOfValues()`. Diese Methode liefert ein `double[]`-Array zurück, das alle Werte der Potenzen aus dem `p`-Array enthält. 
+	- Implementieren Sie eine Objektmethode `getIndexExponent(int exponent)`, die den Index des (ersten) Elementes zurückliefert, bei dem das `Power`-Objekt den Exponenten hat, der als Parameter der Methode übergeben wird. Existiert ein solches Objekt nicht im Array, wird `-1` zurückgegeben. 
+	- Überschreiben Sie die Methode `toString()`, so dass das `p`-Array in der Form (Beispiel)
+		```bash
+		[ (2,5), (2,3), (3,3), (1,5), (2,3), (1,3), (1,3), (1,2), (3,5), (2,3) ]
+		```
+		als `String` zurückgegeben wird. Implementieren Sie eine Methode `print()`, die mithilfe von `toString()` das `p`-Array auf die Konsole ausgibt.
+	- Implementieren Sie eine Methode `sort()`, die das `p`-Array nach den Größen der Werte der Potenzen ordnet – vom kleinsten Wert zum größten Wert. Die Verwendung der `Arrays`-Klasse aus dem `java.util`-Paket ist nicht gestattet. Sollten 2 Potenzen den gleichen Wert haben, z.B. `1^2` und `1^4`, dann soll die Potenz mit dem höheren Exponent größer sein als die Potenz mit dem kleineren Exponenten.
+	- Erzeugen Sie in der `main()`-Methode der Klasse `PowerTest` ein Objekt der Klasse `PowerArray`, so dass das `p`-Array die Länge `10` hat. Rufen Sie für dieses Objekt die Objektmethoden `fillArray()`, `print()`, `sort()` und wieder `print()` auf. Testen Sie außerdem (mindestens) einmal die `getIndexExponent()`- und die `createArrayOfValues()`- Methode (um das Array of Values auf der Konsole auszugeben, verwenden Sie die statische `toString()`-Methode der `Arrays`-Klasse (`import java.util.Arrays;`). Es sollte eine Ausgabe in ungefähr der folgenden Form erfolgen (Zufallswerte):
+	```bash
+	[ (1,5), (1,2), (3,5), (3,4), (4,4), (1,5), (1,2), (3,4), (2,3), (3,5) ]
+	[ (1,2), (1,2), (1,5), (1,5), (2,3), (3,4), (3,4), (3,5), (3,5), (4,4) ]
+	Index : 5
+	Index : -1
+	[1.0, 1.0, 1.0, 1.0, 8.0, 81.0, 81.0, 243.0, 243.0, 256.0]
+	```
+
+??? question "eine mögliche Lösung für Power"
+	=== "Power.java"
+		```java linenums="1"
+		public class Power
+		{
+			private int base;
+			private int exp;
+			
+			Power(int base, int exp)
+			{
+				this.base = base;
+				this.exp = exp;
+			}
+			
+			public int getBase()
+			{
+				return this.base;
+			}
+			
+			public int getExp()
+			{
+				return this.exp;
+			}
+			
+			public double getValue()
+			{
+				double value=1.0;
+				if(this.exp>=0)
+				{
+					for(int i=1; i<=this.exp; i++)
+					{
+						value *= this.base;
+					}
+				}
+				else
+				{
+					for(int i=1; i<=-this.exp; i++)
+					{
+						value *= this.base;
+					}
+					value = 1.0/value;
+				}
+				return value;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "("+this.base+","+this.exp+")";
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+		}
+		```
+
+	=== "PowerOfTwo.java"
+		```java linenums="1"
+		public class PowerOfTwo extends Power
+		{
+			public PowerOfTwo(int exp)
+			{
+				super(2, exp);
+			}
+			
+			public void printBinary()
+			{
+				if(this.getExp()<0)
+				{
+					System.out.println("Zahl ist kleiner als 1");
+				}
+				else
+				{
+					String s = "1";
+					for(int i=1; i<=this.getExp(); i++)
+					{
+						s += " 0";
+					}
+					System.out.println(s);
+				}
+			}
+		}
+		```
+
+	=== "PowerArray.java"
+		```java linenums="1"
+		import java.util.Random;
+
+		public class PowerArray
+		{
+			private Power[] p;
+			
+			public PowerArray(int length)
+			{
+				this.p = new Power[length];
+			}
+			
+			public void fillArray()
+			{
+				Random r = new Random();
+
+				for(int i=0; i<this.p.length; i++)
+				{
+					int nr1 = r.nextInt(5)+1;
+					int nr2 = r.nextInt(5)+1;
+					if(nr1>nr2)
+					{
+						this.p[i] = new Power(nr2, nr1);
+					}
+					else
+					{
+						this.p[i] = new Power(nr1, nr2);
+					}
+				}
+			}
+			
+			public double[] createArrayOfValues()
+			{
+				double[] values = new double[this.p.length];
+				for(int i=0; i<this.p.length; i++)
+				{
+					values[i] = this.p[i].getValue();
+				}
+				return values;
+			}
+			
+			public int getIndexExponent(int exponent)
+			{
+				final int NOT_FOUND = -1;
+				for(int i=0; i<this.p.length; i++)
+				{
+					if(this.p[i].getExp()==exponent)
+					{
+						return i;
+					}
+				}
+				return NOT_FOUND;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = "[ ";
+				for(int i=0; i<this.p.length; i++)
+				{
+					if(i<this.p.length-1)
+					{
+						s += this.p[i].toString()+", ";
+					}
+					else
+					{
+						s += this.p[i].toString();
+					}
+				}
+				s += " ]";
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public void sort()
+			{
+				for(int bubble=0; bubble<this.p.length-1; bubble++)
+				{
+					for(int i=0; i<this.p.length-1-bubble; i++)
+					{
+						if((this.p[i].getValue()>this.p[i+1].getValue()) ||
+							((this.p[i].getValue()==this.p[i+1].getValue() && 
+							this.p[i].getExp()>this.p[i+1].getExp())))
+							{
+								Power temp = this.p[i];
+								this.p[i] = this.p[i+1];
+								this.p[i+1] = temp;
+							}
+					}
+				}
+			}
+		}
+		```
+
+	=== "PowerTest.java"
+		```java linenums="1"
+		import java.util.Arrays;
+
+		public class PowerTest
+		{
+
+			public static void main(String[] args)
+			{
+				// Objekte erzeugen
+				Power p1 = new Power(3,4);
+				Power p2 = new Power(-3,4);
+				Power p3 = new Power(3,0);
+				Power p4 = new Power(3,-4);
+				Power p5 = new Power(-3,-4);
+				
+				System.out.printf("%n%n---------------------- Ausgaben fuer Power ---------------------------%n%n");
+				p1.print();
+				System.out.println(p1.toString() + " = " + p1.getValue());
+				p2.print();
+				System.out.println(p2.toString() + " = " + p2.getValue());
+				p3.print();
+				System.out.println(p3.toString() + " = " + p3.getValue());
+				p4.print();
+				System.out.println(p4.toString() + " = " + p4.getValue());
+				p5.print();
+				System.out.println(p5.toString() + " = " + p5.getValue());
+				
+				System.out.printf("%n%n-------------------- Ausgaben fuer PowerOfTwo -------------------------%n%n");
+				PowerOfTwo p21 = new PowerOfTwo(4);
+				p21.print();
+				p21.printBinary();
+				PowerOfTwo p22 = new PowerOfTwo(-4);
+				p22.print();
+				p22.printBinary();
+				PowerOfTwo p23 = new PowerOfTwo(0);
+				p23.print();
+				p23.printBinary();
+				
+				System.out.printf("%n%n-------------------- Ausgaben fuer PowerArray -------------------------%n%n");
+				PowerArray pa = new PowerArray(10);
+				pa.fillArray();
+				pa.print();
+				pa.sort();
+				pa.print();
+				
+				System.out.println("Index : " +pa.getIndexExponent(4));
+				System.out.println("Index : " +pa.getIndexExponent(0));
+				
+				double[] values = pa.createArrayOfValues();
+				System.out.println(Arrays.toString(values));
+			}
+		}
+		```
+
+
+??? question "Video zu Pizza"
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=d010f9295001a2710d3c409aa244324a&width=720&height=359&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="359" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
+
+
+??? note "Computer"
+	- Implementieren Sie eine Klasse `Computer`. 
+
+		- Objektvariablen sind `hersteller` vom Typ `String`, `ram` vom Typ `int` und `platte` vom Typ `int`. Die Objektvariablen sind in der Klasse und allen abgeleiteten Klassen sichtbar!
+		- Schreiben Sie einen parametrisierten Konstruktor `Computer(String hersteller, int ram, int platte)`. Die Parameterwerte werden genutzt, um den Objektvariablen die entsprechenden Werte zuzuweisen.
+		- Schreiben Sie eine Objektmethode `gleicherHersteller(Computer c)`, die ein `true` zurückgibt, wenn `c` vom gleichen Hersteller ist, wie das aufrufende Objekt. Ansonsten wird ein `false` zurückgegeben. 
+		- Schreiben Sie eine Objektmethode `gleicherHersteller(String hersteller)`, die ein `true` zurückgibt, wenn das aufrufende Objekt den Hersteller hat, der als Parameterwert der Methode übergeben wird. Ansonsten wird ein `false` zurückgegeben.
+		- Überschreiben Sie die Methode `toString()`, so dass der Computer in folgender Form angezeigt wird (Beispielwerte):
+			```bash
+			lenovo mit 8 RAM und 256 SSD
+			```
+		- Schreiben Sie eine Methode `print()`, die mit Hilfe von `toString()` eine Ausgabe auf der Konsole erzeugt.
+
+	- Erstellen Sie eine Klasse `Testklasse` mit `main()`-Methode. Erzeugen Sie in der `main()`-Methode fünf Objekte der Klasse `Computer`:
+
+		- lenovo mit 8 RAM und 256 SSD 
+		- lenovo mit 16 RAM und 512 SSD 
+		- apple mit 4 RAM und 256 SSD 
+		- apple mit 8 RAM und 512 SSD 
+		- dell mit 8 RAM und 256 SSD
+
+		Wenden Sie jeweils die Methode `print()` an, wenden Sie die Methode `gleicherHersteller(Computer c)` für den ersten Computer an und vergleichen ihn mit dem zweiten und dem dritten. Geben Sie jeweils den Wert des Vergleiches aus. <br/>
+		Es sollten folgende Ausgaben auf der Konsole erzeugt werden:
+		```bash
+		--------------------- Test Computer --------------------
+
+		lenovo mit 8 RAM und 256 SSD
+		lenovo mit 16 RAM und 512 SSD
+		apple mit 4 RAM und 256 SSD
+		apple mit 8 RAM und 512 SSD
+		dell mit 8 RAM und 256 SSD
+		c1 und c2 gleicher Hersteller ? : true
+		c1 und c3 gleicher Hersteller ? : false
+		```
+
+	- Erstellen Sie eine Klasse `Notebook`. Diese Klasse erbt von der Klasse `Computer`. 
+	
+		- Zusätzliche Objektvariable der Klasse `Notebook` ist `monitor` vom Typ `int`. Die Objektvariablen sind in der Klasse und allen abgeleiteten Klassen sichtbar!	
+		- Implementieren Sie einen parametrisierten Konstruktor `Notebook(String hersteller, int ram, int platte, int monitor)`. Die Parameterwerte werden genutzt, um den Objektvariablen des zurückgegebenen Objektes die entsprechenden Werte zuzuweisen.
+		- Überschreiben Sie die Methode `toString()`, so dass eine Zeichenkette der Form
+			```bash
+			(hersteller, ram, platte, monitor)
+			```
+			zurückgegeben wird (die entsprechenden Werte werden eingesetzt - siehe Ausgabe der `main()`-Methode unten).  
+
+	- Erzeugen Sie in der `main()`-Methode der `Testklasse` zwei Objekte der Klasse `Notebook` (Beispielwerte siehe nächste Zeile) und rufen Sie jeweils die `print()`-Methode auf. <br/>
+		Es sollten folgende Ausgaben auf der Konsole erzeugt werden:
+		```bash
+		--------------------- Test Notebook --------------------
+
+		(lenovo, 8, 256, 13)
+		(lenovo, 16, 512, 15)
+		```
+
+	- Erstellen Sie eine Klasse `NotebookArray`.  
+
+		- Objektvariable ist `notebooks` vom Typ `Notebook[]`. Die Objektvariable ist nur innerhalb der Klasse sichtbar!
+		- Schreiben Sie einen parametrisierten Konstruktor `NotebookArray(int anzahl)`. Darin wird das `notebooks`-Array mit der Länge `anzahl` erzeugt (es wird noch nicht mit `Notebook`-Objekten befüllt - das macht die nächste Methode).
+		- Schreiben Sie eine Objektmethode `konfigurieren()`. Bei Aufruf der Methode wird das Array `notebooks` mit Objekten der Klasse `Notebook` befüllt. <br/>
+		**Beachten Sie folgende Anforderungen:**
+
+			1. das `notebooks`-Array wird vollständig befüllt
+			2. für das Erzeugen der Objekte wird eine Zufallszahl aus dem Bereich `[0, 1, 2, 3, 4]` (`4` inklusive) erzeugt. Nutzen Sie dazu die Klasse `Random` aus dem `java.util`-Paket. Mithilfe von `nextInt(int exclusiveBorder)` wird eine Zufallszahl erzeugt. Je nach Wert der Zufallszahl wird ein anderes Notebook erzeugt:
+
+				Wert `0` -> zu erzeugendes Objekt: `("lenovo", 8, 256, 13)` <br/>
+				Wert `1` -> zu erzeugendes Objekt: `("lenovo", 16, 512, 15)` <br/>
+				Wert `2` -> zu erzeugendes Objekt: `("apple", 4, 256, 13)` <br/>
+				Wert `3` -> zu erzeugendes Objekt: `("apple", 8, 512, 13)` <br/>
+				Wert `4` -> zu erzeugendes Objekt: `("dell", 8, 512, 15)` <br/>
+
+		- Überschreiben Sie die Objektmethode `toString()`. Diese Methode gibt einen String in der Form (Beispielwerte):
+			```bash
+			[ 5 : (lenovo, 8, 256, 13 ), (apple, 8, 512, 13 ), (lenovo, 16, 512, 15 ), (lenovo, 8, 256, 13 ), (apple, 8, 512, 13 )]
+			```
+			zurück. <br/>
+			**Beachten Sie:**
+	
+			1. die eckigen Klammern zu Beginn und Ende des Strings
+			2. die Angabe der Anzahl der Elemente am Anfang (im obigen Beispiel `5 : `) 
+			3. das Komma zwischen den Elementen (aber nicht nach dem letzten Element)
+
+		- Schreiben Sie eine Methode `print()`, die den in `toString()` erzeugten `String` auf die Konsole ausgibt.
+
+		- Schreiben Sie eine Objektmethode `getHersteller(String hersteller)`. Diese Methode gibt ein Objekt vom Typ `NotebookArray` zurück. Das `notebooks`-Array des erzeugten Objektes enthält genau alle Notebooks aus dem `notebooks`-Array des aufrufenden Objektes, die von dem Hersteller sind, der als Parameterwert übergeben wird.  <br/>
+		**Beispiel:** Angenommen, das `notebooks`-Array des aufrufenden Objektes sieht so aus:
+			```bash
+			[ 10 : (lenovo, 16, 512, 15 ), (apple, 8, 512, 13 ), (apple, 4, 256, 13 ), (apple, 8, 512, 13 ), (lenovo, 8, 256, 13 ), 
+				   (lenovo, 16, 512, 15 ), (lenovo, 16, 512, 15 ), (lenovo, 16, 512, 15 ), (apple, 4, 256, 13 ), (apple, 4, 256, 13 ) ]
+			```
+		Dann würde bei Aufruf der Methode `getHersteller("apple")` das zurückgegebene `NotebookArray`-Objekt folgendes `notebooks`-Array haben:
+			```bash
+			[ (apple, 8, 512, 13 ), (apple, 4, 256, 13 ), (apple, 8, 512, 13 ), (apple, 4, 256, 13 ), (apple, 4, 256, 13 ) ]
+			```
+			, bei Aufruf der Methode `getHersteller("lenovo")` das zurückgegebene `NotebookArray`-Objekt folgendes `notebooks`-Array:
+			```bash
+			[ (lenovo, 16, 512, 15 ), (lenovo, 8, 256, 13 ), (lenovo, 16, 512, 15 ), (lenovo, 16, 512, 15 ), (lenovo, 16, 512, 15 ) ]
+			```
+			und bei Aufruf der Methode `getHersteller("dell")` das zurückgegebene `NotebookArray`-Objekt ein leeres `notebooks`-Array:
+			```bash
+			[ ]
+			```
+
+		- Schreiben Sie eine Objektmethode `sortRamPlatte()`. Diese Methode sortiert das `notebooks`-Array wie folgt:
+
+			1. aufsteigend nach RAM-Größe (kleinste RAM-Größe zuerst)
+			2. ist die RAM-Größer zweier Notebooks gleich, entscheidet die Plattengröße (kleinste Plattengröße zuerst)
+
+	- Erzeugen Sie in der `main()`-Methode der `Testklasse` ein Objekt der Klasse `NotebookArray`, so dass das `notebooks`-Array die Länge `10` hat. Rufen Sie für dieses Objekt die Objektmethoden `konfigurieren()`, `print()`, `sortRamPlatte()` und `print()` auf. Testen Sie außerdem die `getHersteller()`-Methode für alle drei Hersteller und geben Sie jeweils das erzeugte Array aus.  <br/>
+		Es sollten folgende Ausgaben auf der Konsole erzeugt werden (**Zufallswerte!**):
+		```bash
+		------------------ Test NotebookArray ------------------
+
+		[ 10 : (apple, 8, 512, 13), (lenovo, 16, 512, 15), (apple, 4, 256, 13), (lenovo, 8, 256, 13), (apple, 4, 256, 13), (dell, 8, 512, 15), (apple, 4, 256, 13), (apple, 8, 512, 13), (lenovo, 8, 256, 13), (apple, 8, 512, 13)]
+		[ 10 : (apple, 4, 256, 13), (apple, 4, 256, 13), (apple, 4, 256, 13), (lenovo, 8, 256, 13), (lenovo, 8, 256, 13), (apple, 8, 512, 13), (dell, 8, 512, 15), (apple, 8, 512, 13), (apple, 8, 512, 13), (lenovo, 16, 512, 15)]
+		[ 3 : (lenovo, 8, 256, 13), (lenovo, 8, 256, 13), (lenovo, 16, 512, 15)]
+		[ 6 : (apple, 4, 256, 13), (apple, 4, 256, 13), (apple, 4, 256, 13), (apple, 8, 512, 13), (apple, 8, 512, 13), (apple, 8, 512, 13)]
+		[ 1 : (dell, 8, 512, 15)]
+		```
+
+
+??? question "eine mögliche Lösung für Computer"
+	=== "Computer.java"
+		```java linenums="1"
+		package loesungen.probeklausuren.probeklausur2;
+
+		public class Computer
+		{
+			protected String hersteller;
+			protected int ram;
+			protected int platte;
+			
+			public String getHersteller()
+			{
+				return this.hersteller;
+			}
+			public int getRam()
+			{
+				return this.ram;
+			}
+			public int getPlatte()
+			{
+				return this.platte;
+			}
+			
+			public Computer(String hersteller, int ram, int platte)
+			{
+				this.hersteller = hersteller;
+				this.ram = ram;
+				this.platte = platte;
+			}
+			
+			public boolean gleicherHersteller(Computer c)
+			{
+				return this.hersteller.equals(c.hersteller);
+				// es geht auch: return this.hersteller == c.hersteller;
+			}
+			
+			public boolean gleicherHersteller(String hersteller)
+			{
+				return this.hersteller.equals(hersteller);
+				// es geht auch: return this.hersteller == hersteller;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return this.hersteller + " mit " + this.ram + " RAM und " + this.platte + " SSD";
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			
+		}
+		```
+
+	=== "Notebook.java"
+		```java linenums="1"
+		package loesungen.probeklausuren.probeklausur2;
+
+		public class Notebook extends Computer
+		{
+			protected int monitor;
+			
+			public Notebook(String hersteller, int ram, int platte, int monitor)
+			{
+				super(hersteller, ram, platte);
+				this.monitor = monitor;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "(" + this.hersteller + ", " + this.ram + ", " + this.platte + ", " + this.monitor +")";
+			}
+			
+		}
+		```
+
+	=== "NotebookArray.java"
+		```java linenums="1"
+		package loesungen.probeklausuren.probeklausur2;
+
+		import java.util.Random;
+
+		public class NotebookArray
+		{
+			private Notebook[] notebooks;
+			
+			public NotebookArray(int anzahl)
+			{
+				this.notebooks = new Notebook[anzahl];
+			}
+			
+			public void konfigurieren()
+			{
+				Random r = new Random();
+				for (int i = 0; i < this.notebooks.length; i++)
+				{
+					int auswahl = r.nextInt(5);
+					// folgendes kann natuerlich auch mit if..else geloest werden
+					this.notebooks[i] = switch(auswahl)
+					{
+						case 0 -> new Notebook("lenovo", 8, 256, 13); 
+						case 1 ->  new Notebook("lenovo", 16, 512, 15); 
+						case 2 ->  new Notebook("apple", 4, 256, 13); 
+						case 3 ->  new Notebook("apple", 8, 512, 13); 
+						case 4 ->  new Notebook("dell", 8, 512, 15); 
+						default -> null;
+					};
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = "[ " + this.notebooks.length + " : ";
+				for (int i = 0; i < this.notebooks.length; i++)
+				{
+					if(i<this.notebooks.length-1)
+					{
+						s += this.notebooks[i].toString() + ", ";
+					}
+					else
+					{
+						s += this.notebooks[i].toString();
+					}
+				}
+				s += "]";
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public NotebookArray getHersteller(String hersteller)
+			{
+				int anzahl = 0;
+				for (int i = 0; i < this.notebooks.length; i++)
+				{
+					if(this.notebooks[i].gleicherHersteller(hersteller))
+					{
+						anzahl++;
+					}
+				}
+				NotebookArray na = new NotebookArray(anzahl);
+				int indexNA = 0;
+				for (int i = 0; i < this.notebooks.length; i++)
+				{
+					if(this.notebooks[i].gleicherHersteller(hersteller))
+					{
+						na.notebooks[indexNA++] = this.notebooks[i];
+					}
+				}
+				return na;
+			}
+			
+			public void sortRamPlatte()
+			{
+				for(int bubble=0; bubble<this.notebooks.length-1; bubble++)
+				{
+					for(int i=0; i<this.notebooks.length-1-bubble; i++)
+					{
+						if((this.notebooks[i].getRam()>this.notebooks[i+1].getRam()) ||
+							(this.notebooks[i].getRam()==this.notebooks[i+1].getRam() && 
+							this.notebooks[i].getPlatte()>this.notebooks[i+1].getPlatte()))
+						{
+							Notebook temp = this.notebooks[i];
+							this.notebooks[i] = this.notebooks[i+1];
+							this.notebooks[i+1] = temp;
+						}
+					}
+				}
+			}
+		}
+		```
+
+	=== "Testklasse.java"
+		```java linenums="1"
+		package loesungen.probeklausuren.probeklausur2;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				
+				System.out.printf("%n%n--------------------- Test Computer --------------------%n%n");
+				Computer c1 = new Computer("lenovo", 8, 256);
+				Computer c2 = new Computer("lenovo", 16, 512);
+				Computer c3 = new Computer("apple", 4, 256);
+				Computer c4 = new Computer("apple", 8, 512);
+				Computer c5 = new Computer("dell", 8, 256);
+				
+				c1.print();
+				c2.print();
+				c3.print();
+				c4.print();
+				c5.print();
+				
+				System.out.println("c1 und c2 gleicher Hersteller ? : " + c1.gleicherHersteller(c2));
+				System.out.println("c1 und c3 gleicher Hersteller ? : " + c1.gleicherHersteller(c3));
+				
+				System.out.printf("%n%n--------------------- Test Notebook --------------------%n%n");
+				Notebook n1 = new Notebook("lenovo", 8, 256, 13);
+				Notebook n2 = new Notebook("lenovo", 16, 512, 15);
+				
+				n1.print();
+				n2.print();
+				
+				System.out.printf("%n%n------------------ Test NotebookArray ------------------%n%n");		
+				NotebookArray na = new NotebookArray(10);
+				na.konfigurieren();
+				na.print();
+				na.sortRamPlatte();
+				na.print();
+				NotebookArray lenovo = na.getHersteller("lenovo");
+				lenovo.print();
+				NotebookArray apple = na.getHersteller("apple");
+				apple.print();
+				NotebookArray dell = na.getHersteller("dell");
+				dell.print();
+				
+			}
+
+		}
+		```
+
+??? note "Uhrzeit"
+	- Implementieren Sie eine Klasse `Uhrzeit`. 
+
+		- Objektvariablen sind `stunden` vom Typ `int`, `minuten` vom Typ `int` und `sekunden` vom Typ `int`. Die Objektvariablen sind nur in der Klasse sichtbar!
+
+		- Schreiben Sie einen parametrisierten Konstruktor `Uhrzeit(int sekunden)`. Übergeben wird eine beliebige Anzahl von Sekunden. Aus diesem Wert wird die Uhrzeit berechnet. 
+
+			- Beispiel 1: Angenommen, es wird der Wert `83` übergeben, dann sind das `0` Stunden, `1` Minute (`60` Sekunden) und `23` Sekunden.
+
+			- Beispiel 2: Angenommen, es wird der Wert `3662` übergeben, dann sind das `1` Stunde (`3600` Sekunden), `1` Minute (`60` Sekunden) und `2` Sekunden. 
+
+			- Beispiel 3: Angenommen, es wird der Wert `86399` übergeben, dann sind das `23` Stunden (`23x3600` Sekunden), `59` Minuten (`59x60` Sekunden) und `59` Sekunden. 
+
+			- Die Stunden sollen immer im Bereich `0..23` sein, d.h. für einen Stunden-Wert größer als `24` nehmen Sie einfach den `Modulo-24`-Wert.
+
+			- Initialisieren Sie die Objektvariablen mit den berechneten Werten.  
+
+		- Schreiben Sie eine Objektmethode `uhrzeitInSekunden()`. Diese Methode gibt die Uhrzeit in Sekunden als `int` zurück. Der Wert der zurückgegebenen Sekunden berechnet sich aus den Stunden multipliziert mit `3600` plus den Minuten multipliziert mit `60` plus den Sekunden des aufrufenden `Uhrzeit`-Objektes.  
+
+		- Schreiben Sie eine Objektmethode `frueher(Uhrzeit u)`, die ein `true` zurückgibt, wenn die Uhrzeit des aufrufenden Objektes früher liegt als der Wert von `u`; `false` sonst. 
+
+		- Schreiben Sie eine Objektmethode `jetztPlusXSekunden(int sekunden)`, die ein neues `Uhrzeit`-Objekt zurückgibt. Die Uhrzeit des neuen Objektes ergibt sich aus der Uhrzeit des aufrufenden Objektes plus der Anzahl der Sekunden, die als Parameter übergeben werden.
+
+		- Schreiben Sie eine Objektmethode `differenzInSekunden(Uhrzeit u)`, die die Anzahl in Sekunden (`int`) zurückgibt, die zwischen der Uhrzeit des aufrufenden Objektes und `u` liegen. Geben Sie die Anzahl stets als positiven Wert zurück! Sie können dazu die Methode `Math.abs(int wert)` verwenden, die den absoluten Betrag von `wert` zurückgibt. 
+
+		- Überschreiben Sie die Methode `toString()`, so dass der Wert des aufrufenden Objektes in der Form `hh:mm:ss` als `String` zurückgegeben wird, z.B. `23:59:59`. Achten Sie darauf, dass die Stunden, Minuten und Sekunden führende Nullen enthalten können, also z.B. `01:02:03`!
+
+	- Erstellen Sie eine Klasse `Testklasse` mit `main()`-Methode. Erzeugen Sie in der `main()`-Methode vier Objekte der Klasse `Uhrzeit`. Verwenden Sie als Parameterwerte: `83`, `3662`, `86399` und `172799`. Wenden Sie jeweils die Methoden `System.out.print()` und `print()` aus `Uhrzeit` so an, dass folgende Ausgabe entsteht:  
+		```bash
+		z1 : 00:01:23
+		z2 : 01:01:02
+		z3 : 23:59:59
+		z4 : 23:59:59
+		```
+	- Wenden Sie außerdem jeweils die Methoden `System.out.println()` sowie `frueher()`, `jetztPlusXSekunden()`, `differenzInSekunden()` (und evtl. `toString()`) aus `Uhrzeit` so an, dass folgende Ausgabe entsteht:  
+		```bash
+		z1 frueher als z2 ? true
+		z3 frueher als z4 ? false
+
+		z1 plus   40 Sekunden : 00:02:03
+		z2 plus 3598 Sekunden : 02:01:00
+
+		z3-z2 in Sekunden : 82737
+		```
+
+	- Erstellen Sie eine Klasse `UhrzeitArray`. Objektvariable `uhren` ist ein Array, das Elemente von `Uhrzeit` aufnimmt. Die Variable ist nur innerhalb der Klasse sichtbar.
+
+		- Schreiben Sie einen parametrisierten Konstruktor `UhrzeitArray(int laenge)`. Innerhalb des Konstruktors wird das Array erzeugt, auf das die Objektvariable `uhren` referenziert. Das Array hat die Länge `laenge` (Parameterwert).
+		- Schreiben Sie eine Objektmethode `fill()`, die das `uhren`-Array vollständig mit `Uhrzeit`-Objekten befüllt. Die Parameterwerte der `Uhrzeit`-Objekte werden zufällig erzeugt. Erzeugen Sie ein Objekt der Klasse `Random` (dafür muss `java.util.Random` importiert werden) und erzeugen Sie die Parameter-Werte für die `Uhrzeit`-Objekte zufällig (unter Verwendung des `Random`-Objektes) aus dem Bereich `[0, ..., 86399]` (`0` und `86399` jeweils inklusive)
+		- Überschreiben Sie die Objektmethode `toString()`, so dass das `uhren`-Array wie folgt als Zeichenkette zurückgegeben wird (Beispielwerte): 
+			```bash
+			((06:38:30), (01:59:32), (07:16:48), (01:37:58), (18:16:06), (07:50:33), (01:41:47), (05:07:41), (12:38:08), (02:00:04)) 
+			```
+			Also die Uhrzeit jeweils in runden Klammern und durch Komma getrennt sowie das ganze Array in runden Klammern. 
+		- Schreiben Sie eine Objektmethode `print()`, so dass auf der Konsole die durch `toString()` erzeugte eine Zeichenkette ausgegeben wird.  
+		- Schreiben Sie eine Objektmethode `spaeteste()`. Diese Methode gibt die kleinste (früheste) `Uhrzeit` aus dem Array `uhren` zurück. 
+		- Schreiben Sie eine Objektmethode `zwischen(Uhrzeit frueh, Uhrzeit spaet)`. Diese Methode gibt ein `UhrzeitArray`-Objekt zurück. Das zurückgegebene `UhrzeitArray`-Objekt enthält alle `Uhrzeit`-Objekte aus dem Array `uhren`, welche zwischen den beiden Uhrzeiten `frueh` und `spaet` liegen.
+		- Schreiben Sie eine Objektmethode `sortieren()`. Diese Methode sortiert das `uhren`-Array aufsteigend beginnend mit der kleinsten Uhrzeit.
+		- Schreiben Sie eine Objektmethode `kleinsterAbstand()`. Diese Methode gibt ein `UhrzeitArray` der Länge `2` zurück. Es enthält die beiden `Uhrzeit`en aus dem Array `uhren`, welche den kleinsten Abstand (Differenz in Sekunden) haben. Sie können beim Schreiben der Methode davon ausgehen, dass das `uhren`-Array bereits sortiert ist! 
+
+	- Erzeugen Sie in der `main()`-Methode ein Objekt der Klasse `UhrzeitArray`. Das Array soll die Länge `10` haben. 
+
+		- Rufen Sie die `fill()`- und dann die `print()`-Methode auf. Es entsteht folgende Ausgabe (Zufallswerte):
+			```bash
+			((06:38:30), (01:59:32), (07:16:48), (01:37:58), (18:16:06), (07:50:33), (01:41:47), (05:07:41), (12:38:08), (02:00:04))
+			```
+
+		- Wenden Sie jeweils die Methoden `System.out.print()` sowie `spaeteste()` so an, dass folgende Ausgabe entsteht (Zufallswerte):  
+			```bash
+			spaeteste : 18:16:06
+			```
+
+		- Wenden Sie jeweils die Methoden `System.out.print()` sowie `sortieren()` und `print()` so an, dass folgende Ausgabe entsteht (Zufallswerte):
+			```bash  
+			sortiert  : ((01:37:58), (01:41:47), (01:59:32), (02:00:04), (05:07:41), (06:38:30), (07:16:48), (07:50:33), (12:38:08), (18:16:06))
+			```
+
+		- Erzeugen Sie zwei weitere `Uhrzeit`-Objekte `frueh` (Parameterwert `36000`) und `spaet` (Parameterwert `72000`) und rufen Sie damit die Objektmethoden `zwischen(frueh, spaet)` und `print()` auf, so dass folgende Ausgabe entsteht (Zufallswerte):
+			```bash
+			frueh    : 10:00:00
+			spaet    : 20:00:00
+			zwischen : ((12:38:08), (18:16:06))
+			```
+
+		- Wenden Sie jeweils die Methoden `System.out.print()` sowie `kleinsterAbstand()` und `print()` so an, dass folgende Ausgabe entsteht (Zufallswerte):  
+			```bash
+			kleinster Abstand : ((01:59:32), (02:00:04))
+			```
+
+	- **Zur Kontrolle:** ungefähre Ausgabe auf der Konsole (in Teil 2 Zufallswerte):
+		```bash
+		--------------- Teil 1 ---------------
+
+		z1 : 00:01:23
+		z2 : 01:01:02
+		z3 : 23:59:59
+		z4 : 23:59:59
+
+		z1 frueher als z2 ? true
+		z3 frueher als z4 ? false
+
+		z1 plus   40 Sekunden : 00:02:03
+		z2 plus 3598 Sekunden : 02:01:00
+
+		z3-z2 in Sekunden : 82737
+
+		--------------- Teil 2 ---------------
+
+		((06:38:30), (01:59:32), (07:16:48), (01:37:58), (18:16:06), (07:50:33), (01:41:47), (05:07:41), (12:38:08), (02:00:04))
+
+		spaeteste : 18:16:06
+
+		sortiert  : ((01:37:58), (01:41:47), (01:59:32), (02:00:04), (05:07:41), (06:38:30), (07:16:48), (07:50:33), (12:38:08), (18:16:06))
+
+		frueh    : 10:00:00
+		spaet    : 20:00:00
+		zwischen : ((12:38:08), (18:16:06))
+
+		kleinster Abstand : ((01:59:32), (02:00:04))
+		```
+
+??? question "eine mögliche Lösung für Uhrzeit"
+	=== "Uhrzeit.java"
+		```java linenums="1"
+		package loesungen.probeklausuren.probeklausur3;
+
+		public class Uhrzeit
+		{
+			private int stunden;
+			private int minuten;
+			private int sekunden;
+			
+			public Uhrzeit(int sekunden)
+			{
+				final int STUNDE = 3600;
+				final int MINUTE = 60;
+
+				this.stunden = (sekunden/STUNDE)%24;
+				int rest = sekunden%STUNDE;	
+				this.minuten = rest/MINUTE;
+				rest = rest%MINUTE;
+				this.sekunden = rest;
+			}
+			
+			public int uhrZeitInSekunden()
+			{
+				final int STUNDE = 3600;
+				final int MINUTE = 60;
+				
+				int sekunden = this.stunden*STUNDE 
+						+ this.minuten*MINUTE 
+						+ this.sekunden;
+				return sekunden;
+			}
+			
+			public boolean frueher(Uhrzeit u)
+			{
+				return this.uhrZeitInSekunden() < u.uhrZeitInSekunden();
+			}
+			
+			public boolean spaeter(Uhrzeit u)
+			{
+				return this.uhrZeitInSekunden() > u.uhrZeitInSekunden();
+			}
+			
+			public Uhrzeit jetztPlusXSekunden(int sekunden)
+			{
+				int jetzt = this.uhrZeitInSekunden();
+				int neu = jetzt + sekunden;
+				
+				return new Uhrzeit(neu);
+			}
+			
+			public int differenzInSekunden(Uhrzeit u)
+			{
+				int uhrzeit1 = this.uhrZeitInSekunden();
+				int uhrzeit2 = u.uhrZeitInSekunden();
+				int diff	= Math.abs(uhrzeit1-uhrzeit2);
+				return diff;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = "";
+				if(this.stunden<10)
+				{
+					s = s + "0";
+				}
+				s = s + this.stunden +":";
+				if(this.minuten<10)
+				{
+					s = s + "0";
+				}
+				s = s + this.minuten +":";
+				if(this.sekunden<10)
+				{
+					s = s + "0";
+				}
+				s = s + this.sekunden;
+				
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+		```
+
+	=== "UhrzeitArray.java"
+		```java linenums="1"
+		package loesungen.probeklausuren.probeklausur3;
+
+		import java.util.Random;
+
+		public class UhrzeitArray
+		{
+			private Uhrzeit[] uhren;
+			
+			public UhrzeitArray(int laenge)
+			{
+				this.uhren = new Uhrzeit[laenge];
+			}
+			
+			public void fill()
+			{
+				Random r = new Random();
+				for(int i=0; i<this.uhren.length; i++)
+				{
+					int zufSekunden = r.nextInt(86400);
+					this.uhren[i] = new Uhrzeit(zufSekunden);
+				}
+			}
+			
+			public void print()
+			{
+				String s = "(";
+				for(int i=0; i<this.uhren.length; i++)
+				{
+					if(i<this.uhren.length-1)
+					{
+						s = s + "(" + this.uhren[i].toString() + "), ";
+					}
+					else
+					{
+						s = s + "(" + this.uhren[i].toString() + ")";
+					}
+				}
+				s = s +")";
+				System.out.println(s);
+			}
+			
+			public Uhrzeit frueheste()
+			{
+				Uhrzeit frueheste = this.uhren[0];
+				for(int i=1; i<this.uhren.length; i++)
+				{
+					if(this.uhren[i].frueher(frueheste))
+					{
+						frueheste = this.uhren[i];
+					}
+				}
+				return frueheste;
+			}
+			
+			public UhrzeitArray zwischen(Uhrzeit frueh, Uhrzeit spaet)
+			{
+				int anzZwischen = 0;
+				for(Uhrzeit u : this.uhren)
+				{
+					if(frueh.frueher(u) && u.frueher(spaet))
+					{
+						anzZwischen++;
+					}
+				}
+				UhrzeitArray ua = new UhrzeitArray(anzZwischen);
+				int uaIndex = 0;
+				for(int i=0; i<this.uhren.length; i++)
+				{
+					if(frueh.frueher(this.uhren[i]) 
+							&& this.uhren[i].frueher(spaet))
+					{
+						ua.uhren[uaIndex] = this.uhren[i];
+						uaIndex++;
+					}
+				}
+				return ua;
+			}
+			
+			public void sortieren()
+			{
+				for(int bubble=0; bubble<this.uhren.length-1; bubble++)
+				{
+					for(int i=0; i<this.uhren.length-1-bubble; i++)
+					{
+						if(this.uhren[i+1].frueher(this.uhren[i]))
+						{
+							Uhrzeit temp = this.uhren[i];
+							this.uhren[i] = this.uhren[i+1];
+							this.uhren[i+1] = temp;
+						}
+					}
+				}
+			}
+			
+			public UhrzeitArray kleinsterAbstand()
+			{
+				this.sortieren();
+				Uhrzeit u1 = this.uhren[0];
+				Uhrzeit u2 = this.uhren[1];
+				int kleinsterAbstand = u1.differenzInSekunden(u2);
+				for(int i=1; i<this.uhren.length-1; i++)
+				{
+					if(this.uhren[i].differenzInSekunden(this.uhren[i+1]) 
+							< kleinsterAbstand)
+					{
+						u1 = this.uhren[i];
+						u2 = this.uhren[i+1];
+						kleinsterAbstand = u1.differenzInSekunden(u2);
+					}
+				}
+				UhrzeitArray ua = new UhrzeitArray(2);
+				ua.uhren[0] = u1;
+				ua.uhren[1] = u2;
+				return ua;
+					
+			}
+		}
+		```
+
+	=== "Testklasse.java"
+		```java linenums="1"
+		package loesungen.probeklausuren.probeklausur3;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n---------------------- Test Uhrzeit --------------------------%n%n");
+				Uhrzeit z1 = new Uhrzeit(83);
+				Uhrzeit z2 = new Uhrzeit(3662);
+				Uhrzeit z3 = new Uhrzeit(86399);
+				Uhrzeit z4 = new Uhrzeit(172799);
+				
+				System.out.print("z1 : "); 
+				z1.print();
+				System.out.print("z2 : "); 
+				z2.print();
+				System.out.print("z3 : "); 
+				z3.print();
+				System.out.print("z4 : "); 
+				z4.print();
+				
+				System.out.println("z1 frueher als z2 ? " + z1.frueher(z2));
+				System.out.println("z3 frueher als z4 ? " + z3.frueher(z4));
+				
+				System.out.println("z1 plus   40 Sekunden : " 
+				+ z1.jetztPlusXSekunden(40));
+				System.out.println("z2 plus 3598 Sekunden : " 
+				+ z2.jetztPlusXSekunden(3598));
+				
+				System.out.println("z3-z2 in Sekunden : " 
+				+ z3.differenzInSekunden(z2));
+				
+				System.out.printf("%n%n------------------- Test UhrzeitArray ------------------------%n%n");
+				UhrzeitArray ua = new UhrzeitArray(10);
+				ua.fill();
+				ua.print();
+				System.out.println("frueheste : " + ua.frueheste());
+				
+				Uhrzeit frueh = new Uhrzeit(36000);
+				Uhrzeit spaet = new Uhrzeit(72000);
+				UhrzeitArray zwischen = ua.zwischen(frueh, spaet);
+				
+				System.out.print("frueh    : "); frueh.print();
+				System.out.print("spaet    : "); spaet.print();
+				System.out.print("zwischen : "); zwischen.print();
+				
+				ua.sortieren();
+				ua.print();
+				
+				UhrzeitArray kleinsterAbstand = ua.kleinsterAbstand();
+				System.out.print("kleinster Abstand : ");
+				kleinsterAbstand.print();	
+			}
+		}
+		```
+
+??? note "Länder und Kontinente"
+	- Implementieren Sie eine Klasse `Land`. 
+
+		- Objektvariablen sind `name` vom Typ `String` *(Name des Landes)*, `groesse` vom Typ `int` *(Größe des Landes)* und `einwohner` vom Typ `int` *(Anzahl der Einwohner des Landes)*. Die Objektvariablen sind nur in der Klasse sichtbar!
+
+		- Schreiben Sie für alle drei Objektvariablen Getter (`getName()`, `getGroesse()`, `getEinwohner())! 
+
+		- Schreiben Sie eine Objektmethode `erzeugeName()`. Diese Methode gibt einen `String` zurück, der sich aus einem großen Buchstaben und einer Ziffer zusammensetzt, also z.B. `K8`, `L1`, `J4` usw.  Sowohl der Großbuchstabe als auch die Ziffer sollen mithilfe der Klasse `Random` zufällig erzeugt werden. <br/>
+
+		- **Tipps:**
+				
+			- um die Klasse `Random` verwenden zu können, müssen Sie sie aus dem `java.util`-Paket importieren,
+			- verwenden Sie sowohl zum Erzeugen des Großbuchstabens als auch zum Erzeugen der Ziffer die Objektmethode `nextInt(int bound)` der Klasse `Random`,
+			- der ASCII-Code von `A` ist `65`, der von `Z` ist `90` (es sind 26 verschiedene Buchstaben)
+			- bei den Ziffern sind alle 10 Ziffern [0, …,9] möglich
+
+		- Schreiben Sie für die Klasse `Land` einen parameterlosen Konstruktor. In diesem Konstruktor wird
+
+			- die Objektvariable `name` mithilfe der `erzeugeName()`-Methode initialisiert,
+			- die Objektvariable `groesse` wird mit einem Zufallswert aus dem Wertebereich [1, …, 100] (100 verschiedene Zahlen, 1 und 100 inklusive) initialisiert und 
+			- die Objektvariable `einwohner` mit einem Zufallswert aus dem Wertebereich [1, …, 1000] (1000 verschiedene Zahlen, 1 und 1000 inklusive) initialisiert. 
+			- Nutzen Sie erneut die Klasse `Random` und die Methode `nextInt(bound)`.
+
+		- Schreiben Sie eine Objektmethode `ewDichte()`. Diese Methode gibt ein `double` zurück und gibt die Anzahl der `einwohner` pro `groesse` an. 
+		
+		- Überschreiben Sie die Objektmethode `toString()` so, dass ein Land in der folgenden Form als ein `String` zurückgegeben wird (Zufallswerte):
+			```bash
+			A3 :  37 km2 :   91 ew :   2,4595
+			```
+
+			- Zuerst der Name des Landes und dann ` : `, 
+			- dann die Groesse des Landes gefolgt von ` km2 : `,
+			- dann die Anzahl der Einwohner des Landes gefolgt von ` ew : `  und
+			- dann die Einwohnerdichte mit vier Stellen nach dem Komma. 
+
+			Der String soll so formatiert sein, dass die Doppelpunkte ` : ` und das Komma bei der Einwohnerdichte bei der Ausgabe mehrerer Strings untereinander stehen!, also z.B. so:
+				```bash
+				G5 :  76 km2 :   25 ew :   0,3289
+				W0 :  60 km2 :   18 ew :   0,3000
+				S9 :   6 km2 :  585 ew :  97,5000
+				H1 :   4 km2 :  965 ew : 241,2500
+				```
+	
+		- Schreiben Sie eine Objektmethode `print()`. Diese Methode gibt den durch `toString()` erzeugten `String` auf der Konsole aus.
+
+		- Schreiben Sie die Objektmethode `istGroesser(Land land)`. Diese Methode gibt ein `true` zurück, wenn bei dem aufrufenden Objekt der Wert von `groesse` größer ist als von `land`. Ansonsten `false`. 
+
+		- Schreiben Sie die Objektmethode `hatMehrEinwohner(Land land)`. Diese Methode gibt ein `true` zurück, wenn bei dem aufrufenden Objekt der Wert von `einwohner` größer ist als von `land`. Ansonsten `false`. 
+
+		- Schreiben Sie die Objektmethode `nameIstGroesser(Land land)`. Diese Methode gibt ein `true` zurück, wenn bei dem aufrufenden Objekt der Wert von `name` lexikografisch größer ist als von `land`. Ansonsten false.
+
+		**Tipp:** für zwei Strings `s1` und `s2` gilt, dass `s1` lexikografisch größer ist, wenn der Wert von `s1.compareTo(s2)` einem positiven `int`-Wert etspricht. 
+
+		- Überschreiben Sie die Objektmethode `equals(Object o)`. Diese Methode gibt ein `true` zurück, wenn das aufrufende Objekt den gleichen Namen hat wie `o`. Sonst `false`. 
+
+	- Schreiben Sie eine Klasse `Testklasse` mit `main()`-Methode. Erzeugen Sie in der `main()`-Methode in einer Schleife `10` Objekte der Klasse `Land` und rufen (auch in der Schleife) jeweils die `print()`-Methode auf. 
+
+		Es entsteht folgende Ausgabe (Beispielwerte sind zufällig und unterscheiden sich!):
+		```bash
+		J6 :  34 km2 :  198 ew :   5,8235
+		B4 :  72 km2 :  171 ew :   2,3750
+		Z8 :  93 km2 :  712 ew :   7,6559
+		W2 :  75 km2 :  149 ew :   1,9867
+		O0 : 100 km2 :  576 ew :   5,7600
+		Q5 :  21 km2 :  210 ew :  10,0000
+		O9 :  71 km2 :  533 ew :   7,5070
+		B8 :  52 km2 :   57 ew :   1,0962
+		K4 :  71 km2 :  830 ew :  11,6901
+		A9 :  98 km2 :  288 ew :   2,9388
+		```
+
+		- Erzeugen Sie 1 Objekt von `Land` und rufen Sie für dieses Objekt die `print()`-Methode auf. Erzeugen Sie in einer Schleife so lange ein weiteres Objekt von `Land`, bis die beiden Objekte laut `equals()`-Methode gleich sind. Zählen Sie mit, wie viele Objekte von `Land` Sie erzeugen mussten, bis ein gleiches Objekt gefunden wurde. Geben Sie das gefundene Objekt mithilfe der `print()`-Methode aus und wie viele Objekte erzeugt wurden. 
+
+			Es entsteht folgende Ausgabe (Beispielwerte sind zufällig und unterscheiden sich!):
+			```bash
+			I1 :  28 km2 :  914 ew :  32,6429
+			I1 :  80 km2 :    1 ew :   0,0125
+			43 andere Laender erzeugt
+			```
+
+		- Erzeugen Sie zwei Objekte `l1` und `l2` von `Land` und wenden Sie die Methoden `istGroesser()`, `hatMehrEinwohner()` und `nameIstGroesser()` so an, dass folgende Ausgabe entsteht (Zufallswerte!):
+			```bash
+			l1 : T0 :  30 km2 :  237 ew :   7,9000
+			l2 : K0 :  29 km2 :  328 ew :  11,3103
+
+			l1 groesser als l2 ?                : true
+			l1 mehr Einwohner als l2 ?          : false
+			l1 lexikografisch groesser als l2 ? : true
+			```
+
+	- Schreiben Sie eine Klasse `Kontinent`. 
+
+		- Objektvariablen dieser Klasse sind:
+
+			- `laender` vom Typ `Land[]` und
+
+			- `kontinent` vom Typ `char`. 
+
+			Beide Objektvariablen sind nur innerhalb der Klasse sichtbar!
+
+
+		- Schreiben Sie einen parametrisierten Konstruktor `Kontinent(char kontinent, int anzahlLaender)`. Innerhalb des Konstruktors werden:
+
+			- der Parameterwert `kontinent` verwendet, um die Objektvariable `kontinent` zu initialisieren, 
+			- das Array erzeugt, auf das die Objektvariable `laender` referenziert. Das Array hat die Länge `anzahlLaender`,
+			- sowie das `laender`-Array vollständig mit Objekten vom Typ `Land` befüllt.
+
+		- Schreiben Sie eine Objektmethode `getAnzLaender()`. Diese Methode gibt die Anzahl der Länder im `laender`-Array als `int` zurück.
+
+		- Schreiben Sie eine Objektmethode `getLaender()`. Diese Methode gibt eine Referenz auf das `laender`-Array zurück.
+
+		- Schreiben Sie eine Objektmethode `getLandAtIndex(int index)`. Diese Methode gibt das `Land` zurück, das im `laender`-Array unter dem Index `index` gespeichert ist. Sollte `index` kein korrekter Index aus dem `laender`-Array sein, wird `null` zurückgegeben. 
+
+		- Schreiben Sie eine Objektmethode `getSummen()`. Diese Methode gibt ein `int`-Array der Länge `2` zurück. 
+
+			- Der erste Eintrag in diesem Array ist die Summe der Größen aller Länder im `laender`-Array und 
+	
+			- der zweite Eintrag ist die Summe der Einwohner aller Länder im `laender`-Array. 
+
+		- Überschreiben Sie die Objektmethode `toString()` so, dass ein `String` in der folgenden Form zurückgegeben wird (Zufallswerte!):
+		```bash
+		Kontinent a 
+		--------------------------
+		S2 :  81 km2 :  918 ew :  11,3333 
+		Z7 :  14 km2 :  453 ew :  32,3571 
+		O4 :  35 km2 :  713 ew :  20,3714 
+		Q9 :  14 km2 :  728 ew :  52,0000 
+		F1 :  23 km2 :  714 ew :  31,0435 
+		K9 :  67 km2 :  630 ew :   9,4030 
+		W5 :  35 km2 :  128 ew :   3,6571 
+
+		Summen : 269 : 4284 
+		```
+
+			- es wird Kontinent und der Name des Kontinents in der ersten Zeile ausgegeben, 
+
+			- dann kommt eine Trennlinie (egal, wie lang), 
+
+			- dann kommen untereinander alle Länder aus dem laender-Array, 
+
+			- dann kommt eine Lehrzeile und
+
+			- dann kommen die Summen der Größen der Länder und die Summen der Einwohner (beliebig formatiert)
+
+		- Schreiben Sie eine Objektmethode `print()`. Diese Methode gibt den durch `toString()` erzeugten `String` auf der Konsole aus.
+
+		- Schreiben Sie eine Objektmethode `sortiere(int nach)`. Diese Methode sortiert das `laender`-Array aufsteigend von klein nach groß. Der Parameter nach hat folgende Bedeutung:
+
+			-	Ist der Wert von `nach` `0`, dann wird das Array nach der `groesse` der Länder sortiert. 
+
+			-	Ist der Wert von `nach` `1`, dann wird das Array nach der Anzahl der `einwohner` der Länder sortiert.
+
+			-	Ist der Wert von `nach` `2`, dann wird das Array nach der Einwohnerdichte (`ewDichte`) der Länder sortiert.
+
+			-	Für jeden anderen Wert von `nach` (also alles außer `0,1,2`) wird das Array lexikografisch nach den Namen der Länder sortiert. 
+
+	- Erzeugen Sie in der `main()`-Methode ein Array, in dem jedes Element vom Typ `Kontinent` ist. Das Array hat die Länge `5`. Befüllen Sie dieses Array mit `Kontinent`-Objekten in einer **Schleife(!)** wie folgt:
+
+		- Die fünf Kontinente haben die Namen `a`, `b`, `c`, `d`, `e` (der ASCII-Code von `a` ist `97`, der von `b` ist `98` usw. ).
+
+		- Der erste Kontinent hat 7 Länder, der zweite hat 8, der dritte 9, der vierte 10 und der fünfte Kontinent hat 11 Länder.
+
+		- Rufen Sie für alle Kontinente jeweils die `print()`-Methode auf. Es entsteht folgende Ausgabe (Zufallswerte!):
+		```bash
+		Kontinent a
+		--------------------------
+		S2 :  81 km2 :  918 ew :  11,3333 
+		Z7 :  14 km2 :  453 ew :  32,3571 
+		O4 :  35 km2 :  713 ew :  20,3714 
+		Q9 :  14 km2 :  728 ew :  52,0000 
+		F1 :  23 km2 :  714 ew :  31,0435 
+		K9 :  67 km2 :  630 ew :   9,4030 
+		W5 :  35 km2 :  128 ew :   3,6571 
+
+		Summen : 269 : 4284
+
+		Kontinent b 
+		--------------------------
+		R8 :  65 km2 :  337 ew :   5,1846 
+		L9 :  57 km2 :  732 ew :  12,8421 
+		T0 :  74 km2 :  796 ew :  10,7568 
+		P4 :  13 km2 :  481 ew :  37,0000 
+		L5 :  48 km2 :  575 ew :  11,9792 
+		Q2 :  35 km2 :  538 ew :  15,3714 
+		M8 :  72 km2 :  865 ew :  12,0139 
+		T0 :  29 km2 :  855 ew :  29,4828 
+
+		Summen : 393 : 5179
+
+		Kontinent c 
+		--------------------------
+		I9 :  91 km2 :   84 ew :   0,9231 
+		X9 :  41 km2 :  842 ew :  20,5366 
+		V7 :  31 km2 :  120 ew :   3,8710 
+		O3 :  48 km2 :  990 ew :  20,6250 
+		P6 :  27 km2 :  565 ew :  20,9259 
+		J7 :  54 km2 :  810 ew :  15,0000 
+		S9 :  72 km2 :  401 ew :   5,5694 
+		C4 :  29 km2 :  486 ew :  16,7586 
+		I2 :   6 km2 :  393 ew :  65,5000 
+
+		Summen : 399 : 4691
+
+		Kontinent d 
+		--------------------------
+		C0 :  44 km2 :  122 ew :   2,7727 
+		E2 :   8 km2 :  925 ew : 115,6250 
+		I1 :  12 km2 :  585 ew :  48,7500 
+		X9 :  13 km2 :  583 ew :  44,8462 
+		Z6 :  10 km2 :   24 ew :   2,4000 
+		J1 :  20 km2 :  161 ew :   8,0500 
+		I2 :  75 km2 :  432 ew :   5,7600 
+		Y8 :  69 km2 :  224 ew :   3,2464 
+		H1 :  45 km2 :  410 ew :   9,1111 
+		P1 :  24 km2 :  332 ew :  13,8333 
+
+		Summen : 320 : 3798
+
+		Kontinent e 
+		--------------------------
+		J6 :  22 km2 :  358 ew :  16,2727 
+		N9 :  95 km2 :  471 ew :   4,9579 
+		G5 :  94 km2 :  524 ew :   5,5745 
+		G0 :  72 km2 :  753 ew :  10,4583 
+		L3 :  84 km2 :   49 ew :   0,5833 
+		M8 :  39 km2 :   13 ew :   0,3333 
+		K7 :  22 km2 :  881 ew :  40,0455 
+		Y3 :  58 km2 :  355 ew :   6,1207 
+		H3 :  28 km2 :    2 ew :   0,0714 
+		V2 :  67 km2 :   94 ew :   1,4030 
+		S9 :  15 km2 :  392 ew :  26,1333 
+
+		Summen : 596 : 3892
+		```
+		
+		- Rufen Sie für den **ersten** Kontinent im Array nacheinander die Methoden `sortiere(0)`, `print()`, `sortiere(1)`, `print()`, `sortiere(2)`, `print()`, `sortiere(3)`, `print()` auf. Es entsteht folgende Ausgabe (Zufallswerte!):
+		```bash
+		Kontinent a           // keine Ausgabe, nur Info: Kontinent unsortiert 
+		--------------------------
+		S2 :  81 km2 :  918 ew :  11,3333 
+		Z7 :  14 km2 :  453 ew :  32,3571 
+		O4 :  35 km2 :  713 ew :  20,3714 
+		Q9 :  14 km2 :  728 ew :  52,0000 
+		F1 :  23 km2 :  714 ew :  31,0435 
+		K9 :  67 km2 :  630 ew :   9,4030 
+		W5 :  35 km2 :  128 ew :   3,6571 
+
+		Kontinent a           // keine Ausgabe, nur Info: nach groesse sortiert 
+		--------------------------
+		Z7 :  14 km2 :  453 ew :  32,3571 
+		Q9 :  14 km2 :  728 ew :  52,0000 
+		F1 :  23 km2 :  714 ew :  31,0435 
+		O4 :  35 km2 :  713 ew :  20,3714 
+		W5 :  35 km2 :  128 ew :   3,6571 
+		K9 :  67 km2 :  630 ew :   9,4030 
+		S2 :  81 km2 :  918 ew :  11,3333 
+
+		Kontinent a           // keine Ausgabe, nur Info: nach einwohner sortiert 
+		--------------------------
+		W5 :  35 km2 :  128 ew :   3,6571 
+		Z7 :  14 km2 :  453 ew :  32,3571 
+		K9 :  67 km2 :  630 ew :   9,4030 
+		O4 :  35 km2 :  713 ew :  20,3714 
+		F1 :  23 km2 :  714 ew :  31,0435 
+		Q9 :  14 km2 :  728 ew :  52,0000 
+		S2 :  81 km2 :  918 ew :  11,3333 
+
+		Kontinent a           // keine Ausgabe, nur Info: nach ewDichte sortiert 
+		--------------------------
+		W5 :  35 km2 :  128 ew :   3,6571 
+		K9 :  67 km2 :  630 ew :   9,4030 
+		S2 :  81 km2 :  918 ew :  11,3333 
+		O4 :  35 km2 :  713 ew :  20,3714 
+		F1 :  23 km2 :  714 ew :  31,0435 
+		Z7 :  14 km2 :  453 ew :  32,3571 
+		Q9 :  14 km2 :  728 ew :  52,0000 
+
+		Kontinent a           // keine Ausgabe, nur Info: nach name sortiert 
+		--------------------------
+		F1 :  23 km2 :  714 ew :  31,0435 
+		K9 :  67 km2 :  630 ew :   9,4030 
+		O4 :  35 km2 :  713 ew :  20,3714 
+		Q9 :  14 km2 :  728 ew :  52,0000 
+		S2 :  81 km2 :  918 ew :  11,3333 
+		W5 :  35 km2 :  128 ew :   3,6571 
+		Z7 :  14 km2 :  453 ew :  32,3571
+
+		```
+
+	- Schreiben Sie eine Klasse `Welt`.
+
+		- Objektvariable dieser Klasse ist `kontinente` vom Typ `Kontinent[]`. Die Objektvariable ist nur innerhalb der Klasse sichtbar!
+
+		- Schreiben Sie einen parametrisierten Konstruktor `Welt(Kontinent[] kontinente)`. Die Referenz des Parameters wird der Objektvariablen zugewiesen. 
+
+		- Schreiben Sie eine Objektmethode `getAlleLaender()`. Diese Methode gibt ein `Land`-Array zurück, in dem alle Länder aus dem `kontinente`-Array enthalten sind. 
+
+		- Schreiben Sie eine Objektmethode `printAlleLaender(Land[] alleLaender)`, die das als Parameter übergebene Array in der folgenden Form ausgibt (Zufallswerte!): 
+		```bash
+		F1 :  23 km2 :  714 ew :  31,0435
+		K9 :  67 km2 :  630 ew :   9,4030
+		O4 :  35 km2 :  713 ew :  20,3714
+		Q9 :  14 km2 :  728 ew :  52,0000
+		S2 :  81 km2 :  918 ew :  11,3333
+		W5 :  35 km2 :  128 ew :   3,6571
+		Z7 :  14 km2 :  453 ew :  32,3571
+		R8 :  65 km2 :  337 ew :   5,1846
+		L9 :  57 km2 :  732 ew :  12,8421
+		T0 :  74 km2 :  796 ew :  10,7568
+		P4 :  13 km2 :  481 ew :  37,0000
+		L5 :  48 km2 :  575 ew :  11,9792
+		```
+			Es sind mehr Länder – ist hier gekürzt. Also einfach alle Länder untereinander.
+
+		- Schreiben Sie eine Objektmethode `enthaeltDoppel()`. Diese Methode gibt ein `true` zurück, wenn das `kontinente`-Array Länder enthält, die den gleichen Namen haben, also laut `equals()` gleich sind. Ansonsten `false`. 
+
+		- Schreiben Sie eine Objektmethode `groesstestLand()`. Diese Methode gibt das größte Land (größte `groesse`) aller Länder im `kontinente`-Array zurück. 
+
+		- Schreiben Sie eine Objektmethode `alleLaenderGroesserAls(int groesse)`, die ein `Land[]` zurückgibt. Das zurückgegebene `Land[]` enthält alle Länder aus dem `kontinente`-Array, die größer sind als der Parameterwert `groesse`.
+
+	- Testen Sie in der `main()`-Methode die Methoden `getAlleLaender()` und `printAlleLaender()` der Klasse `Welt`, so dass für die Methoden folgende Ausgaben entstehen (Zufallswerte!):
+	```bash
+	L6 :  37 km2 :  122 ew :   3,2973
+	M9 :  22 km2 :  351 ew :  15,9545
+	O4 :  84 km2 :  717 ew :   8,5357
+	P4 :  93 km2 :  759 ew :   8,1613
+	Q3 :   3 km2 :  771 ew : 257,0000
+	R1 :  48 km2 :  610 ew :  12,7083
+	V3 :  40 km2 :  153 ew :   3,8250
+	E8 :  58 km2 :  195 ew :   3,3621
+	I9 :  19 km2 :  875 ew :  46,0526
+	Z6 :  47 km2 :  188 ew :   4,0000
+	Y6 :  75 km2 :  858 ew :  11,4400
+	C7 :  26 km2 :  676 ew :  26,0000
+	V8 :   1 km2 :  470 ew : 470,0000
+	Q8 :  92 km2 :  214 ew :   2,3261
+	T7 :  52 km2 :  544 ew :  10,4615
+	U1 :  46 km2 :  939 ew :  20,4130
+	C9 :  22 km2 :  594 ew :  27,0000
+	Z5 :  94 km2 :  353 ew :   3,7553
+	G6 :   9 km2 :  237 ew :  26,3333
+	D8 :  85 km2 :  910 ew :  10,7059
+	I5 :  15 km2 :  521 ew :  34,7333
+	V7 :  58 km2 :  546 ew :   9,4138
+	V8 :  25 km2 :  535 ew :  21,4000
+	I4 :  91 km2 :  407 ew :   4,4725
+	W1 :  92 km2 :  278 ew :   3,0217
+	M4 :  30 km2 :  494 ew :  16,4667
+	R5 :   8 km2 :  912 ew : 114,0000
+	O1 :  15 km2 :  858 ew :  57,2000
+	S3 :  46 km2 :  463 ew :  10,0652
+	M9 :  43 km2 :  624 ew :  14,5116
+	P5 :  35 km2 :  704 ew :  20,1143
+	Y2 :   2 km2 :  243 ew : 121,5000
+	X9 :  79 km2 :  928 ew :  11,7468
+	Z4 :  36 km2 :  311 ew :   8,6389
+	C6 :   2 km2 :  249 ew : 124,5000
+	J6 :   6 km2 :  683 ew : 113,8333
+	G8 :  18 km2 :    3 ew :   0,1667
+	W3 :  24 km2 :  502 ew :  20,9167
+	K9 :  81 km2 :  996 ew :  12,2963
+	A0 :  46 km2 :  950 ew :  20,6522
+	K9 :  99 km2 :   84 ew :   0,8485
+	T5 :  93 km2 :  488 ew :   5,2473
+	X1 :  40 km2 :  555 ew :  13,8750
+	Q9 :  18 km2 :  631 ew :  35,0556
+	I9 :  22 km2 :  867 ew :  39,4091
+	```
+
+		- Rufen Sie die Methoden `enthaeltDoppel()`, `groesstesLand()`, `alleLaenderGroesserAls(50)` und `printAlleLaender()` so auf, dass folgende Ausgaben entstehen (Zufallswerte!): 
+		```bash
+		Enthaelt Doppel? : true
+		groesstes Land   : K9 :  99 km2 :   84 ew :   0,8485
+		Alle Laender groesser als 50 :
+		O4 :  84 km2 :  717 ew :   8,5357
+		P4 :  93 km2 :  759 ew :   8,1613
+		E8 :  58 km2 :  195 ew :   3,3621
+		Y6 :  75 km2 :  858 ew :  11,4400
+		Q8 :  92 km2 :  214 ew :   2,3261
+		T7 :  52 km2 :  544 ew :  10,4615
+		Z5 :  94 km2 :  353 ew :   3,7553
+		D8 :  85 km2 :  910 ew :  10,7059
+		V7 :  58 km2 :  546 ew :   9,4138
+		I4 :  91 km2 :  407 ew :   4,4725
+		W1 :  92 km2 :  278 ew :   3,0217
+		X9 :  79 km2 :  928 ew :  11,7468
+		K9 :  81 km2 :  996 ew :  12,2963
+		K9 :  99 km2 :   84 ew :   0,8485
+		T5 :  93 km2 :  488 ew :   5,2473
+		```
+
+
+??? question "eine mögliche Lösung für Länder und Kontinente"
+	=== "Land.java"
+		```java linenums="1"
+		package klausur;
+
+		import java.util.Random;
+
+		public class Land
+		{
+			private String name;
+			private int groesse;
+			private int einwohner;
+			
+			public String getName()
+			{
+				return this.name;
+			}
+
+			public int getGroesse()
+			{
+				return this.groesse;
+			}
+
+			public int getEinwohner()
+			{
+				return this.einwohner;
+			}
+			
+			public String erzeugeName()
+			{
+				Random r = new Random();
+				int ascii = r.nextInt(26) + 65;
+				char c = (char)ascii;
+				String s = "" + c;
+				
+				int nr = r.nextInt(10);
+				s += nr;
+				return s;
+			}
+			
+			public Land()
+			{
+				this.name = this.erzeugeName();
+				Random r = new Random();
+				this.groesse = r.nextInt(100) + 1;
+				this.einwohner = r.nextInt(1000) + 1;
+			}
+				
+			public double ewDichte()
+			{
+				double ewDichte = (double)this.einwohner / (double)this.groesse;
+				return ewDichte;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("%s : %3d km2 : %4d ew : %8.4f", this.name, this.groesse, this.einwohner, this.ewDichte());
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public boolean istGroesser(Land l)
+			{
+				return this.groesse > l.groesse;
+			}
+			
+			public boolean hatMehrEinwohner(Land l)
+			{
+				return this.einwohner > l.einwohner;
+			}
+				
+			public boolean nameIstGroesser(Land l)
+			{
+				return this.name.compareTo(l.name) > 0;
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Land lo = (Land)o;
+				return this.name.equals(lo.name);
+			}
+		}
+		```
+
+	=== "Kontinent.java"
+		```java linenums="1"
+		package klausur;
+
+		public class Kontinent
+		{
+			private Land[] laender;
+			private char kontinent;
+			
+			public Kontinent(char kontinent, int anzahlLaender)
+			{
+				this.kontinent = kontinent;
+				this.laender = new Land[anzahlLaender];
+				for (int index = 0; index < this.laender.length; index++)
+				{
+					this.laender[index] = new Land();
+				}
+			}
+			
+			public int getAnzLaender()
+			{
+				return this.laender.length;
+			}
+			
+			public Land[] getLaender()
+			{
+				return this.laender;
+			}
+			
+			public Land getLandAtIndex(int index)
+			{
+				if(index>=0 && index<this.getAnzLaender())
+				{
+					return this.laender[index];
+				}
+				else
+				{
+					return null;
+				}
+			}
+			
+			/*
+			public char getKontinent()
+			{
+				return this.kontinent;
+			}
+			*/
+			
+			public int[] getSummen()
+			{
+				int summeEw = 0;
+				int summeQm = 0;
+				for (int index = 0; index < this.laender.length; index++)
+				{
+					summeEw += this.laender[index].getEinwohner();
+					summeQm += this.laender[index].getGroesse();
+				}
+				int[] summen = {summeQm, summeEw};
+				return summen;
+			}
+
+			@Override
+			public String toString()
+			{
+				String s = String.format("Kontinent %c %n", this.kontinent);
+				s += String.format("--------------------------%n");
+				for (int index = 0; index < this.laender.length; index++)
+				{
+					s += String.format("%24s %n", this.laender[index]);
+				}
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public void sortiere(int nach)
+			{
+				for(int bubble=1; bubble<this.laender.length; bubble++)
+				{
+					for(int index=0; index<this.laender.length-bubble; index++)
+					{
+						if(nach==0 && this.laender[index].istGroesser(this.laender[index+1]) ||
+						   nach==1 && this.laender[index].hatMehrEinwohner(this.laender[index+1]) ||
+						   nach==2 && this.laender[index].ewDichte() > this.laender[index+1].ewDichte() ||
+						   nach!=0 && nach!=1 && nach!=2 && this.laender[index].nameIstGroesser(this.laender[index+1]))
+						{
+							Land tmp = this.laender[index];
+							this.laender[index] = this.laender[index+1];
+							this.laender[index+1] = tmp;
+						}
+					}
+				}
+			}
+		}
+		```
+
+	=== "Kontinent.java"
+		```java linenums="1"
+		package klausur;
+
+		public class Welt
+		{
+			private Kontinent[] kontinente;
+			
+			public Welt(Kontinent[] kontinente)
+			{
+				this.kontinente = kontinente;
+			}
+			
+			public int anzahlLaender()
+			{
+				int anzahl = 0;
+				for (int index = 0; index < this.kontinente.length; index++)
+				{
+					anzahl += this.kontinente[index].getAnzLaender();
+				}
+				return anzahl;
+			}
+			
+			public Land[] getAlleLaender()
+			{
+				Land[] alleLaender = new Land[this.anzahlLaender()];
+				int indexAlle = 0;
+				
+				for (int kontinent = 0; kontinent < this.kontinente.length; kontinent++)
+				{
+					for(int index = 0; index < this.kontinente[kontinent].getAnzLaender(); index++)
+					{
+						alleLaender[indexAlle++] = this.kontinente[kontinent].getLandAtIndex(index);
+					}
+				}
+				return alleLaender;
+			}
+			
+			/*
+			 * war nicht gefordert
+			 */
+			public Land[] sortiereAlleLaenderNachName()
+			{
+				Land[] alleLaender = this.getAlleLaender();
+				
+				for(int bubble=1; bubble<alleLaender.length; bubble++)
+				{
+					for(int index=0; index<alleLaender.length-bubble; index++)
+					{
+						if(alleLaender[index].nameIstGroesser(alleLaender[index+1]))
+						{
+							Land tmp = alleLaender[index];
+							alleLaender[index] = alleLaender[index+1];
+							alleLaender[index+1] = tmp;
+						}
+					}
+				}
+				return alleLaender;
+			}
+			
+			public void printAlleLaender(Land[] alleLaender)
+			{
+				for(int index=0; index<alleLaender.length; index++)
+				{
+					System.out.println(alleLaender[index]);
+				}
+			}
+			
+			public boolean enthaeltDoppel()
+			{
+				Land[] alleLaender = this.getAlleLaender();
+				for(int index1=0; index1<alleLaender.length-1; index1++)
+				{
+					for(int index2=index1+1; index2<alleLaender.length; index2++)
+					{
+						if(alleLaender[index1].equals(alleLaender[index2]))
+						{
+							return true;
+						}
+					}
+				}
+				return false;
+			}
+			
+			public Land[] alleLaenderGroesserAls(int groesse)
+			{
+				Land[] alleLaender = this.getAlleLaender();
+				int anzahl = 0;
+				for(int index=0; index<alleLaender.length; index++)
+				{
+					if(alleLaender[index].getGroesse() > groesse)
+					{
+						anzahl++;
+					}
+				}
+				
+				Land[] laender = new Land[anzahl];
+				int indexLaender = 0;
+				for(int index=0; index<alleLaender.length; index++)
+				{
+					if(alleLaender[index].getGroesse() > groesse)
+					{
+						laender[indexLaender++] = alleLaender[index];
+					}
+				}
+				return laender;
+			}
+			
+			public Land groesstesLand()
+			{
+				Land[] alleLaender = this.getAlleLaender();
+				int indexGroesstes = 0;
+				for(int index=1; index<alleLaender.length; index++)
+				{
+					if(alleLaender[index].istGroesser(alleLaender[indexGroesstes]))
+					{
+						indexGroesstes = index;
+					}
+				}
+				return alleLaender[indexGroesstes];
+			}
+		}
+		```
+
+	=== "Testklasse.java"
+		```java linenums="1"
+		package klausur;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------------------ Test Land ------------------%n%n");
+				for(int i=0; i<10; i++)
+				{
+					new Land().print();
+				}
+				
+				System.out.printf("%n%n----------------- Land equals -----------------%n%n");
+				Land l1 = new Land();
+				Land l2 = new Land();
+				int anz = 0;
+				while(!l1.equals(l2))
+				{
+					l2 = new Land();
+					anz++;
+				}
+				l1.print();
+				l2.print();
+				System.out.println(anz + " andere Laender erzeugt");
+				
+				System.out.printf("%n%n----------------- Land Vergleiche -----------------%n%n");
+				l1 = new Land();
+				l2 = new Land();
+				System.out.print("l1 : ");l1.print();
+				System.out.print("l2 : ");l2.print();
+				System.out.println();
+				System.out.println("l1 groesser als l2 ?                : " + l1.istGroesser(l2));
+				System.out.println("l1 mehr Einwohner als l2 ?          : " + l1.hatMehrEinwohner(l2));
+				System.out.println("l1 lexikografisch groesser als l2 ? : " + l1.nameIstGroesser(l2));
+				
+				System.out.printf("%n%n----------------- Kontinent ------------------%n%n");
+				final int ANZAHL_KONTINENTE = 5;
+				final int ASCII_KLEIN_A = 97;
+				
+				Kontinent[] ka = new Kontinent[ANZAHL_KONTINENTE];
+				for(int index=0; index < ANZAHL_KONTINENTE; index++)
+				{
+					char c = (char)(index+ASCII_KLEIN_A);
+					int anzahlLaender = index + 7;
+					ka[index] = new Kontinent(c, anzahlLaender);
+					ka[index].print();
+					int[] summen = ka[index].getSummen();
+					System.out.println("Summen : " + summen[0] + " : " + summen[1] );
+					System.out.println();
+				}
+				
+				System.out.printf("%n%n----------------- sortieren ------------------%n%n");
+				ka[0].print();
+				ka[0].sortiere(0);
+				ka[0].print();
+				ka[0].sortiere(1);
+				ka[0].print();
+				ka[0].sortiere(2);
+				ka[0].print();
+				ka[0].sortiere(3);
+				ka[0].print();
+				
+				System.out.printf("%n%n----------------- Welt ------------------%n%n");
+				Welt welt = new Welt(ka);
+				Land[] alleLaender = welt.getAlleLaender();
+				welt.printAlleLaender(alleLaender);
+				System.out.println();
+				System.out.println("Enthaelt Doppel? : " + welt.enthaeltDoppel());
+				Land groesstes = welt.groesstesLand();
+				System.out.println("groesstes Land   : " + groesstes.toString());
+				Land[] groesser = welt.alleLaenderGroesserAls(50);
+				System.out.println("Alle Laender groesser als 50 :");
+				welt.printAlleLaender(groesser);
+
+			}
+
+		}
+		```
+
+
+??? note "MyString"
+	- **Information:** 
+
+		- Wir bauen in Ansätzen die Klasse `String` nach, d.h. wir bauen uns einen eigenen Datentypen für Zeichenketten: `MyString`.
+
+		- Ein Objekt von `MyString` ist intern ein `char[]` (wir nennen es `wort`).
+
+		- Von der Klasse `String` selbst verwenden wir nur zwei Methoden: `charAt(index)` und `length()`, und zwar in dem Konstruktor von `MyString`, dem ein `String` als Parameter übergeben wird --> das steht aber nochmal explizit dort
+
+		- Ansonsten verwenden wir von `String` keine weiteren Methoden (ist nicht erlaubt, wäre aber auch nirgendwo hilfreich)
+
+		- Wir erstellen insgesamt nur 2 Klassen: `MyString` und `Testklasse`.
+
+
+	- Implementieren Sie eine Klasse `MyString`. 
+
+		- Objektvariable ist `wort` vom Typ `char[]` *(unsere Zeichenkette - Array von Zeichen)*. Die Objektvariable ist nur in der Klasse sichtbar!
+
+		- Schreiben Sie für `MyString` einen parameterlosen Konstruktor. In diesem Konstruktor wird das `wort`-Array erzeugt mit der Länge `0`.
+
+		- Schreiben Sie für `MyString` einen parametrisierten Konstruktor, dem ein einzelnes Zeichen (`char`) als Parameter übergeben wird. In diesem Konstruktor wird das `wort`-Array erzeugt mit der Länge `1` und das einzelne Zeichen wird in das `wort`-Array gespeichert.
+
+		- Schreiben Sie für `MyString` einen parametrisierten Konstruktor, dem ein `String` als Parameter übergeben wird. In diesem Konstruktor wird das `wort`-Array erzeugt mit der Länge des Strings und jedes einzelne Zeichen des Strings wird in das `wort`-Array gespeichert. Hierzu nutzen Sie die Methoden `charAt(index)` und `length()` der Klasse `String`.
+
+		- Überschreiben Sie die Objektmethode `toString()` so, dass alle Zeichen aus dem `wort`-Array als ein `String` zurückgegeben werden, also z.B. 
+
+			![mystring](./files/208_mystring.png)
+
+		- Schreiben Sie eine Objektmethode `print()`. Diese Methode gibt den durch `toString()` erzeugten `String` auf der Konsole aus.
+
+		- Schreiben Sie die Objektmethode `getLength()`. Diese Methode gibt die Länge des `wort`-Arrays zurück. 
+
+		- Schreiben Sie die Objektmethode `getCharAt(int index)`. Diese Methode gibt ein Leerzeichen zurück, wenn der übergebene `index` kein Index des `wort`-Arrays ist. Ansonsten wird das Zeichen zurückgegeben, das im `wort`-Array unter dem Index `index` gespeichert ist.
+
+		- Schreiben Sie die Objektmethode `contains(char c)`. Diese Methode gibt ein `true` zurück, wenn `c` im `wort`-Array vorkommt. Ansonsten `false`.
+
+		- Überschreiben Sie die Objektmethode `equals(Object o)`. Diese Methode gibt ein `true` zurück, wenn das aufrufende Objekt die gleiche `wort`-Länge hat wie `o` und auch alle Zeichen in den beiden `wort`-Arrays elementweise gleich sind (also Index für Index). Sonst `false`. 
+
+	- Schreiben Sie eine Klasse `Testklasse` mit `main()`-Methode. Erzeugen Sie in der `main()`-Methode 
+
+		- ein Objekt s1 von MyString mithilfe des parameterlosen Konstruktors, 
+
+		- ein Objekt s2 von MyString, dem der einzelne Buchstabe a übergeben wird, 
+
+		- ein Objekt s3 von MyString, dem die Zeichenkette hallo übergeben wird, 
+
+		- rufen Sie für alle drei Objekte die print()-Methode auf. Es entsteht folgende Ausgabe:
+			```bash
+			// das hier gehört nicht zur Ausgabe, soll nur zeigen, dass zunächst eine Leerzeile kommt
+
+			a
+			hallo
+			```
+
+		- Wenden Sie die `getCharAt()`-Methode an und lassen sich für das dritte `MyString`-Objekt (`s3`) den Buchstaben auf der Konsole ausgeben, der am Index `1` gespeichert ist. Wenden Sie die `contains()`-Methode `2` Mal an und lassen sich für das dritte `MyString`-Objekt auf der Konsole ausgebenden, 
+
+			- ob der Buchstabe a in dessen wort-Array gespeichert ist und
+
+			- ob der Buchstabe b in dessen wort-Array gespeichert ist. 
+
+			Es entsteht folgende Ausgabe:
+			```bash
+			a
+			a in hallo ? true
+			b in hallo ? false
+			```
+
+		- Erzeugen Sie zwei weitere Objekte `s4` und `s5` von `MyString`, einmal mit der Zeichenkette `hallo` und einmal mit der Zeichenkette `halLo` und vergleichen Sie beide Objekte mithilfe der `equals()`-Methode mit dem dritten `MyString`-Objekt `s3`. Es entstehen folgende Ausgaben:
+		```bash
+		s3 gleich s4 ? true
+		s3 gleich s4 ? false
+		```
+
+	- weiter mit `MyString`:
+
+		- Schreiben Sie eine Objektmethode `getAsciiCodeOfCharAt(int index)`. Diese Methode gibt den Ascii-Code des Zeichens zurück, das im `wort`-Array unter dem Index `index` gespeichert ist. Ist index kein Index aus dem `wort`-Array, wird `-1` zurückgegeben.
+
+		- Schreiben Sie eine Objektmethode `append(char c)`. Diese Methode hängt das Zeichen `c` an das `wort`-Array, d.h. danach ist das `wort`-Array um 1 länger als vor Aufruf der Methode.
+
+		- Schreiben Sie eine Objektmethode `append(MyString s)`. Diese Methode hängt alle Zeichen aus `s` (aus dessen `wort`-Array) an das `wort`-Array des aufrufenden Objektes. **Tipp:** Verwenden Sie dazu die `append(char c)`-Methode.
+
+		- Schreiben Sie eine Objektmethode `concat(MyString s1, MyString s2)`. Diese Methode gibt ein (neues) `MyString`-Objekt zurück, in dem das `wort`-Array alle Zeichen aus `s1` und `s2` enthält. (Diese `concat()`-Methode entspricht `s1+s2` für Strings): 
+
+			![mystring](./files/209_mystring.png)
+
+		- Schreiben Sie die Objektmethode `firstIndexOf(char c)`. Diese Methode gibt den Index zurück, an dem das Zeichen `c` zum ersten Mal im `wort`-Array vorkommt. Kommt das Zeichen `c` nicht im `wort`-Array vor, wird `-1` zurückgegeben.
+
+		- Schreiben Sie die Objektmethode `lastIndexOf(char c)`. Diese Methode gibt den Index zurück, an dem das Zeichen `c` zum letzten Mal im `wort`-Array vorkommt. Kommt das Zeichen `c` nicht im `wort`-Array vor, wird `-1` zurückgegeben.
+
+		- Schreiben Sie eine Objektmethode `substring(int beginIndex)`. Diese Methode gibt ein (neues) `MyString`-Objekt zurück. Das neue `MyString`-Objekt enthält im `wort`-Array alle Zeichen aus dem `wort`-Array des aufrufenden Objektes ab dem Index `beginIndex` (inklusive). Ist `beginIndex` kein korrekter Index aus dem `wort`-Array des aufrufenden Objektes, wird ein `MyString`-Objekt mit leerem `wort`-Array zurückgegeben.
+
+			![mystring](./files/210_mystring.png)
+
+	- weiter mit `Testklasse`:
+
+		- Testen Sie die `getAsciiCodeOfCharAt()`-Methode, indem Sie sich den Ascii-Code des Zeichens von `s3` auf dem Index `1` ausgeben lassen:
+			```bash
+			Ascii-Code Zeichen aus s3 mit Index 1 = 97
+			```
+
+		- Testen Sie die `append(char)`-Methode, indem Sie an `s3` das Zeichen `c` hängen:
+			```bash
+			halloc 
+			```
+
+		- Testen Sie die `append(MyString)`-Methode, indem Sie sich ein weiteres `MyString`-Objekt `s6` mit `ballo` erzeugen und dieses Objekt an `s3` hängen:
+			```bash
+			hallocballo
+			```
+
+		- Testen Sie die `concat()`-Methode, indem Sie sich ein weiteres `MyString`-Objekt `s7` mit leerem `wort`-Array erzeugen und für dieses Objekt die `concat()`-Methode aufrufen, wobei Sie die Objekte `s4` und `s6` übergeben:
+			```bash
+			halloballo
+			```
+
+		- Testen Sie die `firstIndexOf()`- und die `lastIndexOf()`- Methode, indem Sie jeweils in `s3` nach dem Buchstaben `l` suchen (kleines L):
+			```bash
+			erstes l in s3 am Index 2
+			letztes l in s3 am Index 9
+			```
+
+		- Testen Sie die `substring()`-Methode, indem Sie den Teilstring ab Index `5` für `s3` ausgeben:
+			```bash
+			cballo
+			```
+
+	- weiter mit `MyString`:
+
+		- Schreiben Sie eine Objektmethode `substring(int beginIndex, int endIndex)`. Diese Methode gibt ein (neues) `MyString`-Objekt zurück. Das neue `MyString`-Objekt enthält im `wort`-Array alle Zeichen aus dem `wort`-Array des aufrufenden Objektes ab dem Index `beginIndex` (inklusive) bis zum Index `endIndex` (exklusive). Ist `beginIndex` kein korrekter Index aus dem `wort`-Array des aufrufenden Objektes oder ist `beginIndex` größer gleich `endIndex`, wird ein `MyString`-Objekt mit leerem `wort`-Array zurückgegeben.
+
+			![mystring](./files/211_mystring.png)
+
+		- Schreiben Sie eine Objektmethode `toUpperCase()`, die ein (neues) `MyString`-Objekt zurückgibt. Alle Kleinbuchstaben aus dem aufrufenden Objekt sind im neuen Objekt Großbuchstaben. 
+
+			![mystring](./files/212_mystring.png)
+
+			**Tipps:**
+
+			- Bei der Umwandlung müssen Sie sich nur um die Kleinbuchstaben kümmern, alle anderen Zeichen werden direkt übernommen.
+
+			- Kleinbuchstaben haben die Ascii-Codes `97` (`a`) – `122` (`z`)
+
+			- Großbuchstaben haben die Ascii-Codes `65` (`A`) – `90` (`Z)
+
+		- Schreiben Sie eine Objektmethode `reverse()`, die ein (neues) `MyString`-Objekt zurückgibt. In diesem neuen Objekt ist die Zeichenfolge im `wort`-Array genau umgekehrt wie im aufrufenden Objekt.
+
+			![mystring](./files/213_mystring.png)
+
+		- Schreiben Sie die Objektmethode `contains(MyString s)`. Diese Methode gibt ein `true` zurück, wenn das `wort`-Array von `s` im `wort`-Array des aufrufenden Objektes vorkommt. Ansonsten `false`.
+
+	- weiter mit `Testklasse`:
+
+		- Testen Sie Sie alle 4 Methoden `substring(int beginIndex, int endIndex)`, `toUpperCase()`, `reverse()` und `contains(MyString s)`:
+			```bash
+			-------------------- Teil 3 ----------------------------
+
+			s3                : hallocballo
+			s3 substring(3,7) : locb
+			s3 toUpperCase()  : HALLOCBALLO
+			s3 reverse()      : ollabcollah
+			s4                : locba
+			s4 in s3 ?        : true
+
+			```
+
+
+??? question "eine mögliche Lösung für MyString"
+	=== "MyString.java"
+		```java linenums="1"
+		package klausurvorbereitung.mystring;
+
+		public class MyString
+		{
+			private char[] wort;
+			
+			public MyString()
+			{
+				this.wort = new char[0];
+			}
+			
+			public MyString(char letter)
+			{
+				this.wort = new char[1];
+				this.wort[0] = letter;
+			}
+			
+			public MyString(String wort)
+			{
+				this.wort = new char[wort.length()];
+				for(int index=0; index<this.wort.length; index++)
+				{
+					this.wort[index] = wort.charAt(index);
+				}
+			}
+			
+			@Override 
+			public String toString()
+			{
+				String s = "";
+				for (int index = 0; index < this.wort.length; index++)
+				{
+					s += this.wort[index];
+				}
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public int getLength()
+			{
+				return this.wort.length;
+			}
+			
+			public char getCharAt(int index)
+			{
+				if(index<0 || index>this.wort.length)
+				{
+					return ' ';
+				}
+				else
+				{
+					return this.wort[index];
+				}
+			}
+
+			public boolean contains(char c)
+			{
+				for (int index = 0; index < this.wort.length; index++)
+				{
+					if(this.wort[index]==c) return true;
+				}
+				return false;
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				MyString so = (MyString)o;
+				if(this.getLength() != so.getLength()) return false;
+				for (int index = 0; index < this.wort.length; index++)
+				{
+					if(this.wort[index] != so.wort[index]) return false;
+				}
+				return true;
+			}
+				
+			public int getAsciiCodeOfCharAt(int index)
+			{
+				if(index<0 || index>this.wort.length)
+				{
+					return -1;
+				}
+				else
+				{
+					return (int)this.wort[index];
+				}
+			}
+			
+			public void append(char c)
+			{
+				char[] newWord = new char[this.getLength()+1];
+				for (int index = 0; index < this.wort.length; index++)
+				{
+					newWord[index] = this.getCharAt(index);
+				}
+				newWord[this.getLength()] = c;
+				this.wort = newWord;
+			}
+			
+			public void append(MyString s)
+			{
+				for (int index = 0; index < s.getLength(); index++)
+				{
+					this.append(s.getCharAt(index));
+				}
+			}
+			
+			public MyString concat(MyString s1, MyString s2)
+			{
+				MyString s = new MyString();
+				s.append(s1);
+				s.append(s2);
+				return s;
+			}
+			
+			public int firstIndexOf(char c)
+			{
+				final int NOT_FOUND = -1;
+				for (int index = 0; index < this.wort.length; index++)
+				{
+					if(this.wort[index] == c) return index;
+				}
+				return NOT_FOUND;
+			}
+			
+			public int lastIndexOf(char c)
+			{
+				final int NOT_FOUND = -1;
+				for (int index = this.wort.length-1; index >= 0; index--)
+				{
+					if(this.wort[index] == c) return index;
+				}
+				return NOT_FOUND;
+			}
+			
+			public MyString substring(int beginIndex)
+			{
+				if(beginIndex < 0 || beginIndex >= this.getLength())
+				{
+					return new MyString();
+				}
+				else
+				{
+					MyString s = new MyString(this.getCharAt(beginIndex));
+					for(int index = beginIndex+1; index<this.getLength(); index++)
+					{
+						s.append(this.getCharAt(index));
+					}
+					return s;
+				}
+			}
+			
+			public MyString substring(int beginIndex, int endIndex)
+			{
+				if(beginIndex < 0 || beginIndex >= this.getLength())
+				{
+					return new MyString();
+				}
+				else
+				{
+					MyString s = new MyString(this.getCharAt(beginIndex));
+					for(int index = beginIndex+1; (index<this.getLength() && index<endIndex); index++)
+					{
+						s.append(this.getCharAt(index));
+					}
+					return s;
+				}
+			}
+			
+			public MyString toUpperCase()
+			{
+				final int FROM_LOWER_TO_UPPER = 32;
+				MyString s = new MyString();
+				for(int index = 0; index<this.getLength(); index++)
+				{
+					char c = this.getCharAt(index);
+					int ascii = (int)c;
+					if(ascii>=97 && ascii<=122)
+					{
+						ascii = ascii - FROM_LOWER_TO_UPPER;
+						c = (char)ascii;
+					}
+					s.append(c);
+				}
+				return s;
+			}
+			
+			public MyString reverse()
+			{
+				MyString s = new MyString();
+				for (int index = this.wort.length-1; index >= 0; index--)
+				{
+					s.append(this.getCharAt(index));
+				}
+				return s;
+			}
+			
+			public boolean contains(MyString s)
+			{
+				if(this.getLength() < s.getLength()) return false;
+				if(this.equals(s)) return true;
+				boolean noMatch = true;
+				for (int index = 0; index < this.wort.length; index++)
+				{
+					if(this.wort[index]==s.getCharAt(0))
+					{
+						for(int i=1; i<s.getLength() && noMatch; i++)
+						{
+							if(index+i >= this.getLength() || this.wort[index+i] != s.wort[i])
+							{
+								noMatch = false;
+							}
+						}
+						return true;
+					}
+					noMatch = true;
+				}
+				return false;
+			}
+		}
+		```
+
+	=== "Testklasse.java"
+		```java linenums="1"
+		package klausurvorbereitung.mystring;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------------------ Teil 1 a) --------------------------%n%n");
+				MyString s1 = new MyString();
+				s1.print();
+				MyString s2 = new MyString('a');
+				s2.print();	
+				MyString s3 = new MyString("hallo");
+				s3.print();
+				
+				System.out.printf("%n%n------------------ Teil 1 b) --------------------------%n%n");
+				char c1 = s3.getCharAt(1);
+				System.out.println(c1);
+				System.out.println("a in hallo ? " + s3.contains('a'));
+				System.out.println("b in hallo ? " + s3.contains('b'));
+				
+				System.out.printf("%n%n------------------ Teil 1 c) --------------------------%n%n");
+				MyString s4 = new MyString("hallo");
+				s4.print();
+				MyString s5 = new MyString("halLo");
+				s5.print();
+
+				System.out.println("s3 gleich s4 ? " + s3.equals(s4));
+				System.out.println("s3 gleich s4 ? " + s3.equals(s5));
+				
+				
+				System.out.printf("%n%n-------------------- Teil 2 ----------------------------%n%n");	
+				int i1 = s3.getAsciiCodeOfCharAt(1);
+				System.out.println("Ascii-Code Zeichen aus s3 mit Index 1 = " + i1);
+				s3.append('c');
+				s3.print();
+				MyString s6 = new MyString("ballo");
+				s3.append(s6);
+				s3.print();
+				MyString s7 = new MyString();
+				s7 = s7.concat(s4, s6);
+				s7.print();
+				int i2 = s3.firstIndexOf('l');
+				System.out.println("erstes l in s3 am Index " + i2);
+				i2 = s3.lastIndexOf('l');
+				System.out.println("letztes l in s3 am Index " + i2);
+				MyString s8 = s3.substring(5);
+				s8.print();
+				
+				System.out.printf("%n%n-------------------- Teil 3 ----------------------------%n%n");	
+				System.out.print("s3                : ");
+				s3.print();
+				MyString s9 = s3.substring(3,7);
+				System.out.print("s3 substring(3,7) :    ");
+				s9.print();
+				s9 = s3.toUpperCase();
+				System.out.print("s3 toUpperCase()  : ");
+				s9.print();
+				s9 = s3.reverse();
+				System.out.print("s3 reverse()      : ");
+				s9.print();
+				s4 = new MyString("locba");
+				System.out.print("s4                : ");
+				s4.print();
+				System.out.println("s4 in s3 ?        : " + s3.contains(s4));
+			}
+
+		}
+
+		```
+
+
+
+ 
+
+
+
+
+
+
+
 ### Ausdrücke
 
 ??? note "gleich 12"
