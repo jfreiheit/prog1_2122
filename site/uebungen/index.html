@@ -2828,6 +2828,156 @@ testen Sie alle Methoden der Klasse <code>Uebung10</code> (oder <code>Uebung11</
 </li>
 </ol>
 </details>
+<details class="question"><summary>Eine mögliche Lösung für Übung 13</summary><div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Programmklasse.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">uebungen.uebung13</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programmklasse</span>
+<span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Lottery</span> <span class="n">lo1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Lottery</span><span class="p">();</span>
+            <span class="n">lo1</span><span class="p">.</span><span class="na">drawing</span><span class="p">();</span>
+            <span class="n">lo1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">Lottery</span> <span class="n">lo2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Lottery</span><span class="p">();</span>
+        <span class="n">lo2</span><span class="p">.</span><span class="na">drawing</span><span class="p">();</span>
+        <span class="n">lo2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">Lottery</span> <span class="n">lo3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Lottery</span><span class="p">();</span>
+        <span class="n">lo3</span><span class="p">.</span><span class="na">drawing</span><span class="p">();</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">lo2</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">lo3</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">lo3</span><span class="p">.</span><span class="na">drawing</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">lo3</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Lottery.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">uebungen.uebung13</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Lottery</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">drawingResults</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Lottery</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">contains</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">boolean</span> <span class="n">contains</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">contains</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">==</span> <span class="n">number</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">contains</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">contains</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">drawing</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">zufZahl</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">zufZahl</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">zufZahl</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">zufZahl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sort</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">bubble</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">bubble</span> <span class="o">&lt;=</span> <span class="n">drawingResults</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">bubble</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">drawingResults</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">bubble</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">sort</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;( &quot;</span><span class="p">;</span>
+        <span class="cm">/*</span>
+<span class="cm">        for (int index = 0; index &lt; drawingResults.length; index++)</span>
+<span class="cm">        {</span>
+<span class="cm">            s = s + this.drawingResults[index] + &quot; &quot;;</span>
+<span class="cm">        }</span>
+<span class="cm">        */</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">number</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">number</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;- &quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">o</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">o</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">()</span> <span class="o">!=</span> <span class="n">o</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+        <span class="n">Lottery</span> <span class="n">lo</span> <span class="o">=</span> <span class="p">(</span><span class="n">Lottery</span><span class="p">)</span><span class="n">o</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">sort</span><span class="p">();</span>
+        <span class="n">lo</span><span class="p">.</span><span class="na">sort</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">drawingResults</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">!=</span> <span class="n">lo</span><span class="p">.</span><span class="na">drawingResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
 <hr />
 <h2 id="selbstandiges-uben">Selbständiges Üben<a class="headerlink" href="#selbstandiges-uben" title="Permanent link">&para;</a></h2>
 <p><strong><em>Falls Sie noch Lust und Zeit haben, ein wenig selbständig zu üben, hier einige Aufgaben:</em></strong></p>
@@ -3053,7 +3203,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Punkt2D, Punkt3D</summary><div class="tabbed-set" data-tabs="7:5"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Punkt3D.java</label><div class="tabbed-content">
+<details class="question"><summary>Eine mögliche Lösung für Punkt2D, Punkt3D</summary><div class="tabbed-set" data-tabs="8:5"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Punkt3D.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.punkte</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Punkt3D</span>
@@ -3123,7 +3273,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Punkt2D.java</label><div class="tabbed-content">
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Punkt2D.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3156,7 +3306,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">Strecke.java</label><div class="tabbed-content">
+<input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><label for="__tabbed_8_3">Strecke.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3241,7 +3391,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><label for="__tabbed_7_4">PunkteArray.java</label><div class="tabbed-content">
+<input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><label for="__tabbed_8_4">PunkteArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -3532,7 +3682,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_7_5" name="__tabbed_7" type="radio" /><label for="__tabbed_7_5">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_8_5" name="__tabbed_8" type="radio" /><label for="__tabbed_8_5">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3873,7 +4023,7 @@ Das Haus besteht aus :
 </li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Wohnung</summary><div class="tabbed-set" data-tabs="8:4"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Wohnung.java</label><div class="tabbed-content">
+<details class="question"><summary>Eine mögliche Lösung für Wohnung</summary><div class="tabbed-set" data-tabs="9:4"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Wohnung.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wohnung</span>
@@ -3950,7 +4100,7 @@ Das Haus besteht aus :
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Dachgeschoss.java</label><div class="tabbed-content">
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Dachgeschoss.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dachgeschosswohnung</span> <span class="kd">extends</span> <span class="n">Wohnung</span>
@@ -3975,7 +4125,7 @@ Das Haus besteht aus :
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><label for="__tabbed_8_3">Haus.java</label><div class="tabbed-content">
+<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">Haus.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
@@ -4088,7 +4238,7 @@ Das Haus besteht aus :
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><label for="__tabbed_8_4">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_9_4" name="__tabbed_9" type="radio" /><label for="__tabbed_9_4">Testklasse.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span>
@@ -4377,7 +4527,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 </li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Übung 9</summary><div class="tabbed-set" data-tabs="9:5"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Pizza.java</label><div class="tabbed-content">
+<details class="question"><summary>Eine mögliche Lösung für Übung 9</summary><div class="tabbed-set" data-tabs="10:5"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Pizza.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pizza</span>
@@ -4425,7 +4575,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Pizzaverkauf.java</label><div class="tabbed-content">
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">Pizzaverkauf.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pizzaverkauf</span>
@@ -4473,7 +4623,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">Speisekarte.java</label><div class="tabbed-content">
+<input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><label for="__tabbed_10_3">Speisekarte.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Speisekarte</span>
@@ -4563,7 +4713,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_4" name="__tabbed_9" type="radio" /><label for="__tabbed_9_4">Pizzeria.java</label><div class="tabbed-content">
+<input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><label for="__tabbed_10_4">Pizzeria.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
@@ -4646,7 +4796,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_5" name="__tabbed_9" type="radio" /><label for="__tabbed_9_5">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_10_5" name="__tabbed_10" type="radio" /><label for="__tabbed_10_5">Testklasse.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span>
@@ -4777,7 +4927,7 @@ Index : -1
 </code></pre></div></li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Power</summary><div class="tabbed-set" data-tabs="10:4"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Power.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Power</summary><div class="tabbed-set" data-tabs="11:4"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Power.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -4888,7 +5038,7 @@ Index : -1
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">PowerOfTwo.java</label><div class="tabbed-content">
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">PowerOfTwo.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -4939,7 +5089,7 @@ Index : -1
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><label for="__tabbed_10_3">PowerArray.java</label><div class="tabbed-content">
+<input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><label for="__tabbed_11_3">PowerArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5132,7 +5282,7 @@ Index : -1
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><label for="__tabbed_10_4">PowerTest.java</label><div class="tabbed-content">
+<input id="__tabbed_11_4" name="__tabbed_11" type="radio" /><label for="__tabbed_11_4">PowerTest.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5381,7 +5531,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Computer</summary><div class="tabbed-set" data-tabs="11:4"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Computer.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Computer</summary><div class="tabbed-set" data-tabs="12:4"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Computer.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5490,7 +5640,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">Notebook.java</label><div class="tabbed-content">
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">Notebook.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5531,7 +5681,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><label for="__tabbed_11_3">NotebookArray.java</label><div class="tabbed-content">
+<input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><label for="__tabbed_12_3">NotebookArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5726,7 +5876,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_11_4" name="__tabbed_11" type="radio" /><label for="__tabbed_11_4">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_12_4" name="__tabbed_12" type="radio" /><label for="__tabbed_12_4">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5972,7 +6122,7 @@ kleinster Abstand : <span class="o">((</span><span class="m">01</span>:59:32<spa
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Uhrzeit</summary><div class="tabbed-set" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Uhrzeit.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Uhrzeit</summary><div class="tabbed-set" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Uhrzeit.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -6145,7 +6295,7 @@ kleinster Abstand : <span class="o">((</span><span class="m">01</span>:59:32<spa
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">UhrzeitArray.java</label><div class="tabbed-content">
+<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">UhrzeitArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -6382,7 +6532,7 @@ kleinster Abstand : <span class="o">((</span><span class="m">01</span>:59:32<spa
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><label for="__tabbed_12_3">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><label for="__tabbed_13_3">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -6948,7 +7098,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Länder und Kontinente</summary><div class="tabbed-set" data-tabs="13:4"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Land.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Länder und Kontinente</summary><div class="tabbed-set" data-tabs="14:4"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Land.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -7129,7 +7279,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">Kontinent.java</label><div class="tabbed-content">
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">Kontinent.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -7322,7 +7472,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><label for="__tabbed_13_3">Kontinent.java</label><div class="tabbed-content">
+<input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><label for="__tabbed_14_3">Kontinent.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -7565,7 +7715,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_13_4" name="__tabbed_13" type="radio" /><label for="__tabbed_13_4">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_14_4" name="__tabbed_14" type="radio" /><label for="__tabbed_14_4">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -7940,7 +8090,7 @@ s4 <span class="k">in</span> s3 ?        : <span class="nb">true</span>
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für MyString</summary><div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">MyString.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für MyString</summary><div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">MyString.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -8399,7 +8549,7 @@ s4 <span class="k">in</span> s3 ?        : <span class="nb">true</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3

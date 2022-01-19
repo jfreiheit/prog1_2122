@@ -2075,6 +2075,158 @@
 			```
 
 
+??? question "Eine mögliche Lösung für Übung 13"
+	=== "Programmklasse.java"
+		```java
+		package uebungen.uebung13;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+
+				for (int i = 0; i < 10; i++)
+				{
+					Lottery lo1 = new Lottery();
+					lo1.drawing();
+					lo1.print();
+				}
+				
+				System.out.println();
+				
+				Lottery lo2 = new Lottery();
+				lo2.drawing();
+				lo2.print();
+				
+				Lottery lo3 = new Lottery();
+				lo3.drawing();
+				while(!lo2.equals(lo3))
+				{
+					lo3.drawing();
+				}
+				lo3.print();
+
+			}
+
+		}
+		```		
+	=== "Lottery.java"
+		```java
+		package uebungen.uebung13;
+
+		import java.util.Random;
+
+		public class Lottery
+		{
+			private int[] drawingResults;
+			
+			public Lottery()
+			{
+				this.drawingResults = new int[5];
+			}
+			
+			public boolean contains(int number)
+			{
+				boolean contains = false;
+				for (int index = 0; index < this.drawingResults.length && !contains; index++)
+				{
+					if(this.drawingResults[index] == number)
+					{
+						contains = true;
+					}
+				}
+				return contains;
+			}
+			
+			public void drawing()
+			{
+				Random r = new Random();
+				for (int index = 0; index < this.drawingResults.length; index++)
+				{
+					int zufZahl = r.nextInt(9) + 1;
+					while(this.contains(zufZahl))
+					{
+						zufZahl = r.nextInt(9) + 1;
+					}
+					this.drawingResults[index] = zufZahl;
+				}
+			}
+			
+			public void sort()
+			{
+				for (int bubble = 1; bubble <= drawingResults.length -1; bubble++)
+				{
+					for (int index = 0; index < drawingResults.length - bubble; index++)
+					{
+						if(this.drawingResults[index] > this.drawingResults[index+1])
+						{
+							int tmp = this.drawingResults[index];
+							this.drawingResults[index] = this.drawingResults[index+1];
+							this.drawingResults[index+1] = tmp;
+						}
+					}
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				this.sort();
+				String s = "( ";
+				/*
+				for (int index = 0; index < drawingResults.length; index++)
+				{
+					s = s + this.drawingResults[index] + " ";
+				}
+				*/
+
+				for(int number = 1; number < 10; number++)
+				{
+					if(this.contains(number))
+					{
+						s = s + number + " ";
+					}
+					else
+					{
+						s = s + "- ";
+					}
+				}
+				s = s + ")";
+				return s;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(o == this) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Lottery lo = (Lottery)o;
+				this.sort();
+				lo.sort();
+				for (int index = 0; index < drawingResults.length; index++)
+				{
+					if(this.drawingResults[index] != lo.drawingResults[index])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			
+			
+		}
+		```		
+
+
+
 
 --- 
 

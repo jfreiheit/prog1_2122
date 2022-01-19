@@ -2727,3 +2727,221 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? info "Video zur Vorlesung Klausurvorbereitung 1 -- 18.01.2022"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=3c2e538513a6877d6daa410ee03cfa8c&width=720&height=405&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=3c2e538513a6877d6daa410ee03cfa8c&width=720&height=405&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
+
+??? note "Vorlesung Klausurvorbereitung 2 -- 19.01.2022"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0118;
+
+		public class Programclass
+		{
+
+			public static void main(String[] args)
+			{
+				CharArrays caObj1 = new CharArrays();
+				
+				System.out.printf("%n%n--------- Erstellen ---------------%n%n");
+				char[] ca1 = caObj1.createAndFillCharArray();
+				caObj1.print(ca1);
+				
+				if(caObj1.contains(ca1, 'b'))
+				{
+					System.out.println("b ist enthalten");
+				}
+				else
+				{
+					System.out.println("b ist nicht enthalten");
+				}
+				
+				System.out.printf("%n%n--------- Sortieren ---------------%n%n");
+				caObj1.sort(ca1);
+				caObj1.print(ca1);
+				
+				System.out.printf("%n%n--------- Alphabet ---------------%n%n");
+				for(int asciiValue = 97; asciiValue<123; asciiValue++)
+				{
+				    char c = (char) asciiValue;
+				    if(!caObj1.contains(ca1, c))
+				    {
+				    	System.out.println(c + " fehlt!");
+				    }
+				    
+				}
+				
+				System.out.println(caObj1.getMissingLetter(ca1) + " fehlt!");
+				
+				System.out.printf("%n%n--------- FindWord ---------------%n%n");
+				caObj1.findWord("weihnachten");
+				
+			
+			}
+
+		}
+		```
+	=== "CharArrays.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0118;
+
+		import java.util.Random;
+
+		public class CharArrays
+		{
+			char[] alphabet;
+
+			public CharArrays()
+			{
+				this.alphabet = new char[25];
+			}
+
+
+			public char[] createAndFillCharArray() 
+			{
+				final int LAENGE_ALPHABET = 26;
+				final int ASCII_CODE_a = 97;
+
+				char[] ca = new char[LAENGE_ALPHABET - 1];
+				Random r = new Random();
+
+				for (int index = 0; index < ca.length; index++)
+				{
+					int anzVersuche = 1;
+					char c = (char)(r.nextInt(LAENGE_ALPHABET) + ASCII_CODE_a);
+					while(this.contains(ca, c))
+					{
+						c = (char)(r.nextInt(LAENGE_ALPHABET) + ASCII_CODE_a);
+						anzVersuche++;
+					}
+					ca[index] = c;
+					// System.out.println(index + " : " + anzVersuche + " Versuche");
+				}
+
+				return ca;
+			}
+
+			public void sort(char[] ca)
+			{
+				for (int bubble = 1; bubble < ca.length; bubble++)
+				{
+					for (int index = 0; index < ca.length - bubble; index++)
+					{
+						if(ca[index] > ca[index + 1])
+						{
+							char tmp = ca[index];
+							ca[index] = ca[index + 1];
+							ca[index + 1] = tmp;
+						}
+					}
+				}
+			}
+
+			public void print(char[] arr)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < arr.length-1; index++)
+				{
+					System.out.print(arr[index] + ", ");
+				}
+				if(arr.length > 0)
+				{
+					System.out.print(arr[arr.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+
+
+			public void print()
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < this.alphabet.length-1; index++)
+				{
+					System.out.print(this.alphabet[index] + ", ");
+				}
+				if(this.alphabet.length > 0)
+				{
+					System.out.print(this.alphabet[this.alphabet.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+
+			public boolean contains(char[] caFind, char element)
+			{
+				for (int index = 0; index < caFind.length; index++)
+				{
+					if(caFind[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+
+
+			public boolean contains(char element)
+			{
+				for (int index = 0; index < this.alphabet.length; index++)
+				{
+					if(this.alphabet[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+
+			public char getMissingLetter(char[] a)
+			{
+				this.sort(a);
+				final char FEHLER = 'F';
+
+				for (int index = 0; index < a.length; index++)
+				{
+					if(index != (a[index] - 97))
+					{
+						return (char)(index + 97);
+					}
+				}
+				
+				/*
+				for(int asciiValue = 97; asciiValue<123; asciiValue++) 
+				{ 
+					char c = (char)asciiValue; 
+					if(!this.contains(a, c)) 
+					{ 
+						return c; 
+					} 
+				}
+		*/
+				return FEHLER;
+			}
+
+			public void findWord(String word)
+			{
+				String allesKlein = word.toLowerCase();
+
+				for(int index = 0; index < allesKlein.length(); index++)
+				{
+					char letter = allesKlein.charAt(index);	
+
+					System.out.print(letter);
+
+					char[] ca = this.createAndFillCharArray();
+					char missingLetter = this.getMissingLetter(ca);
+					int anzVersuche = 1;
+
+					while(missingLetter != letter)
+					{
+						System.out.print(".");
+						ca = this.createAndFillCharArray();
+						missingLetter = this.getMissingLetter(ca);
+						anzVersuche++;
+					}
+
+					System.out.println(missingLetter + " (" + anzVersuche +")" );
+				}
+			}
+		}
+		```
+
+
+??? info "Video zur Vorlesung Klausurvorbereitung 2 -- 19.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=9e0f985a900e3d359d551a4f2d04f9cc&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=9e0f985a900e3d359d551a4f2d04f9cc&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
