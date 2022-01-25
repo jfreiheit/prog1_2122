@@ -2945,3 +2945,188 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Vorlesung Klausurvorbereitung 2 -- 19.01.2022"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=9e0f985a900e3d359d551a4f2d04f9cc&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=9e0f985a900e3d359d551a4f2d04f9cc&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Klausurvorbereitung 3 -- 25.01.2022"
+	=== "Programclass.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0125;
+
+		public class Programclass
+		{
+
+			public static void main(String[] args)
+			{
+				MyArray m1 = new MyArray();
+				m1.printArray();
+				m1.equals(m1); 
+				
+				System.out.println(m1.getClass());
+				Object o = m1;
+				System.out.println(o.getClass());
+				
+				
+				MyArray m2 = new MyArray(5);
+				m2.printArray();
+				m2.equals(m1); 
+				
+				m2.insert(3);
+				m2.printArray();
+					
+				m2.insert(2);
+				m2.printArray();
+				
+				m2.insert(8);
+				m2.printArray();
+					
+				m2.insert(7);
+				m2.printArray();
+				
+				m2.insert(4);
+				m2.printArray();
+				
+				m2.insert(4);
+				m2.printArray();
+				
+				int[] a1 = { 1, 2, 3, 4 };
+				int[] a2;
+				a2 = new int[]{ 1, 2, 3, 4 };
+				
+				int i1 = 5;
+				int i2; 
+				i2 = 5;
+				
+				System.out.println(m1 == m2);  // Referenzvergleich!!!
+			}
+
+		}
+		```
+	=== "MyArray.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0125;
+
+		public class MyArray
+		{
+			private int[] a;
+
+			public MyArray()
+			{
+				this.a = new int[0]; 
+			}
+
+			public MyArray(int value)
+			{
+				this.a = new int[]{ value };
+			}
+
+			public int getLength()
+			{
+				return this.a.length;
+			}
+
+			public void printArray()
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < this.a.length-1; index++)
+				{
+					System.out.print(this.a[index] + ", ");
+				}
+				if(this.a.length > 0)
+				{
+					System.out.print(this.a[this.a.length - 1]);
+				}
+				System.out.println(" ]");
+			}
+
+			public boolean contains(int value)
+			{
+				for (int i = 0; i < this.a.length; i++)
+				{
+					if(this.a[i] == value)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+
+			public boolean insert(int newValue)
+			{
+				boolean inserted = this.contains(newValue);
+				if(!inserted)
+				{
+					// angenommen: this.a = { 2, 4, 7, 9, 11 }
+					// newValue = 8
+					// newA = mit Laenge 6 (1 groesser als a)
+
+					int[] newA = new int[this.a.length + 1];
+
+					// jetzt kopiere ich aus this.a alle Werte, die kleiner sind als newValue in newA
+					// newA = { 2, 4, 7, _  , _  , _  } 
+
+					int indexA=0;
+					int indexNewA=0;
+
+					while(indexA<this.a.length && (this.a[indexA] < newValue))
+					{
+						newA[indexNewA] = this.a[indexA];
+						indexA++;
+						indexNewA++;
+					}
+
+					// wo (auf welchem Index) soll mein newValue in newA gespeichert werden???
+					// newA = { 2, 4, 7, 8  , _  , _  } 
+					newA[indexNewA] = newValue;
+					indexNewA++;
+					// ab jetzt ist indexNewA 1 groesser als indexA
+
+
+					// Rest aus this.a nach newA kopieren
+					// newA = { 2, 4, 7, 8  , 9  , 11  } 
+					while(indexA < this.a.length)
+					{
+						newA[indexNewA] = this.a[indexA]; 
+						indexA++;
+						indexNewA++;
+					}
+
+					this.a = newA;
+					inserted = true;
+				}
+				return inserted;
+			}
+			
+			@Override
+			public boolean equals(Object other)
+			{
+				if(other == null) return false;
+				if(this == other) return true;
+				if(this.getClass() != other.getClass()) return false;
+				
+				// hier wissen wir, dass other vom Laufzeittyp MyClass ist
+				MyArray otherMyArray = (MyArray)other;
+				
+				// if(this.a.length == other.a.length) 
+				if(this.a.length == otherMyArray.a.length)
+				{
+					for(int index = 0; index < this.a.length; index++ )
+					{
+						if(this.a[index] != otherMyArray.a[index])
+						{
+							return false;
+						}
+					}
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+		}
+		```
+
+
+??? info "Video zur Vorlesung Klausurvorbereitung 3 -- 25.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=b5769c87aec68a01bd881d8eebf451ba&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=b5769c87aec68a01bd881d8eebf451ba&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
