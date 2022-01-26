@@ -3334,7 +3334,8 @@
 	6. Erstellen Sie im gleichen package eine Klasse `Speisekarte` mit
 
 		- der privaten Objektvariablen 
-			- `angebot` vom Typ `Pizza[]`. 
+			- `angebot` vom Typ `Pizza[]`
+ 
 		- einem parameterlosen Konstruktor `Speisekarte()`. In diesem Konstruktor wird für `angebot` ein `Pizza`-Array der Länge `0` erzeugt. 
 		- einer Objektmethode `pizzaHinzufuegen(Pizza pizza)`. Diese Methode fügt die als Parameter übergebene `pizza` dem angebot-Array hinzu. <br/>
 		**Beachten Sie:**

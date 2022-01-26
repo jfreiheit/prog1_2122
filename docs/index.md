@@ -3130,3 +3130,173 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Vorlesung Klausurvorbereitung 3 -- 25.01.2022"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=b5769c87aec68a01bd881d8eebf451ba&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=b5769c87aec68a01bd881d8eebf451ba&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Klausurvorbereitung 4 -- 26.01.2022"
+	=== "Testklasse.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0126;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Zahlenpaar z1 = new Zahlenpaar();
+				Zahlenpaar z2 = new Zahlenpaar(4,3);
+				
+				System.out.println(z1);
+				System.out.println(z2);
+				
+				while(!z1.equals(z2))
+				{
+					z2 = new Zahlenpaar();
+					System.out.println(" --> " + z2);
+				}
+				System.out.println(z2);
+				
+				
+				System.out.printf("%n----------- ZPArray --------%n");
+				ZPArray zpa1 = new ZPArray(8);
+				zpa1.print();
+				
+				System.out.println();
+				
+				ZPArray zpa2 = new ZPArray(12);
+				zpa2.print();
+				System.out.println();
+				zpa2.sort();
+				zpa2.print();
+				
+				
+				/*
+				 *  < > <= >= Wertetypen
+				 *  < > <= >=  NICHT fuer Referenztypen
+				 *  == != Wertetypen
+				 *  == != auch fuer Referenztypen --> Referenzvergleich
+				 */
+				
+				
+			}
+
+		}
+		```
+
+	=== "Zahlenpaar.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0126;
+
+		import java.util.Random;
+
+		public class Zahlenpaar
+		{
+			private int[] pair;
+			
+			public Zahlenpaar()
+			{
+				this.pair = new int[2];
+				Random r = new Random();
+				int x = r.nextInt(10) * 2 + 2; // 0 1 2 3 4 5 6 7 8 9  (a + b) * c = ac + bc
+				int y = r.nextInt(10) * 2 + 2;
+				this.fillArray(x, y);	
+			}
+			
+			public Zahlenpaar(int x, int y)
+			{
+				this.pair = new int[2];
+				this.fillArray(x, y);
+			}
+			
+			private void fillArray(int x, int y) {
+				if(x < y)
+				{
+					this.pair[0] = x;	
+					this.pair[1] = y;
+				}
+				else
+				{
+					this.pair[0] = y;	
+					this.pair[1] = x;
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("(%2d,%2d)%n", this.pair[0], this.pair[1]);
+				return s;
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				// Zahlenpaar zp = (Zahlenpaar)o;
+				return (this.pair[0] == ((Zahlenpaar)o).pair[0] && this.pair[1] == ((Zahlenpaar)o).pair[1]);
+			}
+			
+			public boolean isSmaller(Zahlenpaar zp)
+			{
+				return (this.pair[0] < zp.pair[0]) || ((this.pair[0] == zp.pair[0]) && (this.pair[1] < zp.pair[1]));
+			}
+			
+			public boolean isBigger(Zahlenpaar zp)
+			{
+				// return !this.isSmaller(zp) && !this.equals(zp);
+				return zp.isSmaller(this);
+			}
+		}
+		```
+
+	=== "ZPArray.java"
+		```java	linenums="1" 
+		package vorlesungen.vorlesung0126;
+
+		public class ZPArray
+		{
+			private Zahlenpaar[] zpa;
+			
+			public ZPArray(int length)
+			{
+				this.zpa = new Zahlenpaar[length];
+				for (int index = 0; index < this.zpa.length; index++)
+				{
+					this.zpa[index] = new Zahlenpaar();
+				}
+			}
+			
+			public void print()
+			{
+				for (int i = 0; i < this.zpa.length; i++)
+				{
+					System.out.print(this.zpa[i].toString());
+				}
+			}
+			
+			public void sort()
+			{
+				for(int bubble = 1; bubble <= this.zpa.length - 1; bubble++)
+				{
+					for (int index = 0; index < this.zpa.length - bubble; index++)
+					{
+						if(this.zpa[index + 1].isSmaller(this.zpa[index]))
+						{
+							Zahlenpaar tmp = this.zpa[index];
+							this.zpa[index] = this.zpa[index + 1];
+							this.zpa[index + 1] = tmp;
+						}
+					}
+				}
+			}
+		}
+		```
+
+??? info "Video zur Vorlesung Klausurvorbereitung 4 -- 26.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=42cffb355d39d27f3380244e1969d3a2&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=42cffb355d39d27f3380244e1969d3a2&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? info "Video zur Übung Klausurvorbereitung 5 -- 26.01.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=ba787a13270477217b8ff77076a98d43&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=ba787a13270477217b8ff77076a98d43&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
