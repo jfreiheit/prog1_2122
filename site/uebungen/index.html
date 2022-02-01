@@ -5402,6 +5402,7 @@ Index : -1
 <p>Implementieren Sie eine Klasse <code>Computer</code>. </p>
 <ul>
 <li>Objektvariablen sind <code>hersteller</code> vom Typ <code>String</code>, <code>ram</code> vom Typ <code>int</code> und <code>platte</code> vom Typ <code>int</code>. Die Objektvariablen sind in der Klasse und allen abgeleiteten Klassen sichtbar!<ul>
+<li>Schreiben Sie für alle Objektvariablen Getter (<code>getRam()</code>, <code>getPlatte()</code>, <code>getHersteller()</code>).</li>
 <li>Schreiben Sie einen parametrisierten Konstruktor <code>Computer(String hersteller, int ram, int platte)</code>. Die Parameterwerte werden genutzt, um den Objektvariablen die entsprechenden Werte zuzuweisen.</li>
 <li>Schreiben Sie eine Objektmethode <code>gleicherHersteller(Computer c)</code>, die ein <code>true</code> zurückgibt, wenn <code>c</code> vom gleichen Hersteller ist, wie das aufrufende Objekt. Ansonsten wird ein <code>false</code> zurückgegeben. </li>
 <li>Schreiben Sie eine Objektmethode <code>gleicherHersteller(String hersteller)</code>, die ein <code>true</code> zurückgibt, wenn das aufrufende Objekt den Hersteller hat, der als Parameterwert der Methode übergeben wird. Ansonsten wird ein <code>false</code> zurückgegeben.</li>
@@ -6021,6 +6022,9 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 <li>
 <p>Überschreiben Sie die Methode <code>toString()</code>, so dass der Wert des aufrufenden Objektes in der Form <code>hh:mm:ss</code> als <code>String</code> zurückgegeben wird, z.B. <code>23:59:59</code>. Achten Sie darauf, dass die Stunden, Minuten und Sekunden führende Nullen enthalten können, also z.B. <code>01:02:03</code>!</p>
 </li>
+<li>
+<p>Schreiben Sie eine Methode <code>print()</code>, die den von <code>toString()</code> erzeugten <code>String</code> auf die Konsole ausgibt. </p>
+</li>
 </ul>
 </li>
 <li>
@@ -6052,7 +6056,7 @@ z3-z2 <span class="k">in</span> Sekunden : <span class="m">82737</span>
 </code></pre></div>
     Also die Uhrzeit jeweils in runden Klammern und durch Komma getrennt sowie das ganze Array in runden Klammern. </li>
 <li>Schreiben Sie eine Objektmethode <code>print()</code>, so dass auf der Konsole die durch <code>toString()</code> erzeugte eine Zeichenkette ausgegeben wird.  </li>
-<li>Schreiben Sie eine Objektmethode <code>spaeteste()</code>. Diese Methode gibt die kleinste (früheste) <code>Uhrzeit</code> aus dem Array <code>uhren</code> zurück. </li>
+<li>Schreiben Sie eine Objektmethode <code>spaeteste()</code>. Diese Methode gibt die größte (späteste) <code>Uhrzeit</code> aus dem Array <code>uhren</code> zurück. </li>
 <li>Schreiben Sie eine Objektmethode <code>zwischen(Uhrzeit frueh, Uhrzeit spaet)</code>. Diese Methode gibt ein <code>UhrzeitArray</code>-Objekt zurück. Das zurückgegebene <code>UhrzeitArray</code>-Objekt enthält alle <code>Uhrzeit</code>-Objekte aus dem Array <code>uhren</code>, welche zwischen den beiden Uhrzeiten <code>frueh</code> und <code>spaet</code> liegen.</li>
 <li>Schreiben Sie eine Objektmethode <code>sortieren()</code>. Diese Methode sortiert das <code>uhren</code>-Array aufsteigend beginnend mit der kleinsten Uhrzeit.</li>
 <li>Schreiben Sie eine Objektmethode <code>kleinsterAbstand()</code>. Diese Methode gibt ein <code>UhrzeitArray</code> der Länge <code>2</code> zurück. Es enthält die beiden <code>Uhrzeit</code>en aus dem Array <code>uhren</code>, welche den kleinsten Abstand (Differenz in Sekunden) haben. Sie können beim Schreiben der Methode davon ausgehen, dass das <code>uhren</code>-Array bereits sortiert ist! </li>

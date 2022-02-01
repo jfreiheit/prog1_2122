@@ -3300,3 +3300,57 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? info "Video zur Übung Klausurvorbereitung 5 -- 26.01.2022"
 	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=ba787a13270477217b8ff77076a98d43&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=ba787a13270477217b8ff77076a98d43&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? note "Vorlesung Klausurvorbereitung 6 -- 01.02.2022"
+	=== "neuer Konstruktor in ZPArray.java"
+		```java	linenums="1" 
+		public ZPArray(int length)
+		{
+			this.zpa = new Zahlenpaar[length];
+			for (int index = 0; index < this.zpa.length; index++)
+			{
+				Random r = new Random();
+				int x = r.nextInt(length);
+				int y = r.nextInt(length);
+				Zahlenpaar zp = new Zahlenpaar(x,y);
+				while(this.contains(zp))
+				{
+					x = r.nextInt(length);
+					y = r.nextInt(length);
+					zp = new Zahlenpaar(x,y);
+				}
+				this.zpa[index] = zp;
+
+			}
+		}
+		
+		public boolean contains(Zahlenpaar zp)
+		{
+			for (int index = 0; index < this.zpa.length; index++) 
+			{
+				if(this.zpa[index] != null && this.zpa[index].equals(zp))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		```
+
+	=== "equals()-Methode in Uhrzeit.java"
+		```java	linenums="1"     
+	    @Override
+	    public boolean equals(Object o)
+	    {
+	    	if(o == null) return false;
+	    	if(o == this) return true;
+	    	if(this.getClass() != o.getClass()) return false;
+	    	
+	    	Uhrzeit uo = (Uhrzeit)o;
+	    	return uo.stunden == this.stunden && uo.minuten == this.minuten && uo.sekunden == this.sekunden;
+	    }
+		```
+
+??? info "Video zur Vorlesung Klausurvorbereitung 6 -- 01.02.2022"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=6eabbd87013739f1799924866bef1208&width=720&height=420&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=6eabbd87013739f1799924866bef1208&width=720&height=420&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="420" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
