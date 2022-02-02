@@ -2226,6 +2226,620 @@
 		```		
 
 
+--- 
+
+
+### Klausuren
+	
+??? note "Klausur 1.PZ (02.02.2022)"
+	
+	1. Erstellen Sie ein package `klausur`. 
+	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `Buch` mit 
+
+		- den privaten Objektvariablen `titel` vom Typ `String` (*Titel des Buches*), `seiten` vom Typ `int` (*Anzahl der Seiten des Buches*) und `jahr` vom Typ `int` (*Erscheinungsjahr des Buches*). 
+
+		- Erstellen Sie für die Klasse `Buch` einen parametrisierten Konstruktor, dem für jede der drei Objektvariablen ein Wert als Parameter übergeben wird. Mit den Parameterwerten werden die Objektvariablen initialisiert. 
+
+		- Erstellen Sie eine Methode `getJahr()`, die den Wert der Objektvariablen `jahr` zurückgibt. 
+
+		- Erstellen Sie eine Methode `istDicker(Buch b)`, die ein `true` zurückgibt, wenn das aufrufende `Buch`-Objekt mehr `seiten` hat, als `b`. Ansonsten wird `false` zurückgegeben.
+
+		- Überschreiben Sie die Objektmethode `toString()`, so, dass ein String in der folgenden Form zurückgegeben wird (Beispielwerte): 
+			```bash
+			Titel Z   : 133 Seiten, von 1958
+			```
+			**Beachten Sie**: `Titel Z` ist der Titel des Buches. Reservieren Sie für den Titel `10` Zeichen (dann kommt ein Doppelpunkt `:`, reservieren Sie für die Seitenzahl `3` Zeichen und für die Jahreszahl `4` Zeichen. 
+
+		- Überschreiben Sie die Objektmethode `equals(Object o)` so, dass zwei Bücher gleich sind, wenn sie denselben Titel haben.    
+
+	3. Erstellen Sie im gleichen package eine Klasse `Testklasse` mit `main()`-Methode. 
+
+		- Erzeugen Sie in der `main()`-Methode in einer Schleife `10` Objekte der Klasse `Lottery` und rufen (auch in der Schleife) jeweils die `drawing()` und die `print()`-Methode auf. Erzeugen Sie in der `main()`-Methode drei `Buch`-Objekte mit den folgenden Werten für die Objektvariablen:
+			```bash
+			"Titel A", 55, 1999
+			"Titel B", 66, 2000
+			"Titel C", 77, 2001 
+			```
+
+		- Geben Sie alle drei `Buch`-Objekte auf die Konsole unter Verwendung der `toString()`-Methode aus. Es entsteht folgende Ausgabe:
+			```bash
+			Titel A   :  55 Seiten, von 1999
+			Titel B   :  66 Seiten, von 2000
+			Titel C   :  77 Seiten, von 2001
+			```
+
+	4. (**Teil 2**) Erweitern Sie die Klasse `Buch` um einen parameterlosen Konstruktor. In diesem Konstruktor werden die Werte für die Objektvariablen zufällig erzeugt. Nutzen Sie dazu die Klasse `Random` aus dem `java.util`-Paket. <br/> **Beachten Sie:**
+
+		- Nutzen Sie immer die `nextInt(bound)`-Methode aus der `Random`-Klasse.
+
+		- Der Wert für `jahr` soll im Bereich von `1900` (inkl.) bis `2021` (inkl.) liegen (`122` verschiedene Jahreszahlen möglich).
+
+		- Der Wert für `seiten` soll im Bereich `20` (inkl.) bis `199` (inkl.) liegen (`180` verschiedene Seitenzahlen möglich).
+
+		- Der Wert für `title` ergibt sich aus `Titel ` gefolgt von einem Großbuchstaben. Der Großbuchstabe soll zufällig erzeugt werden. **Tipp:** Der Ascii-Wert von `A` ist `65`, der von `B` ist `66` usw. und das Alphabet hat `26` Buchstaben. Mögliche Titel können also z.B. sein:
+			```bash
+			Titel A
+			Titel B
+			Titel C
+			…
+			```
+
+	5. Erzeugen Sie in der `main()`-Methode der `Testklasse` ein Array von `Buch`-Objekten. 
+
+		- Das Array hat die Länge `10`.
+
+		- Befüllen Sie in einer Schleife das Array mit `Buch`-Objekten unter Verwendung des parameterlosen Konstruktors. 
+
+		- Berechnen Sie für alle erzeugten `Buch`-Objekte das Alter (ausgehend von aktuellen Jahr `2022` – ein Buch von `2021` ist also `1` Jahr alt, ein Buch von `1950` ist `72` Jahre alt).
+
+		- Geben Sie alle Bücher des Arrays und deren Alter auf der Konsole aus, so dass folgende Ausgabe entsteht (Beispielwerte):
+
+			```bash
+			Titel E   :  84 Seiten, von 1944 -->  78 Jahre alt 
+			Titel G   :  55 Seiten, von 1964 -->  58 Jahre alt 
+			Titel Z   :  52 Seiten, von 1975 -->  47 Jahre alt 
+			Titel T   :  28 Seiten, von 1937 -->  85 Jahre alt 
+			Titel H   : 190 Seiten, von 1964 -->  58 Jahre alt 
+			Titel F   : 145 Seiten, von 1935 -->  87 Jahre alt 
+			Titel V   :  77 Seiten, von 1989 -->  33 Jahre alt 
+			Titel O   : 122 Seiten, von 2008 -->  14 Jahre alt 
+			Titel P   : 143 Seiten, von 2011 -->  11 Jahre alt 
+			Titel A   : 112 Seiten, von 2010 -->  12 Jahre alt
+			```
+
+	6. (**Teil 3**) Erstellen Sie eine Klasse `Bibliothek`. Objektvariable ist `buecher` vom Typ `Buch[]`. Die Objektvariable ist nur innerhalb der Klasse sichtbar!
+
+		- Erstellen Sie einen parametrisierten Konstruktor, dem als Parameter eine `anzBuecher` übergeben wird. Der Wert von `anzBuecher` entspricht der Länge des `buecher`-Arrays. Erzeugen Sie das Array im Konstruktor und befüllen Sie es mit `Buch`-Objekten unter Verwendung des parameterlosen Konstruktors von `Buch`. 
+
+		- Erstellen Sie eine Methode `sort(boolean vonDuennZuDick)`. In dieser Methode wird das `buecher`-Array sortiert. 
+
+			- Ist der Parameterwert `true`, dann werden die Bücher *aufsteigend* vom Buch mit den wenigsten Seiten bis hoch zum Buch mit den meisten Seiten sortiert.
+
+			- Ist der Parameterwert `false`, dann werden die Bücher *absteigend* vom Buch mit den meisten Seiten bis hoch zum Buch mit den wenigsten Seiten sortiert.
+
+		- Überschreiben Sie die Methode `toString()` so, dass ein `String` in der folgenden Form zurückgegeben wird (Beispielwerte): 
+			```bash
+			Bibliothek mit  10 Buechern 
+
+			 1. Titel Q   :  77 Seiten, von 1963 
+			 2. Titel N   :  55 Seiten, von 1982 
+			 3. Titel W   : 112 Seiten, von 2017 
+			 4. Titel R   :  26 Seiten, von 1989 
+			 5. Titel W   : 161 Seiten, von 2002 
+			 6. Titel N   : 147 Seiten, von 1949 
+			 7. Titel U   :  80 Seiten, von 1955 
+			 8. Titel S   : 148 Seiten, von 1948 
+			 9. Titel A   :  96 Seiten, von 1980 
+			10. Titel S   :  77 Seiten, von 1920 
+			```
+
+
+	7. Erzeugen Sie in der `main()`-Methode der `Testklasse` ein Objekt von `Bibliothek`. Übergeben Sie als Parameterwert die `10`.   
+
+		- Geben Sie das `Bibliothek`-Objekt unter Verwendung der `toString()`-Methode auf die Konsole aus.
+
+		- Rufen Sie für das `Bibliothek`-Objekt die Methode `sort(true)` auf und geben Sie danach das `Bibliothek`-Objekt erneut auf die Konsole aus. 
+
+		- Rufen Sie für das `Bibliothek`-Objekt die Methode `sort(false)` auf und geben Sie danach das `Bibliothek`-Objekt erneut auf die Konsole aus. 
+
+		- Es entstehen folgende Ausgaben (Beispielwerte):
+
+			```bash
+			Bibliothek mit  10 Buechern 
+
+			 1. Titel Q   :  77 Seiten, von 1963 
+			 2. Titel N   :  55 Seiten, von 1982 
+			 3. Titel W   : 112 Seiten, von 2017 
+			 4. Titel R   :  26 Seiten, von 1989 
+			 5. Titel W   : 161 Seiten, von 2002 
+			 6. Titel N   : 147 Seiten, von 1949 
+			 7. Titel U   :  80 Seiten, von 1955 
+			 8. Titel S   : 148 Seiten, von 1948 
+			 9. Titel A   :  96 Seiten, von 1980 
+			10. Titel S   :  77 Seiten, von 1920 
+
+
+			Bibliothek mit  10 Buechern 
+
+			 1. Titel R   :  26 Seiten, von 1989 
+			 2. Titel N   :  55 Seiten, von 1982 
+			 3. Titel Q   :  77 Seiten, von 1963 
+			 4. Titel S   :  77 Seiten, von 1920 
+			 5. Titel U   :  80 Seiten, von 1955 
+			 6. Titel A   :  96 Seiten, von 1980 
+			 7. Titel W   : 112 Seiten, von 2017 
+			 8. Titel N   : 147 Seiten, von 1949 
+			 9. Titel S   : 148 Seiten, von 1948 
+			10. Titel W   : 161 Seiten, von 2002 
+
+
+			Bibliothek mit  10 Buechern 
+
+			 1. Titel W   : 161 Seiten, von 2002 
+			 2. Titel S   : 148 Seiten, von 1948 
+			 3. Titel N   : 147 Seiten, von 1949 
+			 4. Titel W   : 112 Seiten, von 2017 
+			 5. Titel A   :  96 Seiten, von 1980 
+			 6. Titel U   :  80 Seiten, von 1955 
+			 7. Titel Q   :  77 Seiten, von 1963 
+			 8. Titel S   :  77 Seiten, von 1920 
+			 9. Titel N   :  55 Seiten, von 1982 
+			10. Titel R   :  26 Seiten, von 1989 
+			```
+
+	8. (**Teil 4**) Erstellen Sie in der Klasse `Bibliothek` eine Methode `enthaeltDoppelungen()`. Diese Methode gibt ein `true` zurück, wenn das `buecher`-Array Bücher mit demselben Titel enthält (also die `equals()`-Methode aus Buch für zwei Bücher `true` ergibt). Ansonsten `false`.
+
+		- Ändern Sie die `toString()`-Methode von `Bibliothek` so, dass mit ausgegeben wird, ob das `buecher`-Array Doppelungen enthält oder nicht. Der zurückgegebene String sieht dann so aus (Beispielwerte):
+			```bash
+			Bibliothek mit   4 Buechern 
+
+			 1. Titel B   : 151 Seiten, von 1940 
+			 2. Titel H   : 126 Seiten, von 1977 
+			 3. Titel Z   :  94 Seiten, von 1991 
+			 4. Titel H   :  65 Seiten, von 1925 
+
+			enthaelt doppelte Eintraege 
+			```
+
+			oder so (Beispielwerte):
+			```bash
+			Bibliothek mit   4 Buechern 
+
+			 1. Titel M   : 131 Seiten, von 1956 
+			 2. Titel L   : 192 Seiten, von 1996 
+			 3. Titel G   :  39 Seiten, von 2019 
+			 4. Titel A   :  81 Seiten, von 1953 
+
+			enthaelt keine doppelten Eintraege 
+			```
+
+
+		- Erstellen Sie in der Klasse `Bibliothek` eine Methode `buecherVonBis(int vonJahr, int bisJahr)`. Diese Methode gibt ein `Buch`-Array zurück. Das zurückgegebene `Buch`-Array enthält alle Bücher aus dem `buecher`-Array, die in der Zeit `vonJahr` (inkl.) – `bisJahr` (inkl.) erschienen sind. 
+
+			Angenommen, das `buecher`-Array sieht so aus:
+
+			```bash
+			Bibliothek mit   4 Buechern 
+
+			 1. Titel B   : 151 Seiten, von 1940 
+			 2. Titel H   : 126 Seiten, von 1977 
+			 3. Titel Z   :  94 Seiten, von 1991 
+			 4. Titel H   :  65 Seiten, von 1925
+			```
+
+			und es werden alle Bücher aus dem Zeitraum `1950 – 1999` gesucht. Dann sieht das zurückgegebene `Buch`-Array so aus:
+
+			```bash
+			Titel H   : 126 Seiten, von 1977
+			Titel Z   :  94 Seiten, von 1991
+			```
+
+		- Rufen Sie die Methode `buecherVonBis(1950,1999)` in der `main()`-Methode für das unter `7.` erstellte `Bibliothek`sobjekt auf. Geben Sie das zurückgegebene `Buch`-Array unter Verwendung der `toString()`-Methode von `Buch` auf die Konsole aus.
+
+		- Erstellen Sie in der Klasse `Bibliothek` eine Methode `duennstesBuch()`. Diese Methode gibt das `Buch` mit den wenigsten `seiten` aus dem `buecher`-Array zurück. Sie können davon ausgehen, dass das `buecher`-Array mindestens ein Buch enthält.
+
+			Rufen Sie die Methode in der `main()`-Methode auf und geben Sie das dünnste Buch in der folgenden Form auf der Konsole aus (Beispielwerte):
+
+			```bash
+			Das duennste Buch ist [ Titel P   :  37 Seiten, von 1990 ]
+			```
+
+		- Erstellen Sie in der Klasse `Bibliothek` eine Methode `aeltestesBuch()`. Diese Methode gibt das `Buch` mit dem frühesten Erscheinungsjahr (`jahr`) aus dem  `buecher`-Array zurück. Sie können davon ausgehen, dass das `buecher`-Array mindestens ein Buch enthält.
+
+			Rufen Sie die Methode in der `main()`-Methode auf und geben Sie das älteste Buch in der folgenden Form auf der Konsole aus (Beispielwerte):
+
+			```bash
+			Das aelteste Buch ist [ Titel D   : 195 Seiten, von 1910 ]
+			```
+
+		- Erstellen Sie in der Klasse `Bibliothek` eine Methode `durchschnittsalter()`. Diese Methode berechnet das Durchschnittsalter aller Bücher aus dem `buecher`-Array und gibt dieses als `double` zurück. Das Alter eines Buches wird berechnet, indem Sie vom aktuellen Jahr `2022` das Erscheinungsjahr des Buches abziehen.
+
+			Rufen Sie die Methode in der `main()`-Methode auf und geben Sie das Durchschnittsalter in der folgenden Form auf der Konsole aus (Beispielwerte):
+
+			```bash
+			Das Durchschnittsalter betraegt 62.2 Jahre.
+			```
+
+	9. Zur Kontrolle: Die möglichen Ausgaben (Beispielwerte) könnten sein:
+
+		```bash
+		----------- Teil 1 -----------------
+
+		Titel A   :  55 Seiten, von 1999
+		Titel B   :  66 Seiten, von 2000
+		Titel C   :  77 Seiten, von 2001
+
+		----------- Teil 2 -----------------
+
+		Titel V   :  29 Seiten, von 2012 -->  10 Jahre alt 
+		Titel B   : 129 Seiten, von 2003 -->  19 Jahre alt 
+		Titel E   :  37 Seiten, von 1940 -->  82 Jahre alt 
+		Titel F   : 141 Seiten, von 1904 --> 118 Jahre alt 
+		Titel L   : 118 Seiten, von 1983 -->  39 Jahre alt 
+		Titel O   : 174 Seiten, von 1998 -->  24 Jahre alt 
+		Titel U   : 162 Seiten, von 2001 -->  21 Jahre alt 
+		Titel I   :  29 Seiten, von 1909 --> 113 Jahre alt 
+		Titel V   : 141 Seiten, von 1944 -->  78 Jahre alt 
+		Titel O   :  38 Seiten, von 1942 -->  80 Jahre alt 
+
+		----------- Teil 3 -----------------
+
+		Bibliothek mit  10 Buechern 
+
+		 1. Titel P   :  79 Seiten, von 1948 
+		 2. Titel U   :  91 Seiten, von 1941 
+		 3. Titel J   :  88 Seiten, von 1956 
+		 4. Titel H   :  76 Seiten, von 1959 
+		 5. Titel Y   :  35 Seiten, von 2002 
+		 6. Titel A   :  83 Seiten, von 2020 
+		 7. Titel T   :  29 Seiten, von 2010 
+		 8. Titel N   : 150 Seiten, von 1936 
+		 9. Titel T   :  56 Seiten, von 1956 
+		10. Titel W   :  70 Seiten, von 1907 
+
+
+		Bibliothek mit  10 Buechern 
+
+		 1. Titel T   :  29 Seiten, von 2010 
+		 2. Titel Y   :  35 Seiten, von 2002 
+		 3. Titel T   :  56 Seiten, von 1956 
+		 4. Titel W   :  70 Seiten, von 1907 
+		 5. Titel H   :  76 Seiten, von 1959 
+		 6. Titel P   :  79 Seiten, von 1948 
+		 7. Titel A   :  83 Seiten, von 2020 
+		 8. Titel J   :  88 Seiten, von 1956 
+		 9. Titel U   :  91 Seiten, von 1941 
+		10. Titel N   : 150 Seiten, von 1936 
+
+
+		Bibliothek mit  10 Buechern 
+
+		 1. Titel N   : 150 Seiten, von 1936 
+		 2. Titel U   :  91 Seiten, von 1941 
+		 3. Titel J   :  88 Seiten, von 1956 
+		 4. Titel A   :  83 Seiten, von 2020 
+		 5. Titel P   :  79 Seiten, von 1948 
+		 6. Titel H   :  76 Seiten, von 1959 
+		 7. Titel W   :  70 Seiten, von 1907 
+		 8. Titel T   :  56 Seiten, von 1956 
+		 9. Titel Y   :  35 Seiten, von 2002 
+		10. Titel T   :  29 Seiten, von 2010 
+
+
+		----------- Teil 4 -----------------
+
+		Bibliothek mit  10 Buechern 
+
+		 1. Titel N   : 150 Seiten, von 1936 
+		 2. Titel U   :  91 Seiten, von 1941 
+		 3. Titel J   :  88 Seiten, von 1956 
+		 4. Titel A   :  83 Seiten, von 2020 
+		 5. Titel P   :  79 Seiten, von 1948 
+		 6. Titel H   :  76 Seiten, von 1959 
+		 7. Titel W   :  70 Seiten, von 1907 
+		 8. Titel T   :  56 Seiten, von 1956 
+		 9. Titel Y   :  35 Seiten, von 2002 
+		10. Titel T   :  29 Seiten, von 2010 
+
+		enthaelt doppelte Eintraege 
+
+
+		Titel J   :  88 Seiten, von 1956
+		Titel H   :  76 Seiten, von 1959
+		Titel T   :  56 Seiten, von 1956
+
+
+
+		Das duennste Buch ist [ Titel T   :  29 Seiten, von 2010 ]
+		Das aelteste Buch ist [ Titel W   :  70 Seiten, von 1907 ]
+		Das Durchschnittsalter betraegt 58.5 Jahre.
+
+		``` 
+
+
+??? question "Eine mögliche Lösung für Klausur 1.PZ"
+	=== "Testklasse.java"
+		```java
+		package klausur;
+
+		public class Testklasse 
+		{
+
+			public static void main(String[] args) 
+			{
+				System.out.printf("%n----------- Teil 1 -----------------%n%n");
+				
+				Buch b1 = new Buch("Titel A", 55, 1999);
+				Buch b2 = new Buch("Titel B", 66, 2000);
+				Buch b3 = new Buch("Titel C", 77, 2001);
+				
+				System.out.println(b1);
+				System.out.println(b2);
+				System.out.println(b3);
+				
+				System.out.printf("%n----------- Teil 2 -----------------%n%n");
+				
+				Buch[] buecher = new Buch[10];
+				for (int index = 0; index < buecher.length; index++) 
+				{
+					buecher[index] = new Buch();
+					System.out.print(buecher[index]);
+					
+					int alter = 2022 -  buecher[index].getJahr();
+					System.out.printf(" --> %3d Jahre alt %n", alter);
+				}
+				
+				System.out.printf("%n----------- Teil 3 -----------------%n%n");
+				Bibliothek bib1 = new Bibliothek(10);
+				System.out.println(bib1);
+				bib1.sort(true);
+				System.out.println(bib1);
+				bib1.sort(false);
+				System.out.println(bib1);
+				
+				// Bibliothek bib2 = new Bibliothek(4);
+				// System.out.println(bib2);
+				
+				System.out.printf("%n----------- Teil 4 -----------------%n%n");
+				System.out.println(bib1);	 // nicht gefordert
+				Buch[] bib3 = bib1.buecherVonBis(1950, 1999);
+				for (int index = 0; index < bib3.length; index++) 
+				{
+					System.out.println(bib3[index]);
+				}
+				
+				System.out.printf("%n----------- Teil 5 -----------------%n%n");
+				Buch duenn = bib1.duennstesBuch();
+				System.out.println("Das duennste Buch ist [ " + duenn.toString() + " ]");
+				
+				Buch alt = bib1.aeltestesBuch();
+				System.out.println("Das aelteste Buch ist [ " + alt.toString() + " ]");
+				
+				double average = bib1.durchschnittsalter();
+				System.out.println("Das Durchschnittsalter betraegt " + average + " Jahre.");
+			}
+
+		}
+		```		
+	=== "Buch.java"
+		```java
+		package klausur;
+
+		import java.util.Random;
+
+		public class Buch 
+		{
+			private String titel;
+			private int seiten;
+			private int jahr;
+			
+			public Buch(String titel, int seiten, int jahr) 
+			{
+				this.titel = titel;
+				this.seiten = seiten;
+				this.jahr = jahr;
+			}
+			
+			public Buch()
+			{
+				Random r = new Random();
+				int seiten = r.nextInt(180) + 20;
+				int jahr = r.nextInt(122) + 1900;
+				char buchstabe = (char)(r.nextInt(26) + 65);
+				String titel = "Titel " + buchstabe;
+				
+				this.titel = titel;
+				this.seiten = seiten;
+				this.jahr = jahr;
+			}
+			
+			public int getJahr()
+			{
+				return this.jahr;
+			}
+			
+			public boolean istDicker(Buch b)
+			{
+				return this.seiten > b.seiten;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("%-10s: %3d Seiten, von %4d", this.titel, this.seiten, this.jahr);
+				return s;
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Buch b = (Buch)o;
+				return this.titel.equals(b.titel);
+			}
+		}
+		```		
+	=== "Bibliothek.java"
+		```java
+		package klausur;
+
+		public class Bibliothek 
+		{
+			Buch[] buecher;
+			
+			public Bibliothek(int anzBuecher)
+			{
+				this.buecher = new Buch[anzBuecher];
+				for (int index = 0; index < buecher.length; index++) 
+				{
+					this.buecher[index] = new Buch();
+				}
+			}
+			
+			public void sort(boolean vonDuennZuDick)
+			{
+				for(int bubble = 1; bubble <= this.buecher.length; bubble++)
+				{
+					for(int index = 0; index < this.buecher.length - bubble; index++)
+					{
+						if(vonDuennZuDick && this.buecher[index].istDicker(this.buecher[index+1]))
+						{
+							Buch tmp = this.buecher[index +1];
+							this.buecher[index +1] = this.buecher[index];
+							this.buecher[index] = tmp;
+						}
+						else if(!vonDuennZuDick && this.buecher[index +1].istDicker(this.buecher[index]))
+						{
+							Buch tmp = this.buecher[index +1];
+							this.buecher[index +1] = this.buecher[index];
+							this.buecher[index] = tmp;
+						}
+					}
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("Bibliothek mit %3d Buechern %n%n", this.buecher.length);
+				for (int index = 0; index < this.buecher.length; index++) 
+				{
+					s = s + String.format("%2d. %s %n", (index + 1), this.buecher[index].toString());
+				}
+				s = s + "\n";
+			
+				if(this.enthaeltDoppelungen())
+				{
+					s = s + "enthaelt doppelte Eintraege \n";
+				}
+				else
+				{
+					s = s + "enthaelt keine doppelten Eintraege \n";
+				}	
+				s = s + "\n";
+				return s;
+			}
+			
+			private boolean contains(Buch b, int fromIndex)
+			{
+				for (int index = fromIndex; index < buecher.length; index++) 
+				{
+					if(this.buecher[index].equals(b))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public boolean enthaeltDoppelungen()
+			{
+				for (int index = 0; index < buecher.length; index++) 
+				{
+					if(this.contains(this.buecher[index], index+1))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+				
+			public Buch[] buecherVonBis(int vonJahr, int bisJahr)
+			{
+				int anzahl = 0;
+				for (int index = 0; index < this.buecher.length; index++) 
+				{
+					if(this.buecher[index].getJahr() >= vonJahr && this.buecher[index].getJahr() <= bisJahr)
+					{
+						anzahl++;
+					}
+				}
+				
+				Buch[] books = new Buch[anzahl];
+				int indexBooks = 0;
+				for (int index = 0; index < this.buecher.length; index++) 
+				{
+					if(this.buecher[index].getJahr() >= vonJahr && this.buecher[index].getJahr() <= bisJahr)
+					{
+						books[indexBooks++] = this.buecher[index];
+					}
+				}
+				
+				return books;
+			}
+			
+			public Buch duennstesBuch()
+			{
+				Buch duennstes = this.buecher[0];
+				for (int index = 1; index < this.buecher.length; index++) 
+				{
+					if(duennstes.istDicker(this.buecher[index]))
+					{
+						duennstes = this.buecher[index];
+					}
+				}
+				return duennstes;
+			}
+			
+			
+			public Buch aeltestesBuch()
+			{
+				Buch aeltestes = this.buecher[0];
+				for (int index = 1; index < this.buecher.length; index++) 
+				{
+					if(this.buecher[index].getJahr() < aeltestes.getJahr())
+					{
+						aeltestes = this.buecher[index];
+					}
+				}
+				return aeltestes;
+			}
+			
+			public double durchschnittsalter()
+			{
+				final int HEUTE = 2022;
+				double sum = 0.0;
+				for (int index = 0; index < this.buecher.length; index++) 
+				{
+					int alter = HEUTE - this.buecher[index].getJahr();
+					sum = sum + alter;
+				}
+
+				if(this.buecher.length > 0)
+				{
+					return (sum/this.buecher.length);
+				} 
+				else 
+				{
+					return 0.0;
+				}
+			}
+		}
+		```		
+
 
 
 --- 
@@ -5423,7 +6037,7 @@
 		}
 		```
 
-	=== "Kontinent.java"
+	=== "Welt.java"
 		```java linenums="1"
 		package klausur;
 

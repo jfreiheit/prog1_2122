@@ -473,6 +473,19 @@
     Übungsblätter (wochenweise)
   </a>
   
+    <nav class="md-nav" aria-label="Übungsblätter (wochenweise)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#klausuren" class="md-nav__link">
+    Klausuren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -598,6 +611,19 @@
   <a href="#ubungsblatter-wochenweise" class="md-nav__link">
     Übungsblätter (wochenweise)
   </a>
+  
+    <nav class="md-nav" aria-label="Übungsblätter (wochenweise)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#klausuren" class="md-nav__link">
+    Klausuren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2979,6 +3005,640 @@ testen Sie alle Methoden der Klasse <code>Uebung10</code> (oder <code>Uebung11</
 </div>
 </details>
 <hr />
+<h3 id="klausuren">Klausuren<a class="headerlink" href="#klausuren" title="Permanent link">&para;</a></h3>
+<details class="note"><summary>Klausur 1.PZ (02.02.2022)</summary><ol>
+<li>Erstellen Sie ein package <code>klausur</code>. </li>
+<li>
+<p>(<strong>Teil 1</strong>) Erstellen Sie in diesem package eine Klasse <code>Buch</code> mit </p>
+<ul>
+<li>
+<p>den privaten Objektvariablen <code>titel</code> vom Typ <code>String</code> (<em>Titel des Buches</em>), <code>seiten</code> vom Typ <code>int</code> (<em>Anzahl der Seiten des Buches</em>) und <code>jahr</code> vom Typ <code>int</code> (<em>Erscheinungsjahr des Buches</em>). </p>
+</li>
+<li>
+<p>Erstellen Sie für die Klasse <code>Buch</code> einen parametrisierten Konstruktor, dem für jede der drei Objektvariablen ein Wert als Parameter übergeben wird. Mit den Parameterwerten werden die Objektvariablen initialisiert. </p>
+</li>
+<li>
+<p>Erstellen Sie eine Methode <code>getJahr()</code>, die den Wert der Objektvariablen <code>jahr</code> zurückgibt. </p>
+</li>
+<li>
+<p>Erstellen Sie eine Methode <code>istDicker(Buch b)</code>, die ein <code>true</code> zurückgibt, wenn das aufrufende <code>Buch</code>-Objekt mehr <code>seiten</code> hat, als <code>b</code>. Ansonsten wird <code>false</code> zurückgegeben.</p>
+</li>
+<li>
+<p>Überschreiben Sie die Objektmethode <code>toString()</code>, so, dass ein String in der folgenden Form zurückgegeben wird (Beispielwerte): 
+        <div class="highlight"><pre><span></span><code>Titel Z   : <span class="m">133</span> Seiten, von <span class="m">1958</span>
+</code></pre></div>
+        <strong>Beachten Sie</strong>: <code>Titel Z</code> ist der Titel des Buches. Reservieren Sie für den Titel <code>10</code> Zeichen (dann kommt ein Doppelpunkt <code>:</code>, reservieren Sie für die Seitenzahl <code>3</code> Zeichen und für die Jahreszahl <code>4</code> Zeichen. </p>
+</li>
+<li>
+<p>Überschreiben Sie die Objektmethode <code>equals(Object o)</code> so, dass zwei Bücher gleich sind, wenn sie denselben Titel haben.    </p>
+</li>
+</ul>
+</li>
+<li>
+<p>Erstellen Sie im gleichen package eine Klasse <code>Testklasse</code> mit <code>main()</code>-Methode. </p>
+<ul>
+<li>
+<p>Erzeugen Sie in der <code>main()</code>-Methode in einer Schleife <code>10</code> Objekte der Klasse <code>Lottery</code> und rufen (auch in der Schleife) jeweils die <code>drawing()</code> und die <code>print()</code>-Methode auf. Erzeugen Sie in der <code>main()</code>-Methode drei <code>Buch</code>-Objekte mit den folgenden Werten für die Objektvariablen:
+        <div class="highlight"><pre><span></span><code><span class="s2">&quot;Titel A&quot;</span>, <span class="m">55</span>, <span class="m">1999</span>
+<span class="s2">&quot;Titel B&quot;</span>, <span class="m">66</span>, <span class="m">2000</span>
+<span class="s2">&quot;Titel C&quot;</span>, <span class="m">77</span>, <span class="m">2001</span> 
+</code></pre></div></p>
+</li>
+<li>
+<p>Geben Sie alle drei <code>Buch</code>-Objekte auf die Konsole unter Verwendung der <code>toString()</code>-Methode aus. Es entsteht folgende Ausgabe:
+        <div class="highlight"><pre><span></span><code>Titel A   :  <span class="m">55</span> Seiten, von <span class="m">1999</span>
+Titel B   :  <span class="m">66</span> Seiten, von <span class="m">2000</span>
+Titel C   :  <span class="m">77</span> Seiten, von <span class="m">2001</span>
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p>(<strong>Teil 2</strong>) Erweitern Sie die Klasse <code>Buch</code> um einen parameterlosen Konstruktor. In diesem Konstruktor werden die Werte für die Objektvariablen zufällig erzeugt. Nutzen Sie dazu die Klasse <code>Random</code> aus dem <code>java.util</code>-Paket. <br/> <strong>Beachten Sie:</strong></p>
+<ul>
+<li>
+<p>Nutzen Sie immer die <code>nextInt(bound)</code>-Methode aus der <code>Random</code>-Klasse.</p>
+</li>
+<li>
+<p>Der Wert für <code>jahr</code> soll im Bereich von <code>1900</code> (inkl.) bis <code>2021</code> (inkl.) liegen (<code>122</code> verschiedene Jahreszahlen möglich).</p>
+</li>
+<li>
+<p>Der Wert für <code>seiten</code> soll im Bereich <code>20</code> (inkl.) bis <code>199</code> (inkl.) liegen (<code>180</code> verschiedene Seitenzahlen möglich).</p>
+</li>
+<li>
+<p>Der Wert für <code>title</code> ergibt sich aus <code>Titel</code> gefolgt von einem Großbuchstaben. Der Großbuchstabe soll zufällig erzeugt werden. <strong>Tipp:</strong> Der Ascii-Wert von <code>A</code> ist <code>65</code>, der von <code>B</code> ist <code>66</code> usw. und das Alphabet hat <code>26</code> Buchstaben. Mögliche Titel können also z.B. sein:
+        <div class="highlight"><pre><span></span><code>Titel A
+Titel B
+Titel C
+…
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Erzeugen Sie in der <code>main()</code>-Methode der <code>Testklasse</code> ein Array von <code>Buch</code>-Objekten. </p>
+<ul>
+<li>
+<p>Das Array hat die Länge <code>10</code>.</p>
+</li>
+<li>
+<p>Befüllen Sie in einer Schleife das Array mit <code>Buch</code>-Objekten unter Verwendung des parameterlosen Konstruktors. </p>
+</li>
+<li>
+<p>Berechnen Sie für alle erzeugten <code>Buch</code>-Objekte das Alter (ausgehend von aktuellen Jahr <code>2022</code> – ein Buch von <code>2021</code> ist also <code>1</code> Jahr alt, ein Buch von <code>1950</code> ist <code>72</code> Jahre alt).</p>
+</li>
+<li>
+<p>Geben Sie alle Bücher des Arrays und deren Alter auf der Konsole aus, so dass folgende Ausgabe entsteht (Beispielwerte):</p>
+<div class="highlight"><pre><span></span><code>Titel E   :  <span class="m">84</span> Seiten, von <span class="m">1944</span> --&gt;  <span class="m">78</span> Jahre alt 
+Titel G   :  <span class="m">55</span> Seiten, von <span class="m">1964</span> --&gt;  <span class="m">58</span> Jahre alt 
+Titel Z   :  <span class="m">52</span> Seiten, von <span class="m">1975</span> --&gt;  <span class="m">47</span> Jahre alt 
+Titel T   :  <span class="m">28</span> Seiten, von <span class="m">1937</span> --&gt;  <span class="m">85</span> Jahre alt 
+Titel H   : <span class="m">190</span> Seiten, von <span class="m">1964</span> --&gt;  <span class="m">58</span> Jahre alt 
+Titel F   : <span class="m">145</span> Seiten, von <span class="m">1935</span> --&gt;  <span class="m">87</span> Jahre alt 
+Titel V   :  <span class="m">77</span> Seiten, von <span class="m">1989</span> --&gt;  <span class="m">33</span> Jahre alt 
+Titel O   : <span class="m">122</span> Seiten, von <span class="m">2008</span> --&gt;  <span class="m">14</span> Jahre alt 
+Titel P   : <span class="m">143</span> Seiten, von <span class="m">2011</span> --&gt;  <span class="m">11</span> Jahre alt 
+Titel A   : <span class="m">112</span> Seiten, von <span class="m">2010</span> --&gt;  <span class="m">12</span> Jahre alt
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>(<strong>Teil 3</strong>) Erstellen Sie eine Klasse <code>Bibliothek</code>. Objektvariable ist <code>buecher</code> vom Typ <code>Buch[]</code>. Die Objektvariable ist nur innerhalb der Klasse sichtbar!</p>
+<ul>
+<li>
+<p>Erstellen Sie einen parametrisierten Konstruktor, dem als Parameter eine <code>anzBuecher</code> übergeben wird. Der Wert von <code>anzBuecher</code> entspricht der Länge des <code>buecher</code>-Arrays. Erzeugen Sie das Array im Konstruktor und befüllen Sie es mit <code>Buch</code>-Objekten unter Verwendung des parameterlosen Konstruktors von <code>Buch</code>. </p>
+</li>
+<li>
+<p>Erstellen Sie eine Methode <code>sort(boolean vonDuennZuDick)</code>. In dieser Methode wird das <code>buecher</code>-Array sortiert. </p>
+<ul>
+<li>
+<p>Ist der Parameterwert <code>true</code>, dann werden die Bücher <em>aufsteigend</em> vom Buch mit den wenigsten Seiten bis hoch zum Buch mit den meisten Seiten sortiert.</p>
+</li>
+<li>
+<p>Ist der Parameterwert <code>false</code>, dann werden die Bücher <em>absteigend</em> vom Buch mit den meisten Seiten bis hoch zum Buch mit den wenigsten Seiten sortiert.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Überschreiben Sie die Methode <code>toString()</code> so, dass ein <code>String</code> in der folgenden Form zurückgegeben wird (Beispielwerte): 
+        <div class="highlight"><pre><span></span><code>Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel Q   :  <span class="m">77</span> Seiten, von <span class="m">1963</span> 
+ <span class="m">2</span>. Titel N   :  <span class="m">55</span> Seiten, von <span class="m">1982</span> 
+ <span class="m">3</span>. Titel W   : <span class="m">112</span> Seiten, von <span class="m">2017</span> 
+ <span class="m">4</span>. Titel R   :  <span class="m">26</span> Seiten, von <span class="m">1989</span> 
+ <span class="m">5</span>. Titel W   : <span class="m">161</span> Seiten, von <span class="m">2002</span> 
+ <span class="m">6</span>. Titel N   : <span class="m">147</span> Seiten, von <span class="m">1949</span> 
+ <span class="m">7</span>. Titel U   :  <span class="m">80</span> Seiten, von <span class="m">1955</span> 
+ <span class="m">8</span>. Titel S   : <span class="m">148</span> Seiten, von <span class="m">1948</span> 
+ <span class="m">9</span>. Titel A   :  <span class="m">96</span> Seiten, von <span class="m">1980</span> 
+<span class="m">10</span>. Titel S   :  <span class="m">77</span> Seiten, von <span class="m">1920</span> 
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Erzeugen Sie in der <code>main()</code>-Methode der <code>Testklasse</code> ein Objekt von <code>Bibliothek</code>. Übergeben Sie als Parameterwert die <code>10</code>.   </p>
+<ul>
+<li>
+<p>Geben Sie das <code>Bibliothek</code>-Objekt unter Verwendung der <code>toString()</code>-Methode auf die Konsole aus.</p>
+</li>
+<li>
+<p>Rufen Sie für das <code>Bibliothek</code>-Objekt die Methode <code>sort(true)</code> auf und geben Sie danach das <code>Bibliothek</code>-Objekt erneut auf die Konsole aus. </p>
+</li>
+<li>
+<p>Rufen Sie für das <code>Bibliothek</code>-Objekt die Methode <code>sort(false)</code> auf und geben Sie danach das <code>Bibliothek</code>-Objekt erneut auf die Konsole aus. </p>
+</li>
+<li>
+<p>Es entstehen folgende Ausgaben (Beispielwerte):</p>
+<div class="highlight"><pre><span></span><code>Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel Q   :  <span class="m">77</span> Seiten, von <span class="m">1963</span> 
+ <span class="m">2</span>. Titel N   :  <span class="m">55</span> Seiten, von <span class="m">1982</span> 
+ <span class="m">3</span>. Titel W   : <span class="m">112</span> Seiten, von <span class="m">2017</span> 
+ <span class="m">4</span>. Titel R   :  <span class="m">26</span> Seiten, von <span class="m">1989</span> 
+ <span class="m">5</span>. Titel W   : <span class="m">161</span> Seiten, von <span class="m">2002</span> 
+ <span class="m">6</span>. Titel N   : <span class="m">147</span> Seiten, von <span class="m">1949</span> 
+ <span class="m">7</span>. Titel U   :  <span class="m">80</span> Seiten, von <span class="m">1955</span> 
+ <span class="m">8</span>. Titel S   : <span class="m">148</span> Seiten, von <span class="m">1948</span> 
+ <span class="m">9</span>. Titel A   :  <span class="m">96</span> Seiten, von <span class="m">1980</span> 
+<span class="m">10</span>. Titel S   :  <span class="m">77</span> Seiten, von <span class="m">1920</span> 
+
+
+Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel R   :  <span class="m">26</span> Seiten, von <span class="m">1989</span> 
+ <span class="m">2</span>. Titel N   :  <span class="m">55</span> Seiten, von <span class="m">1982</span> 
+ <span class="m">3</span>. Titel Q   :  <span class="m">77</span> Seiten, von <span class="m">1963</span> 
+ <span class="m">4</span>. Titel S   :  <span class="m">77</span> Seiten, von <span class="m">1920</span> 
+ <span class="m">5</span>. Titel U   :  <span class="m">80</span> Seiten, von <span class="m">1955</span> 
+ <span class="m">6</span>. Titel A   :  <span class="m">96</span> Seiten, von <span class="m">1980</span> 
+ <span class="m">7</span>. Titel W   : <span class="m">112</span> Seiten, von <span class="m">2017</span> 
+ <span class="m">8</span>. Titel N   : <span class="m">147</span> Seiten, von <span class="m">1949</span> 
+ <span class="m">9</span>. Titel S   : <span class="m">148</span> Seiten, von <span class="m">1948</span> 
+<span class="m">10</span>. Titel W   : <span class="m">161</span> Seiten, von <span class="m">2002</span> 
+
+
+Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel W   : <span class="m">161</span> Seiten, von <span class="m">2002</span> 
+ <span class="m">2</span>. Titel S   : <span class="m">148</span> Seiten, von <span class="m">1948</span> 
+ <span class="m">3</span>. Titel N   : <span class="m">147</span> Seiten, von <span class="m">1949</span> 
+ <span class="m">4</span>. Titel W   : <span class="m">112</span> Seiten, von <span class="m">2017</span> 
+ <span class="m">5</span>. Titel A   :  <span class="m">96</span> Seiten, von <span class="m">1980</span> 
+ <span class="m">6</span>. Titel U   :  <span class="m">80</span> Seiten, von <span class="m">1955</span> 
+ <span class="m">7</span>. Titel Q   :  <span class="m">77</span> Seiten, von <span class="m">1963</span> 
+ <span class="m">8</span>. Titel S   :  <span class="m">77</span> Seiten, von <span class="m">1920</span> 
+ <span class="m">9</span>. Titel N   :  <span class="m">55</span> Seiten, von <span class="m">1982</span> 
+<span class="m">10</span>. Titel R   :  <span class="m">26</span> Seiten, von <span class="m">1989</span> 
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>(<strong>Teil 4</strong>) Erstellen Sie in der Klasse <code>Bibliothek</code> eine Methode <code>enthaeltDoppelungen()</code>. Diese Methode gibt ein <code>true</code> zurück, wenn das <code>buecher</code>-Array Bücher mit demselben Titel enthält (also die <code>equals()</code>-Methode aus Buch für zwei Bücher <code>true</code> ergibt). Ansonsten <code>false</code>.</p>
+<ul>
+<li>
+<p>Ändern Sie die <code>toString()</code>-Methode von <code>Bibliothek</code> so, dass mit ausgegeben wird, ob das <code>buecher</code>-Array Doppelungen enthält oder nicht. Der zurückgegebene String sieht dann so aus (Beispielwerte):
+        <div class="highlight"><pre><span></span><code>Bibliothek mit   <span class="m">4</span> Buechern 
+
+ <span class="m">1</span>. Titel B   : <span class="m">151</span> Seiten, von <span class="m">1940</span> 
+ <span class="m">2</span>. Titel H   : <span class="m">126</span> Seiten, von <span class="m">1977</span> 
+ <span class="m">3</span>. Titel Z   :  <span class="m">94</span> Seiten, von <span class="m">1991</span> 
+ <span class="m">4</span>. Titel H   :  <span class="m">65</span> Seiten, von <span class="m">1925</span> 
+
+enthaelt doppelte Eintraege 
+</code></pre></div></p>
+<p>oder so (Beispielwerte):
+        <div class="highlight"><pre><span></span><code>Bibliothek mit   <span class="m">4</span> Buechern 
+
+ <span class="m">1</span>. Titel M   : <span class="m">131</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">2</span>. Titel L   : <span class="m">192</span> Seiten, von <span class="m">1996</span> 
+ <span class="m">3</span>. Titel G   :  <span class="m">39</span> Seiten, von <span class="m">2019</span> 
+ <span class="m">4</span>. Titel A   :  <span class="m">81</span> Seiten, von <span class="m">1953</span> 
+
+enthaelt keine doppelten Eintraege 
+</code></pre></div></p>
+</li>
+<li>
+<p>Erstellen Sie in der Klasse <code>Bibliothek</code> eine Methode <code>buecherVonBis(int vonJahr, int bisJahr)</code>. Diese Methode gibt ein <code>Buch</code>-Array zurück. Das zurückgegebene <code>Buch</code>-Array enthält alle Bücher aus dem <code>buecher</code>-Array, die in der Zeit <code>vonJahr</code> (inkl.) – <code>bisJahr</code> (inkl.) erschienen sind. </p>
+<p>Angenommen, das <code>buecher</code>-Array sieht so aus:</p>
+<div class="highlight"><pre><span></span><code>Bibliothek mit   <span class="m">4</span> Buechern 
+
+ <span class="m">1</span>. Titel B   : <span class="m">151</span> Seiten, von <span class="m">1940</span> 
+ <span class="m">2</span>. Titel H   : <span class="m">126</span> Seiten, von <span class="m">1977</span> 
+ <span class="m">3</span>. Titel Z   :  <span class="m">94</span> Seiten, von <span class="m">1991</span> 
+ <span class="m">4</span>. Titel H   :  <span class="m">65</span> Seiten, von <span class="m">1925</span>
+</code></pre></div>
+<p>und es werden alle Bücher aus dem Zeitraum <code>1950 – 1999</code> gesucht. Dann sieht das zurückgegebene <code>Buch</code>-Array so aus:</p>
+<div class="highlight"><pre><span></span><code>Titel H   : <span class="m">126</span> Seiten, von <span class="m">1977</span>
+Titel Z   :  <span class="m">94</span> Seiten, von <span class="m">1991</span>
+</code></pre></div>
+</li>
+<li>
+<p>Rufen Sie die Methode <code>buecherVonBis(1950,1999)</code> in der <code>main()</code>-Methode für das unter <code>7.</code> erstellte <code>Bibliothek</code>sobjekt auf. Geben Sie das zurückgegebene <code>Buch</code>-Array unter Verwendung der <code>toString()</code>-Methode von <code>Buch</code> auf die Konsole aus.</p>
+</li>
+<li>
+<p>Erstellen Sie in der Klasse <code>Bibliothek</code> eine Methode <code>duennstesBuch()</code>. Diese Methode gibt das <code>Buch</code> mit den wenigsten <code>seiten</code> aus dem <code>buecher</code>-Array zurück. Sie können davon ausgehen, dass das <code>buecher</code>-Array mindestens ein Buch enthält.</p>
+<p>Rufen Sie die Methode in der <code>main()</code>-Methode auf und geben Sie das dünnste Buch in der folgenden Form auf der Konsole aus (Beispielwerte):</p>
+<div class="highlight"><pre><span></span><code>Das duennste Buch ist <span class="o">[</span> Titel P   :  <span class="m">37</span> Seiten, von <span class="m">1990</span> <span class="o">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>Erstellen Sie in der Klasse <code>Bibliothek</code> eine Methode <code>aeltestesBuch()</code>. Diese Methode gibt das <code>Buch</code> mit dem frühesten Erscheinungsjahr (<code>jahr</code>) aus dem  <code>buecher</code>-Array zurück. Sie können davon ausgehen, dass das <code>buecher</code>-Array mindestens ein Buch enthält.</p>
+<p>Rufen Sie die Methode in der <code>main()</code>-Methode auf und geben Sie das älteste Buch in der folgenden Form auf der Konsole aus (Beispielwerte):</p>
+<div class="highlight"><pre><span></span><code>Das aelteste Buch ist <span class="o">[</span> Titel D   : <span class="m">195</span> Seiten, von <span class="m">1910</span> <span class="o">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>Erstellen Sie in der Klasse <code>Bibliothek</code> eine Methode <code>durchschnittsalter()</code>. Diese Methode berechnet das Durchschnittsalter aller Bücher aus dem <code>buecher</code>-Array und gibt dieses als <code>double</code> zurück. Das Alter eines Buches wird berechnet, indem Sie vom aktuellen Jahr <code>2022</code> das Erscheinungsjahr des Buches abziehen.</p>
+<p>Rufen Sie die Methode in der <code>main()</code>-Methode auf und geben Sie das Durchschnittsalter in der folgenden Form auf der Konsole aus (Beispielwerte):</p>
+<div class="highlight"><pre><span></span><code>Das Durchschnittsalter betraegt <span class="m">62</span>.2 Jahre.
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Zur Kontrolle: Die möglichen Ausgaben (Beispielwerte) könnten sein:</p>
+<div class="highlight"><pre><span></span><code>----------- Teil <span class="m">1</span> -----------------
+
+Titel A   :  <span class="m">55</span> Seiten, von <span class="m">1999</span>
+Titel B   :  <span class="m">66</span> Seiten, von <span class="m">2000</span>
+Titel C   :  <span class="m">77</span> Seiten, von <span class="m">2001</span>
+
+----------- Teil <span class="m">2</span> -----------------
+
+Titel V   :  <span class="m">29</span> Seiten, von <span class="m">2012</span> --&gt;  <span class="m">10</span> Jahre alt 
+Titel B   : <span class="m">129</span> Seiten, von <span class="m">2003</span> --&gt;  <span class="m">19</span> Jahre alt 
+Titel E   :  <span class="m">37</span> Seiten, von <span class="m">1940</span> --&gt;  <span class="m">82</span> Jahre alt 
+Titel F   : <span class="m">141</span> Seiten, von <span class="m">1904</span> --&gt; <span class="m">118</span> Jahre alt 
+Titel L   : <span class="m">118</span> Seiten, von <span class="m">1983</span> --&gt;  <span class="m">39</span> Jahre alt 
+Titel O   : <span class="m">174</span> Seiten, von <span class="m">1998</span> --&gt;  <span class="m">24</span> Jahre alt 
+Titel U   : <span class="m">162</span> Seiten, von <span class="m">2001</span> --&gt;  <span class="m">21</span> Jahre alt 
+Titel I   :  <span class="m">29</span> Seiten, von <span class="m">1909</span> --&gt; <span class="m">113</span> Jahre alt 
+Titel V   : <span class="m">141</span> Seiten, von <span class="m">1944</span> --&gt;  <span class="m">78</span> Jahre alt 
+Titel O   :  <span class="m">38</span> Seiten, von <span class="m">1942</span> --&gt;  <span class="m">80</span> Jahre alt 
+
+----------- Teil <span class="m">3</span> -----------------
+
+Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel P   :  <span class="m">79</span> Seiten, von <span class="m">1948</span> 
+ <span class="m">2</span>. Titel U   :  <span class="m">91</span> Seiten, von <span class="m">1941</span> 
+ <span class="m">3</span>. Titel J   :  <span class="m">88</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">4</span>. Titel H   :  <span class="m">76</span> Seiten, von <span class="m">1959</span> 
+ <span class="m">5</span>. Titel Y   :  <span class="m">35</span> Seiten, von <span class="m">2002</span> 
+ <span class="m">6</span>. Titel A   :  <span class="m">83</span> Seiten, von <span class="m">2020</span> 
+ <span class="m">7</span>. Titel T   :  <span class="m">29</span> Seiten, von <span class="m">2010</span> 
+ <span class="m">8</span>. Titel N   : <span class="m">150</span> Seiten, von <span class="m">1936</span> 
+ <span class="m">9</span>. Titel T   :  <span class="m">56</span> Seiten, von <span class="m">1956</span> 
+<span class="m">10</span>. Titel W   :  <span class="m">70</span> Seiten, von <span class="m">1907</span> 
+
+
+Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel T   :  <span class="m">29</span> Seiten, von <span class="m">2010</span> 
+ <span class="m">2</span>. Titel Y   :  <span class="m">35</span> Seiten, von <span class="m">2002</span> 
+ <span class="m">3</span>. Titel T   :  <span class="m">56</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">4</span>. Titel W   :  <span class="m">70</span> Seiten, von <span class="m">1907</span> 
+ <span class="m">5</span>. Titel H   :  <span class="m">76</span> Seiten, von <span class="m">1959</span> 
+ <span class="m">6</span>. Titel P   :  <span class="m">79</span> Seiten, von <span class="m">1948</span> 
+ <span class="m">7</span>. Titel A   :  <span class="m">83</span> Seiten, von <span class="m">2020</span> 
+ <span class="m">8</span>. Titel J   :  <span class="m">88</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">9</span>. Titel U   :  <span class="m">91</span> Seiten, von <span class="m">1941</span> 
+<span class="m">10</span>. Titel N   : <span class="m">150</span> Seiten, von <span class="m">1936</span> 
+
+
+Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel N   : <span class="m">150</span> Seiten, von <span class="m">1936</span> 
+ <span class="m">2</span>. Titel U   :  <span class="m">91</span> Seiten, von <span class="m">1941</span> 
+ <span class="m">3</span>. Titel J   :  <span class="m">88</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">4</span>. Titel A   :  <span class="m">83</span> Seiten, von <span class="m">2020</span> 
+ <span class="m">5</span>. Titel P   :  <span class="m">79</span> Seiten, von <span class="m">1948</span> 
+ <span class="m">6</span>. Titel H   :  <span class="m">76</span> Seiten, von <span class="m">1959</span> 
+ <span class="m">7</span>. Titel W   :  <span class="m">70</span> Seiten, von <span class="m">1907</span> 
+ <span class="m">8</span>. Titel T   :  <span class="m">56</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">9</span>. Titel Y   :  <span class="m">35</span> Seiten, von <span class="m">2002</span> 
+<span class="m">10</span>. Titel T   :  <span class="m">29</span> Seiten, von <span class="m">2010</span> 
+
+
+----------- Teil <span class="m">4</span> -----------------
+
+Bibliothek mit  <span class="m">10</span> Buechern 
+
+ <span class="m">1</span>. Titel N   : <span class="m">150</span> Seiten, von <span class="m">1936</span> 
+ <span class="m">2</span>. Titel U   :  <span class="m">91</span> Seiten, von <span class="m">1941</span> 
+ <span class="m">3</span>. Titel J   :  <span class="m">88</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">4</span>. Titel A   :  <span class="m">83</span> Seiten, von <span class="m">2020</span> 
+ <span class="m">5</span>. Titel P   :  <span class="m">79</span> Seiten, von <span class="m">1948</span> 
+ <span class="m">6</span>. Titel H   :  <span class="m">76</span> Seiten, von <span class="m">1959</span> 
+ <span class="m">7</span>. Titel W   :  <span class="m">70</span> Seiten, von <span class="m">1907</span> 
+ <span class="m">8</span>. Titel T   :  <span class="m">56</span> Seiten, von <span class="m">1956</span> 
+ <span class="m">9</span>. Titel Y   :  <span class="m">35</span> Seiten, von <span class="m">2002</span> 
+<span class="m">10</span>. Titel T   :  <span class="m">29</span> Seiten, von <span class="m">2010</span> 
+
+enthaelt doppelte Eintraege 
+
+
+Titel J   :  <span class="m">88</span> Seiten, von <span class="m">1956</span>
+Titel H   :  <span class="m">76</span> Seiten, von <span class="m">1959</span>
+Titel T   :  <span class="m">56</span> Seiten, von <span class="m">1956</span>
+
+
+
+Das duennste Buch ist <span class="o">[</span> Titel T   :  <span class="m">29</span> Seiten, von <span class="m">2010</span> <span class="o">]</span>
+Das aelteste Buch ist <span class="o">[</span> Titel W   :  <span class="m">70</span> Seiten, von <span class="m">1907</span> <span class="o">]</span>
+Das Durchschnittsalter betraegt <span class="m">58</span>.5 Jahre.
+</code></pre></div>
+</li>
+</ol>
+</details>
+<details class="question"><summary>Eine mögliche Lösung für Klausur 1.PZ</summary><div class="tabbed-set" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Testklasse.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausur</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span> 
+<span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n----------- Teil 1 -----------------%n%n&quot;</span><span class="p">);</span>
+
+        <span class="n">Buch</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="p">(</span><span class="s">&quot;Titel A&quot;</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">1999</span><span class="p">);</span>
+        <span class="n">Buch</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="p">(</span><span class="s">&quot;Titel B&quot;</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span>
+        <span class="n">Buch</span> <span class="n">b3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="p">(</span><span class="s">&quot;Titel C&quot;</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">2001</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b3</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n----------- Teil 2 -----------------%n%n&quot;</span><span class="p">);</span>
+
+        <span class="n">Buch</span><span class="o">[]</span> <span class="n">buecher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="n">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">);</span>
+
+            <span class="kt">int</span> <span class="n">alter</span> <span class="o">=</span> <span class="mi">2022</span> <span class="o">-</span>  <span class="n">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">getJahr</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot; --&gt; %3d Jahre alt %n&quot;</span><span class="p">,</span> <span class="n">alter</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n----------- Teil 3 -----------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">Bibliothek</span> <span class="n">bib1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bibliothek</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">bib1</span><span class="p">);</span>
+        <span class="n">bib1</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">bib1</span><span class="p">);</span>
+        <span class="n">bib1</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">bib1</span><span class="p">);</span>
+
+        <span class="c1">// Bibliothek bib2 = new Bibliothek(4);</span>
+        <span class="c1">// System.out.println(bib2);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n----------- Teil 4 -----------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">bib1</span><span class="p">);</span>    <span class="c1">// nicht gefordert</span>
+        <span class="n">Buch</span><span class="o">[]</span> <span class="n">bib3</span> <span class="o">=</span> <span class="n">bib1</span><span class="p">.</span><span class="na">buecherVonBis</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">1999</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">bib3</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">bib3</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n----------- Teil 5 -----------------%n%n&quot;</span><span class="p">);</span>
+        <span class="n">Buch</span> <span class="n">duenn</span> <span class="o">=</span> <span class="n">bib1</span><span class="p">.</span><span class="na">duennstesBuch</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Das duennste Buch ist [ &quot;</span> <span class="o">+</span> <span class="n">duenn</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">);</span>
+
+        <span class="n">Buch</span> <span class="n">alt</span> <span class="o">=</span> <span class="n">bib1</span><span class="p">.</span><span class="na">aeltestesBuch</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Das aelteste Buch ist [ &quot;</span> <span class="o">+</span> <span class="n">alt</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; ]&quot;</span><span class="p">);</span>
+
+        <span class="kt">double</span> <span class="n">average</span> <span class="o">=</span> <span class="n">bib1</span><span class="p">.</span><span class="na">durchschnittsalter</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Das Durchschnittsalter betraegt &quot;</span> <span class="o">+</span> <span class="n">average</span> <span class="o">+</span> <span class="s">&quot; Jahre.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Buch.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausur</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Buch</span> 
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">titel</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">seiten</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">jahr</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Buch</span><span class="p">(</span><span class="n">String</span> <span class="n">titel</span><span class="p">,</span> <span class="kt">int</span> <span class="n">seiten</span><span class="p">,</span> <span class="kt">int</span> <span class="n">jahr</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">titel</span> <span class="o">=</span> <span class="n">titel</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">seiten</span> <span class="o">=</span> <span class="n">seiten</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">jahr</span> <span class="o">=</span> <span class="n">jahr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Buch</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">seiten</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span> <span class="o">+</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">jahr</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1900</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">buchstabe</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span> <span class="o">+</span> <span class="mi">65</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">titel</span> <span class="o">=</span> <span class="s">&quot;Titel &quot;</span> <span class="o">+</span> <span class="n">buchstabe</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">titel</span> <span class="o">=</span> <span class="n">titel</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">seiten</span> <span class="o">=</span> <span class="n">seiten</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">jahr</span> <span class="o">=</span> <span class="n">jahr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getJahr</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">jahr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">istDicker</span><span class="p">(</span><span class="n">Buch</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">seiten</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="na">seiten</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%-10s: %3d Seiten, von %4d&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">titel</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">seiten</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">jahr</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">o</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">o</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">()</span> <span class="o">!=</span> <span class="n">o</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+        <span class="n">Buch</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">Buch</span><span class="p">)</span><span class="n">o</span><span class="p">;</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">titel</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="na">titel</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><label for="__tabbed_8_3">Bibliothek.java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausur</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bibliothek</span> 
+<span class="p">{</span>
+    <span class="n">Buch</span><span class="o">[]</span> <span class="n">buecher</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Bibliothek</span><span class="p">(</span><span class="kt">int</span> <span class="n">anzBuecher</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">buecher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="o">[</span><span class="n">anzBuecher</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">vonDuennZuDick</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">bubble</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">bubble</span> <span class="o">&lt;=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">bubble</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">bubble</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">vonDuennZuDick</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">istDicker</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">Buch</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vonDuennZuDick</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">istDicker</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">Buch</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span> <span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Bibliothek mit %3d Buechern %n%n&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%2d. %s %n&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">enthaeltDoppelungen</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;enthaelt doppelte Eintraege \n&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;enthaelt keine doppelten Eintraege \n&quot;</span><span class="p">;</span>
+        <span class="p">}</span>   
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">contains</span><span class="p">(</span><span class="n">Buch</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fromIndex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">fromIndex</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">enthaeltDoppelungen</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">,</span> <span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Buch</span><span class="o">[]</span> <span class="nf">buecherVonBis</span><span class="p">(</span><span class="kt">int</span> <span class="n">vonJahr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bisJahr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">anzahl</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">getJahr</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">vonJahr</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">getJahr</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">bisJahr</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">anzahl</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">Buch</span><span class="o">[]</span> <span class="n">books</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Buch</span><span class="o">[</span><span class="n">anzahl</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">indexBooks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">getJahr</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">vonJahr</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">getJahr</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">bisJahr</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">books</span><span class="o">[</span><span class="n">indexBooks</span><span class="o">++]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">books</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Buch</span> <span class="nf">duennstesBuch</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Buch</span> <span class="n">duennstes</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">duennstes</span><span class="p">.</span><span class="na">istDicker</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">duennstes</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">duennstes</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">public</span> <span class="n">Buch</span> <span class="nf">aeltestesBuch</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Buch</span> <span class="n">aeltestes</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">getJahr</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">aeltestes</span><span class="p">.</span><span class="na">getJahr</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">aeltestes</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">aeltestes</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">durchschnittsalter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">HEUTE</span> <span class="o">=</span> <span class="mi">2022</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">alter</span> <span class="o">=</span> <span class="n">HEUTE</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">getJahr</span><span class="p">();</span>
+            <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">alter</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">sum</span><span class="o">/</span><span class="k">this</span><span class="p">.</span><span class="na">buecher</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+        <span class="p">}</span> 
+        <span class="k">else</span> 
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<hr />
 <h2 id="selbstandiges-uben">Selbständiges Üben<a class="headerlink" href="#selbstandiges-uben" title="Permanent link">&para;</a></h2>
 <p><strong><em>Falls Sie noch Lust und Zeit haben, ein wenig selbständig zu üben, hier einige Aufgaben:</em></strong></p>
 <h3 id="probeklausuren">Probeklausuren<a class="headerlink" href="#probeklausuren" title="Permanent link">&para;</a></h3>
@@ -3203,7 +3863,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Punkt2D, Punkt3D</summary><div class="tabbed-set" data-tabs="8:5"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Punkt3D.java</label><div class="tabbed-content">
+<details class="question"><summary>Eine mögliche Lösung für Punkt2D, Punkt3D</summary><div class="tabbed-set" data-tabs="9:5"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Punkt3D.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.punkte</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Punkt3D</span>
@@ -3273,7 +3933,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Punkt2D.java</label><div class="tabbed-content">
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Punkt2D.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3306,7 +3966,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><label for="__tabbed_8_3">Strecke.java</label><div class="tabbed-content">
+<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">Strecke.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3391,7 +4051,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><label for="__tabbed_8_4">PunkteArray.java</label><div class="tabbed-content">
+<input id="__tabbed_9_4" name="__tabbed_9" type="radio" /><label for="__tabbed_9_4">PunkteArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -3682,7 +4342,7 @@ laengste                  : Strecke <span class="o">[</span><span class="nv">sta
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_8_5" name="__tabbed_8" type="radio" /><label for="__tabbed_8_5">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_9_5" name="__tabbed_9" type="radio" /><label for="__tabbed_9_5">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -4023,7 +4683,7 @@ Das Haus besteht aus :
 </li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Wohnung</summary><div class="tabbed-set" data-tabs="9:4"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Wohnung.java</label><div class="tabbed-content">
+<details class="question"><summary>Eine mögliche Lösung für Wohnung</summary><div class="tabbed-set" data-tabs="10:4"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Wohnung.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wohnung</span>
@@ -4100,7 +4760,7 @@ Das Haus besteht aus :
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Dachgeschoss.java</label><div class="tabbed-content">
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">Dachgeschoss.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dachgeschosswohnung</span> <span class="kd">extends</span> <span class="n">Wohnung</span>
@@ -4125,7 +4785,7 @@ Das Haus besteht aus :
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">Haus.java</label><div class="tabbed-content">
+<input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><label for="__tabbed_10_3">Haus.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
@@ -4238,7 +4898,7 @@ Das Haus besteht aus :
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_4" name="__tabbed_9" type="radio" /><label for="__tabbed_9_4">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><label for="__tabbed_10_4">Testklasse.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.wohnung</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span>
@@ -4531,7 +5191,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 </li>
 </ol>
 </details>
-<details class="question"><summary>Eine mögliche Lösung für Übung 9</summary><div class="tabbed-set" data-tabs="10:5"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Pizza.java</label><div class="tabbed-content">
+<details class="question"><summary>Eine mögliche Lösung für Übung 9</summary><div class="tabbed-set" data-tabs="11:5"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Pizza.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pizza</span>
@@ -4579,7 +5239,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">Pizzaverkauf.java</label><div class="tabbed-content">
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">Pizzaverkauf.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pizzaverkauf</span>
@@ -4627,7 +5287,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><label for="__tabbed_10_3">Speisekarte.java</label><div class="tabbed-content">
+<input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><label for="__tabbed_11_3">Speisekarte.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Speisekarte</span>
@@ -4717,7 +5377,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><label for="__tabbed_10_4">Pizzeria.java</label><div class="tabbed-content">
+<input id="__tabbed_11_4" name="__tabbed_11" type="radio" /><label for="__tabbed_11_4">Pizzeria.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
@@ -4800,7 +5460,7 @@ Die Gesamteinnahmen betragen <span class="m">1026</span>,00 Euro
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_5" name="__tabbed_10" type="radio" /><label for="__tabbed_10_5">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_11_5" name="__tabbed_11" type="radio" /><label for="__tabbed_11_5">Testklasse.java</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">klausurvorbereitung.pizza</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Testklasse</span>
@@ -4931,7 +5591,7 @@ Index : -1
 </code></pre></div></li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Power</summary><div class="tabbed-set" data-tabs="11:4"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Power.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Power</summary><div class="tabbed-set" data-tabs="12:4"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Power.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5042,7 +5702,7 @@ Index : -1
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">PowerOfTwo.java</label><div class="tabbed-content">
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">PowerOfTwo.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5093,7 +5753,7 @@ Index : -1
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><label for="__tabbed_11_3">PowerArray.java</label><div class="tabbed-content">
+<input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><label for="__tabbed_12_3">PowerArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5286,7 +5946,7 @@ Index : -1
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_11_4" name="__tabbed_11" type="radio" /><label for="__tabbed_11_4">PowerTest.java</label><div class="tabbed-content">
+<input id="__tabbed_12_4" name="__tabbed_12" type="radio" /><label for="__tabbed_12_4">PowerTest.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5536,7 +6196,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Computer</summary><div class="tabbed-set" data-tabs="12:4"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Computer.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Computer</summary><div class="tabbed-set" data-tabs="13:4"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Computer.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5645,7 +6305,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">Notebook.java</label><div class="tabbed-content">
+<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">Notebook.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5686,7 +6346,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><label for="__tabbed_12_3">NotebookArray.java</label><div class="tabbed-content">
+<input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><label for="__tabbed_13_3">NotebookArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -5881,7 +6541,7 @@ c1 und c3 gleicher Hersteller ? : <span class="nb">false</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_12_4" name="__tabbed_12" type="radio" /><label for="__tabbed_12_4">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_13_4" name="__tabbed_13" type="radio" /><label for="__tabbed_13_4">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -6130,7 +6790,7 @@ kleinster Abstand : <span class="o">((</span><span class="m">01</span>:59:32<spa
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Uhrzeit</summary><div class="tabbed-set" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Uhrzeit.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Uhrzeit</summary><div class="tabbed-set" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Uhrzeit.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -6303,7 +6963,7 @@ kleinster Abstand : <span class="o">((</span><span class="m">01</span>:59:32<spa
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">UhrzeitArray.java</label><div class="tabbed-content">
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">UhrzeitArray.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -6540,7 +7200,7 @@ kleinster Abstand : <span class="o">((</span><span class="m">01</span>:59:32<spa
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><label for="__tabbed_13_3">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><label for="__tabbed_14_3">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -7106,7 +7766,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für Länder und Kontinente</summary><div class="tabbed-set" data-tabs="14:4"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Land.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für Länder und Kontinente</summary><div class="tabbed-set" data-tabs="15:4"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">Land.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -7287,7 +7947,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">Kontinent.java</label><div class="tabbed-content">
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">Kontinent.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -7480,7 +8140,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><label for="__tabbed_14_3">Kontinent.java</label><div class="tabbed-content">
+<input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><label for="__tabbed_15_3">Welt.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -7723,7 +8383,7 @@ T5 :  <span class="m">93</span> km2 :  <span class="m">488</span> ew :   <span c
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_14_4" name="__tabbed_14" type="radio" /><label for="__tabbed_14_4">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_15_4" name="__tabbed_15" type="radio" /><label for="__tabbed_15_4">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -8098,7 +8758,7 @@ s4 <span class="k">in</span> s3 ?        : <span class="nb">true</span>
 </li>
 </ul>
 </details>
-<details class="question"><summary>eine mögliche Lösung für MyString</summary><div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">MyString.java</label><div class="tabbed-content">
+<details class="question"><summary>eine mögliche Lösung für MyString</summary><div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">MyString.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -8557,7 +9217,7 @@ s4 <span class="k">in</span> s3 ?        : <span class="nb">true</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">Testklasse.java</label><div class="tabbed-content">
+<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">Testklasse.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
